@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>deranged | we do web dev</title>
+		<link href='http://fonts.googleapis.com/css?family=Open+Sans:300|Libre+Baskerville:400italic|Source+Code+Pro' rel='stylesheet' type='text/css'>
+		<style type="text/css">
+			html {
+				text-align: center;
+				height: 100%;
+				background-color: rgba(52, 73, 94,1.0);
+				background-size: contain;
+				color: rgba(236, 240, 241,1.0);
+				text-shadow: 0 4px 1px black;
+			}	
+			body {
+				margin: 10vw 0 0 0;
+				background-color: rgba(44, 62, 80,1.0);
+				padding: 0;
+			}
+			body:before {
+				content: ' ';
+				position: absolute;
+				top: 0;
+				left: 0;
+				right: 0;
+				height: 8vw;
+				background: rgba(52, 73, 94,1.0);
+			}
+			body:after {
+				content: ' ';
+				margin-top: 3vw;
+				width: 100%;
+				display: block;
+				height: 1vw;
+				background: rgba(52, 73, 94,1.0);
+			}
+			h1 {
+				width: 100%;
+				font-family: 'Open Sans';
+				font-weight: 300;
+				margin: 0;
+			}
+			h5 {
+				font-size: 3em;
+				font-family: 'Libre Baskerville';
+				font-weight: normal;
+				margin: 0;
+			}
+			code {
+				font-family: 'Source Code Pro';
+			}
+		</style>
+		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+		<script src="js/jquery.fittext.js"></script>
+	</head>
+	<body class="title-page">
+		<h1>deranged</h1>
+		<h5>we do <code>web</code> <code>dev</code></h5>
+		<script>
+			$("h1").fitText();
+			$("h5").fitText(1.65);
+		</script>
+	</body>
+</html>
