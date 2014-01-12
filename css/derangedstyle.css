@@ -38,8 +38,10 @@ h5 {
 	font-size: 3em;
 	font-family: 'Libre Baskerville', Baskerville, "Baskerville Old Face", "Hoefler Text", Garamond, "Times New Roman", serif;
 	font-weight: normal;
+	font-style: italic;
 	margin: 0;
 }
 code {
 	font-family: 'Source Code Pro', Monaco, Consolas, "Lucida Console", monospace;
+	font-style: normal;
 }
