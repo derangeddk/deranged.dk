@@ -4,17 +4,116 @@
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0"></meta>
 		<title>deranged | we do web dev</title>
-		<link href='http://fonts.googleapis.com/css?family=Libre+Baskerville:400italic|Source+Code+Pro|Source+Sans+Pro:200' rel='stylesheet' type='text/css'>
+		<link href='http://fonts.googleapis.com/css?family=Libre+Baskerville:400,700,400italic|Source+Sans+Pro:400,200,700,400italic,700italic' rel='stylesheet' type='text/css'>
 		<link href="css/derangedstyle.css" rel="stylesheet" type="text/css">
+        <link href="vendor/animate.css" rel="stylesheet" type="text/css">
 		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-		<script src="js/jquery.fittext.js"></script>
+		<script src="vendor/jquery.fittext.js"></script>
 	</head>
-	<body class="title-page">
-		<h1>deranged</h1>
-		<h5>we do <code>web</code> <code>dev</code></h5>
+	<body>
+        <header>
+            <h1>deranged</h1>
+            <h5>we do <code>web</code> <code>dev</code></h5>
+        </header>
 		<script>
-			$("h1").fitText();
-			$("h5").fitText(1.84);
+			$("header h1").fitText();
+			$("header h5").fitText(1.84);
 		</script>
+        <nav>
+            <a href="#values">Values</a>
+            <a href="#people">People</a>
+            <a href="#software">Software</a>
+            <a href="#contact">Contact</a>
+        </nav>
+        <section role="main" class="main-content">
+            <section class="values-intro">
+                <article>
+                <h1>Values</h1>
+                <p>
+                    <em>We are proud of our craft.</em> We hold our software development practices to high standards to ensure that our
+                    partners and customers get as much value as possible from working with us.
+                </p>
+                </article>
+            </section>
+            <section class="values">
+                <section class="value value-instant-value">
+                    <div class="preview">
+                        <h1>Instant Value</h1>
+                    </div>
+                    <div class="content">
+                        <h1>Instant Value</h1>
+                        <p>
+                            We provide value from iteration 1 &ndash; early in the development process. We quickly gauge interest and
+                            launch prototypes to get real customer feedback and ensure that we are moving in the right direction.
+                        </p>
+                    </div>
+                </section>
+                <section class="value value-clean-code">
+                    <div class="preview">
+                        <h1>Clean Code</h1>
+                    </div>
+                    <div class="content">
+                        <h1>Clean Code</h1>
+                        <p>
+                            We write clean code and refactor aggressively to create projects that are maintainable and sustainable.
+                            We write well-formed and extensive tests to make projects flexible and easy to change.
+                        </p>
+                    </div>
+                </section>
+                <section class="value value-continued-impact">
+                    <div class="preview">
+                        <h1>Continued Impact</h1>
+                    </div>
+                    <div class="content">
+                        <h1>Continued Impact</h1>
+                        <p>
+                            We know that requirements change, and that it is impossible to specify everything correctly up-front.
+                            We continuously adjust our course to be certain that we move in the right direction, and continue to
+                            produce value.
+                        </p>
+                    </div>
+                </section>
+            </section>
+            <section class="people">
+                <h1>People</h1>
+                Hello
+            </section>
+        </section>
+        <footer>
+            deranged
+            lol
+            hehehe
+        </footer>
+        <script>
+            $(".values .value .preview").fitText(2.2);
+            $(document).ready(function() {
+                var preview_in = "fadeInDownBig";
+                var preview_out = "fadeOutUpBig";
+                var content_in = "fadeInUpBig";
+                var content_out = "fadeOutDownBig";
+                var preview_remove = 'animated ' + preview_in + ' ' + preview_out;
+                var content_remove = 'animated ' + content_in + ' ' + content_out;
+                $(".values .value").hover(function() {
+                    $(this)
+                        .find('.preview')
+                        .removeClass(preview_remove)
+                        .addClass('animated '+preview_out)
+                        .end()
+                        .find('.content')
+                        .show()
+                        .removeClass(content_remove)
+                        .addClass('animated '+content_in);
+                }, function() {
+                    $(this)
+                        .find('.preview')
+                        .removeClass(preview_remove)
+                        .addClass('animated '+preview_in)
+                        .end()
+                        .find('.content')
+                        .removeClass(content_remove)
+                        .addClass('animated '+content_out);
+                });
+            });
+        </script>
 	</body>
 </html>

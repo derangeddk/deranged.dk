@@ -1,14 +1,13 @@
 html {
 	text-align: center;
 	height: 100%;
-	background-color: rgba(52, 73, 94,1.0);
+	background-color: rgba(44, 62, 80,1.0);
 	background-size: contain;
-	color: rgba(236, 240, 241,1.0);
-	text-shadow: 0 0.2vw 0.05vw black;
+    color: white;
+    font-family: 'Source Sans Pro', Calibri, Candara, Segoe, "Segoe UI", Optima, Arial, sans-serif;
 }	
 body {
-	margin: 10vw 0 0 0;
-	background-color: rgba(44, 62, 80,1.0);
+	margin: 70px 0 100px 0;
 	padding: 0;
 }
 body:before {
@@ -17,31 +16,168 @@ body:before {
 	top: 0;
 	left: 0;
 	right: 0;
-	height: 8vw;
+	height: 70px;
 	background: rgba(52, 73, 94,1.0);
+    z-index: 100;
+    box-shadow: 0 1px 3px black;
 }
-body:after {
-	content: ' ';
-	margin-top: 2vw;
-	width: 100%;
-	display: block;
-	height: 1vw;
-	background: rgba(52, 73, 94,1.0);
+header {
+    padding-bottom: 2vw;
+    color: rgba(236, 240, 241,1.0);
+	text-shadow: 0 0.2vw 0.05vw black;
+    background-color: rgba(44, 62, 80,1.0);
+    position: relative;
+    z-index: 50;
 }
-h1 {
+header h1 {
 	width: 100%;
-	font-family: 'Source Sans Pro', Calibri, Candara, Segoe, "Segoe UI", Optima, Arial, sans-serif;
 	font-weight: 200;
 	margin: 0;
 }
-h5 {
+header h5 {
 	font-size: 3em;
 	font-family: 'Libre Baskerville', Baskerville, "Baskerville Old Face", "Hoefler Text", Garamond, "Times New Roman", serif;
 	font-weight: normal;
 	font-style: italic;
 	margin: 0;
 }
-code {
-	font-family: 'Source Code Pro', Monaco, Consolas, "Lucida Console", monospace;
+header code {
 	font-style: normal;
+}
+
+code {
+    font-family: 'Source Code Pro', Monaco, Consolas, "Lucida Console", monospace;
+}
+
+nav {
+	top: 0;
+	left: 0;
+	right: 0;
+	background: rgba(52, 73, 94,1.0);
+    position: relative;
+    z-index: 100;
+    vertical-align: middle;
+    box-shadow: 0 1px 3px black;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    padding: 6px 12px;
+    display: inline-block;
+    margin: 10px 25px;
+}
+nav a:hover {
+    text-decoration: underline;
+    color: #ecf0f1;
+}
+
+article {
+    font-family: 'Libre Baskerville', Baskerville, "Baskerville Old Face", "Hoefler Text", Garamond, "Times New Roman", serif;
+}
+
+footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: -1;
+}
+
+h1 {
+    margin: 1em 0 0 0;
+}
+p {
+    margin: 0 0 1em 0;
+}
+
+.main-content {
+    background: #bdc3c7;
+    color: black;
+}
+
+.main-content article {
+    text-align: left;
+}
+
+.values-intro {
+    padding: 50px 8px 0;
+    background: #ecf0f1;
+    position:relative;
+    z-index: 999;
+    margin
+}
+.values-intro > * {
+    text-align: left;
+    min-width: 1206px;
+    width: 81%;
+    display: inline-block;
+}
+.values-intro h1 {
+    font-size: 6em;
+    margin: 0;
+    font-family: 'Source Sans Pro', Calibri, Candara, Segoe, "Segoe UI", Optima, Arial, sans-serif;
+}
+.values-intro p {
+    font-family: 'Libre Baskerville', Baskerville, "Baskerville Old Face", "Hoefler Text", Garamond, "Times New Roman", serif;
+    font-size: 2em;
+    max-width: 900px;
+}
+.values {
+    color: white;
+    height: 22vw;
+    min-height: 330px;
+    padding: 15px 8px 40px;
+    background: #ecf0f1;
+    box-shadow: 0 1px 3px black;
+}
+.values .value {
+    display: inline-block;
+    position: relative;
+    width: 27%;
+    vertical-align: top;
+    margin-right: 0;
+    min-width: 400px;
+    text-align: left;
+    cursor: pointer;
+    height: 100%;
+    overflow: hidden;
+    font-size: 1.3em;
+}
+.values .value:nth-child(3n) {
+    margin-right: 0;
+}
+.values .value > div {
+    padding: 20px 2vw;
+    vertical-align: top;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+.values .value .preview  h1{
+    margin: 0;
+    font-size: 5em;
+    font-weight: 200;
+}
+.values .value .content {
+    background: rgba(0,0,0,0.3);
+    box-shadow: 0 -10px 400px 400px rgba(0,0,0,0.3);
+    display: none;
+}
+
+.value-instant-value {
+    background: #e67e22;
+}
+.value-clean-code {
+    background: #8e44ad;
+}
+.value-continued-impact {
+    background: #27ae60;
+}
+
+.people {
+    min-height: 1000px;
+    padding-top: 50px;
 }
