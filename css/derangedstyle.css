@@ -107,11 +107,12 @@ p {
     z-index: 999;
     margin
 }
-.values-intro > * {
+.values-intro > article {
     text-align: left;
-    min-width: 1206px;
+    max-width: 1206px;
     width: 81%;
-    display: inline-block;
+    display: block;
+    padding-bottom: 15px;
 }
 .values-intro h1 {
     font-size: 6em;
@@ -125,7 +126,6 @@ p {
 }
 .values {
     color: white;
-    height: 22vw;
     min-height: 330px;
     padding: 15px 8px 40px;
     background: #ecf0f1;
@@ -140,9 +140,9 @@ p {
     min-width: 400px;
     text-align: left;
     cursor: pointer;
-    height: 100%;
     overflow: hidden;
     font-size: 1.3em;
+    height: 400px;
     box-shadow: -1px 3px 6px rgba(0,0,0,0.5), 1px 3px 6px rgba(0,0,0,0.5);
 }
 .values .value:nth-child(3n) {
