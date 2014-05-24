@@ -92,7 +92,7 @@ p {
 }
 
 .main-content {
-    background: #bdc3c7;
+    background: #ecf0f1;
     color: black;
 }
 
@@ -102,10 +102,10 @@ p {
 
 .values-intro {
     padding: 50px 8px 0;
-    background: #ecf0f1;
     position:relative;
     z-index: 999;
-    margin
+    width: 85%;
+    display: inline-block;
 }
 .values-intro > article {
     text-align: left;
@@ -129,7 +129,6 @@ p {
     min-height: 330px;
     padding: 15px 8px 40px;
     background: #ecf0f1;
-    box-shadow: 0 1px 3px black;
 }
 .values .value {
     display: inline-block;
@@ -176,9 +175,4 @@ p {
 }
 .value-continued-impact {
     background: #27ae60;
-}
-
-.people {
-    min-height: 1000px;
-    padding-top: 50px;
 }
