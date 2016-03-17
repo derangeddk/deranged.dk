@@ -1,0 +1,47 @@
+html {
+	text-align: center;
+	height: 100%;
+	background-color: rgba(52, 73, 94,1.0);
+	background-size: contain;
+	color: rgba(236, 240, 241,1.0);
+	text-shadow: 0 0.2vw 0.05vw black;
+}	
+body {
+	margin: 10vw 0 0 0;
+	background-color: rgba(44, 62, 80,1.0);
+	padding: 0;
+}
+body:before {
+	content: ' ';
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	height: 8vw;
+	background: rgba(52, 73, 94,1.0);
+}
+body:after {
+	content: ' ';
+	margin-top: 2vw;
+	width: 100%;
+	display: block;
+	height: 1vw;
+	background: rgba(52, 73, 94,1.0);
+}
+h1 {
+	width: 100%;
+	font-family: 'Source Sans Pro', Calibri, Candara, Segoe, "Segoe UI", Optima, Arial, sans-serif;
+	font-weight: 200;
+	margin: 0;
+}
+h5 {
+	font-size: 3em;
+	font-family: 'Libre Baskerville', Baskerville, "Baskerville Old Face", "Hoefler Text", Garamond, "Times New Roman", serif;
+	font-weight: normal;
+	font-style: italic;
+	margin: 0;
+}
+code {
+	font-family: 'Source Code Pro', Monaco, Consolas, "Lucida Console", monospace;
+	font-style: normal;
+}
