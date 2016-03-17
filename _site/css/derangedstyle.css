@@ -17,10 +17,19 @@ header .title {
     text-shadow: 0 0.2vw 0.05vw black;
 }
 header nav {
-    font-size: 1em;
     background-color: rgba(52, 73, 94,1.0);
-    padding: 15px;
     box-shadow: 0px 0px 10px rgba(0,0,0,0.15);
+}
+header nav a {
+    font-size: 0.95em;
+    padding: 17px 10px;
+    color: white;
+    display: inline-block;
+    text-decoration: none;
+    transition: background-color 0.4s;
+}
+header nav a:hover {
+    background-color: rgba(255, 255, 255, 0.05);
 }
 .container {
     text-align: left;
@@ -28,13 +37,13 @@ header nav {
     width: 100%;
     display: inline-block;
 }
-h1 {
+header .title h1 {
     font-size: 1.55em;
 	font-weight: 200;
 	margin: 0;
     margin-bottom: -12px;
 }
-h5 {
+header .title h5 {
 	font-family: 'Libre Baskerville', Baskerville, "Baskerville Old Face", "Hoefler Text", Garamond, "Times New Roman", serif;
 	font-weight: normal;
 	font-style: italic;
