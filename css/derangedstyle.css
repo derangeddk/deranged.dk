@@ -14,13 +14,13 @@ header {
     color: rgba(236, 240, 241,1.0);
 }
 header .title {
-    padding: 30px 10px 37px;
+    padding: 30px 25px 37px;
     font-size: 2em;
     background-color: rgba(44, 62, 80,1.0);
     text-shadow: 0 0.2vw 0.05vw black;
 }
 header nav {
-    padding: 0 10px;
+    padding: 0 15px;
     background-color: rgba(52, 73, 94,1.0);
     box-shadow: 0px 0px 10px rgba(0,0,0,0.15);
 }
@@ -59,8 +59,45 @@ code {
 	font-style: normal;
 }
 main {
-    padding: 0 10px;
+    padding: 0 15px 100px;
+    font-size: 1.25em;
 }
 main .container {
-    padding-right: 25%;
+    padding-right: 300px;
+}
+main h1 {
+    font-size: 2.5em;
+    font-weight: 200;
+    margin-bottom: 0;
+    margin-top: 2em;
+}
+main p {
+    margin-top: 0;
+    margin-bottom: 1em;
+}
+.call-to-action {
+    background: rgba(52, 73, 94,1.0);
+    color: rgba(236, 240, 241,1.0);
+    text-decoration: none;
+    display: block;
+    text-align: center;
+    padding: 25px 10px;
+    font-weight: bold;
+    font-size: 1.2em;
+    margin-top: 40px;
+    transition: background 0.2s, color 0.2s;
+}
+.call-to-action:hover {
+    background: rgba(52, 73, 94,0.8);
+    color: white;
+}
+@media screen and (max-width: 900px) {
+    main .container {
+        padding-right: 30%;
+    }
+}
+@media screen and (max-width: 500px) {
+    main .container {
+        padding-right: 0;
+    }
 }
