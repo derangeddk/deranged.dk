@@ -1,0 +1,41 @@
+header.header3 {
+    background: $darkblue;
+    padding: 0;
+    text-align: center;
+
+    .logo {
+        width: 100%;
+        max-width: 150px;
+        height: 70px;
+        background-image: url('/img/somanylogos/2.png');
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;
+        display: inline-block;
+    }
+
+    nav {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        right: 0;
+    }
+
+    nav a {
+        color: white;
+        text-decoration: none;
+        display: inline-block;
+        padding: 15px 15px;
+        margin: 0 5px;
+        background: $darkblue;
+        transition: background 0.5s;
+    }
+
+    nav .container {
+        text-align: center;
+    }
+    
+    nav a:hover {
+        background: lighten($darkblue,5);
+    }
+}
