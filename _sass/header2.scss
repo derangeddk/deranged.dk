@@ -1,0 +1,33 @@
+header.header2 {
+    background: $darkblue;
+    padding-top: 50px;
+
+    .logo {
+        width: 100%;
+        max-width: 250px;
+        height: 150px;
+        background-image: url('/img/somanylogos/1.png');
+        background-position: center;
+        background-size: contain;
+        background-repeat: no-repeat;
+    }
+
+    nav {
+        position: fixed;
+        background: $darkblue;
+        top: 0;
+        left: 0;
+        right: 0;
+    }
+
+    nav .container {
+        text-align: right;
+    }
+
+    nav a {
+        color: white;
+        text-decoration: none;
+        display: inline-block;
+        padding: 15px 20px;
+    }
+}
