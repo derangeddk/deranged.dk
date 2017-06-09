@@ -1,0 +1,21 @@
+<header class="header5">
+    <div class="title">
+        <div class="container">
+            <h1>dera<br>&nbsp nged</h1>
+        </div>
+    </div>
+    {% include nav.html %}
+    <button class="menu-btn hamburger" id="hamburger-btn" onclick="showMenu()">&#9776;</button>
+    <button class="menu-btn cross" id="cross-btn" onclick="hideMenu()">&#735;</button>
+    <div class="menu-backdrop" onclick="hideMenu()"></div>
+</header>
+<script>
+    function showMenu() {
+        var menu = document.getElementsByClassName("header5")[0];
+        menu.classList.add("visible");
+    }
+    function hideMenu() {
+        var menu = document.getElementsByClassName("header5")[0];
+        menu.classList.remove("visible");
+    }
+</script>
