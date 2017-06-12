@@ -5,4 +5,16 @@
             {% include nav.html %}
         </div>
     </div>
+    <button class="menu-btn hamburger" id="hamburger-btn" onclick="showMenu()">&#9776;</button>
+    <button class="menu-btn cross" id="cross-btn" onclick="hideMenu()">&#735;</button>
 </header>
+<script>
+    function showMenu() {
+        var menu = document.getElementsByClassName("header4")[0];
+        menu.classList.add("visible");
+    }
+    function hideMenu() {
+        var menu = document.getElementsByClassName("header4")[0];
+        menu.classList.remove("visible");
+    }
+</script>

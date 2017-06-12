@@ -1,16 +1,19 @@
+$break-large: 700px;
+$menu-btn-top: 10px;
+$menu-btn-right: 10px;
+
+@mixin transition-all($millis) {
+    -webkit-transition: all $millis ease;
+    -moz-transition: all $millis ease;
+    -ms-transition: all $millis ease;
+    -o-transition: all $millis ease;
+    transition: all $millis ease;
+}
+
 header.header4 {
     background: $darkblue;
-    padding: 0 15px;
     text-align: center;
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    z-index: 1;
-
-    .leftsided {
-        width: 200px;
-    }
+    padding: 0 15px;
 
     .logo {
         color: white;
@@ -31,23 +34,96 @@ header.header4 {
 
     nav {
         text-align: left;
-        padding: 0 0 25px;
+        max-height: 0;
+        overflow: hidden;
+        @include transition-all(500ms);
+
+        a {
+            color: white;
+            text-decoration: none;
+            display: block;
+            padding: 2px 10px;
+            background: $darkblue;
+            transition: border 0.2s;
+            border: 2px solid transparent;
+            text-align: left;
+            margin: 3px 0;
+
+            &:hover {
+                border-left: 2px solid white;
+            }
+        }
     }
 
-    nav a {
-        color: white;
-        text-decoration: none;
-        display: block;
-        padding: 2px 10px;
-        margin: 0 5px;
-        background: $darkblue;
-        transition: border 0.2s;
-        border: 2px solid transparent;
-        text-align: left;
-        margin: 3px 0;
+    @media screen and (min-width: $break-large) {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: 1;
+
+        .leftsided {
+            width: 200px;
+        }
+
+        nav {
+            padding: 0 0 25px;
+            max-height: none;
+        }
     }
-    
-    nav a:hover {
-        border-left: 2px solid white;
+
+    .menu-btn {
+        background: none;
+        position: absolute;
+        top: $menu-btn-top;
+        right: $menu-btn-right;
+        font-weight:bold;
+        cursor:pointer;
+        outline:none;
+        z-index:200;
+        @include transition-all(500ms);
+    }
+
+    .hamburger{
+        line-height:30px;
+        color:#999;
+        border:0;
+        font-size:1.4em;
+
+    }
+    .cross{
+        color:#999;
+        border:0;
+        font-size:3em;
+        line-height:50px;
+    }
+
+    @media screen and (min-width: $break-large) {
+        .menu-btn.hamburger {
+            display: none;
+        }
+    }
+    .menu-btn.cross {
+        display: none;
+    }
+
+    &.visible {
+        nav {
+            max-height: 200px;
+        }
+
+        .menu-btn.cross {
+            display: block;
+        }
+
+        .menu-btn.hamburger {
+            display: none;
+        }
+
+        @media screen and (min-width: $break-large) {
+            .menu-btn.cross {
+                display: none;
+            }
+        }
     }
 }
