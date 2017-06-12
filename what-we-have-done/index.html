@@ -5,10 +5,12 @@ layout: default
 <div class="container">
     <div class="rightsided-container">
         <style scoped>
-            .rightsided-container {
-                margin-left: 240px;
-                position: relative;
-                z-index: 3;
+            @media screen and (min-width: 700px) {
+                .rightsided-container {
+                    margin-left: 240px;
+                    position: relative;
+                    z-index: 3;
+                }
             }
             .rightsided-container .content {
                 background: #ecf0f1;
@@ -23,10 +25,16 @@ layout: default
             }
             .rightsided-container header {
                 padding: 10px 40px 0;
-                margin-top: 165px;
                 color: white;
                 text-align: left;
                 margin-bottom: 17px;
+                background: rgba(44, 62, 80,1.0);
+            }
+            @media screen and (min-width: 700px) {
+                .rightsided-container header {
+                    margin-top: 165px;
+                    background: none;
+                }
             }
             .rightsided-container h5 {
                 font-size: 0.9em;
