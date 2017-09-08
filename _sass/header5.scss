@@ -1,0 +1,155 @@
+$break-large: 1400px;
+$menu-btn-top: 20px;
+$menu-btn-left: 20px;
+
+@mixin transition-all($millis) {
+  -webkit-transition: all $millis ease;
+  -moz-transition: all $millis ease;
+  -ms-transition: all $millis ease;
+  -o-transition: all $millis ease;
+  transition: all $millis ease;
+}
+
+@mixin transition-background($millis) {
+  -webkit-transition: background $millis ease;
+  -moz-transition: background $millis ease;
+  -ms-transition: background $millis ease;
+  -o-transition: background $millis ease;
+  transition: background $millis ease;
+}
+
+header.header5 {
+  div.title {
+    display: inline-block;
+    width: 100%;
+
+    h1 {
+      font-size: 5em;
+      line-height: 50%;
+      text-align: center;
+      margin-top: 30px;
+      margin-left: -20px;
+    }
+  }
+
+  nav {
+    position: absolute;
+    left: 20px;
+    top: 60px;
+    width: 0;
+    overflow: hidden;
+    opacity: 0;
+    z-index:200;
+    @include transition-all(500ms);
+
+    @media screen and (min-width: $break-large) {
+      position: fixed;
+      width: 250px;
+      opacity: 1;
+    }
+
+    a {
+      display: block;
+      height: 30px;
+      margin-left: 0;
+      padding: 5px;
+      text-align: left;
+      background: $darkblue;
+      text-decoration: none;
+      color: white;
+      margin-bottom: 2px;
+      overflow: hidden;
+      -webkit-box-shadow: 2px 2px 6px 1px rgba(200,200,200,0.8);
+      box-shadow: 2px 2px 6px 1px rgba(200,200,200,0.8);
+    }
+
+    @for $i from 1 through 10 {
+      a:nth-child(#{$i}) {
+        margin-right: 20px * $i;
+        @include transition-all(200ms + (100ms * $i));
+      }
+      a:nth-child(#{$i}):hover {
+        margin-right: 20px * $i - 20px;
+        margin-left: 20px;
+      }
+    }
+  }
+
+  .menu-btn {
+    background: none;
+    position: absolute;
+    top: $menu-btn-top;
+    left: $menu-btn-left;
+    font-weight:bold;
+    cursor:pointer;
+    outline:none;
+    z-index:190;
+    @include transition-all(500ms);
+  }
+
+  .hamburger{
+    line-height:45px;
+    color:#999;
+    border:0;
+    font-size:1.4em;
+
+  }
+  .cross{
+    color:#999;
+    border:0;
+    font-size:3em;
+    line-height:65px;
+  }
+
+  @media screen and (min-width: $break-large) {
+    .menu-btn.hamburger {
+      display: none;
+    }
+  }
+  .menu-btn.cross {
+    display: none;
+  }
+
+  .menu-backdrop {
+    display: block;
+    position: fixed;
+    top: 0;
+    left: -200%;
+    width: 100%;
+    height: 100%;
+    background: rgba(200,200,200,0.0);
+    z-index: 150;
+    @include transition-background(300ms);
+  }
+
+  &.visible {
+    nav {
+      width: 250px;
+      opacity: 1;
+    }
+
+    .menu-btn.cross {
+      display: block;
+    }
+
+    .menu-btn.hamburger {
+      display: none;
+    }
+
+    .menu-backdrop {
+      background: rgba(200,200,200,0.6);
+      left: 0;
+    }
+
+    @media screen and (min-width: $break-large) {
+      .menu-backdrop {
+        background: rgba(200,200,200,0.0);
+        left: -200%;
+      }
+      .menu-btn.cross {
+        display: none;
+      }
+    }
+
+  }
+}
