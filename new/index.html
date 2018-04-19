@@ -16,7 +16,7 @@ title: 'We are your dev team: deranged'
         transform: translateX(0);
     }
     header nav {
-        padding: 0 10px;
+        padding: 0 10px 0 4px;
     }
     header a {
         color: white;
@@ -24,19 +24,48 @@ title: 'We are your dev team: deranged'
         padding: 10px;
         text-decoration: none;
         transition: background 0.4s;
+        background: #2c3e50;
+    }
+    header .logo {
+        cursor: default;
     }
     header .expand-indicator {
         font-size: 0.7em;
-        cursor: normal;
+        padding-right: 1em;
     }
     header a[href]:hover {
-        background: rgba(255,255,255,0.1);
+        background: #445a70;
+    }
+    @media (max-width: 920px) {
+        header {
+            transform: translateX(0);
+            background: transparent;
+            height: 41px;
+            overflow: hidden;
+        }
+        header:hover {
+            height: auto;
+        }
+        header nav {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+            padding: 0;
+        }
+        header a:not(.logo) {
+            transform: translateX(400px);
+            transition: transform 1s, background 0.4s;
+            padding-left: 15px;
+            padding-right: 15px;
+        }
+        header:hover a {
+            transform: translateX(0);
+        }
     }
 </style>
 <header>
     <nav>
-        <a class="expand-indicator">&#9664;</a>
-        <a class="logo">deranged</a>
+        <a class="logo"><span class="expand-indicator">&#9664;</span> deranged</a>
         {% include menu_links.html %}
     </nav>
 </header>
@@ -297,6 +326,68 @@ title: 'We are your dev team: deranged'
             }
             main aside .box:hover {
                 transform: translateX(calc(100vw - 1080px));
+            }
+        }
+        @media (max-width: 700px) {
+            .pitches {
+                grid-template-columns: [text] calc(100vw - 100px) [asides] 1fr;
+            }
+            main aside .box {
+                width: calc(100vw - 20px);
+                max-width: auto;
+                min-width: auto;
+                margin-left: 10px;
+                margin-right: 10px;
+            }
+            main aside .box:hover {
+                transform: translateX(calc(100px - 100vw));
+            }
+            main h1 {
+                font-size: 3em;
+            }
+            main section.get-a-quote {
+                margin-right: -40px;
+            }
+        }
+        @media (max-width: 560px) {
+            main h1 {
+                font-size: 2.6em;
+            }
+            main h2 {
+                font-size: 1.7em;
+                hyphens: auto;
+            }
+            main h2:nth-child(3) {
+                font-size: 1.55em;
+            }
+            main h2:nth-child(4) {
+                font-size: 1.45em;
+            }
+            main h2:nth-child(5) {
+                font-size: 1.40em;
+            }
+        }
+        @media (max-width: 500px) {
+            main h1 {
+                font-size: 2.3em;
+            }
+            main h2 {
+                font-size: 1.45em;
+            }
+            main h2:nth-child(3) {
+                font-size: 1.35em;
+            }
+            main h2:nth-child(4) {
+                font-size: 1.30em;
+            }
+            main h2:nth-child(5) {
+                font-size: 1.25em;
+            }
+            .pitches {
+                grid-template-columns: [text] calc(100vw - 75px) [asides] 1fr;
+            }
+            main aside .box:hover {
+                transform: translateX(calc(60px - 100vw));
             }
         }
     </style>
