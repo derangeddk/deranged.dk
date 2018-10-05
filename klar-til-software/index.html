@@ -32,17 +32,56 @@ layout: default
     .intro h1 {
         margin-bottom: 75px;
     }
-    .intro p {
-        max-width: 800px;
+    .intro-text-box {
+        max-width: 860px;
+        padding: 15px;
         padding-right: 250px;
         text-align: left;
         font-size: 1.15em;
+        position: relative;
+        z-index: 1;
+        background: rgb(44, 62, 80);
+        color: white;
+        box-sizing: border-box;
+    }
+    .intro-text-box:before {
+        content: '';
+        position: absolute;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        width: calc(100% - 460px);
+        background-color: rgb(44, 62, 80);
+        background-image: url('/klar-til-software/bulbs.jpg');
+        background-size: cover;
+        z-index: -1;
+    }
+    .intro-text-box p {
+        background: rgba(44, 62, 80, 0.95);
+        padding: 15px;
+        margin: 0;
     }
     aside {
-        background: rgb(230, 230, 230);
+        background-color: white;
         padding: 15px;
         max-width: 800px;
         text-align: left;
+        position: relative;
+        padding-left: 200px;
+    }
+    aside:before {
+        content: '';
+        position: absolute;
+        left: -30px;
+        top: 30px;
+        bottom: 15px;
+        width: 185px;
+        max-height: 175px;
+        background-image: url('/klar-til-software/pages.jpg');
+        background-size: cover;
+        background-position: center;
+        border-bottom: 15px solid white;
+        border-left: 15px solid white;
     }
     aside h2 {
         margin: 0;
@@ -56,11 +95,20 @@ layout: default
     }
     .publications {
         margin: 50px 0;
-        max-width: 800px;
+        width: 100%;
+        background-color: white;
         text-align: left;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .publications .content {
+        max-width: 800px;
+        padding: 55px 5px;
     }
     .publications h1 {
         font-size: 2em;
+        margin: 0;
     }
     .publications ul {
         padding-left: 0;
@@ -71,7 +119,7 @@ layout: default
     .publications li a {
         text-decoration: inherit;
         color: inherit;
-        border-left: 5px solid rgb(230, 230, 230);
+        border-left: 5px solid rgb(44, 62, 80);
         display: block;
         padding: 10px;
     }
@@ -84,7 +132,7 @@ layout: default
     }
     .publications li .teaser {
         font-size: 1.2em;
-        padding: 12px 0 5px;
+        padding: 12px 0 7px;
     }
 </style>
 
@@ -93,31 +141,36 @@ layout: default
 <main>
     <section class="intro">
         <h1>Er I klar til at få udviklet software til jeres virksomhed?</h1>
-        <p>
-            Hvis I overvejer at få udviklet software i jeres virksomhed kan det virke en smule overskueligt.
-            Hvor meget kan I selv forberede, og hvor meget skal I overlade til en leverandør?
-            Hvornår i processen er det egentlig bedst at involvere en leverandør, og hvor meget bør I selv lave før det sker?
-        </p>
-        <p>
-            I de følgende udgivelser giver vi vores anbefaling til hvordan man bedst går til processen.
-            Udgivelserne er rettet mod forskellige situationer I kunne stå i, så I kan nøjes med at læse den udgivelse der passer til jer, og dermed giver jer den mest brugbare information, hurtigst muligt.
-        </p>
+        <div class="intro-text-box">
+            <p>
+                Hvis I overvejet at få udviklet software i jeres virksomhed kan det virke en smule uoverskueligt.
+                Hvor meget kan I selv forberede, og hvor meget skal I overlade til en leverandør?
+                Hvornår i processen er det egentlig bedst at involvere en leverandør, og hvor meget bør I selv lave før det sker?
+            </p>
+            <p>
+                I de følgende udgivelser giver vi vores anbefaling til hvordan man bedst går til processen.
+                Udgivelserne er rettet mod forskellige situationer I kunne stå i, så I kan nøjes med at læse den udgivelse der passer til jer, og dermed giver jer den mest brugbare information, hurtigst muligt.
+            </p>
+        </div>
     </section>
 
     <section class="publications">
-        <h1>Udgivelser</h1>
-        <p>
-            Her kan du finde de udgivelser der er udkommet i serien indtil videre.
-        </p>
-        <ul>
-            <li>
-                <a href="/klar-til-software/automatisering-af-processer.pdf">
-                    <h2>Automatisering af processer i mellemstore virksomheder</h2>
-                    <div class="publishing-info">1. udgave, 5. oktober 2018.</div>
-                    <div class="teaser">Kan din virksomhed spare penge og blive mere effektiv, ved at introducere IT-systemer der automatiserer nogle af jeres processer?</div>
-                </a>
-            </li>
-        </ul>
+        <div class="content">
+            <h1>Udgivelser</h1>
+            <p>
+                Her kan du finde de udgivelser der er udkommet i serien indtil videre.
+                Klik på en af dem for at tilgå PDF'en.
+            </p>
+            <ul>
+                <li>
+                    <a href="/klar-til-software/automatisering-af-processer.pdf">
+                        <h2>Automatisering af processer i mellemstore virksomheder</h2>
+                        <div class="publishing-info">1. udgave, 5. oktober 2018.</div>
+                        <div class="teaser">Kan din virksomhed spare penge og blive mere effektiv, ved at introducere IT-systemer der automatiserer nogle af jeres processer?</div>
+                    </a>
+                </li>
+            </ul>
+        </div>
     </section>
 
     <aside class="about">
