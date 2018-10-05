@@ -1,0 +1,135 @@
+---
+layout: default
+---
+<style type="text/css" scoped>
+    nav {
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+    }
+    nav .container {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+    nav .container a {
+        color: inherit;
+        padding: 15px;
+    }
+    main {
+        font-size: 1em;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .intro {
+        margin: 75px 10px 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .intro h1 {
+        margin-bottom: 75px;
+    }
+    .intro p {
+        max-width: 800px;
+        padding-right: 250px;
+        text-align: left;
+        font-size: 1.15em;
+    }
+    aside {
+        background: rgb(230, 230, 230);
+        padding: 15px;
+        max-width: 800px;
+        text-align: left;
+    }
+    aside h2 {
+        margin: 0;
+        font-size: 1.05em;
+    }
+    aside p {
+        margin: 0 0 1em;
+    }
+    aside p:last-child {
+        margin-bottom: 0;
+    }
+    .publications {
+        margin: 50px 0;
+        max-width: 800px;
+        text-align: left;
+    }
+    .publications h1 {
+        font-size: 2em;
+    }
+    .publications ul {
+        padding-left: 0;
+    }
+    .publications li {
+        list-style: none;
+    }
+    .publications li a {
+        text-decoration: inherit;
+        color: inherit;
+        border-left: 5px solid rgb(230, 230, 230);
+        display: block;
+        padding: 10px;
+    }
+    .publications li h2 {
+        margin: 0;
+    }
+    .publications li .publishing-info {
+        font-size: 0.9em;
+        color: rgb(110,110,110);
+    }
+    .publications li .teaser {
+        font-size: 1.2em;
+        padding: 12px 0 5px;
+    }
+</style>
+
+{% include nav.html %}
+
+<main>
+    <section class="intro">
+        <h1>Er I klar til at få udviklet software til jeres virksomhed?</h1>
+        <p>
+            Hvis I overvejer at få udviklet software i jeres virksomhed kan de virke en smule overskueligt.
+            Hvor meget kan I selv forberede, og hvor meget skal I overlade til en leverandør?
+            Hvornår i processen er det egentlig bedst at involvere en leverandør, og hvor meget bør I selv lave før det sker?
+        </p>
+        <p>
+            I de følgende udgivelser giver vi vores anbefaling til hvordan man bedst går til processen.
+            Udgivelserne er rettet mod forskellige situationer I kunne stå i, så I kan nøjes med at læse den udgivelse der passer til jer, og dermed giver jer den mest brugbare information, hurtigst muligt.
+        </p>
+    </section>
+
+    <section class="publications">
+        <h1>Udgivelser</h1>
+        <p>
+            Her kan du finde de udgivelser der er udkommet i serien indtil videre.
+        </p>
+        <ul>
+            <li>
+                <a href="/klar-til-software/automatisering-af-processer.pdf">
+                    <h2>Automatisering af processer i mellemstore virksomheder</h2>
+                    <div class="publishing-info">1. udgave, 5. oktober 2018.</div>
+                    <div class="teaser">Kan din virksomhed spare penge og blive mere effektiv, ved at introducere IT-systemer der automatiserer nogle af jeres processer?</div>
+                </a>
+            </li>
+        </ul>
+    </section>
+
+    <aside class="about">
+        <h2>Om serien</h2>
+        <p>
+            <a href="/">Deranged</a> er en konsulentvirksomhed, der har alle de kompetencer der skal til for at få styr på din IT-infrastruktur. I denne serie af dokumenter forsøger vi at samle de overvejelser din virksomhed bør gøre sig, før den kaster sig ud i specialudvikling af software.
+        </p>
+        <p>
+            Dokumenterne er udtryk for vores anbefaling som professionelle udviklere og er baseret på vores erfaring såvel som den seneste forskning i hvordan man bedst koordinerer softwareudvikling.
+        </p>
+        <p>
+            I serien dækker vi f.eks. de valg man skal tage som mellemstore virksomheder der overvejer at få automatiseret forretningsprocesser, startups i opstartsfasen, eller små virksomheder hvor udviklingen af første version af deres projekt gik galt.
+        </p>
+    </aside>
+</main>
