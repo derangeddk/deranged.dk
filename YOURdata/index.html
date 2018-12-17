@@ -1,5 +1,6 @@
 ---
 layout: default
+title: take control of YOURdata ////$/+++ deranged ///
 ---
 <style scoped>
     .floatydropdownmenu {
@@ -42,6 +43,18 @@ layout: default
         padding: 20px 40px 40px;
         font-size: 1.1em;
     }
+    @media (max-width: 650px) {
+        .yourdata-section {
+            padding-left: 20px;
+            padding-right: 20px;
+        }
+    }
+    @media (max-width: 350px) {
+        .yourdata-section {
+            padding-left: 12px;
+            padding-right: 12px;
+        }
+    }
     .yourdata-section h1 {
         font-weight: 100;
         font-size: 1.9em;
@@ -83,6 +96,65 @@ layout: default
         font-weight: 200;
         letter-spacing: 0.40em;
         padding-left: 0.4em;
+    }
+    @media (max-width: 650px) {
+        .yourdata-logo {
+            margin-top: 80px;
+        }
+    }
+    @media (max-width: 350px) {
+        .yourdata-logo {
+            font-size: 2.5em;
+            width: 220px;
+        }
+    }
+
+    .project-container {
+        display: flex;
+        width: 100%;
+        box-sizing: border-box;
+        flex-direction: row;
+        flex-wrap: wrap;
+        padding: 0 calc(40px - 15px) 50px;
+    }
+    @media (max-width: 650px) {
+        .project-container {
+            padding: 0 calc(20px - 15px) 50px;
+        }
+    }
+    .project {
+        flex-basis: 300px;
+        flex-grow: 1;
+        flex-shrink: 1;
+        min-width: 300px;
+        max-width: 600px;
+        margin: 15px;
+        background: white;
+        text-align: left;
+        padding: 0 15px;
+        box-sizing: border-box;
+    }
+    @media (max-width: 350px) {
+        .project-container {
+            padding: 0 0 50px;
+        }
+        .project {
+            margin: 15px 0;
+            min-width: 0;
+        }
+    }
+    .gh-link {
+        display: inline-block;
+        padding-left: 30px;
+        padding-bottom: 2px;
+        background-image: url('/img/gh.png');
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: left;
+        color: #2980b9;
+    }
+    .gh-link:after {
+        content: 'Try it';
     }
 </style>
 <div class="floatydropdownmenu">
@@ -127,16 +199,18 @@ layout: default
 
     <h1>Reclaiming your data</h1>
     <p>
-        We depend heavily on third party applications because it is <em>easy</em>.
+        Most companies depend heavily on third party applications because it is
+        <em>easy</em>.
         Any potential replacement for existing services must be just as easy
         to integrate with and use.
     </p>
     <p>
-        The YOURdata initiative strives to build open source alternatives to
-        established and popular services used by many websites, and to build
-        them in such a way that you can spin up your own production-ready
-        instance and integrate with it, as quickly as you would sign up for
-        and integrate with the existing services.
+        The YOURdata initiative strives to build and support open source
+        alternatives to established and popular services used by many websites,
+        and to build them in such a way that you can spin up your own
+        production-ready instance and integrate with it, as quickly as you would
+        sign up for and integrate with alternatives where you are not in control
+        of what happens to your and your users' data.
     </p>
     <p>
         Here are a few guiding principles for the projects we are building:
@@ -168,8 +242,8 @@ layout: default
         </ul>
     </p>
     <p>
-        With these rules in mind, we should be able to provide something much like
-        your favourite open source projects, but at a slightly higher level of
+        With these rules in mind, we are building services much like the open
+        source projects you know and love, but at a slightly higher level of
         abstraction: entire applications that can work as services in your software
         system, fully and adequately encapsulating functionality.
         You won't have to reinvent the same system for different contexts.
@@ -179,39 +253,185 @@ layout: default
     </p>
 
     <h1>List of projects</h1>
-    <p>The following projects are part of the YOURdata initiative.</p>
+    <p>
+        The following projects are recommended as projects that live up to the principles
+        of the YOURdata initiative.
+        These are projects we take try to take a role in supporting, but they have not
+        necessarily originated with us.
+    </p>
     <p>
         Projects start as concepts, then move into alpha, beta, and finally release
         stages.
     </p>
+</section>
 
-    <h2>hype (concept)</h2>
-    <p>
-        Build mailing lists for topics, manage lists, send mails in your well-defined
-        templates, writing them in markdown.
-    </p>
-    <p>
-        An alternative to Mailchimp, etc.
-    </p>
+<div class="project-container">
+    <div class="project">
+        <h3>Fathom (beta)</h3>
+        <p>
+            Fathom is a GDPR-aware analytics engine.
+            It helps you keep track of user visits and behavior on your website&mdash;without handing data on
+            to a third party.
+        </p>
+        <p>
+            The project was started by two independent software developers, Danny and Paul, who
+            <a href="https://usefathom.com/" target="_blank" rel="noopener">offer hosting services</a> in
+            case you don't want to set up your own instance.
+        </p>
+        <p>
+            An alternative to Google Analytics, etc.
+        </p>
+        <p>
+            <a class="gh-link" href="https://github.com/usefathom/fathom/" target="_blank" rel="noopener"></a>
+        </p>
+    </div>
 
-    <h2>comments (concept)</h2>
-    <p>
-        Allow comments for topics, set up rules for moderation, and manage them.
-    </p>
-    <p>
-        Alternative to Disqus, etc.
-    </p>
+    <div class="project">
+        <h3>hype (alpha)</h3>
+        <p>
+            hype helps you manage mailing lists and write newsletters.
+            Let users sign up to news about your product or offerings, without passing all that information
+            on to someone else.
+        </p>
+        <p>
+            The project is currently in alpha, which means you can run it, but the feature set is very limited.
+        </p>
+        <p>
+            An alternative to Mailchimp, etc.
+        </p>
+        <p>
+            <a class="gh-link" href="https://github.com/derangeddk/hype" target="_blank" rel="noopener"></a>
+        </p>
+    </div>
 
-    <h2>analytics (concept)</h2>
+    <div class="project">
+        <h3>chattie (concept)</h3>
+        <p>
+            Run your own chat-like interface with customers, allowing quick and informal communication.
+            The goal of chattie is to construct a base level application that can be extended with
+            any capabilities that may be needed, for example machine learning and other popular chat
+            bot features.
+        </p>
+        <p>
+            An alternative to Intercom or even products like Facebook Messenger and Google Allo.
+        </p>
+    </div>
+
+    <div class="project">
+        <h3>ident (concept)</h3>
+        <p>
+            An identity service that does all the boring things you might want in a user system.
+            The service will be easy to integrate with applications in several ways, including
+            through an API or through quicker libraries that talk directly to a database, hopefully
+            making for a service so fast that you will never need to write a user system again.
+        </p>
+        <p>
+            Currently, the project is being incepted as
+            <a href="https://github.com/derangeddk/hype/tree/master/src/ident" target="_blank" rel="noopener">a part of hype</a>,
+            pending future extraction.
+        </p>
+        <p>
+            A fully working alternative (although not quite with the same plans for integration) is
+            Netlify's <a href="https://github.com/netlify/gotrue" target="_blank" rel="noopener">gotrue</a>.
+        </p>
+    </div>
+
+    <div class="project">
+        <h3>payment (concept)</h3>
+        <p>
+            A highly configurable service that allows you to take payment for orders, manage incoming orders,
+            and send receipts by the click of a button.
+            The goal is to support integration with various payment providers, making it quick and easy for a
+            business to change which one they use, without it impacting any other part of the application.
+        </p>
+        <p>
+            Currently, a prototype is running in the Mærkelex project as
+            <a href="https://github.com/hypesystem/maerkelex-payment" target="_blank" rel="noopener">maerkelex-payment</a>,
+            pending future extraction.
+        </p>
+        <p>
+            A fully working alternative (although not quite with the same plans for integration) is
+            Netlify's <a href="https://github.com/netlify/gocommerce" target="_blank" rel="noopener">gocommerce</a>.
+        </p>
+    </div>
+
+    <div class="project">
+        <h3>comments (concept)</h3>
+        <p>
+            Allow users to comment on content you host.
+        </p>
+        <p>
+            An alternative to Discus, etc.
+        </p>
+        <p>
+            A fully working alternative (although not quite with the same plans for integration) is
+            Netlify's <a href="https://github.com/netlify/gotell" target="_blank" rel="noopener">gotell</a>.
+        </p>
+    </div>
+    
+    <div class="project">
+        <h3>groups (concept)</h3>
+        <p>
+            Communities should own the platforms they interact on.
+            This project should result in a basic group interaction experience, where users can share relevant
+            information with each other, create and manage events by the community, and so on.
+        </p>
+        <p>
+            An alternative to Facebook Groups, Podio, etc.
+        </p>
+    </div>
+</div>
+
+<section class="yourdata-section">
+    <h1>Honorable mentions</h1>
     <p>
-        Collect usage data of your application without tracking users (user-identifiable
-        info) or leaking the data to companies that use it for profiling of users.
+        There are projects which live up to the principles stated on this page, but
+        which we are not taking a role in supporting and developing (usually because
+        of slightly differing visions, which lead us to developing and supporting
+        alternatives).
     </p>
     <p>
-        Alternative to Google Analytics. Let's be honest, there aren't really any other
-        options.
+        Nonetheless, these projects deserve mention, as they might be what you need in
+        order to reclaim control of your data.
     </p>
 </section>
+
+<div class="project-container">
+    <div class="project">
+        <h3>gotell (released)</h3>
+        <p>
+            An open source comments-as-a-service created by
+            <a href="https://www.netlify.com/" target="_blank" rel="noopener">Netlify</a> that enables
+            your users to comment on your content, run through an external service.
+        </p>
+        <p>
+            <a class="gh-link" href="https://github.com/netlify/gotell" target="_blank" rel="noopener"></a>
+        </p>
+    </div>
+    <div class="project">
+        <h3>gotrue (released)</h3>
+        <p>
+            An open source identity-as-a-service created by
+            <a href="https://www.netlify.com/" target="_blank" rel="noopener">Netlify</a> that supports user
+            management as an external service.
+        </p>
+        <p>
+            <a class="gh-link" href="https://github.com/netlify/gotrue" target="_blank" rel="noopener"></a>
+        </p>
+    </div>
+    <div class="project">
+        <h3>gocommerce (released)</h3>
+        <p>
+            An open source payment-as-a-service library created by
+            <a href="https://www.netlify.com/" target="_blank" rel="noopener">Netlify</a> that allows you to
+            take payment from your application, through this external service.
+        </p>
+        <p>
+            <a class="gh-link" href="https://github.com/netlify/gocommerce" target="_blank" rel="noopener"></a>
+        </p>
+    </div>
+</div>
+
 <footer class="yourdata-footer">
-    &copy; deranged 2017
+    &copy; deranged 2017-2018
 </footer>
