@@ -1,0 +1,127 @@
+---
+layout: default
+---
+{% include header4.html %}
+<div class="container">
+    <div class="rightsided-container">
+        <style scoped>
+            @media screen and (min-width: 700px) {
+                .rightsided-container {
+                    margin-left: 240px;
+                    position: relative;
+                    z-index: 3;
+                }
+            }
+            .rightsided-container .content {
+                background: #ecf0f1;
+                text-align: left;
+                box-sizing: border-box;
+                padding: 17px 60px 150px 40px;
+                font-size: 1.18em;
+                line-height: 1.42em;
+            }
+            .rightsided-container .content .date {
+                font-size: 0.8em;
+            }
+            .rightsided-container header {
+                padding: 10px 40px 0;
+                color: white;
+                text-align: left;
+                margin-bottom: 17px;
+                background: rgba(44, 62, 80,1.0);
+            }
+            @media screen and (min-width: 700px) {
+                .rightsided-container header {
+                    margin-top: 125px;
+                    background: none;
+                }
+            }
+            .rightsided-container h5 {
+                font-size: 0.9em;
+                margin: 0;
+                margin-bottom: -15px;
+                padding-left: 10px;
+            }
+            .rightsided-container h1 {
+                font-weight: 200;
+                font-size: 3.5em;
+                margin: 0;
+            }
+            .rightsided-container h2 {
+                margin-bottom: 0;
+            }
+            .rightsided-container p {
+                margin-top: 0;
+                margin-bottom: 1em;
+            }
+        </style>
+        <header>
+            <h5>what we have done</h5>
+            <h1>Case: Mærkelex</h1>
+        </header>
+        <section class="content">
+            <p class="date"><em>Launched: February 2016</em></p>
+            <p>
+                Mærkelex is an index of scout badges available to scouts in Denmark, as well as a brand we hope to build into the place to go for badge-related things for Danish scouts.
+            </p>
+            <p>
+                The idea was first a way of scratching our own itch:
+                no central site existed for looking up scout badges, and as scout leaders this was a problem.
+                Each scout association would have its own index of badges, but unofficial badges — badges designed by individual scouts as a way to package a concept — were only listed in a private Facebook group.
+            </p>
+            <p>
+                In other words: this market was a blue ocean (no competitors), and if we were right that there was a need for this central index our product would very likely be a success.
+                The total market size was very small (scout badges in Denmark is a very specific niche), so in rough competition success would be hard to attain.
+            </p>
+            <h2>Testing the product hypothesis</h2>
+            <p>
+                Before we invested lots and lots of energy into the product we needed to know that it would be used, so we built a quick prototype in around a week's part time work.
+                It listed badges and pretty much nothing else.
+                And it was well-received, with many visitors in the first few days and positive feedback.
+            </p>
+            <p>
+                In order to facilitate quick iteration, we broke the problem down to its core and picked a technology based on this.
+                We never pick a <em>default platform</em>, we pick the best platform for the problem.
+                In our case, we could make do with statically hosted files, implementing search entirely in the frontend.
+                We effectively got free hosting from Github Pages (they host Jekyll sites for free), and didn't have to compromise on quality to get this.
+            </p>
+            <p>
+                In fact, we've come to believe that static pages are often more than good enough for projects, and static page sites have the advantage of being much faster than sites that rely on database access for every request.
+            </p>
+            <h2>User friendliness</h2>
+            <p>
+                The first version of the website was responsive, although the desktop version of the site was the one we built first.
+                We quickly noticed that many of our visitors (more than 60%) were on mobile devices.
+                This prompted us to focus on optimizing the user experience for mobile.
+            </p>
+            <p>
+                This started us on the habit of extensive user testing, where we would ask users to use the website from various devices.
+                One of the most important things when doing usability tests is to set up vague tasks to complete and never guide users on how to complete them.
+                For example, we would never tell them to "click that badge", but rather give tasks like "try to find a badge that has to do with knives".
+                These tests helped us solidify the core user experience of looking up badges and searching.
+            </p>
+            <p>
+                Because so many of our user were on mobile devices we also optimized the site for shoddy, inconsistent and slow connections.
+                The first request for the site is very quick, and we make sure the search function buffers input even before the search data is loaded.
+                This makes the site more resilient to situations where users move in and out of mobile network coverage.
+            </p>
+            <p>
+                In other words we looked at who our actual users were and optimized for them.
+                We involved real users in the development process from day one.
+            </p>
+            <h2>Statistics</h2>
+            <p>
+                Generally, Mærkelex has done well.
+                We now have more than 1000 unique users and 10.000 page views every 30 days, whether or not we do any marketing.
+            </p>
+            <p>
+                We are ranked number one on Google for relevant search terms such as "spejdermærke" or "spejdermærker".
+                For certain badges, our page with the badge description even shows up before the official badge website.
+            </p>
+            <p>
+                It felt great when people we didn't know started sharing links to the site in scout badge related forums which we frequented.
+                Our product had become popular enough that strangers would advertise for it!
+            </p>
+        </section>
+    </div>
+</div>
