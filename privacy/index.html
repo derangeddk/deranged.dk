@@ -31,6 +31,37 @@ title: 'privacy policy / deranged'
         We host our own version of Fathom, which means analytics data never leaves our own infrastructure.
         This means that you as a user don't have to worry about third parties building profiles based on your internet usage patterns.
     </p>
+    <p>
+        If you wish to rescind your accept of our cookie policy, you can click <a href="#" id="rescind-cookie">here</a>.
+        You have currently <span id="cookie-accept-status" style="font-weight: bold;">not accepted</span> our cookie policy.
+    </p>
+    <script>
+        (function() {
+            var cookieAcceptStatus = document.getElementById("cookie-accept-status");
+            loadCurrentCookieAcceptStatus();
+
+            document.getElementById("rescind-cookie").addEventListener("click", (e) => {
+                e.preventDefault();
+
+                document.cookie = 'deranged.dk-allow-cookies=true;path=/;expires=Thu, 01 Jan 1970 00:00:00 GMT';
+                loadCurrentCookieAcceptStatus();
+
+                return false;
+            });
+
+            function loadCurrentCookieAcceptStatus() {
+                cookieAcceptStatus.innerText = cookieOk() ? "accepted" : "not accepted";
+            }
+
+            function cookieOk() {
+				return document.cookie.indexOf("deranged.dk-allow-cookies=true") !== -1;
+			}
+
+            setInterval(function() {
+                loadCurrentCookieAcceptStatus();
+            }, 2000);
+        })();
+    </script>
 </div>
 
 <style>
