@@ -722,6 +722,8 @@ title: Let's start building your software 🗲 deranged
         padding: 100px;
         color: #eaf1f7;
         position: relative;
+        display: grid;
+        grid-template-columns: 300px 200px 200px auto;
     }
     footer:after {
         content: '↯';
@@ -732,14 +734,35 @@ title: Let's start building your software 🗲 deranged
         right: 0.4em;
         transform: scaleY(-1) rotate(-50deg);
     }
+    .footer-logo img {
+        width: 100%;
+        object-fit: contain;
+    }
+    .footer-info {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: center;
+    }
 </style>
 <footer>
-    &copy; deranged 2018-<span id="footer-current-year">2019</span>.
-    <script>
-        (function() {
-            var now = new Date();
-            document.getElementById("footer-current-year").innerText = now.getFullYear();
-        })();
-    </script>
-    <a href="/privacy/">Privacy policy</a>.
+    <div class="footer-logo">
+        <img src="/img/somanylogos/1.png">
+    </div>
+    <div class="footer-info">
+        <span>&copy; deranged 2018-<span id="footer-current-year">2019</span></span>
+        <span>CVR 35695583</span>
+        <span><a href="/privacy/">Privacy policy</a></span>
+    </div>
+    <div class="footer-info">
+        <span><a href="/what-we-have-done/">What we have done</a></span>
+        <span><a href="/what-we-have-done/">Who we are</a></span>
+        <span><a href="/what-we-have-done/">How we think</a></span>
+    </div>
 </footer>
+<script>
+    (function() {
+        var now = new Date();
+        document.getElementById("footer-current-year").innerText = now.getFullYear();
+    })();
+</script>
