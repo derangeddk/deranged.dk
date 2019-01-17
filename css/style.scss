@@ -15,6 +15,10 @@ body {
 }
 $darkblue: rgba(44, 62, 80,1.0);
 
+a {
+    color: #abcaea;
+}
+
 header {
     position: relative;
     z-index: 100;
@@ -25,6 +29,7 @@ header {
 @import 'header3';
 @import 'header4';
 @import 'header5';
+@import 'footer';
 
 .container {
     text-align: left;
