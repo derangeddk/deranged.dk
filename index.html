@@ -1,0 +1,441 @@
+---
+layout: default
+title: Let's start building your software 🗲 deranged
+---
+<style type="text/css">
+    .hello-section {
+        min-height: 100vh;
+        height: 650px;
+        padding: 100px;
+        box-sizing: border-box;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: flex-start;
+        background-color: #2c3e50;
+        background-image: linear-gradient(40deg, #2c3e50 30%, #455d75 90%);
+        color: #eaf1f7;
+        position: relative;
+    }
+    .hello-section .logo {
+        color: inherit;
+        text-decoration: inherit;
+        font-weight: 200;
+        font-size: 1.3em;
+    }
+    .hello-section .big-greeting {
+        text-align: left;
+        font-size: 2.5em;
+    }
+    .hello-section .big-greeting h1 {
+        font-size: 2em;
+        margin: 0;
+    }
+    .hello-section .big-greeting h2 {
+        font-size: 1.3em;
+        margin: 0;
+    }
+    .hello-section .quick-intro {
+        text-align: left;
+        max-width: 550px;
+        font-size: 1.05em;
+        line-height: 150%;
+        position: relative;
+    }
+    .hello-section .quick-intro:before {
+        content: '🗲';
+        position: absolute;
+        left: -1.5em;
+        top: 0;
+    }
+    .hello-section .more-button {
+        background-color: transparent;
+        background-image: url('/img/expand_more_white.png');
+        position: absolute;
+        border: none;
+        cursor: pointer;
+        bottom: 100px;
+        right: 100px;
+        height: 48px;
+        width: 48px;
+        animation: upanddown 2.5s linear infinite alternate;
+    }
+    @keyframes upanddown {
+        from { transform: translateY(0); }
+        to { transform: translateY(-18px); }
+    }
+</style>
+<section class="hello-section">
+    <a href="/" class="logo">deranged</a>
+    <div class="big-greeting">
+        <h1>So nice to finally meet you!</h1>
+        <h2>Let's start building your software&hellip;</h2>
+    </div>
+    <p class="quick-intro">
+        We build scalable software that supports businesses and makes their employees and customers happy.
+        We always start from your current business situation, and help you forward in the most efficient way possible.
+        With flexiblity and engagement, we are your dev team.
+    </p>
+    <button class="more-button" href="#customer-section"></button>
+    <script>
+    (function() {
+        if(window.scrollTo) {
+            document.querySelector(".hello-section .more-button").addEventListener("click", function(e) {
+                e.preventDefault();
+
+                var windowHeight = window.innerHeight;
+                
+                window.scrollTo({
+                    top: Math.max(650, windowHeight),
+                    behavior: 'smooth'
+                });
+
+                return false;
+            });
+        }
+    })();
+    </script>
+</section>
+<style type="text/css">
+    .customer-quote-section {
+        background-color: #070d14;
+        background-image: linear-gradient(200deg, #070d14 50%, #2c3e50);
+        min-height: 300px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        color: #eaf1f7;
+        padding: 30px 100px;
+    }
+    .customer-quote-section .quote-text {
+        font-family: 'Libre Baskerville', serif;
+        font-size: 1.3em;
+        max-width: 800px;
+        line-height: 175%;
+        position: relative;
+    }
+    .customer-quote-section .quote-text:before {
+        content: '“';
+        font-size: 5em;
+        position: absolute;
+        left: 5px;
+        top: 25px;
+        opacity: 0.8;
+    }
+    .customer-quote-section .quote-text:after {
+        content: '”';
+        font-size: 5em;
+        position: absolute;
+        right: 5px;
+        bottom: -35px;
+        opacity: 0.4;
+    }
+    .customer-quote-section .quotee {
+        width: 100%;
+        max-width: 800px;
+        text-align: right;
+    }
+    .customer-quote-section .quotee:before {
+        content: '— ';
+    }
+    .customer-quote-section-alternate-style {
+        background-image: linear-gradient(20deg, #070d14 50%, #2c3e50);
+    }
+    .customer-quote-section .see-cases {
+        background: #2c3e50;
+        color: #eaf1f7;
+        text-decoration: inherit;
+        padding: 20px 25px;
+        margin: 20px;
+        cursor: pointer;
+        transition: background-color 0.3s, transform 0.3s;
+    }
+    .customer-quote-section .see-cases:hover {
+        background: #375068;
+        transform: scale(1.1);
+    }
+</style>
+<section class="customer-quote-section" id="customer-quote-section">
+    <p class="quote-text">
+        It has been a pleasure working with a proactive contractor such as deranged. With their technical capacity, they enable the necessary overview and execute quickly.
+    </p>
+    <p class="quotee">Morten Schnack, CTO, The HabLab</p>
+</section>
+<style type="text/css">
+    .products-section {
+        min-height: 80vh;
+        padding: 100px 100px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .product-presentation {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        grid-template-rows: auto auto;
+    }
+    .product-presentation > h1 {
+        grid-row: 1 / 2;
+        grid-column: span 2;
+        font-weight: 200;
+        font-size: 2.5em;
+        margin-top: 0;
+        margin-bottom: 2em;
+    }
+    .product-presentation .product {
+        border: 1px solid #070d14;
+        width: 300px;
+        box-sizing: border-box;
+        padding: 10px;
+        padding-bottom: 20px;
+        margin: 10px;
+        margin-left: 50px;
+        text-align: left;
+        box-shadow: 0 0 2px rgba(0,0,0,0.1), 0 2px 4px rgba(0,0,0,0.1);
+        transition: transform 0.4s;
+        font-size: 0.9em;
+        color: inherit;
+        text-decoration: inherit;
+        position: relative;
+        margin-bottom: 40px;
+    }
+    .product-presentation .product:hover {
+        transform: scale(1.03);
+    }
+    .product-presentation .product img {
+        transform: translateY(-45px) translateX(-45px);
+        /*background-color: rgba(7, 13, 20, 0.9);*/
+        background-image: linear-gradient(45deg, rgba(7, 13, 20, 0.9), rgba(30, 49, 73, 0.85));
+        padding: 10px;
+        border-radius: 100%;
+        width: 63px;
+        height: 63px;
+        object-fit: contain;
+        box-sizing: border-box;
+        margin-bottom: -50px;
+        transition: transform 0.4s, box-shadow 0.4s, background-color 0.4s;
+        box-shadow: 0 0 2px rgba(0,0,0,0.1), 0 2px 4px rgba(0,0,0,0.1);
+    }
+    .product-presentation .product:hover img {
+        transform: translateY(-40px) translateX(-42px) scale(1.15);
+        box-shadow: 0 0 3px rgba(0,0,0,0.15), 0 3px 6px rgba(0,0,0,0.15);
+        background-color: #070d14;
+    }
+    .product-presentation .product h1 {
+        font-size: 1.1em;
+    }
+    .product-presentation .product .read-more {
+        background: #2c3e50;
+        color: #eaf1f7;
+        text-decoration: inherit;
+        padding: 15px 18px;
+        text-align: center;
+        margin: 20px 0;
+        cursor: pointer;
+        transition: background-color 0.3s, transform 0.3s;
+        display: block;
+        border: 1px solid #070d14;
+        box-shadow: 0 0 2px rgba(0,0,0,0.1), 0 2px 4px rgba(0,0,0,0.1);
+        position: absolute;
+        bottom: -48px;
+        width: calc(100% - 10px * 2);
+    }
+    .product-presentation .product .read-more:hover {
+        background: #375068;
+    }
+</style>
+<section class="products-section">
+    <div class="product-presentation">
+        <h1 class="product-mission-header">On a mission?</h1>
+        <a href="/get-started-right/" class="product product-new-platform">
+            <img src="/img/map-icon.svg">
+            <h1>Put your business plan into action</h1>
+            <p>
+                If you have your business plan for your tech company ready, we can help you figure out how to make the right technical choices, and help you start your software development department the right way.
+            </p>
+            <p>
+                We work well within a budget, and provide the same value cheaper than any other option.
+            </p>
+            <div class="read-more">Get started right</div>
+        </a>
+        <a href="/start-automating/" class="product product-automation">
+            <img src="/img/input-icon.svg">
+            <h1>Automate away the tiresome tasks</h1>
+            <p>
+                Business is going well, but as your company has grown, more and more time is spent on drudge work.
+                We can help you identify and automate boring work, freeing up more time for your employees to focus on what is important.
+            </p>
+            <p>
+                We help ensure a constructive process for and buy-in from all stakeholders.
+            </p>
+            <div class="read-more">Start automating</div>
+        </a>
+        <h1 class="product-problem-header">Got a problem?</h1>
+        <a href="/get-awesome/" class="product product-fix-platform">
+            <img src="/img/layers-icon.svg">
+            <h1>Make your existing platform awesome!</h1>
+            <p>
+                If you already have a tech product we can help you maintain it, expand it with new features, and prepare it for growth.
+                We ensure that maintenance is efficient and stays within your budget.
+            </p>
+            <p>
+                We can guide you through technical tradeoffs, and help you find new ways to increase cash flow for your product.
+            </p>
+            <div class="read-more">Get awesome</div>
+        </a>
+        <div class="product product-no-resctrictions">
+            <img src="/img/terrain-icon.svg">
+            <h1>A path towards a system that doesn't restrict you</h1>
+            <p>
+                If the software you're currently using is starting to seem more restricting than enabling, we can help you plan a constructive way forward.
+                We will help you get back in control of the technological heart of your business, and give you the freedom to adapt to changing business practices.
+            </p>
+            <div class="read-more">Find freedom</div>
+        </div>
+    </div>
+</section>
+<section class="customer-quote-section customer-quote-section-alternate-style" id="customer-quote-section">
+    <p class="quote-text">
+        deranged took responsibility and worked to leave a self-sustaining organization for after they left. They helped set direction for the project, and worked well in a complicated multi-stakeholder context, executing in a way that satisfied all stakeholders.
+    </p>
+    <p class="quotee">Rolf Bjerre, Social Entrepreneur</p>
+    <a href="/what-we-have-done/" class="see-cases">See examples of what we have done</a>
+</section>
+<style type="text/css">
+    .other-pages-section {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }
+    .how-we-think-section {
+        grid-row: 1 / 2;
+        padding: 50px 70px;
+        padding-right: 50px;
+        text-align: left;
+        background: #2c3e50;
+        color: #eaf1f7;
+    }
+    .how-we-think-section h1, .who-we-are-section h1 {
+        font-size: 1.8em;
+        font-weight: 200;
+        margin: 0;
+    }
+    .how-we-think-section .read-more {
+        background: #2c3e50;
+        border: 1px solid white;
+        color: #eaf1f7;
+        text-decoration: inherit;
+        padding: 19px 24px;
+        margin: 20px 0;
+        cursor: pointer;
+        transition: background-color 0.3s, transform 0.3s;
+        display: inline-block;
+    }
+    .how-we-think-section .read-more:hover {
+        transform: scale(1.1);
+    }
+    .who-we-are-section {
+        grid-row: 1 / 2;
+        grid-column: 2 / 3;
+        padding: 0 0 0 50px;
+        display: grid;
+        grid-template-columns: auto 270px;
+    }
+    .who-we-are-section .team-photos {
+        display: grid;
+        grid-template-columns: 120px 120px;
+        margin-left: 30px;
+    }
+    .who-we-are-section .team-photos img {
+        width: 120px;
+        height: 120px;
+        object-fit: cover;
+    }
+    .who-we-are-content {
+        text-align: left;
+        padding-top: 50px;
+    }
+    .who-we-are-content .read-more {
+        background: #2c3e50;
+        color: #eaf1f7;
+        text-decoration: inherit;
+        padding: 20px 25px;
+        margin: 20px 0;
+        cursor: pointer;
+        transition: background-color 0.3s, transform 0.3s;
+        display: inline-block;
+    }
+    .who-we-are-content .read-more:hover {
+        background: #375068;
+        transform: scale(1.1);
+    }
+</style>
+<section class="other-pages-section">
+    <section class="who-we-are-section">
+        <div class="who-we-are-content">
+            <h1>Meet the team</h1>
+            <p>
+                Our team consists of enthusiastic, flexible and engaged people with a varied set of backgrounds.
+            </p>
+            <p>
+                When hiring, we look for people who care about making a difference in their day-to-day life, and as a customer you're sure to experience this, too.
+            </p>
+            <a href="/who-we-are/" class="read-more">Check out the team</a>
+        </div>
+        <div class="team-photos">
+            <img src="/img/people/asbjoern-thegler.jpg">
+            <img src="/img/people/helena-bach.jpg">
+            <img src="/img/people/liv-borre.jpg">
+            <img src="/img/people/philip-dein.jpg">
+            <img src="/img/people/niels-christensen.jpg">
+            <img src="/img/people/niels-abildgaard.jpg">
+        </div>
+    </section>
+    <section class="how-we-think-section">
+        <h1>About the company</h1>
+        <p>how we think...</p>
+        <a href="/how-we-think/" class="read-more">Read more</a>
+    </section>
+</section>
+<style type="text/css">
+    .rest-sales {
+        background: #2c3e50;
+        background-image: linear-gradient(145deg, #2c3e50 30%, #1b2b3a 90%);
+        height: 650px;
+        min-height: 100vh;
+        color: #eaf1f7;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+</style>
+<section class="rest-sales">
+    <h1>Get a quote</h1>
+    <p>...</p>
+</section>
+<style type="text/css">
+    footer {
+        background: #1b2b3a;
+        padding: 100px;
+        color: #eaf1f7;
+        position: relative;
+    }
+    footer:after {
+        content: '↯';
+        color: #2c3e50;
+        font-size: 23em;
+        position: absolute;
+        top: -0.75em;
+        right: 0.4em;
+        transform: scaleY(-1) rotate(-50deg);
+    }
+</style>
+<footer>
+    &copy; deranged 2018-<span id="footer-current-year">2019</span>.
+    <script>
+        (function() {
+            var now = new Date();
+            document.getElementById("footer-current-year").innerText = now.getFullYear();
+        })();
+    </script>
+</footer>
