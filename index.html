@@ -347,13 +347,16 @@ title: Let's start building your software 🗲 deranged
     .who-we-are-section .team-photos {
         display: grid;
         grid-template-columns: 120px 120px;
+        grid-auto-rows: 1fr;
         margin-left: 30px;
     }
-    .who-we-are-section .team-photos img {
-        width: 120px;
-        height: 100%;
+    .who-we-are-section .team-photos div {
         min-height: 120px;
+    }
+    .who-we-are-section .team-photos img {
         object-fit: cover;
+        height: 100%;
+        width: 100%;
     }
     .who-we-are-content {
         text-align: left;
@@ -390,12 +393,12 @@ title: Let's start building your software 🗲 deranged
             <a href="/who-we-are/" class="read-more">Check out the team</a>
         </div>
         <div class="team-photos">
-            <img src="/img/people/asbjoern-thegler.jpg">
-            <img src="/img/people/helena-bach.jpg">
-            <img src="/img/people/liv-borre.jpg">
-            <img src="/img/people/philip-dein.jpg">
-            <img src="/img/people/niels-christensen.jpg">
-            <img src="/img/people/niels-abildgaard.jpg">
+            <div><img src="/img/people/asbjoern-thegler.jpg"></div>
+            <div><img src="/img/people/helena-bach.jpg"></div>
+            <div><img src="/img/people/liv-borre.jpg"></div>
+            <div><img src="/img/people/philip-dein.jpg"></div>
+            <div><img src="/img/people/niels-christensen.jpg"></div>
+            <div><img src="/img/people/niels-abildgaard.jpg"></div>
         </div>
     </section>
     <section class="how-we-think-section">
