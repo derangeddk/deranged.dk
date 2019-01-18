@@ -2,6 +2,7 @@
 layout: default
 title: Let's start building your software 🗲 deranged
 ---
+{% include overlay_nav.html %}
 <style type="text/css">
     .hello-section {
         min-height: 100vh;
@@ -66,133 +67,7 @@ title: Let's start building your software 🗲 deranged
         from { transform: translateY(0); }
         to { transform: translateY(-18px); }
     }
-
-    /* Overlay Nav Styling */
-    nav.overlay {
-      position: fixed;
-      top: 0;
-      left: 10%;
-      width: 100%;
-      height: 100%;
-      background: rgba(44, 62, 80,0.99);
-      padding: 0 20%;
-      z-index: -1;
-      opacity: 0.0;
-      transition: all 200ms ease;
-    }
-
-    body.main-nav-open {
-      position: fixed;
-      overflow-y:scroll;
-      width: 100%;
-    }
-
-    body.main-nav-open nav.overlay {
-      top: 0;
-      left: 0;
-      z-index:10;
-      opacity:1;
-    }
-
-    .main-nav-menu {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      height: 100%;
-      max-width: 400px;
-      margin-left: auto;
-    }
-
-    @media screen and (min-width: 768px) {
-       nav.overlay:before {
-          content: "\219D";
-          font-size: 300px;
-          color: white;
-          opacity: 0;
-          position: absolute;
-          left: 10%;
-          top: 50%;
-          transform: translateY(-40%);
-          transition: opacity 1000ms linear 300ms;
-       }
-       body.main-nav-open nav.overlay:before {
-          opacity: 0.4;
-       }
-    }
-
-    .main-nav-menu a {
-      display: block;
-      text-align: right;
-      font-size: 36px;
-      font-weight: 300;
-      color: white;
-      text-decoration: none;
-      padding: 25px 0;
-      position: relative;
-    }
-    .main-nav-menu a:after {
-      content: "";
-      display: block;
-      position: absolute;
-      bottom: 20%;
-      height: 0;
-      width: 2px;
-      right: -20px;
-      background: white;
-      transition: height 500ms ease;
-    }
-    .main-nav-menu a:hover:after {
-      height: 60%;
-    }
-
-    #main-nav-toggle {
-      position: absolute;
-      top: 30px;
-      right: 30px;
-      z-index: 100;
-      font-size: 36px;
-      background: transparent;
-      border-width: 0;
-    }
-
-    #main-nav-toggle .icon-bar {
-      background: white;
-      height: 3px;
-      width: 30px;
-      margin-bottom: 7px;
-      position: relative;
-      transition: all 200ms ease;
-      opacity: 1;
-      top:0;
-    }
-
-    body.main-nav-open #main-nav-toggle .icon-bar:nth-child(1) {
-        transform: rotate(45deg);
-        top: 10px;
-        left: 0;
-    }
-    body.main-nav-open #main-nav-toggle .icon-bar:nth-child(2) {
-        opacity: 0;
-        top: 0;
-        left: 0;
-    }
-    body.main-nav-open #main-nav-toggle .icon-bar:nth-child(3) {
-        transform: rotate(-45deg);
-        top: -10px;
-        left: 0;
-    }
-
 </style>
-<button id="main-nav-toggle" onClick="handleNav()">
-  <div class="icon-bar"></div>
-  <div class="icon-bar"></div>
-  <div class="icon-bar"></div>
-</button>
-<nav id="main-nav" class="main-nav overlay">
-  <div class="main-nav-menu">
-    {% include menu_links.html %}
-  </div>
-</nav>
 <section class="hello-section">
     <a href="/" class="logo">deranged</a>
     <div class="big-greeting">
