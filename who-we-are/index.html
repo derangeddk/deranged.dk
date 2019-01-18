@@ -1,80 +1,393 @@
 ---
 layout: default
+title: 'who we are / deranged'
 ---
 {% include header2.html %}
 <div class="container">
     <style type="text/css" scoped>
-        section.intro {
+        h1 {
+            margin-left: 15px;
+            margin-bottom: 10px;
+        }
+        .intro {
+            display: flex;
+            flex-direction: row;
+            align-items: stretch;
+            justify-content: flex-start;
+            flex-wrap: wrap;
+            padding: 0 15px;
+        }
+        .intro-text {
             max-width: 400px;
+            flex-basis: 300px;
+            flex-grow: 1;
+            flex-shrink: 0;
+            margin-right: 25px;
+            margin-top: 10px;
+            margin-bottom: 20px;
+        }
+        .intro-image {
+            flex-basis: 300px;
+            flex-grow: 2;
+            flex-shrink: 0;
+            background: white;
+            box-shadow: 0 0 2px rgba(0,0,0,0.2), 0 2px 4px rgba(0,0,0,0.2);
+            padding: 15px;
+            margin-top: 10px;
+            margin-bottom: 20px;
+        }
+        @media (max-width: 600px) {
+            .intro-image {
+                min-height: 50vh;
+            }
+        }
+        .intro-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        h1 {
+            font-weight: 200;
+            font-size: 3em;
+        }
+        .people-intro {
+            margin-top: 90px;
+            text-align: center;
+            padding: 10px;
         }
     </style>
-    <h1>who we are</h1>
+    <h1>Who we are</h1>
     <section class="intro">
-        <p>
-            Deranged means outside of the range of the norm.
-            Deranged looks unusual, scary, not normal.
-            ”There’s a thin line between being a genius and insane,” you’ve heard, because genius is different, and how do you know if it is different good or different bad?
-            We’re not means geniuses, but we’re pretty different.
-        </p>
-        <p>
-            We take some pretty intense knowledge of systems (of the human and the technological kind) and apply it to our work.
-            If you work with us, you’ve got to be on board with doing things differently.
-        </p>
-    </section>
-    <script>
-        //TODO: Make this function work:
-        // contentGrab("section.intro", "about", 3);
-        //where the first arg is an element, "about" is the content to grab, 3 is the number of variations
-        //should grab a random file {name}{number} and load it all up into there
-    </script>
-
-    <section class="people">
-        <div class="person niels-abildgaard">
-            <h1>Niels Roesen Abildgaard</h1>
-            <img src="/img/people/niels-abildgaard.png">
+        <div class="intro-text">
             <p>
-                Niels made a deranged thing this one time, and maybe it became something.
+                deranged is a team of enthusiastic, quick-working developers.
+                We have experts at every level of full-stack web application development, and experience from a broad swath of industries and companies.
             </p>
             <p>
-                Niels has been drifting between various startups in the Copenhagen area, touching on micropayments, blogging, scheduling, telecommunications and more.
-                Startups are all very different.
-                But maybe there is a different kind of different to be found.
+                Our current offices are in the Nordvest area, in the shared office space <a href="https://www.google.com/maps/place/Glasvej+3,+2400+København/@55.703652,12.5273953,17z/" target="_blank" rel="noopener">STUDIET Glasvej 3</a>.
+            </p>
+                Our mailing address is:<br>
+                deranged<br>
+                Att. Niels Roesen Abildgaard<br>
+                Markskellet 8 st th<br>
+                2720 Vanløse
             </p>
             <p>
-                Niels likes to spend his time trying to understand cryptography, and mostly just build stuff that works and helps people.
+                You can get in touch with us via email on <a href="mailto:get@deranged.dk">get@deranged.dk</a>.
             </p>
         </div>
-        <div class="person anders-enghoej">
-            <h1>Anders Lysgaard Enghøj</h1>
-            <img src="/img/people/anders-enghoej.png">
-            <p>
-                Anders doesn't like it when things are in the way of getting shit done.
-            </p>
-            <p>
-                Anders has worked in various upstarts in Copenhagen, entering the scene as a designer but slowly realizing that all distinctions are made up and maybe useless.
-                He has worked with second hand clothes stores and micropayments and blogging, as an employee or as a freelancer.
-                There is beauty in pixels but if the pixels don't make a difference they're not worth much.
-            </p>
-            <p>
-                In his spare time, Anders maintains a site that tells the Danish populace if they have new fighter jets yet.
-                So far, the answer has been no.
-            </p>
-        </div>
-        <div class="person asbjoern-thegler">
-            <h1>Asbjørn Thegler</h1>
-            <img src="/img/people/asbjoern-thegler.png">
-            <p>
-                Asbjørn likes the outdoors and some programming languages. Other programming languages&hellip; not so much.
-            </p>
-            <p>
-                Asbjørn has worked for various companies, including one touching on the infrastructure of webdomains and one touching on phone networks.
-                He has made most of his way as a freelance consultant, and is pretty magical at making sure that things run smoothly.
-                He also builds code that helps people get out and moving.
-                His code is delicious. So is his beard.
-            </p>
-            <p>
-                Asbjørn says he works at night and sleeps at day, but we have yet to confirm either ever occurring.
-            </p>
+        <div class="intro-image">
+            <a href="https://www.google.com/maps/place/Glasvej+3,+2400+København/@55.703652,12.5273953,17z/" target="_blank" rel="noopener">
+                <img src="/img/map.png">
+            </a>
         </div>
     </section>
 </div>
+<div class="people-intro">
+    <h1>Team</h1>
+    <p>
+        Take a look at our competent team here!
+    </p>
+    <p>
+        You can also look at our developer profiles in more depth in our <a target="_blank" href="/files/team-cv.pdf">team CV</a>.
+    </p>
+</div>
+<style>
+    .people-container {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .people {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        margin: 0 20px 20px;
+        max-width: 1200px;
+        grid-gap: 20px;
+    }
+    @media (max-width: 1050px) {
+        .people {
+            grid-template-columns: 1fr 1fr;
+        }
+    }
+    @media (max-width: 650px) {
+        .people {
+            grid-template-columns: 1fr;
+        }
+    }
+    .person {
+        grid-column: span 1;
+        grid-row: span 1;
+        background: white;
+        padding: 10px;
+        padding-bottom: 0;
+        text-align: left;
+        margin-top: 115px;
+        box-shadow: 0 4px 2px rgba(0,0,0,0.05);
+        display: flex;
+        flex-direction: column;
+    }
+    .person-image {
+        margin-top: -100px;
+        height: 200px;
+        text-align: center;
+    }
+    .person-image img {
+        border-radius: 100%;
+        height: 200px;
+        width: 200px;
+        box-sizing: border-box;
+        padding: 10px;
+        background: white;
+        object-fit: cover;
+    }
+    .person-name {
+        text-align: center;
+    }
+    .person-name h2 {
+        margin: 0;
+    }
+    .person-title {
+        font-size: 0.85em;
+    }
+    .person-about {
+        margin-top: 1em;
+        flex: auto;
+    }
+    .person-about p {
+        margin-top: 0;
+        margin-bottom: 1em;
+    }
+    .person-about:before {
+        content: '';
+        display: block;
+        width: 100%;
+        height: 18px;
+        background-image: url('/img/code.png');
+        background-size: contain;
+        background-position: center left;
+        background-repeat: no-repeat;
+        margin-bottom: -5px;
+    }
+    .person-free-time:before {
+        content: '';
+        display: block;
+        width: 100%;
+        height: 18px;
+        background-image: url('/img/terrain.png');
+        background-size: contain;
+        background-position: center left;
+        background-repeat: no-repeat;
+        margin-bottom: -5px;
+    }
+    .person-previous-experience {
+        background: #eff3f4;
+        margin: 20px -10px 0;
+        padding: 10px;
+        font-size: 0.8em;
+    }
+    .person-links {
+        margin: 10px 0;
+        text-align: center;
+    }
+    .person-links a {
+        display: inline-block;
+        color: white;
+        background: #237fdb;
+        text-decoration: none;
+        padding: 5px 6px;
+        margin: 3px;
+        border-radius: 4px;
+    }
+</style>
+<div class="people-container">
+    <section class="people">
+        <div class="person">
+            <div class="person-image">
+                <img src="/img/people/niels-abildgaard.jpg">
+            </div>
+            <div class="person-name">
+                <h2>Niels Roesen Abildgaard</h2>
+                <div class="person-title">Software developer. MSc Software Development.</div>
+            </div>
+            <div class="person-about">
+                <p>
+                    Niels loves integrating with companies, figuring out their business goals, and helping achieve them with rapidly delivered software.
+                </p>
+                <p>
+                    Niels has worked as a software architect and full-stack web developer in a variety of companies, and has experience with many modern technologies for building highly scalable applications for the web.
+                </p>
+            </div>
+            <div class="person-free-time">
+                In his free time, Niels is an engaged scout, spending most of his time as a group leader in <a href="http://soeborggruppe.dk">1. Søborg Gruppe</a>.
+            </div>
+            <div class="person-previous-experience">
+                Previously at Planday, CubeIO, Newsquid.<br>
+                Has worked in telecom, pharma.
+            </div>
+            <div class="person-links">
+                <a target="_blank" rel="noopener" href="https://github.com/hypesystem">Github</a>
+                <a target="_blank" rel="noopener" href="http://hypesystem.dk">Website</a>
+                <a target="_blank" rel="noopener" href="http://blog.hypesystem.dk">Blog</a>
+            </div>
+        </div>
+        <div class="person">
+            <div class="person-image">
+                <img src="/img/people/asbjoern-thegler.jpg">
+            </div>
+            <div class="person-name">
+                <h2>Asbjørn Thegler</h2>
+                <div class="person-title">Software developer. MSc Computer Science.</div>
+            </div>
+            <div class="person-about">
+                <p>
+                    Asbjørn is a privacy-minded and ethical software developer with an eye for the bigger picture.
+                    He cares strongly about the ethics of customer data handling and has a high sense of duty.
+                </p>
+                <p>
+                    Asbjørn is an experienced software infrastructure designer and maintainer, and takes a holistic
+                    approach to designing applications that run and scale well, including DevOps and continuous
+                    deployment practices.
+                </p>
+            </div>
+            <div class="person-previous-experience">
+                Previously at CubeIO, DK-Hostmaster.<br>
+                Has worked in banking, telecom, pharma.
+            </div>
+            <div class="person-links">
+                <a target="_blank" rel="noopener" href="https://github.com/ath88">Github</a>
+            </div>
+        </div>
+        <div class="person">
+            <div class="person-image">
+                <img src="/img/people/niels-christensen.jpg">
+            </div>
+            <div class="person-name">
+                <h2>Niels Ørbæk Christensen</h2>
+                <div class="person-title">Software developer. BSc Humanities and Technology.</div>
+            </div>
+            <div class="person-about">
+                <p>
+                    Niels is a software developer who cares about solving real problems in a way that is suitable and adds value for people. He is used to working in a crossdiciplinary manner and communicating about complex technical solutions to people without technical background.
+                </p>
+                <p>
+                    Niels likes being productive and developing usable software fast, using modern high-level frameworks and tools,as well as employing his theoretical and academic background to solve lower level technical tasks when needed.
+                </p>
+            </div>
+            <div class="person-free-time">
+                In his spare time Niels goes bouldering and spends a lot of time in <a href="http://nkk.dk" target="_blank" rel="noopener">Nørrebro Klatreklub</a>.
+            </div>
+            <div class="person-previous-experience">
+                Previously at TwentyThree.
+            </div>
+        </div>
+        <div class="person">
+            <div class="person-image">
+                <img src="/img/people/helena-bach.jpg">
+            </div>
+            <div class="person-name">
+                <h2>Helena Bach</h2>
+                <div class="person-title">Software developer. BSc Computer Science.</div>
+            </div>
+            <div class="person-about">
+                <p>
+                    Helena cares strongly about building software with an impact.
+                    She has a passion for the mathematical underpinnings of software development, but cares strongly about applying that passion practically.
+                </p>
+                <p>
+                    Helena has significant experience in corporate solutions from working at Netcompany.
+                    She is quick to learn new tools and approaches and finding and reproducing patterns in existing systems, and has significant experience in maintaining existing code bases, finding the best way of delivering new features and maintaining code quality given the circumstances she finds herself in.
+                </p>
+            </div>
+            <div class="person-free-time">
+                In her free time, Helena helps plan the <a href="http://nakkefestival.dk" target="_blank" rel="noopener">Nakke festival</a>.
+            </div>
+            <div class="person-previous-experience">
+                Previously at Netcompany.
+            </div>
+        </div>
+        <div class="person">
+            <div class="person-image">
+                <img src="/img/people/philip-dein.jpg">
+            </div>
+            <div class="person-name">
+                <h2>Philip Dein</h2>
+                <div class="person-title">Software developer.</div>
+            </div>
+            <div class="person-about">
+                <p>
+                    Philip loves delivering working software to customers that solves real problems. The work of
+                    finding creative solutions to problems faced by customers is what drives his work. It’s not worth it,
+                    to build things that nobody will use.
+                </p>
+                <p>
+                    In his day-to-day work Philip emphasized the need for communication and knowledge sharing in
+                    the development team, ensuring that nobody becomes a bottleneck in the team.
+                </p>
+            </div>
+            <div class="person-free-time">
+                In his free time, Philip is a scout leader in <a href="https://www.1glostrupgruppe.dk/" target="_blank" rel="noopener">1. Glostrup Gruppe</a>.
+            </div>
+            <div class="person-previous-experience">
+                Previously at Daman Digital.
+            </div>
+        </div>
+        <div class="person">
+            <div class="person-image">
+                <img src="/img/people/liv-borre.jpg">
+            </div>
+            <div class="person-name">
+                <h2>Liv Hartoft Borre</h2>
+                <div class="person-title">Software developer.</div>
+            </div>
+            <div class="person-about">
+                <p>
+                    Liv finds great purpose and passion in developing solutions that are valuable to others, from helping people do things they weren’t capable of before, to simply eliminating grunt work.
+                </p>
+                <p>
+                    She enjoys software development as a creative, problem-solving craft that she’s continuously perfecting, and she focuses on writing efficient and maintainable code and designing usable and extendable solutions.
+                </p>
+                <p>
+                    Haunted by perfectionistic tendencies, she puts great care into details and code quality while keeping focus on the creation and delivery of value.
+                </p>
+            </div>
+        </div>
+        <!--div class="person">
+            <div class="person-image">
+                <img src="/img/people/sidse-petersen.jpg">
+            </div>
+            <div class="person-name">
+                <h2>Sidse Petersen</h2>
+                <div class="person-title">Sales. BSc?</div>
+            </div>
+            <div class="person-about">
+                <p>
+                    ...
+                </p>
+            </div>
+            <div class="person-free-time">
+                ...
+            </div>
+            <div class="person-previous-experience">
+                Previously at ...<br>
+            </div>
+        </div-->
+    </section>
+</div>
+<style>
+footer {
+    background: #2c3e50;
+    color: white;
+    text-align: left;
+    margin-top: 100px;
+    padding: 22px 20px 20px;
+}
+footer a {
+    color: inherit;
+}
+</style>
+<footer>
+    &copy; deranged 2018-2019. CVR 35695583.
+    <a href="/privacy/">Privacy policy</a>.
+</footer>
