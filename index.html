@@ -3,71 +3,9 @@ layout: default
 title: Let's start building your software 🗲 deranged
 ---
 {% include overlay_nav.html %}
-<style type="text/css">
-    .hello-section {
-        min-height: 100vh;
-        height: 650px;
-        padding: 100px;
-        box-sizing: border-box;
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-        align-items: flex-start;
-        background-color: #2c3e50;
-        background-image: linear-gradient(40deg, #2c3e50 30%, #455d75 90%);
-        color: #eaf1f7;
-        position: relative;
-    }
-    .hello-section .logo {
-        color: inherit;
-        text-decoration: inherit;
-        font-weight: 200;
-        font-size: 1.3em;
-        postition: relative;
-        z-index: 11;
-    }
-    .hello-section .big-greeting {
-        text-align: left;
-        font-size: 2.5em;
-    }
-    .hello-section .big-greeting h1 {
-        font-size: 2em;
-        margin: 0;
-    }
-    .hello-section .big-greeting h2 {
-        font-size: 1.3em;
-        margin: 0;
-    }
-    .hello-section .quick-intro {
-        text-align: left;
-        max-width: 550px;
-        font-size: 1.05em;
-        line-height: 150%;
-        position: relative;
-    }
-    .hello-section .quick-intro:before {
-        content: '🗲';
-        position: absolute;
-        left: -1.5em;
-        top: 0;
-    }
-    .hello-section .more-button {
-        background-color: transparent;
-        background-image: url('/img/expand_more_white.png');
-        position: absolute;
-        border: none;
-        cursor: pointer;
-        bottom: 100px;
-        right: 100px;
-        height: 48px;
-        width: 48px;
-        animation: upanddown 2.5s linear infinite alternate;
-    }
-    @keyframes upanddown {
-        from { transform: translateY(0); }
-        to { transform: translateY(-18px); }
-    }
-</style>
+
+<link href="/css/homestyle.css" rel="stylesheet" type="text/css">
+
 <section class="hello-section">
     <a href="/" class="logo">deranged</a>
     <div class="big-greeting">
@@ -99,155 +37,14 @@ title: Let's start building your software 🗲 deranged
     })();
     </script>
 </section>
-<style type="text/css">
-    .customer-quote-section {
-        background-color: #070d14;
-        background-image: linear-gradient(200deg, #070d14 50%, #2c3e50);
-        min-height: 300px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        flex-direction: column;
-        color: #eaf1f7;
-        padding: 30px 100px;
-    }
-    .customer-quote-section .quote-text {
-        font-family: 'Libre Baskerville', serif;
-        font-size: 1.3em;
-        max-width: 800px;
-        line-height: 175%;
-        position: relative;
-    }
-    .customer-quote-section .quote-text:before {
-        content: '“';
-        font-size: 5em;
-        position: absolute;
-        left: 5px;
-        top: 25px;
-        opacity: 0.8;
-    }
-    .customer-quote-section .quote-text:after {
-        content: '”';
-        font-size: 5em;
-        position: absolute;
-        right: 5px;
-        bottom: -35px;
-        opacity: 0.4;
-    }
-    .customer-quote-section .quotee {
-        width: 100%;
-        max-width: 800px;
-        text-align: right;
-    }
-    .customer-quote-section .quotee:before {
-        content: '— ';
-    }
-    .customer-quote-section-alternate-style {
-        background-image: linear-gradient(20deg, #070d14 50%, #2c3e50);
-    }
-    .customer-quote-section .see-cases {
-        background: #2c3e50;
-        color: #eaf1f7;
-        text-decoration: inherit;
-        padding: 20px 25px;
-        margin: 20px;
-        cursor: pointer;
-        transition: background-color 0.3s, transform 0.3s;
-    }
-    .customer-quote-section .see-cases:hover {
-        background: #375068;
-        transform: scale(1.1);
-    }
-</style>
+
 <section class="customer-quote-section" id="customer-quote-section">
     <p class="quote-text">
         It has been a pleasure working with a proactive contractor such as deranged. With their technical capacity, they enable the necessary overview and execute quickly.
     </p>
     <p class="quotee">Morten Schnack, CTO, The HabLab</p>
 </section>
-<style type="text/css">
-    .products-section {
-        min-height: 80vh;
-        padding: 100px 100px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
-    .product-presentation {
-        display: grid;
-        grid-template-columns: 1fr 1fr 1fr 1fr;
-        grid-template-rows: auto auto;
-    }
-    .product-presentation > h1 {
-        grid-row: 1 / 2;
-        grid-column: span 2;
-        font-weight: 200;
-        font-size: 2.5em;
-        margin-top: 0;
-        margin-bottom: 2em;
-    }
-    .product-presentation .product {
-        border: 1px solid #070d14;
-        width: 300px;
-        box-sizing: border-box;
-        padding: 10px;
-        padding-bottom: 20px;
-        margin: 10px;
-        margin-left: 50px;
-        text-align: left;
-        box-shadow: 0 0 2px rgba(0,0,0,0.1), 0 2px 4px rgba(0,0,0,0.1);
-        transition: transform 0.4s;
-        font-size: 0.9em;
-        color: inherit;
-        text-decoration: inherit;
-        position: relative;
-        margin-bottom: 40px;
-    }
-    .product-presentation .product:hover {
-        transform: scale(1.03);
-    }
-    .product-presentation .product img {
-        transform: translateY(-45px) translateX(-45px);
-        /*background-color: rgba(7, 13, 20, 0.9);*/
-        background-image: linear-gradient(45deg, rgba(7, 13, 20, 0.9), rgba(30, 49, 73, 0.85));
-        padding: 10px;
-        border-radius: 100%;
-        width: 63px;
-        height: 63px;
-        object-fit: contain;
-        box-sizing: border-box;
-        margin-bottom: -50px;
-        transition: transform 0.4s, box-shadow 0.4s, background-color 0.4s;
-        box-shadow: 0 0 2px rgba(0,0,0,0.1), 0 2px 4px rgba(0,0,0,0.1);
-    }
-    .product-presentation .product:hover img {
-        transform: translateY(-40px) translateX(-42px) scale(1.15);
-        box-shadow: 0 0 3px rgba(0,0,0,0.15), 0 3px 6px rgba(0,0,0,0.15);
-        background-color: #070d14;
-    }
-    .product-presentation .product h1 {
-        font-size: 1.1em;
-    }
-    .product-presentation .product .read-more {
-        background: #2c3e50;
-        color: #eaf1f7;
-        text-decoration: inherit;
-        padding: 15px 18px;
-        text-align: center;
-        margin: 20px 0;
-        cursor: pointer;
-        transition: background-color 0.3s, transform 0.3s;
-        display: block;
-        border: 1px solid #070d14;
-        box-shadow: 0 0 2px rgba(0,0,0,0.1), 0 2px 4px rgba(0,0,0,0.1);
-        position: absolute;
-        bottom: -48px;
-        width: calc(100% - 10px * 2);
-    }
-    .product-presentation .product .read-more:hover {
-        background: #375068;
-    }
-</style>
+
 <section class="products-section">
     <div class="product-presentation">
         <h1 class="product-mission-header">On a mission?</h1>
@@ -305,84 +102,7 @@ title: Let's start building your software 🗲 deranged
     <p class="quotee">Rolf Bjerre, Social Entrepreneur</p>
     <a href="/what-we-have-done/" class="see-cases">See examples of what we have done</a>
 </section>
-<style type="text/css">
-    .other-pages-section {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-    }
-    .how-we-think-section {
-        grid-row: 1 / 2;
-        padding: 50px 70px;
-        padding-right: 50px;
-        text-align: left;
-        background: #2c3e50;
-        color: #eaf1f7;
-    }
-    .how-we-think-section p {
-        max-width: 500px;
-    }
-    .how-we-think-section h1, .who-we-are-section h1 {
-        font-size: 1.8em;
-        font-weight: 200;
-        margin: 0;
-    }
-    .how-we-think-section .read-more {
-        background: #2c3e50;
-        border: 1px solid white;
-        color: #eaf1f7;
-        text-decoration: inherit;
-        padding: 19px 24px;
-        margin: 20px 0;
-        cursor: pointer;
-        transition: background-color 0.3s, transform 0.3s;
-        display: inline-block;
-    }
-    .how-we-think-section .read-more:hover {
-        transform: scale(1.1);
-    }
-    .who-we-are-section {
-        grid-row: 1 / 2;
-        grid-column: 2 / 3;
-        padding: 0 0 0 50px;
-        display: grid;
-        grid-template-columns: auto 270px;
-    }
-    .who-we-are-section .team-photos {
-        display: grid;
-        grid-template-columns: 120px 120px;
-        grid-auto-rows: 1fr;
-        margin-left: 30px;
-    }
-    .who-we-are-section .team-photos div {
-        min-height: 120px;
-    }
-    .who-we-are-section .team-photos img {
-        object-fit: cover;
-        height: 100%;
-        width: 100%;
-    }
-    .who-we-are-content {
-        text-align: left;
-        padding-top: 50px;
-    }
-    .who-we-are-content p {
-        max-width: 500px;
-    }
-    .who-we-are-content .read-more {
-        background: #2c3e50;
-        color: #eaf1f7;
-        text-decoration: inherit;
-        padding: 20px 25px;
-        margin: 20px 0;
-        cursor: pointer;
-        transition: background-color 0.3s, transform 0.3s;
-        display: inline-block;
-    }
-    .who-we-are-content .read-more:hover {
-        background: #375068;
-        transform: scale(1.1);
-    }
-</style>
+
 <section class="other-pages-section">
     <section class="who-we-are-section">
         <div class="who-we-are-content">
@@ -416,129 +136,7 @@ title: Let's start building your software 🗲 deranged
         <a href="/how-we-think/" class="read-more">Read more</a>
     </section>
 </section>
-<style type="text/css">
-    .rest-sales {
-        background: #2c3e50;
-        background-image: linear-gradient(145deg, #2c3e50 30%, #1b2b3a 90%);
-        height: 650px;
-        min-height: 100vh;
-        color: #eaf1f7;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        flex-direction: column;
-    }
-    .rest-sales h1 {
-        font-weight: 200;
-        font-size: 3em;
-        margin: 0.5em;
-        margin-top: 2.5em;
-    }
-    .rest-sales > p {
-        max-width: 500px;
-        width: 100%;
-        text-align: left;
-    }
-    .get-a-quote {
-        background: #f4f8f9;
-        border: 1px solid #f4f8f9;
-        box-shadow: 0 0 4px rgba(0,0,0,0.2), 0 3px 6px rgba(0,0,0,0.2);
-        padding: 0;
-        margin-bottom: 100px;
-        color: #070d14;
-        width: 100%;
-        max-width: 500px;
-    }
-    .get-a-quote a {
-        color: #17395b;
-    }
-    .get-a-quote .header {
-        color: white;
-        padding: 15px;
-        background: #2c3e50;
-    }
-    .get-a-quote .tabs {
-        display: flex;
-        background: #2c3e50;
-        border-left: 8px solid #2c3e50;
-    }
-    .get-a-quote .tabs .tab {
-        background: #c3cacc;
-        color: #4d637a;
-        font-size: 0.7em;
-        text-transform: uppercase;
-        padding: 7px 15px;
-        border-right: 1px solid #2c3e50;
-        border-bottom: 1px solid #2c3e50;
-        cursor: pointer;
-    }
-    .get-a-quote .tabs .tab.active {
-        background: #f4f8f9;
-        color: inherit;
-        border-bottom: 1px solid transparent;
-    }
-    .get-a-quote .tab-content {
-        display: none;
-    }
-    .get-a-quote .tab-content > * {
-        margin: 15px;
-    }
-    .get-a-quote .tab-content.active {
-        display: block;
-    }
-    .get-a-quote .tab-content label {
-        text-align: center;
-        display: block;
-    }
-    .get-a-quote .tab-content input {
-        text-align: right;
-        font-family: inherit;
-        font-weight: 200;
-        padding: 0.2em;
-        font-size: 1.2em;
-        width: 6em;
-    }
-    .get-a-quote .evaluation-text {
-        background: #cee8ef;
-        margin-left: 0;
-        margin-right: 0;
-        padding: 5px 15px;
-        font-size: 0.7em;
-        min-height: 4em;
-        transition: background 1.2s;
-    }
-    .get-a-quote .evaluation-text.good {
-        background: #c8efba;
-    }
-    .get-a-quote .evaluation-text.bad {
-        background: #efe6ba;
-    }
-    .get-a-quote .tab-content .button {
-        display: block;
-        width: 100%;
-        text-align: center;
-        background: #2c3e50;
-        border: none;
-        cursor: pointer;
-        text-decoration: none;
-        padding: 0.5em;
-        font-size: 1.4em;
-        color: white;
-        font-weight: 200;
-        font-family: inherit;
-        margin-left: 0;
-        margin-right: 0;
-        margin-bottom: 0;
-        transition: background-color 0.2s;
-    }
-    .get-a-quote .tab-content .button:hover {
-        background: #3f5e7c;
-    }
-    .get-a-quote .get-in-touch-explanation {
-        text-align: center;
-        font-size: 0.6em;
-    }
-</style>
+
 <section class="rest-sales">
     <h1>Get a quote</h1>
     <p>
@@ -717,6 +315,6 @@ title: Let's start building your software 🗲 deranged
             });
         })();
         </script>
-        
+
     </section>
 </section>

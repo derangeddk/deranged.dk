@@ -1,23 +1,27 @@
 footer {
     background: #1b2b3a;
-    padding: 100px;
+    padding: 100px 30px;
     color: #eaf1f7;
     position: relative;
     display: grid;
-    grid-template-columns: 300px 200px 200px auto;
-
-    &:after {
-        content: '\21af';
-        color: #2c3e50;
-        font-size: 23em;
-        position: absolute;
-        top: -0.75em;
-        right: 0.4em;
-        transform: scaleY(-1) rotate(-50deg);
+    grid-template-columns: 100%;
+    @media screen and (min-width: 1200px) {
+      grid-template-columns: 300px 200px 200px auto;
+      padding: 100px;
+      &:after {
+          content: '\21af';
+          color: #2c3e50;
+          font-size: 23em;
+          position: absolute;
+          top: -0.75em;
+          right: 0.4em;
+          transform: scaleY(-1) rotate(-50deg);
+      }
     }
 }
 .footer-logo img {
     width: 100%;
+    max-width: 300px;
     object-fit: contain;
 }
 .footer-info {
