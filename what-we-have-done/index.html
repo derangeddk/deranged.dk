@@ -1,17 +1,195 @@
 ---
 layout: default
 ---
-{% include header4.html %}
+{% include header2.html %}
 <div class="container">
     <header>
-        <h5>what we have done</h5>
+        <h1>what we have done</h1>
     </header>
-    <section class="intro">
-        deranged is a new company, 
-    </section>
-    <div class="case-overview" style="width:100%;">
-            <img src="../img/kongen.jpg" alt="Kongen" style="width:25%;">
-            <img src="../img/se-kongen-danser.jpg" alt="se-kongen-danser" style="width:25%;">
-            <img src="../img/the-leader.jpg" alt="the-leader" style="width:25%;">
-    </div>
 </div>
+<div class="container">
+    <section class="intro">
+        <p>deranged is a very young company, made up of a strong team of engineers with a desire to do things differently.</p>
+        <p>
+            Elsewhere on this website you can read about <a href='/how-we-think/'>how we think</a> and what we offer as a company.
+            These cases provide concrete examples of the work we have done, and how, more concretely, we work with customers within their business demands and constraints.
+        </p>
+    </section>
+</div>
+<div class="case-summaries">
+    <div class="case-summary">
+        <img src="../img/maerkelex2.jpg" alt="maerkelex image">
+        <div class="summary-text">
+            <h1>Mærkelex</h1>
+            <p class="case-summary-preview-text">For Mærkelex, we built a highly scalable and cost-aware platform and webshop, bootstrapping a niche business. Efficient software doesn’t have to be expensive.</p>
+            <p>Mærkelex is a niche web shop selling scout badges designed by and for scouts in Denmark. Mærkelex design some scout badges, and license popular badges from other designers to sell directly on the platform. On top of being just a webshop it is also the go-to platform for discovering scout badges, including many that are not sold directly on the platform.</p>
+            <p>It was important for Mærkelex to get up and running on a minimal budget and with minimal recurring expenses, as the market for scout badges is limited in size.</p>
+            <p>We built a highly scalable website with a clear brand, and a webshop as a separate component, ensuring that the scalability of the two are disconnected. That means that traffic can increase on the platform without significantly increasing infrastructure costs, and sales specific traffic will pay for any potential increases in infrastructure cost for the webshop.</p>
+        </div>
+    </div>
+    <div class="case-summary">
+        <img src="../img/klikkit2.jpg" alt="klikkit image">
+        <div class="summary-text">
+            <h1>Klikkit</h1>
+            <p class="case-summary-preview-text">For The HabLab, we took over an existing backend system, improved stability and scalability, ensured adherence to legal requirements, and constructed a web application for interacting with the system.</p>
+            <p> "It has been a pleasure working with a proactive contracter such as deranged. With their technical capacity, they enable the necessary overview and execute quickly."
+            — Morten Schnack, CTO, The HabLab </p>
+            <p>Klikkit is a product built by The HabLab, a startup springing from LEO Innovation Lab. LEO Innovation Lab was started with the goal of making every step of skin disease treatment easier, and Klikkit is a product that focuses on keeping patients on track with their medication.</p>
+            <p>The product has broader implications than just in skin disease treatment, covering any kind of patient medication management.</p>
+            <p>We joined Klikkit to help make their backend system ready for pilots. They had an existing system that needed assessing and shining up, before being deployed. We worked closely with the rest of their team, integrating with their technical team to make the best decisions for the whole business.</p>
+            <p>We brought the entire system to the cloud, running it on Docker and Kubernetes, and ensured living up to legal requirements (specifically those of HIPAA and GDPR) such as regular backups and auditability. We ensured that the system was more stable and scalable by automating testing, and setting up advanced logging and monitoring, and ensuring geographic distribution.</p>
+            <p>Finally, we developed a web interface for carers of patients to interact with the system, providing live, actionable data as needed.</p>
+            <p>Most importantly, throughout the entire process, we worked closely with the business, being steered by business objectives and goals, and making sure we put their money to the best possible use.</p>
+        </div>
+    </div>
+    <div class="case-summary">
+        <img src="../img/coen-van-den-broek-1139524-unsplash.jpg" alt="on-demand service image">
+        <div class="summary-text">
+            <h1>An on-demand economy service</h1>
+            <p class="case-summary-preview-text">For an on-demand service we took over from a previous team of developers, maintaining the platform and developing a few new features.</p>
+            <p>The service provides an interface for looking up a service to be provided on-demand. The budget for the project was fairly limited and based entirely on incoming funds.</p>
+            <p>We adjusted to the budget and business situation and helped bring the business forward at a sustainable pace.</p>
+            <p>We also helped make strategic plans for improving cash flow through expansion of the business and business opportunities, leveraging the company’s existing platform to move into other markets.</p>
+        </div>
+    </div>
+    <div class="fade"></div>
+</div>
+
+<script>
+
+    var nodeList = document.querySelectorAll(".case-summary");
+    var cases = Array.prototype.map.call(nodeList, function(caseNode) {
+        return {
+            element: caseNode,
+            state: {
+                expanded: false
+            }
+        }
+    });
+
+    var fade = document.querySelector(".fade");
+    fade.addEventListener("click", function() {
+        expandedSummary = cases.find(x => x.state.expanded);
+        if(!expandedSummary) {
+            //something is super wrong
+            return;
+        }
+        closeSummary(expandedSummary, this);
+    });
+
+    var spaceElement = document.createElement("div");
+    spaceElement.classList.add("case-summary");
+    spaceElement.setAttribute('id', "space");
+    spaceElement.style.visibility = "hidden";
+
+    cases.forEach(function(c) {
+        c.element.addEventListener("click", function() {
+            if(c.state.expanded) {
+                closeSummary(c, fade);
+            }
+            else {
+                expandSummary(c, fade);
+            }
+        })
+    });
+
+    function closeSummary(expandedCase, fade) {
+        expandedCase.element.classList.remove("case-summary-expanded");
+        var space = document.getElementById("space");
+        space.parentNode.removeChild(space);
+        expandedCase.state.expanded = false;
+        fade.style.display = "none";
+    }
+
+    function expandSummary(c, fade) {
+        c.element.classList.add("case-summary-expanded");
+        c.state.expanded = true;
+        fade.style.display = "block";
+        c.element.parentNode.insertBefore(spaceElement, c.element);
+    }
+</script>
+
+<style>
+    .container {
+        max-width: 1000;
+    }
+
+    h1 {
+        text-align: center;
+        margin-top: 30px;
+        font-weight: 300;
+        font-size: 40px;
+        margin-bottom: 0;
+    }
+
+    .intro {
+        text-align: center;
+        padding: 0 8px;
+    }
+
+    .case-summaries {
+        display: flex;
+        position: relative;
+        flex-wrap: wrap;
+        overflow-wrap: break-word;
+    }
+
+    .case-summary {
+        margin: 10px;
+        width:0;
+        flex-grow: 1;
+        text-align: left;
+        background: white;
+        box-shadow: 0 0 4px rgba(0,0,0, 0.2), 0 2px 2px rgba(0, 0, 0, 0.2);
+        z-index: 100;
+        min-width: 250px;
+        overflow: visible;
+    }
+
+    .case-summary h1 {
+        font-size: 1.6em;
+        font-weight: 200;
+        text-align: center;
+    }
+
+    .case-summary p {
+        padding: 0 15px;
+    }
+
+    .case-summary:not(.case-summary-expanded) p:not(.case-summary-preview-text) {
+        display: none;
+    }
+
+    .case-summaries .case-summary img {
+        width:100%;
+        height: 20vw;
+        max-height: 250px;
+        object-fit: cover;
+    }
+
+    .case-summary-expanded {
+        position: fixed;
+        width: 650px;
+        top: 85px;
+        left: calc((100vw - 650px) / 2);
+        z-index: 300;
+        height: 80vh;
+        overflow-y: auto;
+        box-shadow: 0 0 90px rgba(0,0,0, 0.2), 10px 10px 25px rgba(0, 0, 0, 0.2);
+    }
+
+    .case-summary-expanded .summary-text {
+        padding: 0 20px;
+    }
+
+    .fade {
+        background: rgba(0,0,0,0.4);
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        z-index: 200;
+        display: none;
+    }
+</style>
