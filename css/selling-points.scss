@@ -1,22 +1,25 @@
 ---
 permalink: /css/selling-points.css
 ---
-.selling-points {
-    display: grid;
-    grid-template-columns: minmax(100px, 750px);
-    margin: 70px 0;
-    justify-content: center;
+$selling-point-vertical-spacing: 130px;
 
-    @media(max-width: 600px) {
-        grid-auto-columns: 1fr;
-    }
+.selling-points {
+    display: inline-grid;
+    grid-template-columns: 2fr 1fr 2fr;
+    margin: $selling-point-vertical-spacing 0 0;
 }
 
 .selling-point {
     position: relative;
-    border: 1px solid #070d14;
-    box-shadow: 0 0 2px rgba(0, 0, 0, 0.1), 0 2px 4px rgba(0, 0, 0, 0.1);
-    margin-bottom: 40px;
+    margin-bottom: $selling-point-vertical-spacing;
+    padding-left: 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    grid-column: 2 / 4;
+    max-width: 675px;
+    min-width: 100px;
 
     @media (min-width: 768px) {
         margin-left: 40px;
@@ -24,9 +27,9 @@ permalink: /css/selling-points.css
 
     img {
         position: absolute;
-        top: 44%;
+        top: calc(-40px + 0.95em);
         left: -40px;
-        background-image: linear-gradient(45deg, rgba(7, 13, 20, 0.9), rgba(30, 49, 73, 0.85));
+        background-image: linear-gradient(45deg, rgb(7, 13, 20), rgb(30, 49, 73));
         padding: 10px;
         border-radius: 100%;
         width: 80px;
@@ -43,16 +46,17 @@ permalink: /css/selling-points.css
 
     h2 {
         margin: 0;
-        font-size: 1.2em;
-        font-weight: 400;
-        padding: 15px;
-        color: white;
-        background: #2c3e50;
-        color: #ecf0f1;
+        font-size: 1.1em;
+        font-weight: 600;
+        color: #2c3e50;
+        border-bottom: 1px solid #2c3e50;
+        text-align: left;
+        margin-left: 15px;
     }
 
     &:nth-child(2n) {
         margin-left: 0;
+        grid-column: 1 / 3;
 
         @media (min-width: 768px) {
             margin-right: 40px;
@@ -63,9 +67,12 @@ permalink: /css/selling-points.css
             right: -41px;
         }
 
+        padding-left: 0;
+        padding-right: 50px;
+
         .selling-point__text {
             padding-left: 15px;
-            padding-right: 65px;
+            padding-right: 15px;
 
             @media (max-width: 767px) {
                 padding-right: 15px;
@@ -76,9 +83,9 @@ permalink: /css/selling-points.css
 
 .selling-point__text {
     padding: 15px;
-    padding-left: 65px;
+    padding-left: 15px;
     padding-bottom: 0;
-    font-size: 1.2em;
+    font-size: 1.1em;
     text-align: left;
 
     @media (max-width: 767px) {
