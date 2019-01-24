@@ -3,7 +3,7 @@ permalink: /css/selling-points.css
 ---
 .selling-points {
     display: grid;
-    grid-template-columns: minmax(100px, 1100px);
+    grid-template-columns: minmax(100px, 750px);
     margin: 70px 0;
     justify-content: center;
 
@@ -43,9 +43,9 @@ permalink: /css/selling-points.css
 
     h2 {
         margin: 0;
-        font-size: 25px;
+        font-size: 1.2em;
         font-weight: 400;
-        padding: 20px;
+        padding: 15px;
         color: white;
         background: #2c3e50;
         color: #ecf0f1;
@@ -64,19 +64,20 @@ permalink: /css/selling-points.css
         }
 
         .selling-point__text {
-            padding-left: 30px;
-            padding-right: 80px;
+            padding-left: 15px;
+            padding-right: 65px;
 
             @media (max-width: 767px) {
-                padding-right: 30px;
+                padding-right: 15px;
             }
         }
     }
 }
 
 .selling-point__text {
-    padding: 30px;
-    padding-left: 80px;
+    padding: 15px;
+    padding-left: 65px;
+    padding-bottom: 0;
     font-size: 1.2em;
     text-align: left;
 
