@@ -1,0 +1,86 @@
+---
+permalink: /css/selling-points.css
+---
+.selling-points {
+    display: grid;
+    grid-template-columns: minmax(100px, 1100px);
+    margin: 70px 0;
+    justify-content: center;
+
+    @media(max-width: 600px) {
+        grid-auto-columns: 1fr;
+    }
+}
+
+.selling-point {
+    position: relative;
+    border: 1px solid #070d14;
+    box-shadow: 0 0 2px rgba(0, 0, 0, 0.1), 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin-bottom: 40px;
+
+    @media (min-width: 768px) {
+        margin-left: 40px;
+    }
+
+    img {
+        position: absolute;
+        top: 44%;
+        left: -40px;
+        background-image: linear-gradient(45deg, rgba(7, 13, 20, 0.9), rgba(30, 49, 73, 0.85));
+        padding: 10px;
+        border-radius: 100%;
+        width: 80px;
+        height: 80px;
+        object-fit: contain;
+        box-sizing: border-box;
+        transition: transform 0.4s, box-shadow 0.4s, background-color 0.4s;
+        box-shadow: 0 0 2px rgba(0, 0, 0, 0.1), 0 2px 4px rgba(0, 0, 0, 0.1);
+
+        @media(max-width: 767px) {
+            display: none;
+        } 
+    }
+
+    h2 {
+        margin: 0;
+        font-size: 25px;
+        font-weight: 400;
+        padding: 20px;
+        color: white;
+        background: #2c3e50;
+        color: #ecf0f1;
+    }
+
+    &:nth-child(2n) {
+        margin-left: 0;
+
+        @media (min-width: 768px) {
+            margin-right: 40px;
+        }
+
+        img {
+            left: auto;
+            right: -41px;
+        }
+
+        .selling-point__text {
+            padding-left: 30px;
+            padding-right: 80px;
+
+            @media (max-width: 767px) {
+                padding-right: 30px;
+            }
+        }
+    }
+}
+
+.selling-point__text {
+    padding: 30px;
+    padding-left: 80px;
+    font-size: 1.2em;
+    text-align: left;
+
+    @media (max-width: 767px) {
+        padding-left: 30px;
+    }
+}
