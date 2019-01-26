@@ -59,17 +59,22 @@ permalink: /css/homestyle.css
       font-size: 1.6em;
     }
   }
+
   .quick-intro {
     text-align: left;
     max-width: 550px;
     font-size: 1.05em;
     line-height: 150%;
     position: relative;
-    &:before {
-      content: '\1f5f2';
+  
+    .quick-intro-icon {
       position: absolute;
       left: -1.5em;
       top: 0;
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
+      user-select: none;
     }
 
     @media (max-width: 400px) {

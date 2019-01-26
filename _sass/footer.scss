@@ -8,14 +8,18 @@ footer {
     @media screen and (min-width: 1200px) {
       grid-template-columns: 300px 200px 200px auto;
       padding: 100px;
-      &:after {
-          content: '\21af';
+
+      .footer-icon {
           color: #2c3e50;
           font-size: 23em;
           position: absolute;
           top: -0.75em;
           right: 0.4em;
           transform: scaleY(-1) rotate(-50deg);
+          -webkit-user-select: none;
+          -moz-user-select: none;
+          -ms-user-select: none;
+          user-select: none;
       }
     }
 }
