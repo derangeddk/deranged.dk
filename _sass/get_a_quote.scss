@@ -11,8 +11,9 @@
   h1 {
     font-weight: 200;
     font-size: 3em;
-    margin: 0.5em;
+    margin: 10px;
     margin-top: 2.5em;
+    margin-bottom: 0.5em;
   }
   > p {
     max-width: 500px;
@@ -28,8 +29,8 @@
 
   @media screen and (max-width: 539px) {
     p {
-      padding-left: 30px;
-      padding-right: 30px;
+      padding-left: 10px;
+      padding-right: 10px;
     }
   }
 }
@@ -134,13 +135,5 @@
   }
   @media screen and (max-width: 767px) {
     margin-bottom: 0;
-  }
-}
-
-@media screen and (max-width:1199px) {
-  .rest-sales {
-    background: #FFF;
-    background-image: none;
-    color: #2c3e50;
   }
 }
