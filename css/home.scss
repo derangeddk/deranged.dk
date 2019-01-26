@@ -14,6 +14,16 @@ permalink: /css/homestyle.css
   background-image: linear-gradient(40deg, #2c3e50 30%, #455d75 90%);
   color: #eaf1f7;
   position: relative;
+
+  @media (max-width: 1000px) {
+    padding: 100px 50px;
+  }
+  @media (max-width: 600px) {
+    padding: 100px 30px;
+    font-size: 0.95em;
+    height: auto;
+  }
+
   .logo {
     color: inherit;
     text-decoration: inherit;
@@ -28,10 +38,25 @@ permalink: /css/homestyle.css
     h1 {
       font-size: 2em;
       margin: 0;
+
+      @media (max-width: 400px) {
+        margin: 15px 0;
+      }
     }
     h2 {
       font-size: 1.3em;
       margin: 0;
+
+      @media (max-width: 400px) {
+        margin: 0 0 15px;
+      }
+    }
+
+    @media (max-width: 1200px) {
+      font-size: 2em;
+    }
+    @media (max-width: 900px) {
+      font-size: 1.6em;
     }
   }
   .quick-intro {
@@ -46,6 +71,10 @@ permalink: /css/homestyle.css
       left: -1.5em;
       top: 0;
     }
+
+    @media (max-width: 400px) {
+      margin-bottom: 25px;
+    }
   }
   .more-button {
     background-color: transparent;
@@ -58,20 +87,22 @@ permalink: /css/homestyle.css
     height: 48px;
     width: 48px;
     animation: upanddown 2.5s linear infinite alternate;
+
+    @media (max-width: 1000px) {
+      right: 50px;
+    }
+    @media (max-width: 600px) {
+      right: 30px;
+    }
   }
   @media screen and (max-width:768px) {
-    padding: 60px 50px 100px;
     .big-greeting {
-      h1 {font-size: 1.3em; margin-bottom: 20px;}
-      h2 {font-size: 0.8em}
+      font-size: 1.2em;
     }
     .more-button {
       bottom:30px;
       right: 30px;
     }
-  }
-  @media screen and (max-width: 539px) {
-    font-size: 12px;
   }
 }
 
@@ -134,10 +165,14 @@ permalink: /css/homestyle.css
     &:before {
       content: '— ';
     }
+
+    @media screen and (max-width: 539px) {
+      font-size: 1.15em;
+    }
   }
   @media screen and (max-width: 539px) {
-    padding: 30px 50px;
-    font-size: 12px;
+    padding: 30px 35px;
+    font-size: 0.7em;
   }
 }
 
@@ -157,6 +192,14 @@ permalink: /css/homestyle.css
     background: #375068;
     transform: scale(1.1);
   }
+
+  @media screen and (max-width: 539px) {
+    font-size: 1.2em;
+  }
+
+  @media (max-width: 400px) {
+    margin: 20px -25px;
+  }
 }
 
 .products-section {
@@ -166,10 +209,9 @@ permalink: /css/homestyle.css
   justify-content: center;
   align-items: center;
   @media screen and (max-width:767px) {
-    padding: 0 30px;
+    padding: 0 10px;
   }
   @media screen and (max-width: 539px) {
-    font-size: 12px;
     padding: 0;
   }
 }
@@ -206,7 +248,7 @@ permalink: /css/homestyle.css
     }
     img {
       transform: translateY(-45px) translateX(-45px);
-      /*background-color: rgba(7, 13, 20, 0.9);*/
+      background-color: rgba(7, 13, 20, 0.9);
       background-image: linear-gradient(45deg, rgba(7, 13, 20, 0.9), rgba(30, 49, 73, 0.85));
       padding: 10px;
       border-radius: 100%;
@@ -275,14 +317,27 @@ permalink: /css/homestyle.css
     .product {
       margin-bottom: 100px;
       margin-left: 10px;
-      font-size: 18px;
       width: auto;
       max-width: 500px;
       padding-bottom: 50px;
+
+      &:hover img {
+        transform: scale(1.1);
+        box-shadow: 0 0 3px rgba(0, 0, 0, 0.15), 0 3px 6px rgba(0, 0, 0, 0.15);
+        background-color: #070d14;
+      }
+
+      h1 {
+        text-align: center;
+        margin-top: 1.5em;
+      }
     }
   }
   @media screen and (max-width:539px) {
-    padding: 50px 30px;
+    padding: 50px 10px;
+  }
+  @media screen and (max-width: 400px) {
+    padding: 50px 0;
   }
 }
 
@@ -307,6 +362,9 @@ permalink: /css/homestyle.css
   }
   @media screen and (max-width: 539px) {
     padding: 50px 30px;
+  }
+  @media screen and (max-width: 400px) {
+    padding: 50px 10px;
   }
 }
 
@@ -363,6 +421,12 @@ permalink: /css/homestyle.css
       grid-template-columns: 1fr 1fr 1fr;
       grid-auto-rows: 1fr 1fr;
       margin-left: 0;
+    }
+  }
+  @media screen and (max-width: 400px) {
+    .who-we-are-content {
+      padding-left: 10px;
+      padding-right: 10px;
     }
   }
 }
