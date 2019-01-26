@@ -68,6 +68,12 @@ layout: default
             display: grid;
             grid-template-columns: 1fr 1fr 1fr;
             color: #ecf0f1;
+            grid-auto-flow: dense;
+        }
+        @media (max-width: 1150px) {
+            .product-intro {
+                grid-template-columns: 1fr 1fr;
+            }
         }
         .product-intro .product-description {
             grid-column: span 2;
@@ -76,16 +82,26 @@ layout: default
             text-align: left;
             font-size: 1.2em;
         }
+        @media (max-width: 1150px) {
+            .product-intro .product-description {
+                grid-row: 1 / 2;
+            }
+        }
         .product-intro .product-description p {
             max-width: 625px;
         }
         .product-intro .alternate-products-box {
             grid-column: 3 / 4;
-            grid-row: 2 / 3;
+            grid-row: span 1;
             background: #ecf0f1;
             display: flex;
             justify-content: center;
             align-items: center;
+        }
+        @media (max-width: 1150px) {
+            .product-intro .alternate-products-box {
+                grid-column: 2 / 3;
+            }
         }
         .product-intro .image {
             grid-row: span 1;
@@ -93,6 +109,7 @@ layout: default
             padding: 20px 15px;
             position: relative;
             overflow: hidden;
+            min-height: 250px;
         }
         .product-intro .image .image-icon {
             position: absolute;
