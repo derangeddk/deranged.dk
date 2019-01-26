@@ -127,12 +127,15 @@ permalink: /css/homestyle.css
   flex-direction: column;
   color: #eaf1f7;
   padding: 30px 100px;
+  overflow: hidden;
+
   .quote-text {
     font-family: 'Libre Baskerville', serif;
     font-size: 1.3em;
     max-width: 800px;
     line-height: 175%;
     position: relative;
+  
     &:before {
       content: '“';
       font-size: 5em;
@@ -141,6 +144,7 @@ permalink: /css/homestyle.css
       top: 25px;
       opacity: 0.8;
     }
+  
     &:after {
       content: '”';
       font-size: 5em;
