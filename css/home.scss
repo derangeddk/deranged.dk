@@ -228,11 +228,19 @@ permalink: /css/homestyle.css
 .product-presentation {
   display: grid;
   grid-template-rows: auto auto;
+
+  &:before {
+    content: '';
+    grid-row: 1 / 3;
+    grid-column: 3 / 4;
+    width: 200px;
+  }
+
   > h1 {
     grid-row: 1 / 2;
     grid-column: span 2;
     font-weight: 200;
-    font-size: 2.5em;
+    font-size: 3.5em;
     margin-top: 0;
     margin-bottom: 2em;
   }
@@ -303,13 +311,18 @@ permalink: /css/homestyle.css
       }
     }
   }
-  @media screen and (max-width:1500px) {
+  @media screen and (max-width:1700px) {
     grid-template-columns: 1fr 1fr;
+
+    &:before {
+      content: none;
+    }
+
     > h1 {
       grid-row: auto;
       grid-column: span 2;
       &:not(:first-child) {
-        margin-top: 100px;
+        margin-top: 2.8em;
       }
     }
   }
@@ -320,7 +333,7 @@ permalink: /css/homestyle.css
       grid-column: auto;
       margin-bottom: 50px;
       &:not(:first-child) {
-        margin-top: 0px;
+        margin-top: 0;
       }
     }
     .product {
