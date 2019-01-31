@@ -1,0 +1,36 @@
+footer {
+    background: #1b2b3a;
+    padding: 100px 30px;
+    color: #eaf1f7;
+    position: relative;
+    display: grid;
+    grid-template-columns: 100%;
+    @media screen and (min-width: 1200px) {
+      grid-template-columns: 300px 200px 200px auto;
+      padding: 100px;
+
+      .footer-icon {
+          color: #2c3e50;
+          font-size: 23em;
+          position: absolute;
+          top: -0.75em;
+          right: 0.4em;
+          transform: scaleY(-1) rotate(-50deg);
+          -webkit-user-select: none;
+          -moz-user-select: none;
+          -ms-user-select: none;
+          user-select: none;
+      }
+    }
+}
+.footer-logo img {
+    width: 100%;
+    max-width: 300px;
+    object-fit: contain;
+}
+.footer-info {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+}

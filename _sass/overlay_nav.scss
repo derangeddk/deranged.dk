@@ -1,0 +1,116 @@
+/* Overlay Nav Styling khaskjf */
+nav.overlay {
+  position: fixed;
+  top: 0;
+  left: 10%;
+  width: 100%;
+  height: 100%;
+  background: rgba(44, 62, 80,0.99);
+  padding: 0 20%;
+  z-index: -1;
+  opacity: 0.0;
+  transition: all 200ms ease;
+  @media screen and (min-width: 768px) {
+    nav.overlay:before {
+       content: "\219D";
+       font-size: 300px;
+       color: white;
+       opacity: 0;
+       position: absolute;
+       left: 10%;
+       top: 50%;
+       transform: translateY(-40%);
+       transition: opacity 1000ms linear 300ms;
+    }
+  }
+}
+
+.main-nav-menu {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 100%;
+  max-width: 400px;
+  margin-left: auto;
+  a {
+    display: block;
+    text-align: right;
+    font-size: 36px;
+    font-weight: 300;
+    color: white;
+    text-decoration: none;
+    padding: 25px 0;
+    position: relative;
+    &:after {
+      content: "";
+      display: block;
+      position: absolute;
+      bottom: 20%;
+      height: 0;
+      width: 2px;
+      right: -20px;
+      background: white;
+      transition: height 500ms ease;
+    }
+    &:hover:after {
+      height: 60%;
+    }
+  }
+}
+
+#main-nav-toggle {
+  position: absolute;
+  top: 30px;
+  right: 30px;
+  z-index: 100;
+  font-size: 36px;
+  background: transparent;
+  border-width: 0;
+  cursor: pointer;
+
+  .icon-bar {
+   background: white;
+   height: 3px;
+   width: 30px;
+   margin-bottom: 7px;
+   position: relative;
+   transition: all 200ms ease;
+   opacity: 1;
+   top:0;
+ }
+}
+
+body.main-nav-open {
+  position: fixed;
+  overflow-y:scroll;
+  width: 100%;
+  nav.overlay {
+    top: 0;
+    left: 0;
+    z-index:10;
+    opacity:1;
+
+    @media screen and (min-width: 768px) {
+      &:before {
+         opacity: 0.4;
+      }
+    }
+  }
+  #main-nav-toggle {
+    .icon-bar:nth-child(1) {
+        transform: rotate(45deg);
+        top: 10px;
+        left: 0;
+    }
+    .icon-bar:nth-child(2) {
+        opacity: 0;
+        top: 0;
+        left: 0;
+    }
+    .icon-bar:nth-child(3) {
+        transform: rotate(-45deg);
+        top: -10px;
+        left: 0;
+    }
+  }
+}

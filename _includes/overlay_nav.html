@@ -1,0 +1,16 @@
+<button id="main-nav-toggle" onClick="handleNav()">
+  <div class="icon-bar"></div>
+  <div class="icon-bar"></div>
+  <div class="icon-bar"></div>
+</button>
+<nav id="main-nav" class="main-nav overlay">
+  <div class="main-nav-menu">
+    {% include menu_links.html %}
+  </div>
+</nav>
+
+<script>
+    function handleNav() {
+      document.querySelector("body").classList.toggle("main-nav-open");
+    }
+</script>
