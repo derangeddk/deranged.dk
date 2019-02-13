@@ -58,6 +58,14 @@ nav.overlay {
   }
 }
 
+#main-nav-toggle:focus {
+  outline: 0;
+}
+
+#main-nav-toggle::-moz-focus-inner{
+  border: 0;
+}
+
 #main-nav-toggle {
   position: absolute;
   top: 30px;
