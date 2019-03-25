@@ -1,103 +1,121 @@
 ---
 layout: default
-title: 'who we are / deranged'
+title: 'the Team ↳↷↷ deranged'
 ---
-{% include header2.html %}
-<div class="container">
-    <style type="text/css" scoped>
-        h1 {
-            margin-left: 15px;
-            margin-bottom: 10px;
-        }
-        .intro {
-            display: flex;
-            flex-direction: row;
-            align-items: stretch;
-            justify-content: flex-start;
-            flex-wrap: wrap;
-            padding: 0 15px;
-        }
-        .intro a {
-            color: #17395b;
-        }
-        .intro-text {
-            max-width: 400px;
-            flex-basis: 300px;
-            flex-grow: 1;
-            flex-shrink: 0;
-            margin-right: 25px;
-            margin-top: 10px;
-            margin-bottom: 20px;
-        }
-        .intro-image {
-            flex-basis: 300px;
-            flex-grow: 2;
-            flex-shrink: 0;
-            background: white;
-            box-shadow: 0 0 2px rgba(0,0,0,0.2), 0 2px 4px rgba(0,0,0,0.2);
-            padding: 15px;
-            margin-top: 10px;
-            margin-bottom: 20px;
-        }
-        @media (max-width: 600px) {
-            .intro-image {
-                min-height: 50vh;
-            }
-        }
-        .intro-image img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-        h1 {
-            font-weight: 200;
-            font-size: 3em;
-        }
-        .people-intro {
-            margin-top: 90px;
-            text-align: center;
-            padding: 10px;
-        }
-        .people-intro a {
-            color: #17395b;
-        }
-    </style>
+{% include overlay_nav.html %}
+
+<style type="text/css" scoped>
+    .header {
+        background: rgba(52, 73, 94, 1.0);
+        display: grid;
+        grid-template-columns: 150px 1fr;
+        color: #eaf1f7;
+        padding: 30px;
+        text-align: left;
+    }
+
+    .header .logo {
+        color: inherit;
+        text-decoration: inherit;
+        font-weight: 200;
+        font-size: 1.3em;
+        position: relative;
+        z-index: 11;
+    }
+
+    .header h1 {
+        margin: 0;
+        padding: 0;
+        margin-top: -9px;
+        font-weight: 200;
+        font-size: 3em;
+    }
+</style>
+<section class="header">
+    <a href="/" class="logo">deranged</a>
     <h1>Who we are</h1>
-    <section class="intro">
-        <div class="intro-text">
-            <p>
-                deranged is a team of enthusiastic, quick-working developers.
-                We have experts at every level of full-stack web application development, and experience from a broad swath of industries and companies.
-            </p>
-            <p>
-                Our current offices are in the Nordvest area, in the shared office space <a href="https://www.google.com/maps/place/Glasvej+3,+2400+København/@55.703652,12.5273953,17z/" target="_blank" rel="noopener">STUDIET Glasvej 3</a>.
-            </p>
-                Our mailing address is:<br>
-                deranged<br>
-                Att. Niels Roesen Abildgaard<br>
-                Markskellet 8 st th<br>
-                2720 Vanløse
-            </p>
-            <p>
-                You can get in touch with us via email on <a href="mailto:get@deranged.dk">get@deranged.dk</a>.
-            </p>
-        </div>
-        <div class="intro-image">
-            <a href="https://www.google.com/maps/place/Glasvej+3,+2400+København/@55.703652,12.5273953,17z/" target="_blank" rel="noopener">
-                <img src="/img/map.png">
-            </a>
-        </div>
-    </section>
-</div>
-<div class="people-intro">
-    <h1>Team</h1>
-    <p>
-        Take a look at our competent team here!
-    </p>
-    <p>
-        You can also look at our developer profiles in more depth in our <a target="_blank" href="/files/team-cv.pdf">team CV</a>.
-    </p>
-</div>
+</section>
+<style type="text/css" scoped>
+    .intro {
+        background: rgba(52, 73, 94, 1.0);
+        color: #eaf1f7;
+        display: flex;
+    }
+    .intro-text {
+        font-size: 1.3em;
+        text-align: left;
+        padding: 45px;
+        padding-left: 175px;
+        max-width: 1000px;
+    }
+    .intro-image {
+        flex-basis: 300px;
+        flex-grow: 2;
+        flex-shrink: 0;
+        position: relative;
+        opacity: 0.85;
+        transition: opacity 0.4s;
+    }
+    .intro-image:hover {
+        opacity: 1;
+    }
+    @media (max-width: 600px) {
+        .intro-image {
+            min-height: 50vh;
+        }
+    }
+    .intro-image img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+    .intro-image:after {
+        content: '';
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        background-image: linear-gradient(340deg, rgb(69, 93, 117, 0.7) 0%, transparent 35%, transparent 65%, rgba(52, 73, 94, 0.8) 100%);
+        transition: opacity 0.3s;
+        z-index: 1;
+        pointer-events: none;
+    }
+    .intro-image:hover:after {
+        opacity: 0.7;
+    }
+</style>
+<section class="intro">
+    <div class="intro-text">
+        <p>
+            deranged is a team of enthusiastic, quick-working developers.
+            We have experts at every level of full-stack web application development, and experience from a broad swath of industries and companies.
+        </p>
+        <p>
+            Our current offices are in the Nordvest area, in the shared office space <a href="https://www.google.com/maps/place/Glasvej+3,+2400+København/@55.703652,12.5273953,17z/" target="_blank" rel="noopener">STUDIET Glasvej 3</a>.
+        </p>
+            Our mailing address is:<br>
+            deranged<br>
+            Att. Niels Roesen Abildgaard<br>
+            Markskellet 8 st th<br>
+            2720 Vanløse
+        </p>
+        <p>
+            You can get in touch with us via email on <a href="mailto:get@deranged.dk">get@deranged.dk</a>.
+        </p>
+        <p>
+            On this page, you can see the competent people on our team. You can also look at our developer profiles in more depth in our <a target="_blank" href="/files/team-cv.pdf">team CV</a>.
+        </p>
+    </div>
+    <div class="intro-image">
+        <a href="https://www.google.com/maps/place/Glasvej+3,+2400+København/@55.703652,12.5273953,17z/" target="_blank" rel="noopener">
+            <img src="/img/map.png">
+        </a>
+    </div>
+</section>
+<section class="people-container">
+
+</section>
 <style>
     .people-container {
         width: 100%;
