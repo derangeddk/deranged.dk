@@ -125,7 +125,7 @@ title: 'the Team ↳↷↷ deranged'
         grid-gap: 8px;
         position: relative;
         z-index: 1;
-        padding: 8px 0;
+        padding: 8px 0 0;
     }
     .person-image {
         grid-row: span 2;
@@ -265,6 +265,23 @@ title: 'the Team ↳↷↷ deranged'
         transform: translateY(128px);
         height: 51px;
     }*/
+    .join-us-container {
+        background: rgb(44, 62, 80);
+        background-image: linear-gradient(rgb(44, 62, 80) 40%, rgb(27, 43, 58));
+        color: #eaf1f7;
+        grid-column: span 2;
+        grid-row: span 2;
+        font-size: 1.5em;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 100px;
+    }
+    .join-us-container h1 {
+        font-size: 2.5em;
+        font-weight: 100;
+    }
 </style>
 <section class="people-container">
     <div class="person-image person-lg-col-1">
@@ -416,5 +433,11 @@ title: 'the Team ↳↷↷ deranged'
     </div>
     <div class="person-image person-lg-col-4">
         <img src="/img/people/liv-borre.jpg">
+    </div>
+    <div class="join-us-container">
+        <h1>Want to join the team?</h1>
+        <p>
+            We are not currently actively hiring, but if you are interested in what it's like working with us, and would like to learn more, you are always welcome to contact us on <a href="mailto:get@deranged.dk">get@deranged.dk</a>.
+        </p>
     </div>
 </section>
