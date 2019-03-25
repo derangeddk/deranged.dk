@@ -30,6 +30,11 @@ title: 'the Team ↳↷↷ deranged'
         font-weight: 200;
         font-size: 3em;
     }
+    @media (max-width: 600px) {
+        .header {
+            grid-template-columns: 1fr;
+        }
+    }
 </style>
 <section class="header">
     <a href="/" class="logo">deranged</a>
@@ -55,6 +60,7 @@ title: 'the Team ↳↷↷ deranged'
         position: relative;
         opacity: 0.85;
         transition: opacity 0.4s;
+        max-width: 1500px;
     }
     .intro-image:hover {
         opacity: 1;
@@ -83,6 +89,34 @@ title: 'the Team ↳↷↷ deranged'
     }
     .intro-image:hover:after {
         opacity: 0.7;
+    }
+    @media (max-width: 1450px) {
+        .intro-text {
+            font-size: 1.1em;
+            max-width: 800px;
+        }
+    }
+    @media (max-width: 1100px) {
+        .intro-text {
+            font-size: 1em;
+            max-width: 700px;
+        }
+    }
+    @media (max-width: 900px) {
+        .intro {
+            flex-direction: column;
+        }
+        .intro-image {
+            max-height: 50vw;
+        }
+    }
+    @media (max-width: 600px) {
+        .intro-text {
+            padding: 40px 25px;
+        }
+        .intro-image {
+            display: none;
+        }
     }
 </style>
 <section class="intro">
@@ -558,6 +592,16 @@ title: 'the Team ↳↷↷ deranged'
     @media (max-width: 599px) {
         .join-us-container {
             grid-column: span 1;
+        }
+    }
+    @media (max-width: 450px) {
+        .join-us-container {
+            padding: 50px;
+        }
+    }
+    @media (max-width: 350px) {
+        .join-us-container {
+            padding: 25px;
         }
     }
 </style>
