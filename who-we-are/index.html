@@ -118,10 +118,14 @@ title: 'the Team ↳↷↷ deranged'
     .people-container {
         display: grid;
         grid-template-columns: 1fr 1fr 1fr 1fr;
+        grid-auto-rows: 1fr;
         background: rgb(44, 62, 80);
         background-image: linear-gradient(160deg, rgb(44, 62, 80) 40%, rgb(69, 93, 117) 100%);
         grid-auto-flow: dense;
         grid-gap: 8px;
+        position: relative;
+        z-index: 1;
+        padding: 8px 0;
     }
     .person-image {
         grid-row: span 2;
@@ -143,6 +147,12 @@ title: 'the Team ↳↷↷ deranged'
     .person-lg-col-4 {
         grid-column: 4 / 5;
     }
+    .person-image.person-lg-row-2 {
+        grid-row: 2 / 4;
+    }
+    .person.person-lg-row-4 {
+        grid-row: 4 / 5;
+    }
     .person-lg-scoot-left {
         transform: translateX(-30px);
         position: relative;
@@ -162,6 +172,7 @@ title: 'the Team ↳↷↷ deranged'
         left: -50px;
         top: 22px;
         background-color: rgba(52, 73, 94, 1.0);
+        z-index: 10;
     }
     .person-lg-scoot-right {
         transform: translateX(30px);
@@ -183,21 +194,77 @@ title: 'the Team ↳↷↷ deranged'
         right: -50px;
         top: 22px;
         background-color: rgba(52, 73, 94, 1.0);
+        z-index: 10;
     }
     .person {
         text-align: left;
         color: #eaf1f7;
         padding: 30px 15px;
         background: rgba(52, 73, 94, 1.0);
+        box-shadow: 0 1px 3px rgba(0,0,0,0.4);
+        font-size: 1.1em;
+        position: relative;
+        z-index: 1;
+    }
+    .person .person-name {
+        margin-bottom: 1em;
     }
     .person .person-name h2 {
         font-weight: 100;
-        font-size: 2em;
+        font-size: 1.85em;
         margin: 0;
     }
-    .person .person-about, .person .person-free-time, .person .person-previous-experience {
+    .person .person-about, .person .person-free-time {
         max-width: 550px;
     }
+    .person .person-title {
+        font-size: 0.85em;
+    }
+    .person-about:before {
+        content: '';
+        display: block;
+        width: 100%;
+        height: 18px;
+        background-image: url('/img/code-icon.svg');
+        background-size: contain;
+        background-position: center left;
+        background-repeat: no-repeat;
+        margin-bottom: -1em;
+    }
+    .person-free-time:before {
+        content: '';
+        display: block;
+        width: 100%;
+        height: 18px;
+        background-image: url('/img/terrain-icon.svg');
+        background-size: contain;
+        background-position: center left;
+        background-repeat: no-repeat;
+        margin-bottom: -5px;
+    }
+    .person .person-previous-experience, .person .person-links {
+        height: 0;
+        overflow: hidden;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background: rgb(69, 93, 117);
+        padding: 0 15px;
+        z-index: 103;
+        transition: transform 0.4s, height 0.4s, padding 0.4s;
+        font-size: 0.9em;
+    }
+    /* TODO: make showing more info on hover work */
+    /*.person:hover .person-previous-experience, .person:hover .person-links {
+        height: 73px;
+        padding: 15px;
+        transform: translateY(75px);
+    }
+    .person:hover .person-links {
+        transform: translateY(128px);
+        height: 51px;
+    }*/
 </style>
 <section class="people-container">
     <div class="person-image person-lg-col-1">
@@ -259,7 +326,7 @@ title: 'the Team ↳↷↷ deranged'
     <div class="person-image person-lg-col-2">
         <img src="/img/people/niels-christensen.jpg">
     </div>
-    <div class="person person-lg-col-3 person-lg-scoot-left">
+    <div class="person person-lg-col-3 person-lg-row-2 person-lg-scoot-left">
         <div class="person-name">
             <h2>Niels Ørbæk Christensen</h2>
             <div class="person-title">Software developer. BSc Humanities and Technology.</div>
@@ -282,7 +349,7 @@ title: 'the Team ↳↷↷ deranged'
     <div class="person-image person-lg-col-1">
         <img src="/img/people/helena-bach.jpg">
     </div>
-    <div class="person person-lg-col-2 person-lg-scoot-left">
+    <div class="person person-lg-col-2 person-lg-row-4 person-lg-scoot-left">
         <div class="person-name">
             <h2>Helena Bach</h2>
             <div class="person-title">Software developer. BSc Computer Science.</div>
