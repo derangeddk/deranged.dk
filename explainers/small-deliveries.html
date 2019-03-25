@@ -1,0 +1,208 @@
+---
+permalink: explainers/small-deliveries
+layout: default
+---
+<style>
+    .graph-container {
+        padding: 15px;
+        display: flex;
+        flex-direction: column;
+        width: calc(640px + 15px + 15px);
+        position: relative;
+        padding-bottom: 30px;
+        background: #ecf0f1;
+    }
+
+    .graph-area {
+        opacity: 0.7;
+        transition: opacity 0.4s;
+    }
+    .graph-area:hover {
+        opacity: 1;
+    }
+    .graph .y-axis-number {
+        font-size: 0.8em;
+    }
+
+    .value-function-container {
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        z-index: 3;
+    }
+    .value-function-container-link {
+        border: 1px solid rgba(52, 73, 94, 1.0);
+        color: rgba(52, 73, 94, 1.0);
+        text-decoration: none;
+        font-size: 0.7em;
+        padding: 4px 10px;
+        transition: color 0.4s, background-color 0.4s;
+        float: right;
+        margin-right: 25px;
+        background: #ecf0f1;
+    }
+    .value-function-container-link:hover {
+        background: rgba(52, 73, 94, 1.0);
+        color: #eaf1f7;
+    }
+    .value-function-container-closed .save-value-function-link {
+        display: none;
+    }
+    .value-function-container-closed .value-function-container-content {
+        display: none;
+    }
+    .value-function-container-open .see-value-function-link {
+        display: none;
+    }
+
+    .value-function-container-content {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: -1;
+        z-index: -1;
+        background: #ecf0f1;
+        display: flex;
+        flex-direction: column;
+        padding: 25px;
+        text-align: left;
+    }
+    .value-function-container-label {
+        font-size: 0.8em;
+        max-width: 470px;
+    }
+    .value-function-function {
+        font-family: 'Source Code Pro', Consolas, Monaco, monospace;
+        display: flex;
+        align-items: center;
+        margin-top: 1em;
+    }
+    .value-function-function-body-field {
+        font-family: inherit;
+        font-size: 0.8em;
+        resize: none;
+        flex-grow: 1;
+        margin-left: 5px;
+    }
+</style>
+<main></main>
+
+<script>
+(function() {
+    function makeGraph(functionBody) {
+        let container = document.createElement("div");
+        container.classList.add("graph-container");
+
+        container.innerHTML = `
+            <svg class="graph" width="640" height="320" viewBox="-30,-10 640,320" xmlns="http://www.w3.org/2000/svg">
+                <line x1="0" y1="0" x2="0" y2="300" stroke="#aaa" />
+                <line x1="0" y1="300" x2="600" y2="300" stroke="#aaa" />
+                <line x1="60" y1="0" x2="60" y2="300" stroke="#dedede" />
+                <line x1="120" y1="0" x2="120" y2="300" stroke="#dedede" />
+                <line x1="180" y1="0" x2="180" y2="300" stroke="#dedede" />
+                <line x1="240" y1="0" x2="240" y2="300" stroke="#dedede" />
+                <line x1="300" y1="0" x2="300" y2="300" stroke="#dedede" />
+                <line x1="360" y1="0" x2="360" y2="300" stroke="#dedede" />
+                <line x1="420" y1="0" x2="420" y2="300" stroke="#dedede" />
+                <line x1="480" y1="0" x2="480" y2="300" stroke="#dedede" />
+                <line x1="540" y1="0" x2="540" y2="300" stroke="#dedede" />
+                <line x1="600" y1="0" x2="600" y2="300" stroke="#dedede" />
+                <line x1="0" y1="0" x2="600" y2="0" stroke="#dedede" />
+                <line x1="0" y1="75" x2="600" y2="75" stroke="#dedede" />
+                <line x1="0" y1="150" x2="600" y2="150" stroke="#dedede" />
+                <line x1="0" y1="225" x2="600" y2="225" stroke="#dedede" />
+                <text x="-25" y="301" fill="#aaa" class="y-axis-number vMin">0</text>
+                <text x="-25" y="153" fill="#aaa" class="y-axis-number vHalf">0</text>
+                <text x="-25" y="6" fill="#aaa" class="y-axis-number vMax">0</text>
+                <polygon fill="rgba(46, 204, 113, 1)" class="graph-area area-value-over-time" />
+                <polygon fill="rgba(142, 68, 173, 1)" class=" graph-area area-value-per-time-over-time" />
+            </svg>
+
+            <div class="value-function-container value-function-container-closed">
+                <a href="#" class="value-function-container-link see-value-function-link">See function</a>
+                <a href="#" class="value-function-container-link save-value-function-link">Save value function</a>
+                <div class="value-function-container-content">
+                    <span class="value-function-container-label">The function f describes the change in value v over time t, v=f(t).</span>
+
+                    <span class="value-function-function">
+                        <span class="value-function-function-label">f(t)=</span>
+                        <textarea class="value-function-function-body-field">${functionBody}</textarea>
+                    </span>
+                </div>
+            </div>
+        `;
+
+        let graph = container.querySelector(".graph");
+        let graphFunctionField = container.querySelector(".value-function-function-body-field");
+
+        let graphFunction = new Function(`t`, `return ${graphFunctionField.value};`);
+
+        // graph rendering
+        let polyV = graph.querySelector(".area-value-over-time");
+        let polyVpt = graph.querySelector(".area-value-per-time-over-time");
+
+        let vHalfNumber = graph.querySelector(".vHalf");
+        let vMaxNumber = graph.querySelector(".vMax");
+
+        computeGraph(polyV, polyVpt, vHalfNumber, vMaxNumber, graphFunction);
+
+        // on see function
+        let functionContainer = container.querySelector(".value-function-container");
+        let seeFunctionLink = container.querySelector(".see-value-function-link");
+        seeFunctionLink.addEventListener("click", (e) => {
+            e.preventDefault();
+
+            functionContainer.classList.remove("value-function-container-closed");
+            functionContainer.classList.add("value-function-container-open");
+
+            return false;
+        });
+
+        let saveFunctionLink = container.querySelector(".save-value-function-link");
+        saveFunctionLink.addEventListener("click", (e) => {
+            e.preventDefault();
+
+            functionContainer.classList.remove("value-function-container-open");
+            functionContainer.classList.add("value-function-container-closed");
+
+            graphFunction = new Function(`t`, `return ${graphFunctionField.value};`);
+
+            computeGraph(polyV, polyVpt, vHalfNumber, vMaxNumber, graphFunction);
+
+            return false;
+        })
+
+        return container;
+    }
+
+    function renderGraphPoints(points, maxV) {
+        return `0,300 ` + points.map((point, t) => {
+            return `${(t + 1) * 60},${300 - (point * 300 / maxV)}`;
+        }).join(" ") + ` 600,300`
+    }
+
+    function computeGraph(polyV, polyVpt, vHalfNumber, vMaxNumber, graphFunction) {
+        let pointsVpt = [];
+        let pointsV = [];
+        let v = 0;
+        for(let t = 0; t < 10; t++) {
+            let vPerT = graphFunction(t + 1);
+            v += vPerT;
+            pointsVpt.push(vPerT);
+            pointsV.push(v);
+        }
+
+        let maxV = Math.ceil(pointsV[9]);
+
+        vHalfNumber.innerHTML = Math.round(maxV / 2);
+        vMaxNumber.innerHTML = maxV;
+
+        polyVpt.setAttribute("points", renderGraphPoints(pointsVpt, maxV));
+        polyV.setAttribute("points", renderGraphPoints(pointsV, maxV));
+    }
+
+    document.querySelector("main").appendChild(makeGraph("Math.min(0.6 * t * Math.log(t), 6)"));
+})();
+</script>
