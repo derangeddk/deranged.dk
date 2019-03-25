@@ -113,292 +113,241 @@ title: 'the Team ↳↷↷ deranged'
         </a>
     </div>
 </section>
-<section class="people-container">
 
-</section>
-<style>
+<style type="text/css" scoped>
     .people-container {
-        width: 100%;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
-    .people {
         display: grid;
-        grid-template-columns: 1fr 1fr 1fr;
-        margin: 0 20px 120px;
-        max-width: 1200px;
-        grid-gap: 20px;
-    }
-    .people a {
-        color: #17395b;
-    }
-    @media (max-width: 1050px) {
-        .people {
-            grid-template-columns: 1fr 1fr;
-        }
-    }
-    @media (max-width: 650px) {
-        .people {
-            grid-template-columns: 1fr;
-        }
-    }
-    .person {
-        grid-column: span 1;
-        grid-row: span 1;
-        background: white;
-        padding: 10px;
-        padding-bottom: 0;
-        text-align: left;
-        margin-top: 115px;
-        box-shadow: 0 4px 2px rgba(0,0,0,0.05);
-        display: flex;
-        flex-direction: column;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        background: rgb(44, 62, 80);
+        background-image: linear-gradient(160deg, rgb(44, 62, 80) 40%, rgb(69, 93, 117) 100%);
+        grid-auto-flow: dense;
+        grid-gap: 8px;
     }
     .person-image {
-        margin-top: -100px;
-        height: 200px;
-        text-align: center;
+        grid-row: span 2;
     }
     .person-image img {
-        border-radius: 100%;
-        height: 200px;
-        width: 200px;
-        box-sizing: border-box;
-        padding: 10px;
-        background: white;
+        width: 100%;
+        height: 100%;
         object-fit: cover;
     }
-    .person-name {
-        text-align: center;
+    .person-lg-col-1 {
+        grid-column: 1 / 2;
     }
-    .person-name h2 {
+    .person-lg-col-2 {
+        grid-column: 2 / 3;
+    }
+    .person-lg-col-3 {
+        grid-column: 3 / 4;
+    }
+    .person-lg-col-4 {
+        grid-column: 4 / 5;
+    }
+    .person-lg-scoot-left {
+        transform: translateX(-30px);
+        position: relative;
+        transition: transform 0.8s;
+    }
+    .person-lg-scoot-left:hover {
+        transform: translateX(-45px);
+    }
+    .person-lg-scoot-left:after {
+        content: '';
+        background-image: url('/img/expand_more_white.png');
+        background-size: contain;
+        width: 60px;
+        height: 60px;
+        position: absolute;
+        transform: rotate(90deg);
+        left: -50px;
+        top: 22px;
+        background-color: rgba(52, 73, 94, 1.0);
+    }
+    .person-lg-scoot-right {
+        transform: translateX(30px);
+        position: relative;
+        transition: transform 0.8s;
+    }
+    
+    .person-lg-scoot-right:hover {
+        transform: translateX(45px);
+    }
+    .person-lg-scoot-right:after {
+        content: '';
+        background-image: url('/img/expand_more_white.png');
+        background-size: contain;
+        width: 60px;
+        height: 60px;
+        position: absolute;
+        transform: rotate(270deg);
+        right: -50px;
+        top: 22px;
+        background-color: rgba(52, 73, 94, 1.0);
+    }
+    .person {
+        text-align: left;
+        color: #eaf1f7;
+        padding: 30px 15px;
+        background: rgba(52, 73, 94, 1.0);
+    }
+    .person .person-name h2 {
+        font-weight: 100;
+        font-size: 2em;
         margin: 0;
     }
-    .person-title {
-        font-size: 0.85em;
-    }
-    .person-about {
-        margin-top: 1em;
-        flex: auto;
-    }
-    .person-about p {
-        margin-top: 0;
-        margin-bottom: 1em;
-    }
-    .person-about:before {
-        content: '';
-        display: block;
-        width: 100%;
-        height: 18px;
-        background-image: url('/img/code.png');
-        background-size: contain;
-        background-position: center left;
-        background-repeat: no-repeat;
-        margin-bottom: -5px;
-    }
-    .person-free-time:before {
-        content: '';
-        display: block;
-        width: 100%;
-        height: 18px;
-        background-image: url('/img/terrain.png');
-        background-size: contain;
-        background-position: center left;
-        background-repeat: no-repeat;
-        margin-bottom: -5px;
-    }
-    .person-previous-experience {
-        background: #eff3f4;
-        margin: 20px -10px 0;
-        padding: 10px;
-        font-size: 0.8em;
-    }
-    .person-links {
-        margin: 10px 0;
-        text-align: center;
-    }
-    .person-links a {
-        display: inline-block;
-        color: white;
-        background: #237fdb;
-        text-decoration: none;
-        padding: 5px 6px;
-        margin: 3px;
-        border-radius: 4px;
+    .person .person-about, .person .person-free-time, .person .person-previous-experience {
+        max-width: 550px;
     }
 </style>
-<div class="people-container">
-    <section class="people">
-        <div class="person">
-            <div class="person-image">
-                <img src="/img/people/niels-abildgaard.jpg">
-            </div>
-            <div class="person-name">
-                <h2>Niels Roesen Abildgaard</h2>
-                <div class="person-title">Software developer. MSc Software Development.</div>
-            </div>
-            <div class="person-about">
-                <p>
-                    Niels loves integrating with companies, figuring out their business goals, and helping achieve them with rapidly delivered software.
-                </p>
-                <p>
-                    Niels has worked as a software architect and full-stack web developer in a variety of companies, and has experience with many modern technologies for building highly scalable applications for the web.
-                </p>
-            </div>
-            <div class="person-free-time">
-                In his free time, Niels is an engaged scout, spending most of his time as a group leader in <a href="http://soeborggruppe.dk">1. Søborg Gruppe</a>.
-            </div>
-            <div class="person-previous-experience">
-                Previously at Planday, CubeIO, Newsquid.<br>
-                Has worked in telecom, pharma.
-            </div>
-            <div class="person-links">
-                <a target="_blank" rel="noopener" href="https://github.com/hypesystem">Github</a>
-                <a target="_blank" rel="noopener" href="http://hypesystem.dk">Website</a>
-                <a target="_blank" rel="noopener" href="http://blog.hypesystem.dk">Blog</a>
-            </div>
+<section class="people-container">
+    <div class="person-image person-lg-col-1">
+        <img src="/img/people/niels-abildgaard.jpg">
+    </div>
+    <div class="person person-lg-col-2 person-lg-scoot-left">
+        <div class="person-name">
+            <h2>Niels Roesen Abildgaard</h2>
+            <div class="person-title">Software developer. MSc Software Development.</div>
         </div>
-        <div class="person">
-            <div class="person-image">
-                <img src="/img/people/asbjoern-thegler.jpg">
-            </div>
-            <div class="person-name">
-                <h2>Asbjørn Thegler</h2>
-                <div class="person-title">Software developer. MSc Computer Science.</div>
-            </div>
-            <div class="person-about">
-                <p>
-                    Asbjørn is a privacy-minded and ethical software developer with an eye for the bigger picture.
-                    He cares strongly about the ethics of customer data handling and has a high sense of duty.
-                </p>
-                <p>
-                    Asbjørn is an experienced software infrastructure designer and maintainer, and takes a holistic
-                    approach to designing applications that run and scale well, including DevOps and continuous
-                    deployment practices.
-                </p>
-            </div>
-            <div class="person-previous-experience">
-                Previously at CubeIO, DK-Hostmaster.<br>
-                Has worked in banking, telecom, pharma.
-            </div>
-            <div class="person-links">
-                <a target="_blank" rel="noopener" href="https://github.com/ath88">Github</a>
-            </div>
+        <div class="person-about">
+            <p>
+                Niels loves integrating with companies, figuring out their business goals, and helping achieve them with rapidly delivered software.
+            </p>
+            <p>
+                Niels has worked as a software architect and full-stack web developer in a variety of companies, and has experience with many modern technologies for building highly scalable applications for the web.
+            </p>
         </div>
-        <div class="person">
-            <div class="person-image">
-                <img src="/img/people/niels-christensen.jpg">
-            </div>
-            <div class="person-name">
-                <h2>Niels Ørbæk Christensen</h2>
-                <div class="person-title">Software developer. BSc Humanities and Technology.</div>
-            </div>
-            <div class="person-about">
-                <p>
-                    Niels is a software developer who cares about solving real problems in a way that is suitable and adds value for people. He is used to working in a crossdiciplinary manner and communicating about complex technical solutions to people without technical background.
-                </p>
-                <p>
-                    Niels likes being productive and developing usable software fast, using modern high-level frameworks and tools,as well as employing his theoretical and academic background to solve lower level technical tasks when needed.
-                </p>
-            </div>
-            <div class="person-free-time">
-                In his spare time Niels goes bouldering and spends a lot of time in <a href="http://nkk.dk" target="_blank" rel="noopener">Nørrebro Klatreklub</a>.
-            </div>
-            <div class="person-previous-experience">
-                Previously at TwentyThree.
-            </div>
+        <div class="person-free-time">
+            In his free time, Niels is an engaged scout, spending most of his time as a group leader in <a href="http://soeborggruppe.dk">1. Søborg Gruppe</a>.
         </div>
-        <div class="person">
-            <div class="person-image">
-                <img src="/img/people/helena-bach.jpg">
-            </div>
-            <div class="person-name">
-                <h2>Helena Bach</h2>
-                <div class="person-title">Software developer. BSc Computer Science.</div>
-            </div>
-            <div class="person-about">
-                <p>
-                    Helena cares strongly about building software with an impact.
-                    She has a passion for the mathematical underpinnings of software development, but cares strongly about applying that passion practically.
-                </p>
-                <p>
-                    Helena has significant experience in corporate solutions from working at Netcompany.
-                    She is quick to learn new tools and approaches and finding and reproducing patterns in existing systems, and has significant experience in maintaining existing code bases, finding the best way of delivering new features and maintaining code quality given the circumstances she finds herself in.
-                </p>
-            </div>
-            <div class="person-free-time">
-                In her free time, Helena helps plan the <a href="http://nakkefestival.dk" target="_blank" rel="noopener">Nakke festival</a>.
-            </div>
-            <div class="person-previous-experience">
-                Previously at Netcompany.
-            </div>
+        <div class="person-previous-experience">
+            Previously at Planday, CubeIO, Newsquid.<br>
+            Has worked in telecom, pharma.
         </div>
-        <div class="person">
-            <div class="person-image">
-                <img src="/img/people/philip-dein.jpg">
-            </div>
-            <div class="person-name">
-                <h2>Philip Dein</h2>
-                <div class="person-title">Software developer.</div>
-            </div>
-            <div class="person-about">
-                <p>
-                    Philip loves delivering working software to customers that solves real problems. The work of
-                    finding creative solutions to problems faced by customers is what drives his work. It’s not worth it,
-                    to build things that nobody will use.
-                </p>
-                <p>
-                    In his day-to-day work Philip emphasized the need for communication and knowledge sharing in
-                    the development team, ensuring that nobody becomes a bottleneck in the team.
-                </p>
-            </div>
-            <div class="person-free-time">
-                In his free time, Philip is a scout leader in <a href="https://www.1glostrupgruppe.dk/" target="_blank" rel="noopener">1. Glostrup Gruppe</a>.
-            </div>
-            <div class="person-previous-experience">
-                Previously at Daman Digital.
-            </div>
+        <div class="person-links">
+            <a target="_blank" rel="noopener" href="https://github.com/hypesystem">Github</a>
+            <a target="_blank" rel="noopener" href="http://hypesystem.dk">Website</a>
+            <a target="_blank" rel="noopener" href="http://blog.hypesystem.dk">Blog</a>
         </div>
-        <div class="person">
-            <div class="person-image">
-                <img src="/img/people/liv-borre.jpg">
-            </div>
-            <div class="person-name">
-                <h2>Liv Hartoft Borre</h2>
-                <div class="person-title">Software developer.</div>
-            </div>
-            <div class="person-about">
-                <p>
-                    Liv finds great purpose and passion in developing solutions that are valuable to others, from helping people do things they weren’t capable of before, to simply eliminating grunt work.
-                </p>
-                <p>
-                    She enjoys software development as a creative, problem-solving craft that she’s continuously perfecting, and she focuses on writing efficient and maintainable code and designing usable and extendable solutions.
-                </p>
-                <p>
-                    Haunted by perfectionistic tendencies, she puts great care into details and code quality while keeping focus on the creation and delivery of value.
-                </p>
-            </div>
+    </div>
+    <div class="person person-lg-col-3 person-lg-scoot-right">
+        <div class="person-name">
+            <h2>Asbjørn Thegler</h2>
+            <div class="person-title">Software developer. MSc Computer Science.</div>
         </div>
-        <!--div class="person">
-            <div class="person-image">
-                <img src="/img/people/sidse-petersen.jpg">
-            </div>
-            <div class="person-name">
-                <h2>Sidse Petersen</h2>
-                <div class="person-title">Sales. BSc?</div>
-            </div>
-            <div class="person-about">
-                <p>
-                    ...
-                </p>
-            </div>
-            <div class="person-free-time">
-                ...
-            </div>
-            <div class="person-previous-experience">
-                Previously at ...<br>
-            </div>
-        </div-->
-    </section>
-</div>
+        <div class="person-about">
+            <p>
+                Asbjørn is a privacy-minded and ethical software developer with an eye for the bigger picture.
+                He cares strongly about the ethics of customer data handling and has a high sense of duty.
+            </p>
+            <p>
+                Asbjørn is an experienced software infrastructure designer and maintainer, and takes a holistic
+                approach to designing applications that run and scale well, including DevOps and continuous
+                deployment practices.
+            </p>
+        </div>
+        <div class="person-previous-experience">
+            Previously at CubeIO, DK-Hostmaster.<br>
+            Has worked in banking, telecom, pharma.
+        </div>
+        <div class="person-links">
+            <a target="_blank" rel="noopener" href="https://github.com/ath88">Github</a>
+        </div>
+    </div>
+    <div class="person-image person-lg-col-4">
+        <img src="/img/people/asbjoern-thegler.jpg">
+    </div>
+    <div class="person-image person-lg-col-2">
+        <img src="/img/people/niels-christensen.jpg">
+    </div>
+    <div class="person person-lg-col-3 person-lg-scoot-left">
+        <div class="person-name">
+            <h2>Niels Ørbæk Christensen</h2>
+            <div class="person-title">Software developer. BSc Humanities and Technology.</div>
+        </div>
+        <div class="person-about">
+            <p>
+                Niels is a software developer who cares about solving real problems in a way that is suitable and adds value for people. He is used to working in a crossdiciplinary manner and communicating about complex technical solutions to people without technical background.
+            </p>
+            <p>
+                Niels likes being productive and developing usable software fast, using modern high-level frameworks and tools,as well as employing his theoretical and academic background to solve lower level technical tasks when needed.
+            </p>
+        </div>
+        <div class="person-free-time">
+            In his spare time Niels goes bouldering and spends a lot of time in <a href="http://nkk.dk" target="_blank" rel="noopener">Nørrebro Klatreklub</a>.
+        </div>
+        <div class="person-previous-experience">
+            Previously at TwentyThree.
+        </div>
+    </div>
+    <div class="person-image person-lg-col-1">
+        <img src="/img/people/helena-bach.jpg">
+    </div>
+    <div class="person person-lg-col-2 person-lg-scoot-left">
+        <div class="person-name">
+            <h2>Helena Bach</h2>
+            <div class="person-title">Software developer. BSc Computer Science.</div>
+        </div>
+        <div class="person-about">
+            <p>
+                Helena cares strongly about building software with an impact.
+                She has a passion for the mathematical underpinnings of software development, but cares strongly about applying that passion practically.
+            </p>
+            <p>
+                Helena has significant experience in corporate solutions from working at Netcompany.
+                She is quick to learn new tools and approaches and finding and reproducing patterns in existing systems, and has significant experience in maintaining existing code bases, finding the best way of delivering new features and maintaining code quality given the circumstances she finds herself in.
+            </p>
+        </div>
+        <div class="person-free-time">
+            In her free time, Helena helps plan the <a href="http://nakkefestival.dk" target="_blank" rel="noopener">Nakke festival</a>.
+        </div>
+        <div class="person-previous-experience">
+            Previously at Netcompany.
+        </div>
+    </div>
+    <div class="person-image person-lg-col-3">
+        <img src="/img/people/philip-dein.jpg">
+    </div>
+    <div class="person person-lg-col-4 person-lg-scoot-left">
+        <div class="person-name">
+            <h2>Philip Dein</h2>
+            <div class="person-title">Software developer.</div>
+        </div>
+        <div class="person-about">
+            <p>
+                Philip loves delivering working software to customers that solves real problems. The work of
+                finding creative solutions to problems faced by customers is what drives his work. It’s not worth it,
+                to build things that nobody will use.
+            </p>
+            <p>
+                In his day-to-day work Philip emphasized the need for communication and knowledge sharing in
+                the development team, ensuring that nobody becomes a bottleneck in the team.
+            </p>
+        </div>
+        <div class="person-free-time">
+            In his free time, Philip is a scout leader in <a href="https://www.1glostrupgruppe.dk/" target="_blank" rel="noopener">1. Glostrup Gruppe</a>.
+        </div>
+        <div class="person-previous-experience">
+            Previously at Daman Digital.
+        </div>
+    </div>
+    <div class="person person-lg-col-3 person-lg-scoot-right">
+        <div class="person-name">
+            <h2>Liv Hartoft Borre</h2>
+            <div class="person-title">Software developer.</div>
+        </div>
+        <div class="person-about">
+            <p>
+                Liv finds great purpose and passion in developing solutions that are valuable to others, from helping people do things they weren’t capable of before, to simply eliminating grunt work.
+            </p>
+            <p>
+                She enjoys software development as a creative, problem-solving craft that she’s continuously perfecting, and she focuses on writing efficient and maintainable code and designing usable and extendable solutions.
+            </p>
+            <p>
+                Haunted by perfectionistic tendencies, she puts great care into details and code quality while keeping focus on the creation and delivery of value.
+            </p>
+        </div>
+    </div>
+    <div class="person-image person-lg-col-4">
+        <img src="/img/people/liv-borre.jpg">
+    </div>
+</section>
