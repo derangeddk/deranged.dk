@@ -56,6 +56,16 @@ layout: default
         display: none;
     }
 
+    .value-function-summary {
+        font-size: 0.6em;
+        padding: 0 45px;
+        text-align: left;
+        font-family: 'Source Code Pro', Consolas, Monaco, monospace;
+    }
+    .value-function-container-open .value-function-summary {
+        display: none;
+    }
+
     .value-function-container-content {
         position: absolute;
         top: 0;
@@ -66,7 +76,7 @@ layout: default
         background: #ecf0f1;
         display: flex;
         flex-direction: column;
-        padding: 25px;
+        padding: 5px 25px 25px;
         text-align: left;
     }
     .value-function-container-label {
@@ -123,6 +133,7 @@ layout: default
             <div class="value-function-container value-function-container-closed">
                 <a href="#" class="value-function-container-link see-value-function-link">See function</a>
                 <a href="#" class="value-function-container-link save-value-function-link">Save value function</a>
+                <div class="value-function-summary">f(t)=${functionBody}</div>
                 <div class="value-function-container-content">
                     <span class="value-function-container-label">The function f describes the change in value v over time t, v=f(t).</span>
 
@@ -136,6 +147,7 @@ layout: default
 
         let graph = container.querySelector(".graph");
         let graphFunctionField = container.querySelector(".value-function-function-body-field");
+        let graphFunctionSummaryField = container.querySelector(".value-function-summary");
 
         let graphFunction = new Function(`t`, `return ${graphFunctionField.value};`);
 
@@ -168,6 +180,7 @@ layout: default
             functionContainer.classList.add("value-function-container-closed");
 
             graphFunction = new Function(`t`, `return ${graphFunctionField.value};`);
+            graphFunctionSummaryField.innerText = `f(t)=${graphFunctionField.value}`;
 
             computeGraph(polyV, polyVpt, vHalfNumber, vMaxNumber, graphFunction);
 
