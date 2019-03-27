@@ -41,6 +41,7 @@ layout: default
         float: right;
         margin-right: 25px;
         background: #ecf0f1;
+        transform: translateY(-5px);
     }
     .value-function-container-link:hover {
         background: rgba(52, 73, 94, 1.0);
@@ -96,12 +97,330 @@ layout: default
         flex-grow: 1;
         margin-left: 5px;
     }
+
+    figure {
+        display: flex;
+        flex-direction: row;
+        align-items: flex-start;
+        justify-content: center;
+    }
+    figure.figure-reverse {
+        flex-direction: row-reverse;
+    }
+    .graph-figure .graph-container {
+        border: 1px solid #070d14;
+    }
+    figure figcaption {
+        border: 1px solid #070d14;
+        font-size: 0.8em;
+        max-width: 400px;
+        padding: 15px;
+        transform: translate(18px, 35px);
+        text-align: left;
+        z-index: 2;
+        background: #ecf0f1;
+        box-shadow: 0 2px 2px rgba(0,0,0,0.2);
+    }
+    figure.figure-reverse figcaption {
+        transform: translate(-18px, 35px);
+    }
+
+    figure .svg-moves-illustration {
+        padding: 25px;
+        border: 1px solid #070d14;
+    }
+    .svg-moves-illustration {
+        display: grid;
+    }
+    .svg-moves-illustration svg {
+        grid-row: span 2;
+        grid-column: span 2;
+    }
 </style>
-<main></main>
+<main>
+    <h1>Get more value for money with small deliveries</h1>
+    <section class="teaser">
+        <p>
+            When building software, it is better to take it into use a bit at a time.
+            That way, you will get more total value for your business.
+            And there are several other reasons why this is a good idea.
+        </p>
+        <p>
+            In this quick explainer, we will be covering the mechanics at play when delivering software, and the differences between delivering in small increments and delivering in one big delivery at the end of a project.
+        </p>
+    </section>
+    <section>
+        <h2>Delivering software</h2>
+        <p>
+            ... what is it, what are the ways of doing it? (link to requirements specifications)
+        </p>
+    </section>
+    <section>
+        <h2>You get more business value</h2>
+        <p>
+            ... what is business value? money saved, money made, in a single number
+            ... the calcuations of why you get more business value
+            ... introduce the graphs and colors
+        </p>
+        <figure id="big-bang-graph" class="graph-figure">
+            <figcaption>
+                When all the value in a project is delivered at once (purple), there is no change in value added to the business over time.
+                Value provided by the software keeps accumulating (green) as time goes on.
+            </figcaption>
+        </figure>
+        <figure id="small-deliveries-graph" class="graph-figure figure-reverse">
+            <figcaption>
+                With earlier, smaller deliveries, software starts providing business value for a business very early on.
+                Because of the accumulation effect, value delivered early has greater impact.
+                Smaller deliveries leads to more total value created at any given point in time!
+            </figcaption>
+        </figure>
+        <p>
+            ... use the graphs to determine how quickly you earn IT investments back
+            ... note that small deliveries result in faster earn-back
+        </p>
+    </section>
+    <section>
+        <h2>Everything changes, all the time</h2>
+        <p>
+            ... why is feedback important
+            ... lack of clarity in communication -> delivery of something you don't need. feedback clarifies, deliveries are concrete.
+            (aside: requirement specs are bad communication, conversations are better. ready for link when that explainer works)
+        </p>
+        <figure class="svg-moves-figure figure-reverse">
+            <figcaption>
+                As software is delivered to a business, the business gets something concrete to think about, comment on, and base future decisions on.
+                These decisions can impact what software is built next.
+            </figcaption>
+            <style>
+                .biz-it-illustration {
+                    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+                    grid-template-rows: 1fr 1fr 1fr 1fr;
+                }
+                .biz-it-illustration .biz-illustration {
+                    grid-row: 2 / 4;
+                    grid-column: 1 / 3;
+                }
+                .biz-it-illustration .it-illustration {
+                    grid-row: 2 / 4;
+                    grid-column: 5 / 7;
+                }
+                .biz-it-illustration .arrow-it-in {
+                    grid-row: 1 / 3;
+                    grid-column: 3 / 5;
+                    transform: translateX(-15px) rotate(-45deg) scale(0.7);
+                }
+                .biz-it-illustration .arrow-it-out {
+                    grid-row: 3 / 5;
+                    grid-column: 3 /5;
+                    transform: translateX(-15px) rotate(135deg) scale(0.7);
+                }
+            </style>
+            <div class="svg-moves-illustration biz-it-illustration">
+                <svg class="biz-illustration" viewBox="0,0 300,300" width="150" height="150">
+                    <polygon points="
+                        150,0 190,44 200,80 180,135 160,150
+                        157,169 175,173 175,230
+                        125,230 125,172 142,168
+                        140,150 123,135 100,80 110,39
+                    " fill="#efdcbd" />
+                    <polygon points="
+                        157,169 150,176 142,168
+                        141,159 130,169 130,230
+                        150,265
+                        171,230 171,169 164,169
+                    " fill="white" />
+                    <polygon points="
+                        150,300 222,270 265,193 171,169
+                        155,225 150,260 145,225
+                        130,169 45,192 80,272
+                    " fill="#34495e" />
+                </svg>
+                <svg class="it-illustration" viewBox="0,0 300,300" width="150" height="150">
+                    <polygon points="
+                        10,55 290,57 290,90 10,90
+                    " fill="#2c3e50" />
+                    <polygon points="
+                        10,90 19,240 287,240 290,90
+                    " fill="#bdc3c7" />
+                    <polygon points="
+                        275,64 285,73 275,80 266,72
+                    " fill="#e74c3c" />
+                    <polygon points="
+                        70,165 120,125 129,134 92,164 128,197 117,205
+                    " fill="#1abc9c" />
+                    <polygon points="
+                        230,165 177,125 169,134 208,164 176,197 187,203
+                    " fill="#1abc9c" />
+                </svg>
+                <svg class="arrow-illustration arrow-it-out" viewBox="0,0 300,300" width="150" height="150">
+                    <polygon points="
+                        64,80 157,148 198,212 212,263 198,263
+                        240,300 265,250 250,258
+                        237,210 198,140 120,68 40,35
+                        0,28 19,45 20,53 0,66
+                    " fill="#2980b9" />
+                </svg>
+                <svg class="arrow-illustration arrow-it-in" viewBox="0,0 300,300" width="150" height="150">
+                    <polygon points="
+                        64,80 157,148 198,212 212,263 198,263
+                        240,300 265,250 250,258
+                        237,210 198,140 120,68 40,35
+                        0,28 19,45 20,53 0,66
+                    " fill="#2980b9" />
+                </svg>
+            </div>
+        </figure>
+        <p>
+            ... changes happen in the real world, these changes affect the business, and that affects the IT needs
+        </p>
+        <figure class="svg-moves-figure">
+            <figcaption>
+                No business exists in a vacuum.
+                Changes in the real world, and changes to the business's interaction with the world, inform what software is needed to support the business.
+                As the business changes, so do its requirements for software.
+            </figcaption>
+            <style>
+                .world-biz-it-illustration {
+                    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+                    grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr;
+                }
+                .world-biz-it-illustration .world-illustration {
+                    grid-row: 1 / 3;
+                    grid-column: 1 / 3;
+                }
+                .world-biz-it-illustration .biz-illustration {
+                    grid-row: 3 / 5;
+                    grid-column: 4 / 6;
+                }
+                @keyframes swell {
+                    0% { transform: scale(1); }
+                    75% { transform: scale(1); }
+                    100% { transform: scale(1.1); }
+                }
+                .world-biz-it-illustration .it-illustration {
+                    grid-row: 5 / 7;
+                    grid-column: 7 / 9;
+                    animation: swell 4s infinite alternate-reverse;
+                }
+                .world-biz-it-illustration .arrow-world-out {
+                    grid-row: 1 / 3;
+                    grid-column: 3 / 5;
+                    transform: scale(0.7) translateY(45px);
+                }
+                .world-biz-it-illustration .arrow-world-in {
+                    grid-row: 3 / 5;
+                    grid-column: 2 / 4;
+                    transform: rotate(180deg) scale(0.7) translate(-10px, 20px);
+                }
+                .world-biz-it-illustration .arrow-it-in {
+                    grid-row: 3 / 5;
+                    grid-column: 6 / 8;
+                    transform: scale(0.7) translate(-20px, 35px);
+                }
+                .world-biz-it-illustration .arrow-it-out {
+                    grid-row: 5 / 7;
+                    grid-column: 5 / 7;
+                    transform: rotate(180deg) scale(0.7) translateY(20px);
+                }
+            </style>
+            <div class="svg-moves-illustration world-biz-it-illustration">
+                <svg class="world-illustration" viewBox="0,0 300,300" width="150" height="150">
+                    <polygon points="
+                        130,0 200,20, 255,65 280,155
+                        240,245 175,290 150,300
+                        90,290 25,220 5,160 2,145
+                        55,40
+                    " fill="#2980b9" />
+                    <polygon points="
+                        130,0 165,20 145,45 160,90 220,145 245,142 180,232 172,245 162,221 80,192 90,152 50,120 59,43
+                    " fill="#2ecc71" />
+                    <polygon points="
+                        140,260 150,280 143,295 132,283 125,263
+                    " fill="#2ecc71" />
+                </svg>
+                <svg class="biz-illustration" viewBox="0,0 300,300" width="150" height="150">
+                    <polygon points="
+                        150,0 190,44 200,80 180,135 160,150
+                        157,169 175,173 175,230
+                        125,230 125,172 142,168
+                        140,150 123,135 100,80 110,39
+                    " fill="#efdcbd" />
+                    <polygon points="
+                        157,169 150,176 142,168
+                        141,159 130,169 130,230
+                        150,265
+                        171,230 171,169 164,169
+                    " fill="white" />
+                    <polygon points="
+                        150,300 222,270 265,193 171,169
+                        155,225 150,260 145,225
+                        130,169 45,192 80,272
+                    " fill="#34495e" />
+                </svg>
+                <svg class="it-illustration" viewBox="0,0 300,300" width="150" height="150">
+                    <polygon points="
+                        10,55 290,57 290,90 10,90
+                    " fill="#2c3e50" />
+                    <polygon points="
+                        10,90 19,240 287,240 290,90
+                    " fill="#bdc3c7" />
+                    <polygon points="
+                        275,64 285,73 275,80 266,72
+                    " fill="#e74c3c" />
+                    <polygon points="
+                        70,165 120,125 129,134 92,164 128,197 117,205
+                    " fill="#1abc9c" />
+                    <polygon points="
+                        230,165 177,125 169,134 208,164 176,197 187,203
+                    " fill="#1abc9c" />
+                </svg>
+                <svg class="arrow-illustration arrow-world-out" viewBox="0,0 300,300" width="150" height="150">
+                    <polygon points="
+                        64,80 157,148 198,212 212,263 198,263
+                        240,300 265,250 250,258
+                        237,210 198,140 120,68 40,35
+                        0,28 19,45 20,53 0,66
+                    " fill="#2980b9" />
+                </svg>
+                <svg class="arrow-illustration arrow-world-in" viewBox="0,0 300,300" width="150" height="150">
+                    <polygon points="
+                        64,80 157,148 198,212 212,263 198,263
+                        240,300 265,250 250,258
+                        237,210 198,140 120,68 40,35
+                        0,28 19,45 20,53 0,66
+                    " fill="#2980b9" />
+                </svg>
+                <svg class="arrow-illustration arrow-it-out" viewBox="0,0 300,300" width="150" height="150">
+                    <polygon points="
+                        64,80 157,148 198,212 212,263 198,263
+                        240,300 265,250 250,258
+                        237,210 198,140 120,68 40,35
+                        0,28 19,45 20,53 0,66
+                    " fill="#2980b9" />
+                </svg>
+                <svg class="arrow-illustration arrow-it-in" viewBox="0,0 300,300" width="150" height="150">
+                    <polygon points="
+                        64,80 157,148 198,212 212,263 198,263
+                        240,300 265,250 250,258
+                        237,210 198,140 120,68 40,35
+                        0,28 19,45 20,53 0,66
+                    " fill="#2980b9" />
+                </svg>
+            </div>
+        </figure>
+    </section>
+    <section>
+        <h2>Our takeaway</h2>
+        <p>
+            ... what we do at deranged, why it's good, how to hire us.
+        </p>
+    </section>
+</main>
 
 <script>
 (function() {
-    function makeGraph(functionBody) {
+    function makeGraph(functionBody, hardMax) {
         let container = document.createElement("div");
         container.classList.add("graph-container");
 
@@ -131,7 +450,7 @@ layout: default
             </svg>
 
             <div class="value-function-container value-function-container-closed">
-                <a href="#" class="value-function-container-link see-value-function-link">See function</a>
+                <a href="#" class="value-function-container-link see-value-function-link">Edit function</a>
                 <a href="#" class="value-function-container-link save-value-function-link">Save value function</a>
                 <div class="value-function-summary">f(t)=${functionBody}</div>
                 <div class="value-function-container-content">
@@ -158,7 +477,7 @@ layout: default
         let vHalfNumber = graph.querySelector(".vHalf");
         let vMaxNumber = graph.querySelector(".vMax");
 
-        computeGraph(polyV, polyVpt, vHalfNumber, vMaxNumber, graphFunction);
+        computeGraph(polyV, polyVpt, vHalfNumber, vMaxNumber, graphFunction, hardMax);
 
         // on see function
         let functionContainer = container.querySelector(".value-function-container");
@@ -182,7 +501,7 @@ layout: default
             graphFunction = new Function(`t`, `return ${graphFunctionField.value};`);
             graphFunctionSummaryField.innerText = `f(t)=${graphFunctionField.value}`;
 
-            computeGraph(polyV, polyVpt, vHalfNumber, vMaxNumber, graphFunction);
+            computeGraph(polyV, polyVpt, vHalfNumber, vMaxNumber, graphFunction, hardMax);
 
             return false;
         })
@@ -193,10 +512,24 @@ layout: default
     function renderGraphPoints(points, maxV) {
         return `0,300 ` + points.map((point, t) => {
             return `${(t + 1) * 60},${300 - (point * 300 / maxV)}`;
-        }).join(" ") + ` 600,300`
+        }).join(" ") + ` 600,300`;
     }
 
-    function computeGraph(polyV, polyVpt, vHalfNumber, vMaxNumber, graphFunction) {
+    function renderJaggedGraphPoints(points, maxV) {
+        return `0,300 ` + points.map((point, t) => {
+            let result = ``;
+            if(t == 0) {
+                result += `${(t + 1) * 60},300 `;
+            }
+            else {
+                result += `${(t + 1) * 60},${300 - (points[t - 1] * 300 / maxV)} `;
+            }
+            result += `${(t + 1) * 60},${300 - (point * 300 / maxV)}`;
+            return result;
+        }).join(" ") + ` 600,300`;
+    }
+
+    function computeGraph(polyV, polyVpt, vHalfNumber, vMaxNumber, graphFunction, hardMax) {
         let pointsVpt = [];
         let pointsV = [];
         let v = 0;
@@ -207,15 +540,16 @@ layout: default
             pointsV.push(v);
         }
 
-        let maxV = Math.ceil(pointsV[9]);
+        let maxV = hardMax || Math.ceil(pointsV[9]);
 
         vHalfNumber.innerHTML = Math.round(maxV / 2);
         vMaxNumber.innerHTML = maxV;
 
-        polyVpt.setAttribute("points", renderGraphPoints(pointsVpt, maxV));
-        polyV.setAttribute("points", renderGraphPoints(pointsV, maxV));
+        polyVpt.setAttribute("points", renderJaggedGraphPoints(pointsVpt, maxV));
+        polyV.setAttribute("points", renderJaggedGraphPoints(pointsV, maxV));
     }
 
-    document.querySelector("main").appendChild(makeGraph("Math.min(0.6 * t * Math.log(t), 6)"));
+    document.querySelector("#small-deliveries-graph").appendChild(makeGraph("Math.min(t, 6)", 50));
+    document.querySelector("#big-bang-graph").appendChild(makeGraph("t < 6 ? 0 : 6", 50));
 })();
 </script>
