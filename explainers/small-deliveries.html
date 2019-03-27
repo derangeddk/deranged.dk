@@ -116,6 +116,9 @@ layout: default
     main .teaser p:last-child {
         margin-bottom: 0;
     }
+    main a {
+        color: #2c3e50;
+    }
 
     .graph-container {
         padding: 15px;
@@ -314,13 +317,50 @@ layout: default
     <section>
         <h2>You get more business value</h2>
         <p>
-            ... what is business value? money saved, money made, in a single number
-            ... monthly business value of software (savings+profit)
-            ... accumulated business value
-            ... earn back period (significant number: we want to earn our money back asap)
-            ... introduce the graphs and colors
-            ... the calcuations of why you get more business value
-            ... "value generation rate", "value accumulation"
+            <em>Business value</em> is a measure of how much something is worth to your business.
+            It is a general term that encompasses money you make or money you save.
+            Concretely, when talking about software projects, business value is a measure for how much money a piece of software helps you make or save.
+            In the end, the two are interchangeable.
+        </p>
+        <p>
+            For example, a piece of software may help automate some tedious work processes, which frees up employees to do other work, and catch up on things that have been left for later.
+            The business value of that piece of software is the cost of the time it saves.
+        </p>
+        <p>
+            Whether a piece of software saves you time or helps you make more money is the same from the perspective of business value.
+            Both help you create room in your budget, as more money becomes available to you.
+            The room created in your budget is what we call business value <em>generated</em> by the software.
+        </p>
+        <p>
+            When undertaking software projects, it is common to investigate how long it will take for the software to earn itself back.
+            Often, a five year period is deemed acceptable.
+            That means that the software has to save or earn enough money over five years to cover the cost of development.
+            Of course, earn-back periods vary from business to business.
+        </p>
+        <p>
+            Software is an interesting type of product, because it costs money to build, but not to keep running.
+            Of course there might be maintenance work related to a project, but compared to manufactured goods, a relatively larger chunk of investment goes into the initial design than continued operation.
+            In other words, software keeps accumulating value for a business after you stop investing in development.
+        </p>
+        <p>
+            For example, the <span class="graph-term-value-generation">value generated</span> by software can be measured in monthly increments.
+            One piece of work automation software could save 10000 DKK every month, by automating work processes.
+            After two months, the <span class="graph-term-accumulated-value">accumulated value</span> would be 20000 DKK, and after three months it would be 30000 DKK.
+        </p>
+        <p>
+            The number 10000 DKK here is the <em><span class="graph-term-value-generation">value generation rate</span></em> of the software.
+            The total amount of money saved for a business is the <em><span class="graph-term-accumulated-value">total accumulated value</span></em> from the software.
+        </p>
+        <p>
+            Below, we will use some more abstract graphs to illustrate how "big bang" deliveries compare to smaller deliveries in terms of <span class="graph-term-value-generation">value generation rate</span> (purple on the graphs) and <span class="graph-term-accumulated-value">total accumulated value</span> (green on the graphs).
+        </p>
+        <p>
+            Instead of using concrete units of value (such as thousands of Danish Kroner) on the vertical x-axis, we use some abstract value from 0 to 50.
+            Instead of using a concrete unit of time (such as months) on the horizontal y-axis we use an abstract time unit.
+            The points made regard the mathematical effect of early deliveries, and apply to any concrete situation, any time scale and any monetary scale.
+        </p>
+        <p>
+            Concretely, the first two graphs show how early deliveries consistently result in more total accumulated business value, even if a project is finished later than it would otherwise be (more on this below).
         </p>
         <figure id="big-bang-graph" class="graph-figure">
             <figcaption>
@@ -341,9 +381,20 @@ layout: default
             </figcaption>
         </figure>
         <p>
-            ... use the graphs to determine how quickly you earn IT investments back
-            ... note that small deliveries result in faster earn-back
-            ... optimize further by delivering highest-impact, quick-to-deliver task first
+            The first graph shows a "big bang" delivery, where all of the software is delivered in one chunk, and then starts <span class="graph-term-value-generation">generating value</span>.
+            This means that <span class="graph-term-accumulated-value">value accumulation</span> starts relatively late.
+        </p>
+        <p>
+            Conversely, with early deliveries, the software starts <span class="graph-term-value-generation">generating value</span> very early on (once the first value-generating feature is delivered), and then keeps ramping up.
+            The total <span class="graph-term-accumulated-value">value accumulated</span> is significantly greater than in the first case.
+            The longer a project's development time, the more pronounced this effect will be.
+        </p>
+        <p>
+            This effect can be further improved by prioritizing high-impact features that can be developed on their own.
+            By stacking high-impact features at the start of a project, their value generation gets to run for longer, thus accumulating more total value.
+        </p>
+        <p>
+            This is shown in the following graph, where high impact features are delivered in the first two time units, resulting in an even higher <span class="graph-term-accumulated-value">total accumulated value</span>.
         </p>
         <figure id="valuable-first-graph" class="graph-figure figure-reverse">
             <figcaption>
@@ -354,11 +405,35 @@ layout: default
             </figcaption>
         </figure>
         <p>
-            ... slight detail: earn-back depends on money spent. will small deliveries result in more money spent? usually no, as small pieces are easier to reason about and test, so there are fewer corrections. At the same time, small deliveries ensure that the contractor knows how to deliver, it's not some unknown that will have to be discovered at the end. Delivery costs most the first time, and is cheap to iterate on.
+            In short, software delivered in small increments results in shorter earn-back periods and more overall value generated.
+            That is the main reason for us to recommend this approach over "big bang" deliveries.
+        </p>
+        <p>
+            Of course, earn-back periods also depend on how much the software cost to develop, so it is entirely appropriate to ask if software in small deliveries costs more.
+        </p>
+        <p>
+            The short answer is no.
+            In our experience, it is often the other way around, and projects with short term deliveries often end up being cheaper for value produced.
+        </p>
+        <p>
+            One big reason for this is that small deliveries force the contractor to deliver regularly, so they know how to deliver, and do so consistently.
+            With "big bang" deliveries, the team doesn't have to figure out how to actually deliver the software until the very end, which can then lead to all sorts of complications.
+            There may be challenges with the software deploying to the infrastructure you wish to run it on, or subtle bugs that are only revealed with use may be identified.
+            Delivery is hardest to do the first time, but once a system of delivery of software has been established, it is relatively easy to maintain.
+        </p>
+        <p>
+            Similarly, large deliveries are much harder to test and verify the functionality of.
+            They are also harder to take into use for the employees of your business, as there are more features to learn how to use.
+        </p>
+        <p>
+            Finally, a big reason for savings with small deliveries is that each little bit of software delivered changes and informs the way you do business.
+            And that may change your requirements, or bring clarity to what your actual business needs are, which means you can build better and more appropriate software.
+            This means you can use your contractor's time much more efficiently, building software that generates much more value.
+            This feedback cycle has larger implications, so we will spend the next section diving deeper into it.
         </p>
     </section>
     <section>
-        <h2>Everything changes, all the time</h2>
+        <h2>Everything changes all the time</h2>
         <p>
             ... why is feedback important
             ... lack of clarity in communication -> delivery of something you don't need. feedback clarifies, deliveries are concrete.
@@ -590,7 +665,39 @@ layout: default
     <section>
         <h2>Our takeaway</h2>
         <p>
-            ... what we do at deranged, why it's good, how to hire us.
+            You made it to the end!
+            Hopefully you learned a bit about how the software sausage gets made, so to speak.
+            And hopefully you got some clarity regarding the benefits of smaller deliveries, and how they can impact your business positively.
+        </p>
+        <p>
+            When we're not writing explainers, <a href="/">deranged</a> is a software consultancy, which means we get to use this knowledge in practice.
+            Of course, this has implications if you choose to work with us.
+        </p>
+        <p>
+            Concretely, we try to integrate closely with our customers, because we believe in the power of rapid and direct feedback.
+            We build the best possible software for our customers if we understand their business needs and the concrete challenges they are facing.
+        </p>
+        <p>
+            Instead of using requirement specification documents to communicate, we use concrete conversations and interviews with affected stakeholders and employees of the companies we work with.
+            (Did we mention you should avoid requirements specifications?)
+            We discuss potential technical solutions with our customers and help them understand the tradeoffs of each possible path they might take.
+        </p>
+        <p>
+            We like having customers that are happy with our work.
+            For that reason, we make it easy to get started working with us (including on a limited budget), and easy to get rid of us, if you get dissatisfied with our work.
+            We work in small increments and deliver value to your business as early as possible.
+            This gives you an opportunity to concretely judge our work, and decide on how to move forwards.
+            At the same time, everything we hand over is yours, so you can stop your business relationship with us at any time, and keep our progress up to that point.
+        </p>
+        <p>
+            Generally we say that we can deliver some small thing with some business impact to a business within the first two weeks (although this depends on budget and how busy we are with other customers).
+        </p>
+        <p>
+            If it sounds like you could be interested in working with us, you are very welcome to <a href="mailto:get@deranged.dk">shoot us an email at get@deranged.dk</a>.
+            You can even write us just to get in touch, even if you have no concrete business proposals&mdash;we would love to hear from you.
+        </p>
+        <p>
+            Best of luck in your future software adventures from <a href="/who-we-are">the whole team</a>!
         </p>
     </section>
 </main>
