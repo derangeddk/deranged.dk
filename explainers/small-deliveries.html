@@ -1,0 +1,1086 @@
+---
+permalink: explainers/small-deliveries
+layout: default
+---
+{% include overlay_nav.html %}
+
+<style type="text/css" scoped>
+    .header {
+        background: rgba(52, 73, 94, 1.0);
+        display: grid;
+        grid-template-columns: 150px 1fr;
+        color: #eaf1f7;
+        padding: 30px;
+        text-align: left;
+    }
+
+    .header .logo {
+        color: inherit;
+        text-decoration: inherit;
+        font-weight: 200;
+        font-size: 1.3em;
+        position: relative;
+        z-index: 11;
+    }
+
+    .header h1 {
+        margin: 0;
+        padding: 0;
+        margin-top: -9px;
+        font-weight: 200;
+        font-size: 3em;
+    }
+
+    .header h1 a {
+        color: inherit;
+        text-decoration: inherit;
+    }
+
+    .explainer-logo {
+        display: inline-block;
+        transform: translate(-5px, -13px) scale(0.4);
+    }
+
+    @media (max-width: 600px) {
+        .header {
+            grid-template-columns: 1fr;
+        }
+    }
+</style>
+<section class="header">
+    <a href="/" class="logo">deranged</a>
+    <h1><a href="/explainers">explainers<span class="explainer-logo">?</span></a></h1>
+</section>
+
+<style>
+    main {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        text-align: left;
+        margin-bottom: 4em;
+    }
+    main h1 {
+        text-align: left;
+        margin: 2em;
+        margin-left: 175px;
+        margin-bottom: 1em;
+        margin-right: 25px;
+        font-size: 4em;
+    }
+    h1 strong {
+        font-weight: bold;
+    }
+    main h2 {
+        margin-bottom: 1em;
+        margin-top: 4em;
+        padding-right: 25px;
+        font-size: 2em;
+        font-weight: 200;
+        margin-left: 175px;
+        position: relative;
+        max-width: 700px;
+        color: #ecf0f1;
+        z-index: 2;
+    }
+    main h2:before {
+        content: '';
+        background-image: linear-gradient(40deg, #2c3e50 30%, #455d75 90%);
+        width: calc(100% + 25px);
+        max-width: 750px;
+        position: absolute;
+        top: -0.25em;
+        bottom: -0.25em;
+        left: 0;
+        z-index: -1;
+        transform: translate(-25px, -2px) rotate(-0.5deg);
+    }
+    main section > p {
+        margin-left: 175px;
+        max-width: 650px;
+    }
+    main > section {
+        width: 100%;
+        box-sizing: border-box;
+    }
+    main > section.explainer-description {
+        display: flex;
+        margin-left: 150px;
+        margin-bottom: 4em;
+        width: auto;
+        font-size: 1em;
+    }
+    main > section.explainer-description .teaser {
+        background-color: #2c3e50;
+        background-image: linear-gradient(40deg, #2c3e50 30%, #455d75 90%);
+        padding: 25px;
+        color: #ecf0f1;
+    }
+    main .teaser p {
+        font-size: 1.1em;
+        max-width: 700px;
+        margin-left: 0;
+    }
+    main .teaser p:last-child {
+        margin-bottom: 0;
+    }
+    main .author {
+        font-size: 0.7em;
+        padding: 25px;
+        color: #84969b;
+    }
+    main .author a {
+        color: inherit;
+    }
+
+    @media (max-width: 1250px) {
+        main > section.explainer-description {
+            flex-direction: column;
+        }
+    }
+    @media (max-width: 1100px) {
+        main h1 {
+            margin-left: 20px;
+        }
+        main > section.explainer-description {
+            margin-left: 0;
+        }
+        main section > h2 {
+            margin-left: 20px;
+        }
+        main section > p {
+            margin-left: 20px;
+        }
+    }
+    @media (max-width: 950px) {
+        main h1 {
+            font-size: 3.5em;
+        }
+        main h1 br {
+            display: none;
+        }
+    }
+    @media (max-width: 600px) {
+        main h1 {
+            font-size: 3em;
+        }
+    }
+    @media (max-width: 450px) {
+        main {
+            font-size: 1.1em;
+        }
+    }
+
+    main a {
+        color: #2c3e50;
+    }
+
+    .graph-container {
+        padding: 15px;
+        display: flex;
+        flex-direction: column;
+        position: relative;
+        padding-bottom: 30px;
+        background: #ecf0f1;
+    }
+
+    .graph-area {
+        opacity: 0.7;
+        transition: opacity 0.4s;
+    }
+    .graph-area:hover {
+        opacity: 1;
+    }
+    .graph {
+        max-width: 640px;
+    }
+    .graph .y-axis-number {
+        font-size: 0.8em;
+    }
+
+    .value-function-container {
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        z-index: 3;
+    }
+    .value-function-container-link {
+        border: 1px solid rgba(52, 73, 94, 1.0);
+        color: rgba(52, 73, 94, 1.0);
+        text-decoration: none;
+        font-size: 0.7em;
+        padding: 4px 10px;
+        transition: color 0.4s, background-color 0.4s;
+        float: right;
+        margin-right: 25px;
+        background: #ecf0f1;
+        transform: translateY(-5px);
+    }
+    .value-function-container-link:hover {
+        background: rgba(52, 73, 94, 1.0);
+        color: #eaf1f7;
+    }
+    .value-function-container-closed .save-value-function-link {
+        display: none;
+    }
+    .value-function-container-closed .value-function-container-content {
+        display: none;
+    }
+    .value-function-container-open .see-value-function-link {
+        display: none;
+    }
+
+    .value-function-summary {
+        font-size: 0.6em;
+        padding: 0 45px;
+        text-align: left;
+        font-family: 'Source Code Pro', Consolas, Monaco, monospace;
+    }
+    .value-function-container-open .value-function-summary {
+        display: none;
+    }
+    @media (max-width: 700px) {
+        .value-function-summary {
+            display: none;
+        }
+    }
+
+    .value-function-container-content {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: -1;
+        z-index: -1;
+        background: #ecf0f1;
+        display: flex;
+        flex-direction: column;
+        padding: 5px 25px 25px;
+        text-align: left;
+        box-shadow: 0 3px 3px rgba(0,0,0,0.3);
+    }
+    .value-function-container-label {
+        font-size: 0.8em;
+        margin-right: 145px;
+    }
+    .value-function-function {
+        font-family: 'Source Code Pro', Consolas, Monaco, monospace;
+        display: flex;
+        align-items: center;
+        margin-top: 1em;
+    }
+    .value-function-function-body-field {
+        font-family: inherit;
+        font-size: 0.8em;
+        resize: none;
+        flex-grow: 1;
+        margin-left: 5px;
+    }
+
+    figure {
+        display: flex;
+        flex-direction: row;
+        align-items: flex-start;
+        justify-content: center;
+        margin: 8em 0;
+    }
+    figure.figure-reverse {
+        flex-direction: row-reverse;
+    }
+    .graph-figure .graph-container {
+        border: 1px solid #070d14;
+    }
+    figure figcaption {
+        border: 1px solid #070d14;
+        font-size: 0.8em;
+        max-width: 400px;
+        padding: 15px;
+        transform: translate(18px, 35px);
+        text-align: left;
+        z-index: 2;
+        background: #ecf0f1;
+        box-shadow: 0 2px 2px rgba(0,0,0,0.2);
+    }
+    figure.figure-reverse figcaption {
+        transform: translate(-18px, 35px);
+    }
+    @media (max-width: 1100px) {
+        figure, figure.figure-reverse {
+            flex-direction: column;
+        }
+        figure figcaption, figure.figure-reverse figcaption {
+            transform: translate(65px, 30px);
+        }
+    }
+    @media (max-width: 550px) {
+        figure figcaption, figure.figure-reverse figcaption {
+            transform: translate(20px, 20px);
+            width: calc(100% - 20px);
+        }
+    }
+
+    figure .svg-moves-illustration {
+        padding: 25px;
+        border: 1px solid #070d14;
+    }
+    .svg-moves-illustration {
+        display: grid;
+    }
+    .svg-moves-illustration svg {
+        grid-row: span 2;
+        grid-column: span 2;
+        max-width: 150px;
+    }
+
+    .graph-term-value-generation {
+        background: rgba(142, 68, 173, 0.4);
+        padding: 2px 4px;
+        transition: background-color 0.4s, color 0.4s;
+    }
+    .graph-term-value-generation:hover {
+        background-color: rgba(142, 68, 173, 1);
+        color: #ecf0f1;
+    }
+    .graph-term-accumulated-value {
+        background: rgba(46, 204, 113, 0.4);
+        padding: 1px 2px;
+        transition: background-color 0.4s, color 0.4s;
+    }
+    .graph-term-accumulated-value:hover {
+        background-color: rgba(46, 204, 113, 1);
+        color: #ecf0f1;
+    }
+
+    .aside-wrap {
+        display: flex;
+        align-items: flex-end;
+    }
+    aside {
+        background: #ecf0f1;
+        border: 1px solid #070d14;
+        font-size: 0.8em;
+        padding: 25px;
+        max-width: 450px;
+        margin-left: 50px;
+    }
+    aside h3 {
+        margin-top: 0;
+        margin-bottom: 0.5em;
+    }
+    aside p:last-child {
+        margin-bottom: 0;
+    }
+    @media (max-width: 1350px) {
+        .aside-wrap {
+            flex-direction: column;
+            align-items: flex-start;
+        }
+        aside {
+            max-width: 700px;
+            margin-left: 150px;
+            margin-top: 50px;
+        }
+    }
+    @media (max-width: 1100px) {
+        aside {
+            margin-left: 0;
+        }
+    }
+</style>
+<main>
+    <h1>
+        Get more value for money<br>
+        with <strong>small deliveries</strong>
+    </h1>
+    <section class="explainer-description">
+        <div class="teaser">
+            <p>
+                When building software, it is better to take it into use a bit at a time.
+                That way, you will get more total value for your business.
+                Not only that, you probably also get better software, because small deliveries encourage feedback.
+            </p>
+            <p>
+                In this quick explainer, we cover the mechanics at play when delivering software, and the differences between delivering in small increments and "big bang" deliveries.
+            </p>
+        </div>
+        <div class="author">
+            Published 28<sup>th</sup> of March 2019<br>
+            Written by <a href="mailto:niels@deranged.dk">Niels Roesen Abildgaard</a><br>
+            Illustrations by <a href="mailto:niels@deranged.dk">Niels Roesen Abildgaard</a>
+        </div>
+    </section>
+    <section>
+        <h2>Delivering software</h2>
+        <p>
+            In software development, we talk about <em>deliveries</em>.
+            A delivery is what happens when a piece of software is taken into use by a customer.
+            This is when the software can start producing value for the customer, by improving work processes, or generating new income.
+        </p>
+        <p>
+            Many software projects are first described by a business that has problems that need a technical solution.
+            The description of the project, often in the form of a requirements specification, is then published or sent to potential contractors who can bid on how to build the project.
+            (There are many issues with requirements specifications, and we generally recommend avoiding them when possible.)
+            Once the contractor has built something that lives up to the requirements set forth in the specification, it is delivered to the business, which can then take it into use.
+        </p>
+        <p>
+            This model is what is often called a "big bang" delivery, where the software is delivered all at once.
+            The business goes from having no software to having a fully functioning system in an instant.
+        </p>
+        <p>
+            The alternative to the "big bang" model is delivering in small increments.
+            In this model, the contractor will make software available to the business as it becomes ready, building one functional part at a time.
+            As soon as the first part is delivered, it starts providing value to the business.
+        </p>
+        <p>
+            Delivering in small increments is the perferable model.
+            It provides more total business value, even if the overall project takes longer to complete, and it allows for natural feedback to occur between business and contractor, and even allows for a changing of priorities mid-way through development.
+            The rest of this explainer covers these benefits (and how they occur) in more detail.
+        </p>
+    </section>
+    <section>
+        <h2>You get more business value</h2>
+        <p>
+            <em>Business value</em> is a measure of how much something is worth to your business.
+            It is a general term that encompasses money you make or money you save.
+            Concretely, when talking about software projects, business value is a measure for how much money a piece of software helps you make or save.
+            In the end, the two are interchangeable.
+        </p>
+        <p>
+            For example, a piece of software may help automate some tedious work processes, which frees up employees to do other work, and catch up on things that have been left for later.
+            The business value of that piece of software is the cost of the time it saves.
+        </p>
+        <p>
+            Whether a piece of software saves you time or helps you make more money is the same from the perspective of business value.
+            Both help you create room in your budget, as more money becomes available to you.
+            The room created in your budget is what we call business value <em>generated</em> by the software.
+        </p>
+        <p>
+            When undertaking software projects, it is common to investigate how long it will take for the software to earn itself back.
+            Often, a five year period is deemed acceptable.
+            That means that the software has to save or earn enough money over five years to cover the cost of development.
+            Of course, earn-back periods vary from business to business.
+        </p>
+        <p>
+            Software is an interesting type of product, because it costs money to build, but not to keep running.
+            Of course there might be maintenance work related to a project, but compared to manufactured goods, a relatively larger chunk of investment goes into the initial design than continued operation.
+            In other words, software keeps accumulating value for a business after you stop investing in development.
+        </p>
+        <p>
+            For example, the <span class="graph-term-value-generation">value generated</span> by software can be measured in monthly increments.
+            One piece of work automation software could save 10000 DKK every month, by automating work processes.
+            After two months, the <span class="graph-term-accumulated-value">accumulated value</span> would be 20000 DKK, and after three months it would be 30000 DKK.
+        </p>
+        <p>
+            The number 10000 DKK here is the <em><span class="graph-term-value-generation">value generation rate</span></em> of the software.
+            The total amount of money saved for a business is the <em><span class="graph-term-accumulated-value">total accumulated value</span></em> from the software.
+        </p>
+        <p>
+            Below, we will use some more abstract graphs to illustrate how "big bang" deliveries compare to smaller deliveries in terms of <span class="graph-term-value-generation">value generation rate</span> (purple on the graphs) and <span class="graph-term-accumulated-value">total accumulated value</span> (green on the graphs).
+        </p>
+        <p>
+            Instead of using concrete units of value (such as thousands of Danish Kroner) on the vertical x-axis, we use some abstract value from 0 to 50.
+            Instead of using a concrete unit of time (such as months) on the horizontal y-axis we use an abstract time unit.
+            The points made regard the mathematical effect of early deliveries, and apply to any concrete situation, any time scale and any monetary scale.
+        </p>
+        <p>
+            Concretely, the first two graphs show how early deliveries consistently result in more total accumulated business value, even if a project is finished later than it would otherwise be (more on this below).
+        </p>
+        <figure id="big-bang-graph" class="graph-figure">
+            <figcaption>
+                This graph shows a how the <span class="graph-term-value-generation">value generation rate</span> and <span class="graph-term-accumulated-value">accumulated value</span> of a "big bang" project looks.
+                The <span class="graph-term-value-generation">value generation of the project</span> goes from zero to the total value generation rate of the project in an instant.
+                <br><br>
+                On this graph, the project is delivered at t=5, which means no value is generated before this point, and from this point on, the <span class="graph-term-accumulated-value">accumulated value generated by the project</span> keeps increasing with the <span class="graph-term-value-generation">value generation rate</span>.
+            </figcaption>
+        </figure>
+        <figure id="small-deliveries-graph" class="graph-figure figure-reverse">
+            <figcaption>
+                This graph shows a project that is delivered in small increments.
+                With earlier, smaller deliveries, software starts generating business value for a business very early on.
+                A little <span class="graph-term-value-generation">value generated every time unit</span> over a long time has a surprisingly large effect on <span class="graph-term-accumulated-value">value accumulation</span>.
+                <br><br>
+                Smaller deliveries leads to <span class="graph-term-accumulated-value">more total value</span> created at any given point in time!
+                This is even the case in this example, where the project is delivered one time unit later than the project shown above.
+            </figcaption>
+        </figure>
+        <p>
+            The first graph shows a "big bang" delivery, where all of the software is delivered in one chunk, and then starts <span class="graph-term-value-generation">generating value</span>.
+            This means that <span class="graph-term-accumulated-value">value accumulation</span> starts relatively late.
+        </p>
+        <p>
+            Conversely, with early deliveries, the software starts <span class="graph-term-value-generation">generating value</span> very early on (once the first value-generating feature is delivered), and then keeps ramping up.
+            The total <span class="graph-term-accumulated-value">value accumulated</span> is significantly greater than in the first case.
+            The longer a project's development time, the more pronounced this effect will be.
+        </p>
+        <p>
+            This effect can be further improved by prioritizing high-impact features that can be developed on their own.
+            By stacking high-impact features at the start of a project, their value generation gets to run for longer, thus accumulating more total value.
+        </p>
+        <p>
+            This is shown in the following graph, where high impact features are delivered in the first two time units, resulting in an even higher <span class="graph-term-accumulated-value">total accumulated value</span>.
+        </p>
+        <figure id="valuable-first-graph" class="graph-figure figure-reverse">
+            <figcaption>
+                This graph shows a project where two high-impact features (generating 2 <span class="graph-term-value-generation">value per time</span>) are delivered early on, one in each of the first two time units.
+                By delivering the highest value, quickest to build task first, the <span class="graph-term-accumulated-value">total value delivered</span> gets even higher, as the <span class="graph-term-value-generation">value generation</span> of these higher value tasks has an impact over longer time.
+                <br><br>
+                In this example, the project is not fully delivered until one time unit after the previous example (and two time units before the first example), and yet it delivers the most <span class="graph-term-accumulated-value">total value</span>.
+            </figcaption>
+        </figure>
+        <p>
+            In short, software delivered in small increments results in shorter earn-back periods and more overall value generated.
+            That is the main reason for us to recommend this approach over "big bang" deliveries.
+        </p>
+        <p>
+            Of course, earn-back periods also depend on how much the software cost to develop, so it is entirely appropriate to ask if software in small deliveries costs more.
+        </p>
+        <p>
+            The short answer is no.
+            In our experience, it is often the other way around, and projects with short term deliveries often end up being cheaper for value produced.
+        </p>
+        <p>
+            One big reason for this is that small deliveries force the contractor to deliver regularly, so they know how to deliver, and do so consistently.
+            With "big bang" deliveries, the team doesn't have to figure out how to actually deliver the software until the very end, which can then lead to all sorts of complications.
+            There may be challenges with the software deploying to the infrastructure you wish to run it on, or subtle bugs that are only revealed with use may be identified.
+            Delivery is hardest to do the first time, but once a system of delivery of software has been established, it is relatively easy to maintain.
+        </p>
+        <p>
+            Similarly, large deliveries are much harder to test and verify the functionality of.
+            They are also harder to take into use for the employees of your business, as there are more features to learn how to use.
+        </p>
+        <p>
+            Finally, a big reason for savings with small deliveries is that each little bit of software delivered changes and informs the way you do business.
+            And that may change your requirements, or bring clarity to what your actual business needs are, which means you can build better and more appropriate software.
+            This means you can use your contractor's time much more efficiently, building software that generates much more value.
+            This feedback cycle has larger implications, so we will spend the next section diving deeper into it.
+        </p>
+    </section>
+    <section>
+        <h2>Everything changes all the time</h2>
+        <p>
+            A major disadvantage of "big bang" deliveries is the lack of chances to course correct.
+            While a project is being developed, and before anything has been delivered, it is hard to make changes to the project.
+        </p>
+        <p>
+            While the project cannot be modified, the inverse is true for your business: nothing can stop it from changing.
+            Your business is made up of living people who constantly change the way they work in small ways.
+            This potentially has an impact on what the best software for your business looks like, but with a "big bang" delivery there is no obvious way to account for these changes.
+        </p>
+        <p>
+            The contractor buliding the "big bang" delivery, meanwhile, may be working on flawed assumptions, or may be drifting from what you originally agreed.
+            This can be down to miscommunication or a sense of living up to the letter rather than the intention of your agreement for the software project.
+            Either way, there is no easy way of knowing if this is happening.
+        </p>
+        <p>
+            (Many approaches to solving this problem focus on prototypes and interactivity tests, but they are all fraught, primarily due to the disconnect between prototypes and real software.)
+        </p>
+        <p>
+            All of these problems go away with small deliveries.
+            Every time a delivery of a working feature is made to your business, you get to see concrete evidence of how well your assumptions for the project fit the contractor's.
+        </p>
+        <p>
+            Each software delivery gives you a natural opportunity for giving feedback and adjusting direction.
+            Your employees will naturally notice if their practices have or are drifting from what is supported by the software, and can let the contractor know.
+        </p>
+        <p>
+            At the same time, the new software also modifies your business.
+            No software exists in a vacuum, and all introduction of new software requires an adjustment of work practices, as the software replaces or supports some work task.
+        </p>
+        <p>
+            As the changes to your business take effect, your needs or priorities for future software may change.
+            Some software may make a different bottleneck painfully obvious, or it may remove the need for software you thought you needed as entire work practices restructure.
+        </p>
+        <p>
+            With small deliveries, your business situation continuously informs software decisions, and the software continuously affects and changes your business.
+        </p>
+        <figure class="svg-moves-figure figure-reverse">
+            <figcaption>
+                As software is delivered to a business, the business gets something concrete to think about, comment on, and base future decisions on.
+                These decisions can impact what software is built next.
+            </figcaption>
+            <style>
+                .biz-it-illustration {
+                    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+                    grid-template-rows: 1fr 1fr 1fr 1fr;
+                }
+                .biz-it-illustration .biz-illustration {
+                    grid-row: 2 / 4;
+                    grid-column: 1 / 3;
+                }
+                .biz-it-illustration .it-illustration {
+                    grid-row: 2 / 4;
+                    grid-column: 5 / 7;
+                }
+                .biz-it-illustration .arrow-it-in {
+                    grid-row: 1 / 3;
+                    grid-column: 3 / 5;
+                    transform: translateX(-15px) rotate(-45deg) scale(0.7);
+                }
+                .biz-it-illustration .arrow-it-out {
+                    grid-row: 3 / 5;
+                    grid-column: 3 / 5;
+                    transform: translateX(-15px) rotate(135deg) scale(0.7);
+                }
+                @media (max-width: 450px) {
+                    .biz-it-illustration {
+                        grid-template-columns: 1fr 1fr 1fr 1fr;
+                        grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr;
+                    }
+                    .biz-it-illustration .biz-illustration {
+                        grid-row: 1 / 3;
+                        grid-column: 2 / 4;
+                    }
+                    .biz-it-illustration .it-illustration {
+                        grid-row: 5 / 7;
+                        grid-column: 2 / 4;
+                    }
+                    .biz-it-illustration .arrow-it-in {
+                        grid-row: 3 / 5;
+                        grid-column: 1 / 3;
+                        transform: rotate(225deg) scale(0.8);
+                    }
+                    .biz-it-illustration .arrow-it-out {
+                        transform: rotate(45deg) scale(0.8);
+                    }
+                }
+            </style>
+            <div class="svg-moves-illustration biz-it-illustration">
+                <svg class="biz-illustration" viewBox="0,0 300,300">
+                    <polygon points="
+                        150,0 190,44 200,80 180,135 160,150
+                        157,169 175,173 175,230
+                        125,230 125,172 142,168
+                        140,150 123,135 100,80 110,39
+                    " fill="#efdcbd" />
+                    <polygon points="
+                        157,169 150,176 142,168
+                        141,159 130,169 130,230
+                        150,265
+                        171,230 171,169 164,169
+                    " fill="white" />
+                    <polygon points="
+                        150,300 222,270 265,193 171,169
+                        155,225 150,260 145,225
+                        130,169 45,192 80,272
+                    " fill="#34495e" />
+                </svg>
+                <svg class="it-illustration" viewBox="0,0 300,300">
+                    <polygon points="
+                        10,55 290,57 290,90 10,90
+                    " fill="#2c3e50" />
+                    <polygon points="
+                        10,90 19,240 287,240 290,90
+                    " fill="#bdc3c7" />
+                    <polygon points="
+                        275,64 285,73 275,80 266,72
+                    " fill="#e74c3c" />
+                    <polygon points="
+                        70,165 120,125 129,134 92,164 128,197 117,205
+                    " fill="#1abc9c" />
+                    <polygon points="
+                        230,165 177,125 169,134 208,164 176,197 187,203
+                    " fill="#1abc9c" />
+                </svg>
+                <svg class="arrow-illustration arrow-it-out" viewBox="0,0 300,300">
+                    <polygon points="
+                        64,80 157,148 198,212 212,263 198,263
+                        240,300 265,250 250,258
+                        237,210 198,140 120,68 40,35
+                        0,28 19,45 20,53 0,66
+                    " fill="#2980b9" />
+                </svg>
+                <svg class="arrow-illustration arrow-it-in" viewBox="0,0 300,300">
+                    <polygon points="
+                        64,80 157,148 198,212 212,263 198,263
+                        240,300 265,250 250,258
+                        237,210 198,140 120,68 40,35
+                        0,28 19,45 20,53 0,66
+                    " fill="#2980b9" />
+                </svg>
+            </div>
+        </figure>
+        <p>
+            Small deliveries naturally establish a feedback loop between your business needs and the software being built.
+            This feedback loop is vital for clean communication, and helps ensure that the software being built actually helps your business.
+        </p>
+        <p>
+            Significantly, the communication happens over time and with concrete implementations to discuss.
+            This makes assumptions on both sides visible, and ensures that they are confirmed or corrected.
+            For this communicataion to happen efficiently, it has to take the form of conversations, as the nuance of business issues and technical decisions are often lost in writing.
+            (This is another reason that requirement specifications should be avoided.)
+        </p>
+        <p>
+            There is one more factor to consider when assessing the usefulness of continuous feedback in software development.
+            <strong>Change is not limited to your company.</strong>
+            The whole world is changing, all the time.
+        </p>
+        <p>
+            As other businesses interact with the world, and as new inventions see the light of day, the basis for your business changes.
+            You do not always have control over what changes and when.
+            New markets open up, and old markets close.
+            To stay succesful as a business, you must be able to respond to these changes in a way that is beneficial to you.
+        </p>
+        <p>
+            Your business is a part of a bigger system, so as much as you may try you cannot stop the need to change.
+            And the need for change in your business means changing priorities for software to support it.
+            Fortunately, small deliveries support making these changes.
+        </p>
+        <figure class="svg-moves-figure">
+            <figcaption>
+                No business exists in a vacuum.
+                Changes in the real world, and changes to the business's interaction with the world, inform what software is needed to support the business.
+                As the business changes, so do its requirements for software.
+            </figcaption>
+            <style>
+                .world-biz-it-illustration {
+                    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+                    grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr;
+                }
+                .world-biz-it-illustration .world-illustration {
+                    grid-row: 1 / 3;
+                    grid-column: 1 / 3;
+                }
+                .world-biz-it-illustration .biz-illustration {
+                    grid-row: 3 / 5;
+                    grid-column: 4 / 6;
+                }
+                @keyframes swell {
+                    0% { transform: scale(1); }
+                    75% { transform: scale(1); }
+                    100% { transform: scale(1.1); }
+                }
+                .world-biz-it-illustration .it-illustration {
+                    grid-row: 5 / 7;
+                    grid-column: 7 / 9;
+                    animation: swell 4s infinite alternate-reverse;
+                }
+                .world-biz-it-illustration .arrow-world-out {
+                    grid-row: 1 / 3;
+                    grid-column: 3 / 5;
+                    transform: scale(0.7) translateY(45px);
+                }
+                .world-biz-it-illustration .arrow-world-in {
+                    grid-row: 3 / 5;
+                    grid-column: 2 / 4;
+                    transform: rotate(180deg) scale(0.7) translate(-10px, 20px);
+                }
+                .world-biz-it-illustration .arrow-it-in {
+                    grid-row: 3 / 5;
+                    grid-column: 6 / 8;
+                    transform: scale(0.7) translate(-20px, 35px);
+                }
+                .world-biz-it-illustration .arrow-it-out {
+                    grid-row: 5 / 7;
+                    grid-column: 5 / 7;
+                    transform: rotate(180deg) scale(0.7) translateY(20px);
+                }
+                @media (max-width: 550px) {
+                    .world-biz-it-illustration {
+                        grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+                        grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr;
+                    }
+                    .world-biz-it-illustration .biz-illustration {
+                        grid-row: 4 / 6;
+                    }
+                    .world-biz-it-illustration .it-illustration {
+                        grid-row: 7 / 9;
+                        grid-column: 1 / 3; 
+                    }
+                    .world-biz-it-illustration .arrow-world-out {
+                        transform: translate(15px, 40px);
+                    }
+                    .world-biz-it-illustration .arrow-world-in {
+                        transform: rotate(180deg);
+                    }
+                    .world-biz-it-illustration .arrow-it-out {
+                        grid-row: 5 / 7;
+                        grid-column: 2 / 4;
+                        transform: rotate(270deg);
+                    }
+                    .world-biz-it-illustration .arrow-it-in {
+                        grid-row: 7 / 9;
+                        grid-column: 3 / 5;
+                        transform: translate(15px, -40px) rotate(90deg);
+                    }
+                }
+            </style>
+            <div class="svg-moves-illustration world-biz-it-illustration">
+                <svg class="world-illustration" viewBox="0,0 300,300">
+                    <polygon points="
+                        130,0 200,20, 255,65 280,155
+                        240,245 175,290 150,300
+                        90,290 25,220 5,160 2,145
+                        55,40
+                    " fill="#2980b9" />
+                    <polygon points="
+                        130,0 165,20 145,45 160,90 220,145 245,142 180,232 172,245 162,221 80,192 90,152 50,120 59,43
+                    " fill="#2ecc71" />
+                    <polygon points="
+                        140,260 150,280 143,295 132,283 125,263
+                    " fill="#2ecc71" />
+                </svg>
+                <svg class="biz-illustration" viewBox="0,0 300,300">
+                    <polygon points="
+                        150,0 190,44 200,80 180,135 160,150
+                        157,169 175,173 175,230
+                        125,230 125,172 142,168
+                        140,150 123,135 100,80 110,39
+                    " fill="#efdcbd" />
+                    <polygon points="
+                        157,169 150,176 142,168
+                        141,159 130,169 130,230
+                        150,265
+                        171,230 171,169 164,169
+                    " fill="white" />
+                    <polygon points="
+                        150,300 222,270 265,193 171,169
+                        155,225 150,260 145,225
+                        130,169 45,192 80,272
+                    " fill="#34495e" />
+                </svg>
+                <svg class="it-illustration" viewBox="0,0 300,300">
+                    <polygon points="
+                        10,55 290,57 290,90 10,90
+                    " fill="#2c3e50" />
+                    <polygon points="
+                        10,90 19,240 287,240 290,90
+                    " fill="#bdc3c7" />
+                    <polygon points="
+                        275,64 285,73 275,80 266,72
+                    " fill="#e74c3c" />
+                    <polygon points="
+                        70,165 120,125 129,134 92,164 128,197 117,205
+                    " fill="#1abc9c" />
+                    <polygon points="
+                        230,165 177,125 169,134 208,164 176,197 187,203
+                    " fill="#1abc9c" />
+                </svg>
+                <svg class="arrow-illustration arrow-world-out" viewBox="0,0 300,300">
+                    <polygon points="
+                        64,80 157,148 198,212 212,263 198,263
+                        240,300 265,250 250,258
+                        237,210 198,140 120,68 40,35
+                        0,28 19,45 20,53 0,66
+                    " fill="#2980b9" />
+                </svg>
+                <svg class="arrow-illustration arrow-world-in" viewBox="0,0 300,300">
+                    <polygon points="
+                        64,80 157,148 198,212 212,263 198,263
+                        240,300 265,250 250,258
+                        237,210 198,140 120,68 40,35
+                        0,28 19,45 20,53 0,66
+                    " fill="#2980b9" />
+                </svg>
+                <svg class="arrow-illustration arrow-it-out" viewBox="0,0 300,300">
+                    <polygon points="
+                        64,80 157,148 198,212 212,263 198,263
+                        240,300 265,250 250,258
+                        237,210 198,140 120,68 40,35
+                        0,28 19,45 20,53 0,66
+                    " fill="#2980b9" />
+                </svg>
+                <svg class="arrow-illustration arrow-it-in" viewBox="0,0 300,300">
+                    <polygon points="
+                        64,80 157,148 198,212 212,263 198,263
+                        240,300 265,250 250,258
+                        237,210 198,140 120,68 40,35
+                        0,28 19,45 20,53 0,66
+                    " fill="#2980b9" />
+                </svg>
+            </div>
+        </figure>
+    </section>
+    <div class="aside-wrap">
+        <section>
+            <h2>Our takeaway</h2>
+            <p>
+                You made it to the end!
+                Hopefully you learned a bit about how the software sausage gets made, so to speak.
+                And hopefully you got some clarity regarding the benefits of smaller deliveries, and how they can impact your business positively.
+            </p>
+            <p>
+                When we're not writing explainers, <a href="/">deranged</a> is a software consultancy, which means we get to use this knowledge in practice.
+                Of course, this has implications if you choose to work with us.
+            </p>
+            <p>
+                Concretely, we try to integrate closely with our customers, because we believe in the power of rapid and direct feedback.
+                We build the best possible software for our customers if we understand their business needs and the concrete challenges they are facing.
+            </p>
+            <p>
+                Instead of using requirement specification documents to communicate, we use concrete conversations and interviews with affected stakeholders and employees of the companies we work with.
+                (Did we mention you should avoid requirements specifications?)
+                We discuss potential technical solutions with our customers and help them understand the tradeoffs of each possible path they might take.
+            </p>
+            <p>
+                We like having customers that are happy with our work.
+                For that reason, we make it easy to get started working with us (including on a limited budget), and easy to get rid of us, if you get dissatisfied with our work.
+                We work in small increments and deliver value to your business as early as possible.
+                This gives you an opportunity to concretely judge our work, and decide on how to move forwards.
+                At the same time, everything we hand over is yours, so you can stop your business relationship with us at any time, and keep our progress up to that point.
+            </p>
+            <p>
+                Generally we say that we can deliver some small thing with some business impact to a business within the first two weeks (although this depends on budget and how busy we are with other customers).
+            </p>
+            <p>
+                If it sounds like you could be interested in working with us, you are very welcome to <a href="mailto:get@deranged.dk">shoot us an email at get@deranged.dk</a>.
+                You can even write us just to get in touch, even if you have no concrete business proposals&mdash;we would love to hear from you.
+            </p>
+            <p>
+                Best of luck in your future software adventures from <a href="/who-we-are">the whole team</a>!
+            </p>
+        </section>
+        <aside>
+            <h3>Further reading</h3>
+            <p>
+                If this explainer has piqued your interest, but you are looking for some more in-depth resources on software development, we recommend the following.
+            </p>
+            <p>
+                In <em><a href="https://www.impactmapping.org/book.html" target="_blank" rel="noopener">Impact Mapping</a></em>, Gojko Adzic writes about the benefits of including software developers in the process of making decisions regarding what software to build.
+                Developers who understand the business situation they are working within can often find cheaper and more efficient solutions than non-technical decision makers.
+            </p>
+            <p>
+                Ron Jeffries breaks down the <em><a href="https://pragprog.com/book/rjnsd/the-nature-of-software-development" target="_blank" rel="noopener">Nature of Software Development</a></em> in his book.
+                He discusses how to decide where to start on a software project, and how to progress when building it.
+                He has a strong notion of working <em>with</em> the grain of software, to build it with least possible resistance.
+            </p>
+        </aside>
+    </div>
+</main>
+
+<script>
+(function() {
+    function makeGraph(functionBody, hardMax) {
+        let container = document.createElement("div");
+        container.classList.add("graph-container");
+
+        container.innerHTML = `
+            <svg class="graph" viewBox="-30,-10 640,320" xmlns="http://www.w3.org/2000/svg">
+                <line x1="0" y1="0" x2="0" y2="300" stroke="#aaa" />
+                <line x1="0" y1="300" x2="600" y2="300" stroke="#aaa" />
+                <line x1="60" y1="0" x2="60" y2="300" stroke="#dedede" />
+                <line x1="120" y1="0" x2="120" y2="300" stroke="#dedede" />
+                <line x1="180" y1="0" x2="180" y2="300" stroke="#dedede" />
+                <line x1="240" y1="0" x2="240" y2="300" stroke="#dedede" />
+                <line x1="300" y1="0" x2="300" y2="300" stroke="#dedede" />
+                <line x1="360" y1="0" x2="360" y2="300" stroke="#dedede" />
+                <line x1="420" y1="0" x2="420" y2="300" stroke="#dedede" />
+                <line x1="480" y1="0" x2="480" y2="300" stroke="#dedede" />
+                <line x1="540" y1="0" x2="540" y2="300" stroke="#dedede" />
+                <line x1="600" y1="0" x2="600" y2="300" stroke="#dedede" />
+                <line x1="0" y1="0" x2="600" y2="0" stroke="#dedede" />
+                <line x1="0" y1="75" x2="600" y2="75" stroke="#dedede" />
+                <line x1="0" y1="150" x2="600" y2="150" stroke="#dedede" />
+                <line x1="0" y1="225" x2="600" y2="225" stroke="#dedede" />
+                <text x="-25" y="301" fill="#aaa" class="y-axis-number vMin">0</text>
+                <text x="-25" y="153" fill="#aaa" class="y-axis-number vHalf">0</text>
+                <text x="-25" y="6" fill="#aaa" class="y-axis-number vMax">0</text>
+                <polygon fill="rgba(46, 204, 113, 1)" class="graph-area area-value-over-time" />
+                <polygon fill="rgba(142, 68, 173, 1)" class=" graph-area area-value-per-time-over-time" />
+            </svg>
+
+            <div class="value-function-container value-function-container-closed">
+                <a href="#" class="value-function-container-link see-value-function-link">Edit function</a>
+                <a href="#" class="value-function-container-link save-value-function-link">Save value function</a>
+                <div class="value-function-summary">f(t)=${functionBody}</div>
+                <div class="value-function-container-content">
+                    <span class="value-function-container-label">The function f describes the value generation rate vt for a given point in time t: vt=f(t).</span>
+
+                    <span class="value-function-function">
+                        <span class="value-function-function-label">f(t)=</span>
+                        <textarea class="value-function-function-body-field">${functionBody}</textarea>
+                    </span>
+                </div>
+            </div>
+        `;
+
+        let graph = container.querySelector(".graph");
+        let graphFunctionField = container.querySelector(".value-function-function-body-field");
+        let graphFunctionSummaryField = container.querySelector(".value-function-summary");
+
+        let graphFunction = new Function(`t`, `return ${graphFunctionField.value};`);
+
+        // graph rendering
+        let polyV = graph.querySelector(".area-value-over-time");
+        let polyVpt = graph.querySelector(".area-value-per-time-over-time");
+
+        let vHalfNumber = graph.querySelector(".vHalf");
+        let vMaxNumber = graph.querySelector(".vMax");
+
+        computeGraph(polyV, polyVpt, vHalfNumber, vMaxNumber, graphFunction, hardMax);
+
+        // on see function
+        let functionContainer = container.querySelector(".value-function-container");
+        let seeFunctionLink = container.querySelector(".see-value-function-link");
+        seeFunctionLink.addEventListener("click", (e) => {
+            e.preventDefault();
+
+            functionContainer.classList.remove("value-function-container-closed");
+            functionContainer.classList.add("value-function-container-open");
+
+            return false;
+        });
+
+        let saveFunctionLink = container.querySelector(".save-value-function-link");
+        saveFunctionLink.addEventListener("click", (e) => {
+            e.preventDefault();
+
+            functionContainer.classList.remove("value-function-container-open");
+            functionContainer.classList.add("value-function-container-closed");
+
+            graphFunction = new Function(`t`, `return ${graphFunctionField.value};`);
+            graphFunctionSummaryField.innerText = `f(t)=${graphFunctionField.value}`;
+
+            computeGraph(polyV, polyVpt, vHalfNumber, vMaxNumber, graphFunction, hardMax);
+
+            return false;
+        })
+
+        return container;
+    }
+
+    function renderGraphPoints(points, maxV) {
+        return `0,300 ` + points.map((point, t) => {
+            return `${(t + 1) * 60},${300 - (point * 300 / maxV)}`;
+        }).join(" ") + ` 600,300`;
+    }
+
+    function renderJaggedGraphPoints(points, maxV) {
+        return `0,300 ` + points.map((point, t) => {
+            let result = ``;
+            if(t == 0) {
+                result += `${(t + 1) * 60},300 `;
+            }
+            else {
+                result += `${(t + 1) * 60},${300 - (points[t - 1] * 300 / maxV)} `;
+            }
+            result += `${(t + 1) * 60},${300 - (point * 300 / maxV)}`;
+            return result;
+        }).join(" ") + ` 600,300`;
+    }
+
+    function computeGraph(polyV, polyVpt, vHalfNumber, vMaxNumber, graphFunction, hardMax) {
+        let pointsVpt = [];
+        let pointsV = [];
+        let v = 0;
+        for(let t = 0; t < 10; t++) {
+            let vPerT = graphFunction(t + 1);
+            v += vPerT;
+            pointsVpt.push(vPerT);
+            pointsV.push(v);
+        }
+
+        let maxV = hardMax || Math.ceil(pointsV[9]);
+
+        vHalfNumber.innerHTML = Math.round(maxV / 2);
+        vMaxNumber.innerHTML = maxV;
+
+        polyVpt.setAttribute("points", renderJaggedGraphPoints(pointsVpt, maxV));
+        polyV.setAttribute("points", renderJaggedGraphPoints(pointsV, maxV));
+    }
+
+    document.querySelector("#small-deliveries-graph").appendChild(makeGraph("Math.min(t, 6)", 50));
+    document.querySelector("#big-bang-graph").appendChild(makeGraph("t < 5 ? 0 : 6", 50));
+    document.querySelector("#valuable-first-graph").appendChild(makeGraph("t < 3 ? 2 * t : Math.min(4 + t / 4, 6)", 50));
+})();
+</script>
