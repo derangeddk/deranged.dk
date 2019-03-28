@@ -179,7 +179,6 @@ layout: default
         padding: 15px;
         display: flex;
         flex-direction: column;
-        width: calc(640px + 15px + 15px);
         position: relative;
         padding-bottom: 30px;
         background: #ecf0f1;
@@ -191,6 +190,9 @@ layout: default
     }
     .graph-area:hover {
         opacity: 1;
+    }
+    .graph {
+        max-width: 640px;
     }
     .graph .y-axis-number {
         font-size: 0.8em;
@@ -238,6 +240,11 @@ layout: default
     .value-function-container-open .value-function-summary {
         display: none;
     }
+    @media (max-width: 700px) {
+        .value-function-summary {
+            display: none;
+        }
+    }
 
     .value-function-container-content {
         position: absolute;
@@ -251,10 +258,11 @@ layout: default
         flex-direction: column;
         padding: 5px 25px 25px;
         text-align: left;
+        box-shadow: 0 3px 3px rgba(0,0,0,0.3);
     }
     .value-function-container-label {
         font-size: 0.8em;
-        max-width: 470px;
+        margin-right: 145px;
     }
     .value-function-function {
         font-family: 'Source Code Pro', Consolas, Monaco, monospace;
@@ -947,7 +955,7 @@ layout: default
         container.classList.add("graph-container");
 
         container.innerHTML = `
-            <svg class="graph" width="640" height="320" viewBox="-30,-10 640,320" xmlns="http://www.w3.org/2000/svg">
+            <svg class="graph" viewBox="-30,-10 640,320" xmlns="http://www.w3.org/2000/svg">
                 <line x1="0" y1="0" x2="0" y2="300" stroke="#aaa" />
                 <line x1="0" y1="300" x2="600" y2="300" stroke="#aaa" />
                 <line x1="60" y1="0" x2="60" y2="300" stroke="#dedede" />
@@ -976,7 +984,7 @@ layout: default
                 <a href="#" class="value-function-container-link save-value-function-link">Save value function</a>
                 <div class="value-function-summary">f(t)=${functionBody}</div>
                 <div class="value-function-container-content">
-                    <span class="value-function-container-label">The function f describes the change in value v over time t, v=f(t).</span>
+                    <span class="value-function-container-label">The function f describes the value generation rate vt for a given point in time t: vt=f(t).</span>
 
                     <span class="value-function-function">
                         <span class="value-function-function-label">f(t)=</span>
