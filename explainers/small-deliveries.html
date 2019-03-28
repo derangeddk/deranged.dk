@@ -140,16 +140,34 @@ layout: default
     }
     @media (max-width: 1100px) {
         main h1 {
-            margin-left: 25px;
+            margin-left: 20px;
         }
         main > section.explainer-description {
             margin-left: 0;
         }
         main section > h2 {
-            margin-left: 25px;
+            margin-left: 20px;
         }
         main section > p {
-            margin-left: 25px;
+            margin-left: 20px;
+        }
+    }
+    @media (max-width: 950px) {
+        main h1 {
+            font-size: 3.5em;
+        }
+        main h1 br {
+            display: none;
+        }
+    }
+    @media (max-width: 600px) {
+        main h1 {
+            font-size: 3em;
+        }
+    }
+    @media (max-width: 450px) {
+        main {
+            font-size: 1.1em;
         }
     }
 
@@ -356,7 +374,10 @@ layout: default
     }
 </style>
 <main>
-    <h1>Get more value for money<br>with <strong>small deliveries</strong></h1>
+    <h1>
+        Get more value for money<br>
+        with <strong>small deliveries</strong>
+    </h1>
     <section class="explainer-description">
         <div class="teaser">
             <p>
