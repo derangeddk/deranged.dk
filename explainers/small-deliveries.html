@@ -65,6 +65,7 @@ layout: default
         margin: 2em;
         margin-left: 175px;
         margin-bottom: 1em;
+        margin-right: 25px;
         font-size: 4em;
     }
     h1 strong {
@@ -73,6 +74,7 @@ layout: default
     main h2 {
         margin-bottom: 1em;
         margin-top: 4em;
+        padding-right: 25px;
         font-size: 2em;
         font-weight: 200;
         margin-left: 175px;
@@ -84,7 +86,8 @@ layout: default
     main h2:before {
         content: '';
         background-image: linear-gradient(40deg, #2c3e50 30%, #455d75 90%);
-        width: 750px;
+        width: calc(100% + 25px);
+        max-width: 750px;
         position: absolute;
         top: -0.25em;
         bottom: -0.25em;
@@ -124,11 +127,30 @@ layout: default
     main .author {
         font-size: 0.7em;
         padding: 25px;
-        line-height: 240%;
         color: #84969b;
     }
     main .author a {
         color: inherit;
+    }
+
+    @media (max-width: 1250px) {
+        main > section.explainer-description {
+            flex-direction: column;
+        }
+    }
+    @media (max-width: 1100px) {
+        main h1 {
+            margin-left: 25px;
+        }
+        main > section.explainer-description {
+            margin-left: 0;
+        }
+        main section > h2 {
+            margin-left: 25px;
+        }
+        main section > p {
+            margin-left: 25px;
+        }
     }
 
     main a {
@@ -257,6 +279,14 @@ layout: default
     figure.figure-reverse figcaption {
         transform: translate(-18px, 35px);
     }
+    @media (max-width: 1100px) {
+        figure, figure.figure-reverse {
+            flex-direction: column;
+        }
+        figure figcaption, figure.figure-reverse figcaption {
+            transform: translate(65px, 30px);
+        }
+    }
 
     figure .svg-moves-illustration {
         padding: 25px;
@@ -307,6 +337,22 @@ layout: default
     }
     aside p:last-child {
         margin-bottom: 0;
+    }
+    @media (max-width: 1350px) {
+        .aside-wrap {
+            flex-direction: column;
+            align-items: flex-start;
+        }
+        aside {
+            max-width: 650px;
+            margin-left: 175px;
+            margin-top: 50px;
+        }
+    }
+    @media (max-width: 1100px) {
+        aside {
+            margin-left: 25px;
+        }
     }
 </style>
 <main>
