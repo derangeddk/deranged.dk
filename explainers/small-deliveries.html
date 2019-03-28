@@ -58,6 +58,7 @@ layout: default
         flex-direction: column;
         align-items: flex-start;
         text-align: left;
+        margin-bottom: 4em;
     }
     main h1 {
         text-align: left;
@@ -91,7 +92,7 @@ layout: default
         z-index: -1;
         transform: translate(-25px, -2px) rotate(-0.5deg);
     }
-    main p {
+    main section > p {
         margin-left: 175px;
         max-width: 650px;
     }
@@ -286,6 +287,26 @@ layout: default
     .graph-term-accumulated-value:hover {
         background-color: rgba(46, 204, 113, 1);
         color: #ecf0f1;
+    }
+
+    .aside-wrap {
+        display: flex;
+        align-items: flex-end;
+    }
+    aside {
+        background: #ecf0f1;
+        border: 1px solid #070d14;
+        font-size: 0.8em;
+        padding: 25px;
+        max-width: 450px;
+        margin-left: 50px;
+    }
+    aside h3 {
+        margin-top: 0;
+        margin-bottom: 0.5em;
+    }
+    aside p:last-child {
+        margin-bottom: 0;
     }
 </style>
 <main>
@@ -737,44 +758,61 @@ layout: default
             </div>
         </figure>
     </section>
-    <section>
-        <h2>Our takeaway</h2>
-        <p>
-            You made it to the end!
-            Hopefully you learned a bit about how the software sausage gets made, so to speak.
-            And hopefully you got some clarity regarding the benefits of smaller deliveries, and how they can impact your business positively.
-        </p>
-        <p>
-            When we're not writing explainers, <a href="/">deranged</a> is a software consultancy, which means we get to use this knowledge in practice.
-            Of course, this has implications if you choose to work with us.
-        </p>
-        <p>
-            Concretely, we try to integrate closely with our customers, because we believe in the power of rapid and direct feedback.
-            We build the best possible software for our customers if we understand their business needs and the concrete challenges they are facing.
-        </p>
-        <p>
-            Instead of using requirement specification documents to communicate, we use concrete conversations and interviews with affected stakeholders and employees of the companies we work with.
-            (Did we mention you should avoid requirements specifications?)
-            We discuss potential technical solutions with our customers and help them understand the tradeoffs of each possible path they might take.
-        </p>
-        <p>
-            We like having customers that are happy with our work.
-            For that reason, we make it easy to get started working with us (including on a limited budget), and easy to get rid of us, if you get dissatisfied with our work.
-            We work in small increments and deliver value to your business as early as possible.
-            This gives you an opportunity to concretely judge our work, and decide on how to move forwards.
-            At the same time, everything we hand over is yours, so you can stop your business relationship with us at any time, and keep our progress up to that point.
-        </p>
-        <p>
-            Generally we say that we can deliver some small thing with some business impact to a business within the first two weeks (although this depends on budget and how busy we are with other customers).
-        </p>
-        <p>
-            If it sounds like you could be interested in working with us, you are very welcome to <a href="mailto:get@deranged.dk">shoot us an email at get@deranged.dk</a>.
-            You can even write us just to get in touch, even if you have no concrete business proposals&mdash;we would love to hear from you.
-        </p>
-        <p>
-            Best of luck in your future software adventures from <a href="/who-we-are">the whole team</a>!
-        </p>
-    </section>
+    <div class="aside-wrap">
+        <section>
+            <h2>Our takeaway</h2>
+            <p>
+                You made it to the end!
+                Hopefully you learned a bit about how the software sausage gets made, so to speak.
+                And hopefully you got some clarity regarding the benefits of smaller deliveries, and how they can impact your business positively.
+            </p>
+            <p>
+                When we're not writing explainers, <a href="/">deranged</a> is a software consultancy, which means we get to use this knowledge in practice.
+                Of course, this has implications if you choose to work with us.
+            </p>
+            <p>
+                Concretely, we try to integrate closely with our customers, because we believe in the power of rapid and direct feedback.
+                We build the best possible software for our customers if we understand their business needs and the concrete challenges they are facing.
+            </p>
+            <p>
+                Instead of using requirement specification documents to communicate, we use concrete conversations and interviews with affected stakeholders and employees of the companies we work with.
+                (Did we mention you should avoid requirements specifications?)
+                We discuss potential technical solutions with our customers and help them understand the tradeoffs of each possible path they might take.
+            </p>
+            <p>
+                We like having customers that are happy with our work.
+                For that reason, we make it easy to get started working with us (including on a limited budget), and easy to get rid of us, if you get dissatisfied with our work.
+                We work in small increments and deliver value to your business as early as possible.
+                This gives you an opportunity to concretely judge our work, and decide on how to move forwards.
+                At the same time, everything we hand over is yours, so you can stop your business relationship with us at any time, and keep our progress up to that point.
+            </p>
+            <p>
+                Generally we say that we can deliver some small thing with some business impact to a business within the first two weeks (although this depends on budget and how busy we are with other customers).
+            </p>
+            <p>
+                If it sounds like you could be interested in working with us, you are very welcome to <a href="mailto:get@deranged.dk">shoot us an email at get@deranged.dk</a>.
+                You can even write us just to get in touch, even if you have no concrete business proposals&mdash;we would love to hear from you.
+            </p>
+            <p>
+                Best of luck in your future software adventures from <a href="/who-we-are">the whole team</a>!
+            </p>
+        </section>
+        <aside>
+            <h3>Further reading</h3>
+            <p>
+                If this explainer has piqued your interest, but you are looking for some more in-depth resources on software development, we recommend the following.
+            </p>
+            <p>
+                In <em><a href="https://www.impactmapping.org/book.html" target="_blank" rel="noopener">Impact Mapping</a></em>, Gojko Adzic writes about the benefits of including software developers in the process of making decisions regarding what software to build.
+                Developers who understand the business situation they are working within can often find cheaper and more efficient solutions than non-technical decision makers.
+            </p>
+            <p>
+                Ron Jeffries breaks down the <em><a href="https://pragprog.com/book/rjnsd/the-nature-of-software-development" target="_blank" rel="noopener">Nature of Software Development</a></em> in his book.
+                He discusses how to decide where to start on a software project, and how to progress when building it.
+                He has a strong notion of working <em>with</em> the grain of software, to build it with least possible resistance.
+            </p>
+        </aside>
+    </div>
 </main>
 
 <script>
