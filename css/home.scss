@@ -62,7 +62,7 @@ permalink: /css/homestyle.css
 
   .quick-intro {
     text-align: left;
-    max-width: 550px;
+    max-width: 500px;
     font-size: 1.05em;
     line-height: 150%;
     position: relative;
@@ -118,6 +118,45 @@ permalink: /css/homestyle.css
 
   to {
     transform: translateY(-18px);
+  }
+}
+
+
+.differentiation-section {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 40px;
+  background-image: linear-gradient(-4deg, rgb(7, 13, 20) -15%, transparent 25%, transparent 70%, #2c3e50 102%);
+
+  .point-of-differentiation {
+    flex-basis: 200px;
+    max-width: 450px;
+    flex-grow: 1;
+    flex-shrink: 0;
+    margin: 60px 40px;
+
+    img {
+      background-color: rgba(7, 13, 20, 0.9);
+      background-image: linear-gradient(45deg, rgba(7, 13, 20, 0.9), rgba(30, 49, 73, 0.85));
+      padding: 10px;
+      border-radius: 100%;
+      width: 63px;
+      height: 63px;
+      object-fit: contain;
+      box-sizing: border-box;
+      box-shadow: 0 0 2px rgba(0, 0, 0, 0.1), 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+
+    h1 {
+      font-weight: 200;
+      font-size: 2.1em;
+    }
+
+    p {
+      text-align: left;
+    }
   }
 }
 
