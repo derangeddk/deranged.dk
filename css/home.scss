@@ -128,7 +128,14 @@ permalink: /css/homestyle.css
   justify-content: center;
   align-items: flex-start;
   padding: 40px;
-  background-image: linear-gradient(-4deg, rgb(7, 13, 20) -15%, transparent 25%, transparent 70%, #2c3e50 102%);
+  background-image: linear-gradient(-4deg, rgb(7, 13, 20) -100px, transparent 200px, transparent calc(100% - 200px), #2c3e50 calc(100% + 20px));
+
+  @media (max-width: 1100px) {
+    flex-direction: column;
+    align-items: center;
+    padding-left: 15px;
+    padding-right: 15px;
+  }
 
   .point-of-differentiation {
     flex-basis: 200px;
@@ -136,6 +143,11 @@ permalink: /css/homestyle.css
     flex-grow: 1;
     flex-shrink: 0;
     margin: 60px 40px;
+
+    @media (max-width: 1100px) {
+      margin-left: 0;
+      margin-right: 0;
+    }
 
     img {
       background-color: rgba(7, 13, 20, 0.9);
