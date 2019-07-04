@@ -16,7 +16,7 @@
     margin-bottom: 0.5em;
   }
   > p {
-    max-width: 500px;
+    max-width: 550px;
     width: 100%;
     text-align: left;
   }
@@ -140,7 +140,7 @@
 
 .contact-form {
   width: 100%;
-  max-width: 500px;
+  max-width: 550px;
   border: 1px solid #1b2b3a;
   background: #ecf0f1;
   padding: 5px 15px;
@@ -152,12 +152,14 @@
   grid-template-columns: 1fr 1fr;
   grid-gap: 10px;
 }
-.contact-form label {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  margin-top: 10px;
-  margin-bottom: 10px;
+.contact-form {
+  label {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
 
   label > span {
     font-size: 0.8em;
@@ -242,7 +244,7 @@
   .side-by-side-contact-form-and-explanation {
     display: block;
     width: 100%;
-    max-width: 500px;
+    max-width: 550px;
     padding-left: 0;
   }
   .side-explanation {
