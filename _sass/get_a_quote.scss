@@ -4,21 +4,20 @@
   min-height: 100vh;
   color: #eaf1f7;
   display: flex;
-  justify-content: center;
-  align-items: center;
   flex-direction: column;
-  padding: 0 5px 50px;
+  padding: 50px 50px 50px 70px;
   h1 {
     font-weight: 200;
-    font-size: 3em;
-    margin: 10px;
-    margin-top: 2.5em;
+    font-size: 1.8em;
+    margin-top: 0.5em;
     margin-bottom: 0.5em;
+    text-align: left;
   }
   > p {
     max-width: 550px;
     width: 100%;
     text-align: left;
+    margin: 0 0 1em;
   }
   @media screen and (max-width: 767px) {
     height: auto;
@@ -227,8 +226,6 @@
 .side-by-side-contact-form-and-explanation {
   display: flex;
   flex-direction: row;
-  padding-left: 300px;
-  justify-content: center;
   width: 100%;
 }
 .side-explanation {
