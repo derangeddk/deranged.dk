@@ -8,180 +8,164 @@
         We are experts in working in the most efficient way possible, playing to each others' strengths, making sure you get the most value delivered for your money.
     </p>
     <p>
-        When you hire us, we will have a trial period of a month, after which we will evaluate our working relationship, to ensure that you are happy with the work we are doing for you.
+        Get in touch and we will first arrange a meeting to talk about your concrete business situation.
+        We will suggest a small project for you to get familiar with how we work, and if the fit is right initiate a longer, sustainable relationship, where we help you improve your business's software.
     </p>
-    <p>
-        If you want to hire us, see if we can make something happen within your budget here:
-    </p>
-    <section class="get-a-quote" id="get-a-quote">
-        <div class="header">
-            Get a quote
-        </div>
-        <div class="tabs">
-            <div class="tab active" data-tab="team">Team</div>
-            <div class="tab" data-tab="project">Project</div>
-            <div class="tab" data-tab="other">Other</div>
-        </div>
-        <div class="tab-content active" data-tab="team">
-            <p>
-                We can be your drop-in development team.
-                Let us know your budget, and we'll work something out!
-            </p>
-            <label class="input-container">
-                <input name="team-budget" placeholder="0,00"> DKK/month
-            </label>
-            <div class="evaluation-text">
-                Input a budget, and we'll work something out!
-            </div>
-            <a href="mailto:get@deranged.dk" class="button">Get in touch!</a>
-            <p class="get-in-touch-explanation">
-                (Email us at <a href="mailto:get@deranged.dk">get@deranged.dk</a>.)
-            </p>
-        </div>
+    <section class="side-by-side-contact-form-and-explanation">
+        <section class="contact-form">
+            <form id="contactForm" action="https://contact-form.deranged.k8s.deranged.dk/" method="post">
+                <div class="two-col-inputs">
+                    <label for="name">
+                        <span>Name</span>
+                        <input type="text" name="name" placeholder="Peter Parker">
+                    </label>
+                    <label for="email">
+                        <span>Email</span>
+                        <input type="text" name="email" placeholder="peter.parker@dailyplanet.com">
+                    </label>
+                </div>
+                <label for="subject">
+                    <span>Subject</span>
+                    <input type="text" name="subject" value="Quote request" placeholder="Quote request">
+                </label>
+                <label for="message">
+                    <span>Message</span>
+                    <textarea name="message" placeholder="Hi deranged,
+
+We're planning to expand into a new market, but we need our technology to keep up..."></textarea>
+                </label>
+                <button type="submit">Get in touch!</button>
+            </form>
+            <div class="contact-form-overlay contact-form-overlay-clickthrough">Sending...</div>
+        </section>
         <script>
-        let parseValue = (val) => parseFloat(val.replace(/\./g, "").replace(/,/g, "."));
-        let thousandSeparators = (str) => {
-            if(str.length < 7) {
-                return str;
-            }
-            let parts = [ str.substr(str.length - 6, 6) ];
-            str = str.substr(0, str.length - 6);
-            while(str.length > 3) {
-                parts.unshift(str.substr(str.length - 3, 3));
-                str = str.substr(0, str.length - 3);
-            }
-            parts.unshift(str);
-            return parts.join(".");
-        }
-        let formatValue = (val) => thousandSeparators(val.toFixed(2).replace(/\./g, ","));
+            (function() {
+                var form = document.getElementById("contactForm");
+                var nameField = form.name;
+                var emailField = form.email;
+                var messageField = form.message;
+                var subjectField = form.subject;
 
-        (function() {
-            let button = document.querySelector("[data-tab=team] .button");
-            let evalText  = document.querySelector("[data-tab=team] .evaluation-text");
+                var contactFormOverlay = document.querySelector(".contact-form-overlay");
 
-            let setBudgetInContact = (budget) => button.setAttribute("href", `mailto:get@deranged.dk?subject=${encodeURIComponent(`We'd like to hire you as a development team! Our monthly budget is DKK ${formatValue(budget)}.`)}`);
-            let setEvalText = (cls, text) => {
-                evalText.classList.remove("bad", "good");
-                if(cls) {
-                    evalText.classList.add(cls);
-                }
-                evalText.innerHTML = text;
-            }
-
-            document.querySelector("[name=team-budget]").addEventListener("keyup", function(e) {
-                let val = parseValue(this.value);
-                if(Number.isNaN(val)) {
-                    val = 0;
-                }
-                setBudgetInContact(val);
-                if(val < 0.01) {
-                    return setEvalText(null, `Input a budget, and we'll work something out!`);
-                }
-                if(val < 2500) {
-                    return setEvalText("bad", `We can't run a development team for ${formatValue(val)} DKK per month. You can contact us for a talk about what it costs to run a team, though.`);
-                }
-                if(val < 8000) {
-                    return setEvalText("bad", `For ${formatValue(val)} DKK per month it is hard to run a software team. We can give it a shot, though; let us know what makes sense.`);
-                }
-                if(val < 250000) {
-                    return setEvalText("good", `That's great&mdash;we can definitely work something out for ${formatValue(val)} DKK per month. Get in touch!`);
-                }
-                return setEvalText("good", `Yowza! ${formatValue(val)} DKK per month is a pretty big budget. It might take us some time to ramp up, but we're up for the challenge. Hit us up!`);
-            });
-
-            document.querySelector("[name=team-budget]").addEventListener("change", function(e) {
-                this.value = formatValue(parseValue(this.value));
-            });
-        })();
-        </script>
-        <div class="tab-content" data-tab="project">
-            <p>
-                If you want to hire us for a single project, that's absolutely something we can help with.
-                Let us know your budget and get in touch.
-            </p>
-            <label class="input-container" for="project-budget">
-                <input name="project-budget" placeholder="0,00"> DKK
-            </label>
-            <div class="evaluation-text">
-                Input a budget, and we'll work something out!
-            </div>
-            <a href="mailto:get@deranged.dk" class="button">Get in touch!</a>
-            <p class="get-in-touch-explanation">
-                (Email us at <a href="mailto:get@deranged.dk">get@deranged.dk</a>.)
-            </p>
-        </div>
-        <script>
-        (function() {
-            let button = document.querySelector("[data-tab=project] .button");
-            let evalText  = document.querySelector("[data-tab=project] .evaluation-text");
-
-            let setBudgetInContact = (budget) => button.setAttribute("href", `mailto:get@deranged.dk?subject=${encodeURIComponent(`We'd like to hire you for a project! Our budget is DKK ${formatValue(budget)}.`)}`);
-            let setEvalText = (cls, text) => {
-                evalText.classList.remove("bad", "good");
-                if(cls) {
-                    evalText.classList.add(cls);
-                }
-                evalText.innerHTML = text;
-            }
-
-            document.querySelector("[name=project-budget]").addEventListener("keyup", function(e) {
-                let val = parseValue(this.value);
-                if(Number.isNaN(val)) {
-                    val = 0;
-                }
-                setBudgetInContact(val);
-                if(val < 0.01) {
-                    return setEvalText(null, `Input a budget, and we'll work something out!`);
-                }
-                if(val < 10000) {
-                    return setEvalText("bad", `${formatValue(val)} DKK won't get you far at all. Get in touch and we can figure out a realistic budget and plan.`);
-                }
-                if(val < 50000) {
-                    return setEvalText("bad", `It's pretty hard to run a project for less that 50.000 DKK&mdash;but you can get in touch and we can talk through a realistic budget.`);
-                }
-                if(val < 750000) {
-                    return setEvalText("good", `Great! We can definitely figure something out for ${formatValue(val)} DKK. Get in touch!`);
-                }
-                return setEvalText("good", `Wow&mdash;${formatValue(val)} DKK is a big budget! We can definitely figure something out, but it might make more sense for you to set a monthly budget for a team. That way, you have more flexibility.`);
-            });
-
-            document.querySelector("[name=project-budget]").addEventListener("change", function(e) {
-                this.value = formatValue(parseValue(this.value));
-            });
-        })();
-        </script>
-        <div class="tab-content" data-tab="other">
-            <p>
-                If you have some other inquiry, you are of course also always very welcome to get in touch.
-            </p>
-            <a href="mailto:get@deranged.dk" class="button">Get in touch!</a>
-            <p class="get-in-touch-explanation">
-                (Email us at <a href="mailto:get@deranged.dk">get@deranged.dk</a>.)
-            </p>
-        </div>
-        <script>
-        let forEachElement = (selector, func) => Array.prototype.forEach.call(document.querySelectorAll(selector), func);
-
-        (function() {
-            let activeTab = "team";
-            // CHANGE TAB
-            forEachElement(".tab", (tabElement) => {
-                tabElement.addEventListener("click", function(e) {
+                form.addEventListener("submit", function(e) {
                     e.preventDefault();
+                    showOverlay();
 
-                    console.log("clicked", this);
+                    var name = nameField.value;
+                    var email = emailField.value;
+                    var message = messageField.value;
+                    var subject = subjectField.value;
 
-                    // deactivate old
-                    forEachElement(`[data-tab=${activeTab}]`, (el) => el.classList.remove("active"));
+                    sendRequest({
+                        from: name + "<" + email + ">",
+                        subject: "[deranged.dk contact form] " + subject,
+                        content: message
+                    }, {
+                        success: showSuccess,
+                        failure: showFailure
+                    });
 
-                    //activate new
-                    forEachElement(`[data-tab=${this.dataset.tab}]`, (el) => el.classList.add("active"));
-
-                    activeTab = this.dataset.tab;
+                    return false;
                 });
-            });
-        })();
-        </script>
 
+                function showOverlay() {
+                    contactFormOverlay.innerText = "Getting in touch...";
+                    contactFormOverlay.classList.remove("contact-form-overlay-clickthrough");
+                    requestAnimationFrame(function() {
+                        contactFormOverlay.classList.add("contact-form-overlay-visible");
+                    });
+                }
+
+                function sendRequest(data, callbacks) {
+                    var req = new XMLHttpRequest();
+                    req.open("POST", form.action, true);
+                    req.setRequestHeader("Content-Type", "application/json");
+                    req.onreadystatechange = function() {
+                        if(req.readyState != 4) {
+                            return;
+                        }
+                        if(req.status == 200) {
+                            return callbacks.success();
+                        }
+                        console.error("Response from server on request", {
+                            status: req.statusText,
+                            responseType: req.responseType,
+                            response: req.response
+                        });
+                        callbacks.failure();
+                    };
+                    req.send(JSON.stringify(data));
+                }
+
+                function showSuccess() {
+                    contactFormOverlay.classList.remove("contact-form-overlay-visible");
+                    
+                    setTimeout(function() {
+                        contactFormOverlay.innerText = "Got in touch!";
+                        contactFormOverlay.classList.add("contact-form-overlay-visible");
+
+                        setTimeout(function() {
+                            contactFormOverlay.classList.remove("contact-form-overlay-visible");
+
+                            setTimeout(function() {
+                                contactFormOverlay.classList.add("contact-form-overlay-clickthrough");
+                            }, 500);
+                        }, 1500);
+                    }, 200);
+
+                    deleteTextInField(nameField);
+                    deleteTextInField(emailField);
+                    deleteTextInField(messageField);
+                    deleteTextInField(subjectField, function() {
+                        writeTextInField(subjectField, "Quote request");
+                    });
+                }
+
+                function showFailure() {
+                    contactFormOverlay.classList.remove("contact-form-overlay-visible");
+                    
+                    setTimeout(function() {
+                        contactFormOverlay.innerText = "Something went wrong - try again!";
+                        contactFormOverlay.classList.add("contact-form-overlay-visible");
+
+                        setTimeout(function() {
+                            contactFormOverlay.classList.remove("contact-form-overlay-visible");
+
+                            setTimeout(function() {
+                                contactFormOverlay.classList.add("contact-form-overlay-clickthrough");
+                            }, 500);
+                        }, 2000);
+                    }, 200);
+                }
+
+                function deleteTextInField(field, callback) {
+                    if(field.value.length == 0) {
+                        if(callback) {
+                            return callback();
+                        }
+                        return;
+                    }
+                    field.value = field.value.substring(0, field.value.length - 1);
+                    setTimeout(deleteTextInField, 33, field, callback);
+                }
+
+                function writeTextInField(field, text) {
+                    if(text.length == 0) {
+                        return;
+                    }
+                    field.value += text[0];
+                    setTimeout(writeTextInField, 33, field, text.substring(1));
+                }
+            })();
+        </script>
+        <div class="side-explanation">
+            <p>
+                The contact form runs on our tiny open-source <a href="https://github.com/derangeddk/contact-form-api/" target="_blank" rel="noopener">contact-form-api</a>, which is highly configurable, and is easy to use for your business, too.
+            </p>
+            <p>
+                It runs as a separate service, and comes packaged with a Dockerfile, so it takes minutes to launch it on your own infrastructure.
+            </p>
+        </div>
     </section>
 </section>
