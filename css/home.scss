@@ -128,7 +128,7 @@ permalink: /css/homestyle.css
   justify-content: center;
   align-items: flex-start;
   padding: 40px;
-  background-image: linear-gradient(-4deg, rgb(7, 13, 20) -100px, transparent 200px, transparent calc(100% - 200px), #2c3e50 calc(100% + 20px));
+  background-image: linear-gradient(-4deg, transparent 0px, rgba(44,62,80,0.3) calc(100% + 20px));
 
   @media (max-width: 1100px) {
     flex-direction: column;
