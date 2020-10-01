@@ -1,13 +1,17 @@
 <style>
 .section-breakup-1 {
     position: absolute;
-    right: -200px;
-    top: -125px;
+    right: -100px;
     width: 200px;
     height: 200px;
-    transform: rotate(45deg);
+    transform: rotate(45deg) translateY(-125px);
     background-color: #502c2c;
     background-image: linear-gradient(0deg, #502c2c, #7d4a4a);
+}
+@media(max-width: 700px) {
+    .section-breakup-1 {
+        right: -150px;
+    }
 }
 </style>
 <div class="section-breakup-1"></div>
