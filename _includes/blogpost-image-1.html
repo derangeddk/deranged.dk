@@ -138,8 +138,10 @@
         <div class="illustration">
             <img src="{{ include.imageUrl }}">
         </div>
-        <div class="figure-text">
-            {{ include.imageDescription }}
-        </div>
+        {% if include.imageDescription %}
+            <div class="figure-text">
+                {{ include.imageDescription }}
+            </div>
+        {% endif %}
     </div>
 </section>
