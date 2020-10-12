@@ -33,10 +33,11 @@ published_date: 1. oktober 2020
 {% capture imageDescription %}
     <strong>Own your code</strong>
         <p>
-           SKRIV SKRIV SKRIV
+           Don't get stuck not being able to change your code when you want to. Make sure that the software developers you're working with don't own the code they create for you. 
+           It can be a very expensive mistake if you ever want to change developers or want to make major changes.
         </p>
 {% endcapture %}
-{% include blogpost-image-1.html imageUrl="/img/blog/banner-with-code.png" imageDescription=imageDescription %} 
+{% include blogpost-image-1.html imageUrl="/img/blog/man-with-money-happy.png" imageDescription=imageDescription %} 
     
 <section class="blog-text">
     <p>
@@ -51,10 +52,10 @@ published_date: 1. oktober 2020
 {% capture imageDescription %}
 <strong>Get an estimate</strong>
 <p>
-    Getting an estimate is one of the best ways of making sure you're getting the most for your money. They keep a project within a range and ensures that you actually get what you've paid for. Not getting an estimate brings with it a level of uncertainty as you don't know whether there's enough money in the budget to actually build the solution you need or if you're overspending on something being built for you. We love providing our clients with an estimate as it means we're also setting out which tasks need to be prioritized and that means everyone is on the same wavelength with what needs to be done. 
+    Getting an estimate is one of the best ways of making sure you're getting the most for your money. Estimates keep a project within a range and ensures that you actually get what you've paid for. We love providing our clients with an estimate as it means we're also setting out which tasks need to be prioritized and that means everyone is on the same page with what needs to be done. 
 </p>
 {% endcapture %}
-{% include blogpost-image-1.html imageUrl="/img/blog/man-with-money-happy.png" imageDescription=imageDescription %}
+{% include blogpost-image-1.html imageUrl="/img/blog/banner-with-code.png" imageDescription=imageDescription %}
 
 <section class="blog-text">
     <p>
