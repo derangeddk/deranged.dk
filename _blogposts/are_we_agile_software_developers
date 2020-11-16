@@ -1,6 +1,6 @@
 ---
 title: Are we agile software developers?
-heroImageUrl: "/img/blog/man-in-computer-world.png"
+heroImageUrl: "/img/blog/krokodille_til_øverst_agile.png"
 intro: >
    In short: yes, we are. How lovely if we could simply end it there, but it’s not quite as easy as that. The word agile is a loaded one in the software industry. It’s been around since the beginning of the 21st century, and you might have noticed companies using it to brand themselves, or you may have been told to look out for it on your hunt to find a software development partner. Agile is, however, much more than simply a word to define a software development business. So what does it actually mean? And how do we use it?
 author: Josefine Older Steffensen
@@ -41,12 +41,12 @@ published_date: 16. november 2020
 </section>
 
 {% capture imageDescription %}
-    <strong>Own your code</strong>
+    <strong>Scrumfall</strong>
         <p>
-          NOGET OM SCRUM
+            Scrumfall combines waterfall and scrum. Waterfall is the traditional method of producing code, where research and documentation is completed before any code is created. Many big companies have used this methods, but have tried to modernize by including scrum within that process, to make them seem agile. This usually leads to scrumfall, where the two processes fail to combine because they work in very different ways, so the company is really still using the traditional waterfall method with requirement specifications and no continual deliveries, but can say they're agile because they've implemented scrum within the waterfall process.
         </p>
 {% endcapture %}
-{% include blogpost-image-1.html imageUrl="/img/blog/man-with-money-happy.png" imageDescription=imageDescription %} 
+{% include blogpost-image-1.html imageUrl="/img/blog/lyseroed_plante_til_agile.png" imageDescription=imageDescription %} 
     
 <section class="blog-text">
     <p>
@@ -68,12 +68,12 @@ published_date: 16. november 2020
 </section>
 
 {% capture imageDescription %}
-<strong>Get an estimate</strong>
+<strong>Agility at deranged</strong>
 <p>
-  YAY, hvor er deranged gode
+  For us, it's not important that we're agile. what's important is that we work with our clients to understand what their needs are, deliver software continually and that we don't get lost in documentation and processes. Most importantly we want to be fair and honest developers who say no when we need to, find the best solutions for a client and think both in the long and the short term.
 </p>
 {% endcapture %}
-{% include blogpost-image-1.html imageUrl="/img/blog/banner-with-code.png" imageDescription=imageDescription %}
+{% include blogpost-image-1.html imageUrl="/img/blog/blaa_metorit_til_agile.png" imageDescription=imageDescription %}
 
 <section class="blog-text">
     <p>
