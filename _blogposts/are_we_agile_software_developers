@@ -1,0 +1,103 @@
+---
+title: Are we agile software developers?
+heroImageUrl: "/img/blog/man-in-computer-world.png"
+intro: >
+   In short: yes, we are. How lovely if we could simply end it there, but it’s not quite as easy as that. The word agile is a loaded one in the software industry. It’s been around since the beginning of the 21st century, and you might have noticed companies using it to brand themselves, or you may have been told to look out for it on your hunt to find a software development partner. Agile is, however, much more than simply a word to define a software development business. So what does it actually mean? And how do we use it?
+author: Josefine Older Steffensen
+editor: Niels Roesen Abildgaard
+artist: Maja Nielsen // Sjuskemaja
+designer: Niels Roesen Abildgaard
+published_date: 16. november 2020
+---
+<section class="blog-text">
+    <h2>A brief history of Agile</h2>
+    <p>
+        Agile software development is a phrase coined in 2001 by a group of software developers who got together in Utah and wanted to change the industry. Agile was essentially born out of a frustration for the way software development was traditionally done. It used to take a long time to develop software. It could take years before a project was actually finished and in that time the client couldn’t use the software. Software wasn’t prioritized and the development of it was only started after the hardware was completed. Once it had been built it was very difficult to change it, and with a lack of feedback it was also unclear whether or not the software would actually work well for the client. 
+    </p>
+    <p>
+        Essentially, software development used to be a clunky process that led to bad software being developed. Something needed to change and the agile manifesto was born (have a look at <http://www.agilemanifesto.org> for the original website). The agile manifesto is a collection of principles and values for software developers to follow in order to deliver and create better software. The agile values are:  
+    </p>
+    <p>
+        <b>Individuals and interactions</b> over processes and tools
+        <b>Working software</b> over comprehensive documentation
+        <b>Customer collaboration</b> over contract negotiations
+        <b>Responding to change</b> over following a plan
+        All of the items on the list are valued, but the ones on the left are valued more than those on the right. 
+
+    </p>
+
+    <h2>What is Agile (not)?</h2>
+    <p>
+        One of the most important things to note about agile is that it is a set of values and principles. Agile is therefore not a decision maker; a methodology to follow; a specific way of developing software; a framework to follow or scrum. 
+    </p>
+    
+    <p>
+      All software development companies today will say that they are agile. Most of them will make this claim because they use scrum, a methodology created based on the agile principles. Scrum orders the workflow into sprints where small bits of the software is planned, built, tested and reviewed and the process is repeated as many times as is needed for the complete software to be produced. 
+    </p>
+    
+    <p>
+    The problem with scrum is that companies often use it without considering the agile values and principles. They are using a tool blindly and end up following the scrum process religiously which then ends up valuing processes and tools over individuals and interactions, going against the agile values listed above. 
+    </p>
+</section>
+
+{% capture imageDescription %}
+    <strong>Own your code</strong>
+        <p>
+          NOGET OM SCRUM
+        </p>
+{% endcapture %}
+{% include blogpost-image-1.html imageUrl="/img/blog/man-with-money-happy.png" imageDescription=imageDescription %} 
+    
+<section class="blog-text">
+    <p>
+        “The problem with hearing the word agile in the software industry today, and in particular in Denmark, is that people equate agile to scrum. And although scrum was initially based on the agile principles, the process of using scrum itself isn’t actually agile. That’s why we, at deranged, don’t say that we’re agile, despite the fact that we use the agile principles and values every day, because we don’t want people to think we use scrum. We don’t follow a particular set methodology, like scrum, because our clients and their projects are different and require different approaches,” explains Niels from deranged.
+    </p>
+    
+    <p>
+      Agile is also not a case of having a huge requirement specification (comprehensive documentation) before being able to create working software, or having a contract in place before you can start to consider working with another company, and it certainly doesn’t mean sticking to a plan at any cost if other more important things come up. As the name suggests, agile requires agility from developers. 
+    </p>
+
+   <h2> Agile software development at deranged </h2>
+   <p>
+      We have to start by pointing out that we don’t love saying that we are agile developers simply because it has become so tainted. We don’t use scrum or any other agile methodology, but we do follow the agile principles and values, mainly because we find it natural to do so with the way we work.
+    </p>
+    
+    <p>
+    We consider each of our clients to be individuals. Every single one will require something slightly different from us, and we need to be able to provide them with that. We don’t follow a set structure with each of our clients, but find a way to work together that suits both us and them. That way we can make sure that we’re prioritising the people we’re working with, establish a good customer collaboration and provide better work for them because we have a better understanding of how they work. 
+    </p>
+</section>
+
+{% capture imageDescription %}
+<strong>Get an estimate</strong>
+<p>
+  YAY, hvor er deranged gode
+</p>
+{% endcapture %}
+{% include blogpost-image-1.html imageUrl="/img/blog/banner-with-code.png" imageDescription=imageDescription %}
+
+<section class="blog-text">
+    <p>
+      We also never work with requirement specifications. We will establish what is needed and what will work best alongside our client and throughout the process. We won’t ask the clients to figure it out on their own. That ultimately makes for counterproductive work, as it is impossible to predict everything that is going to be needed for the software development. 
+    </p>
+    <p>
+      When creating our fee for any project, we set out three different price estimates in order to allow for any unforeseen changes along the way. We strongly believe that it is cheaper in the long run to fix things as they come up, rather than to push on and create software that isn’t optimal for the client. We also believe in providing our clients with changes quickly and efficiently, so we frequently deliver working software to our clients, so they can see how those developments help to build their business. 
+    </p>
+
+    {% include blogpost-sectionbreak-1.html %}
+    
+    <p>
+      We use the agile principles and values to help us to deliver the best software solutions to our clients. However, due to the fact that agile has become such a loaded term, we tend to not market ourselves on it. It is innate to the way we work, that we value our clients over a process, that we’d rather create working software than wait for a requirement specification, that we’d rather work with our clients instead of negotiate with them and that we’d rather create software that actually works instead of stick to a precise plan. 
+    </p>
+    
+    <p>
+      If a software developer tells you they’re agile, ask them how they do it, which values and principles they find particularly interesting or have a specific focus on. Agile is not just a word or something to market yourself on – find out how they’re actually using it within the company. The values and processes behind agile software development should make the process better for you as a client, you just have to find out whether or not the developers know why and how that is. 
+    </p>
+
+    {% include blogpost-endmarker-1.html %}
+</section>
+<section class="blog-post-end">
+    <strong>Making agile work for you</strong>
+    <p>
+      If a software developer tells you they’re agile, ask them how they do it, which values and principles they find particularly interesting or have a specific focus on. Agile is not just a word or something to market yourself on – find out how they’re actually using it within the company. The values and processes behind agile software development should make the process better for you as a client, you just have to find out whether or not the developers know why and how that is. 
+    </p>
+</section>
