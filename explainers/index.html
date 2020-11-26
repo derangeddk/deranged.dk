@@ -1,82 +1,183 @@
 ---
-layout: explainers
+layout: with-explainer-header
 ---
-<h1>
-    Avoid common mistakes<br>
-    and build <strong>better software</strong>
-</h1>
-
-<section class="explainer-description">
-    <div class="teaser">
-        <p>
-            Our <em>explainers</em> are a collection of resources for decision makers in any kind of company, faced with the challenge of building software tools or products to support their business and its needs.
-        </p>
-        <p>
-            Software is a complex endeavour, and there are many pitfalls for people who are not new to the industry.
-            Hopefully, our explainers will help guide you through some of these, and help you build better tools and products for your employees and customers.
-        </p>
-    </div>
-    <div class="author"></div>
-</section>
-
-<style type="text/css" scoped>
-    .explainer-summary {
-        display: block;
-        border: 1px solid rgba(52, 73, 94, 1.0);
-        text-decoration: none;
-        margin-left: 150px;
-        margin-top: 50px;
-        position: relative;
-        overflow: hidden;
-        width: 100%;
-        max-width: 750px;
+<style>
+    main {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: left;
+        margin: 4em 0;
+    }
+    .blog-landing-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        width: 1150px;
+        grid-auto-flow: dense;
+        grid-gap: 2em;
+    }
+    .blog-landing-grid h1.overline {
+        grid-column: 1 / 4;
+        text-align: right;
+    }
+    .blog-landing-grid h1.wraparound {
+        grid-column: 2 / 4;
+        text-align: right;
+        transform: translateY(-0.3em);
+    }
+    .blog-landing-grid .blog-post {
+        grid-row: span 3;
+        border: 1px solid #2c3e50;
         padding: 1em;
-        box-sizing: border-box;
-        transform: translateY(-1px);
-        transition: transform 0.5s;
+        text-decoration: none;
+        color: white;
+        background-image: linear-gradient(40deg, #2c3e50 30%, #455d75 90%);
+        position: relative;
+        transition: transform 0.3s;
+    }
+    .blog-landing-grid .blog-post:hover {
+        transform: scale(1.03);
+    }
+    .blog-landing-grid .blog-post .author {
+        font-size: 0.7em;
         background: #ecf0f1;
-    }
-    .explainer-summary h2 {
-        font-size: 1.2em;
-        margin: 0.5em 20px 0.5em 0;
-    }
-    .explainer-summary p {
-        margin: 0.5em 0;
-        font-size: 0.9em;
-    }
-    .explainer-summary:hover {
-        transform: scale(1.04);
-    }
-    .explainer-summary-hero {
-        width: 325px;
+        color: #2c3e50;
+        padding: 0.5em;
         position: absolute;
-        right: 0;
-        bottom: 0;
+        top: -0.1em;
+        right: -0.5em;
+    }
+    .blog-landing-grid .blog-post h2 {
+        margin: 0.7em 0 0 0;
+        font-size: 2.2em;
+        font-weight: 200;
+    }
+    .blog-landing-grid .blog-post h2 strong {
+        font-weight: 900;
+    }
+    .blog-landing-grid .blog-post p {
+        margin: 1em 0 0 0;
+    }
+    .blog-landing-grid .explainers-ad {
+        margin-top: 1.55em;
+        text-decoration: inherit;
+        color: inherit;
+        border: 1px solid #2c3e50;
+        grid-column: 3 / 4;
+        grid-row: span 4;
+        padding: 1em;
+    }
+    .blog-landing-grid .explainers-ad h2 {
+        margin: 0;
+    }
+    .blog-landing-grid .explainers-ad p {
+        margin: 1em 0 0 0;
+    }
+    main h1 {
+        text-align: left;
+        font-size: 4em;
+        margin: 0;
+    }
+    h1 strong {
+        font-weight: bold;
+    }
+    main section > h2 {
+        margin-bottom: 1em;
+        margin-top: 4em;
+        padding-right: 25px;
+        font-size: 2em;
+        font-weight: 200;
+        margin-left: 175px;
+        position: relative;
+        max-width: 700px;
+        color: #ecf0f1;
+        z-index: 2;
+    }
+    main section > h2:before {
+        content: '';
+        background-image: linear-gradient(40deg, #2c3e50 30%, #455d75 90%);
+        width: calc(100% + 25px);
+        max-width: 750px;
+        position: absolute;
+        top: -0.25em;
+        bottom: -0.25em;
+        left: 0;
         z-index: -1;
-        opacity: 0.15;
-        filter: blur(1px);
-        transition: filter 0.5s, opacity 0.5s, width 0.5s;
+        transform: translate(-25px, -2px) rotate(-0.5deg);
     }
-    .explainer-summary:hover .explainer-summary-hero {
-        width: 375px;
-        filter: none;
-        opacity: 1;
+    main section > p {
+        margin-left: 175px;
+        max-width: 650px;
     }
-    @media (max-width: 1100px) {
-        .explainer-summary {
-            margin-left: 0;
+    main > section {
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    @media (max-width: 1250px) {
+        main > section.explainer-description {
+            flex-direction: column;
         }
     }
+    @media (max-width: 1100px) {
+        main h1 {
+            margin-left: 20px;
+        }
+        main > section.explainer-description {
+            margin-left: 0;
+        }
+        main section > h2 {
+            margin-left: 20px;
+        }
+        main section > p {
+            margin-left: 20px;
+        }
+    }
+    @media (max-width: 950px) {
+        main h1 {
+            font-size: 3.5em;
+        }
+        main h1 br {
+            display: none;
+        }
+    }
+    @media (max-width: 600px) {
+        main h1 {
+            font-size: 3em;
+        }
+    }
+    @media (max-width: 450px) {
+        main {
+            font-size: 1.1em;
+        }
+    }
+
+    main a {
+        color: #2c3e50;
+    }
 </style>
-<section>
-    <a class="explainer-summary" href="/explainers/small-deliveries/">
-        <img class="explainer-summary-hero" src="/explainers/small-deliveries-hero.jpg">
-        <h2>Get more value for money with small deliveries</h2>
-        <p>
-            When building software, it is better to take it into use a bit at a time.
-            That way, you will get more total value for your business.
-            Not only that, you probably also get better software, because small deliveries encourage feedback.
-            <u>Read more.</u>
-        </p>
-    </a>
-</section>
+<main>
+    <div class="blog-landing-grid">
+        <h1 class="overline">Avoid common mistakes and build</h1>
+        <h1 class="wraparound"><strong>better software</strong></h1>
+        <a class="explainers-ad" href="/blog">
+            <h2>Want more angles?</h2>
+            <p>
+                Our explainers are a collection of resources for decision makers in any kind of company, faced with the challenge of building software tools or products to support their business and its needs.
+            </p>
+            <p>
+                If you want to find inspiration and hear stories from software developers, trying to build the best possible software for a variety of customers, you will find exactly that on <u>our blog</u>.
+            </p>
+        </a>
+        <a href="/explainers/small-deliveries" class="blog-post">
+            <div class="author">by Niels Roesen Abildgaard, March 28, 2019.</div>
+            <h2>Get more value for money with <strong>small deliveries</strong></h2>
+            <p>
+                When building software, it is better to take it into use a bit at a time.
+                That way, you will get more total value for your business.
+                Not only that, you probably also get better software, because small deliveries encourage feedback.
+                <u>Read more.</u>
+            </p>
+        </a>
+    </div>
+</main>
