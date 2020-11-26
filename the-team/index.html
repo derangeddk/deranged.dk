@@ -1,0 +1,766 @@
+---
+layout: default
+title: 'the Team ↳↷↷ deranged'
+---
+{% include overlay_nav.html %}
+
+<style type="text/css" scoped>
+    .header {
+        background: rgba(52, 73, 94, 1.0);
+        display: grid;
+        grid-template-columns: 150px 1fr;
+        color: #eaf1f7;
+        padding: 30px;
+        text-align: left;
+    }
+
+    .header .logo {
+        color: inherit;
+        text-decoration: inherit;
+        font-weight: 200;
+        font-size: 1.3em;
+        position: relative;
+        z-index: 11;
+    }
+
+    .header h1 {
+        margin: 0;
+        padding: 0;
+        margin-top: -9px;
+        font-weight: 200;
+        font-size: 3em;
+    }
+    @media (max-width: 600px) {
+        .header {
+            grid-template-columns: 1fr;
+        }
+    }
+</style>
+<section class="header">
+    <a href="/" class="logo">deranged</a>
+    <h1>Who we are</h1>
+</section>
+<style type="text/css" scoped>
+    .intro {
+        background: rgba(52, 73, 94, 1.0);
+        color: #eaf1f7;
+        display: flex;
+    }
+    .intro-text {
+        font-size: 1.1em;
+        text-align: left;
+        padding: 45px;
+        padding-left: 175px;
+        max-width: 900px;
+    }
+    .intro-image {
+        flex-basis: 300px;
+        flex-grow: 2;
+        flex-shrink: 0;
+        position: relative;
+        opacity: 0.85;
+        transition: opacity 0.4s;
+        max-width: 1300px;
+        margin-left: 100px;
+    }
+    .intro-image:hover {
+        opacity: 1;
+    }
+    @media (max-width: 600px) {
+        .intro-image {
+            min-height: 50vh;
+        }
+    }
+    .intro-image img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+    .intro-image:after {
+        content: '';
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        background-image: linear-gradient(340deg, rgb(69, 93, 117, 0.7) 0%, transparent 35%, transparent 65%, rgba(52, 73, 94, 0.8) 100%);
+        transition: opacity 0.3s;
+        z-index: 1;
+        pointer-events: none;
+    }
+    .intro-image:hover:after {
+        opacity: 0.7;
+    }
+    @media (max-width: 1450px) {
+        .intro-text {
+            font-size: 1.1em;
+            max-width: 800px;
+        }
+    }
+    @media (max-width: 1100px) {
+        .intro-text {
+            font-size: 1em;
+            max-width: 700px;
+        }
+    }
+    @media (max-width: 900px) {
+        .intro {
+            flex-direction: column;
+        }
+        .intro-image {
+            max-height: 50vw;
+        }
+    }
+    @media (max-width: 600px) {
+        .intro-text {
+            padding: 40px 25px;
+        }
+        .intro-image {
+            display: none;
+        }
+    }
+</style>
+<section class="intro">
+    <div class="intro-text">
+        <p>
+            deranged is a team of enthusiastic, quick-working developers.
+            We have experts at every level of full-stack web application development, and experience from a broad swath of industries and companies.
+        </p>
+        <p>
+            Our current offices are in the Nordvest area, in the shared office space <a href="https://www.google.com/maps/place/Glasvej+3,+2400+København/@55.703652,12.5273953,17z/" target="_blank" rel="noopener">STUDIET Glasvej 3</a>.
+        </p>
+            Our mailing address is:<br>
+            deranged<br>
+            Att. Niels Roesen Abildgaard<br>
+            Markskellet 8 st th<br>
+            2720 Vanløse
+        </p>
+        <p>
+            You can get in touch with us via email on <a href="mailto:get@deranged.dk">get@deranged.dk</a>.
+        </p>
+        <p>
+            On this page, you can see the competent people on our team. You can also look at our developer profiles in more depth in our <a target="_blank" href="/files/team-cv.pdf">team CV</a>.
+        </p>
+    </div>
+    <div class="intro-image">
+        <a href="https://www.google.com/maps/place/Glasvej+3,+2400+København/@55.703652,12.5273953,17z/" target="_blank" rel="noopener">
+            <img src="/img/map.png">
+        </a>
+    </div>
+</section>
+
+<style type="text/css" scoped>
+    .people-container {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        grid-auto-rows: 1fr;
+        background: rgb(44, 62, 80);
+        background-image: linear-gradient(160deg, rgb(44, 62, 80) 40%, rgb(69, 93, 117) 100%);
+        grid-auto-flow: dense;
+        grid-gap: 8px;
+        position: relative;
+        z-index: 1;
+        padding: 8px 0 0;
+    }
+    .person-image {
+        grid-row: span 2;
+    }
+    .person-image img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+    @media (min-width: 1600px) {
+        .person-lg-col-1 {
+            grid-column: 1 / 2;
+        }
+        .person-lg-col-2 {
+            grid-column: 2 / 3;
+        }
+        .person-lg-col-3 {
+            grid-column: 3 / 4;
+        }
+        .person-lg-col-4 {
+            grid-column: 4 / 5;
+        }
+        .person-image.person-lg-row-2 {
+            grid-row: 2 / 4;
+        }
+        .person.person-lg-row-4 {
+            grid-row: 4 / 5;
+        }
+        .person-image.person-lg-row-4 {
+            grid-row: 4 / 6;
+        }
+        .person-lg-scoot-left {
+            transform: translateX(-30px);
+            position: relative;
+            transition: transform 0.8s;
+        }
+        .person-lg-scoot-left:hover {
+            transform: translateX(-45px);
+        }
+        .person-lg-scoot-left:after {
+            content: '';
+            background-image: url('/img/expand_more_white.png');
+            background-size: contain;
+            width: 60px;
+            height: 60px;
+            position: absolute;
+            transform: rotate(90deg);
+            left: -50px;
+            top: 22px;
+            background-color: rgba(52, 73, 94, 1.0);
+            z-index: 10;
+        }
+        .person-lg-scoot-right {
+            transform: translateX(30px);
+            position: relative;
+            transition: transform 0.8s;
+        }
+        .person-lg-scoot-right:hover {
+            transform: translateX(45px);
+        }
+        .person-lg-scoot-right:after {
+            content: '';
+            background-image: url('/img/expand_more_white.png');
+            background-size: contain;
+            width: 60px;
+            height: 60px;
+            position: absolute;
+            transform: rotate(270deg);
+            right: -50px;
+            top: 22px;
+            background-color: rgba(52, 73, 94, 1.0);
+            z-index: 10;
+        }
+    }
+    @media (max-width: 1800px) {
+        .people-container {
+            font-size: 0.9em;
+        }
+    }
+    @media (min-width: 1350px) and (max-width: 1599px) {
+        .people-container {
+            grid-template-columns: 1fr 1fr 1fr;
+        }
+        .person-md-col-1 {
+            grid-column: 1 / 2;
+        }
+        .person-md-col-2 {
+            grid-column: 2 / 3;
+        }
+        .person-md-col-3 {
+            grid-column: 3 / 4;
+        }
+        .person-image.person-md-row-6 {
+            grid-row: 6 / 8;
+        }
+        .person.person-md-row-4 {
+            grid-row: 4 / 5;
+        }
+        .person-md-scoot-left {
+            transform: translateX(-30px);
+            position: relative;
+            transition: transform 0.8s;
+        }
+        .person-md-scoot-left:hover {
+            transform: translateX(-45px);
+        }
+        .person-md-scoot-left:after {
+            content: '';
+            background-image: url('/img/expand_more_white.png');
+            background-size: contain;
+            width: 60px;
+            height: 60px;
+            position: absolute;
+            transform: rotate(90deg);
+            left: -50px;
+            top: 22px;
+            background-color: rgba(52, 73, 94, 1.0);
+            z-index: 10;
+        }
+        .person-md-scoot-right {
+            transform: translateX(30px);
+            position: relative;
+            transition: transform 0.8s;
+        }
+        .person-md-scoot-right:hover {
+            transform: translateX(45px);
+        }
+        .person-md-scoot-right:after {
+            content: '';
+            background-image: url('/img/expand_more_white.png');
+            background-size: contain;
+            width: 60px;
+            height: 60px;
+            position: absolute;
+            transform: rotate(270deg);
+            right: -50px;
+            top: 22px;
+            background-color: rgba(52, 73, 94, 1.0);
+            z-index: 10;
+        }
+        .person-md-scoot-up {
+            transform: translateY(-30px);
+            position: relative;
+            transition: transform 0.8s;
+        }
+        .person-md-scoot-up:hover {
+            transform: translateY(-45px);
+        }
+        .person-md-scoot-up:after {
+            content: '';
+            background-image: url('/img/expand_more_white.png');
+            background-size: contain;
+            width: 60px;
+            height: 60px;
+            position: absolute;
+            transform: rotate(180deg);
+            right: 22px;
+            top: -50px;
+            background-color: rgba(52, 73, 94, 1.0);
+            z-index: 10;
+        }
+    }
+    @media (min-width: 950px) and (max-width: 1349px) {
+        .people-container {
+            grid-template-columns: 1fr 1fr 1fr;
+        }
+        .person-image {
+            grid-row: span 1;
+        }
+        .person-sm-col-1 {
+            grid-column: 1 / 2;
+        }
+        .person-sm-col-2 {
+            grid-column: 2 / 3;
+        }
+        .person-sm-col-3 {
+            grid-column: 3 / 4;
+        }
+        .person-image.person-md-row-2 {
+            grid-row: 2 / 4;
+        }
+        .person.person-sm-row-4 {
+            grid-row: 4 / 5;
+        }
+        .person-sm-scoot-left {
+            transform: translateX(-30px);
+            position: relative;
+            transition: transform 0.8s;
+        }
+        .person-sm-scoot-left:hover {
+            transform: translateX(-45px);
+        }
+        .person-sm-scoot-left:after {
+            content: '';
+            background-image: url('/img/expand_more_white.png');
+            background-size: contain;
+            width: 60px;
+            height: 60px;
+            position: absolute;
+            transform: rotate(90deg);
+            left: -50px;
+            top: 22px;
+            background-color: rgba(52, 73, 94, 1.0);
+            z-index: 10;
+        }
+        .person-sm-scoot-right {
+            transform: translateX(30px);
+            position: relative;
+            transition: transform 0.8s;
+        }
+        .person-sm-scoot-right:hover {
+            transform: translateX(45px);
+        }
+        .person-sm-scoot-right:after {
+            content: '';
+            background-image: url('/img/expand_more_white.png');
+            background-size: contain;
+            width: 60px;
+            height: 60px;
+            position: absolute;
+            transform: rotate(270deg);
+            right: -50px;
+            top: 22px;
+            background-color: rgba(52, 73, 94, 1.0);
+            z-index: 10;
+        }
+        .person-sm-scoot-up {
+            transform: translateY(-30px);
+            position: relative;
+            transition: transform 0.8s;
+        }
+        .person-sm-scoot-up:hover {
+            transform: translateY(-45px);
+        }
+        .person-sm-scoot-up:after {
+            content: '';
+            background-image: url('/img/expand_more_white.png');
+            background-size: contain;
+            width: 60px;
+            height: 60px;
+            position: absolute;
+            transform: rotate(180deg);
+            right: 22px;
+            top: -50px;
+            background-color: rgba(52, 73, 94, 1.0);
+            z-index: 10;
+        }
+    }
+    @media (min-width: 600px) and (max-width: 949px) {
+        .people-container {
+            grid-template-columns: 1fr 1fr;
+        }
+        .person-image {
+            grid-row: span 1;
+        }
+        .person-xs-col-1 {
+            grid-column: 1 / 2;
+        }
+        .person-xs-col-2 {
+            grid-column: 2 / 3;
+        }
+        .person-xs-scoot-left {
+            transform: translateX(-30px);
+            position: relative;
+            transition: transform 0.8s;
+        }
+        .person-xs-scoot-left:hover {
+            transform: translateX(-45px);
+        }
+        .person-xs-scoot-left:after {
+            content: '';
+            background-image: url('/img/expand_more_white.png');
+            background-size: contain;
+            width: 60px;
+            height: 60px;
+            position: absolute;
+            transform: rotate(90deg);
+            left: -50px;
+            top: 22px;
+            background-color: rgba(52, 73, 94, 1.0);
+            z-index: 10;
+        }
+        .person-xs-scoot-right {
+            transform: translateX(30px);
+            position: relative;
+            transition: transform 0.8s;
+        }
+        .person-xs-scoot-right:hover {
+            transform: translateX(45px);
+        }
+        .person-xs-scoot-right:after {
+            content: '';
+            background-image: url('/img/expand_more_white.png');
+            background-size: contain;
+            width: 60px;
+            height: 60px;
+            position: absolute;
+            transform: rotate(270deg);
+            right: -50px;
+            top: 22px;
+            background-color: rgba(52, 73, 94, 1.0);
+            z-index: 10;
+        }
+    }
+    @media (max-width: 599px) {
+        .people-container {
+            grid-template-columns: 1fr;
+            grid-auto-rows: auto;
+        }
+        .person-image {
+            height: 100vw;
+        }
+        .person {
+            transform: translateY(-30px);
+            position: relative;
+            transition: transform 0.8s;
+        }
+        .person:after {
+            content: '';
+            background-image: url('/img/expand_more_white.png');
+            background-size: contain;
+            width: 60px;
+            height: 60px;
+            position: absolute;
+            transform: rotate(180deg);
+            right: 22px;
+            top: -50px;
+            background-color: rgba(52, 73, 94, 1.0);
+            z-index: 10;
+        }
+    }
+    .person {
+        text-align: left;
+        color: #eaf1f7;
+        padding: 30px 15px;
+        background: rgba(52, 73, 94, 1.0);
+        box-shadow: 0 1px 3px rgba(0,0,0,0.4);
+        font-size: 1.1em;
+        position: relative;
+        z-index: 1;
+    }
+    .person .person-name {
+        margin-bottom: 1em;
+    }
+    .person .person-name h2 {
+        font-weight: 100;
+        font-size: 1.85em;
+        margin: 0;
+    }
+    .person .person-about, .person .person-free-time {
+        max-width: 550px;
+    }
+    .person .person-title {
+        font-size: 0.85em;
+    }
+    .person-about:before {
+        content: '';
+        display: block;
+        width: 100%;
+        height: 18px;
+        background-image: url('/img/code-icon.svg');
+        background-size: contain;
+        background-position: center left;
+        background-repeat: no-repeat;
+        margin-bottom: -1em;
+    }
+    .person-free-time:before {
+        content: '';
+        display: block;
+        width: 100%;
+        height: 18px;
+        background-image: url('/img/terrain-icon.svg');
+        background-size: contain;
+        background-position: center left;
+        background-repeat: no-repeat;
+        margin-bottom: -5px;
+    }
+    .person .person-previous-experience, .person .person-links {
+        height: 0;
+        overflow: hidden;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background: rgb(69, 93, 117);
+        padding: 0 15px;
+        z-index: 103;
+        transition: transform 0.4s, height 0.4s, padding 0.4s;
+        font-size: 0.9em;
+    }
+    /* TODO: make showing more info on hover work */
+    /*.person:hover .person-previous-experience, .person:hover .person-links {
+        height: 73px;
+        padding: 15px;
+        transform: translateY(75px);
+    }
+    .person:hover .person-links {
+        transform: translateY(128px);
+        height: 51px;
+    }*/
+    .join-us-container {
+        background: rgb(44, 62, 80);
+        background-image: linear-gradient(rgb(44, 62, 80) 40%, rgb(27, 43, 58));
+        color: #eaf1f7;
+        grid-column: span 2;
+        grid-row: span 2;
+        font-size: 1.5em;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 100px;
+    }
+    .join-us-container h1 {
+        font-size: 2.5em;
+        font-weight: 100;
+    }
+    @media (min-width: 1350px) and (max-width: 1599px) {
+        .join-us-container {
+            font-size: 1em;
+            grid-column: span 1;
+        }
+    }
+    @media (max-width: 1349px) {
+        .join-us-container {
+            font-size: 1em;
+            grid-row: span 1;
+        }
+    }
+    @media (max-width: 599px) {
+        .join-us-container {
+            grid-column: span 1;
+        }
+    }
+    @media (max-width: 450px) {
+        .join-us-container {
+            padding: 50px;
+        }
+    }
+    @media (max-width: 350px) {
+        .join-us-container {
+            padding: 25px;
+        }
+    }
+</style>
+<section class="people-container">
+    <div class="person-image person-lg-col-1 person-md-col-1 person-sm-col-1">
+        <img src="/img/people/niels-abildgaard.jpg">
+    </div>
+    <div class="person person-lg-col-2 person-lg-scoot-left person-md-col-2 person-md-scoot-left person-sm-col-2 person-sm-scoot-left person-xs-scoot-left">
+        <div class="person-name">
+            <h2>Niels Roesen Abildgaard</h2>
+            <div class="person-title">Software developer. MSc Software Development.</div>
+        </div>
+        <div class="person-about">
+            <p>
+                Niels loves integrating with companies, figuring out their business goals, and helping achieve them with rapidly delivered software.
+            </p>
+            <p>
+                Niels has worked as a software architect and full-stack web developer in a variety of companies, and has experience with many modern technologies for building highly scalable applications for the web.
+            </p>
+        </div>
+        <div class="person-free-time">
+            In his free time, Niels is an engaged scout, spending most of his time as a group leader in <a href="http://soeborggruppe.dk">1. Søborg Gruppe</a>.
+        </div>
+        <div class="person-previous-experience">
+            Previously at Planday, CubeIO, Newsquid.<br>
+            Has worked in telecom, pharma.
+        </div>
+        <div class="person-links">
+            <a target="_blank" rel="noopener" href="https://github.com/hypesystem">Github</a>
+            <a target="_blank" rel="noopener" href="http://hypesystem.dk">Website</a>
+            <a target="_blank" rel="noopener" href="http://blog.hypesystem.dk">Blog</a>
+        </div>
+    </div>
+    <div class="person-image person-lg-col-4 person-md-col-3 person-sm-col-2 person-xs-col-2">
+        <img src="/img/people/asbjoern-thegler.jpg">
+    </div>
+    <div class="person person-lg-col-3 person-lg-scoot-right person-md-col-2 person-md-scoot-right person-sm-col-1 person-sm-scoot-right person-xs-scoot-right person-xs-col-1">
+        <div class="person-name">
+            <h2>Asbjørn Dyhrberg Thegler</h2>
+            <div class="person-title">Software developer. MSc Computer Science.</div>
+        </div>
+        <div class="person-about">
+            <p>
+                Asbjørn is a privacy-minded and ethical software developer with an eye for the bigger picture.
+                He cares strongly about the ethics of customer data handling and has a high sense of duty.
+            </p>
+            <p>
+                Asbjørn is an experienced software infrastructure designer and maintainer, and takes a holistic
+                approach to designing applications that run and scale well, including DevOps and continuous
+                deployment practices.
+            </p>
+        </div>
+        <div class="person-previous-experience">
+            Previously at CubeIO, DK-Hostmaster.<br>
+            Has worked in banking, telecom, pharma.
+        </div>
+        <div class="person-links">
+            <a target="_blank" rel="noopener" href="https://github.com/ath88">Github</a>
+        </div>
+    </div>
+    <div class="person-image person-lg-col-2 person-md-col-2 person-sm-col-3">
+        <img src="/img/people/niels-christensen.jpg">
+    </div>
+    <div class="person person-lg-col-3 person-lg-row-2 person-lg-scoot-left person-md-col-1 person-md-scoot-right person-sm-col-3 person-sm-scoot-up person-xs-scoot-left">
+        <div class="person-name">
+            <h2>Niels Ørbæk Christensen</h2>
+            <div class="person-title">Software developer. BSc Humanities and Technology.</div>
+        </div>
+        <div class="person-about">
+            <p>
+                Niels is a software developer who cares about solving real problems in a way that is suitable and adds value for people. He is used to working in a crossdiciplinary manner and communicating about complex technical solutions to people without technical background.
+            </p>
+            <p>
+                Niels likes being productive and developing usable software fast, using modern high-level frameworks and tools,as well as employing his theoretical and academic background to solve lower level technical tasks when needed.
+            </p>
+        </div>
+        <div class="person-free-time">
+            In his spare time Niels goes bouldering and spends a lot of time in <a href="http://nkk.dk" target="_blank" rel="noopener">Nørrebro Klatreklub</a>.
+        </div>
+        <div class="person-previous-experience">
+            Previously at TwentyThree.
+        </div>
+    </div>
+    <div class="person-image person-lg-col-1 person-md-col-3 person-sm-col-3">
+        <img src="/img/people/helena-bach.jpg">
+    </div>
+    <div class="person person-lg-col-2 person-lg-row-4 person-lg-scoot-left person-md-col-3 person-md-scoot-up person-sm-col-2 person-sm-scoot-right person-xs-scoot-left">
+        <div class="person-name">
+            <h2>Helena Bach</h2>
+            <div class="person-title">Software developer. BSc Computer Science.</div>
+        </div>
+        <div class="person-about">
+            <p>
+                Helena cares strongly about building software with an impact.
+                She has a passion for the mathematical underpinnings of software development, but cares strongly about applying that passion practically.
+            </p>
+            <p>
+                Helena has significant experience in corporate solutions from working at Netcompany.
+                She is quick to learn new tools and approaches and finding and reproducing patterns in existing systems, and has significant experience in maintaining existing code bases, finding the best way of delivering new features and maintaining code quality given the circumstances she finds herself in.
+            </p>
+        </div>
+        <div class="person-free-time">
+            In her free time, Helena helps plan the <a href="http://nakkefestival.dk" target="_blank" rel="noopener">Nakke festival</a>.
+        </div>
+        <div class="person-previous-experience">
+            Previously at Netcompany.
+        </div>
+    </div>
+    <div class="person-image person-lg-col-3 person-md-col-1 person-sm-col-1">
+        <img src="/img/people/philip-dein.jpg">
+    </div>
+    <div class="person person-lg-col-4 person-lg-scoot-left person-md-col-2 person-md-scoot-left person-sm-col-1 person-sm-scoot-up person-xs-scoot-left">
+        <div class="person-name">
+            <h2>Philip Dein</h2>
+            <div class="person-title">Software developer.</div>
+        </div>
+        <div class="person-about">
+            <p>
+                Philip loves delivering working software to customers that solves real problems. The work of
+                finding creative solutions to problems faced by customers is what drives his work. It’s not worth it,
+                to build things that nobody will use.
+            </p>
+            <p>
+                In his day-to-day work Philip emphasized the need for communication and knowledge sharing in
+                the development team, ensuring that nobody becomes a bottleneck in the team.
+            </p>
+        </div>
+        <div class="person-free-time">
+            In his free time, Philip is a scout leader in <a href="https://www.1glostrupgruppe.dk/" target="_blank" rel="noopener">1. Glostrup Gruppe</a>.
+        </div>
+        <div class="person-previous-experience">
+            Previously at Daman Digital.
+        </div>
+    </div>
+    <div class="person-image person-lg-col-4 person-lg-row-4 person-md-col-1 person-md-row-6 person-sm-col-2 person-xs-col-2">
+        <img src="/img/people/liv-borre.jpg">
+    </div>
+    <div class="person person-lg-col-3 person-lg-scoot-right person-md-col-2 person-md-scoot-left person-sm-col-3 person-sm-scoot-left person-xs-scoot-right person-xs-col-1">
+        <div class="person-name">
+            <h2>Liv Hartoft Borre</h2>
+            <div class="person-title">Software developer.</div>
+        </div>
+        <div class="person-about">
+            <p>
+                Liv finds great purpose and passion in developing solutions that are valuable to others, from helping people do things they weren’t capable of before, to simply eliminating grunt work.
+            </p>
+            <p>
+                She enjoys software development as a creative, problem-solving craft that she’s continuously perfecting, and she focuses on writing efficient and maintainable code and designing usable and extendable solutions.
+            </p>
+            <p>
+                Haunted by perfectionistic tendencies, she puts great care into details and code quality while keeping focus on the creation and delivery of value.
+            </p>
+        </div>
+    </div>
+    <div class="join-us-container">
+        <h1>Want to join the team?</h1>
+        <p>
+            We are not currently actively hiring, but if you are interested in what it's like working with us, and would like to learn more, you are always welcome to contact us on <a href="mailto:get@deranged.dk">get@deranged.dk</a>.
+        </p>
+    </div>
+</section>
