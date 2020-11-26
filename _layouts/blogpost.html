@@ -80,9 +80,6 @@ body {
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
     margin-bottom: 0;
 }
-.blog-header--chevron .title, .blog-header--big-softie .title {
-    color: #eaf1f7;
-}
 .blog-post-intro .title {
     grid-column: 3 / 6;
     grid-row: 1 / 3;
@@ -93,6 +90,10 @@ body {
     width: calc(100vw - 760px);
     padding-left: 10px;
     color: hsl({{ page.hue }}, 29%, 24%);
+}
+.blog-header--chevron .blog-post-intro .title,
+.blog-header--big-softie .blog-post-intro .title {
+    color: #eaf1f7;
 }
 .blog-header--platformer .blog-post-intro .title {
     grid-column: 1 / 6;
