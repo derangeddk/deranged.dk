@@ -129,6 +129,7 @@ body {
     object-fit: contain;
     object-position: right top;
 }
+{% if page.shapes == "chevron" %}
 @media (max-width: 1450px) {
     .blog-post-intro .title h1 {
         font-size: 4em;
@@ -143,6 +144,7 @@ body {
         padding-left: 0;
     }
 }
+{% endif %}
 .blog-post-intro .intro-paragraph {
     grid-column: 1 / 3;
     grid-row: 2 / 5;
@@ -236,6 +238,7 @@ section.blog-text h2 {
         text-align: left;
         font-size: 0.9em;
     }
+    {% if page.shapes == "chevron" %}
     @media(max-width: 1400px) {
         .blog-post-end {
             position: relative;
@@ -400,6 +403,7 @@ section.blog-text h2 {
             margin-right: 8px;
         }
     }
+    {% endif %}
 </style>
 <section class="blog-header blog-header--{{ page.shapes }}">
     <div class="blog-crumbs">
