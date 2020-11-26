@@ -44,29 +44,6 @@ body {
 }
 .blog-header h1 {
     font-family: 'Libre Baskerville', serif;
-    color: #eaf1f7;
-}
-.triangle-explosion {
-    background-color: #502c2c;
-    background-image: linear-gradient(0deg, #502c2c, #7d4a4a);
-    height: 1536px;
-    width: 100vw;
-    transform: translateX(55px) translateY(-969px) rotate(2deg) skewX(-8.34deg);
-    box-shadow: 0 0 4px rgba(0,0,0,0.2);
-    position: absolute;
-    z-index: -1;
-    top: -75px;
-    left: 0;
-}
-.another-detail {
-    width: 100vw;
-    height: 100px;
-    position: absolute;
-    background: #502c2c;
-    background-image: linear-gradient(8deg, #502c2c, #3d2121);
-    transform: translateX(-79px) translateY(562px) rotate(2deg) skewX(8deg);
-    top: -75px;
-    left: 0;
 }
 .blog-post-intro {
     display: grid;
@@ -79,6 +56,9 @@ body {
     margin-bottom: 75px;
     position: relative;
     z-index: 3;
+}
+.blog-header--chevron .title, .blog-header--big-softie .title {
+    color: #eaf1f7;
 }
 .blog-post-intro .title {
     grid-column: 3 / 6;
@@ -168,7 +148,7 @@ section.blog-text h2 {
     margin-top: 2em;
     font-family: 'Source Sans Pro', Calibri, Candara, Segoe, "Segoe UI", Optima, Arial, sans-serif;
     font-weight: 900;
-    color: #502c2c;
+    color: hsl({{ page.hue }}, 29%, 24%);
 }
 </style>
 <style>
@@ -177,8 +157,8 @@ section.blog-text h2 {
     }
     .blog-post-end:before {
         content: '';
-        background-color: #502c2c;
-        background-image: linear-gradient(0deg, #502c2c, #7d4a4a);
+        background-color: hsl({{ page.hue }}, 29%, 24%);
+        background-image: linear-gradient(0deg, hsl({{ page.hue }}, 29%, 24%), hsl({{ page.hue }}, 26%, 39%));
         width: calc(100% + 320px);
         height: calc(100% + 300px);
         position: absolute;
@@ -214,7 +194,7 @@ section.blog-text h2 {
 
     @media(min-width: 1200px) {
         footer .footer-icon {
-            color: hsl(0, 26%, 39%);
+            color: hsl({{ page.hue }}, 26%, 39%);
         }
     }
 
@@ -365,7 +345,7 @@ section.blog-text h2 {
         }
     }
 </style>
-<section class="blog-header">
+<section class="blog-header blog-header--{{ page.shapes }}">
     <div class="blog-crumbs">
         <a class="logo" href="/">deranged</a>
         <a class="blog-logo" href="/blog">Blog</a>
@@ -373,8 +353,8 @@ section.blog-text h2 {
 
     <div class="blog-post-intro">
         <div class="title">
-            <div class="triangle-explosion"></div>
-            <div class="another-detail"></div>
+            {% capture header_details_file %}blog/header__details--{{ page.shapes }}.html{% endcapture %}
+            {% include {{ header_details_file }} %}
             <h1>{{ page.title }}</h1>
         </div>
         <div class="illustration">

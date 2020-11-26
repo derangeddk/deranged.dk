@@ -10,3 +10,5 @@ defaults:
         type: blogposts
       values:
         layout: blogpost
+        shapes: chevron
+        hue: 0
