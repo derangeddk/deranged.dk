@@ -46,7 +46,7 @@ published_date: 16. november 2020
             Scrumfall combines waterfall and scrum. Waterfall is the traditional method of producing code, where research and documentation is completed before any code is created. Many big companies have used this methods, but have tried to modernize by including scrum within that process, to make them seem agile. This usually leads to scrumfall, where the two processes fail to combine because they work in very different ways, so the company is really still using the traditional waterfall method with requirement specifications and no continual deliveries, but can say they're agile because they've implemented scrum within the waterfall process.
         </p>
 {% endcapture %}
-{% include blogpost-image-1.html imageUrl="/img/blog/lyseroed_plante_til_agile.png" imageDescription=imageDescription %} 
+{% include blog/image-1--chevron.html imageUrl="/img/blog/lyseroed_plante_til_agile.png" imageDescription=imageDescription %} 
     
 <section class="blog-text">
     <p>
@@ -73,7 +73,7 @@ published_date: 16. november 2020
   For us, it's not important that we're agile. what's important is that we work with our clients to understand what their needs are, deliver software continually and that we don't get lost in documentation and processes. Most importantly we want to be fair and honest developers who say no when we need to, find the best solutions for a client and think both in the long and the short term.
 </p>
 {% endcapture %}
-{% include blogpost-image-1.html imageUrl="/img/blog/blaa_metorit_til_agile.png" imageDescription=imageDescription %}
+{% include blog/image-1--chevron.html imageUrl="/img/blog/blaa_metorit_til_agile.png" imageDescription=imageDescription %}
 
 <section class="blog-text">
     <p>
