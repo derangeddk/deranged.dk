@@ -1,0 +1,189 @@
+---
+layout: default
+---
+<style>
+    .menu-btn-background {
+        background-image: linear-gradient(40deg, #2c3e50 30%, #455d75 90%);
+        width: 50px;
+        height: 48px;
+        border-radius: 100%;
+        position: absolute;
+        top: 18px;
+        right: 28px;
+    }
+</style>
+<div class="menu-btn-background"></div>
+{% include overlay_nav.html %}
+<style>
+    .blog-index-intro {
+        display: flex;
+        align-items: flex-start;
+        justify-content: space-between;
+    }
+    .blog-index-intro .teasers {
+        margin: 100px;
+        display: flex;
+        flex-direction: column;
+        text-align: left;
+        align-items: flex-end;
+    }
+    .blog-index-intro .blog-teaser {
+        background: white;
+        padding: 20px;
+        font-size: 1.2em;
+        max-width: 800px;
+        font-family: 'Libre Baskerville', serif;
+    }
+    .blog-index-intro .explainers-teaser {
+        color: white;
+        background-image: linear-gradient(40deg, #2c3e50 30%, #455d75 90%);
+        max-width: 400px;
+        padding: 20px;
+        font-size: 1.1em;
+    }
+</style>
+<section class="blog-index-intro">
+    <div class="blog-crumbs">
+        <a class="logo" href="/">deranged</a>
+        <a class="blog-logo" href="/blog">Blog</a>
+    </div>
+
+    <div class="teasers">
+        <div class="blog-teaser">
+            Here, we collect stories and perspectives on software development, the IT industry, leadership, company design, and much more.
+            We experiment and interview and muse on what is and what could be.
+        </div>
+        <div class="explainers-teaser">
+            Our <a href="/explainers">explainers</a> are more formal introductions to software industry concepts.
+        </div>
+    </div>
+</section>
+
+<style>
+    .blog-index-list {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: left;
+        margin-bottom: 200px;
+        margin-top: -100px;
+    }
+    .blog-index-item {
+        font-family: 'Libre Baskerville', serif;
+        max-width: 850px;
+        margin: 40px 0;
+        color: inherit;
+        text-decoration: inherit;
+        display: block;
+    }
+    .blog-index-item, .blog-index-item * {
+        transition: transform 2s;
+    }
+    .blog-index-item h1 {
+        font-size: 2em;
+        width: 75%;
+    }
+    .blog-index-item__containy {
+        display: flex;
+        align-items: flex-start;
+        min-height: 250px;
+    }
+    .blog-index-item:nth-child(2n+1) .blog-index-item__containy {
+        flex-direction: row-reverse;
+    }
+    .blog-index-item__imgbox {
+        width: 250px;
+        height: 250px;
+        flex-grow: 0;
+        flex-shrink: 0;
+        position: relative;
+        padding-right: 40px;
+    }
+    .blog-index-item:nth-child(2n+1) .blog-index-item__imgbox {
+        padding-left: 40px;
+        padding-right: 0;
+    }
+    .blog-index-item__imgbox img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+        transform: scale(1.5);
+    }
+    .blog-index-item__artist {
+        font-size: 0.8em;
+        font-family: 'Source Sans Pro', Calibri, Candara, Segoe, "Segoe UI", Optima, Arial, sans-serif;
+        position: absolute;
+        top: 100%;
+        right: 0;
+        color: white;
+        padding: 5px 10px;
+        transform: translateX(30px);
+    }
+    .blog-index-item__teaser {
+        background: white;
+        padding: 20px;
+        color: black;
+        flex-basis: 400px;
+        flex-grow: 2;
+        transform: translate(-30px, -20px);
+        position: relative;
+    }
+    .blog-index-item:nth-child(2n) .blog-index-item__teaser {
+        transform: translate(30px, -20px);
+    }
+    .blog-index-item__author {
+        font-size: 0.8em;
+        font-family: 'Source Sans Pro', Calibri, Candara, Segoe, "Segoe UI", Optima, Arial, sans-serif;
+        position: absolute;
+        top: 100%;
+        right: 0;
+        padding: 5px 10px;
+        background: white;
+    }
+
+    .blog-index-item:hover, .blog-index-item:hover * {
+        transition: transform 25s;
+    }
+    .blog-index-item:hover h1 {
+        transform: scale(1.3) translate(80px, -10px);
+    }
+    .blog-index-item:hover .blog-index-item__teaser {
+        transform: translate(-75px, -22px);
+    }
+    .blog-index-item:nth-child(2n):hover .blog-index-item__teaser {
+        transform: translate(75px, -22px);
+    }
+    .blog-index-item:hover .blog-index-item__author {
+        transform: translateY(8px);
+    }
+    .blog-index-item:hover .blog-index-item__containy {
+        transform: scale(1.05);
+    }
+    .blog-index-item:hover .blog-index-item__artist {
+        transform: translate(40px, 8px);
+    }
+    .blog-index-item:hover .blog-index-item__imgbox img {
+        transform: scale(2);
+    }
+</style>
+<section class="blog-index-list">
+    {% for post in site.blogposts %}
+        <a class="blog-index-item" href="{{ post.url }}">
+            <h1>{{ post.title }}</h1>
+            <div class="blog-index-item__containy" style="background-image: linear-gradient(40deg, hsl({{ post.hue }}, 29%, 24%) 30%, hsl({{ post.hue }}, 26%, 36%) 90%);">
+                <div class="blog-index-item__imgbox">
+                    <img src="{{ post.heroImageUrl }}">
+                <div class="blog-index-item__artist" style="background-color: hsl({{ post.hue }}, 29%, 24%);">
+                        Art by {{ post.artist }}
+                    </div>
+                </div>
+                <div class="blog-index-item__teaser">
+                    {{ post.intro }}
+                    <div class="blog-index-item__author">
+                        Written by {{ post.author }}
+                    </div>
+                </div>
+            </div>
+        </a>
+    {% endfor %}
+</section>
