@@ -5,6 +5,8 @@ footer {
     position: relative;
     display: grid;
     grid-template-columns: 100%;
+    z-index: 2;
+
     @media screen and (min-width: 1200px) {
       grid-template-columns: 300px 200px 200px auto;
       padding: 100px;

@@ -1,0 +1,120 @@
+<style>
+    .big-softie-image-include {
+        margin-top: 20px;
+        position: relative;
+        height: 500px;
+        margin-bottom: 40px;
+    }
+    @media (max-width: 860px) {
+        .chevron-image-include {
+            transform: translateX(-100px);
+        }
+    }
+    .image-include-content {
+        height: 100%;
+        display: flex;
+        flex-direction: row;
+        align-items: flex-end;
+        position: relative;
+        z-index: 5;
+    }
+    .big-softie-image-include .image-include-content .illustration {
+        height: 100%;
+        padding-left: 40px;
+        max-width: 100vw;
+        position: relative;
+    }
+    .big-softie-image-include .image-include-content .illustration img {
+        height: 100%;
+        max-width: 600px;
+        object-fit: contain;
+    }
+    .big-softie-image-include .image-include-content .figure-text {
+        max-width: 400px;
+        text-align: left;
+        background: white;
+        padding: 15px;
+        margin-bottom: 40px;
+        box-shadow: 0 1px 3px rgba(0,0,0,0.3);
+        margin-left: -10px;
+        margin-right: -10px;
+    }
+    .image-include-content .figure-text strong {
+        font-family: 'Libre Baskerville', serif;
+        display: block;
+        margin-top: 1em;
+    }
+    .image-include-content .figure-text p {
+        margin: 0 0 1em 0;
+    }
+
+    @media (max-width: 700px) {
+        .blank-image-include {
+            height: auto;
+            margin-bottom: 20px;
+        }
+        .image-include-content {
+            flex-direction: column;
+            align-items: center;
+            transform: translateX(100px);
+        }
+        .image-include-content .figure-text {
+            margin-left: 0;
+        }
+        .image-include-content .illustration {
+            padding-left: 0px;
+            max-height: 450px;
+        }
+    }
+
+    .big-circle-boi {
+        width: 500px;
+        height: 500px;
+        border-radius: 100%;
+        position: absolute;
+        right: -300px;
+        top: 0;
+        z-index: -1;
+        background-image: linear-gradient(20deg, hsl({{ page.hue }}, 30%, 17%), hsl({{ page.hue }}, 30%, 25%));
+    }
+    .big-circle-boi-2 {
+        width: 750px;
+        height: 750px;
+        border-radius: 100%;
+        position: absolute;
+        right: -400px;
+        top: -300px;
+        z-index: -1;
+        background-image: linear-gradient(20deg, hsl({{ page.hue }}, 30%, 17%), hsl({{ page.hue }}, 30%, 25%));
+    }
+    .big-circle-boi-3 {
+        width: 220px;
+        height: 220px;
+        border-radius: 100%;
+        position: absolute;
+        left: -125px;
+        top: -50px;
+        z-index: -1;
+        background-image: linear-gradient(20deg, hsl({{ page.hue }}, 30%, 17%), hsl({{ page.hue }}, 30%, 25%));
+    }
+</style>
+<section class="big-softie-image-include">
+    <div class="big-circle-boi-2"></div>
+    <div class="big-circle-boi-3"></div>
+    <div
+        class="image-include-content"
+        {% if include.figureTextSide == "left" %}
+            style="flex-direction: row-reverse; justify-content: flex-end; margin-left: 100px;"
+        {% endif %}
+    >
+        <div class="illustration">
+            <div class="big-circle-boi"></div>
+            <img src="{{ include.imageUrl }}">
+        </div>
+        {% if include.imageDescription %}
+            <div class="figure-text">
+                {{ include.imageDescription }}
+            </div>
+        {% endif %}
+    </div>
+</section>

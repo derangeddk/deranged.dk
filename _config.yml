@@ -1,0 +1,14 @@
+collections:
+    blogposts:
+        output: true
+        permalink: /blog/:path/
+        layout: blogpost
+
+defaults:
+    - scope:
+        path: ""
+        type: blogposts
+      values:
+        layout: blogpost
+        shapes: chevron
+        hue: 0

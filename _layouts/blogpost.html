@@ -1,0 +1,412 @@
+---
+layout: default
+---
+{% include overlay_nav.html %}
+<style>
+body {
+    overflow-x: hidden;
+}
+.blog-header {
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+    width: 100%;
+}
+.blog-header h1 {
+    font-family: 'Libre Baskerville', serif;
+}
+.blog-post-intro {
+    display: grid;
+    width: 100%;
+    grid-template-columns: 245px 246px 1fr 1fr 1fr;
+    grid-template-rows: auto 100px 1fr 2fr;
+    box-sizing: border-box;
+    padding: 0 100px 0;
+    grid-gap: 25px;
+    margin-bottom: 75px;
+    z-index: 3;
+}
+.blog-header--platformer .blog-post-intro:before {
+    content: '';
+    grid-row: 3 / 4;
+    grid-column: 1 / 4;
+    height: 150px;
+    background-image: linear-gradient(0deg, hsl(219, 23%, 50%), hsl(219, 45%, 70%));
+    transform: skewY(-1deg) translateY(60px) translateX(-150px);
+    margin-right: 100px;
+    z-index: 2;
+}
+.blog-header--platformer .blog-post-intro:after {
+    content: '';
+    grid-row: 3 / 4;
+    grid-column: 1 / 3;
+    height: 100px;
+    background-image: linear-gradient(0deg, hsl(219, 25%, 60%), hsl(219, 55%, 80%));
+    transform: skewY(-1deg) translateY(-25px) translateX(-150px);
+    margin-left: 40px;
+}
+.blog-header--platformer .blog-post-intro {
+    margin-top: -200px;
+    grid-template-rows: auto auto auto;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    margin-bottom: 0;
+}
+.blog-post-intro .title {
+    grid-column: 3 / 6;
+    grid-row: 1 / 3;
+    display: flex;
+    justify-content: flex-end;
+    text-shadow: 0 1px 2px rgba(0,0,0,0.3);
+    margin: 0;
+    width: calc(100vw - 760px);
+    padding-left: 10px;
+    color: hsl({{ page.hue }}, 29%, 24%);
+}
+.blog-header--chevron .blog-post-intro .title,
+.blog-header--big-softie .blog-post-intro .title {
+    color: #eaf1f7;
+}
+.blog-header--platformer .blog-post-intro .title {
+    grid-column: 1 / 6;
+    grid-row: 2 / 3;
+    width: auto;
+    text-shadow: 0 1px 2px rgba(255,255,255,0.4);
+}
+.blog-post-intro .title h1 {
+    max-width: 1000px;
+    margin: 0;
+    font-size: 5em;
+    text-align: right;
+}
+.blog-post-intro .illustration {
+    grid-column: 3 / 6;
+    grid-row: 3 / 5;
+    box-sizing: border-box;
+    padding-left: 100px;
+    position: relative;
+    z-index: 2;
+    max-height: 300px;
+    min-height: 170px;
+    transform: translateY(50px);
+}
+.blog-header--platformer .blog-post-intro .illustration {
+    grid-column: 3 / 6;
+    grid-row: 1 / 2;
+    max-height: 500px;
+}
+.blog-post-intro .illustration img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    object-position: right top;
+}
+{% if page.shapes == "chevron" %}
+@media (max-width: 1450px) {
+    .blog-post-intro .title h1 {
+        font-size: 4em;
+    }
+    .triangle-explosion {
+        top: -120px;
+    }
+    .another-detail {
+        top: -120px;
+    }
+    .blog-post-intro .illustration {
+        padding-left: 0;
+    }
+}
+{% endif %}
+.blog-post-intro .intro-paragraph {
+    grid-column: 1 / 3;
+    grid-row: 2 / 5;
+    text-align: left;
+    padding-right: 60px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    margin-bottom: 50px;
+}
+.blog-header--platformer .blog-post-intro .intro-paragraph {
+    grid-column: 4 / 6;
+    grid-row: 3 / 4;
+    padding-right: 0;
+    margin-bottom: 0;
+}
+
+.blog-post-intro .intro-paragraph p {
+    font-family: 'Libre Baskerville', serif;
+    font-size: 1.3em;
+    margin: 0.5em 0;
+    line-height: 1.5em;
+}
+sup {
+    display: inline-block;
+    margin-top: -1em;
+}
+.blog-post-intro .intro-paragraph .credits {
+    font-family: 'Source Sans Pro', Calibri, Candara, Segoe, "Segoe UI", Optima, Arial, sans-serif;
+    font-size: 0.8em;
+    opacity: 0.7;
+}
+.blog-post-intro .intro-paragraph .credits a {
+    color: inherit;
+    text-decoration: none;
+}
+
+section.blog-text {
+    margin: 0 100px;
+    text-align: left;
+    font-size: 1.1em;
+    font-family: 'Libre Baskerville', serif;
+    line-height: 1.5em;
+    position: relative;
+}
+
+section.blog-text p {
+    margin: 0 0 1em 0;
+    max-width: 600px;
+}
+section.blog-text a {
+    color: inherit;
+    text-decoration: underline;
+}
+
+section.blog-text h2 {
+    font-size: 2em;
+    margin-top: 2em;
+    font-family: 'Source Sans Pro', Calibri, Candara, Segoe, "Segoe UI", Optima, Arial, sans-serif;
+    font-weight: 900;
+    color: hsl({{ page.hue }}, 29%, 24%);
+}
+</style>
+<style>
+    body {
+        position: relative;
+    }
+    .blog-post-end:before {
+        content: '';
+        background-color: hsl({{ page.hue }}, 29%, 24%);
+        background-image: linear-gradient(0deg, hsl({{ page.hue }}, 29%, 24%), hsl({{ page.hue }}, 26%, 39%));
+        width: calc(100% + 320px);
+        height: calc(100% + 300px);
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: -100;
+        transform: translateX(-70px) translateY(-50px) rotate(1deg);
+    }
+    .blog-post-end {
+        position: absolute;
+        right: 0;
+        bottom: 350px;
+        z-index: 2;
+        color: white;
+        margin-top: 120px;
+        margin-right: 100px;
+        margin-bottom: 165px;
+        max-width: 500px;
+        text-align: left;
+        font-size: 0.9em;
+    }
+    {% if page.shapes == "chevron" %}
+    @media(max-width: 1400px) {
+        .blog-post-end {
+            position: relative;
+            right: auto;
+            bottom: auto;
+            margin-left: 100px;
+        }
+        .blog-post-end:before {
+            height: calc(100% + 300px);
+        }
+    }
+
+    @media(min-width: 1200px) {
+        footer .footer-icon {
+            color: hsl({{ page.hue }}, 26%, 39%);
+        }
+    }
+
+    @media(max-width: 1250px) {
+        .blog-post-intro {
+            margin-bottom: 25px;
+        }
+    }
+
+    @media(max-width: 1100px) {
+        .blog-post-intro {
+            grid-template-rows: auto auto auto;
+            grid-template-columns: auto auto auto auto auto;
+        }
+        .blog-post-intro .title {
+            grid-column: 2 / 6;
+            grid-row: 1 / 2;
+            width: auto;
+        }
+        .blog-post-intro .illustration {
+            grid-column: 2 / 6;
+            grid-row: 2 / 3;
+        }
+        .blog-post-intro .intro-paragraph {
+            width: 600px;
+            grid-column: 1 / 4;
+            grid-row: 3 / 4;
+            padding-right: 0;
+        }
+        .triangle-explosion {
+            top: -250px;
+        }
+        .another-detail {
+            top: -250px;
+        }
+    }
+
+    @media (max-width: 860px) {
+        .blog-crumbs {
+            margin: 25px;
+        }
+        .blog-post-intro {
+            padding: 0 25px 0;
+        }
+        .blog-post-intro .title h1 {
+            font-size: 3.5em;
+        }
+        section.blog-text {
+            margin: 0 25px;
+        }
+        .blog-post-end {
+            margin-left: 25px;
+            margin-right: 25px;
+            margin-bottom: 100px;
+        }
+    }
+    @media (max-width: 700px) {
+        .blog-post-intro {
+            grid-template-columns: 105px auto auto auto auto;
+            grid-gap: 0;
+        }
+        .blog-post-intro .intro-paragraph {
+            grid-column: 1 / 6;
+            max-width: 600px;
+            width: auto;
+        }
+        .blog-post-intro .triangle-explosion {
+            left: 30px;
+        }
+        .blog-post-intro .another-detail {
+            left: 30px;
+        }
+    }
+    @media (max-width: 600px) {
+        .blog-post-intro .title h1 {
+            font-size: 3em;
+        }
+        .blog-post-intro .triangle-explosion {
+            top: -300px;
+        }
+        .blog-post-intro .another-detail {
+            top: -300px;
+        }
+    }
+    @media (max-width: 500px) {
+        .blog-post-intro .title h1 {
+            font-size: 2.5em;
+        }
+        .blog-post-intro .triangle-explosion {
+            top: -340px;
+            left: 45px;
+        }
+        .blog-post-intro .another-detail {
+            top: -340px;
+            left: 45px;
+        }
+        .blog-post-intro .intro-paragraph p {
+            font-size: 1.2em;
+        }
+        section.blog-text {
+            font-size: 1em;
+        }
+    }
+    @media(max-width: 435px) {
+        .blog-post-intro .title h1 {
+            font-size: 2em;
+        }
+        .blog-post-intro .triangle-explosion {
+            top: -370px;
+            left: 48px;
+        }
+        .blog-post-intro .another-detail {
+            top: -370px;
+            left: 48px;
+        }
+    }
+    @media(max-width: 380px) {
+        .blog-post-intro .title h1 {
+            font-size: 1.8em;
+        }
+        .blog-post-intro .triangle-explosion {
+            top: -380px;
+            left: 50px;
+        }
+        .blog-post-intro .another-detail {
+            top: -380px;
+            left: 50px;
+        }
+        .blog-crumbs {
+            margin: 8px;
+        }
+        .blog-post-intro {
+            padding: 0 8px 0;
+        }
+        section.blog-text {
+            margin: 0 8px;
+        }
+        .blog-post-end {
+            margin-left: 8px;
+        }
+        #main-nav-toggle {
+            top: 16px;
+            right: 8px;
+        }
+        .blog-post-end {
+            margin-left: 8px;
+            margin-right: 8px;
+        }
+    }
+    {% endif %}
+</style>
+<section class="blog-header blog-header--{{ page.shapes }}">
+    <div class="blog-crumbs">
+        <a class="logo" href="/">deranged</a>
+        <a class="blog-logo" href="/blog">Blog</a>
+    </div>
+
+    <div class="blog-post-intro">
+        <div class="title">
+            {% capture header_details_file %}blog/header__details--{{ page.shapes }}.html{% endcapture %}
+            {% include {{ header_details_file }} %}
+            <h1>{{ page.title }}</h1>
+        </div>
+        <div class="illustration">
+            <img src="{{ page.heroImageUrl }}">
+        </div>
+        <div class="intro-paragraph">
+            <p>
+                {{ page.intro }}
+            </p>
+            <div class="credits">
+                Written by {{ page.author }}<br>
+                Edited by {{ page.editor }}<br>
+                Art by {{ page.artist }}<br>
+                Design by {{ page.designer }}<br>
+                Udgivet {{ page.published_date }}
+            </div>
+        </div>
+    </div>
+</section>
+
+{{ content }}
+    
