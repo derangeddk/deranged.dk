@@ -60,6 +60,10 @@ layout: default
 </section>
 
 <style>
+    sup {
+        display: inline-block;
+        margin-top: -1em;
+    }
     .blog-index-list {
         display: flex;
         flex-direction: column;
@@ -70,7 +74,7 @@ layout: default
     }
     .blog-index-item {
         font-family: 'Libre Baskerville', serif;
-        max-width: 850px;
+        max-width: 950px;
         margin: 40px 0;
         color: inherit;
         text-decoration: inherit;
@@ -86,18 +90,19 @@ layout: default
     .blog-index-item__containy {
         display: flex;
         align-items: flex-start;
-        min-height: 250px;
+        min-height: 300px;
     }
     .blog-index-item:nth-child(2n+1) .blog-index-item__containy {
         flex-direction: row-reverse;
     }
     .blog-index-item__imgbox {
         width: 250px;
-        height: 250px;
+        height: 300px;
         flex-grow: 0;
         flex-shrink: 0;
         position: relative;
         padding-right: 40px;
+        align-self: flex-end;
     }
     .blog-index-item:nth-child(2n+1) .blog-index-item__imgbox {
         padding-left: 40px;
@@ -120,25 +125,36 @@ layout: default
         transform: translateX(30px);
     }
     .blog-index-item__teaser {
+        font-size: 1.1rem;
+        line-height: 150%;
         background: white;
-        padding: 20px;
+        padding: 20px 30px;
         color: black;
         flex-basis: 400px;
         flex-grow: 2;
         transform: translate(-30px, -20px);
         position: relative;
+        box-shadow: 0 1px 2px rgba(0,0,0,0.1);
+    }
+    .blog-index-item__teaser p {
+        margin: 0;
+    }
+    .blog-index-item__teaser p:not(:last-child) {
+        margin-bottom: 1em;
     }
     .blog-index-item:nth-child(2n) .blog-index-item__teaser {
         transform: translate(30px, -20px);
     }
     .blog-index-item__author {
-        font-size: 0.8em;
+        line-height: 100%;
+        font-size: 0.8rem;
         font-family: 'Source Sans Pro', Calibri, Candara, Segoe, "Segoe UI", Optima, Arial, sans-serif;
         position: absolute;
         top: 100%;
         right: 0;
         padding: 5px 10px;
         background: white;
+        box-shadow: 0 2px 4px rgba(0,0,0,0.1);
     }
 
     .blog-index-item:hover, .blog-index-item:hover * {
@@ -173,15 +189,15 @@ layout: default
             <div class="blog-index-item__containy" style="background-image: linear-gradient(40deg, hsl({{ post.hue }}, 29%, 24%) 30%, hsl({{ post.hue }}, 26%, 36%) 90%);">
                 <div class="blog-index-item__imgbox">
                     <img src="{{ post.heroImageUrl }}">
-                <div class="blog-index-item__artist" style="background-color: hsl({{ post.hue }}, 29%, 24%);">
+                    <div class="blog-index-item__artist" style="background-color: hsl({{ post.hue }}, 29%, 24%);">
                         Art by {{ post.artist }}
                     </div>
                 </div>
                 <div class="blog-index-item__teaser">
-                    {{ post.intro }}
                     <div class="blog-index-item__author">
                         Written by {{ post.author }}
                     </div>
+                    {{ post.intro }}
                 </div>
             </div>
         </a>
