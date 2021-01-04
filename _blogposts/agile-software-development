@@ -1,0 +1,108 @@
+---
+title: Agile Software Development
+heroImageUrl: "/img/blog/krokodille_til_oeverst_agile.png"
+intro: >
+   <p>When you delve into the world of software development, Agile is a word that will frequently come up.</p>
+   <p>Agile is a loaded work in the software industry. It's been around since the turn of the century, and you might have noticed that it's a word companies use to brand themeselves with. It might also be something you've been told to look out for on your hunt to find a good software development partner. Agile is much more than just a marketing term. In this blog post, we're going to dive into what agile is - and what it isn't.</p>
+author: Josefine Older Steffensen
+editor: Niels Roesen Abildgaard
+artist: Maja Nielsen // Sjuskemaja
+designer: Niels Roesen Abildgaard
+published_date: 16. november 2020
+shapes: platformer
+hue: 219
+---
+<section class="blog-text">
+    <h2>A brief history of Agile</h2>
+    <p>
+        Agile software development is a phrase coined in 2001 by a group of software developers who got together in Utah and wanted to change the industry. Agile was essentially born out of a frustration for the way software development was traditionally done. It used to take a long time to develop software. It could take years before a project was actually finished and in that time the client couldn’t use the software. Software wasn’t prioritized and the development of it was only started after the hardware was completed. Once it had been built, it was very difficult to change it, and with a lack of feedback it was also unclear whether or not the software would actually work well for the client. 
+    </p>
+    <p>
+        Essentially, software development used to be a clunky process that led to bad software being developed. Something needed to change and the agile manifesto was born (have a look at <a href="http://www.agilemanifesto.org" target="_blank" rel="noopener">agile&shy;manifesto.org</a> for the original website). The agile manifesto is a collection of principles and values for software developers to follow in order to deliver and create better software. The agile values are:  
+    </p>
+    <p>
+        <b>Individuals and interactions</b> over processes and tools<br>
+        <b>Working software</b> over comprehensive documentation<br>
+        <b>Customer collaboration</b> over contract negotiations<br>
+        <b>Responding to change</b> over following a plan<br>
+        All of the items on the list are valued, but the ones on the left are valued more than those on the right.
+    </p>
+
+    <h2>What is Agile (not)?</h2>
+    <p>
+        One of the most important things to note about agile is that it is a set of values and principles. It's a guide for software developers to use in order to make their work more efficient, cheaper and better for their clients. Agile is therefore not a decision maker; a methodology to follow; a specific way of developing software; a framework or scrum. Let's start with scrum.
+    </p>
+    
+    <p>
+      All software development companies today will say that they are agile. Most of them will make this claim because they use scrum, a methodology created based on the agile principles. Scrum orders the workflow into sprints where small bits of the software is planned, built, tested and reviewed and the process is repeated as many times as is needed for the complete software to be produced. 
+    </p>
+    
+    <p>
+      The problem with scrum is that companies often use it without considering the agile values and principles. They are using a tool blindly and end up following the scrum process religiously which then ends up valuing processes and tools over individuals and interactions, going against the agile values listed above. 
+    </p>
+   
+   <h2>Scrumfall</h2>
+   <p>
+        Scrumfall combines waterfall and scrum. Waterfall is the traditional method of producing code, where research and documentation is completed before any code is created. Many big companies have used this methods, but have tried to modernize by including scrum within that process, to make them seem agile. This usually leads to scrumfall, where the two processes fail to combine because they work in very different ways, so the company is really still using the traditional waterfall method with requirement specifications and no continual deliveries, but can say they're agile because they've implemented scrum within the waterfall process.
+   </p>
+      
+   
+</section>
+
+{% capture imageDescription %}
+        <p>
+           "The word “agile” has become sloganized; meaningless at best, jingoist at worst. We have large swaths of people doing “flaccid agile,” a half-hearted attempt at following a few select software development practices, poorly." *Andy Hunt, one of the original authors of the Agile Manifesto, 2015*
+        </p>
+{% endcapture %}
+{% include blog/image-1--platformer.html imageUrl="/img/blog/lyseroed_plante_til_agile.png" imageDescription=imageDescription %} 
+    
+<section class="blog-text">
+    <p>
+        “The problem with hearing the word agile in the software industry today, and in particular in Denmark, is that people equate agile to scrum. And although scrum was initially based on the agile principles, the process of using scrum itself isn’t actually agile. It's now just a system that people use without thinking or without reflecting on how it actually works for their company or their customers. It's not very agile in any sense of the word,” explains Niels from deranged.
+    </p>
+    
+    <p>
+      Even though companies say they're agile, they still want a requirement specification, or in agile terms 'comprehensive documentation'. According to them, they need it to be able to start working and know what they're working towards, but requirement specifications mean that it takes much longer to get working software in place and what's in the requirement specification is likely to change as the project moves along, making the initial specification redundant and a time waster. Agile, as the name suggests, requires agility, so if you're finding your software developer sticking to their plan above all else and not taking into account changes or new priorities, they're not agile, and they're probably not the right match for your business.  
+    </p>
+
+   <h2>So what is agile?</h2>
+   <p>
+      Real agile software development doesn't come from using it as a marketing term or using a predetermined agile framework. Agile is about flexibility, making a process work for the client and ensuring that good, tested software is being launched frequently. 
+    </p>
+    
+    <p>
+    Clients are all individuals and they will all require something slightly different when their software is built. Putting them into a particular framework makes it much harder to view them individually and find a way to work that suits both them and the developers. It's important to understand a client's needs and their business in order to give them software that is actually useful for their business. If the developer is agile this should be natural for them to do. 
+    </p>
+</section>
+
+{% capture imageDescription %}
+<strong>Agility at deranged</strong>
+<p>
+  For us, it's not important that we're agile. what's important is that we work with our clients to understand what their needs are, deliver software continually and that we don't get lost in documentation and processes. Most importantly we want to be fair and honest developers who say no when we need to, find the best solutions for a client and think both in the long and the short term.
+</p>
+{% endcapture %}
+{% include blog/image-2--platformer.html imageUrl="/img/blog/blaa_metorit_til_agile.png" imageDescription=imageDescription %}
+
+<section class="blog-text">
+    <p>
+      Agile development also means not leaving the client hanging. Clients shouldn't have to figure it all out on their own at the beginning with a big requirement specification. Their speciality is not software development, but their business. The expertise of them and the developer should come together and create a partnership at the beginning. That way it ensures the best process for both. It also certainly promotes customer collaboration over contract negotiation. 
+    </p>
+    <p>
+      For something to be agile it also needs to be flexible and that also means that a budget can't be finalised in the initial stages. Software is an unpredictable beast and there are always unforeseen changes or new developments. Find a company that gives budget estimates and leaves a buffer for any changes. Part of agile development is also delivering builds frequently so they can be tested and used and then changed if they need to be. Waiting for one large delivery is not what agile is all about, so when you're working with an agile software developer, you should expect to see changes happen throughout the partnership. 
+    </p>
+    
+    <p>
+      If a software developer tells you they’re agile, ask them how they do it, which values and principles they find particularly interesting or have a specific focus on. Agile is not just a word or something to market yourself on – find out how they’re actually using it within the company. The values and processes behind agile software development should make the process better for you as a client, you just have to find out whether or not the developers know why and how that is. 
+    </p>
+
+    {% include blogpost-endmarker-1.html %}
+</section>
+<section class="blog-post-end">
+    <strong>Making agile work for you</strong>
+    <p>
+      If a software developer tells you they’re agile, ask them how they do it, which values and principles they find particularly interesting or have a specific focus on. Agile is not just a word or something to market yourself on – find out how they’re actually using it within the company.
+    </p>
+    <p>
+      The values and processes behind agile software development should make the process better for you as a client, you just have to find out whether or not the developers know why and how that is. 
+    </p>
+</section>
