@@ -142,6 +142,9 @@ main p {
     }
 }
 
-.hidden {
-  display: none;
+.honeypot {
+  height: 0;
+  box-sizing: border-box;
+  overflow: hidden;
+  opacity: 0;
 }
