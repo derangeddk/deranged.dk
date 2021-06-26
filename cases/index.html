@@ -87,18 +87,23 @@ title: 'Cases ____ deranged'
         object-fit: contain;
         padding: 30px 5px;
         opacity: 0.9;
+        transition: opacity 0.3s;
+    }
+    .case__logo:hover {
+        opacity: 1;
     }
     .case__icon {
         font-size: 2em;
         filter: grayscale(0.75) hue-rotate(-45deg);
         width: 2em;
         height: 2em;
+        color: white;
         text-align: center;
         margin-top: -1px;
         display: flex;
         align-items: center;
         justify-content: center;
-        transition: filter 1s;
+        transition: filter 0.3s, opacity 0.3s;
         opacity: 0.9;
     }
     .case__icon:nth-child(1) {
@@ -106,12 +111,13 @@ title: 'Cases ____ deranged'
     }
     .case__icon:hover {
         filter: grayscale(0.2);
+        opacity: 1;
     }
     .case__content {
         font-size: 1rem;
         color: #eaf1f7;
         text-align: left;
-        max-width: 500px;
+        max-width: 535px;
         line-height: 150%;
     }
     .case__content h1 {
@@ -175,6 +181,39 @@ title: 'Cases ____ deranged'
                 </li>
                 <li>
                     We also coordinated between several of Marmar's other suppliers and were instrumental in ensuring the success of a migration of a logistics integration for the entire business (both B2B and webshop).</li>
+                </li>
+            </ul>
+            <button disabled class="case__read-more">More elaborate case coming soon&hellip;</button>
+        </div>
+    </div>
+
+    <div class="case">
+        <div class="case__meta">
+            <h1>
+                <a href="https://fischer-lighting.com" target="_blank" rel="noopener">Fischer Lighting</a>
+            </h1>
+            <img src="/img/fischer-lighting.png" class="case__logo">
+            <div class="case__icon">💡</div>
+            <div class="case__icon">🗎</div>
+            <div class="case__icon">⚡</div>
+        </div>
+        <div class="case__content">
+            <h1>Summary</h1>
+            <ul>
+                <li>
+                    A legacy custom software system used for running several business critical functions was causing problems, and needed replacing.
+                </li>
+                <li>
+                    We planned the replacement to be gradual and stable. We decided not to build and design a large and complex system to be launched all at once, as this would lead to significant confusion among users and potentially inhibit adoption. Additionally, such an approach is error prone as the complexity of systems grows exponentially with size: bugs would be more likely, and we would be less likely to have designed good user interactions for all use cases. Instead, we implemented a new system, integrsting with the legacy system, replaing one part at a time. This allowed users to get used to the new system in manageable increments, while minimizing disruption to established work processes.
+                </li>
+                <li>
+                    We performed an analysis of people and work processes involved in the tasks supported by the legacy system, which identified bottlenecks in communication and coordination, as well as providing a more thorough understanding of the work the legacy system was supporting. This alliwed us to design a new system that would more comprehensibly automate easily automatable tasks and better support human decision making and creative processes.
+                </li>
+                <li>
+                    Throughout, we have analyzed and recommended the highest impact improvements, e.g. the ones where most value would result from the smallest investment. We continuously interact with users, working to understand how the software has changed their work processes, needs and interactions. This has allowed us to contimue to improve user interaction with our system and support more and more of the work in the company.
+                </li>
+                <li>
+                    We have integrated with various of Fischer Lighting's other suppliers and tools, and built custom support for supply handling and planning of complex and interdependent products; advanced requirements specification of Fischer Lighting's customers' needs; project planning and execution; and report generation with advanced calculations. We have migrated data from a complex legacy system, and launched a new system that significantly saves employee work time, freeing up time for more important tasks.
                 </li>
             </ul>
             <button disabled class="case__read-more">More elaborate case coming soon&hellip;</button>
