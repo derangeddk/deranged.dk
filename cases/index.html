@@ -37,7 +37,7 @@ title: 'Cases ____ deranged'
         margin: 0;
         font-weight: 400;
     }
-    @media (max-width: 600px) {
+    @media (max-width: 900px) {
         .header {
             grid-template-columns: 1fr;
         }
@@ -67,10 +67,12 @@ title: 'Cases ____ deranged'
         flex-basis: 200px;
         flex-grow: 0;
         flex-shrink: 0;
-        margin-right: 20px;
         display: flex;
         flex-direction: column;
         align-items: flex-end;
+    }
+    .case__meta-intro {
+        text-align: left;
     }
     .case__meta h1 {
         font-size: 0.9rem;
@@ -119,6 +121,7 @@ title: 'Cases ____ deranged'
         text-align: left;
         max-width: 535px;
         line-height: 150%;
+        margin: 0 20px;
     }
     .case__content h1 {
         font-size: 0.9rem;
@@ -149,14 +152,52 @@ title: 'Cases ____ deranged'
     .case__read-more:not(:disabled):hover {
         background: #375068;
     }
+    
+    @media (max-width: 900px) {
+        .cases {
+            padding-left: 20px;
+        }
+    }
+    @media (max-width: 600px) {
+        .cases {
+            padding: 0;
+        }
+        .case {
+            flex-direction: column;
+            align-items: flex-start;
+        }
+        .case__meta {
+            width: 100%;
+            padding: 0 30px;
+            flex-direction: row;
+        }
+        .case__logo {
+            padding: 0;
+            padding-top: 30px;
+            padding-right: 5px;
+        }
+        .case__content {
+            margin: 0 30px;
+            margin-top: 30px;
+        }
+    }
+    @media (max-width: 400px) {
+        .case__icon {
+            width: 1.25em;
+            height: 1.25em;
+            font-size: 1.25em;
+        }
+    }
 </style>
 <section class="cases">
     <div class="case">
         <div class="case__meta">
-            <h1>
-                <a href="https://marmarcopenhagen.dk" target="_blank" rel="noopener">Marmar</a>
-            </h1>
-            <img src="/img/marmar.png" class="case__logo">
+            <div class="case__meta-intro">
+                <h1>
+                    <a href="https://marmarcopenhagen.dk" target="_blank" rel="noopener">Marmar</a>
+                </h1>
+                <img src="/img/marmar.png" class="case__logo">
+            </div>
             <div class="case__icon">👕</div>
             <div class="case__icon">👗</div>
             <div class="case__icon">📈</div>
@@ -189,10 +230,12 @@ title: 'Cases ____ deranged'
 
     <div class="case">
         <div class="case__meta">
-            <h1>
-                <a href="https://fischer-lighting.com" target="_blank" rel="noopener">Fischer Lighting</a>
-            </h1>
-            <img src="/img/fischer-lighting.png" class="case__logo">
+            <div class="case__meta-intro">
+                <h1>
+                    <a href="https://fischer-lighting.com" target="_blank" rel="noopener">Fischer Lighting</a>
+                </h1>
+                <img src="/img/fischer-lighting.png" class="case__logo">
+            </div>
             <div class="case__icon">💡</div>
             <div class="case__icon">🗎</div>
             <div class="case__icon">⚡</div>
