@@ -1,128 +1,183 @@
 ---
 layout: default
+title: 'Cases ____ deranged'
 ---
-{% include header4.html %}
-<div class="container">
-    <div class="rightsided-container">
-        <style scoped>
-            @media screen and (min-width: 700px) {
-                .rightsided-container {
-                    margin-left: 240px;
-                    position: relative;
-                    z-index: 3;
-                }
-            }
-            .rightsided-container .content {
-                background: #ecf0f1;
-                text-align: left;
-                box-sizing: border-box;
-                padding: 17px 60px 17px 40px;
-                margin-bottom: 133px;
-                font-size: 1.18em;
-                line-height: 1.42em;
-            }
-            .rightsided-container .content .date {
-                font-size: 0.8em;
-            }
-            .rightsided-container header {
-                padding: 10px 40px 0;
-                color: white;
-                text-align: left;
-                margin-bottom: 17px;
-                background: rgba(44, 62, 80,1.0);
-            }
-            @media screen and (min-width: 700px) {
-                .rightsided-container header {
-                    margin-top: 125px;
-                    background: none;
-                }
-            }
-            .rightsided-container h5 {
-                font-size: 0.9em;
-                margin: 0;
-                margin-bottom: -15px;
-                padding-left: 10px;
-            }
-            .rightsided-container h1 {
-                font-weight: 200;
-                font-size: 3.5em;
-                margin: 0;
-            }
-            .rightsided-container h2 {
-                margin-bottom: 0;
-            }
-            .rightsided-container p {
-                margin-top: 0;
-                margin-bottom: 1em;
-            }
-        </style>
-        <header>
-            <h5>what we have done</h5>
-            <h1>Case: Mærkelex</h1>
-        </header>
-        <section class="content">
-            <p class="date"><em>Launched: February 2016</em></p>
-            <p>
-                Mærkelex is an index of scout badges available to scouts in Denmark, as well as a brand we hope to build into the place to go for badge-related things for Danish scouts.
-            </p>
-            <p>
-                The idea was first a way of scratching our own itch:
-                no central site existed for looking up scout badges, and as scout leaders this was a problem.
-                Each scout association would have its own index of badges, but unofficial badges — badges designed by individual scouts as a way to package a concept — were only listed in a private Facebook group.
-            </p>
-            <p>
-                In other words: this market was a blue ocean (no competitors), and if we were right that there was a need for this central index our product would very likely be a success.
-                The total market size was very small (scout badges in Denmark is a very specific niche), so in rough competition success would be hard to attain.
-            </p>
-            <h2>Testing the product hypothesis</h2>
-            <p>
-                Before we invested lots and lots of energy into the product we needed to know that it would be used, so we built a quick prototype in around a week's part time work.
-                It listed badges and pretty much nothing else.
-                And it was well-received, with many visitors in the first few days and positive feedback.
-            </p>
-            <p>
-                In order to facilitate quick iteration, we broke the problem down to its core and picked a technology based on this.
-                We never pick a <em>default platform</em>, we pick the best platform for the problem.
-                In our case, we could make do with statically hosted files, implementing search entirely in the frontend.
-                We effectively got free hosting from Github Pages (they host Jekyll sites for free), and didn't have to compromise on quality to get this.
-            </p>
-            <p>
-                In fact, we've come to believe that static pages are often more than good enough for projects, and static page sites have the advantage of being much faster than sites that rely on database access for every request.
-            </p>
-            <h2>User friendliness</h2>
-            <p>
-                The first version of the website was responsive, although the desktop version of the site was the one we built first.
-                We quickly noticed that many of our visitors (more than 60%) were on mobile devices.
-                This prompted us to focus on optimizing the user experience for mobile.
-            </p>
-            <p>
-                This started us on the habit of extensive user testing, where we would ask users to use the website from various devices.
-                One of the most important things when doing usability tests is to set up vague tasks to complete and never guide users on how to complete them.
-                For example, we would never tell them to "click that badge", but rather give tasks like "try to find a badge that has to do with knives".
-                These tests helped us solidify the core user experience of looking up badges and searching.
-            </p>
-            <p>
-                Because so many of our user were on mobile devices we also optimized the site for shoddy, inconsistent and slow connections.
-                The first request for the site is very quick, and we make sure the search function buffers input even before the search data is loaded.
-                This makes the site more resilient to situations where users move in and out of mobile network coverage.
-            </p>
-            <p>
-                In other words we looked at who our actual users were and optimized for them.
-                We involved real users in the development process from day one.
-            </p>
-            <h2>Statistics</h2>
-            <p>
-                Generally, Mærkelex has done well.
-                We now have more than 1000 unique users and 10.000 page views every 30 days, whether or not we do any marketing.
-            </p>
-            <p>
-                We are ranked number one on Google for relevant search terms such as "spejdermærke" or "spejdermærker".
-                For certain badges, our page with the badge description even shows up before the official badge website.
-            </p>
-            <p>
-                It felt great when people we didn't know started sharing links to the site in scout badge related forums which we frequented.
-                Our product had become popular enough that strangers would advertise for it!
-            </p>
-        </section>
+{% include overlay_nav.html %}
+
+<style type="text/css" scoped>
+    .header {
+        background: rgba(52, 73, 94, 1.0);
+        display: grid;
+        grid-template-columns: 150px 1fr;
+        color: #eaf1f7;
+        padding: 30px;
+        text-align: left;
+    }
+
+    .header .logo {
+        color: inherit;
+        text-decoration: inherit;
+        font-weight: 200;
+        font-size: 1.3em;
+        position: relative;
+        z-index: 11;
+    }
+
+    .header .intro {
+        margin: 15vh 0;
+        padding: 0;
+    }
+    .header h1 {
+        margin: 0;
+        font-weight: 200;
+        font-size: 3em;
+    }
+    .header h2 {
+        font-size: 1.5em;
+        margin: 0;
+        font-weight: 400;
+    }
+    @media (max-width: 600px) {
+        .header {
+            grid-template-columns: 1fr;
+        }
+    }
+</style>
+<section class="header">
+    <a href="/" class="logo">deranged</a>
+    <div class="intro">
+        <h1>Cases</h1>
+        <h2>A showcase of some of the things we have worked on in the past.</h2>
     </div>
-</div>
+</section>
+
+<style scoped>
+    .cases {
+        background: rgba(52, 73, 94, 1.0);
+        background-image: linear-gradient(rgba(52, 73, 94, 1.0), rgb(33, 51, 66));
+        padding-left: 180px;
+    }
+    .case {
+        display: flex;
+        align-items: flex-start;
+        justify-content: flex-start;
+        padding: 80px 0;
+    }
+    .case__meta {
+        flex-basis: 200px;
+        flex-grow: 0;
+        flex-shrink: 0;
+        margin-right: 20px;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+    }
+    .case__meta h1 {
+        font-size: 0.9rem;
+        font-weight: 500;
+        letter-spacing: 0.25rem;
+        text-transform: uppercase;
+        margin: 0;
+    }
+    .case__meta a {
+        text-decoration: underline;
+    }
+    .case__logo {
+        width: 200px;
+        object-fit: contain;
+        padding: 30px 5px;
+        opacity: 0.9;
+    }
+    .case__icon {
+        font-size: 2em;
+        filter: grayscale(0.75) hue-rotate(-45deg);
+        width: 2em;
+        height: 2em;
+        text-align: center;
+        margin-top: -1px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: filter 1s;
+        opacity: 0.9;
+    }
+    .case__icon:nth-child(1) {
+        border-top: none;
+    }
+    .case__icon:hover {
+        filter: grayscale(0.2);
+    }
+    .case__content {
+        font-size: 1rem;
+        color: #eaf1f7;
+        text-align: left;
+        max-width: 500px;
+        line-height: 150%;
+    }
+    .case__content h1 {
+        font-size: 0.9rem;
+        font-weight: 500;
+        letter-spacing: 0.25rem;
+        text-transform: uppercase;
+        margin: 0;
+        line-height: normal;
+    }
+    .case__read-more {
+        background: transparent;
+        color: #eaf1f7;
+        border: 1px solid #eaf1f7;
+        text-decoration: inherit;
+        padding: 15px 18px;
+        text-align: center;
+        margin: 40px 0;
+        cursor: pointer;
+        transition: background-color 0.3s, transform 0.3s;
+        display: block;
+        box-shadow: 0 0 2px rgba(0, 0, 0, 0.1), 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+    .case__read-more:disabled {
+        border-color: #dee3e7;
+        color: #dee3e7;
+        cursor: default;
+    }
+    .case__read-more:not(:disabled):hover {
+        background: #375068;
+    }
+</style>
+<section class="cases">
+    <div class="case">
+        <div class="case__meta">
+            <h1>
+                <a href="https://marmarcopenhagen.dk" target="_blank" rel="noopener">Marmar</a>
+            </h1>
+            <img src="/img/marmar.png" class="case__logo">
+            <div class="case__icon">👕</div>
+            <div class="case__icon">👗</div>
+            <div class="case__icon">📈</div>
+        </div>
+        <div class="case__content">
+            <h1>Summary</h1>
+            <ul>
+                <li>
+                    We were hired in to initially modernize webshop, as the existing shop was aging and hard to maintain. Especially the work required to upload new products and handle orders was a problem.
+                </li>
+                <li>
+                    Marmar's needs were for a typical webshop, so we suggested using a standard (best in class) piece of software for the shop, and focus on processes and integrations. We landed on Shopify as the core webshop product.
+                </li>
+                <li>
+                    We integrated two webshops (for different markets) with Marmar's logistics partner and their accounting system, allowing most orders to be fully processed without need for employee interaction. For edge cases, we implemented a reporing interface, supporting Marmar staff in figuring out what might have gone wrong with orders and fix the issues.
+                </li>
+                <li>
+                    We focused on employee education, making sure that key employees could solve issues as they occur. Additionally we trained employees to make advanced changes to the Shopify store, freeing them from the need to communicate with and pay and external contractor for changes to the webshop's look and content.
+                </li>
+                <li>
+                    The project resulted in a manifold increase in sales from webshop and significantly reduced workload required to handle orders and upload products.
+                </li>
+                <li>
+                    We also coordinated between several of Marmar's other suppliers and were instrumental in ensuring the success of a migration of a logistics integration for the entire business (both B2B and webshop).</li>
+                </li>
+            </ul>
+            <button disabled class="case__read-more">More elaborate case coming soon&hellip;</button>
+        </div>
+    </div>
+</section>
