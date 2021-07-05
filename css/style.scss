@@ -141,3 +141,10 @@ main p {
         transform: translateY(500px);
     }
 }
+
+.honeypot {
+  height: 0;
+  box-sizing: border-box;
+  overflow: hidden;
+  opacity: 0;
+}
