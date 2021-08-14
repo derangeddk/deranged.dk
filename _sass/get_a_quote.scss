@@ -42,11 +42,20 @@
   padding: 5px 15px;
   color: black;
   position: relative;
+
+  .honeypot {
+    margin: 0;
+  }
 }
 .contact-form .two-col-inputs {
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-gap: 10px;
+  margin-bottom: 10px;
+
+  label {
+    margin-bottom: 0;
+  }
 }
 .contact-form {
   label {
