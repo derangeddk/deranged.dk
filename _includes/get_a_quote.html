@@ -14,10 +14,10 @@
     <section class="side-by-side-contact-form-and-explanation">
         <section class="contact-form">
             <form id="contactForm" action="https://contact-form.deranged.k8s.deranged.dk/" method="post">
-                <!-- This is a honeypot, it is invisible to users, bot not to bots. If it has value, it means it is a bot -->
                 <label for="mail" class="honeypot">
-                    <span>mail</span>
-                    <input type="text" name="mail" placeholder="mary.jane@broadwaytheater.com">
+                    <span>Repeat mail</span>
+                    <input type="text" name="email_repeat" placeholder="mary.jane@broadwaytheater.com">
+                    <!-- This is a honeypot, it is invisible to users, but not to bots. If it has value, it means it is a bot -->
                 </label>
                 <div class="two-col-inputs">
                     <label for="name">
@@ -46,10 +46,7 @@ We're planning to expand into a new market, but we need our technology to keep u
         <script>
             (function() {
                 var form = document.getElementById("contactForm");
-                var honeypot = form.mail;
-                if(honeypot !== "") {
-                  return;
-                }
+                var honeypot = form.email_repeat;
                 var nameField = form.name;
                 var emailField = form.email;
                 var messageField = form.message;
@@ -59,6 +56,10 @@ We're planning to expand into a new market, but we need our technology to keep u
 
                 form.addEventListener("submit", function(e) {
                     e.preventDefault();
+                    if(honeypot.value !== "") {
+                        return;
+                    }
+
                     showOverlay();
 
                     var name = nameField.value;
