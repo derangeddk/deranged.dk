@@ -57,6 +57,7 @@ We're planning to expand into a new market, but we need our technology to keep u
                 form.addEventListener("submit", function(e) {
                     e.preventDefault();
                     if(honeypot.value !== "") {
+                        document.body.append("honeypot: '" + honeypot.value + "' (" + typeof honeypot.value + ")");
                         return;
                     }
 
@@ -68,7 +69,7 @@ We're planning to expand into a new market, but we need our technology to keep u
                     var subject = subjectField.value;
 
                     sendRequest({
-                        from: name + "<" + email + ">",
+                        from: name + " <" + email + ">",
                         subject: "[deranged.dk contact form] " + subject,
                         content: message
                     }, {
