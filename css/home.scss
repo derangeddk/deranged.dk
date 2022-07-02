@@ -244,94 +244,9 @@ permalink: /css/homestyle.css
   background-color: #070d14;
   background-image: linear-gradient(200deg, #070d14 50%, #2c3e50);
   min-height: 300px;
-}
 
-.customer-quote-section {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  padding: 100px 100px;
-  overflow: hidden;
-
-  &--dark {
-    color: #eaf1f7;
-  }
-
-  .quote-text {
-    font-family: 'Libre Baskerville', serif;
-    font-size: 1.3em;
-    max-width: 800px;
-    line-height: 175%;
-    position: relative;
-  
-    &:before {
-      content: '“';
-      font-size: 5em;
-      position: absolute;
-      left: 5px;
-      top: 25px;
-      opacity: 0.8;
-    }
-  
-    &:after {
-      content: '”';
-      font-size: 5em;
-      position: absolute;
-      right: 5px;
-      bottom: -35px;
-      opacity: 0.4;
-    }
-    @media screen and (max-width:991px) {
-      &:before {
-        left: -45px;
-      }
-      &:after {
-        right: -45px;
-      }
-    }
-  }
-  .quotee {
-    width: 100%;
-    max-width: 800px;
-    text-align: right;
-    &:before {
-      content: '— ';
-    }
-
-    @media screen and (max-width: 539px) {
-      font-size: 1.15em;
-    }
-  }
-  @media screen and (max-width: 539px) {
-    padding: 30px 35px;
-    font-size: 0.7em;
-  }
-}
-
-.customer-quote-section-alternate-style {
-  background-image: linear-gradient(20deg, #070d14 50%, #2c3e50);
-}
-
-.customer-quote-section .see-cases {
-  background: #2c3e50;
-  color: #eaf1f7;
-  text-decoration: inherit;
-  padding: 20px 25px;
-  margin: 20px;
-  cursor: pointer;
-  transition: background-color 0.3s, transform 0.3s;
-  &:hover {
-    background: #375068;
-    transform: scale(1.1);
-  }
-
-  @media screen and (max-width: 539px) {
-    font-size: 1.2em;
-  }
-
-  @media (max-width: 400px) {
-    margin: 20px -25px;
+  &--alternate {
+    background-image: linear-gradient(20deg, #070d14 50%, #2c3e50);
   }
 }
 
