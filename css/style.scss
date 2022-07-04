@@ -6,6 +6,10 @@ html {
     background-color: #ecf0f1;
 	color: #2c3e50;
     font-family: 'Source Sans Pro', Calibri, Candara, Segoe, "Segoe UI", Optima, Arial, sans-serif;
+
+    @media (min-width: 1400px) {
+        font-size: 1.143vw;
+    }
 }
 * {
     box-sizing: border-box;
@@ -162,10 +166,15 @@ main p {
   
     .quote-text {
         font-family: 'Libre Baskerville', serif;
-        font-size: 1.3em;
-        max-width: 800px;
+        font-size: 1.486vw;
+        max-width: 57.14vw;
         line-height: 175%;
         position: relative;
+
+        @media (max-width: 1400px) {
+            font-size: 1.3em;
+            max-width: 800px;
+        }
     
         &:before {
             content: '“';
@@ -195,13 +204,17 @@ main p {
     }
     .quotee {
         width: 100%;
-        max-width: 800px;
         text-align: right;
+        max-width: 57.14vw;
         &:before {
             content: '— ';
         }
+
+        @media (max-width: 1400px) {
+            max-width: 800px;
+        }
   
-        @media screen and (max-width: 539px) {
+        @media (max-width: 539px) {
             font-size: 1.15em;
         }
     }

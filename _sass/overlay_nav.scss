@@ -68,23 +68,33 @@ nav.overlay {
 
 #main-nav-toggle {
   position: absolute;
-  top: 30px;
-  right: 30px;
+  top: 2.143vw;
+  right: 2.143vw;
   z-index: 100;
-  font-size: 36px;
   background: transparent;
   border-width: 0;
   cursor: pointer;
+  font-size: 2.57vw;
+
+  @media (max-width: 1400px) {
+    font-size: 36px;
+  }
 
   .icon-bar {
    background: white;
-   height: 3px;
-   width: 30px;
-   margin-bottom: 7px;
    position: relative;
    transition: all 200ms ease;
    opacity: 1;
    top:0;
+   height: 0.2143vw;
+   width: 2.143vw;
+   margin-bottom: 0.5vw;
+
+   @media (max-width: 1400px) {
+    height: 3px;
+    width: 30px;
+    margin-bottom: 7px;
+   }
  }
 }
 
