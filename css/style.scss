@@ -243,3 +243,10 @@ main p {
         margin: 20px -25px;
     }
 }
+
+@for $i from 1 through 10 {
+    .my-#{$i} {
+        margin-top: #{$i}rem;
+        margin-bottom: #{$i}rem;
+    }
+}
