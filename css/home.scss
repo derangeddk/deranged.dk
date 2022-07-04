@@ -192,7 +192,7 @@ permalink: /css/homestyle.css
   }
   .image-of-counsel:before {
     transform: skew(46.85deg);
-    background-image: url('/img/image-of-devops.jpg');
+    background-image: url('/img/image-of-counsel.jpg');
   }
 
   .image-of-play {
@@ -204,6 +204,17 @@ permalink: /css/homestyle.css
   .image-of-play:before {
     transform: skew(-46.85deg);
     background-image: url('/img/image-of-devops.jpg');
+  }
+
+  .image-of-extra {
+    grid-column: 3 / 6;
+    grid-row: 6 / 9;
+    transform: skewX(46.85deg) translateX(-21.2vw);
+    background: #8d674e;
+  }
+  .image-of-extra:before {
+    transform: skew(-46.85deg);
+    background-image: url('/img/image-of-extra.jpg');
   }
 
   // screen width min 1400, that's where we start
