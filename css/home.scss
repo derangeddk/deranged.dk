@@ -165,8 +165,8 @@ permalink: /css/homestyle.css
   display: grid;
   background: #2c3e50;
   background-image: linear-gradient(-220deg, #2c3e50 0%, #2c3e50 30.09%, #ecf0f1 30.1%, #ecf0f1 100%);
-  grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
-  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+  grid-template-rows: repeat(8, 14.2857vw);
+  grid-template-columns: repeat(7, 14.2857vw);
   width: 100%;
   overflow-x: hidden;
   padding: 56.25px 0;
@@ -196,8 +196,6 @@ permalink: /css/homestyle.css
   .image-of-differentiation {
     position: relative;
     overflow: hidden;
-    width: 100%;
-    height: 100%;
 
     &:before {
       position: absolute;
@@ -224,14 +222,11 @@ permalink: /css/homestyle.css
     grid-column: 5 / 8;
     grid-row: 3 / 6;
     background: #8d7f4e;
-    transform: skewX(-47.3deg) translateX(-538px);
-
-    @media (max-width: 2500px) {
-      transform: skewX(-47.3deg) translateX(-21.52vw);
-    }
+    transform: skewX(-45deg);
+    transform-origin: top center;
   }
   .image-of-devops:before {
-    transform: skew(46.85deg);
+    transform: skew(45deg);
     background-image: url('/img/image-of-devops.jpg');
   }
 
@@ -239,14 +234,11 @@ permalink: /css/homestyle.css
     grid-column: 1 / 4;
     grid-row: 1 / 4;
     background: #4e8d7b;
-    transform: skewX(-47.3deg) translateX(538px);
-
-    @media (max-width: 2500px) {
-      transform: skewX(-47.3deg) translateX(21.52vw);
-    }
+    transform: skewX(-45deg);
+    transform-origin: bottom center;
   }
   .image-of-counsel:before {
-    transform: skew(46.85deg);
+    transform: skew(45deg);
     background-image: url('/img/image-of-counsel.jpg');
   }
 
@@ -254,14 +246,11 @@ permalink: /css/homestyle.css
     grid-column: 4 / 7;
     grid-row: 4 / 7;
     background: #4e748d;
-    transform: skewX(47.3deg) translateX(-538px);
-
-    @media (max-width: 2500px) {
-      transform: skewX(47.3deg) translateX(-21.52vw);
-    }
+    transform: skewX(45deg);
+    transform-origin: bottom center;
   }
   .image-of-play:before {
-    transform: skew(-46.85deg);
+    transform: skew(-45deg);
     background-image: url('/img/image-of-devops.jpg');
   }
 
@@ -269,29 +258,19 @@ permalink: /css/homestyle.css
     grid-column: 3 / 6;
     grid-row: 6 / 9;
     background: #8d674e;
-    transform: skewX(47.3deg) translateX(-537px);
-
-    @media (max-width: 2500px) {
-      transform: skewX(47.3deg) translateX(-21.48vw);
-    }
+    transform: skewX(45deg);
+    transform-origin: bottom center;
   }
   .image-of-extra:before {
-    transform: skew(-46.85deg);
+    transform: skew(-45deg);
     background-image: url('/img/image-of-extra.jpg');
   }
 
   // screen width min 1400, that's where we start
   .point-of-differentiation {
     background: white;
-    padding: 0 35.5px;
-    height: 662px;
-    box-shadow: 0 3.57px 17.85px rgba(0,0,0,0.4);
-    
-    @media (max-width: 2500px) {
-      box-shadow: 0 0.1429vw 0.714vw rgba(0,0,0,0.4);
-      padding: 0 1.429vw;
-      height: 26.5vw;
-    }
+    padding: 0 20px 20px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.4);
 
     h1 {
       font-weight: 900;
@@ -324,6 +303,122 @@ permalink: /css/homestyle.css
       padding: 0.714vw;
       box-shadow: 0 0 0.1429vw rgba(0, 0, 0, 0.3), 0 0.1429vw 0.2857vw rgba(0, 0, 0, 0.5);
       margin-top: -2.143vw;
+    }
+  }
+}
+
+@media (min-width: 1325px) {
+  .differentiation-section .point-of-differentiation {
+    font-size: 1.1em;
+  }
+}
+@media (min-width: 1600px) {
+  .differentiation-section {
+    grid-template-rows: repeat(8, 8.3333vw);
+    grid-template-columns: repeat(12, 8.3333vw);
+
+    .point-of-differentiation {
+      font-size: 1.0em;
+    }
+
+    .image-of-counsel {
+      grid-column: 1 / 5;
+      grid-row: 1 / 6;
+      transform-origin: bottom center;
+      transform: skewX(-45deg);
+      z-index: 3;
+    }
+    .image-of-devops {
+      grid-column: 5 / 9;
+      grid-row: 1 / 6;
+      transform: skewX(-45deg);
+      transform-origin: bottom center;
+    }
+    .image-of-play {
+      grid-column: 4 / 8;
+      grid-row: 4 / 8;
+      transform: skewX(45deg);
+      transform-origin: top center;
+      z-index: 2;
+    }
+    .image-of-extra {
+      grid-column: 5 / 9;
+      grid-row: 5 / 10;
+      transform: skewX(45deg);
+      transform-origin: bottom center;
+      z-index: 3;
+    }
+    .point-of-devops {
+      grid-column: 3 / 7;
+      grid-row: 1 / 4;
+      z-index: 3;
+    }
+    .point-of-counsel {
+      grid-column: 1 / 5;
+      grid-row: 5 / 8;
+      z-index: 3;
+    }
+    .point-of-play {
+      grid-column: 9 / 13;
+      grid-row: 6 / 9;
+      z-index: 3;
+    }
+  }
+}
+@media (min-width: 1900px) {
+  .differentiation-section .point-of-differentiation {
+    font-size: 1.1em;
+  }
+}
+@media (min-width: 2000px) {
+  .differentiation-section .point-of-differentiation {
+    font-size: 1.2em;
+  }
+}
+@media (min-width: 2150px) {
+  .differentiation-section {
+    .point-of-differentiation {
+      font-size: 1.0em;
+    }
+    .point-of-devops {
+      grid-row: 2 / 4;
+    }
+    .point-of-counsel {
+      grid-row: 5 / 7;
+    }
+    .point-of-play {
+      grid-row: 6 / 8;
+    }
+  }
+}
+@media (min-width: 2400px) {
+  .differentiation-section .point-of-differentiation {
+    font-size: 1.1em;
+  }
+}
+@media (min-width: 2575px) {
+  .differentiation-section {
+    grid-template-rows: repeat(8, 214.57px);
+    grid-template-columns: repeat(12, 214.57px);
+
+    .point-of-differentiation {
+      font-size: 1.0em;
+    }
+
+    .point-of-devops {
+      grid-column: 4 / 7;
+      grid-row: 2 / 4;
+      z-index: 3;
+    }
+    .point-of-counsel {
+      grid-column: 1 / 4;
+      grid-row: 5 / 7;
+      z-index: 3;
+    }
+    .point-of-play {
+      grid-column: 9 / 12;
+      grid-row: 6 / 8;
+      z-index: 3;
     }
   }
 }
