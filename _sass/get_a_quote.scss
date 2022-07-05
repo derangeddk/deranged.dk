@@ -24,12 +24,8 @@
       margin-top: 1em;
     }
   }
-
-  @media screen and (max-width: 539px) {
-    p {
-      padding-left: 10px;
-      padding-right: 10px;
-    }
+  @media (max-width: 539px) {
+    padding: 50px 30px;
   }
 }
 
@@ -101,7 +97,7 @@
 
     &:hover {
       background: #375068;
-      transform: scale(1.1);
+      transform: scale(1.025);
     }
   }
 }

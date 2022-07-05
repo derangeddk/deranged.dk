@@ -206,18 +206,11 @@ main p {
             right: 5px;
             bottom: -35px;
         }
-        @media screen and (max-width:991px) {
-            &:before {
-                left: -45px;
-            }
-            &:after {
-                right: -45px;
-            }
-        }
     }
     .quotee {
         width: 100%;
         text-align: right;
+        padding: 0 0.75em;
         max-width: 800px;
         &:before {
             content: '— ';
