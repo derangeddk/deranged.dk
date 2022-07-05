@@ -3,19 +3,32 @@ permalink: /css/derangedstyle.css
 ---
 html {
 	text-align: center;
-    background-color: #ecf0f1;
+    background-color: black;
+    background-image: linear-gradient(200deg, #070d14 50%, #2c3e50);
+    background-attachment: fixed;
 	color: #2c3e50;
     font-family: 'Source Sans Pro', Calibri, Candara, Segoe, "Segoe UI", Optima, Arial, sans-serif;
-
-    @media (min-width: 1400px) {
+    
+    @media (min-width: 1400px) and (max-width: 2500px) {
         font-size: 1.143vw;
     }
+    @media (min-width: 2500px) {
+        font-size: 28.6px;
+    }
+
+    display: flex;
+    justify-content: center;
+    width: 100vw;
 }
 * {
     box-sizing: border-box;
 }
 body {
     margin: 0;
+    overflow-x: hidden;
+    background-color: #ecf0f1;
+    max-width: 2500px;
+    position: relative;
 }
 $darkblue: rgba(44, 62, 80,1.0);
 

@@ -48,11 +48,10 @@ title: 'the Team ↳↷↷ deranged'
         overflow: hidden;
     }
     .intro-text {
-        font-size: 1.1em;
         text-align: left;
         padding: 45px;
         padding-left: 175px;
-        max-width: 900px;
+        max-width: 55%;
         z-index: 1;
     }
     .intro-image {
@@ -87,7 +86,6 @@ title: 'the Team ↳↷↷ deranged'
         top: -5px;
         bottom: -5px;
         background-image: linear-gradient(8deg, rgb(52, 73, 94) 3%, rgba(52, 73, 94, 0.7) 25%, transparent 45%);
-        transition: opacity 0.3s;
         z-index: 1;
         pointer-events: none;
     }
@@ -166,6 +164,7 @@ title: 'the Team ↳↷↷ deranged'
         position: relative;
         z-index: 1;
         padding: 8px 0 0;
+        font-size: 0.8em;
     }
     .person-image {
         grid-row: span 2;
@@ -240,13 +239,9 @@ title: 'the Team ↳↷↷ deranged'
             z-index: 10;
         }
     }
-    @media (max-width: 1800px) {
-        .people-container {
-            font-size: 0.9em;
-        }
-    }
     @media (min-width: 1350px) and (max-width: 1599px) {
         .people-container {
+            font-size: 0.9em;
             grid-template-columns: 1fr 1fr 1fr;
         }
         .person-md-col-1 {
