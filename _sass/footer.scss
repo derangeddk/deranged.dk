@@ -6,7 +6,7 @@ footer {
     display: grid;
     grid-template-columns: 100%;
     @media screen and (min-width: 1200px) {
-      grid-template-columns: 300px 200px 200px auto;
+      grid-template-columns: 300px 250px 200px auto;
       padding: 100px;
 
       .footer-icon {
