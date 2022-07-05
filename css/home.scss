@@ -2,9 +2,6 @@
 permalink: /css/homestyle.css
 ---
 .hello-section {
-  min-height: calc(100vh + 112.5px);
-  height: 1160px;
-  padding: 178.5px;
   box-sizing: border-box;
   display: flex;
   flex-direction: column;
@@ -14,17 +11,10 @@ permalink: /css/homestyle.css
   background-image: linear-gradient(40deg, #2c3e50 30%, #455d75 90%);
   color: #eaf1f7;
   position: relative;
+  min-height: calc(100vh + 63px);
+  height: 650px;
+  padding: 100px;
 
-  @media (max-width: 2500px) {
-    min-height: calc(100vh + 4.5vw);
-    height: 46.43vw;
-    padding: 7.14vw;
-  }
-  @media (max-width: 1400px) {
-    min-height: calc(100vh + 63px);
-    height: 650px;
-    padding: 100px;
-  }
   @media (max-width: 1000px) {
     padding: 100px 50px;
   }
@@ -40,25 +30,12 @@ permalink: /css/homestyle.css
     font-weight: 200;
     position: relative;
     z-index: 11;
-    font-size: 37.25px;
-    
-    @media (max-width: 2500px) {
-      font-size: 1.49vw;
-    }
-    @media (max-width: 1400px) {
-      font-size: 1.3em;
-    }
+    font-size: 1.3em;
   }
   .big-greeting {
     text-align: left;
-    font-size: 62.5px;
+    font-size: 2.5em;
 
-    @media (max-width: 2500px) {
-      font-size: 2.5vw;
-    }
-    @media (max-width: 1400px) {
-      font-size: 2.5em;
-    }
     @media (max-width: 1200px) {
       font-size: 2em;
     }
@@ -91,14 +68,13 @@ permalink: /css/homestyle.css
     max-width: 892.5px;
     font-size: 27.5px;
 
-    @media (max-width: 2500px) {
-      max-width: 35.7vw;
-      font-size: 1.1vw;
+    font-size: 1.05em;
+    max-width: 40%;
+
+    @media (min-width: 2250px) {
+      font-size: 1.3em;
     }
-    @media (max-width: 1400px) {
-      font-size: 1.05em;
-      max-width: 500px;
-    }
+
     @media (max-width: 400px) {
       margin-bottom: 25px;
     }
@@ -120,10 +96,10 @@ permalink: /css/homestyle.css
     position: absolute;
     border: none;
     cursor: pointer;
-    bottom: 7.143vw;
-    right: 7.143vw;
-    height: 3.43vw;
-    width: 3.43vw;
+    bottom: 100px;
+    right: 100px;
+    height: 48px;
+    width: 48px;
     animation: upanddown 2.5s linear infinite alternate;
 
     @media (max-width: 1400px) {
@@ -298,11 +274,11 @@ permalink: /css/homestyle.css
     margin-top: -53.58px;
 
     @media (max-width: 2500px) {
-      height: 4.5vw;
-      width: 4.5vw;
-      padding: 0.714vw;
-      box-shadow: 0 0 0.1429vw rgba(0, 0, 0, 0.3), 0 0.1429vw 0.2857vw rgba(0, 0, 0, 0.5);
-      margin-top: -2.143vw;
+      height: 63px;
+      width: 63px;
+      padding: 10px;
+      box-shadow: 0 0 2px rgba(0, 0, 0, 0.3), 0 2px 4px rgba(0, 0, 0, 0.5);
+      margin-top: -30px;
     }
   }
 }
