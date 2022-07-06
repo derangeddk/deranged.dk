@@ -74,6 +74,9 @@ permalink: /css/homestyle.css
     @media (min-width: 2250px) {
       font-size: 1.3em;
     }
+    @media (max-width: 1300px) {
+      max-width: 500px;
+    }
 
     @media (max-width: 400px) {
       margin-bottom: 25px;
