@@ -3,15 +3,28 @@ permalink: /css/derangedstyle.css
 ---
 html {
 	text-align: center;
-    background-color: #ecf0f1;
+    background-color: black;
+    background-image: linear-gradient(200deg, #070d14 50%, #2c3e50);
+    background-attachment: fixed;
 	color: #2c3e50;
     font-family: 'Source Sans Pro', Calibri, Candara, Segoe, "Segoe UI", Optima, Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+
+    @media (min-width: 1700px) {
+        font-size: 18px;
+    }
 }
 * {
     box-sizing: border-box;
 }
 body {
     margin: 0;
+    overflow-x: hidden;
+    background-color: #ecf0f1;
+    width: 100%;
+    max-width: 2575px;
+    position: relative;
 }
 $darkblue: rgba(44, 62, 80,1.0);
 
@@ -147,4 +160,96 @@ main p {
   box-sizing: border-box;
   overflow: hidden;
   opacity: 0;
+}
+
+.customer-quote-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    overflow: hidden;
+  
+    &--dark {
+        color: #eaf1f7;
+    }
+
+    &--big {
+        .quote-text {
+            font-size: 1.3em;
+            max-width: 800px;
+
+            @media (min-width: 1600px) {
+                font-size: 1.5em;
+                max-width: 1000px;
+            }
+        }
+    }
+  
+    .quote-text {
+        font-family: 'Libre Baskerville', serif;
+        line-height: 175%;
+        position: relative;
+        padding: 0 2.75em;
+    
+        &:before {
+            content: '“';
+            font-size: 5em;
+            position: absolute;
+            left: 5px;
+            top: 25px;
+        }
+    
+        &:after {
+            content: '”';
+            font-size: 5em;
+            position: absolute;
+            right: 5px;
+            bottom: -35px;
+        }
+    }
+    .quotee {
+        width: 100%;
+        text-align: right;
+        padding: 0 0.75em;
+        max-width: 800px;
+        &:before {
+            content: '— ';
+        }
+  
+        @media (max-width: 539px) {
+            font-size: 1.15em;
+        }
+    }
+    @media screen and (max-width: 539px) {
+        font-size: 0.7em;
+    }
+}
+  
+.customer-quote-section .see-cases {
+    background: #2c3e50;
+    color: #eaf1f7;
+    text-decoration: inherit;
+    padding: 20px 25px;
+    margin: 20px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
+    &:hover {
+        background: #375068;
+        transform: scale(1.1);
+    }
+  
+    @media screen and (max-width: 539px) {
+        font-size: 1.2em;
+    }
+  
+    @media (max-width: 400px) {
+        margin: 20px -25px;
+    }
+}
+
+@for $i from 1 through 10 {
+    .my-#{$i} {
+        margin-top: #{$i}rem;
+        margin-bottom: #{$i}rem;
+    }
 }

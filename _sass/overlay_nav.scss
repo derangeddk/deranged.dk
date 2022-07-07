@@ -70,21 +70,21 @@ nav.overlay {
   position: absolute;
   top: 30px;
   right: 30px;
-  z-index: 100;
   font-size: 36px;
+  z-index: 100;
   background: transparent;
   border-width: 0;
   cursor: pointer;
 
   .icon-bar {
    background: white;
-   height: 3px;
-   width: 30px;
-   margin-bottom: 7px;
    position: relative;
    transition: all 200ms ease;
    opacity: 1;
-   top:0;
+   top: 0;
+   height: 3px;
+   width: 30px;
+   margin-bottom: 7px;
  }
 }
 

@@ -45,26 +45,24 @@ title: 'the Team ↳↷↷ deranged'
         background: rgba(52, 73, 94, 1.0);
         color: #eaf1f7;
         display: flex;
+        overflow: hidden;
     }
     .intro-text {
-        font-size: 1.1em;
         text-align: left;
         padding: 45px;
         padding-left: 175px;
-        max-width: 900px;
+        max-width: 55%;
+        z-index: 1;
     }
     .intro-image {
         flex-basis: 300px;
         flex-grow: 2;
         flex-shrink: 0;
         position: relative;
-        opacity: 0.85;
-        transition: opacity 0.4s;
         max-width: 1300px;
         margin-left: 100px;
-    }
-    .intro-image:hover {
-        opacity: 1;
+        transform: skewX(-45deg);
+        overflow: hidden;
     }
     @media (max-width: 600px) {
         .intro-image {
@@ -72,24 +70,24 @@ title: 'the Team ↳↷↷ deranged'
         }
     }
     .intro-image img {
-        width: 100%;
         height: 100%;
         object-fit: cover;
+        transform: skewX(45deg);
+        position: absolute;
+        left: -70%;
+        right: -70%;
+        width: 250%;
     }
     .intro-image:after {
         content: '';
         position: absolute;
-        left: 0;
-        right: 0;
-        top: 0;
-        bottom: 0;
-        background-image: linear-gradient(340deg, rgb(69, 93, 117, 0.7) 0%, transparent 35%, transparent 65%, rgba(52, 73, 94, 0.8) 100%);
-        transition: opacity 0.3s;
+        left: -5px;
+        right: -5px;
+        top: -5px;
+        bottom: -5px;
+        background-image: linear-gradient(8deg, rgb(52, 73, 94) 3%, rgba(52, 73, 94, 0.7) 25%, transparent 45%);
         z-index: 1;
         pointer-events: none;
-    }
-    .intro-image:hover:after {
-        opacity: 0.7;
     }
     @media (max-width: 1450px) {
         .intro-text {
@@ -166,6 +164,7 @@ title: 'the Team ↳↷↷ deranged'
         position: relative;
         z-index: 1;
         padding: 8px 0 0;
+        font-size: 0.8em;
     }
     .person-image {
         grid-row: span 2;
@@ -240,13 +239,9 @@ title: 'the Team ↳↷↷ deranged'
             z-index: 10;
         }
     }
-    @media (max-width: 1800px) {
-        .people-container {
-            font-size: 0.9em;
-        }
-    }
     @media (min-width: 1350px) and (max-width: 1599px) {
         .people-container {
+            font-size: 0.9em;
             grid-template-columns: 1fr 1fr 1fr;
         }
         .person-md-col-1 {
@@ -514,10 +509,6 @@ title: 'the Team ↳↷↷ deranged'
         font-weight: 100;
         font-size: 1.85em;
         margin: 0;
-    }
-    .person .person-about,
-    .person .person-free-time {
-        max-width: 550px;
     }
     .person .person-title {
         font-size: 0.85em;
