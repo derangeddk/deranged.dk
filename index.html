@@ -103,6 +103,164 @@ title: Let's start building your software ➟ deranged
     <p class="quotee">Morten Schnack, CTO, The HabLab</p>
 </section>
 
+<section class="segments-section">
+    <div class="segment">
+        <div class="problem">
+            <p>
+                set the right direction
+                <p>
+                </p>
+                It's hard to find the kind of person who can see the big picture of your business,
+                and make the right technical decisions to support it. Even if you have a great CTO,
+                they will quickly get too many tasks for each day. That leads to high-level technical
+                decision making and direction setting becoming a bottleneck.
+            </p>
+        </div>
+        <div class="solution">
+            <p>
+                Our consultants take on that exact perspective, to take on the role as
+                temporary CTO if you don't have one, or the role of directly supporting your CTO in
+                the important work they are doing.
+                Check it out
+            </p>
+            <p>
+                --->
+                /cto
+                CTA: see if we are the right fit
+            </p>
+        </div>
+    </div>
+
+    <div class="segment">
+        <div class="problem">
+            <p>
+                Unlock your team's potential
+            </p>
+            <p>
+                Senior developers are few and far between. That makes it difficult to train junior developers and build a highly competent software development team that takes responsibility and delivers consistently. To make matters worse, if developers don't feel like they are learning and growing, they often leave for other companies.
+            </p>
+        </div>
+        <div class="solution">
+            <p>
+                We help software teams improve technical skills and how they work through pair programming, coaching, and presentations tailored to the concrete team situation.
+                [ quote ]
+            </p>
+            <p>
+                Check it out
+                --->
+                /upskill
+                CTA: Upgrade your team!
+            </p>
+        </div>
+    </div>
+
+    <script>
+        function createBackground(segment) {
+            const canvas = document.createElement("canvas");
+            canvas.classList.add("segments-background-canvas");
+
+            const segmentRect = segment.getBoundingClientRect();
+            canvas.height = segmentRect.height;
+            canvas.width = segmentRect.width;
+
+            const context = canvas.getContext('2d');
+            const horizontalResolution=150;
+            const unit = canvas.width/horizontalResolution;
+            context.scale(unit, unit);
+
+            return {canvas, tilesX: horizontalResolution, tilesY: Math.floor(canvas.height/unit)};
+        };
+
+        function fillRect(context, x, y) {
+            context.fillStyle = "#2c3e50";
+            context.save();
+            context.translate(x,y);
+            context.transform(1, 0, 0.4, 1, 0, 0);
+            context.fillRect(0, 0, 1, 1);
+            context.restore();
+        }
+
+        function distributeTiles({canvas, tilesX, tilesY}, distributionFunction, minX=0, minY=0, maxX=tilesX, maxY=tilesY) {
+            const context = canvas.getContext("2d");
+            minX = Math.floor(minX);
+            minY = Math.floor(minY);
+            maxX = Math.floor(maxX);
+            maxY = Math.floor(maxY);
+
+            const jitterFactor = 0.5;
+
+            for(let x = minX; x < maxX; x++) {
+                for(let y = minY; y < maxY; y++) {
+                    if(Math.random() < distributionFunction(x, y)) {
+                        const noiseX = jitterFactor * Math.random() - 0.5;
+                        const noiseY = jitterFactor * Math.random() - 0.5;
+                        fillRect(context, x + noiseX, y + noiseY);
+                    }
+                }
+            }
+        }
+
+        function euclideanDistance(x1, y1, x2, y2) {
+            const deltaX = Math.abs(x1 - x2);
+            const deltaY = Math.abs(y1 - y2);
+
+            return Math.sqrt(Math.pow(deltaX, 2) + Math.pow(deltaY, 2));
+        }
+
+        function sigmoid(x) {
+            x = 2 - x * 4;
+            return 1/(1 + Math.exp(-x));
+        }
+
+        const asPercentDistanceFromCenter = (f) => {
+            return ({tilesX, tilesY}) => {
+                const centerToCornerDistance = euclideanDistance(0, 0, tilesX / 2, tilesY / 2);
+                return (x, y) => {
+                    const distance = euclideanDistance(x, y, tilesX / 2, tilesY / 2);
+                    return f(distance / centerToCornerDistance);
+                };
+            };
+        };
+
+        const asPercentDistanceFromBar = (f) => {
+            return ({tilesX, tilesY}) => {
+                const barToCornerDistance = euclideanDistance(0, 0, tilesX * .4, tilesY / 2);
+                return (x, y) => {
+                    let distance;
+                    if (x <= tilesX*0.4) {
+                        distance = euclideanDistance(x, y, tilesX * .4, tilesY * 0.5);
+                    } else if (x >= tilesX*0.6) {
+                        distance = euclideanDistance(x, y, tilesX * .6, tilesY * 0.5);
+                    } else {
+                        distance = euclideanDistance(x, y, x, tilesY * 0.5);
+                    }
+                    return f(distance / barToCornerDistance);
+                };
+            };
+        };
+
+        const linearDistribution = asPercentDistanceFromCenter((d) => 1 - d);
+
+        const normalDistribution = asPercentDistanceFromCenter(sigmoid);
+
+        const exponential = (d) => (Math.pow(3, (1-d)*10) - 1) / Math.pow(3,10);
+
+        const exponentialDistribution = asPercentDistanceFromCenter(exponential);
+
+        const exponentialDistributionFromBar = asPercentDistanceFromBar(exponential);
+
+        document.querySelectorAll(".segments-section .segment").forEach((segment) => {
+            const background = createBackground(segment);
+            const { canvas, tilesX, tilesY } = background;
+            segment.appendChild(canvas);
+            const context = canvas.getContext('2d');
+
+            distributeTiles(background, exponentialDistributionFromBar(background));
+            //distributeTiles(background, () => 0.5, Math.ceil(tilesX/7*3), Math.round(tilesY/10*4), Math.floor(tilesX/7*4), Math.round(tilesY/10*7));
+        });
+    </script>
+</section>
+
 <section class="products-section">
     <div class="product-presentation">
         <h1 class="product-mission-header">On a mission?</h1>

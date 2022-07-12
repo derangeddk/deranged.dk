@@ -286,6 +286,36 @@ permalink: /css/homestyle.css
   }
 }
 
+.segments-section {
+  .segments-background-canvas {
+    position: absolute;
+  }
+
+  .segment {
+    position:relative;
+    padding: 10px 100px;
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    grid-template-columns: 3fr 1fr 3fr;
+  }
+
+  .problem {
+    color: #eaf1f7;
+    background: #2c3e50;
+    z-index: 1;
+    grid-column: 1 / 2;
+    grid-row: 1 / 2;
+  }
+
+  .solution {
+    color: #eaf1f7;
+    background: #2c3e50;
+    z-index: 1;
+    grid-column: 3 / 4;
+    grid-row: 2 / 3;
+  }
+}
+
 @media (min-width: 600px) {
   .differentiation-section {
     grid-template-rows: repeat(11, 20vw);
