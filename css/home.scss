@@ -611,6 +611,7 @@ permalink: /css/homestyle.css
   .segment {
     display: flex;
     flex-direction: column;
+    position: relative;
     max-width: 2000px;
     width: 100%;
     text-align: start;
@@ -702,6 +703,55 @@ permalink: /css/homestyle.css
 
     .problem, .solution {
       line-height: 1.6em;
+    }
+
+    .icon {
+      position: absolute;
+      color: #253545;
+      font-size: 20em;
+      opacity: .3;
+
+      @media (max-width: 1150px) {
+        display: none;
+      }
+    }
+
+    .icon-top {
+      top: -.4em;
+      right: .3em;
+    }
+
+    .icon-bottom {
+      top: 1em;
+      left: -0.2em;
+    }
+
+    .arrow-1 {
+      transform: scaleY(-1) rotate(-135deg);
+    }
+
+    .arrow-2 {
+      transform: scaleY(-1) rotate(-30deg);
+    }
+
+    .arrow-4 {
+      top: 1.2em;
+      left: .2em;
+      transform: scaleX(-1);
+    }
+
+    .arrow-3 {
+      right: .1em;
+    }
+
+    .arrow-5 {
+      transform: scaleY(-1);
+    }
+
+    .arrow-6 {
+      top: .8em;
+      left: .5em;
+      transform: scaleY(-1) rotate(-40deg);
     }
 
     @media (max-width: 539px) {
