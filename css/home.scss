@@ -617,6 +617,10 @@ permalink: /css/homestyle.css
   width: 100%;
   text-align: start;
   margin: 3em 0em;
+
+  @media (max-width: 767px) {
+    margin: 5em 0em;
+  }
 }
 
 .segment__item {
