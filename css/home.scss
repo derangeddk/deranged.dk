@@ -708,7 +708,8 @@ permalink: /css/homestyle.css
   position: absolute;
   color: #253545;
   font-size: 20em;
-  opacity: .3;
+  opacity: 0.3;
+  user-select: none;
 
   @media (max-width: 1150px) {
     display: none;
