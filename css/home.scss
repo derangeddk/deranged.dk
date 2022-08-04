@@ -773,11 +773,6 @@ permalink: /css/homestyle.css
   p {
     max-width: 500px;
   }
-  h1 {
-    font-size: 1.8em;
-    font-weight: 200;
-    margin: 0;
-  }
   @media screen and (max-width: 539px) {
     padding: 50px 30px;
   }
@@ -786,7 +781,13 @@ permalink: /css/homestyle.css
   }
 }
 
-.who-we-are-section h1 {
+.how-we-think-section__title {
+  font-size: 1.8em;
+  font-weight: 200;
+  margin: 0;
+}
+
+.who-we-are-section__title {
   font-size: 1.8em;
   font-weight: 200;
   margin: 0;
