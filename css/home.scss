@@ -670,6 +670,16 @@ permalink: /css/homestyle.css
     align-self: flex-end;
 }
 
+.segment__cta-icon {
+  display: inline-block;
+  margin-left: 10px;
+  transition: 200ms;
+
+  .segment__cta:hover & {
+    transform: translatex(5px);
+  }
+}
+
 .segment__quote {
   align-self: center;
   max-width: 700px;
