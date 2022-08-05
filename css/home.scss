@@ -637,7 +637,7 @@ permalink: /css/homestyle.css
   line-height: 1.6em;
 
   @media (max-width: 539px) {
-    padding: 1em;
+    padding: 1em 0 0;
   }
 
   &:after {
@@ -697,7 +697,7 @@ permalink: /css/homestyle.css
   margin-bottom: 3em;
 
   @media (max-width: 539px) {
-    padding: 0 1em;
+    padding: 0;
   }
 
   .quote-text {
