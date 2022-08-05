@@ -5,6 +5,7 @@ title: Let's start building your software ➟ deranged
 {% include overlay_nav.html %}
 
 <link href="/css/homestyle.css" rel="stylesheet" type="text/css">
+<link href="/css/utilities.css" rel="stylesheet" type="text/css">
 
 <section class="hello-section">
     <a href="/" class="logo">deranged</a>
@@ -103,61 +104,141 @@ title: Let's start building your software ➟ deranged
     <p class="quotee">Morten Schnack, CTO, The HabLab</p>
 </section>
 
-<section class="products-section">
-    <div class="product-presentation">
-        <h1 class="product-mission-header">On a mission?</h1>
-        <a href="/get-started-right/" class="product product-new-platform">
-            <img src="/img/map-icon.svg">
-            <h1>Put your business plan into action</h1>
-            <p>
-                If you have your business plan for your tech company ready, we can help you figure out how to make the right technical choices, and help you start your software development department the right way.
+<section class="products">
+    <h1 class="products__title mt-0">
+        We excel at solving these problems…
+    </h1>
+    <div class="segment">
+        <div class="segment__icon segment__icon--top segment__icon--arrow-1">
+            ☈
+        </div>
+        <div class="segment__item segment__item--problem">
+            <h2 class="mt-0">
+                High-level technical leadership is hard to find
+            </h2>
+            It's hard to find the kind of person who can see the big picture of your business,
+            and make the right technical decisions to support it. Even if you have a great CTO,
+            they will quickly get too many tasks for each day. That leads to high-level technical
+            decision making and direction setting becoming a bottleneck.
+        </div>
+        <section class="segment__quote customer-quote-section">
+            <p class="quote-text mb-0">
+                <a href="mailto:niels@deranged.dk">[Niels from deranged]'s</a> ability to absorb and assimilate new information into actionable strategy is beyond compare. […] Choosing to work with him could very well be the best decision you make for your company.
             </p>
-            <p>
-                We work well within a budget, and provide the same value cheaper than any other option.
+            <p class="quotee mb-0">
+                Isaac, Product Owner<br>
+                <a href="/cases/#tech-scaleup-1">
+                    Tech Scaleup
+                </a>
             </p>
-            <div class="read-more">Get started right</div>
-        </a>
-        <a href="/start-automating/" class="product product-automation">
-            <img src="/img/input-icon.svg">
-            <h1>Automate away the tiresome tasks</h1>
-            <p>
-                Business is going well, but as your company has grown, more and more time is spent on drudge work.
-                We can help you identify and automate boring work, freeing up more time for your employees to focus on what is important.
+        </section>
+        <div class="segment__item segment__item--solution">
+            <h2 class="mt-0">
+                Setting the right direction
+            </h2>
+            Our consultants take on a full perspective of your company and industry, to take on the role as temporary
+            CTO if you don't have one, or the role of directly supporting your CTO in the important
+            work they are doing.
+            <a class="segment__cta" href="">
+                Check it out <span class="segment__cta-icon">↬</span>
+            </a>
+        </div>
+        <div class="segment__icon segment__icon--bottom segment__icon--arrow-2">
+            ⟿
+        </div>
+    </div>
+    <div class="segment">
+        <div class="segment__icon segment__icon--top segment__icon--arrow-3">
+            ↶
+        </div>
+        <div class="segment__item segment__item--problem">
+            <h2 class="mt-0">
+                There aren't enough developers to go around
+            </h2>
+            Hiring and training a development team requires a continuous, large investment.
+            If developers leave, you lose the knowledge you've spent time building. Under constrained
+            budgets, it's impossible to cover all the skills needed in a development team. Alternatively,
+            consulting companies work on a project basis and aren't there to make adjustments as you
+            need them, and disagreements about scope often arise.
+        </div>
+        <section class="segment__quote customer-quote-section">
+            <p class="quote-text mb-0">
+                There has been good communication and dedi&shy;cation from deranged throughout the partner&shy;ship. [...] We have a close client-supplier relation&shy;ship. I see deranged as being my own in-house developers. That is how it feels.
             </p>
-            <p>
-                We help ensure a constructive process for and buy-in from all stakeholders.
+            <p class="quotee mb-0">
+                Ninna Toft Hansen, then-COO<br>
+                <a href="/cases/#fischer-lighting">
+                    Fischer Lighting
+                </a>
             </p>
-            <div class="read-more">Start automating</div>
-        </a>
-        <h1 class="product-problem-header">Got a problem?</h1>
-        <a href="/get-awesome/" class="product product-fix-platform">
-            <img src="/img/layers-icon.svg">
-            <h1>Make your existing platform awesome!</h1>
-            <p>
-                If you already have a tech product we can help you maintain it, expand it with new features, and prepare it for growth.
-                We ensure that maintenance is efficient and stays within your budget.
+        </section>
+        <div class="segment__item segment__item--solution">
+            <h2 class="mt-0">
+                Get the team you actually need
+            </h2>
+            We have an experienced team that is used to working together. We integrate closely
+            with your business as if we were your own developers, we hit the ground running,
+            and you only pay for us in the periods where you need development.
+            We focus on long-term collaboration with all our customers so the knowledge we build is not wasted.
+            We're a plug and play team: plug us into your business and we will start delivering value.
+            <a class="segment__cta" href="">
+                Check it out <span class="segment__cta-icon">⇝</span>
+            </a>
+        </div>
+        <div class="segment__icon segment__icon--bottom segment__icon--arrow-4">
+            ↸
+        </div>
+    </div>
+    <div class="segment">
+        <div class="segment__icon segment__icon--top segment__icon--arrow-5">
+            ⤰
+        </div>
+        <div class="segment__item segment__item--problem">
+            <h2 class="mt-0">
+                Senior technical knowledge is required
+            </h2>
+            Senior developers are few and far between. That makes it difficult to train junior
+            developers and build a highly competent software development team that takes responsibility
+            and delivers consistently. To make matters worse, if developers don't feel like they are
+            learning and growing, they often leave for other companies.
+        </div>
+        <section class="segment__quote customer-quote-section">
+            <p class="quote-text mb-0">
+                My approach to software engineering rapidly changed for better [while working with deranged].
+                We began asking the right questions, frequently communicating our ideas for solving problems, and implementing more impactful code.
             </p>
-            <p>
-                We can guide you through technical tradeoffs, and help you find new ways to increase cash flow for your product.
+            <p class="quotee mb-0">
+                Michal, Full Stack Developer<br>
+                <a href="/cases/#tech-scaleup-1">
+                    Tech Scaleup
+                </a>
             </p>
-            <div class="read-more">Get awesome</div>
-        </a>
-        <a href="/no-restrictions/" class="product product-no-resctrictions">
-            <img src="/img/terrain-icon.svg">
-            <h1>A path towards a system that doesn't restrict you</h1>
-            <p>
-                If the software you're currently using is starting to seem more restricting than enabling, we can help you plan a constructive way forward.
-                We will help you get back in control of the technological heart of your business, and give you the freedom to adapt to changing business practices.
-            </p>
-            <div class="read-more">Find freedom</div>
-        </a>
+        </section>
+        <div class="segment__item segment__item--solution">
+            <h2 class="mt-0">
+                Unlock your team's potential
+            </h2>
+            We help software teams improve technical skills and how they work through pair programming,
+            coaching, and presentations tailored to the concrete team situation.
+            <a class="segment__cta" href="">
+                Check it out <span class="segment__cta-icon">⇢</span>
+            </a>
+        </div>
+        <div class="segment__icon segment__icon--bottom segment__icon--arrow-6">
+            ⥉
+        </div>
     </div>
 </section>
 <section class="customer-quote-section customer-quote-section--big my-8">
     <p class="quote-text">
-        deranged took responsibility and worked to leave a self-sustaining organization for after they left. They helped set direction for the project, and worked well in a complicated multi-stakeholder context, executing in a way that satisfied all stakeholders.
+        I have never worked with anyone who has taken on so much respon&shy;sibility.
     </p>
-    <p class="quotee">Rolf Bjerre, Social Entrepreneur</p>
+    <p class="quotee">
+        Signe Trolle Gronemann, Specialkonsulent and Product Owner<br>
+        <a class="link--dark" href="/cases/#koebenhavns-stadsarkiv">
+            Københavns Stadsarkiv
+        </a>
+    </p>
     <a href="/cases/" class="see-cases">See examples of what we have done</a>
 </section>
 
