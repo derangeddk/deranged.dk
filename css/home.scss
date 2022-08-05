@@ -595,12 +595,14 @@ permalink: /css/homestyle.css
   background-image: linear-gradient(315deg, #2c3e50 15%, #455d75 95%);
   color: #ecf0f1;
   padding: 100px;
+  padding-top: 175px;
   position: relative;
   z-index: 0;
   overflow: hidden;
 
   @media (max-width: 767px) {
     padding: 3em 1.5em;
+    padding-top: 100px;
     overflow: hidden;
   }
 
