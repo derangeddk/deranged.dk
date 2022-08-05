@@ -595,10 +595,31 @@ permalink: /css/homestyle.css
   background-image: linear-gradient(315deg, #2c3e50 15%, #455d75 95%);
   color: #ecf0f1;
   padding: 100px;
+  padding-top: 175px;
+  position: relative;
+  z-index: 0;
+  overflow: hidden;
 
   @media (max-width: 767px) {
     padding: 3em 1.5em;
+    padding-top: 100px;
     overflow: hidden;
+  }
+
+  &:before, &:after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: 100vw;
+    height: 100vw;
+    background-color: #ecf0f1;
+    transform: rotate(170deg);
+    transform-origin: top left;
+  }
+
+  &:after {
+    transform: rotate(280deg);
   }
 }
 
@@ -617,10 +638,10 @@ permalink: /css/homestyle.css
   max-width: 2000px;
   width: 100%;
   text-align: start;
-  margin: 3em 0em;
+  margin: 3em auto;
 
   @media (max-width: 767px) {
-    margin: 5em 0em;
+    margin: 5em 0;
   }
 }
 
