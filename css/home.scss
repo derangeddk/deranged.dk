@@ -638,10 +638,10 @@ permalink: /css/homestyle.css
   max-width: 2000px;
   width: 100%;
   text-align: start;
-  margin: 3em 0em;
+  margin: 3em auto;
 
   @media (max-width: 767px) {
-    margin: 5em 0em;
+    margin: 5em 0;
   }
 }
 
