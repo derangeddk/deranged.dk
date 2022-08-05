@@ -172,6 +172,10 @@ main p {
     align-items: center;
     flex-direction: column;
     overflow: hidden;
+
+    @media (max-width: 539px) {
+        font-size: 0.7em;
+    }
   
     &--dark {
         color: #eaf1f7;
@@ -223,9 +227,6 @@ main p {
         @media (max-width: 539px) {
             font-size: 1.15em;
         }
-    }
-    @media screen and (max-width: 539px) {
-        font-size: 0.7em;
     }
 }
   
