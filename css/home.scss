@@ -695,9 +695,10 @@ permalink: /css/homestyle.css
 
 .segment__cta {
   color: inherit;
-    text-decoration: rgba(236, 240, 241, 0.7) wavy underline;
-    margin: 1em 0;
-    align-self: flex-end;
+  text-decoration: rgba(236, 240, 241, 0.7) wavy underline;
+  margin: 1em 0;
+  align-self: flex-end;
+  display: none; //remove when segment blogs get added
 }
 
 .segment__cta-icon {
