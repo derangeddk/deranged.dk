@@ -1,0 +1,110 @@
+---
+title: Bliv GDPR-compliant med dine analytics – Fix Google Analytics – deranged
+layout: default
+---
+{% include overlay_nav.html %}
+
+<style type="text/css" scoped>
+    .header {
+        background: rgba(52, 73, 94, 1.0);
+        display: grid;
+        grid-template-columns: 150px 1fr;
+        color: #eaf1f7;
+        padding: 30px;
+        text-align: left;
+    }
+
+    .header .logo {
+        color: inherit;
+        text-decoration: inherit;
+        font-weight: 200;
+        font-size: 1.3em;
+        position: relative;
+        z-index: 11;
+    }
+    @media (max-width: 900px) {
+        .header {
+            grid-template-columns: 1fr;
+        }
+    }
+    main {
+        background: rgba(52, 73, 94, 1.0);
+        background-image: linear-gradient(rgba(52, 73, 94, 1.0), rgb(33, 51, 66));
+        padding-left: 180px;
+        color: #eaf1f7;
+        text-align: left;
+        padding-top: 3rem;
+    }
+    main p {
+        max-width: 700px;
+    }
+    main h1 {
+        margin-bottom: 1rem;
+    }
+    main h2 {
+        margin-bottom: 0;
+    }
+    @media (max-width: 1200px) {
+        main {
+            padding-left: 15px;
+            font-size: 1rem;
+        }
+        main p {
+            max-width: 600px;
+        }
+    }
+</style>
+<section class="header">
+    <a href="/" class="logo">deranged</a>
+</section>
+
+<main>
+    <h1>Bliv GDPR-compliant med dine analytics</h1>
+    <p>
+        <a href="https://www.datatilsynet.dk/presse-og-nyheder/nyhedsarkiv/2022/sep/brug-af-google-analytics-til-webstatistik" target="_blank" rel="noopener"></a>Datatilsynet har konkluderet</a> at Google Analytics "ikke kan benyttes lovligt uden videre ". Det gælder altså alle der opererer i Danmark: I skal finde en vej udenom. Så hvad gør man nu?
+    </p>
+    <p>
+        Heldigvis behøver man ikke skifte ud af Google Analytics – man kan nemlig sørge for at pille den personhenførbare data ud af det der sendes til Google før de modtager det, og så må man godt bruge det.
+    </p>
+    <p>
+        Vi har en løsning på dette på trapperne lige nu, og du kan skrive til os på <a href="mailto:get@deranged.dk">get@deranged.dk</a> for at få besked så snart vi lancerer den.
+    </p>
+    
+    <h2>Konkrete vilkår</h2>
+    <p>
+        Vi skal bare lige have dækket vores hostingudgifter - så løsningen kommer til at koste €0,01 (eller 0,07 kr) pr. 1000 tracking events med en minimumsbetaling på €5 (37 kr).
+    </p>
+    <p>
+        Installationen er simpel: du skifter dit Google Analytics script ud med et let modificeret ét du får fra os - så ryger events via vores server, der sørger for at fjerne al personhenførbar information.
+    </p>
+    <p>
+        Det sidste der kræves er at du indgår en databehandleraftale med os, så sådan én har vi selvfølgelig også klar til dig.
+    </p>
+    <p>
+        Hvis du er interesseret, er det bare at sende os en mail på <a href="mailto:get@deranged.dk">get@deranged.dk</a>, så vender vi tilbage snarest muligt.
+    </p>
+
+    <h2>Vi anbefaler et alternativ</h2>
+    <p>
+        Hele balladen starter med at Google Analytics anvendes så mange steder - fra offentlige til private institutioner i Danmark.
+    </p>
+    <p>
+        Vi er store fortalere for at virksomheder og offentlige institutioner selv ejer deres infrastruktur, og kører deres egne løsninger. Det er heldigvis nemmere end nogensinde, fordi der findes rigtig gode open-source alternativer til mange af de hyppigst forekommende services.
+    </p>
+    <p>
+        Til analytics anbefaler vi <a href="https://matomo.org/" target="_blank" rel="noopener">Matomo</a>, der endda kan konfigureres til <a href="https://matomo.org/faq/new-to-piwik/how-do-i-use-matomo-analytics-without-consent-or-cookie-banner/" target="_blank" rel="noopener">ikke engang at bruge cookies</a> så man helt kan undgå en irriterende pop-up, og samtidig behandle ens brugeres data sikkert og uden Google som mellemmand.
+    </p>
+    <p>
+        Kontakt os på <a href="mailto:get@deranged.dk">get@deranged.dk</a>, hvis du har brug for hjælp til opsætning af Matomo i infrastruktur ejet af dig. Det tager nogle konsulenttimer, men derefter betaler du kun for dine egne udgifter til hosting, hvilket for større insitutioner og virksomheder sjældent er en væsentlig udgift.
+    </p>
+</main>
+
+<!--
+TODO:
+- spørgeskema: kan jeg bruge denne service?
+- databehandleraftale + flow for denne?
+- blog post: sammenligning mellem google analytics/google analytics gennem vores proxy/open source altenativer for at se hvad der batter (matomo med/uden cookies, fathom)
+- blog post: hvordan fungerer vores google analytics proxy service/hvordan lever vi op til deres anbefalinger
+-->
+
+{% include get_a_quote.html title='Kontakt os' hide_pitch='true' %}

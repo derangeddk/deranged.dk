@@ -1,7 +1,8 @@
 <section class="rest-sales">
     <h2 class="rest-sales__title">
-        Get a quote
+        {{ include.title || "Get a quote" }}
     </h2>
+    {% if include.hide_pitch != "true" %}
     <p>
         We generally work with being paid on an hourly basis.
         We are conscious of your budget when planning our work, and communicate with you to ensure there are no surprises.
@@ -13,6 +14,7 @@
         Get in touch and we will first arrange a meeting to talk about your concrete business situation.
         We will suggest a small project for you to get familiar with how we work, and if the fit is right initiate a longer, sustainable relationship, where we help you improve your business's software.
     </p>
+    {% endif %}
     <section class="side-by-side-contact-form-and-explanation">
         <section class="contact-form">
             <form id="contactForm" action="https://contact-form.deranged.k8s.deranged.dk/" method="post">
