@@ -1,0 +1,181 @@
+---
+title: Associ / stop reimplementing user systems – deranged
+layout: default
+---
+{% include overlay_nav.html %}
+
+<style type="text/css" scoped>
+    .header {
+        background: rgba(52, 73, 94, 1.0);
+        display: grid;
+        grid-template-columns: 150px 1fr;
+        color: #eaf1f7;
+        padding: 30px;
+        text-align: left;
+    }
+
+    .header .logo {
+        color: inherit;
+        text-decoration: inherit;
+        font-weight: 200;
+        font-size: 1.3em;
+        position: relative;
+        z-index: 11;
+    }
+    .header .intro {
+        margin: 15vh 0;
+        padding: 0;
+    }
+    .header h1 {
+        margin: 0;
+        font-weight: 200;
+        font-size: 3em;
+    }
+    .header h2 {
+        font-size: 1.5em;
+        margin: 0;
+        font-weight: 400;
+    }
+    @media (max-width: 900px) {
+        .header {
+            grid-template-columns: 1fr;
+        }
+    }
+    main {
+        background: rgba(52, 73, 94, 1.0);
+        background-image: linear-gradient(rgba(52, 73, 94, 1.0), rgb(33, 51, 66));
+        padding-left: 180px;
+        color: #eaf1f7;
+        text-align: left;
+        padding-top: 3rem;
+    }
+    main p, main ul {
+        max-width: 700px;
+    }
+    main ul li {
+        margin-bottom: 0.5rem;
+    }
+    main h1 {
+        margin-bottom: 1rem;
+    }
+    main h2 {
+        margin-bottom: 0;
+    }
+    @media (max-width: 1200px) {
+        main {
+            padding-left: 15px;
+            font-size: 1rem;
+        }
+        main p {
+            max-width: 600px;
+        }
+    }
+</style>
+<section class="header">
+    <a href="/" class="logo">deranged</a>
+    <div class="intro">
+        <h1>Associ</h1>
+        <h2>The user system for your application.</h2>
+    </div>
+</section>
+
+<main>
+    <h2>Abstract</h2>
+    <p>
+        The Associ user system is an opinionated, easily integratable user system that emphasizes user control.
+    </p>
+    <p>
+        The system is currently in development, targeting use in a few systems we are working on internally and for customers. If you are interested in the project and want to hear more, you are very welcome to <a href="mailto:get@deranged.dk">reach out</a>.
+    </p>
+    <p>
+        The barrier of entry for new application development is high, in part due to the implementation of user systems for each new application. A feature rich and easily integratable user system will enable the development of more applications, which will allow focus on the unique features of new applications, enabling more competition with Silicon Valley startups and large corporations.
+    </p>
+    <p>
+        Associ includes features commonly found in user systems, as well as ready-to-use (or modify) frontend components. It lets users control when and how they are contacted via notifications, emails, or email digests. It will include optional organization and role systems. It can be integrated into any programming environment over gRPC, or natively as Node.js modules. It can be configured to use various databases or authentication systems.
+    </p>
+    <p>
+        Associ is a building block to democratize creation; to enable better alternatives.
+    </p>
+
+    <h2>Full feature-set and plan</h2>
+    <p>
+        The Associ user system aims to be a foundational layer in enabling quicker construction of more software applications. By building common capabilities by lots of applications in a reusable way, application developers can focus on what makes their applications unique, rather than all the required work to have a system at all.
+    </p>
+    <p>
+        This will make a significant difference for smaller and less well-funded teams with good ideas that can help wrest control from the centralized and well-funded players in the industry like Silicon Valley startups and large tech corporations.
+    </p>
+    <p>
+        Associ is built and published as modules for Node.js, as it is an increasingly popular programming language for web application development. However, the system can be integrated into any programming language using a well-defined gRPC interface.
+    </p>
+    <p>
+        The Associ user system will be modular, allowing the setup of exactly the capabilities needed in a specific application. The system will include but is not limited to and does not require the use of all of the following:
+    </p>
+    <ul>
+        <li>
+            User accounts with profile information, avatar, and a unified interface for contact.
+        </li>
+        <li>
+            Contact preferences, which allow the user to decide how exactly they are contacted and with what information. Other modules in the application register contact scenarios that allow the user to change whether information is sent to them, and if so whether it is sent instantly when something happens or in daily, weekly or monthly digests.
+        </li>
+        <li>
+            Notification system where information sent to users can be turned into notifications that appear in a notification tray for the user. Messages whose notifications have already been handled are not sent out in digests, resulting in less noisy communication to users.
+        </li>
+        <li>
+            Flexible database integration, allowing the user system to work with whatever database is otherwise used in an application or use a completely isolated database. Initial support for using MongoDB or Postgres as databases.
+        </li>
+        <li>
+            Flexible contact method integration, letting each application decide how to contact their users. Initial support for Mailgun and SMTP email.
+        </li>
+        <li>
+            Permission system that allows applications to simply specify access control throughout the application.
+        </li>
+        <li>
+            Modules for enabling organizations and user roles in the application, allowing complex access control.
+        </li>
+        <li>
+            Support for other authentication providers, including Keycloak, LDAP, Google Identity, and more.
+        </li>
+        <li>
+            Fully modular frontend components that can be integrated in other application code, forked, or completely ignored depending on the concrete needs for any given application.
+        </li>
+        <li>
+            Well-documented user-facing HTTP API for all interactions, so custom interfaces can be constructed.
+        </li>
+        <li>
+            Well-documented gRPC or native Node.js API for other parts of the application to integrate with the user system to perform system functions, meaning that applications in any programming language can use the user system.
+        </li>
+        <li>
+            Authentication layer that can easily be implemented into other parts of the application, no matter the technologies used to build the application.
+        </li>
+    </ul>
+    <p>
+        The development of the user system will include the above features, but as open source software it will eventually need to be driven by the community, evolving to fit the changing needs of developers.
+    </p>
+    <p>
+        The project is currently in the early research and development phase. The big milestones look like this:
+    </p>
+    <ul>
+        <li><strong>Research and development (2022)</strong>, including using the system in several concrete applications, including some for open source and some for proprietary use, in order to drive forward the feature set.</li>
+        <li><strong>Release to the public (2022 or 2023)</strong>, including setting up easily accessible documentation and encouraging use in projects outside the control of deranged.</li>
+        <li><strong>Establishing governance (future)</strong>, to ensure the future healthy evolution of the project.</li>
+    </ul>
+
+    <h2>Compared to other approaches</h2>
+    <p>
+        The primary unique characteristic of Associ is that it is not a standalone application, and it is also not just a library - it lands somewhere in between, as a feature-rich full stack building block for building web applications.
+    </p>
+    <p>
+        Protocol-level solutions like OpenID Connect and OAuth 2.0 describe standardized ways to authenticate with applications, but require a large amount of implementation to make work in applications. At the same time, they describe authentication but have none of the user-facing features of Associ.
+    </p>
+    <p>
+        Libraries like Passport.js provide access to a large amount of authentication strategies that can be quickly integrated into web applications, but no features beyond that. Associ can be easily adapted to support Passport authentication strategies if there is demand for it.
+    </p>
+    <p>
+        Full authentication systems like Keycloak provide a lot of functionality in a standalone system that can be integrated with others. It provides a permission system, a method for contacting users, authentication flows and more - but not, for example, a notification system and contact preferences. At the same time, integration usually takes the form of directing users away from the main application and over to Keycloak, in what is far from a seamless experience. A more seamless authentication experience requires significant implementation effort. Associ can be based on Keycloak, using the features from Keycloak while adding features on top.
+    </p>
+    <p>
+        Content management systems that allow a large degree of customization (like e.g. Wordpress and Drupal) could be seen as alternative strategies to getting a user system and building on top of it. Compared to Associ, they are less flexible in how easily and closely they can be integrated into other systems, and lock developers into using specific technologies, whereas Associ allows integration with any application via gRPC.
+    </p>
+</main>
+
+{% include get_a_quote.html title='Interested?' hide_pitch='true' subject='Re: Associ' %}
