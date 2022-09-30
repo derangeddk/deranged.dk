@@ -35,7 +35,7 @@
                 </div>
                 <label for="subject">
                     <span>Subject</span>
-                    <input type="text" name="subject" value="Quote request" placeholder="Quote request">
+                    <input type="text" name="subject" value="{{ include.subject || '' }}" placeholder="{{ include.subject || 'Subject' }}">
                 </label>
                 <label for="message">
                     <span>Message</span>
