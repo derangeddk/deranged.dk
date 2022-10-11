@@ -1,64 +1,7 @@
 ---
 title: Bliv GDPR-compliant med dine analytics – Fix Google Analytics – deranged
-layout: default
+layout: fix-analytics
 ---
-{% include overlay_nav.html %}
-
-<style type="text/css" scoped>
-    .header {
-        background: rgba(52, 73, 94, 1.0);
-        display: grid;
-        grid-template-columns: 150px 1fr;
-        color: #eaf1f7;
-        padding: 30px;
-        text-align: left;
-    }
-
-    .header .logo {
-        color: inherit;
-        text-decoration: inherit;
-        font-weight: 200;
-        font-size: 1.3em;
-        position: relative;
-        z-index: 11;
-    }
-    @media (max-width: 900px) {
-        .header {
-            grid-template-columns: 1fr;
-        }
-    }
-    main {
-        background: rgba(52, 73, 94, 1.0);
-        background-image: linear-gradient(rgba(52, 73, 94, 1.0), rgb(33, 51, 66));
-        padding-left: 180px;
-        color: #eaf1f7;
-        text-align: left;
-        padding-top: 3rem;
-    }
-    main p {
-        max-width: 700px;
-    }
-    main h1 {
-        margin-bottom: 1rem;
-    }
-    main h2 {
-        margin-bottom: 0;
-    }
-    @media (max-width: 1200px) {
-        main {
-            padding-left: 15px;
-            font-size: 1rem;
-        }
-        main p {
-            max-width: 600px;
-        }
-    }
-</style>
-<section class="header">
-    <a href="/" class="logo">deranged</a>
-</section>
-
-<main>
     <h1>Bliv GDPR-compliant med dine analytics</h1>
     <p>
         <a href="https://www.datatilsynet.dk/presse-og-nyheder/nyhedsarkiv/2022/sep/brug-af-google-analytics-til-webstatistik" target="_blank" rel="noopener"></a>Datatilsynet har konkluderet</a> at Google Analytics "ikke kan benyttes lovligt uden videre ". Det gælder altså alle der opererer i Danmark: I skal finde en vej udenom. Så hvad gør man nu?
@@ -97,7 +40,6 @@ layout: default
     <p>
         Kontakt os på <a href="mailto:get@deranged.dk">get@deranged.dk</a>, hvis du har brug for hjælp til opsætning af Matomo i infrastruktur ejet af dig. Det tager nogle konsulenttimer, men derefter betaler du kun for dine egne udgifter til hosting, hvilket for større insitutioner og virksomheder sjældent er en væsentlig udgift.
     </p>
-</main>
 
 <!--
 TODO:
@@ -106,5 +48,3 @@ TODO:
 - blog post: sammenligning mellem google analytics/google analytics gennem vores proxy/open source altenativer for at se hvad der batter (matomo med/uden cookies, fathom)
 - blog post: hvordan fungerer vores google analytics proxy service/hvordan lever vi op til deres anbefalinger
 -->
-
-{% include get_a_quote.html title='Kontakt os' hide_pitch='true' subject='Fix mine analytics' %}
