@@ -19,25 +19,35 @@
                 type="text"
                 name="email"
                 placeholder="user@domain.com"
+                required
             />
         </label>
         <label>
             <span>Currency</span>
-            <select name="currency">
+            <select
+                name="currency"
+                required
+            >
                 <option value="dkk">DKK</option>
                 <option value="euro">Euro</option>
             </select>
         </label>
         <label>
             <span>Preferred Language</span>
-            <select name="locale">
+            <select
+                name="locale"
+                required
+            >
                 <option value="en_US">English</option>
                 <option value="da_DK">Danish</option>
             </select>
         </label>
         <label>
             <span>Customer Type</span>
-            <select name="customer_type">
+            <select
+                name="customer_type"
+                required
+            >
                 <option value="company">Enterprise</option>
                 <option value="person">Private</option>
             </select>
@@ -48,6 +58,7 @@
                 type="text"
                 name="name"
                 placeholder="Company Inc"
+                required
             />
         </label>
         <label>
@@ -55,6 +66,7 @@
             <input
                 type="text"
                 name="location_street"
+                required
             />
         </label>
         <div class="two-col-inputs">
@@ -63,6 +75,7 @@
                 <input
                     type="text"
                     name="location_city"
+                    required
                 />
             </label>
             <label for="">
@@ -70,6 +83,7 @@
                 <input
                     type="number"
                     name="location_zipcode"
+                    required
                 />
             </label>
         </div>
@@ -83,33 +97,39 @@
             </label>
             <label>
                 <span>Country</span>
-                <select name="location_country_id">
+                <select
+                    name="location_country_id"
+                    required
+                >
                     <option value="dk">Denmark</option>
                 </select>
             </label>
         </div>
-        <label for="">
+        <label>
             <span>Phone number</span>
             <input
                 type="tel"
                 name="phone"
+                required
             />
         </label>
-        <label for="">
+        <label>
             <span>Registration No. (such as VAT or CVR)</span>
             <input
                 type="text"
                 name="registration_number"
+                required
             />
         </label>
-        <label for="">
+        <label>
             <span>Domains</span>
             <input
                 type="text"
                 name="domain"
+                required
             />
         </label>
-        <label for="">
+        <label>
             <span>Discount Voucher (optional)</span>
             <input
                 type="text"
@@ -140,8 +160,19 @@
         var honeypot = form.UZZvvqxJKRlGGbvYaVxz;
         var nameField = form.name;
         var emailField = form.email;
-        var messageField = form.message;
-        var subjectField = form.subject;
+        var currencyField = form.currency;
+        var localeField = form.locale;
+        var customerTypeField = form.customer_type;
+        var locationStreetField = form.location_street;
+        var locationCityField = form.location_city;
+        var locationZipField = form.location_zipcode;
+        var locationStateField = form.location_state;
+        var locationCountryIdField = form.location_country_id;
+        var phoneField = form.phone;
+        var registrationNumberField = form.registration_number;
+        var voucherField = form.voucher;
+        var acceptTermsField = form.accept_terms;
+        var domainField = form.domain;
 
         var contactFormOverlay = document.querySelector("[data-analytics-form-overlay]");
 
@@ -155,22 +186,31 @@
 
             showOverlay();
 
-            var name = nameField.value;
-            var email = emailField.value;
-            var message = messageField.value;
-            var subject = subjectField.value;
+            var customer = {
+                email: emailField.value,
+                currency: currencyField.value,
+                locale: localeField.value,
+                type: customerTypeField.value,
+                name: nameField.value,
+                countryId: locationCountryIdField.value,
+                street: locationStreetField.value,
+                cityText: locationCityField.value,
+                stateText: locationStateField.value,
+                zipcode: locationZipField.value,
+                phone: phoneField.value,
+                registrationNo: registrationNumberField.value,
+            };
+            var domains = [domainField.value];
+            var voucher = voucherField.value;
 
-            sendRequest(
-                {
-                    from: name + " <" + email + ">",
-                    subject: "[deranged.dk contact form] " + subject,
-                    content: message,
-                },
-                {
-                    success: showSuccess,
-                    failure: showFailure,
-                }
-            );
+            var data = {
+                customer,
+                domains,
+                voucher,
+            };
+
+            console.warn("data", data);
+            // TODO: Send data to endpoint
 
             return false;
         });
