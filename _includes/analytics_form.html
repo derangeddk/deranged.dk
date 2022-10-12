@@ -1,0 +1,214 @@
+<section class="contact-form">
+    <form id="contact-form-analytics" action="http://api.fix-analytics.deranged.dk/customer" method="post">
+        <label for="mail" class="honeypot">
+            <span>Repeat mail</span>
+            <input type="text" name="UZYvvqxJKVgFLbvYcWxs" placeholder="mary.jane@broadwaytheater.com" />
+            <!-- This is a honeypot, it is invisible to users, but not to bots. If it has value, it means it is a bot -->
+        </label>
+        <label for="email">
+            <span>Email</span>
+            <input type="text" name="email" placeholder="peter.parker@dailyplanet.com" />
+        </label>
+        <label>
+            <span>Currency</span>
+            <select name="" id="">
+                <option value="dkk">DKK</option>
+                <option value="euro">Euro</option>
+            </select>
+        </label>
+        <label>
+            <span>Preferred Language</span>
+            <select name="" id="">
+                <option value="en_US">English</option>
+                <option value="da_DK">Danish</option>
+            </select>
+        </label>
+        <label>
+            <span>Customer Type</span>
+            <select name="" id="">
+                <option value="company">Enterprise</option>
+                <option value="person">Private</option>
+            </select>
+        </label>
+        <label for="name">
+            <span>Name (for company)</span>
+            <input type="text" name="name" placeholder="" />
+        </label>
+        <label>
+            <span>Street and street number</span>
+            <input type="text" name="street" />
+        </label>
+        <div class="two-col-inputs">
+            <label>
+                <span>City</span>
+                <input type="text" name="cityText" />
+            </label>
+            <label for="">
+                <span>Zip code</span>
+                <input type="number" name="zipcode" />
+            </label>
+        </div>
+        <div class="two-col-inputs">
+            <label for="">
+                <span>State (optional)</span>
+                <input type="text" name="stateText" />
+            </label>
+            <label>
+                <span>Country</span>
+                <select name="countryId">
+                    <option value="dk">Denmark</option>
+                </select>
+            </label>
+        </div>
+        <label for="">
+            <span>Phone number</span>
+            <input type="number" name="phone" />
+        </label>
+        <label for="">
+            <span>Registration No. (such as VAT or CVR)</span>
+            <input type="text" name="registrationNo" />
+        </label>
+        <label for="">
+            <span> Domains </span>
+            <input type="text" name="domain" />
+        </label>
+        <label for="">
+            <span>Discount Voucher (optional)</span>
+            <input type="text" name="voucher" />
+        </label>
+        <button type="submit">Signup</button>
+    </form>
+    <div class="contact-form-overlay contact-form-overlay-clickthrough" data-analytics-form-overlay>Sending...</div>
+</section>
+
+<script>
+    (function () {
+        var form = document.getElementById("contact-form-analytics");
+        var honeypot = form.UZYvvqxJKVgFLbvYcWxs;
+        var nameField = form.name;
+        var emailField = form.email;
+        var messageField = form.message;
+        var subjectField = form.subject;
+
+        var contactFormOverlay = document.querySelector("[data-analytics-form-overlay]");
+
+        form.addEventListener("submit", function (e) {
+            e.preventDefault();
+            var honeypotValue = honeypot.value;
+            if (honeypotValue !== "") {
+                document.body.append("honeypot: '" + honeypotValue + "' (" + typeof honeypotValue + ")");
+                return;
+            }
+
+            showOverlay();
+
+            var name = nameField.value;
+            var email = emailField.value;
+            var message = messageField.value;
+            var subject = subjectField.value;
+
+            sendRequest(
+                {
+                    from: name + " <" + email + ">",
+                    subject: "[deranged.dk contact form] " + subject,
+                    content: message,
+                },
+                {
+                    success: showSuccess,
+                    failure: showFailure,
+                }
+            );
+
+            return false;
+        });
+
+        function showOverlay() {
+            contactFormOverlay.innerText = "Getting in touch...";
+            contactFormOverlay.classList.remove("contact-form-overlay-clickthrough");
+            requestAnimationFrame(function () {
+                contactFormOverlay.classList.add("contact-form-overlay-visible");
+            });
+        }
+
+        function sendRequest(data, callbacks) {
+            var req = new XMLHttpRequest();
+            req.open("POST", form.action, true);
+            req.setRequestHeader("Content-Type", "application/json");
+            req.onreadystatechange = function () {
+                if (req.readyState != 4) {
+                    return;
+                }
+                if (req.status == 200) {
+                    return callbacks.success();
+                }
+                console.error("Response from server on request", {
+                    status: req.statusText,
+                    responseType: req.responseType,
+                    response: req.response,
+                });
+                callbacks.failure();
+            };
+            req.send(JSON.stringify(data));
+        }
+
+        function showSuccess() {
+            contactFormOverlay.classList.remove("contact-form-overlay-visible");
+
+            setTimeout(function () {
+                contactFormOverlay.innerText = "Got in touch!";
+                contactFormOverlay.classList.add("contact-form-overlay-visible");
+
+                setTimeout(function () {
+                    contactFormOverlay.classList.remove("contact-form-overlay-visible");
+
+                    setTimeout(function () {
+                        contactFormOverlay.classList.add("contact-form-overlay-clickthrough");
+                    }, 500);
+                }, 1500);
+            }, 200);
+
+            deleteTextInField(nameField);
+            deleteTextInField(emailField);
+            deleteTextInField(messageField);
+            deleteTextInField(subjectField, function () {
+                writeTextInField(subjectField, "Quote request");
+            });
+        }
+
+        function showFailure() {
+            contactFormOverlay.classList.remove("contact-form-overlay-visible");
+
+            setTimeout(function () {
+                contactFormOverlay.innerText = "Something went wrong - try again!";
+                contactFormOverlay.classList.add("contact-form-overlay-visible");
+
+                setTimeout(function () {
+                    contactFormOverlay.classList.remove("contact-form-overlay-visible");
+
+                    setTimeout(function () {
+                        contactFormOverlay.classList.add("contact-form-overlay-clickthrough");
+                    }, 500);
+                }, 2000);
+            }, 200);
+        }
+
+        function deleteTextInField(field, callback) {
+            if (field.value.length == 0) {
+                if (callback) {
+                    return callback();
+                }
+                return;
+            }
+            field.value = field.value.substring(0, field.value.length - 1);
+            setTimeout(deleteTextInField, 33, field, callback);
+        }
+
+        function writeTextInField(field, text) {
+            if (text.length == 0) {
+                return;
+            }
+            field.value += text[0];
+            setTimeout(writeTextInField, 33, field, text.substring(1));
+        }
+    })();
+</script>
