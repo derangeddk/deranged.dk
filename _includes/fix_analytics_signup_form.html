@@ -1,94 +1,143 @@
 <section class="contact-form">
-    <form id="contact-form-analytics" action="http://api.fix-analytics.deranged.dk/customer" method="post">
-        <label for="mail" class="honeypot">
+    <form
+        id="contact-form-analytics"
+        action="http://api.fix-analytics.deranged.dk/customer"
+        method="post"
+    >
+        <label class="honeypot">
             <span>Repeat mail</span>
-            <input type="text" name="UZYvvqxJKVgFLbvYcWxs" placeholder="mary.jane@broadwaytheater.com" />
+            <input
+                type="text"
+                name="UZZvvqxJKRlGGbvYaVxz"
+                placeholder="mary.jane@broadwaytheater.com"
+            />
             <!-- This is a honeypot, it is invisible to users, but not to bots. If it has value, it means it is a bot -->
         </label>
         <label for="email">
             <span>Email</span>
-            <input type="text" name="email" placeholder="peter.parker@dailyplanet.com" />
+            <input
+                type="text"
+                name="email"
+                placeholder="user@domain.com"
+            />
         </label>
         <label>
             <span>Currency</span>
-            <select name="" id="">
+            <select name="currency">
                 <option value="dkk">DKK</option>
                 <option value="euro">Euro</option>
             </select>
         </label>
         <label>
             <span>Preferred Language</span>
-            <select name="" id="">
+            <select name="locale">
                 <option value="en_US">English</option>
                 <option value="da_DK">Danish</option>
             </select>
         </label>
         <label>
             <span>Customer Type</span>
-            <select name="" id="">
+            <select name="customer_type">
                 <option value="company">Enterprise</option>
                 <option value="person">Private</option>
             </select>
         </label>
-        <label for="name">
+        <label>
             <span>Name (for company)</span>
-            <input type="text" name="name" placeholder="" />
+            <input
+                type="text"
+                name="name"
+                placeholder="Company Inc"
+            />
         </label>
         <label>
             <span>Street and street number</span>
-            <input type="text" name="street" />
+            <input
+                type="text"
+                name="location_street"
+            />
         </label>
         <div class="two-col-inputs">
             <label>
                 <span>City</span>
-                <input type="text" name="cityText" />
+                <input
+                    type="text"
+                    name="location_city"
+                />
             </label>
             <label for="">
                 <span>Zip code</span>
-                <input type="number" name="zipcode" />
+                <input
+                    type="number"
+                    name="location_zipcode"
+                />
             </label>
         </div>
         <div class="two-col-inputs">
             <label for="">
                 <span>State (optional)</span>
-                <input type="text" name="stateText" />
+                <input
+                    type="text"
+                    name="location_state"
+                />
             </label>
             <label>
                 <span>Country</span>
-                <select name="countryId">
+                <select name="location_country_id">
                     <option value="dk">Denmark</option>
                 </select>
             </label>
         </div>
         <label for="">
             <span>Phone number</span>
-            <input type="number" name="phone" />
+            <input
+                type="number"
+                name="phone"
+            />
         </label>
         <label for="">
             <span>Registration No. (such as VAT or CVR)</span>
-            <input type="text" name="registrationNo" />
+            <input
+                type="text"
+                name="registration_number"
+            />
         </label>
         <label for="">
-            <span> Domains </span>
-            <input type="text" name="domain" />
+            <span>Domains</span>
+            <input
+                type="text"
+                name="domain"
+            />
         </label>
         <label for="">
             <span>Discount Voucher (optional)</span>
-            <input type="text" name="voucher" />
+            <input
+                type="text"
+                name="voucher"
+            />
         </label>
         <label>
             <span>Jeg accepterer vilkår og databehandleraftale</span>
-            <input required type="checkbox" name="accept_terms" />
+            <input
+                required
+                type="checkbox"
+                name="accept_terms"
+            />
         </label>
         <button type="submit">Signup</button>
     </form>
-    <div class="contact-form-overlay contact-form-overlay-clickthrough" data-analytics-form-overlay>Sending...</div>
+    <div
+        class="contact-form-overlay contact-form-overlay-clickthrough"
+        data-analytics-form-overlay
+    >
+        Sending...
+    </div>
 </section>
 
 <script>
     (function () {
         var form = document.getElementById("contact-form-analytics");
-        var honeypot = form.UZYvvqxJKVgFLbvYcWxs;
+        var honeypot = form.UZZvvqxJKRlGGbvYaVxz;
         var nameField = form.name;
         var emailField = form.email;
         var messageField = form.message;
