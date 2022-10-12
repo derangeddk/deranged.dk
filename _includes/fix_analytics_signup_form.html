@@ -209,11 +209,29 @@
                 voucher,
             };
 
-            console.warn("data", data);
-            // TODO: Send data to endpoint
+            sendRequest(form.action, data);
 
             return false;
         });
+
+        async function sendRequest(url, data) {
+            try {
+                const rawResponse = await fetch(url, {
+                method: 'POST',
+                headers: {
+                    'Accept': 'application/json',
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(data)
+                });
+                const content = await rawResponse.json();
+
+                console.log("DONE", content);
+            }
+            catch {
+                console.log(error)
+            }
+        }
 
         function showOverlay() {
             contactFormOverlay.innerText = "Getting in touch...";
