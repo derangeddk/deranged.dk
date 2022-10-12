@@ -121,14 +121,23 @@
                 required
             />
         </label>
-        <label>
-            <span>Domains</span>
-            <input
-                type="text"
-                name="domain"
-                required
-            />
-        </label>
+        <div data-domains-container>
+            <label>
+                <span>Domains</span>
+                <input
+                    type="text"
+                    name="domain_1"
+                    required
+                    data-domain-field
+                />
+            </label>
+        </div>
+        <button
+            class="btn"
+            data-add-additional-domain
+        >
+            Add additional domain
+        </button>
         <label>
             <span>Discount Voucher (optional)</span>
             <input
@@ -172,9 +181,11 @@
         var registrationNumberField = form.registration_number;
         var voucherField = form.voucher;
         var acceptTermsField = form.accept_terms;
-        var domainField = form.domain;
+        var domainField = form.domain_1;
 
         var contactFormOverlay = document.querySelector("[data-analytics-form-overlay]");
+        var addAdditionalDomainButton = document.querySelector("[data-add-additional-domain");
+        var domainsContainer = document.querySelector("[data-domains-container");
 
         form.addEventListener("submit", function (e) {
             e.preventDefault();
@@ -200,7 +211,13 @@
                 phone: phoneField.value,
                 registrationNo: registrationNumberField.value,
             };
-            var domains = [domainField.value];
+            var domainList = document.querySelectorAll("[data-domain-field]");
+            var domains = [];
+            var domainValues = domainList.forEach(input => {
+                if (input.value) {
+                    domains.push(input.value);
+                };
+            });
             var voucher = voucherField.value;
 
             var data = {
@@ -209,28 +226,45 @@
                 voucher,
             };
 
-            sendRequest(form.action, data);
+            sendRequestToApi(form.action, data);
 
             return false;
         });
 
-        async function sendRequest(url, data) {
+        addAdditionalDomainButton.addEventListener("click", function (e) {
+            e.preventDefault();
+            addNewDomainField();
+        });
+
+        async function sendRequestToApi(url, data) {
             try {
                 const rawResponse = await fetch(url, {
-                method: 'POST',
-                headers: {
-                    'Accept': 'application/json',
-                    'Content-Type': 'application/json'
-                },
-                body: JSON.stringify(data)
+                    method: "POST",
+                    headers: {
+                        Accept: "application/json",
+                        "Content-Type": "application/json",
+                    },
+                    body: JSON.stringify(data),
                 });
                 const content = await rawResponse.json();
 
                 console.log("DONE", content);
+            } catch {
+                console.log(error);
             }
-            catch {
-                console.log(error)
-            }
+        }
+
+        function addNewDomainField() {
+            var domainFields = document.querySelectorAll("[data-domain-field]")
+            var domainFieldCount = domainFields.length + 1;
+            var input = document.createElement("INPUT");
+            input.setAttribute("Type", "text");
+            input.setAttribute("Placeholder", "domain" + domainFieldCount);
+            input.setAttribute("data-domain-field", true);
+            input.setAttribute("Name", "domain_" + domainFieldCount);
+            domainsContainer
+                .appendChild(document.createElement('label'))
+                .appendChild(input);
         }
 
         function showOverlay() {
