@@ -228,6 +228,11 @@
         var addAdditionalDomainButton = document.querySelector("[data-add-additional-domain");
         var domainsContainer = document.querySelector("[data-domains-container");
 
+        addAdditionalDomainButton.addEventListener("click", function (e) {
+            e.preventDefault();
+            addNewDomainField();
+        });
+
         form.addEventListener("submit", function (e) {
             e.preventDefault();
             var honeypotValue = honeypot.value;
@@ -272,11 +277,6 @@
             return false;
         });
 
-        addAdditionalDomainButton.addEventListener("click", function (e) {
-            e.preventDefault();
-            addNewDomainField();
-        });
-
         async function sendRequestToApi(url, data) {
             try {
                 const rawResponse = await fetch(url, {
@@ -289,20 +289,19 @@
                 });
                 const content = await rawResponse.json();
 
-                console.log("DONE", content);
-            } catch {
-                console.log(error);
+                console.log("success", content);
+                showSuccess();
+            } catch (error) {
+                console.log("error", error);
+                showFailure();
             }
         }
 
         function addNewDomainField() {
-            var domainFields = document.querySelectorAll("[data-domain-field]");
-            var domainFieldCount = domainFields.length + 1;
             var input = document.createElement("INPUT");
             input.setAttribute("Type", "text");
             input.setAttribute("Placeholder", "www.your-domain.com");
             input.setAttribute("data-domain-field", true);
-            input.setAttribute("Name", "domain_" + domainFieldCount);
             domainsContainer.appendChild(document.createElement("label")).appendChild(input);
         }
 
@@ -314,32 +313,12 @@
             });
         }
 
-        function sendRequest(data, callbacks) {
-            var req = new XMLHttpRequest();
-            req.open("POST", form.action, true);
-            req.setRequestHeader("Content-Type", "application/json");
-            req.onreadystatechange = function () {
-                if (req.readyState != 4) {
-                    return;
-                }
-                if (req.status == 200) {
-                    return callbacks.success();
-                }
-                console.error("Response from server on request", {
-                    status: req.statusText,
-                    responseType: req.responseType,
-                    response: req.response,
-                });
-                callbacks.failure();
-            };
-            req.send(JSON.stringify(data));
-        }
-
         function showSuccess() {
+            // TODO: Make the success state better/clearer
             contactFormOverlay.classList.remove("contact-form-overlay-visible");
 
             setTimeout(function () {
-                contactFormOverlay.innerText = "Got in touch!";
+                contactFormOverlay.innerText = "Got in touch! 👍";
                 contactFormOverlay.classList.add("contact-form-overlay-visible");
 
                 setTimeout(function () {
@@ -348,22 +327,16 @@
                     setTimeout(function () {
                         contactFormOverlay.classList.add("contact-form-overlay-clickthrough");
                     }, 500);
-                }, 1500);
+                }, 3000);
             }, 200);
-
-            deleteTextInField(nameField);
-            deleteTextInField(emailField);
-            deleteTextInField(messageField);
-            deleteTextInField(subjectField, function () {
-                writeTextInField(subjectField, "Quote request");
-            });
         }
 
         function showFailure() {
+            // TODO: Make the success state better/clearer
             contactFormOverlay.classList.remove("contact-form-overlay-visible");
 
             setTimeout(function () {
-                contactFormOverlay.innerText = "Something went wrong - try again!";
+                contactFormOverlay.innerText = "Something went wrong - try again! ❌";
                 contactFormOverlay.classList.add("contact-form-overlay-visible");
 
                 setTimeout(function () {
@@ -372,27 +345,8 @@
                     setTimeout(function () {
                         contactFormOverlay.classList.add("contact-form-overlay-clickthrough");
                     }, 500);
-                }, 2000);
+                }, 3000);
             }, 200);
-        }
-
-        function deleteTextInField(field, callback) {
-            if (field.value.length == 0) {
-                if (callback) {
-                    return callback();
-                }
-                return;
-            }
-            field.value = field.value.substring(0, field.value.length - 1);
-            setTimeout(deleteTextInField, 33, field, callback);
-        }
-
-        function writeTextInField(field, text) {
-            if (text.length == 0) {
-                return;
-            }
-            field.value += text[0];
-            setTimeout(writeTextInField, 33, field, text.substring(1));
         }
     })();
 </script>
