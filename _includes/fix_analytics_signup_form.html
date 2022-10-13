@@ -1,4 +1,4 @@
-<section class="contact-form">
+<section>
     <form
         id="contact-form-analytics"
         action="http://api.fix-analytics.deranged.dk/customer"
@@ -13,147 +13,157 @@
             />
             <!-- This is a honeypot, it is invisible to users, but not to bots. If it has value, it means it is a bot -->
         </label>
-        <label for="email">
-            <span>Email</span>
-            <input
-                type="text"
-                name="email"
-                placeholder="user@domain.com"
-                required
-            />
-        </label>
-        <label>
-            <span>Currency</span>
-            <select
-                name="currency"
-                required
+        <div class="contact-form">
+            <h2>Your Domains</h2>
+            <div data-domains-container>
+                <label>
+                    <span>Domains</span>
+                    <input
+                        placeholder="www.your-domain.com"
+                        type="text"
+                        name="domain_1"
+                        required
+                        data-domain-field
+                    />
+                </label>
+            </div>
+            <button
+                class="btn"
+                data-add-additional-domain
             >
-                <option value="DKK">DKK</option>
-                <option value="EUR">Euro</option>
-            </select>
-        </label>
-        <label>
-            <span>Preferred Language</span>
-            <select
-                name="locale"
-                required
-            >
-                <option value="en_US">English</option>
-                <option value="da_DK">Danish</option>
-            </select>
-        </label>
-        <label>
-            <span>Customer Type</span>
-            <select
-                name="customer_type"
-                required
-            >
-                <option value="company">Enterprise</option>
-                <option value="person">Private</option>
-            </select>
-        </label>
-        <label>
-            <span>Name (for company)</span>
-            <input
-                type="text"
-                name="name"
-                placeholder="Company Inc"
-                required
-            />
-        </label>
-        <label>
-            <span>Street and street number</span>
-            <input
-                type="text"
-                name="location_street"
-                required
-            />
-        </label>
-        <div class="two-col-inputs">
-            <label>
-                <span>City</span>
-                <input
-                    type="text"
-                    name="location_city"
-                    required
-                />
-            </label>
-            <label for="">
-                <span>Zip code</span>
-                <input
-                    type="number"
-                    name="location_zipcode"
-                    required
-                />
-            </label>
+                Add additional domain
+            </button>
         </div>
-        <div class="two-col-inputs">
-            <label for="">
-                <span>State (optional)</span>
-                <input
-                    type="text"
-                    name="location_state"
-                />
-            </label>
+        <div class="contact-form">
+            <h2>Options</h2>
             <label>
-                <span>Country</span>
+                <span>Currency</span>
                 <select
-                    name="location_country_id"
+                    name="currency"
                     required
                 >
-                    <option value="DK">Denmark</option>
+                    <option value="DKK">DKK</option>
+                    <option value="EUR">Euro</option>
                 </select>
             </label>
-        </div>
-        <label>
-            <span>Phone number</span>
-            <input
-                type="tel"
-                name="phone"
-                required
-            />
-        </label>
-        <label>
-            <span>Registration No. (such as VAT or CVR)</span>
-            <input
-                type="text"
-                name="registration_number"
-                required
-            />
-        </label>
-        <div data-domains-container>
             <label>
-                <span>Domains</span>
+                <span>Preferred Language</span>
+                <select
+                    name="locale"
+                    required
+                >
+                    <option value="da_DK">Danish</option>
+                    <option value="en_US">English</option>
+                </select>
+            </label>
+            <label>
+                <span>Customer Type</span>
+                <select
+                    name="customer_type"
+                    required
+                >
+                    <option value="company">Enterprise</option>
+                    <option value="person">Private</option>
+                </select>
+            </label>
+            <label>
+                <span>Discount Voucher (optional)</span>
                 <input
                     type="text"
-                    name="domain_1"
-                    required
-                    data-domain-field
+                    name="voucher"
                 />
             </label>
         </div>
-        <button
-            class="btn"
-            data-add-additional-domain
-        >
-            Add additional domain
-        </button>
-        <label>
-            <span>Discount Voucher (optional)</span>
-            <input
-                type="text"
-                name="voucher"
-            />
-        </label>
-        <label>
-            <span>Jeg accepterer vilkår og databehandleraftale</span>
-            <input
-                required
-                type="checkbox"
-                name="accept_terms"
-            />
-        </label>
-        <button type="submit">Signup</button>
+        <div class="contact-form">
+            <h2>Contact information</h2>
+            <label>
+                <span>Name (for company)</span>
+                <input
+                    type="text"
+                    name="name"
+                    placeholder="Company Inc"
+                    required
+                />
+            </label>
+            <label>
+                <span>Street and street number</span>
+                <input
+                    type="text"
+                    name="location_street"
+                    required
+                />
+            </label>
+            <div class="two-col-inputs">
+                <label>
+                    <span>City</span>
+                    <input
+                        type="text"
+                        name="location_city"
+                        required
+                    />
+                </label>
+                <label for="">
+                    <span>Zip code</span>
+                    <input
+                        type="number"
+                        name="location_zipcode"
+                        required
+                    />
+                </label>
+            </div>
+            <div class="two-col-inputs">
+                <label for="">
+                    <span>State (optional)</span>
+                    <input
+                        type="text"
+                        name="location_state"
+                    />
+                </label>
+                <label>
+                    <span>Country</span>
+                    <select
+                        name="location_country_id"
+                        required
+                    >
+                        <option value="DK">Denmark</option>
+                    </select>
+                </label>
+            </div>
+            <label for="email">
+                <span>Email</span>
+                <input
+                    type="text"
+                    name="email"
+                    placeholder="user@domain.com"
+                    required
+                />
+            </label>
+            <label>
+                <span>Phone number</span>
+                <input
+                    type="tel"
+                    name="phone"
+                    required
+                />
+            </label>
+            <label>
+                <span>Registration No. (such as VAT or CVR)</span>
+                <input
+                    type="text"
+                    name="registration_number"
+                    required
+                />
+            </label>
+            <label>
+                <span>Jeg accepterer vilkår og databehandleraftale</span>
+                <input
+                    required
+                    type="checkbox"
+                    name="accept_terms"
+                />
+            </label>
+            <button type="submit">Signup</button>
+        </div>
     </form>
     <div
         class="contact-form-overlay contact-form-overlay-clickthrough"
@@ -213,10 +223,10 @@
             };
             var domainList = document.querySelectorAll("[data-domain-field]");
             var domains = [];
-            var domainValues = domainList.forEach(input => {
+            var domainValues = domainList.forEach((input) => {
                 if (input.value) {
                     domains.push(input.value);
-                };
+                }
             });
             var voucher = voucherField.value;
 
@@ -255,16 +265,14 @@
         }
 
         function addNewDomainField() {
-            var domainFields = document.querySelectorAll("[data-domain-field]")
+            var domainFields = document.querySelectorAll("[data-domain-field]");
             var domainFieldCount = domainFields.length + 1;
             var input = document.createElement("INPUT");
             input.setAttribute("Type", "text");
             input.setAttribute("Placeholder", "domain" + domainFieldCount);
             input.setAttribute("data-domain-field", true);
             input.setAttribute("Name", "domain_" + domainFieldCount);
-            domainsContainer
-                .appendChild(document.createElement('label'))
-                .appendChild(input);
+            domainsContainer.appendChild(document.createElement("label")).appendChild(input);
         }
 
         function showOverlay() {
