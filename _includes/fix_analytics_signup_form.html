@@ -14,10 +14,10 @@
             <!-- This is a honeypot, it is invisible to users, but not to bots. If it has value, it means it is a bot -->
         </label>
         <div class="contact-form">
-            <h2>Your Domains</h2>
+            <h2>{% if include.language == "danish" %} Dine domæner {% else %} Your Domains {% endif %}</h2>
             <div data-domains-container>
                 <label>
-                    <span>Domains</span>
+                    <span>{% if include.language == "danish" %} Domæne {% else %} Domain {% endif %}</span>
                     <input
                         placeholder="www.your-domain.com"
                         type="text"
@@ -31,13 +31,13 @@
                 class="btn"
                 data-add-additional-domain
             >
-                Add additional domain
+                {% if include.language == "danish" %} Tilføj flere domæner {% else %} Add additional domain {% endif %}
             </button>
         </div>
         <div class="contact-form">
-            <h2>Options</h2>
+            <h2>{% if include.language == "danish" %} Valgmuligheder {% else %} Options {% endif %}</h2>
             <label>
-                <span>Currency</span>
+                <span> {% if include.language == "danish" %} Valuta {% else %} Currency {% endif %} </span>
                 <select
                     name="currency"
                     required
@@ -47,17 +47,19 @@
                 </select>
             </label>
             <label>
-                <span>Preferred Language</span>
+                <span>
+                    {% if include.language == "danish" %} Foretrukne sprog {% else %} Preferred Language {% endif %}
+                </span>
                 <select
                     name="locale"
                     required
                 >
-                    <option value="da_DK">Danish</option>
+                    <option value="da_DK">Dansk</option>
                     <option value="en_US">English</option>
                 </select>
             </label>
             <label>
-                <span>Customer Type</span>
+                <span> {% if include.language == "danish" %} Kundetype {% else %} Customer Type {% endif %} </span>
                 <select
                     name="customer_type"
                     required
@@ -75,9 +77,11 @@
             </label>
         </div>
         <div class="contact-form">
-            <h2>Contact information</h2>
+            <h2>
+                {% if include.language == "danish" %} Faktureringsinformation {% else %} Billing information{% endif %}
+            </h2>
             <label>
-                <span>Name (for company)</span>
+                <span> {% if include.language == "danish" %} Firmanavn {% else %} Company name {% endif %} </span>
                 <input
                     type="text"
                     name="name"
@@ -86,7 +90,13 @@
                 />
             </label>
             <label>
-                <span>Street and street number</span>
+                <span>
+                    {% if include.language == "danish" %}
+                        Vejnavn og vejnummer
+                    {% else %}
+                        Street and street number
+                    {% endif %}
+                </span>
                 <input
                     type="text"
                     name="location_street"
@@ -95,7 +105,7 @@
             </label>
             <div class="two-col-inputs">
                 <label>
-                    <span>City</span>
+                    <span> {% if include.language == "danish" %} By {% else %} City {% endif %} </span>
                     <input
                         type="text"
                         name="location_city"
@@ -103,7 +113,7 @@
                     />
                 </label>
                 <label for="">
-                    <span>Zip code</span>
+                    <span> {% if include.language == "danish" %} Postnummer {% else %} Zip code {% endif %} </span>
                     <input
                         type="number"
                         name="location_zipcode"
@@ -113,14 +123,16 @@
             </div>
             <div class="two-col-inputs">
                 <label for="">
-                    <span>State (optional)</span>
+                    <span>
+                        {% if include.language == "danish" %} Stat (valgfri) {% else %} State (optional) {% endif %}
+                    </span>
                     <input
                         type="text"
                         name="location_state"
                     />
                 </label>
                 <label>
-                    <span>Country</span>
+                    <span> {% if include.language == "danish" %} Land {% else %} Country {% endif %} </span>
                     <select
                         name="location_country_id"
                         required
@@ -139,7 +151,7 @@
                 />
             </label>
             <label>
-                <span>Phone number</span>
+                <span> {% if include.language == "danish" %} Telefonnummer {% else %} Phone number {% endif %} </span>
                 <input
                     type="tel"
                     name="phone"
@@ -147,7 +159,13 @@
                 />
             </label>
             <label>
-                <span>Registration No. (such as VAT or CVR)</span>
+                <span>
+                    {% if include.language == "danish" %}
+                        CVR
+                    {% else %}
+                        Registration No. (such as VAT or CVR)
+                    {% endif %}
+                </span>
                 <input
                     type="text"
                     name="registration_number"
@@ -155,21 +173,27 @@
                 />
             </label>
             <label>
-                <span>Jeg accepterer vilkår og databehandleraftale</span>
+                <span>
+                    {% if include.language == "danish" %}
+                        Jeg accepterer vilkår og databehandleraftale
+                    {% else %}
+                        I accept the terms and conditions
+                    {% endif %}
+                </span>
                 <input
                     required
                     type="checkbox"
                     name="accept_terms"
                 />
             </label>
-            <button type="submit">Signup</button>
+            <button type="submit">{% if include.language == "danish" %} Tilmeld {% else %} Signup {% endif %}</button>
         </div>
     </form>
     <div
         class="contact-form-overlay contact-form-overlay-clickthrough"
         data-analytics-form-overlay
     >
-        Sending...
+        {% if include.language == "danish" %} Sender... {% else %} Sending... {% endif %}
     </div>
 </section>
 
@@ -269,7 +293,7 @@
             var domainFieldCount = domainFields.length + 1;
             var input = document.createElement("INPUT");
             input.setAttribute("Type", "text");
-            input.setAttribute("Placeholder", "domain" + domainFieldCount);
+            input.setAttribute("Placeholder", "www.your-domain.com");
             input.setAttribute("data-domain-field", true);
             input.setAttribute("Name", "domain_" + domainFieldCount);
             domainsContainer.appendChild(document.createElement("label")).appendChild(input);
