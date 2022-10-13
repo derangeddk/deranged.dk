@@ -45,6 +45,11 @@
   .honeypot {
     margin: 0;
   }
+
+  // Use regular text color because the link color is too light to be used here.
+  a {
+    color: inherit;
+  }
 }
 .contact-form .two-col-inputs {
   display: grid;
@@ -69,7 +74,11 @@
     font-size: 0.8em;
   }
 
-  label input,
+  input[type=text],
+  input[type=number],
+  input[type=password],
+  input[type=tel],
+  input[type=email],
   select {
     width: 100%;
     padding: 8px;
@@ -77,7 +86,7 @@
     font-size: 0.9em;
   }
 
-  label textarea {
+  textarea {
     width: 100%;
     height: 150px;
     resize: none;
@@ -103,6 +112,16 @@
     &:hover {
       background: #375068;
       transform: scale(1.025);
+    }
+  }
+
+  .checkbox-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+    input[type=checkbox] {
+      margin-left: 10px;
     }
   }
 }

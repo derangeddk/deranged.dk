@@ -151,7 +151,7 @@
             <label for="email">
                 <span>Email</span>
                 <input
-                    type="text"
+                    type="email"
                     name="email"
                     placeholder="user@domain.com"
                     required
@@ -179,10 +179,10 @@
                     required
                 />
             </label>
-            <label>
+            <label class="checkbox-container">
                 <span>
                     {% if include.language == "danish" %}
-                        Jeg accepterer vilkår og databehandleraftale
+                        Jeg accepterer <a target="_blank" href="/fix-google-analytics/vilkaar">vilkår og databehandleraftale</a>
                     {% else %}
                         I accept the terms and conditions
                     {% endif %}
