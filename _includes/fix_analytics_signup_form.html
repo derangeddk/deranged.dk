@@ -124,15 +124,28 @@
                     />
                 </label>
                 <label>
-                    <span> {% if include.language == "danish" %} Land {% else %} Country {% endif %} </span>
+                    <span>
+                        {% if include.language == "danish" %} Land {% else %} Country {% endif %} *
+                    </span>
                     <select
                         name="location_country_id"
                         required
                     >
                         <option value="DK">Danmark</option>
+                        <option value="NO">Norge</option>
+                        <option value="SE">Sverige</option>
                     </select>
                 </label>
             </div>
+            <label>
+                <span>
+                    {% if include.language == "danish" %}
+                        * Er dit land ikke på listen? <a href="mailto:get+analytics@deranged.dk">Skriv os en mail</a>, så finder vi ud af det.
+                    {% else %}
+                        * Are your country missing from the list? <a href="mailto:get+analytics@deranged.dk">Mail us</a> and we will fix it.
+                    {% endif %}
+                </span>
+            </label>
             <label for="email">
                 <span>Email</span>
                 <input
