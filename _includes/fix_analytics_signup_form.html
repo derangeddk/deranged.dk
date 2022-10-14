@@ -49,7 +49,7 @@
                     required
                 >
                     <option value="DKK">DKK</option>
-                    <option value="EUR">Euro</option>
+                    <option value="EUR">EUR</option>
                 </select>
             </label>
             <label>
@@ -70,12 +70,18 @@
                     name="customer_type"
                     required
                 >
-                    <option value="company">Enterprise</option>
-                    <option value="person">Private</option>
+                    <option value="company">
+                        {% if include.language == "danish" %} Virksomhed {% else %} Company {% endif %}
+                    </option>
+                    <option value="person">
+                        {% if include.language == "danish" %} Privatperson {% else %} Individual {% endif %}
+                    </option>
                 </select>
             </label>
             <label>
-                <span>Discount Voucher (optional)</span>
+                <span>
+                    {% if include.language == "danish" %} Rabatkode (valgfri) {% else %} Discount Voucher (optional) {% endif %}
+                </span>
                 <input
                     type="text"
                     name="voucher"
@@ -143,7 +149,7 @@
                         name="location_country_id"
                         required
                     >
-                        <option value="DK">Denmark</option>
+                        <option value="DK">Danmark</option>
                     </select>
                 </label>
             </div>
@@ -169,7 +175,7 @@
                     {% if include.language == "danish" %}
                         CVR
                     {% else %}
-                        Registration No. (such as VAT or CVR)
+                        Company registration no.
                     {% endif %}
                 </span>
                 <input
@@ -183,7 +189,7 @@
                     {% if include.language == "danish" %}
                         Jeg accepterer <a target="_blank" href="/fix-google-analytics/vilkaar">vilkår og databehandleraftale</a>
                     {% else %}
-                        I accept the terms and conditions
+                        I accept the <a target="_blank" href="/fix-google-analytics/vilkaar">terms and conditions</a>
                     {% endif %}
                 </span>
                 <input
