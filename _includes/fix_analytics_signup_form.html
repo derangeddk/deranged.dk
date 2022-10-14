@@ -1,7 +1,6 @@
 <section>
     <form
         id="contact-form-analytics"
-        action="https://api.fix-analytics.deranged.dk/customer"
         method="post"
     >
         <label class="honeypot">
@@ -208,22 +207,6 @@
     (function () {
         var form = document.getElementById("contact-form-analytics");
         var honeypot = form.UZZvvqxJKRlGGbvYaVxz;
-        var nameField = form.name;
-        var emailField = form.email;
-        var currencyField = form.currency;
-        var localeField = form.locale;
-        var customerTypeField = form.customer_type;
-        var locationStreetField = form.location_street;
-        var locationCityField = form.location_city;
-        var locationZipField = form.location_zipcode;
-        var locationStateField = form.location_state;
-        var locationCountryIdField = form.location_country_id;
-        var phoneField = form.phone;
-        var registrationNumberField = form.registration_number;
-        var voucherField = form.voucher;
-        var acceptTermsField = form.accept_terms;
-        var domainField = form.domain_1;
-
         var contactFormOverlay = document.querySelector("[data-analytics-form-overlay]");
         var addAdditionalDomainButton = document.querySelector("[data-add-additional-domain");
         var domainsContainer = document.querySelector("[data-domains-container");
@@ -243,20 +226,23 @@
 
             showOverlay();
 
-            var customer = {
-                email: emailField.value,
-                currency: currencyField.value,
-                locale: localeField.value,
-                type: customerTypeField.value,
-                name: nameField.value,
-                countryId: locationCountryIdField.value,
-                street: locationStreetField.value,
-                cityText: locationCityField.value,
-                stateText: locationStateField.value,
-                zipcode: locationZipField.value,
-                phone: phoneField.value,
-                registrationNo: registrationNumberField.value,
-            };
+            var customer = getFormFieldValues(
+                form,
+                [
+                    "email",
+                    "currency",
+                    "locale",
+                    "customer_type",
+                    "name",
+                    "location_country_id",
+                    "location_street",
+                    "location_city",
+                    "location_state",
+                    "location_zipcode",
+                    "phone",
+                    "registration_number",
+                ]
+            );
             var domainList = document.querySelectorAll("[data-domain-field]");
             var domains = [];
             var domainValues = domainList.forEach((input) => {
@@ -264,15 +250,11 @@
                     domains.push(input.value);
                 }
             });
-            var voucher = voucherField.value;
-
-            var data = {
+            sendRequestToApi("https://api.fix-analytics.deranged.dk/customer", {
                 customer,
                 domains,
-                voucher,
-            };
-
-            sendRequestToApi(form.action, data);
+                voucher: form.voucher.value,
+            });
 
             return false;
         });
@@ -295,6 +277,14 @@
                 console.log("error", error);
                 showFailure();
             }
+        }
+
+        function getFormFieldValues(form, fields) {
+            var result = {};
+            fields.forEach(function (field) {
+                result[field] = form[field].value;
+            });
+            return result;
         }
 
         function addNewDomainField() {
