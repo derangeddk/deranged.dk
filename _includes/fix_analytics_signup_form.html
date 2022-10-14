@@ -42,28 +42,8 @@
         </div>
         <div class="contact-form">
             <h2>{% if include.language == "danish" %} Valgmuligheder {% else %} Options {% endif %}</h2>
-            <label>
-                <span> {% if include.language == "danish" %} Valuta {% else %} Currency {% endif %} </span>
-                <select
-                    name="currency"
-                    required
-                >
-                    <option value="DKK">DKK</option>
-                    <option value="EUR">EUR</option>
-                </select>
-            </label>
-            <label>
-                <span>
-                    {% if include.language == "danish" %} Foretrukne sprog {% else %} Preferred Language {% endif %}
-                </span>
-                <select
-                    name="locale"
-                    required
-                >
-                    <option value="da_DK">Dansk</option>
-                    <option value="en_US">English</option>
-                </select>
-            </label>
+            <input hidden name="currency" value="{% if include.language == 'danish' %}DKK{% else %}EUR{% endif %}" />
+            <input hidden name="locale" value="{% if include.language == 'danish' %}da_DK{% else %}en_US{% endif %}" />
             <label>
                 <span> {% if include.language == "danish" %} Kundetype {% else %} Customer Type {% endif %} </span>
                 <select
