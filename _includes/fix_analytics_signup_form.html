@@ -1,7 +1,7 @@
 <section>
     <form
         id="contact-form-analytics"
-        action="http://api.fix-analytics.deranged.dk/customer"
+        action="https://api.fix-analytics.deranged.dk/customer"
         method="post"
     >
         <label class="honeypot">
@@ -19,27 +19,27 @@
                 <label>
                     <span>{% if include.language == "danish" %} Domæne {% else %} Domain {% endif %}</span>
                     <input
-                    placeholder="www.your-domain.com"
-                    type="text"
-                    name="domain_1"
-                    required
-                    data-domain-field
+                        placeholder="www.your-domain.com"
+                        type="text"
+                        name="domain_1"
+                        required
+                        data-domain-field
                     />
                 </label>
             </div>
             <button
-            class="btn"
-            data-add-additional-domain
+                class="btn"
+                data-add-additional-domain
             >
-            {% if include.language == "danish" %} Tilføj flere domæner {% else %} Add additional domain {% endif %}
+                {% if include.language == "danish" %} Tilføj flere domæner {% else %} Add additional domain {% endif %}
             </button>
-        <p>
-            {% if include.language == "danish" %}
-                Pris pr. domæne: <strong>37 kr.</strong>
-            {% else %}
-                Price pr. domain: <strong>€5</strong>
-            {% endif %}
-        </p>
+            <p>
+                {% if include.language == "danish" %}
+                    Pris pr. domæne: <strong>37 kr.</strong>
+                {% else %}
+                    Price per domain: <strong>€5</strong>
+                {% endif %}
+            </p>
         </div>
         <div class="contact-form">
             <h2>{% if include.language == "danish" %} Valgmuligheder {% else %} Options {% endif %}</h2>
