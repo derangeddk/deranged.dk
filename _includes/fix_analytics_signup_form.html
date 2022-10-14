@@ -35,6 +35,15 @@
             >
                 {% if lang_da %} Tilføj flere domæner {% else %} Add additional domain {% endif %}
             </button>
+            <label>
+                <span>
+                    {% if lang_da %} Rabatkode (valgfri) {% else %} Discount Voucher (optional) {% endif %}
+                </span>
+                <input
+                    type="text"
+                    name="voucher"
+                />
+            </label>
             <p>
                 {% if lang_da %}
                     Pris pr. domæne: <strong>37 kr.</strong>
@@ -44,13 +53,15 @@
             </p>
         </div>
         <div class="contact-form">
-            <h2>{% if lang_da %} Valgmuligheder {% else %} Options {% endif %}</h2>
             <input hidden name="currency" value="{% if include.language == 'danish' %}DKK{% else %}EUR{% endif %}" />
             <input hidden name="locale" value="{% if include.language == 'danish' %}da_DK{% else %}en_US{% endif %}" />
+            <h2>
+                {% if lang_da %} Faktureringsinformation {% else %} Billing information{% endif %}
+            </h2>
             <label>
                 <span> {% if lang_da %} Kundetype {% else %} Customer Type {% endif %} </span>
                 <select
-                    name="customer_type"
+                    name="type"
                     required
                 >
                     <option value="company">
@@ -61,20 +72,6 @@
                     </option>
                 </select>
             </label>
-            <label>
-                <span>
-                    {% if lang_da %} Rabatkode (valgfri) {% else %} Discount Voucher (optional) {% endif %}
-                </span>
-                <input
-                    type="text"
-                    name="voucher"
-                />
-            </label>
-        </div>
-        <div class="contact-form">
-            <h2>
-                {% if lang_da %} Faktureringsinformation {% else %} Billing information{% endif %}
-            </h2>
             <label>
                 <span> {% if lang_da %} Firmanavn {% else %} Company name {% endif %} </span>
                 <input
@@ -94,7 +91,7 @@
                 </span>
                 <input
                     type="text"
-                    name="location_street"
+                    name="street"
                     required
                 />
             </label>
@@ -103,7 +100,7 @@
                     <span> {% if lang_da %} By {% else %} City {% endif %} </span>
                     <input
                         type="text"
-                        name="location_city"
+                        name="city"
                         required
                     />
                 </label>
@@ -111,7 +108,7 @@
                     <span> {% if lang_da %} Postnummer {% else %} Zip code {% endif %} </span>
                     <input
                         type="number"
-                        name="location_zipcode"
+                        name="zipcode"
                         required
                     />
                 </label>
@@ -123,7 +120,7 @@
                     </span>
                     <input
                         type="text"
-                        name="location_state"
+                        name="state"
                     />
                 </label>
                 <label>
@@ -131,7 +128,7 @@
                         {% if lang_da %} Land {% else %} Country {% endif %} *
                     </span>
                     <select
-                        name="location_country_id"
+                        name="countryId"
                         required
                     >
                         <option value="DK">Danmark</option>
@@ -176,7 +173,7 @@
                 </span>
                 <input
                     type="text"
-                    name="registration_number"
+                    name="registrationNo"
                     required
                 />
             </label>
@@ -260,15 +257,15 @@
                     "email",
                     "currency",
                     "locale",
-                    "customer_type",
+                    "type",
                     "name",
-                    "location_country_id",
-                    "location_street",
-                    "location_city",
-                    "location_state",
-                    "location_zipcode",
+                    "countryId",
+                    "street",
+                    "city",
+                    "state",
+                    "zipcode",
                     "phone",
-                    "registration_number",
+                    "registrationNo",
                 ]
             );
             var domainList = document.querySelectorAll("[data-domain-field]");
