@@ -213,7 +213,7 @@
 
         addAdditionalDomainButton.addEventListener("click", function (e) {
             e.preventDefault();
-            addNewDomainField();
+            addNewDomainField(domainsContainer);
         });
 
         form.addEventListener("submit", function (e) {
@@ -245,7 +245,7 @@
             );
             var domainList = document.querySelectorAll("[data-domain-field]");
             var domains = [];
-            var domainValues = domainList.forEach((input) => {
+            var domainValues = domainList.forEach(function(input) {
                 if (input.value) {
                     domains.push(input.value);
                 }
@@ -287,12 +287,14 @@
             return result;
         }
 
-        function addNewDomainField() {
-            var input = document.createElement("INPUT");
-            input.setAttribute("Type", "text");
-            input.setAttribute("Placeholder", "www.your-domain.com");
+        function addNewDomainField(containerElement) {
+            var input = document.createElement("input");
+            input.setAttribute("type", "text");
+            input.setAttribute("placeholder", "www.your-domain.com");
             input.setAttribute("data-domain-field", true);
-            domainsContainer.appendChild(document.createElement("label")).appendChild(input);
+            containerElement
+                .appendChild(document.createElement("label"))
+                .appendChild(input);
         }
 
         function showOverlay() {
