@@ -147,6 +147,25 @@
 .contact-form-overlay-visible {
   opacity: 1;
 }
+.contact-form-overlay__message {
+  text-align: center;
+  display: none;
+}
+.contact-form-overlay__message--success {
+  .contact-form-overlay--success & {
+    display: block;
+  }
+}
+.contact-form-overlay__message--error {
+  .contact-form-overlay--error & {
+    display: block;
+  }
+}
+.contact-form-overlay__message--awaiting {
+  .contact-form-overlay--awaiting & {
+    display: block;
+  }
+}
 
 .side-by-side-contact-form-and-explanation {
   display: flex;

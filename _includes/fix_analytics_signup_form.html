@@ -199,7 +199,33 @@
         class="contact-form-overlay contact-form-overlay-clickthrough"
         data-analytics-form-overlay
     >
-        {% if include.language == "danish" %} Sender... {% else %} Sending... {% endif %}
+        <div class="contact-form-overlay__message contact-form-overlay__message--awaiting">
+            {% if include.language == "danish" %}
+                Sender...
+            {% else %}
+                Sending request...
+            {% endif %}
+        </div>
+        <div class="contact-form-overlay__message contact-form-overlay__message--success">
+            <p>
+                {% if include.language == "danish" %}
+                    Succes! 👍<br>
+                    Du modtager en mail med information omkring implementation.
+                {% else %}
+                    Success! 👍<br>
+                    Please confirm you have recieved an email and your order has been registered.
+                {% endif %}
+            </p>
+        </div>
+        <div class="contact-form-overlay__message contact-form-overlay__message--error">
+            <p>
+                {% if include.language == "danish" %}
+                    Noget gik desværre galt - Prøv igen ❌
+                {% else %}
+                    Something went wrong - try again! ❌
+                {% endif %}
+            </p>
+        </div>
     </div>
 </section>
 
@@ -298,7 +324,7 @@
         }
 
         function showOverlay() {
-            contactFormOverlay.innerText = "Getting in touch...";
+            contactFormOverlay.classList.add("contact-form-overlay--awaiting");
             contactFormOverlay.classList.remove("contact-form-overlay-clickthrough");
             requestAnimationFrame(function () {
                 contactFormOverlay.classList.add("contact-form-overlay-visible");
@@ -310,11 +336,13 @@
             contactFormOverlay.classList.remove("contact-form-overlay-visible");
 
             setTimeout(function () {
-                contactFormOverlay.innerText = "Got in touch! 👍";
+                contactFormOverlay.classList.remove("contact-form-overlay--awaiting");
+                contactFormOverlay.classList.add("contact-form-overlay--success");
                 contactFormOverlay.classList.add("contact-form-overlay-visible");
 
                 setTimeout(function () {
                     contactFormOverlay.classList.remove("contact-form-overlay-visible");
+                    contactFormOverlay.classList.remove("contact-form-overlay--success");
 
                     setTimeout(function () {
                         contactFormOverlay.classList.add("contact-form-overlay-clickthrough");
@@ -328,11 +356,13 @@
             contactFormOverlay.classList.remove("contact-form-overlay-visible");
 
             setTimeout(function () {
-                contactFormOverlay.innerText = "Something went wrong - try again! ❌";
+                contactFormOverlay.classList.remove("contact-form-overlay--awaiting");
+                contactFormOverlay.classList.add("contact-form-overlay--error");
                 contactFormOverlay.classList.add("contact-form-overlay-visible");
 
                 setTimeout(function () {
                     contactFormOverlay.classList.remove("contact-form-overlay-visible");
+                    contactFormOverlay.classList.remove("contact-form-overlay--error");
 
                     setTimeout(function () {
                         contactFormOverlay.classList.add("contact-form-overlay-clickthrough");
