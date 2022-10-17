@@ -180,6 +180,32 @@
             <label class="checkbox-container">
                 <span>
                     {% if lang_da %}
+                        Må vi vise jeres navn og logo på vores hjemmeside for at vise at I bruger vores løsning?
+                    {% else %}
+                        Can we use your name and logo on our website to show that you use our solution?
+                    {% endif %}
+                </span>
+                <input
+                    type="checkbox"
+                    name="useLogoAndName"
+                />
+            </label>
+            <label class="checkbox-container">
+                <span>
+                    {% if lang_da %}
+                        Må vi kontakte jer med henblik på at profilere jer som en privacy-bevidst virksomhed i branding relateret til Fix Analytics-produktet?
+                    {% else %}
+                        Can we contact you for the purpose of profiling you as a privacy-conscious company in branding related to the Fix Analytics product?
+                    {% endif %}
+                </span>
+                <input
+                    type="checkbox"
+                    name="contactForProfiling"
+                />
+            </label>
+            <label class="checkbox-container">
+                <span>
+                    {% if lang_da %}
                         Jeg accepterer <a target="_blank" href="/fix-google-analytics/vilkaar">vilkår og databehandleraftale</a>
                     {% else %}
                         I accept the <a target="_blank" href="/fix-google-analytics/vilkaar">terms and conditions</a>
@@ -279,6 +305,10 @@
                 customer,
                 domains,
                 voucher: form.voucher.value,
+                consent: {
+                    "useLogoAndName": form.useLogoAndName.checked,
+                    "contactForProfiling": form.contactForProfiling.checked,
+                }
             });
 
             return false;
