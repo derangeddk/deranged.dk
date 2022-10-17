@@ -1,7 +1,7 @@
 {% if include.language == "danish" %}
     {% assign lang_da = true %}
 {% endif %}
-<section>
+<section class="fix-analytics-form">
     <form
         id="contact-form-analytics"
         method="post"
@@ -78,6 +78,14 @@
                     type="text"
                     name="name"
                     placeholder="Company Inc"
+                    required
+                />
+            </label>
+            <label>
+                <span>{% if lang_da %} Kontaktperson {% else %} Contact person {% endif %}</span>
+                <input
+                    type="text"
+                    name="contactName"
                     required
                 />
             </label>
@@ -218,40 +226,40 @@
                 />
             </label>
             <button type="submit">{% if lang_da %} Tilmeld {% else %} Signup {% endif %}</button>
+            <div
+                class="contact-form-overlay contact-form-overlay-clickthrough"
+                data-analytics-form-overlay
+            >
+                <div class="contact-form-overlay__message contact-form-overlay__message--awaiting">
+                    {% if lang_da %}
+                        Sender...
+                    {% else %}
+                        Sending request...
+                    {% endif %}
+                </div>
+                <div class="contact-form-overlay__message contact-form-overlay__message--success">
+                    <p>
+                        {% if lang_da %}
+                            Succes! 👍<br>
+                            Du modtager en mail med information omkring implementation.
+                        {% else %}
+                            Success! 👍<br>
+                            Please confirm you have recieved an email and your order has been registered.
+                        {% endif %}
+                    </p>
+                </div>
+                <div class="contact-form-overlay__message contact-form-overlay__message--error">
+                    <p>
+                        {% if lang_da %}
+                            Noget gik desværre galt - Prøv igen ❌
+                        {% else %}
+                            Something went wrong - try again! ❌
+                        {% endif %}
+                    </p>
+                </div>
+            </div>
         </div>
     </form>
-    <div
-        class="contact-form-overlay contact-form-overlay-clickthrough"
-        data-analytics-form-overlay
-    >
-        <div class="contact-form-overlay__message contact-form-overlay__message--awaiting">
-            {% if lang_da %}
-                Sender...
-            {% else %}
-                Sending request...
-            {% endif %}
-        </div>
-        <div class="contact-form-overlay__message contact-form-overlay__message--success">
-            <p>
-                {% if lang_da %}
-                    Succes! 👍<br>
-                    Du modtager en mail med information omkring implementation.
-                {% else %}
-                    Success! 👍<br>
-                    Please confirm you have recieved an email and your order has been registered.
-                {% endif %}
-            </p>
-        </div>
-        <div class="contact-form-overlay__message contact-form-overlay__message--error">
-            <p>
-                {% if lang_da %}
-                    Noget gik desværre galt - Prøv igen ❌
-                {% else %}
-                    Something went wrong - try again! ❌
-                {% endif %}
-            </p>
-        </div>
-    </div>
 </section>
 
 <script>
@@ -285,6 +293,7 @@
                     "locale",
                     "type",
                     "name",
+                    "contactName",
                     "countryId",
                     "street",
                     "city",
