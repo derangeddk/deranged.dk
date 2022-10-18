@@ -61,6 +61,7 @@
                 <select
                     name="type"
                     required
+                    data-toggel-customer-type
                 >
                     <option value="company">
                         {% if lang_da %} Virksomhed {% else %} Company {% endif %}
@@ -71,11 +72,11 @@
                 </select>
             </label>
             <label>
-                <span> {% if lang_da %} Firmanavn {% else %} Company name {% endif %} </span>
+                <span data-company-name-label> {% if lang_da %} Firmanavn {% else %} Company name {% endif %} </span>
+                <span data-private-name-label hidden> {% if lang_da %} Navn {% else %} Name {% endif %} </span>
                 <input
                     type="text"
                     name="name"
-                    placeholder="Company Inc"
                     required
                 />
             </label>
@@ -85,6 +86,7 @@
                     type="text"
                     name="contactName"
                     required
+                    data-contact-name-field
                 />
             </label>
             <label>
@@ -181,6 +183,7 @@
                     type="text"
                     name="registrationNo"
                     required
+                    data-registration-no-field
                 />
             </label>
             <label>
@@ -276,6 +279,9 @@
         var contactFormOverlay = document.querySelector("[data-analytics-form-overlay]");
         var addAdditionalDomainButton = document.querySelector("[data-add-additional-domain");
         var domainsContainer = document.querySelector("[data-domains-container");
+        var customerTypeSelect = document.querySelector("[data-toggel-customer-type]");
+
+        customerTypeSelect.addEventListener("change", toggelCustomerType);
 
         addAdditionalDomainButton.addEventListener("click", function (e) {
             e.preventDefault();
@@ -375,6 +381,30 @@
             }
             if (eurPriceElement) {
                 eurPriceElement.innerHTML = totalPriceEur;
+            }
+        }
+
+        function toggelCustomerType(e) {
+            const contactNameField = document.querySelector("[data-contact-name-field]");
+            const registrationNoField = document.querySelector("[data-registration-no-field]");
+            const companyNameLabel = document.querySelector("[data-company-name-label]");
+            const privateNameLabel = document.querySelector("[data-private-name-label]");
+
+            if (e.target.value === "person") {
+                // disable stuff
+                contactNameField.value = "";
+                registrationNoField.value = "";
+                contactNameField.setAttribute("disabled", true);
+                registrationNoField.setAttribute("disabled", true);
+                privateNameLabel.removeAttribute("hidden");
+                companyNameLabel.setAttribute("hidden", true);
+
+            }
+            else {
+                contactNameField.removeAttribute("disabled");
+                registrationNoField.removeAttribute("disabled");
+                companyNameLabel.removeAttribute("hidden");
+                privateNameLabel.setAttribute("hidden", true);
             }
         }
 
