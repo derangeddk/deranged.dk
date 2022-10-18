@@ -35,20 +35,18 @@
             >
                 {% if lang_da %} Tilføj flere domæner {% else %} Add additional domain {% endif %}
             </button>
-            <label>
-                <span>
-                    {% if lang_da %} Rabatkode (valgfri) {% else %} Discount Voucher (optional) {% endif %}
-                </span>
-                <input
-                    type="text"
-                    name="voucher"
-                />
-            </label>
+            <span>
+                {% if lang_da %}
+                    Pris pr domæne: 37 dk.
+                {% else %}
+                    Price per domain: €5.
+                {% endif %}
+            </span>
             <p>
                 {% if lang_da %}
-                    Pris pr. domæne: <strong>37 kr.</strong>
+                    Total pris: <strong><span data-price-dkk>37</span> kr.</strong>
                 {% else %}
-                    Price per domain: <strong>€5</strong>
+                    Total price: <strong>€<span data-price-eur>5</span></strong>
                 {% endif %}
             </p>
         </div>
@@ -225,6 +223,15 @@
                     name="accept_terms"
                 />
             </label>
+            <label>
+                <span>
+                    {% if lang_da %} Rabatkode (valgfri) {% else %} Discount Voucher (optional) {% endif %}
+                </span>
+                <input
+                    type="text"
+                    name="voucher"
+                />
+            </label>
             <button type="submit">{% if lang_da %} Tilmeld {% else %} Signup {% endif %}</button>
             <div
                 class="contact-form-overlay contact-form-overlay-clickthrough"
@@ -351,6 +358,26 @@
             return result;
         }
 
+        function updatePrice() {
+            const domainList = document.querySelectorAll("[data-domain-field]");
+            const dkkPriceElement = document.querySelector("[data-price-dkk]");
+            const eurPriceElement = document.querySelector("[data-price-eur]");
+            let totalPriceDkk = 0;
+            let totalPriceEur = 0;
+            domainList.forEach(function(input) {
+                if (input.value) {
+                    totalPriceDkk += 37;
+                    totalPriceEur += 5;
+                }
+            });
+            if (dkkPriceElement) {
+                dkkPriceElement.innerHTML = totalPriceDkk;
+            }
+            if (eurPriceElement) {
+                eurPriceElement.innerHTML = totalPriceEur;
+            }
+        }
+
         function addNewDomainField(containerElement) {
             var input = document.createElement("input");
             input.setAttribute("type", "text");
@@ -359,6 +386,10 @@
             containerElement
                 .appendChild(document.createElement("label"))
                 .appendChild(input);
+            // Reassign Event when a new field is added
+            document.querySelectorAll("[data-domain-field]").forEach(function(field) {
+                field.addEventListener('input', updatePrice);
+            });
         }
 
         function showOverlay() {
