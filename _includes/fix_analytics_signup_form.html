@@ -39,20 +39,20 @@
                 {% if lang_da %}
                     Pris pr domæne: 37 dk.
                 {% else %}
-                    Price per domain: €5.
+                    Price per domain: € 5.
                 {% endif %}
             </span>
             <p>
                 {% if lang_da %}
                     Total pris: <strong><span data-price-dkk>37</span> kr.</strong>
                 {% else %}
-                    Total price: <strong>€<span data-price-eur>5</span></strong>
+                    Total price: <strong>€ <span data-price-eur>5</span></strong>
                 {% endif %}
             </p>
         </div>
         <div class="contact-form">
-            <input hidden name="currency" value="{% if include.language == 'danish' %}DKK{% else %}EUR{% endif %}" />
-            <input hidden name="locale" value="{% if include.language == 'danish' %}da_DK{% else %}en_US{% endif %}" />
+            <input hidden name="currency" value="{% if lang_da %}DKK{% else %}EUR{% endif %}" />
+            <input hidden name="locale" value="{% if lang_da %}da_DK{% else %}en_US{% endif %}" />
             <h2>
                 {% if lang_da %} Faktureringsinformation {% else %} Billing information{% endif %}
             </h2>
@@ -148,11 +148,11 @@
                     {% if lang_da %}
                         * Er dit land ikke på listen? <a href="mailto:get+analytics@deranged.dk">Skriv os en mail</a>, så finder vi ud af det.
                     {% else %}
-                        * Are your country missing from the list? <a href="mailto:get+analytics@deranged.dk">Mail us</a> and we will fix it.
+                        * Is your country missing from the list? <a href="mailto:get+analytics@deranged.dk">Email us</a> and we will fix it.
                     {% endif %}
                 </span>
             </label>
-            <label for="email">
+            <label>
                 <span>Email</span>
                 <input
                     type="email"
@@ -181,6 +181,15 @@
                     type="text"
                     name="registrationNo"
                     required
+                />
+            </label>
+            <label>
+                <span>
+                    {% if lang_da %} Rabatkode (valgfri) {% else %} Discount Voucher (optional) {% endif %}
+                </span>
+                <input
+                    type="text"
+                    name="voucher"
                 />
             </label>
             <label class="checkbox-container">
@@ -223,15 +232,6 @@
                     name="accept_terms"
                 />
             </label>
-            <label>
-                <span>
-                    {% if lang_da %} Rabatkode (valgfri) {% else %} Discount Voucher (optional) {% endif %}
-                </span>
-                <input
-                    type="text"
-                    name="voucher"
-                />
-            </label>
             <button type="submit">{% if lang_da %} Tilmeld {% else %} Signup {% endif %}</button>
             <div
                 class="contact-form-overlay contact-form-overlay-clickthrough"
@@ -271,7 +271,7 @@
 
 <script>
     (function () {
-        var form = document.getElementById("contact-form-analytics");
+        var form = document.forms['contact-form-analytics'];
         var honeypot = form.UZZvvqxJKRlGGbvYaVxz;
         var contactFormOverlay = document.querySelector("[data-analytics-form-overlay]");
         var addAdditionalDomainButton = document.querySelector("[data-add-additional-domain");
