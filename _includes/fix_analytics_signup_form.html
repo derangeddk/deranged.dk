@@ -21,9 +21,10 @@
                 <label>
                     <span>{% if lang_da %} Domæne {% else %} Domain {% endif %}</span>
                     <input
-                        placeholder="www.your-domain.com"
+                        placeholder="your-domain.com"
                         type="text"
                         name="domain_1"
+                        value=""
                         required
                         data-domain-field
                     />
@@ -413,6 +414,7 @@
             input.setAttribute("type", "text");
             input.setAttribute("placeholder", "www.your-domain.com");
             input.setAttribute("data-domain-field", true);
+            input.setAttribute("value", "");
             containerElement
                 .appendChild(document.createElement("label"))
                 .appendChild(input);
