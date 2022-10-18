@@ -280,6 +280,8 @@
         var addAdditionalDomainButton = document.querySelector("[data-add-additional-domain");
         var domainsContainer = document.querySelector("[data-domains-container");
         var customerTypeSelect = document.querySelector("[data-toggel-customer-type]");
+        const dkkPriceElement = document.querySelector("[data-price-dkk]");
+        const eurPriceElement = document.querySelector("[data-price-eur]");
 
         customerTypeSelect.addEventListener("change", toggelCustomerType);
 
@@ -366,8 +368,6 @@
 
         function updatePrice() {
             const domainList = document.querySelectorAll("[data-domain-field]");
-            const dkkPriceElement = document.querySelector("[data-price-dkk]");
-            const eurPriceElement = document.querySelector("[data-price-eur]");
             let totalPriceDkk = 0;
             let totalPriceEur = 0;
             domainList.forEach(function(input) {
