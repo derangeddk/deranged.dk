@@ -95,7 +95,7 @@
     font-size: 0.9em;
   }
 
-  button {
+  .button {
     background: #2c3e50;
     color: #eaf1f7;
     text-decoration: inherit;
@@ -113,6 +113,18 @@
       background: #375068;
       transform: scale(1.025);
     }
+
+    &:disabled {
+      background-color: #cccccc;
+      color: #616161;
+      cursor: default;
+      transform: none;
+    }
+  }
+
+  .button--small {
+    width: auto;
+    padding: 10px 15px;
   }
 
   .checkbox-container {
@@ -206,5 +218,17 @@
   }
   .contact-form label textarea {
     height: 210px;
+  }
+}
+
+.contact-form__navigation {
+  margin-top: 10px;
+}
+
+.contact-form__navigation-item {
+  text-decoration: none;
+
+  &:hover {
+    text-decoration: underline;
   }
 }

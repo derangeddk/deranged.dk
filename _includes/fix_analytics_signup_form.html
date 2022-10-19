@@ -15,8 +15,11 @@
             />
             <!-- This is a honeypot, it is invisible to users, but not to bots. If it has value, it means it is a bot -->
         </label>
-        <div class="contact-form">
-            <h2>{% if lang_da %} Dine domæner {% else %} Your Domains {% endif %}</h2>
+        <div class="contact-form" data-form-step-1>
+            <h2>{% if lang_da %} Tilmeld til Fix-Analytics {% else %} Signup to Fix-Analytics {% endif %}</h2>
+            <p>
+                {% if lang_da %}Skriv adressen på din webside, f.eks. your-domain.dk.{% else %} The adress to your web site, fx. your-domain.com. {% endif %}
+            </p>
             <div data-domains-container>
                 <label>
                     <span>{% if lang_da %} Domæne {% else %} Domain {% endif %}</span>
@@ -30,12 +33,14 @@
                     />
                 </label>
             </div>
-            <button
-                class="btn"
-                data-add-additional-domain
-            >
-                {% if lang_da %} Tilføj flere domæner {% else %} Add additional domain {% endif %}
-            </button>
+            <div class="u-text-right">
+                <button
+                    class="button button--small"
+                    data-add-additional-domain
+                >
+                    <strong>+</strong>{% if lang_da %} Tilføj flere domæner {% else %} Add additional domain {% endif %}
+                </button>
+            </div>
             <span>
                 {% if lang_da %}
                     Pris pr domæne: 37 dk.
@@ -45,15 +50,31 @@
             </span>
             <p>
                 {% if lang_da %}
-                    Total pris: <strong><span data-price-dkk>37</span> kr.</strong>
+                    Total pris: <strong><span data-price-dkk>0</span> kr.</strong>
                 {% else %}
-                    Total price: <strong>€ <span data-price-eur>5</span></strong>
+                    Total price: <strong>€ <span data-price-eur>0</span></strong>
                 {% endif %}
             </p>
+            <button
+                class="button"
+                data-toggel-form-state
+                disabled
+            >
+                {% if lang_da %} Gå til fakturering {% else %} Go to billing {% endif %}
+            </button>
         </div>
-        <div class="contact-form">
+        <div class="contact-form u-hide" data-form-step-2>
             <input hidden name="currency" value="{% if lang_da %}DKK{% else %}EUR{% endif %}" />
             <input hidden name="locale" value="{% if lang_da %}da_DK{% else %}en_US{% endif %}" />
+            <div class="contact-form__navigation">
+                <a
+                    class="contact-form__navigation-item"
+                    href="#"
+                    data-toggel-form-state
+                >
+                    ⤌{% if lang_da %} Tilbage til domæner {% else %} Back to domains {% endif %}
+                </a>
+            </div>
             <h2>
                 {% if lang_da %} Faktureringsinformation {% else %} Billing information{% endif %}
             </h2>
@@ -62,7 +83,7 @@
                 <select
                     name="type"
                     required
-                    data-toggel-customer-type
+                    data-toggle-customer-type
                 >
                     <option value="company">
                         {% if lang_da %} Virksomhed {% else %} Company {% endif %}
@@ -236,7 +257,7 @@
                     name="accept_terms"
                 />
             </label>
-            <button type="submit">{% if lang_da %} Tilmeld {% else %} Signup {% endif %}</button>
+            <button class="button" type="submit">{% if lang_da %} Tilmeld {% else %} Signup {% endif %}</button>
             <div
                 class="contact-form-overlay contact-form-overlay-clickthrough"
                 data-analytics-form-overlay
@@ -280,16 +301,24 @@
         var contactFormOverlay = document.querySelector("[data-analytics-form-overlay]");
         var addAdditionalDomainButton = document.querySelector("[data-add-additional-domain");
         var domainsContainer = document.querySelector("[data-domains-container");
-        var customerTypeSelect = document.querySelector("[data-toggel-customer-type]");
+        var customerTypeSelect = document.querySelector("[data-toggle-customer-type]");
         const dkkPriceElement = document.querySelector("[data-price-dkk]");
         const eurPriceElement = document.querySelector("[data-price-eur]");
+        const toggleFormStateButtons = document.querySelectorAll("[data-toggel-form-state]");
+        const formStep1 = document.querySelector("[data-form-step-1]");
+        const formStep2 = document.querySelector("[data-form-step-2]");
 
-        customerTypeSelect.addEventListener("change", toggelCustomerType);
+        customerTypeSelect.addEventListener("change", toggleCustomerType);
+        toggleFormStateButtons.forEach(function(button) {
+            button.addEventListener("click", toggleFormState);
+        })
 
         addAdditionalDomainButton.addEventListener("click", function (e) {
             e.preventDefault();
             addNewDomainField(domainsContainer);
         });
+
+        document.querySelector("[data-domain-field]").addEventListener('input', updatePrice);
 
         form.addEventListener("submit", function (e) {
             e.preventDefault();
@@ -383,9 +412,21 @@
             if (eurPriceElement) {
                 eurPriceElement.innerHTML = totalPriceEur;
             }
+            if (!totalPriceDkk || !totalPriceEur ) {
+                toggleFormStateButtons[0].setAttribute("disabled", true);
+            }
+            else {
+                toggleFormStateButtons[0].removeAttribute("disabled");
+            }
         }
 
-        function toggelCustomerType(e) {
+        function toggleFormState(e) {
+            e.preventDefault();
+            formStep1.classList.toggle("u-hide");
+            formStep2.classList.toggle("u-hide");
+        }
+
+        function toggleCustomerType(e) {
             const contactNameField = document.querySelector("[data-contact-name-field]");
             const registrationNoField = document.querySelector("[data-registration-no-field]");
             const companyNameLabel = document.querySelector("[data-company-name-label]");

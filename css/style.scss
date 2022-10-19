@@ -49,6 +49,7 @@ header {
 @import 'overlay_nav';
 @import 'footer';
 @import 'get_a_quote';
+@import 'utility';
 
 .container {
     text-align: left;
@@ -176,7 +177,7 @@ main p {
     @media (max-width: 539px) {
         font-size: 0.7em;
     }
-  
+
     &--dark {
         color: #eaf1f7;
     }
@@ -192,13 +193,13 @@ main p {
             }
         }
     }
-  
+
     .quote-text {
         font-family: 'Libre Baskerville', serif;
         line-height: 175%;
         position: relative;
         padding: 0 2.75em;
-    
+
         &:before {
             content: '“';
             font-size: 5em;
@@ -206,7 +207,7 @@ main p {
             left: 5px;
             top: 25px;
         }
-    
+
         &:after {
             content: '”';
             font-size: 5em;
@@ -223,13 +224,13 @@ main p {
         &:before {
             content: '— ';
         }
-  
+
         @media (max-width: 539px) {
             font-size: 1.15em;
         }
     }
 }
-  
+
 .customer-quote-section .see-cases {
     background: #2c3e50;
     color: #eaf1f7;
@@ -242,11 +243,11 @@ main p {
         background: #375068;
         transform: scale(1.1);
     }
-  
+
     @media screen and (max-width: 539px) {
         font-size: 1.2em;
     }
-  
+
     @media (max-width: 400px) {
         margin: 20px -25px;
     }

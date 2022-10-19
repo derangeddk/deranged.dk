@@ -43,7 +43,7 @@
 
 We're planning to expand into a new market, but we need our technology to keep up..."></textarea>
                 </label>
-                <button type="submit">Get in touch!</button>
+                <button class="button" type="submit">Get in touch!</button>
             </form>
             <div class="contact-form-overlay contact-form-overlay-clickthrough">Sending...</div>
         </section>
@@ -116,7 +116,7 @@ We're planning to expand into a new market, but we need our technology to keep u
 
                 function showSuccess() {
                     contactFormOverlay.classList.remove("contact-form-overlay-visible");
-                    
+
                     setTimeout(function() {
                         contactFormOverlay.innerText = "Got in touch!";
                         contactFormOverlay.classList.add("contact-form-overlay-visible");
@@ -140,7 +140,7 @@ We're planning to expand into a new market, but we need our technology to keep u
 
                 function showFailure() {
                     contactFormOverlay.classList.remove("contact-form-overlay-visible");
-                    
+
                     setTimeout(function() {
                         contactFormOverlay.innerText = "Something went wrong - try again!";
                         contactFormOverlay.classList.add("contact-form-overlay-visible");
