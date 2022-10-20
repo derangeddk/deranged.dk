@@ -36,6 +36,21 @@ layout: fix-analytics
         Hvis du vil hjælpe os med at teste installationen og være én af de første til følge datatilsynets konklusion, kan du tage fat i os på <a href="mailto:get+analytics@deranged.dk">get+analytics@deranged.dk</a>, så tager vi den videre derfra.
     </p>
 
+    <h2>Så nemt er det&hellip;</h2>
+    <p>
+        To linjer kode, skal du ændre.
+    </p>
+    <p>
+        Den første linje bruger vores proxy til at hente Googles script, så de ikke får adgang til brugerens IP-adresse gennem dette kald.
+    </p>
+    <p>
+        Den anden linje kode konfigurerer Googles kode til at bruge vores <em>collector</em> proxy (den service der modtager events når brugere interagerer med din side), der sender relevant kode videre til Google.
+    </p>
+    <p>
+        Sådan her ser det ud:
+    </p>
+    <img src="/fix-google-analytics/gtag-upgrade-code.png" alt="Kode-udsnit viser ændring til at bruge derangeds proxy i stedet for at sende data direkte til Google Analytics. På én linje ændres script urlen fra www.googletagmanager.com til tagmanager.deranged.dk. På en anden linje tilføjes konfigurations-feltet transport_url med værdien ga-proxy.deranged.dk til gtag konfigurationen.">
+
     <h2>Vi anbefaler et alternativ</h2>
     <p>
         Hele balladen starter med at Google Analytics anvendes så mange steder - fra offentlige til private institutioner i Danmark.
