@@ -168,11 +168,26 @@ title: 'the Team ↳↷↷ deranged'
     }
     .person-image {
         grid-row: span 2;
+        position: relative;
+        overflow: hidden;
     }
     .person-image img {
         width: 100%;
         height: 100%;
         object-fit: cover;
+    }
+    .person-image img.dream {
+        position: absolute;
+        opacity: 0;
+        filter: blur(2px) brightness(0.2) contrast(3);
+        transform: scale(0.95);
+        transition: filter 6s, opacity 3s ease-in-out, transform 8s ease-out;
+    }
+    .person-image:hover img.dream {
+        mix-blend-mode: normal;
+        opacity: 0.85;
+        filter: blur(1px);
+        transform: scale(1.05);
     }
     @media (min-width: 1600px) {
         .person-lg-col-1 {
@@ -606,6 +621,7 @@ title: 'the Team ↳↷↷ deranged'
 </style>
 <section class="people-container">
     <div class="person-image person-lg-col-1 person-md-col-1 person-sm-col-1">
+        <img src="/img/people/niels-dream-2-sq.jpg" class="dream">
         <img src="/img/people/niels-abildgaard.jpg">
     </div>
     <div
@@ -639,6 +655,7 @@ title: 'the Team ↳↷↷ deranged'
         </div>
     </div>
     <div class="person-image person-lg-col-4 person-md-col-3 person-sm-col-2 person-xs-col-2">
+        <img src="/img/people/anders-dream-3-sq.jpg" class="dream">
         <img src="/img/people/anders.jpg">
     </div>
     <div
@@ -663,6 +680,7 @@ title: 'the Team ↳↷↷ deranged'
         </div>
     </div>
     <div class="person-image person-lg-col-2 person-md-col-2 person-sm-col-3">
+        <img src="/img/people/sigurt-dream-2-sq.jpg" class="dream">
         <img src="/img/people/sigurt-dinesen.jpg">
     </div>
     <div
@@ -689,6 +707,7 @@ title: 'the Team ↳↷↷ deranged'
         </div>
     </div>
     <div class="person-image person-lg-col-1 person-md-col-3 person-sm-col-3 person-xs-col-2">
+        <img src="/img/people/philip-dream-sq.jpg" class="dream">
         <img src="/img/people/philip-dein.jpg">
     </div>
     <div
@@ -718,6 +737,7 @@ title: 'the Team ↳↷↷ deranged'
     </div>
     <div
         class="person-image person-lg-col-3 person-md-col-1 person-sm-col-1">
+        <img src="/img/people/haidar-dream-3-sq.jpg" class="dream">
         <img src="/img/people/haidar.jpg">
     </div>
     <div
@@ -738,6 +758,7 @@ title: 'the Team ↳↷↷ deranged'
         </div>
     </div>
     <div class="person-image person-lg-col-4 person-md-col-3 person-sm-col-2 person-xs-col-2">
+        <img src="/img/people/asbjoern-dream-sq.jpg" class="dream">
         <img src="/img/people/asbjoern-thegler.jpg">
     </div>
     <div
