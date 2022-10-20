@@ -1,0 +1,84 @@
+---
+layout: default
+---
+{% include overlay_nav.html %}
+
+<style type="text/css" scoped>
+    .header {
+        background: rgb(52, 73, 94);
+        display: grid;
+        grid-template-columns: 150px 1fr;
+        color: #eaf1f7;
+        padding: 30px;
+        text-align: left;
+    }
+
+    .header .logo {
+        color: inherit;
+        text-decoration: inherit;
+        font-weight: 200;
+        font-size: 1.3em;
+        position: relative;
+        z-index: 11;
+    }
+    @media (max-width: 900px) {
+        .header {
+            grid-template-columns: 1fr;
+        }
+    }
+    main {
+        background: rgb(52, 73, 94);
+        background-image: linear-gradient(rgb(52, 73, 94), rgb(33, 51, 66));
+        padding-left: 180px;
+        color: #eaf1f7;
+        text-align: left;
+        padding-top: 3rem;
+    }
+    main p, main ol, main ul {
+        max-width: 700px;
+    }
+    main h1 {
+        margin-bottom: 1rem;
+    }
+    main h2 {
+        margin-bottom: 0;
+    }
+    main h3 {
+        margin-bottom: 0;
+    }
+    @media (max-width: 1200px) {
+        main {
+            padding-left: 15px;
+            font-size: 1rem;
+        }
+        main p, main ol, main ul {
+            max-width: 600px;
+        }
+    }
+    .fixga-logo {
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+        font-weight: 800;
+        color: white;
+        text-decoration: none;
+        font-size: 1rem;
+        line-height: 0.8rem;
+        text-shadow: 0 0 1px rgba(255,255,255,0.8), 0 0 3px rgba(255,255,255,0.5);
+    }
+</style>
+<section class="header">
+    <a href="/" class="logo">deranged</a>
+    <a href="/fix-google-analytics/" class="fixga-logo">Fix<br>Analytics</a>
+</section>
+
+<main>
+    {% for breadcrumb in page.breadcrumbs %}
+        {% if breadcrumb.url %}
+            <a href="{{ breadcrumb.url }}">{{ breadcrumb.text }}</a> ⇀
+        {% else %}
+            {{ breadcrumb.text }}
+        {% endif %}
+    {% endfor %}
+    {{ content }}
+</main>
+
+{% include get_a_quote.html title='Kontakt os' hide_pitch='true' subject='Fix mine analytics' %}
