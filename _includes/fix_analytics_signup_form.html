@@ -257,9 +257,8 @@
                     name="accept_terms"
                 />
             </label>
-            <button class="button" type="submit">{% if lang_da %} Tilmeld {% else %} Signup {% endif %}</button>
             <div
-                class="contact-form-overlay contact-form-overlay-clickthrough"
+                class="u-hide"
                 data-analytics-form-overlay
             >
                 <div class="contact-form-overlay__message contact-form-overlay__message--awaiting">
@@ -270,26 +269,39 @@
                     {% endif %}
                 </div>
                 <div class="contact-form-overlay__message contact-form-overlay__message--success">
+                    <h3>
+                        {% if lang_da %}
+                            Succes! 👍
+                        {% else %}
+                            Success! 👍
+                        {% endif %}
+                    </h3>
                     <p>
                         {% if lang_da %}
-                            Succes! 👍<br>
                             Du modtager en mail med information omkring implementation.
                         {% else %}
-                            Success! 👍<br>
                             Please confirm you have recieved an email and your order has been registered.
                         {% endif %}
                     </p>
                 </div>
                 <div class="contact-form-overlay__message contact-form-overlay__message--error">
-                    <p>
+                    <h3>
                         {% if lang_da %}
                             Noget gik desværre galt - Prøv igen ❌
                         {% else %}
                             Something went wrong - try again! ❌
                         {% endif %}
-                    </p>
+                    </h3>
+                    <p data-detailed-error-message></p>
                 </div>
             </div>
+            <button
+                class="button"
+                type="submit"
+                data-submit-form-button
+            >
+                {% if lang_da %} Tilmeld {% else %} Signup {% endif %}
+            </button>
         </div>
     </form>
 </section>
@@ -307,6 +319,8 @@
         const toggleFormStateButtons = document.querySelectorAll("[data-toggel-form-state]");
         const formStep1 = document.querySelector("[data-form-step-1]");
         const formStep2 = document.querySelector("[data-form-step-2]");
+        const submitFormButton = document.querySelector("[data-submit-form-button]");
+        const detailedErrorMessage = document.querySelector("[data-detailed-error-message]");
 
         customerTypeSelect.addEventListener("change", toggleCustomerType);
         toggleFormStateButtons.forEach(function(button) {
@@ -361,7 +375,7 @@
                 voucher: form.voucher.value,
                 consent: {
                     "useLogoAndName": form.useLogoAndName.checked,
-                    "contactForProfiling": form.contactForProfiling.checked,
+                    "contactForProfiling": form.contactForProfiling.checked
                 }
             });
 
@@ -369,22 +383,23 @@
         });
 
         async function sendRequestToApi(url, data) {
-            try {
-                const rawResponse = await fetch(url, {
-                    method: "POST",
-                    headers: {
-                        Accept: "application/json",
-                        "Content-Type": "application/json",
-                    },
-                    body: JSON.stringify(data),
-                });
-                const content = await rawResponse.json();
+            const rawResponse = await fetch(url, {
+                method: "POST",
+                headers: {
+                    Accept: "application/json",
+                    "Content-Type": "application/json",
+                },
+                body: JSON.stringify(data),
+            });
 
-                console.log("success", content);
+            if (rawResponse.status === 200) {
                 showSuccess();
-            } catch (error) {
-                console.log("error", error);
+            }
+            else {
                 showFailure();
+                const content = await rawResponse.json();
+                console.warn("content", content)
+                detailedErrorMessage.innerHTML = content.reason ? content.reason.da_DK : content.messsage;
             }
         }
 
@@ -466,51 +481,22 @@
         }
 
         function showOverlay() {
+            contactFormOverlay.classList.remove("u-hide");
             contactFormOverlay.classList.add("contact-form-overlay--awaiting");
-            contactFormOverlay.classList.remove("contact-form-overlay-clickthrough");
-            requestAnimationFrame(function () {
-                contactFormOverlay.classList.add("contact-form-overlay-visible");
-            });
         }
 
         function showSuccess() {
             // TODO: Make the success state better/clearer
-            contactFormOverlay.classList.remove("contact-form-overlay-visible");
-
-            setTimeout(function () {
-                contactFormOverlay.classList.remove("contact-form-overlay--awaiting");
-                contactFormOverlay.classList.add("contact-form-overlay--success");
-                contactFormOverlay.classList.add("contact-form-overlay-visible");
-
-                setTimeout(function () {
-                    contactFormOverlay.classList.remove("contact-form-overlay-visible");
-                    contactFormOverlay.classList.remove("contact-form-overlay--success");
-
-                    setTimeout(function () {
-                        contactFormOverlay.classList.add("contact-form-overlay-clickthrough");
-                    }, 500);
-                }, 3000);
-            }, 200);
+            submitFormButton.classList.add("u-hide");
+            contactFormOverlay.classList.remove("contact-form-overlay--error");
+            contactFormOverlay.classList.remove("contact-form-overlay--awaiting");
+            contactFormOverlay.classList.add("contact-form-overlay--success");
         }
 
         function showFailure() {
             // TODO: Make the success state better/clearer
-            contactFormOverlay.classList.remove("contact-form-overlay-visible");
-
-            setTimeout(function () {
-                contactFormOverlay.classList.remove("contact-form-overlay--awaiting");
-                contactFormOverlay.classList.add("contact-form-overlay--error");
-                contactFormOverlay.classList.add("contact-form-overlay-visible");
-
-                setTimeout(function () {
-                    contactFormOverlay.classList.remove("contact-form-overlay-visible");
-                    contactFormOverlay.classList.remove("contact-form-overlay--error");
-
-                    setTimeout(function () {
-                        contactFormOverlay.classList.add("contact-form-overlay-clickthrough");
-                    }, 500);
-                }, 3000);
-            }, 200);
+            contactFormOverlay.classList.remove("contact-form-overlay--awaiting");
+            contactFormOverlay.classList.add("contact-form-overlay--error");
         }
     })();
 </script>
