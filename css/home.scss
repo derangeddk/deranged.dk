@@ -338,7 +338,7 @@ permalink: /css/homestyle.css
 @media (min-width: 800px) {
   .differentiation-section {
     grid-template-rows: repeat(8, 20vw);
-  
+
     .point-of-devops {
       grid-column: 2 / 6;
       grid-row: 1 / 3;
@@ -351,7 +351,7 @@ permalink: /css/homestyle.css
       grid-column: 2 / 6;
       grid-row: 7 / 9;
     }
-  
+
     .image-of-devops {
       grid-column: 1 / 4;
       grid-row: 2 / 5;
@@ -360,7 +360,7 @@ permalink: /css/homestyle.css
     .image-of-devops:before {
       transform: skew(45deg);
     }
-  
+
     .image-of-counsel {
       grid-column: 2 / 5;
       grid-row: 1 / 4;
@@ -369,7 +369,7 @@ permalink: /css/homestyle.css
     .image-of-counsel:before {
       transform: skew(45deg);
     }
-  
+
     .image-of-play {
       grid-column: 1 / 4;
       grid-row: 4 / 7;
@@ -378,7 +378,7 @@ permalink: /css/homestyle.css
     .image-of-play:before {
       transform: skew(-45deg);
     }
-  
+
     .image-of-extra {
       grid-column: 3 / 6;
       grid-row: 6 / 9;
@@ -683,7 +683,7 @@ permalink: /css/homestyle.css
   justify-content: end;
   align-self: end;
   padding-top: 0;
-  
+
   @media (min-width: 768px) {
     padding: 0 1.8em 1.8em 0;
   }

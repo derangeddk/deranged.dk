@@ -45,6 +45,11 @@
   .honeypot {
     margin: 0;
   }
+
+  // Use regular text color because the link color is too light to be used here.
+  a {
+    color: inherit;
+  }
 }
 .contact-form .two-col-inputs {
   display: grid;
@@ -69,14 +74,19 @@
     font-size: 0.8em;
   }
 
-  label input {
+  input[type=text],
+  input[type=number],
+  input[type=password],
+  input[type=tel],
+  input[type=email],
+  select {
     width: 100%;
     padding: 8px;
     font-family: inherit;
     font-size: 0.9em;
   }
 
-  label textarea {
+  textarea {
     width: 100%;
     height: 150px;
     resize: none;
@@ -85,24 +95,17 @@
     font-size: 0.9em;
   }
 
-  button {
-    background: #2c3e50;
-    color: #eaf1f7;
-    text-decoration: inherit;
-    padding: 20px 25px;
-    margin: 0 0 10px;
-    cursor: pointer;
-    transition: background-color 0.3s, transform 0.3s;
-    display: inline-block;
-    border: none;
-    width: 100%;
-    font-size: 1em;
-    font-family: inherit;
+  .checkbox-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
 
-    &:hover {
-      background: #375068;
-      transform: scale(1.025);
+    input[type=checkbox] {
+      margin-left: 10px;
     }
+
   }
 }
 .contact-form-overlay {
@@ -126,6 +129,25 @@
 }
 .contact-form-overlay-visible {
   opacity: 1;
+}
+.contact-form-overlay__message {
+  text-align: center;
+  display: none;
+}
+.contact-form-overlay__message--success {
+  .contact-form-overlay--success & {
+    display: block;
+  }
+}
+.contact-form-overlay__message--error {
+  .contact-form-overlay--error & {
+    display: block;
+  }
+}
+.contact-form-overlay__message--awaiting {
+  .contact-form-overlay--awaiting & {
+    display: block;
+  }
 }
 
 .side-by-side-contact-form-and-explanation {
@@ -164,5 +186,17 @@
   }
   .contact-form label textarea {
     height: 210px;
+  }
+}
+
+.contact-form__navigation {
+  margin-top: 10px;
+}
+
+.contact-form__navigation-item {
+  text-decoration: none;
+
+  &:hover {
+    text-decoration: underline;
   }
 }
