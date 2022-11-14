@@ -1,0 +1,18 @@
+.logo {
+  font-weight: 800;
+  line-height: 0.8em;
+  text-decoration: inherit;
+  display: inline-block;
+}
+
+.logo--big {
+  font-size: 2rem;
+}
+.logo--huge {
+  font-size: 4rem;
+}
+
+.logo--fancy:before,
+.logo--fancy:after {
+  content: 'Fix \A Analytics';
+}

@@ -1,0 +1,18 @@
+---
+title: Bliv GDPR-compliant med Fix Google Analytics
+layout: fix-analytics-page
+lang: "da_dk"
+inter:
+  en_us:
+    hero:
+      title: "heheh"
+  da_dk:
+    hero:
+      title: "yooooo"
+---
+{% assign content = page.inter[page.lang] %}
+
+{% include fix-analytics-hero.html text=content.hero %}
+{% include fix-analytics-risk-and-price.html %}
+{% include fix-analytics-how-we-do-it.html %}
+{% include fix-analytics-how-to-set-up.html %}

@@ -1,0 +1,9 @@
+.hero-section {
+  padding-top: 50px;
+  padding-bottom: 80px;
+
+  @media(min-width: $width-md) {
+    padding-top: 100px;
+    padding-bottom: 170px;
+  }
+}
