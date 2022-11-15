@@ -10,3 +10,8 @@ permalink: /css/fix-analytics-pages.css
 @import 'fix-analytics/text';
 @import 'fix-analytics/hero-section';
 @import 'fix-analytics/utility';
+@import 'fix-analytics/tooltip';
+@import 'fix-analytics/form';
+
+// Section specific
+@import 'fix-analytics/section/risk-and-pricing';

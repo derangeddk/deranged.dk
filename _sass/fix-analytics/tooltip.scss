@@ -1,0 +1,25 @@
+.tooltip {
+    cursor: help;
+}
+
+.icon-tooltip {
+    display: inline-flex;
+    position: relative;
+    background: rgba(0,0,0,0.35);
+    color: rgba(255,255,255,0.8);
+    width: 1.25rem;
+    height: 1.25rem;
+    align-items: center;
+    justify-content: center;
+    border-radius: 100%;
+    transform: translateY(0.025rem);
+    box-shadow: 0 -2px 3px rgba(0,0,0,0.7) inset;
+}
+
+.icon-tooltip__icon {
+    display: inline-block;
+}
+
+.tooltip__text {
+    display: none;
+}

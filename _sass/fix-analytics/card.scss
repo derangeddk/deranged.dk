@@ -2,14 +2,21 @@
     border-radius: $border-radius;
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
+    align-items: stretch;
     background: white;
     box-shadow: $overlay-shadow, 0 -4px 5px rgba(0,0,0,0.1) inset;
 }
 
 .card__header {
-    font-weight: 200;
+    font-weight: 400;
     margin-bottom: 1rem;
+    align-self: flex-start;
+}
+
+.card__text {
+    p {
+        margin-bottom: 1rem;
+    }
 }
 
 .card--dark-shiny {

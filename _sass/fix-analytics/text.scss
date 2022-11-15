@@ -64,3 +64,17 @@
 .text__cheapest--fancy:after {
   content: 'cheapest';
 }
+
+.text--large {
+  font-size: 2rem;
+}
+.text--huge {
+  font-size: 3rem;
+}
+.text--small {
+  font-size: 0.8rem;
+}
+.text--centered {
+  text-align: center;
+  width: 100%;
+}

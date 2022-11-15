@@ -64,3 +64,34 @@
     flex: 1 0 0%;
   }
 }
+
+// Margins
+.mt-0 {
+  margin-top: 0 !important;
+}
+.mt-1 {
+  margin-top: 0.125rem !important;
+}
+.mt-2 {
+  margin-top: 0.25rem !important;
+}
+.mt-3 {
+  margin-top: 0.5rem !important;
+}
+.mt-4 {
+  margin-top: 1rem !important;
+}
+
+.f-justify-space-between {
+  justify-content: space-between;
+}
+.f-justify-center {
+  justify-content: center;
+}
+.f-align-center {
+  align-items: center;
+}
+.f-self-stretch {
+  align-self: stretch;
+  justify-self: stretch;
+}
