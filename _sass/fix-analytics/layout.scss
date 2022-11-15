@@ -47,10 +47,6 @@
   align-items: center;
 }
 
-.aside-section__aside-box {
-  padding: 20px;
-}
-
 .row {
   display: flex;
   flex-wrap: wrap;
@@ -94,4 +90,8 @@
 .f-self-stretch {
   align-self: stretch;
   justify-self: stretch;
+}
+
+.spacer {
+  flex-grow: 3;
 }
