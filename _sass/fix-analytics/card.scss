@@ -10,12 +10,14 @@
 
 .card__icon {
     position: absolute;
-    right: -1.25rem;
-    top: -1.75rem;
+    right: -4.75rem;
+    top: -2.75rem;
     user-select: none;
     text-shadow: -2px 4px 5px rgba(0,0,0,0.35);
-    width: 4rem;
-    height: 4rem;
+    width: 7rem;
+    height: 7rem;
+    z-index: -1;
+    opacity: 0.3;
 }
 .card__icon img {
     width: 100%;
@@ -28,10 +30,6 @@
     align-self: flex-start;
     padding: 1.25rem;
     padding-bottom: 1rem;
-
-    .card__icon + & {
-        padding-right: 3.5rem;
-    }
 }
 
 .card__text {
