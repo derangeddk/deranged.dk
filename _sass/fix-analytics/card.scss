@@ -35,8 +35,8 @@
 .card__text {
     padding: 0 1.25rem;
 
-    p {
-        margin-bottom: 1rem;
+    p+p {
+        margin-top: 1rem;
     }
 }
 
