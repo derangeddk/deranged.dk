@@ -27,6 +27,7 @@
   //outline: 1px solid blue;
   position: relative;
   z-index: 2;
+  display: inline-block;
 
   &:after,
   &:before {
