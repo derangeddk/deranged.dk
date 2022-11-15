@@ -5,6 +5,9 @@
 .labelled-field__label {
     font-size: 0.8rem;
 }
+.labelled-field__input {
+    border: none;
+}
 
 .input--number {
     text-align: right;
@@ -12,6 +15,7 @@
 .input--big {
     font-size: 1.325rem;
     padding: 0.25rem;
+    border-radius: $border-radius;
 }
 .input--short {
     width: 10rem;
