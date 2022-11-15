@@ -80,3 +80,56 @@
         }
     }
 }
+
+.card__usp {
+    padding: 2rem;
+    display: grid;
+
+    @media(min-width: $width-md) {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+.card__usp--4-rows {
+    @media(min-width: $width-md) {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+.card__usp-item {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px 0;
+
+    @media(min-width: $width-md) {
+        padding: 0 40px;
+    }
+
+    @media(max-width: $width-sm) {
+        &:first-of-type {
+            padding-top: 0;
+        }
+
+        &:last-of-type {
+            padding-bottom: 0;
+        }
+    }
+
+    // Add seperators between elements
+    &+& {
+        border-top: 1px solid $border-grey;
+
+        @media(min-width: $width-md) {
+            border-top: none;
+            border-left: 1px solid $border-grey;
+        }
+    }
+}
+
+.card__usp-title {
+    width: 100%;
+    font-weight: 400;
+    text-align: center;
+}
