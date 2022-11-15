@@ -1,0 +1,27 @@
+.button {
+    border-radius: $border-radius;
+    padding: 0.5rem 1rem;
+    color: inherit;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.button--dark {
+    color: white;
+}
+
+.button--dashed {
+    background: transparent;
+    border: 1px dashed black;
+    outline: 1px solid transparent;
+    outline-offset: -3px;
+    transition: outline 0.15s;
+
+    &.button--dark {
+        border-color: white;
+    }
+
+    &:hover, &:focus {
+        outline-color: white;
+    }
+}

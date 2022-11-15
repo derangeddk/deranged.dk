@@ -1,7 +1,10 @@
 <section class="content-section">
   <div class="aside-section aside-section--equal">
     <div>
-      <h2>If you do nothing...</h2>
+      <h2 class="heading--big">
+        Avoid getting<br />
+        <span class="heading--humongous text--shiny text--line-height-90">fined</span>
+      </h2>
       - austria, denmark, france(?), munchen, diff sitches
       - risk of fines; back in time, too; minimize risk by showing you take the risk seriously, are working to mitigate
       - bødestørrelse: 10% af omsætning max x millioner - find kilde til det
@@ -9,9 +12,79 @@
       - Read more on risks
     </div>
     <aside class="aside-section__aside">
-      <div class="aside-section__aside-box">
-        <h2>Pricing</h2>
-        - €5 for 500.000 events / pricing calculator ud fra besøgende, gns. antal sidevisninger pr. besøg, antal special-events pr. besøg
+      <div class="aside-section__aside-box card card--dark">
+        <h2 class="card__header">Pricing</h2>
+        <div class="card__text">
+          <p>
+            Using the proxy costs <strong>€ 0.01 per 1000 tracking events</strong>
+            <span class="tooltip icon-tooltip" data-tooltip title="A tracking event is usually a page visit, but you may also be tracking special events in order to gather information on user behavior on your site.">
+              <span class="icon-tooltip__icon" data-tooltip-activator>?</span>
+              <span class="tooltip__text" data-tooltip-tip>
+                A <em>tracking event</em> is usually a page visit, but you may also be tracking special events in order to gather information on user behavior on your site.
+              </span>
+            </span>
+            .
+            There is a minimum payment of € 5 per domain per year.
+          </p>
+        </div>
+        <div class="card__text mt-4">
+          <h3>Annual cost for your domain</h3>
+          <div class="text--huge text--centered">
+            € <span data-pricing-calculator-result>5.00</span>
+          </div>
+          <div class="text--small text--centered">
+            based on
+          </div>
+          <form name="pricing" class="row f-justify-space-between f-align-center">
+            <div>
+              <label class="labelled-field">
+                <span class="labelled-field__label">Daily visitors</span>
+                <input type="number" name="dailyVisitors" value="340" class="labelled-field__input input--number input--big input--short">
+              </label>
+            </div>
+            <div class="text--huge">
+              &times;
+            </div>
+            <div>
+              <label class="labelled-field">
+                <span class="labelled-field__label">Avg. page views per visit</span>
+                <input type="number" name="pageViewsPerVisit" value="4" class="labelled-field__input input--number input--big input--short">
+              </label>
+              <div class="text--large text--centered f-self-stretch">+</div>
+              <label class="labelled-field">
+                <span class="labelled-field__label">Avg. special events per visit</span>
+                <input type="number" name="specialEventsPerVisit" value="0" class="labelled-field__input input--number input--big input--short">
+              </label>
+            </div>
+          </form>
+          <script>
+            (function() {
+              var pricingForm = document.forms.pricing;
+              var result = document.querySelector("[data-pricing-calculator-result]");
+
+              function getVal(field) {
+                return parseInt(pricingForm[field].value);
+              }
+              function updatePricingResult() {
+                var dailyEvents = getVal("dailyVisitors") * (getVal("pageViewsPerVisit") + getVal("specialEventsPerVisit"));
+                var annualPrice = Math.max(5, 0.01 * (dailyEvents * 365) / 1000);
+                result.innerText = annualPrice.toFixed(2);
+              }
+
+              pricingForm.dailyVisitors.addEventListener("input", updatePricingResult);
+              pricingForm.pageViewsPerVisit.addEventListener("input", updatePricingResult);
+              pricingForm.specialEventsPerVisit.addEventListener("input", updatePricingResult);
+
+              updatePricingResult();
+            })();
+          </script>
+        </div>
+        <div class="card__actions">
+          <div class="spacer"></div>
+          <a class="button button--dashed button--dark" href="signup">
+            Get started
+          </a>
+        </div>
       </div>
     </aside>
   </div>

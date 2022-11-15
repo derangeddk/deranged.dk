@@ -1,0 +1,18 @@
+.labelled-field {
+    display: flex;
+    flex-direction: column;
+}
+.labelled-field__label {
+    font-size: 0.8rem;
+}
+
+.input--number {
+    text-align: right;
+}
+.input--big {
+    font-size: 1.325rem;
+    padding: 0.25rem;
+}
+.input--short {
+    width: 10rem;
+}

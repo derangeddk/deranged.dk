@@ -18,6 +18,9 @@
 .heading--huge {
   font-size: 6rem;
 }
+.heading--humongous {
+  font-size: 9rem;
+}
 
 .heading--light {
   font-weight: 400;
@@ -27,6 +30,7 @@
   //outline: 1px solid blue;
   position: relative;
   z-index: 2;
+  display: inline-block;
 
   &:after,
   &:before {
@@ -63,4 +67,31 @@
 .text__cheapest--fancy:before,
 .text__cheapest--fancy:after {
   content: 'cheapest';
+}
+
+.text--large {
+  font-size: 2rem;
+}
+.text--huge {
+  font-size: 3rem;
+}
+.text--small {
+  font-size: 0.8rem;
+}
+.text--centered {
+  text-align: center;
+  width: 100%;
+}
+.text--shiny {
+  background-clip: text;
+  -moz-background-clip: text;
+  -webkit-background-clip: text;
+  background-image: linear-gradient(200deg, $font-off-black 50%, $blue-gradient-dark);
+  font-weight: 900;
+  -webkit-text-fill-color: transparent;
+	-moz-text-fill-color: transparent;
+}
+
+.text--line-height-90 {
+  line-height: 90%;
 }
