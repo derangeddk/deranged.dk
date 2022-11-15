@@ -5,13 +5,33 @@
     align-items: stretch;
     background: white;
     box-shadow: $overlay-shadow, 0 -4px 5px rgba(0,0,0,0.1) inset;
+    position: relative;
+}
+
+.card__icon {
+    position: absolute;
+    right: -1.25rem;
+    top: -1.75rem;
+    user-select: none;
+    text-shadow: -2px 4px 5px rgba(0,0,0,0.35);
+    width: 4rem;
+    height: 4rem;
+}
+.card__icon img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
 }
 
 .card__header {
     font-weight: 400;
-    margin-bottom: 1rem;
     align-self: flex-start;
-    padding-top: 1.25rem;
+    padding: 1.25rem;
+    padding-bottom: 1rem;
+
+    .card__icon + & {
+        padding-right: 3.5rem;
+    }
 }
 
 .card__text {
