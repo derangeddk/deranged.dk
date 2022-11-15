@@ -68,14 +68,15 @@
     .card__actions {
         background-image: linear-gradient(270deg, rgba(255,230,230,0.09) 0%, transparent 50%, transparent);
         position: relative;
-    }
-    .card__actions:before {
-        content: '';
-        height: 1px;
-        background-image: linear-gradient(270deg, rgba(255,255,255,0.1) 10%, transparent 90%, transparent);
-        position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
+
+        &:before {
+            content: '';
+            height: 1px;
+            background-image: linear-gradient(270deg, rgba(255,255,255,0.1) 10%, transparent 90%, transparent);
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+        }
     }
 }
