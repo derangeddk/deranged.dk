@@ -8,6 +8,10 @@
     position: relative;
 }
 
+.card__body {
+    padding: 1rem 1.25rem;
+}
+
 .card__icon {
     position: absolute;
     right: -4.75rem;
@@ -19,7 +23,8 @@
     z-index: -1;
     opacity: 0.3;
 }
-.card__icon img {
+
+.card__icon-image {
     width: 100%;
     height: 100%;
     object-fit: contain;
@@ -28,13 +33,10 @@
 .card__header {
     font-weight: 400;
     align-self: flex-start;
-    padding: 1.25rem;
-    padding-bottom: 1rem;
+    margin-bottom: 1rem;
 }
 
 .card__text {
-    padding: 0 1.25rem;
-
     p+p {
         margin-top: 1rem;
     }
@@ -44,7 +46,6 @@
     display: flex;
     flex-direction: row;
     padding: 1rem 1.25rem;
-    margin-top: 1rem;
 }
 
 .card--dark {
