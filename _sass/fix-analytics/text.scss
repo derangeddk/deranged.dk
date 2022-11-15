@@ -18,6 +18,9 @@
 .heading--huge {
   font-size: 6rem;
 }
+.heading--humongous {
+  font-size: 9rem;
+}
 
 .heading--light {
   font-weight: 400;
@@ -78,4 +81,17 @@
 .text--centered {
   text-align: center;
   width: 100%;
+}
+.text--shiny {
+  background-clip: text;
+  -moz-background-clip: text;
+  -webkit-background-clip: text;
+  background-image: linear-gradient(200deg, #1c2731 50%, #4a6785);
+  font-weight: 900;
+  -webkit-text-fill-color: transparent;
+	-moz-text-fill-color: transparent;
+}
+
+.text--line-height-90 {
+  line-height: 90%;
 }
