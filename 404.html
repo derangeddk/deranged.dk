@@ -1,11 +1,58 @@
 ---
+title: not_found :url >> /dev/null
 layout: default
 ---
-{% include header2.html %}
-<h1>nope</h1>
-<p>this page doesn't exist</p>
 <style>
-    footer {
-        margin-top: 100px;
+    body {
+        background: transparent;
+    }
+    .lost-in-space {
+        height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 0.9rem;
+    }
+    .all-i-know-is-this {
+        display: block;
+        text-align: left;
+        font-family: 'Source Code Pro', monospace;
+        color: #ddddff;
+        border: 1px solid #ddddff;
+    }
+    .i-cannot-find-my-way {
+        border-bottom: 1px solid rgb(221, 221, 255);
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        padding: 0.125rem;
+        background: rgba(221, 221, 225, 0.125);
+    }
+    .the-void {
+        font-size: 1.6rem;
+        line-height: 1rem;
+    }
+    .is-all-hope-then-lost {
+        padding: 0.125rem;
+    }
+    .is-all-hope-then-lost p {
+        margin: 0;
+    }
+    .is-all-hope-then-lost p:not(:last-child) {
+        margin-bottom: 0.125rem;
     }
 </style>
+<div class="lost-in-space">
+    <div class="all-i-know-is-this">
+        <div class="i-cannot-find-my-way">
+            <span>not_found</span>
+            <span class="the-void">֎</span>
+        </div>
+        <div class="is-all-hope-then-lost">
+            <p>this page doesn't exist</p>
+            <p>how did you get here</p>
+            <p>i hope you find your way</p>
+            <p><a href="/">back</a> <a href="/">إرجاع</a> <a href="/">ra đi</a> <a href="/">ud</a></p>
+        </div>
+    </div>
+</div>
