@@ -1,5 +1,7 @@
 .button {
+    background-color: transparent;
     border-radius: $border-radius;
+    border: 1px solid $font-off-black;
     padding: 0.5rem 1rem;
     color: inherit;
     text-decoration: none;
@@ -12,7 +14,7 @@
 
 .button--dashed {
     background: transparent;
-    border: 1px dashed black;
+    border: 1px dashed $font-off-black;
     outline: 1px solid transparent;
     outline-offset: -3px;
     transition: outline 0.15s;
@@ -24,4 +26,13 @@
     &:hover, &:focus {
         outline-color: white;
     }
+}
+
+.button--disabled,
+.button:disabled {
+    background-color: transparent;
+    color: $border-grey;
+    cursor: default;
+    transform: none;
+    border-color: $border-grey;
 }
