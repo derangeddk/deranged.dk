@@ -13,8 +13,12 @@
 /*
   3. Allow percentage-based heights in the application
 */
-html, body {
+html,
+body {
   height: 100%;
+  // No horizontal scrolling
+  max-width: 100%;
+  overflow-x: hidden;
 }
 /*
   Typographic tweaks!
