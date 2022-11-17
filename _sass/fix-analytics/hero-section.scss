@@ -1,6 +1,5 @@
 .hero-section {
   position: relative;
-  margin-bottom: 30px;
   overflow: hidden;
 }
 
@@ -9,15 +8,16 @@
   position: absolute;
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  background-size: cover;
   background-image:
-    linear-gradient(to bottom, transparent, $off-white),
+    linear-gradient(to bottom, transparent, $off-white 85%),
     url(/fix-analytics/screen-image-by-markus-winkler.jpg);
-  background-position: left;
+  background-position: top;
+  background-repeat: no-repeat;
+}
 
-  @media(min-width: $width-md) {
-    background-position: top left;
-  }
+.hero-section__background--fixed {
+  background-attachment: fixed;
 }
 
 .hero-section__content {

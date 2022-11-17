@@ -72,16 +72,24 @@
 .text--large {
   font-size: 2rem;
 }
+
 .text--huge {
   font-size: 3rem;
 }
+
 .text--small {
   font-size: 0.8rem;
 }
+
 .text--centered {
-  text-align: center;
+  text-align: center !important;
   width: 100%;
 }
+
+.text---right {
+  text-align: right !important;
+}
+
 .text--shiny {
   background-clip: text;
   -moz-background-clip: text;

@@ -15,293 +15,297 @@
             />
             <!-- This is a honeypot, it is invisible to users, but not to bots. If it has value, it means it is a bot -->
         </label>
-        <div class="contact-form" data-form-step-1>
-            <h2>{% if lang_da %} Tilmeld til Fix-Analytics {% else %} Signup to Fix-Analytics {% endif %}</h2>
-            <p>
-                {% if lang_da %}Skriv adressen på din webside, f.eks. your-domain.dk.{% else %} The adress to your web site, fx. your-domain.com. {% endif %}
-            </p>
-            <div data-domains-container>
-                <label>
-                    <span>{% if lang_da %} Domæne {% else %} Domain {% endif %}</span>
-                    <input
-                        placeholder="your-domain.com"
-                        type="text"
-                        name="domain_1"
-                        value=""
-                        required
-                        data-domain-field
-                    />
-                </label>
-            </div>
-            <div class="u-text-right">
+        <div class="contact-form card" data-form-step-1>
+            <div class="card__body">
+                <h2>{% if lang_da %} Tilmeld til Fix-Analytics {% else %} Signup to Fix-Analytics {% endif %}</h2>
+                <p>
+                    {% if lang_da %}Skriv adressen på din webside, f.eks. your-domain.dk.{% else %} The adress to your web site, fx. your-domain.com. {% endif %}
+                </p>
+                <div data-domains-container>
+                    <label>
+                        <span>{% if lang_da %} Domæne {% else %} Domain {% endif %}</span>
+                        <input
+                            placeholder="your-domain.com"
+                            type="text"
+                            name="domain_1"
+                            value=""
+                            required
+                            data-domain-field
+                        />
+                    </label>
+                </div>
+                <div class="u-text-right text---right">
+                    <button
+                        class="button button--small button--dashed"
+                        data-add-additional-domain
+                    >
+                        <strong>+</strong>{% if lang_da %} Tilføj flere domæner {% else %} Add additional domain {% endif %}
+                    </button>
+                </div>
+                <span>
+                    {% if lang_da %}
+                        Pris pr domæne: 37 dk.
+                    {% else %}
+                        Price per domain: € 5.
+                    {% endif %}
+                </span>
+                <p>
+                    {% if lang_da %}
+                        Total pris: <strong><span data-price-dkk>0</span> kr.</strong>
+                    {% else %}
+                        Total price: <strong>€ <span data-price-eur>0</span></strong>
+                    {% endif %}
+                </p>
                 <button
-                    class="button button--small"
-                    data-add-additional-domain
+                    class="button u-mt-sm"
+                    data-toggel-form-state
+                    disabled
                 >
-                    <strong>+</strong>{% if lang_da %} Tilføj flere domæner {% else %} Add additional domain {% endif %}
+                    {% if lang_da %} Gå til fakturering {% else %} Go to billing {% endif %}
                 </button>
             </div>
-            <span>
-                {% if lang_da %}
-                    Pris pr domæne: 37 dk.
-                {% else %}
-                    Price per domain: € 5.
-                {% endif %}
-            </span>
-            <p>
-                {% if lang_da %}
-                    Total pris: <strong><span data-price-dkk>0</span> kr.</strong>
-                {% else %}
-                    Total price: <strong>€ <span data-price-eur>0</span></strong>
-                {% endif %}
-            </p>
-            <button
-                class="button"
-                data-toggel-form-state
-                disabled
-            >
-                {% if lang_da %} Gå til fakturering {% else %} Go to billing {% endif %}
-            </button>
         </div>
-        <div class="contact-form u-hide" data-form-step-2>
-            <input hidden name="currency" value="{% if lang_da %}DKK{% else %}EUR{% endif %}" />
-            <input hidden name="locale" value="{% if lang_da %}da_DK{% else %}en_US{% endif %}" />
-            <div class="contact-form__navigation">
-                <a
-                    class="contact-form__navigation-item"
-                    href="#"
-                    data-toggel-form-state
-                >
-                    ⤌{% if lang_da %} Tilbage til domæner {% else %} Back to domains {% endif %}
-                </a>
-            </div>
-            <h2>
-                {% if lang_da %} Faktureringsinformation {% else %} Billing information{% endif %}
-            </h2>
-            <label>
-                <span> {% if lang_da %} Kundetype {% else %} Customer Type {% endif %} </span>
-                <select
-                    name="type"
-                    required
-                    data-toggle-customer-type
-                >
-                    <option value="company">
-                        {% if lang_da %} Virksomhed {% else %} Company {% endif %}
-                    </option>
-                    <option value="person">
-                        {% if lang_da %} Privatperson {% else %} Individual {% endif %}
-                    </option>
-                </select>
-            </label>
-            <label>
-                <span data-company-name-label> {% if lang_da %} Firmanavn {% else %} Company name {% endif %} </span>
-                <span data-private-name-label hidden> {% if lang_da %} Navn {% else %} Name {% endif %} </span>
-                <input
-                    type="text"
-                    name="name"
-                    required
-                />
-            </label>
-            <label>
-                <span>{% if lang_da %} Kontaktperson {% else %} Contact person {% endif %}</span>
-                <input
-                    type="text"
-                    name="contactName"
-                    required
-                    data-contact-name-field
-                />
-            </label>
-            <label>
-                <span>
-                    {% if lang_da %}
-                        Vejnavn og vejnummer
-                    {% else %}
-                        Street and street number
-                    {% endif %}
-                </span>
-                <input
-                    type="text"
-                    name="street"
-                    required
-                />
-            </label>
-            <div class="two-col-inputs">
-                <label>
-                    <span> {% if lang_da %} By {% else %} City {% endif %} </span>
-                    <input
-                        type="text"
-                        name="city"
-                        required
-                    />
-                </label>
-                <label for="">
-                    <span> {% if lang_da %} Postnummer {% else %} Zip code {% endif %} </span>
-                    <input
-                        type="number"
-                        name="zipcode"
-                        required
-                    />
-                </label>
-            </div>
-            <div class="two-col-inputs">
-                <label for="">
-                    <span>
-                        {% if lang_da %} Stat (valgfri) {% else %} State (optional) {% endif %}
-                    </span>
-                    <input
-                        type="text"
-                        name="state"
-                    />
-                </label>
-                <label>
-                    <span>
-                        {% if lang_da %} Land {% else %} Country {% endif %} *
-                    </span>
-                    <select
-                        name="countryId"
-                        required
+        <div class="contact-form card u-hide" data-form-step-2>
+            <div class="card__body">
+                <input hidden name="currency" value="{% if lang_da %}DKK{% else %}EUR{% endif %}" />
+                <input hidden name="locale" value="{% if lang_da %}da_DK{% else %}en_US{% endif %}" />
+                <div class="contact-form__navigation u-mb-md">
+                    <a
+                        class="contact-form__navigation-item"
+                        href="#"
+                        data-toggel-form-state
                     >
-                        <option value="DK">Danmark</option>
-                        <option value="NO">Norge</option>
-                        <option value="SE">Sverige</option>
+                        ⤌{% if lang_da %} Tilbage til domæner {% else %} Back to domains {% endif %}
+                    </a>
+                </div>
+                <h2>
+                    {% if lang_da %} Faktureringsinformation {% else %} Billing information{% endif %}
+                </h2>
+                <label>
+                    <span> {% if lang_da %} Kundetype {% else %} Customer Type {% endif %} </span>
+                    <select
+                        name="type"
+                        required
+                        data-toggle-customer-type
+                    >
+                        <option value="company">
+                            {% if lang_da %} Virksomhed {% else %} Company {% endif %}
+                        </option>
+                        <option value="person">
+                            {% if lang_da %} Privatperson {% else %} Individual {% endif %}
+                        </option>
                     </select>
                 </label>
+                <label>
+                    <span data-company-name-label> {% if lang_da %} Firmanavn {% else %} Company name {% endif %} </span>
+                    <span data-private-name-label hidden> {% if lang_da %} Navn {% else %} Name {% endif %} </span>
+                    <input
+                        type="text"
+                        name="name"
+                        required
+                    />
+                </label>
+                <label>
+                    <span>{% if lang_da %} Kontaktperson {% else %} Contact person {% endif %}</span>
+                    <input
+                        type="text"
+                        name="contactName"
+                        required
+                        data-contact-name-field
+                    />
+                </label>
+                <label>
+                    <span>
+                        {% if lang_da %}
+                            Vejnavn og vejnummer
+                        {% else %}
+                            Street and street number
+                        {% endif %}
+                    </span>
+                    <input
+                        type="text"
+                        name="street"
+                        required
+                    />
+                </label>
+                <div class="two-col-inputs">
+                    <label>
+                        <span> {% if lang_da %} By {% else %} City {% endif %} </span>
+                        <input
+                            type="text"
+                            name="city"
+                            required
+                        />
+                    </label>
+                    <label for="">
+                        <span> {% if lang_da %} Postnummer {% else %} Zip code {% endif %} </span>
+                        <input
+                            type="number"
+                            name="zipcode"
+                            required
+                        />
+                    </label>
+                </div>
+                <div class="two-col-inputs">
+                    <label for="">
+                        <span>
+                            {% if lang_da %} Stat (valgfri) {% else %} State (optional) {% endif %}
+                        </span>
+                        <input
+                            type="text"
+                            name="state"
+                        />
+                    </label>
+                    <label>
+                        <span>
+                            {% if lang_da %} Land {% else %} Country {% endif %} *
+                        </span>
+                        <select
+                            name="countryId"
+                            required
+                        >
+                            <option value="DK">Danmark</option>
+                            <option value="NO">Norge</option>
+                            <option value="SE">Sverige</option>
+                        </select>
+                    </label>
+                </div>
+                <label>
+                    <span>
+                        {% if lang_da %}
+                            * Er dit land ikke på listen? <a href="mailto:get+analytics@deranged.dk">Skriv os en mail</a>, så finder vi ud af det.
+                        {% else %}
+                            * Is your country missing from the list? <a href="mailto:get+analytics@deranged.dk">Email us</a> and we will fix it.
+                        {% endif %}
+                    </span>
+                </label>
+                <label>
+                    <span>Email</span>
+                    <input
+                        type="email"
+                        name="email"
+                        placeholder="user@domain.com"
+                        required
+                    />
+                </label>
+                <label>
+                    <span> {% if lang_da %} Telefonnummer {% else %} Phone number {% endif %} </span>
+                    <input
+                        type="tel"
+                        name="phone"
+                        required
+                    />
+                </label>
+                <label>
+                    <span>
+                        {% if lang_da %}
+                            CVR
+                        {% else %}
+                            Company registration no.
+                        {% endif %}
+                    </span>
+                    <input
+                        type="text"
+                        name="registrationNo"
+                        required
+                        data-registration-no-field
+                    />
+                </label>
+                <label>
+                    <span>
+                        {% if lang_da %} Rabatkode (valgfri) {% else %} Discount Voucher (optional) {% endif %}
+                    </span>
+                    <input
+                        type="text"
+                        name="voucher"
+                    />
+                </label>
+                <label class="checkbox-container">
+                    <span>
+                        {% if lang_da %}
+                            Må vi vise jeres navn og logo på vores hjemmeside for at vise at I bruger vores løsning?
+                        {% else %}
+                            Can we use your name and logo on our website to show that you use our solution?
+                        {% endif %}
+                    </span>
+                    <input
+                        type="checkbox"
+                        name="useLogoAndName"
+                    />
+                </label>
+                <label class="checkbox-container">
+                    <span>
+                        {% if lang_da %}
+                            Må vi kontakte jer med henblik på at profilere jer som en privacy-bevidst virksomhed i branding relateret til Fix Analytics-produktet?
+                        {% else %}
+                            Can we contact you for the purpose of profiling you as a privacy-conscious company in branding related to the Fix Analytics product?
+                        {% endif %}
+                    </span>
+                    <input
+                        type="checkbox"
+                        name="contactForProfiling"
+                    />
+                </label>
+                <label class="checkbox-container">
+                    <span>
+                        {% if lang_da %}
+                            Jeg accepterer <a target="_blank" href="/fix-google-analytics/vilkaar">vilkår og databehandleraftale</a>
+                        {% else %}
+                            I accept the <a target="_blank" href="/fix-google-analytics/vilkaar">terms and conditions</a>
+                        {% endif %}
+                    </span>
+                    <input
+                        required
+                        type="checkbox"
+                        name="accept_terms"
+                    />
+                </label>
+                <div
+                    class="u-hide"
+                    data-analytics-form-overlay
+                >
+                    <div class="contact-form-overlay__message contact-form-overlay__message--awaiting">
+                        {% if lang_da %}
+                            Sender...
+                        {% else %}
+                            Sending request...
+                        {% endif %}
+                    </div>
+                    <div class="contact-form-overlay__message contact-form-overlay__message--success">
+                        <h3>
+                            {% if lang_da %}
+                                Succes! 👍
+                            {% else %}
+                                Success! 👍
+                            {% endif %}
+                        </h3>
+                        <p>
+                            {% if lang_da %}
+                                Du modtager en mail med information omkring implementation.
+                            {% else %}
+                                Please confirm you have recieved an email and your order has been registered.
+                            {% endif %}
+                        </p>
+                    </div>
+                    <div class="contact-form-overlay__message contact-form-overlay__message--error">
+                        <h3>
+                            {% if lang_da %}
+                                Noget gik desværre galt - Prøv igen ❌
+                            {% else %}
+                                Something went wrong - try again! ❌
+                            {% endif %}
+                        </h3>
+                        <p data-detailed-error-message></p>
+                    </div>
+                </div>
+                <button
+                    class="button"
+                    type="submit"
+                    data-submit-form-button
+                >
+                    {% if lang_da %} Tilmeld {% else %} Signup {% endif %}
+                </button>
             </div>
-            <label>
-                <span>
-                    {% if lang_da %}
-                        * Er dit land ikke på listen? <a href="mailto:get+analytics@deranged.dk">Skriv os en mail</a>, så finder vi ud af det.
-                    {% else %}
-                        * Is your country missing from the list? <a href="mailto:get+analytics@deranged.dk">Email us</a> and we will fix it.
-                    {% endif %}
-                </span>
-            </label>
-            <label>
-                <span>Email</span>
-                <input
-                    type="email"
-                    name="email"
-                    placeholder="user@domain.com"
-                    required
-                />
-            </label>
-            <label>
-                <span> {% if lang_da %} Telefonnummer {% else %} Phone number {% endif %} </span>
-                <input
-                    type="tel"
-                    name="phone"
-                    required
-                />
-            </label>
-            <label>
-                <span>
-                    {% if lang_da %}
-                        CVR
-                    {% else %}
-                        Company registration no.
-                    {% endif %}
-                </span>
-                <input
-                    type="text"
-                    name="registrationNo"
-                    required
-                    data-registration-no-field
-                />
-            </label>
-            <label>
-                <span>
-                    {% if lang_da %} Rabatkode (valgfri) {% else %} Discount Voucher (optional) {% endif %}
-                </span>
-                <input
-                    type="text"
-                    name="voucher"
-                />
-            </label>
-            <label class="checkbox-container">
-                <span>
-                    {% if lang_da %}
-                        Må vi vise jeres navn og logo på vores hjemmeside for at vise at I bruger vores løsning?
-                    {% else %}
-                        Can we use your name and logo on our website to show that you use our solution?
-                    {% endif %}
-                </span>
-                <input
-                    type="checkbox"
-                    name="useLogoAndName"
-                />
-            </label>
-            <label class="checkbox-container">
-                <span>
-                    {% if lang_da %}
-                        Må vi kontakte jer med henblik på at profilere jer som en privacy-bevidst virksomhed i branding relateret til Fix Analytics-produktet?
-                    {% else %}
-                        Can we contact you for the purpose of profiling you as a privacy-conscious company in branding related to the Fix Analytics product?
-                    {% endif %}
-                </span>
-                <input
-                    type="checkbox"
-                    name="contactForProfiling"
-                />
-            </label>
-            <label class="checkbox-container">
-                <span>
-                    {% if lang_da %}
-                        Jeg accepterer <a target="_blank" href="/fix-google-analytics/vilkaar">vilkår og databehandleraftale</a>
-                    {% else %}
-                        I accept the <a target="_blank" href="/fix-google-analytics/vilkaar">terms and conditions</a>
-                    {% endif %}
-                </span>
-                <input
-                    required
-                    type="checkbox"
-                    name="accept_terms"
-                />
-            </label>
-            <div
-                class="u-hide"
-                data-analytics-form-overlay
-            >
-                <div class="contact-form-overlay__message contact-form-overlay__message--awaiting">
-                    {% if lang_da %}
-                        Sender...
-                    {% else %}
-                        Sending request...
-                    {% endif %}
-                </div>
-                <div class="contact-form-overlay__message contact-form-overlay__message--success">
-                    <h3>
-                        {% if lang_da %}
-                            Succes! 👍
-                        {% else %}
-                            Success! 👍
-                        {% endif %}
-                    </h3>
-                    <p>
-                        {% if lang_da %}
-                            Du modtager en mail med information omkring implementation.
-                        {% else %}
-                            Please confirm you have recieved an email and your order has been registered.
-                        {% endif %}
-                    </p>
-                </div>
-                <div class="contact-form-overlay__message contact-form-overlay__message--error">
-                    <h3>
-                        {% if lang_da %}
-                            Noget gik desværre galt - Prøv igen ❌
-                        {% else %}
-                            Something went wrong - try again! ❌
-                        {% endif %}
-                    </h3>
-                    <p data-detailed-error-message></p>
-                </div>
-            </div>
-            <button
-                class="button"
-                type="submit"
-                data-submit-form-button
-            >
-                {% if lang_da %} Tilmeld {% else %} Signup {% endif %}
-            </button>
         </div>
     </form>
 </section>

@@ -63,13 +63,26 @@
   margin-bottom: 0.5rem !important;
 }
 
+.u-mt-xs {
+  margin-top: 0.5rem !important;
+}
+
 .u-mb-sm {
   margin-bottom: 0.75rem !important;
 }
 
 .u-mb-md { margin-bottom: 1rem !important; }
 .u-mt-md { margin-top: 1rem !important; }
+.u-mt-sm {
+  margin-top: 0.75rem !important;
+}
 
 .u-mt-lg {
 	margin-top: 4rem !important;
+}
+
+/* Visibility
+// ================================================== */
+.u-hide {
+  display: none !important;
 }
