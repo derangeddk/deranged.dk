@@ -4,7 +4,7 @@
 }
 
 .hero-section__background {
-  z-index: 1;
+  z-index: -1;
   position: absolute;
   width: 100%;
   height: 100%;
@@ -24,7 +24,7 @@
   padding-top: 50px;
   padding-bottom: 80px;
   position: relative;
-  z-index: 2;
+  z-index: 1;
 
   @media(min-width: $width-md) {
     padding-top: 100px;
