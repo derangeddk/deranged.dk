@@ -7,6 +7,22 @@
   font-style: normal;
 }
 
+.heading--small {
+  font-size: 1.25rem;
+
+  @media(min-width: $width-md) {
+    font-size: 2rem;
+  }
+}
+
+.heading--medium {
+  font-size: 1.5rem;
+
+  @media(min-width: $width-md) {
+    font-size: 3rem;
+  }
+}
+
 .heading--big {
   font-size: 2rem;
 
