@@ -40,10 +40,19 @@
 }
 
 .heading--huge {
-  font-size: 6rem;
+  font-size: 4rem;
+
+  @media(min-width: $width-md) {
+    font-size: 6rem;
+  }
 }
+
 .heading--humongous {
-  font-size: 9rem;
+  font-size: 7rem;
+
+  @media(min-width: $width-md) {
+    font-size: 9rem;
+  }
 }
 
 .heading--light {

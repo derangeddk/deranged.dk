@@ -18,5 +18,6 @@
     border-radius: $border-radius;
 }
 .input--short {
-    width: 10rem;
+    width: 100%;
+    max-width: 10rem;
 }
