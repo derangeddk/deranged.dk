@@ -19,12 +19,18 @@
     outline-offset: -3px;
     transition: outline 0.15s;
 
-    &.button--dark {
-        border-color: white;
+    &:hover,
+    &:focus {
+        outline-color: $font-off-black;
     }
 
-    &:hover, &:focus {
-        outline-color: white;
+    &.button--dark {
+        border-color: white;
+
+        &:hover,
+        &:focus {
+            outline-color: white;
+        }
     }
 }
 
