@@ -281,9 +281,18 @@
                         </h3>
                         <p>
                             {% if lang_da %}
-                                Du modtager en mail med information omkring implementation.
+                                Du vil modtage en mail med en bekræftelse på din bestilling.
                             {% else %}
                                 Please confirm you have recieved an email and your order has been registered.
+                            {% endif %}
+                        </p>
+                    </div>
+                    <div class="contact-form-overlay__message contact-form-overlay__message--success-with-redirect">
+                        <p>
+                            {% if lang_da %}
+                                Du bliver videresendt til <span data-redirect-name></span> om <span data-redirect-countdown></span> sekunder.
+                            {% else %}
+                                You will be redirected to <span data-redirect-name></span> in <span data-redirect-countdown></span> seconds.
                             {% endif %}
                         </p>
                     </div>
@@ -325,6 +334,16 @@
         const formStep2 = document.querySelector("[data-form-step-2]");
         const submitFormButton = document.querySelector("[data-submit-form-button]");
         const detailedErrorMessage = document.querySelector("[data-detailed-error-message]");
+        const redirectCountdownElement = document.querySelector("[data-redirect-countdown]");
+        const redirectNameElement = document.querySelector("[data-redirect-name]");
+
+        const params = new Proxy(new URLSearchParams(window.location.search), { get: (searchParams, prop) => searchParams.get(prop) });
+        const { redirectUrl, redirectName } = params;
+
+        if (redirectUrl) {
+            redirectNameElement.innerText = redirectName;
+            redirectCountdownElement.innerText = 5;
+        }
 
         customerTypeSelect.addEventListener("change", toggleCustomerType);
         toggleFormStateButtons.forEach(function(button) {
@@ -495,6 +514,14 @@
             contactFormOverlay.classList.remove("contact-form-overlay--error");
             contactFormOverlay.classList.remove("contact-form-overlay--awaiting");
             contactFormOverlay.classList.add("contact-form-overlay--success");
+
+            if (redirectUrl) {
+                contactFormOverlay.classList.add("contact-form-overlay--success-with-redirect");
+                setInterval(() => {
+                    redirectCountdownElement.innerText -= 1;
+                    if (redirectCountdownElement.innerText == 0) document.location.href = redirectUrl;
+                }, 1 * 1000);
+            }
         }
 
         function showFailure() {
