@@ -97,9 +97,19 @@
   content: 'fastest';
 }
 
+.text__fastest-da--fancy:before,
+.text__fastest-da--fancy:after {
+  content: 'hurtigste';
+}
+
 .text__cheapest--fancy:before,
 .text__cheapest--fancy:after {
   content: 'cheapest';
+}
+
+.text__cheapest-da--fancy:before,
+.text__cheapest-da--fancy:after {
+  content: 'billigste';
 }
 
 .text--large {
