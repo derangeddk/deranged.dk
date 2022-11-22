@@ -120,6 +120,12 @@
   }
 }
 
+.contact-form-overlay__message--success-with-redirect {
+  .contact-form-overlay--success-with-redirect & {
+      display: block;
+  }
+}
+
 .contact-form-overlay__message--error {
   .contact-form-overlay--error & {
       display: block;
