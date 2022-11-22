@@ -9,10 +9,28 @@ text_content:
     usp1: <strong>75-90% cheaper</strong> than comparable alternatives
     usp2: <strong>10 minute</strong><br>setup
     usp3: Keep your <strong>analytics history</strong> when UA shuts down
+  risk_and_price:
+    title_start: Avoid getting<br>
+    title_big: fined
+    body: TODO
+    pricing_title: Pricing
+    pricing_body1: Using the proxy costs <strong>€ 0.01 per 1000 tracking events</strong>
+    pricing_body2: There is a minimum payment of € 5 per domain per year.
+    pricing_tooltip: A tracking event is usually a page visit, but you may also be tracking special events in order to gather information on user behavior on your site.
+    pricing_form_title: Annual cost for your domain
+    pricing_form_based_on: based on
+    pricing_form_daily_visitors: Daily visitors
+    pricing_form_avg_views: Avg. page views per visit
+    pricing_form_avg_special_events: Avg. special events per visit
+    pricing_form_cta: Get started
+pricing:
+  currency: €
+  per_domain: 5
+  per_1000_tracking_events: 0.01
 ---
 {% include fix-analytics-hero.html text_content=page.text_content.hero %}
 <div class="container">
-  {% include fix-analytics-risk-and-price.html %}
+  {% include fix-analytics-risk-and-price.html text_content=page.text_content.risk_and_price pricing=page.pricing %}
   {% include fix-analytics-how-we-do-it.html %}
   {% include fix-analytics-how-to-set-up.html %}
   {% include fix-analytics-coming-soon.html %}

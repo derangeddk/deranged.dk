@@ -2,44 +2,50 @@
   <div class="aside-section aside-section--equal">
     <div>
       <h2 class="heading--big">
-        Avoid getting<br />
-        <span class="heading--humongous text--shiny text--line-height-90">fined</span>
+        {{ include.text_content.title_start }}
+        <span class="heading--humongous text--shiny text--line-height-90">
+          {{ include.text_content.title_big }}
+        </span>
       </h2>
-      - austria, denmark, france(?), munchen, diff sitches
-      - risk of fines; back in time, too; minimize risk by showing you take the risk seriously, are working to mitigate
-      - bødestørrelse: 10% af omsætning max x millioner - find kilde til det
-      - if you use UA: you will lose your history, even if you migrate to GA4
-      - Read more on risks
+      <!-- <p>{{ include.text_content.body }}</p> -->
     </div>
     <aside class="aside-section__aside">
       <div class="card card--dark">
         <div class="card__body">
-          <h2 class="card__header">Pricing</h2>
+          <h2 class="card__header">
+            {{ include.text_content.pricing_title}}
+          </h2>
           <div class="card__text">
             <p>
-              Using the proxy costs <strong>€ 0.01 per 1000 tracking events</strong>
-              <span class="tooltip icon-tooltip" data-tooltip title="A tracking event is usually a page visit, but you may also be tracking special events in order to gather information on user behavior on your site.">
+              {{ include.text_content.pricing_body1 }}
+              <span class="tooltip icon-tooltip" data-tooltip title="{{ include.text_content.pricing_tooltip }}">
                 <span class="icon-tooltip__icon" data-tooltip-activator>?</span>
                 <span class="tooltip__text" data-tooltip-tip>
-                  A <em>tracking event</em> is usually a page visit, but you may also be tracking special events in order to gather information on user behavior on your site.
+                  {{ include.text_content.pricing_tooltip }}
                 </span>
               </span>
               .
-              There is a minimum payment of € 5 per domain per year.
+              {{ include.text_content.pricing_body2 }}
             </p>
           </div>
           <div class="card__text mt-4">
-            <h3>Annual cost for your domain</h3>
+            <h3>
+              {{ include.text_content.pricing_form_title }}
+            </h3>
             <div class="text--huge text--centered">
-              € <span data-pricing-calculator-result>5.00</span>
+              {{ include.pricing.currency }} <span data-pricing-calculator-result>5.00</span>
             </div>
+            <input hidden data-pricing-per-domain type="number" value="{{ include.pricing.per_domain }}">
+            <input hidden data-pricing-per-1000-tracking-events type="number" value="{{ include.pricing.per_1000_tracking_events }}">
             <div class="text--small text--centered">
-              based on
+              {{ include.text_content.pricing_form_based_on }}
             </div>
             <form name="pricing" class="row f-justify-space-between f-align-center">
               <div>
                 <label class="labelled-field">
-                  <span class="labelled-field__label">Daily visitors</span>
+                  <span class="labelled-field__label">
+                    {{ include.text_content.pricing_form_daily_visitors }}
+                  </span>
                   <input type="number" name="dailyVisitors" value="340" class="labelled-field__input input--number input--big input--short">
                 </label>
               </div>
@@ -48,12 +54,16 @@
               </div>
               <div>
                 <label class="labelled-field">
-                  <span class="labelled-field__label">Avg. page views per visit</span>
+                  <span class="labelled-field__label">
+                    {{ include.text_content.pricing_form_avg_views }}
+                  </span>
                   <input type="number" name="pageViewsPerVisit" value="4" class="labelled-field__input input--number input--big input--short">
                 </label>
                 <div class="text--large text--centered f-self-stretch">+</div>
                 <label class="labelled-field">
-                  <span class="labelled-field__label">Avg. special events per visit</span>
+                  <span class="labelled-field__label">
+                    {{ include.text_content.pricing_form_avg_special_events }}
+                  </span>
                   <input type="number" name="specialEventsPerVisit" value="0" class="labelled-field__input input--number input--big input--short">
                 </label>
               </div>
@@ -62,13 +72,15 @@
               (function() {
                 var pricingForm = document.forms.pricing;
                 var result = document.querySelector("[data-pricing-calculator-result]");
+                var pricePerDomain = document.querySelector("[data-pricing-per-domain]").value || 5;
+                var pricePer1000TrackingEvents = document.querySelector("[data-pricing-per-1000-tracking-events]").value || 0.01;
 
                 function getVal(field) {
                   return parseInt(pricingForm[field].value);
                 }
                 function updatePricingResult() {
                   var dailyEvents = getVal("dailyVisitors") * (getVal("pageViewsPerVisit") + getVal("specialEventsPerVisit"));
-                  var annualPrice = Math.max(5, 0.01 * (dailyEvents * 365) / 1000);
+                  var annualPrice = Math.max(pricePerDomain, pricePer1000TrackingEvents * (dailyEvents * 365) / 1000);
                   result.innerText = annualPrice.toFixed(2);
                 }
 
@@ -84,7 +96,7 @@
         <div class="card__actions">
           <div class="spacer"></div>
           <a class="button button--dashed button--dark" href="signup">
-            Get started
+            {{ include.text_content.pricing_form_cta }}
           </a>
         </div>
       </div>
