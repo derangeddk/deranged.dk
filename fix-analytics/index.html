@@ -2,16 +2,15 @@
 title: "Fix Analytics: The fastest and cheapest way to stay GDPR-compliant"
 layout: fix-analytics-page
 lang: "en_us"
-inter:
-  en_us:
-    hero:
-      title: "heheh"
-  da_dk:
-    title: "yooooo"
+text_content:
+  hero:
+    title: The <em class="heading__emphasis text--fancy text__fastest--fancy">fastest</em> and <em class="heading__emphasis text--fancy text__cheapest--fancy">cheapest</em> way to stay GDPR-compliant
+    subtitle: for users of Google Analytics
+    usp1: <strong>75-90% cheaper</strong> than comparable alternatives
+    usp2: <strong>10 minute</strong><br>setup
+    usp3: Keep your <strong>analytics history</strong> when UA shuts down
 ---
-{% assign content = page.inter[page.lang] %}
-
-{% include fix-analytics-hero.html text=content.hero %}
+{% include fix-analytics-hero.html text_content=page.text_content.hero %}
 <div class="container">
   {% include fix-analytics-risk-and-price.html %}
   {% include fix-analytics-how-we-do-it.html %}

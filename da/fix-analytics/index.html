@@ -2,17 +2,15 @@
 title: Bliv GDPR-compliant med Fix Google Analytics
 layout: fix-analytics-page
 lang: "da_dk"
-inter:
-  en_us:
-    hero:
-      title: "heheh"
-  da_dk:
-    hero:
-      title: "yooooo"
+text_content:
+  hero:
+    title: Den <em class="heading__emphasis text--fancy text__fastest-da--fancy">hurtigste</em> og <em class="heading__emphasis text--fancy text__cheapest-da--fancy">billigste</em> måde at forblive GDPR-compliant
+    subtitle: for Google Analytics brugere
+    usp1: <strong>75-90% billigere</strong> end sammenlignelige alternativer
+    usp2: <strong>10 minutters</strong><br>opsætning
+    usp3: Behold din <strong>analytics historik</strong> når UA lukker ned
 ---
-{% assign content = page.inter[page.lang] %}
-
-{% include fix-analytics-hero.html text=content.hero %}
+{% include fix-analytics-hero.html text_content=page.text_content.hero %}
 <div class="container">
   {% include fix-analytics-risk-and-price.html %}
   {% include fix-analytics-how-we-do-it.html %}
