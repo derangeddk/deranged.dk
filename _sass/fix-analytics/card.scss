@@ -1,0 +1,140 @@
+.card {
+    border-radius: $border-radius;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    background: white;
+    box-shadow: $overlay-shadow, $plastic-material-shadow;
+    position: relative;
+}
+
+.card__body {
+    padding: 1rem 1.25rem;
+    display: flex;
+    flex-direction: column;
+}
+
+.card__icon {
+    position: absolute;
+    right: -4.75rem;
+    top: -2.75rem;
+    user-select: none;
+    text-shadow: -2px 4px 5px rgba(0,0,0,0.35);
+    width: 7rem;
+    height: 7rem;
+    z-index: -1;
+    opacity: 0.3;
+}
+
+.card__icon-image {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.card__header {
+    font-weight: 400;
+    align-self: flex-start;
+    margin-bottom: 1rem;
+}
+
+.card__text {
+    p+p {
+        margin-top: 1rem;
+    }
+}
+
+.card__actions {
+    display: flex;
+    flex-direction: row;
+    padding: 1rem 1.25rem;
+}
+
+.card--dark {
+    color: white;
+    background-color: #2c3e50;
+    background-image: linear-gradient(200deg, $blue-gradient-light 50%, $blue-gradient-dark);
+    border-radius: 0;
+    box-shadow: $overlay-shadow;
+
+    .card__header {
+        background: white;
+        box-shadow: $overlay-shadow, $plastic-material-shadow;
+        color: $font-off-black;
+        padding: 0.75rem 1.75rem;
+        padding-right: 3.5rem;
+        border-radius: $border-radius $border-radius 3rem $border-radius;
+        margin-top: -1.25rem;
+        margin-left: -1.5rem;
+        margin-bottom: 1.25rem;
+        min-width: 50%;
+    }
+
+    .card__actions {
+        background-image: linear-gradient(270deg, rgba(255,230,230,0.09) 0%, transparent 50%, transparent);
+        position: relative;
+
+        &:before {
+            content: '';
+            height: 1px;
+            background-image: linear-gradient(270deg, rgba(255,255,255,0.1) 10%, transparent 90%, transparent);
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+        }
+    }
+}
+
+.card__usp {
+    padding: 2rem;
+    display: grid;
+
+    @media(min-width: $width-md) {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+.card__usp--4-rows {
+    @media(min-width: $width-md) {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+.card__usp-item {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px 0;
+
+    @media(min-width: $width-md) {
+        padding: 0 40px;
+    }
+
+    @media(max-width: $width-sm) {
+        &:first-of-type {
+            padding-top: 0;
+        }
+
+        &:last-of-type {
+            padding-bottom: 0;
+        }
+    }
+
+    // Add seperators between elements
+    &+& {
+        border-top: 1px solid $border-grey;
+
+        @media(min-width: $width-md) {
+            border-top: none;
+            border-left: 1px solid $border-grey;
+        }
+    }
+}
+
+.card__usp-title {
+    width: 100%;
+    font-weight: 400;
+    text-align: center;
+}

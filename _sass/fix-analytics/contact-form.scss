@@ -1,0 +1,151 @@
+// OLD Signup form styling. Should be refactored/deleted when we have the time
+
+.contact-form {
+  width: 100%;
+  max-width: 550px;
+  position: relative;
+
+  // Use regular text color because the link color is too light to be used here.
+  a {
+      color: inherit;
+  }
+
+  label {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      margin-top: 10px;
+      margin-bottom: 10px;
+  }
+
+  label > span {
+      font-size: 0.8em;
+  }
+
+  input[type=text],
+  input[type=number],
+  input[type=password],
+  input[type=tel],
+  input[type=email],
+  select {
+      width: 100%;
+      padding: 8px;
+      font-family: inherit;
+      font-size: 0.9em;
+  }
+
+  textarea {
+      width: 100%;
+      height: 150px;
+      resize: none;
+      font-family: inherit;
+      padding: 8px;
+      font-size: 0.9em;
+
+      @media (max-width: 539px) {
+          height: 210px;
+      }
+  }
+
+  .checkbox-container {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      margin-top: 20px;
+      margin-bottom: 20px;
+
+      input[type=checkbox] {
+          margin-left: 10px;
+      }
+  }
+
+  .two-col-inputs {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-gap: 10px;
+      margin-bottom: 10px;
+
+      @media (max-width: 539px) {
+          display: block;
+      }
+
+      label {
+          margin-bottom: 0;
+      }
+  }
+}
+
+.honeypot {
+  margin: 0;
+  height: 0;
+  box-sizing: border-box;
+  overflow: hidden;
+  opacity: 0;
+  position: absolute;
+}
+
+.contact-form-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(27,43,58,0.9);
+  color: white;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.8em;
+  font-weight: 200;
+  display: flex;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.contact-form-overlay-clickthrough {
+  display: none;
+}
+
+.contact-form-overlay-visible {
+  opacity: 1;
+}
+
+.contact-form-overlay__message {
+  text-align: center;
+  display: none;
+}
+
+.contact-form-overlay__message--success {
+  .contact-form-overlay--success & {
+      display: block;
+  }
+}
+
+.contact-form-overlay__message--success-with-redirect {
+  .contact-form-overlay--success-with-redirect & {
+      display: block;
+  }
+}
+
+.contact-form-overlay__message--error {
+  .contact-form-overlay--error & {
+      display: block;
+  }
+}
+
+.contact-form-overlay__message--awaiting {
+  .contact-form-overlay--awaiting & {
+      display: block;
+  }
+}
+
+.contact-form__navigation {
+  margin-top: 10px;
+}
+
+.contact-form__navigation-item {
+  text-decoration: none;
+
+  &:hover {
+      text-decoration: underline;
+  }
+}

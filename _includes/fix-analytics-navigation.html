@@ -1,0 +1,22 @@
+{% assign signup_text = "Sign up" %}
+
+{% if include.lang == "da_dk" %}
+    {% assign signup_text = "Køb nu" %}
+    {% assign lang = "/da" %}
+{% endif %}
+
+<nav class="navigation">
+  <div class="container row f-wrap f-align-center">
+    <a class="logo" href="{{lang}}/fix-analytics/">
+      Fix<br />Analytics<br />
+      <span class="logo__deranged-attribution">by deranged</span>
+    </a>
+    <div class="spacer"></div>
+    <a
+      class="button button--dashed button--dark"
+      href="{{lang}}/fix-analytics/signup/"
+    >
+      {{ signup_text }}
+    </a>
+  </div>
+</nav>

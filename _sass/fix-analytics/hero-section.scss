@@ -1,0 +1,33 @@
+.hero-section {
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-section__background {
+  z-index: -1;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-image:
+    linear-gradient(to bottom, transparent, $off-white 85%),
+    url(/fix-analytics/screen-image-by-markus-winkler.jpg);
+  background-position: top;
+  background-repeat: no-repeat;
+}
+
+.hero-section__background--fixed {
+  background-attachment: fixed;
+}
+
+.hero-section__content {
+  padding-top: 50px;
+  padding-bottom: 80px;
+  position: relative;
+  z-index: 1;
+
+  @media(min-width: $width-md) {
+    padding-top: 100px;
+    padding-bottom: 170px;
+  }
+}

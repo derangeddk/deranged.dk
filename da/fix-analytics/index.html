@@ -1,0 +1,44 @@
+---
+title: Bliv GDPR-compliant med Fix Google Analytics
+layout: fix-analytics-page
+lang: "da_dk"
+text_content:
+  hero:
+    title: Den <em class="heading__emphasis text--fancy text__fastest-da--fancy">hurtigste</em> og <em class="heading__emphasis text--fancy text__cheapest-da--fancy">billigste</em> måde at forblive GDPR-compliant
+    subtitle: for Google Analytics brugere
+    usp1: <strong>75-90% billigere</strong> end sammenlignelige alternativer
+    usp2: <strong>10 minutters</strong><br>opsætning
+    usp3: Behold din <strong>analytics historik</strong> når UA lukker ned
+  risk_and_price:
+    title_start: Undgå at få<br>
+    title_big: bøder
+    body: TODO
+    pricing_title: Priser
+    pricing_body1: Bruger prisen for proxy på <strong>0,07 kr per 1000 tracking events</strong>
+    pricing_body2: Der er en minimumsbetaling på 37 kr pr. domæne pr. år.
+    pricing_tooltip: A tracking event is usually a page visit, but you may also be tracking special events in order to gather information on user behavior on your site.
+    pricing_form_title: Årlig omkostning for dit domæne
+    pricing_form_based_on: baseret på
+    pricing_form_daily_visitors: Daglige besøgende
+    pricing_form_avg_views: Gennemsnit sidevisninger per besøg
+    pricing_form_avg_special_events: Gennemsnit special events per besøg
+    pricing_form_cta: Kom i gang
+  dandomain_pitch:
+    title: Bruger du DanDomain Webshop?
+    body: Læs vores step-by-step guide til hvordan du bruger Fix Analytics på din DanDomain webshop.
+    cta: Gå til guide
+    aside_title: Brug for on-prem løsninger?
+    aside_body: Vi tilbyder kompetivitve løsninger til on-premise proxying eller matomo hosting, inklusiv migration af data. Hvis du vil høre mere så <a href="mailto:get@deranged.dk">kontakt os</a>
+pricing:
+  currency: DKK
+  per_domain: 37
+  per_1000_tracking_events: 0.7
+---
+{% include fix-analytics-hero.html text_content=page.text_content.hero %}
+<div class="container">
+  {% include fix-analytics-risk-and-price.html text_content=page.text_content.risk_and_price pricing=page.pricing %}
+  {% include fix-analytics-dandomain-pitch.html text_content=page.text_content.dandomain_pitch %}
+  <!-- {% include fix-analytics-how-we-do-it.html %}
+  {% include fix-analytics-how-to-set-up.html %}
+  {% include fix-analytics-coming-soon.html %} -->
+</div>

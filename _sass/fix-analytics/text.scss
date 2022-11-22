@@ -1,0 +1,148 @@
+.heading {
+  font-weight: 600;
+}
+
+.heading__emphasis {
+  font-weight: 800;
+  font-style: normal;
+}
+
+.heading--x-small {
+  font-size: 1.25rem;
+
+  @media(min-width: $width-md) {
+    font-size: 1.5rem;
+  }
+}
+
+.heading--small {
+  font-size: 1.5rem;
+
+  @media(min-width: $width-md) {
+    font-size: 2rem;
+  }
+}
+
+.heading--medium {
+  font-size: 1.75rem;
+
+  @media(min-width: $width-md) {
+    font-size: 3rem;
+  }
+}
+
+.heading--big {
+  font-size: 2rem;
+
+  @media(min-width: $width-md) {
+    font-size: 4rem;
+  }
+}
+
+.heading--huge {
+  font-size: 4rem;
+
+  @media(min-width: $width-md) {
+    font-size: 6rem;
+  }
+}
+
+.heading--humongous {
+  font-size: 7rem;
+
+  @media(min-width: $width-md) {
+    font-size: 9rem;
+  }
+}
+
+.heading--light {
+  font-weight: 400;
+}
+
+.text--fancy {
+  //outline: 1px solid blue;
+  position: relative;
+  z-index: 2;
+  display: inline-block;
+
+  &:after,
+  &:before {
+    line-height: inherit;
+    position: absolute;
+    z-index: -2;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    color: transparent;
+    -webkit-text-stroke-width: 1px;
+    display: block;
+    white-space: pre-wrap;
+  }
+
+  &::before {
+    -webkit-text-stroke-color: rgb(40,255,40);
+    transform: translate(8px,8px);
+  }
+
+  &::after {
+    //outline: 1px solid rgba(255,0,0,0.5);
+    -webkit-text-stroke-color: rgb(255,80,80);
+    transform: translate(4px,4px);
+  }
+}
+
+.text__fastest--fancy:before,
+.text__fastest--fancy:after {
+  content: 'fastest';
+}
+
+.text__fastest-da--fancy:before,
+.text__fastest-da--fancy:after {
+  content: 'hurtigste';
+}
+
+.text__cheapest--fancy:before,
+.text__cheapest--fancy:after {
+  content: 'cheapest';
+}
+
+.text__cheapest-da--fancy:before,
+.text__cheapest-da--fancy:after {
+  content: 'billigste';
+}
+
+.text--large {
+  font-size: 2rem;
+}
+
+.text--huge {
+  font-size: 3rem;
+}
+
+.text--small {
+  font-size: 0.8rem;
+}
+
+.text--centered {
+  text-align: center !important;
+  width: 100%;
+}
+
+.text---right {
+  text-align: right !important;
+}
+
+.text--shiny {
+  background-clip: text;
+  -moz-background-clip: text;
+  -webkit-background-clip: text;
+  background-image: linear-gradient(200deg, $font-off-black 50%, $blue-gradient-dark);
+  font-weight: 900;
+  -webkit-text-fill-color: transparent;
+	-moz-text-fill-color: transparent;
+}
+
+.text--line-height-90 {
+  line-height: 90%;
+}
