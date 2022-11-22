@@ -338,7 +338,7 @@
         const redirectNameElement = document.querySelector("[data-redirect-name]");
 
         const params = new Proxy(new URLSearchParams(window.location.search), { get: (searchParams, prop) => searchParams.get(prop) });
-        const { redirectUrl, redirectName } = params;
+        const { redirectUrl, redirectName, referrer } = params;
 
         if (redirectUrl) {
             redirectNameElement.innerText = redirectName;
@@ -399,7 +399,8 @@
                 consent: {
                     "useLogoAndName": form.useLogoAndName.checked,
                     "contactForProfiling": form.contactForProfiling.checked
-                }
+                },
+                referrer
             });
 
             return false;
