@@ -17,14 +17,7 @@
           </h2>
           <div class="card__text">
             <p>
-              {{ include.text_content.pricing_body1 }}
-              <span class="tooltip icon-tooltip" data-tooltip title="{{ include.text_content.pricing_tooltip }}">
-                <span class="icon-tooltip__icon" data-tooltip-activator>?</span>
-                <span class="tooltip__text" data-tooltip-tip>
-                  {{ include.text_content.pricing_tooltip }}
-                </span>
-              </span>
-              .
+              {{ include.text_content.pricing_body1 }}*.
               {{ include.text_content.pricing_body2 }}
             </p>
           </div>
@@ -92,6 +85,9 @@
               })();
             </script>
           </div>
+          <p class="text--small u-mt-md">
+            * {{ include.text_content.pricing_tooltip }}
+          </p>
         </div>
         <div class="card__actions">
           <div class="spacer"></div>
