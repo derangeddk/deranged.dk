@@ -1,0 +1,45 @@
+.dialog {
+  max-width: 560px;
+  width: 100%;
+  max-height: 100%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: $border-radius;
+  box-shadow: $overlay-shadow, $plastic-material-shadow;
+  border: none;
+  background-color: white;
+  padding: 0;
+
+  @media(min-width: $width-md) {
+    max-height: 560px;
+  }
+}
+
+.dialog__body {
+  padding: 1rem 1.25rem;
+}
+
+.dialog__actions {
+  padding: 1rem 1.25rem;
+  position: sticky;
+  bottom: 0;
+  left: 0;
+  display: flex;
+  justify-content: flex-end;
+  background-color: white;
+  border-top: 1px solid $border-grey;
+  gap: 10px;
+}
+
+// Overlay/backdrop styling
+.dialog::backdrop {
+  background: repeating-linear-gradient(
+    45deg,
+    rgba(0, 0, 0, 0.2),
+    rgba(0, 0, 0, 0.2) 1px,
+    rgba(0, 0, 0, 0.3) 1px,
+    rgba(0, 0, 0, 0.3) 20px
+  );
+  backdrop-filter: blur(3px);
+}
