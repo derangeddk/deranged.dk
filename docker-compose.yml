@@ -1,0 +1,8 @@
+services:
+  web:
+    image: jekyll/jekyll:3.8.3
+    command: jekyll serve --watch --force_polling --verbose --livereload
+    ports: 
+      - 4000:4000
+    volumes:
+      - .:/srv/jekyll
