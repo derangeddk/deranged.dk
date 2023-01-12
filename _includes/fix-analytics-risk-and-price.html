@@ -21,7 +21,7 @@
               {{ include.text_content.pricing_body2 }}
             </p>
           </div>
-          <div class="card__text mt-4">
+          <div class="card__text mt-sm">
             <h3>
               {{ include.text_content.pricing_form_title }}
             </h3>
@@ -33,7 +33,7 @@
             <div class="text--small text--centered">
               {{ include.text_content.pricing_form_based_on }}
             </div>
-            <form name="pricing" class="row f-justify-space-between f-align-center">
+            <form name="pricing" class="flex justify-content--space-between align-items--center">
               <div>
                 <label class="labelled-field">
                   <span class="labelled-field__label">
@@ -52,7 +52,9 @@
                   </span>
                   <input type="number" name="pageViewsPerVisit" value="4" class="labelled-field__input input--number input--big input--short">
                 </label>
-                <div class="text--large text--centered f-self-stretch">+</div>
+                <div class="text--large text--centered">
+                  +
+                </div>
                 <label class="labelled-field">
                   <span class="labelled-field__label">
                     {{ include.text_content.pricing_form_avg_special_events }}
@@ -85,7 +87,7 @@
               })();
             </script>
           </div>
-          <p class="text--small u-mt-md">
+          <p class="text--small mt-md">
             * {{ include.text_content.pricing_tooltip }}
           </p>
         </div>
