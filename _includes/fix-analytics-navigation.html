@@ -7,6 +7,14 @@
     {% assign change_lang_text = "🇬🇧 English" %}
 {% endif %}
 
+{%- capture switch_lang_url -%}
+  {%- if lang != '/da' -%}
+      /da{{ page.url }}
+  {%- else -%}
+    {{ page.url | remove_first: "/da" }}
+  {% endif %}
+{%- endcapture -%}
+
 <nav class="navigation">
   <div class="container flex flex-wrap align-items--center">
     <a class="logo" href="{{lang}}/fix-analytics/">
@@ -16,7 +24,7 @@
     <div class="spacer"></div>
     <a
       class="mr-sm"
-      href="{% if lang != '/da' %}/da{% endif %}{{page.url | remove: "/da"}}"
+      href="{{switch_lang_url}}"
     >
       {{ change_lang_text }}
     </a>
