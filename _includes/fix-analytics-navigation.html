@@ -1,17 +1,25 @@
 {% assign signup_text = "Sign up" %}
+{% assign change_lang_text = "🇩🇰 Danish" %}
 
 {% if include.lang == "da_dk" %}
     {% assign signup_text = "Køb nu" %}
     {% assign lang = "/da" %}
+    {% assign change_lang_text = "🇬🇧 English" %}
 {% endif %}
 
 <nav class="navigation">
-  <div class="container flex flex-wrap flex-align--center">
+  <div class="container flex flex-wrap align-items--center">
     <a class="logo" href="{{lang}}/fix-analytics/">
       Fix<br />Analytics<br />
       <span class="logo__deranged-attribution">by deranged</span>
     </a>
     <div class="spacer"></div>
+    <a
+      class="mr-sm"
+      href="{% if lang != '/da' %}/da{% endif %}{{page.url | remove: "/da"}}"
+    >
+      {{ change_lang_text }}
+    </a>
     <a
       class="button button--dashed button--dark"
       href="{{lang}}/fix-analytics/signup/"
