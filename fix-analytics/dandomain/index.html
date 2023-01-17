@@ -1,0 +1,147 @@
+---
+title: "Fix Analytics: The fastest and cheapest way to stay GDPR-compliant"
+layout: fix-analytics-page
+lang: "en_us"
+---
+<div class="hero-section">
+  <div class="hero-section__background"></div>
+  <div class="hero-section__content container">
+    <h1 class="heading heading--big text--shiny">
+      How to use Fix Analytics on your DanDomain webshop
+    </h1>
+    <p class="mt-sm">
+      Here you will find a step-by-step guide on how to use Fix Analytics on your DanDomain webshop.
+    </p>
+  </div>
+</div>
+
+<div class="container mb-xl">
+  <section>
+    <h2 class="heading heading--small mb-sm" id="0">
+      Step 0: Buy a subscription for Fix Analytics
+    </h2>
+    <p>
+        You need to buy a subscription for your domain before you can use Fix Analytics.
+        When you have a subscription you can continue following this guide.
+    </p>
+
+    <div class="mt-sm">
+      <a data-signup-button class="button" href="/fix-analytics/signup?redirectUrl=/fix-analytics/dandomain%231&redirectName=DanDomain-guiden">
+        Buy Fix Analytics now
+      </a>
+    </div>
+
+    <h2 class="heading heading--small mb-sm mt-lg" id="1">
+      Step 1: Which version of the DanDomain Webshop do you use?
+    </h2>
+
+    <!-- Guide #1 -->
+    <details>
+      <summary class="button button--dashed heading heading--small" id="dandomain-webshop-guide">
+        DanDomain Webshop Guide
+      </summary>
+      <div class="card mt-sm">
+        <div class="card__body">
+          <h3 class="card__header heading--x-small" id="1a">
+            <strong>Step 1a:</strong> Log in and go to 'Apps'
+          </h3>
+          <p>
+            Log in on your DanDomain Webshop and click 'Apps' in the menu on the left.
+          </p>
+          <a class="mt-sm" href="/da/fix-analytics/dandomain/image-1a.jpg" target="_blank">
+            <img alt="dandomain guide image 1a" src="/da/fix-analytics/dandomain/image-1a.jpg" />
+          </a>
+        </div>
+      </div>
+
+      <div class="card mt-lg">
+        <div class="card__body">
+          <h3 class="card__header heading--x-small" id="2a">
+            <strong>Step 2a:</strong> Find the app 'Google Analytics' and click 'Settings'
+          </h3>
+          <p>
+            You might need to search around to find the link in the list.
+          </p>
+          <a class="mt-sm" href="/da/fix-analytics/dandomain/image-2a.jpg" target="_blank">
+            <img alt="dandomain guide image 2a" src="/da/fix-analytics/dandomain/image-2a.jpg" />
+          </a>
+        </div>
+      </div>
+
+      <div class="card mt-lg">
+        <div class="card__body">
+          <h3 class="card__header heading--x-small" id="3a">
+            <strong>Step 3a:</strong> Add the new settings
+          </h3>
+          <p>
+            Click 'Use proxy / transport url for Google Analytics' to show the field where you write 'https://ga-proxy.deranged.dk'.
+            Remember to click 'Save' afterwards.
+          </p>
+          <a class="mt-sm" href="/da/fix-analytics/dandomain/image-3a.jpg" target="_blank">
+            <img alt="dandomain guide image 3a" src="/da/fix-analytics/dandomain/image-3a.jpg" />
+          </a>
+        </div>
+      </div>
+    </details>
+
+
+    <!-- Guide #2 -->
+    <details class="mt-sm">
+      <summary class="button button--dashed heading heading--small" id="dandomain-classic-guide">
+        DanDomain Classic (Webshop8)
+      </summary>
+      <div class="card mt-sm">
+        <div class="card__body">
+          <h3 class="card__header heading--x-small" id="1b">
+            <strong>Step 1b:</strong> Log in and go to 'Shop settings'
+          </h3>
+          <p>
+            You will find it by clicking 'Settings' and then 'Shop Settings'.
+          </p>
+          <a class="mt-sm" href="/da/fix-analytics/dandomain/image-1b.jpg" target="_blank">
+            <img alt="dandomain guide image 1b" src="/da/fix-analytics/dandomain/image-1b.jpg" />
+          </a>
+        </div>
+      </div>
+
+      <div class="card mt-lg">
+        <div class="card__body">
+          <h3 class="card__header heading--x-small" id="2b">
+            <strong>Step 2b:</strong> Go to 'Tracking and Feeds'
+          </h3>
+          <p>
+            You will find the link in the middle of the page.
+          </p>
+          <a class="mt-sm" href="/da/fix-analytics/dandomain/image-2b.jpg" target="_blank">
+            <img alt="dandomain guide image 2b" src="/da/fix-analytics/dandomain/image-2b.jpg" />
+          </a>
+        </div>
+      </div>
+
+      <div class="card mt-lg">
+        <div class="card__body">
+          <h3 class="card__header heading--x-small" id="3b">
+            <strong>Step 3b:</strong> Insert new settings
+          </h3>
+          <p>
+            Under 'Tracking' you find the section 'Alternative analytics URL' where you will write 'https://ga-proxy.deranged.dk'.
+            Remember to click 'Save' afterwards.
+          </p>
+          <a class="mt-sm" href="/da/fix-analytics/dandomain/image-3b.jpg" target="_blank">
+            <img alt="dandomain guide image 3b" src="/da/fix-analytics/dandomain/image-3b.jpg" />
+          </a>
+        </div>
+      </div>
+    </details>
+  </section>
+</div>
+
+<script>
+    (function () {
+        const params = new Proxy(new URLSearchParams(window.location.search), { get: (searchParams, prop) => searchParams.get(prop) });
+        const { referrer } = params;
+        const signupButtonElement = document.querySelector("[data-signup-button]");
+
+        if (referrer) signupButtonElement.href += `&referrer=${referrer}`;
+    })();
+</script>
