@@ -6,8 +6,9 @@ title: 'Cases ____ deranged'
 {% include overlay_nav.html %}
 <style scoped>
     .hero {
-        margin: 15vh 0;
-        padding: 0;
+        max-width: 1200px;
+        margin: 15vh auto;
+        padding: 15px;
     }
     .hero__title {
         margin: 0;
@@ -26,31 +27,53 @@ title: 'Cases ____ deranged'
         text-align: left;
         font-size: 18px;
     }
+
     li + li {
         margin-top: 1rem;
     }
-    .cases__container {
-        max-width: 1200px;
-        width: 100%;
-        margin: 0 auto;
-        padding: 30px 15px;
-    }
-    .cases__container p,
-    .cases__container li {
+
+    .case p,
+    .case li {
         line-height: 1.35;
     }
-    .case {
-        margin-bottom: 120px
+    .cases {
+        display: grid;
+        gap: 20px;
+        padding: 15px;
+        background: rgb(44, 62, 80);
+        background-image: linear-gradient(160deg, rgb(44, 62, 80) 40%, rgb(69, 93, 117) 100%);
     }
+    @media(min-width: 1000px) {
+        .cases {
+            grid-template-columns: 1fr 1fr;
+        }
+    }
+
     .case__head {
-        display: flex;
+        display: grid;
+        height: 100%;
+        width: 100%;
+        gap: 10px;
         align-items: center;
-        gap: 50px;
+    }
+
+    @media(min-width: 1200px) {
+        .case__head {
+            grid-template-columns: 1fr 1fr 1fr;
+        }
+    }
+
+    .case__head--opposite-image-mode .case__intro {
+        order: 2;
     }
 
     .case__intro {
         width: 100%;
-        max-width: 500px;
+        height: 100%;
+        background: rgba(52, 73, 94, 1);
+        background-image: linear-gradient(rgba(52, 73, 94, 1), rgb(33, 51, 66));
+        padding: 30px 15px;
+        grid-column: span 2;
     }
 
     .case__teaser {
@@ -69,8 +92,9 @@ title: 'Cases ____ deranged'
     }
     .case__graphic {
         width: 100%;
+        height: 100%;
     }
-    @media(max-width: 1000px) {
+    @media(max-width: 1200px) {
         .case__graphic {
             display: none;
         }
@@ -89,8 +113,11 @@ title: 'Cases ____ deranged'
             grid-template-columns: 1fr 1fr;
         }
     }
+    .case__body {
+        display: none;
+    }
 </style>
-<div class="cases__container">
+<div class="cases__page">
     <section class="hero">
         <h1 class="hero__title">
             Cases
@@ -165,7 +192,9 @@ title: 'Cases ____ deranged'
         <div class="case" id="tech-scaleup-1">
             <div class="case__head">
                 <div class="case__intro">
-                    <h2>Tech Scaleup Company</h2>
+                    <h2 class="mt-0">
+                        Tech Scaleup Company
+                    </h2>
                     <!-- <img
                         src="/img/tech-company-logo-placeholder.jpg"
                         class="case__logo"
@@ -179,6 +208,9 @@ title: 'Cases ____ deranged'
                         technical skill-level of the employees, improving processes to unlock the full potential of the
                         developers, and focus work on the most important tasks in order to support scaling.
                     </p>
+                    <p>
+                        This case is anonymized. References available <a href="mailto:get@deranged.dk">by request</a>.
+                    </p>
                 </div>
                 <div class="case__graphic">
                     <img
@@ -189,9 +221,6 @@ title: 'Cases ____ deranged'
                 </div>
             </div>
             <div class="case__body">
-                <p>
-                    This case is anonymized. References available <a href="mailto:get@deranged.dk">by request</a>.
-                </p>
                 <h3 class="case__subheading">Summary</h3>
                 <div class="case__summary">
                     <ul>
@@ -271,7 +300,7 @@ title: 'Cases ____ deranged'
         </div>
 
         <div class="case" id="fischer-lighting">
-            <div class="case__head">
+            <div class="case__head case__head--opposite-image-mode">
                 <div class="case__intro">
                     <img
                         src="/img/fischer-lighting.png"
@@ -345,7 +374,7 @@ title: 'Cases ____ deranged'
             </div>
         </div>
         <div class="case" id="koebenhavns-stadsarkiv">
-            <div class="case__head">
+            <div class="case__head case__head--opposite-image-mode">
                 <div class="case__intro">
                     <img
                         src="/img/kbh-stadsarkiv.png"
