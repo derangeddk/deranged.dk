@@ -67,6 +67,8 @@ title: 'Cases ____ deranged'
     }
 
     .case__intro {
+        display: flex;
+        flex-direction: column;
         width: 100%;
         height: 100%;
         background: rgba(52, 73, 94, 1);
@@ -115,6 +117,23 @@ title: 'Cases ____ deranged'
     .case__body {
         display: none;
     }
+
+    .case__cta {
+        font-size: 20px;
+        color: white;
+        margin-top: auto;
+        margin-bottom: 0;
+    }
+    .case__cta::before {
+        content: "➟";
+    }
+    .case__cta:hover::before {
+        position: relative;
+        left: 2px;
+    }
+    .case__cta-link {
+        color: white;
+    }
 </style>
 <div class="cases__page">
     <section class="hero">
@@ -142,13 +161,11 @@ title: 'Cases ____ deranged'
                         piece of software for the shop, and focus on processes and integrations. We landed on Shopify as
                         the core webshop product.
                     </p>
-                    <ul>
-                        <li>
-                            <a href="https://marmarcopenhagen.dk" target="_blank">
-                                MarMar Copenhagen's webshop
-                            </a>
-                        </li>
-                    </ul>
+                    <p class="case__cta">
+                        <a class="case__cta-link" href="/cases/marmar-copenhagen/">
+                             Read more about this case
+                        </a>
+                    </p>
                 </div>
                 <div class="case__graphic">
                     <img
@@ -162,6 +179,11 @@ title: 'Cases ____ deranged'
                 <div class="case__summary">
                     <h3 class="case__subheading">Summary</h3>
                     <ul>
+                        <li>
+                            MarMar's needs were for a typical webshop, so we suggested using a standard (best in class)
+                            piece of software for the shop, and focus on processes and integrations. We landed on Shopify as
+                            the core webshop product.
+                        </li>
                         <li>
                             We integrated two webshops (for different markets) with Marmar's logistics partner and their
                             accounting system, allowing most orders to be fully processed without need for employee
@@ -191,7 +213,7 @@ title: 'Cases ____ deranged'
         <div class="case" id="tech-scaleup-1">
             <div class="case__head">
                 <div class="case__intro">
-                    <h2 class="mt-0">
+                    <h2 class="mt-0 mb-0">
                         Tech Scaleup Company
                     </h2>
                     <!-- <img
@@ -202,13 +224,21 @@ title: 'Cases ____ deranged'
                         A <strong>Nasdaq-listed scaleup</strong> was looking to strengthen their development team and capitalize on new
                         business opportunities.
                     </h2>
+                    <section class="customer-quote-section">
+                        <p class="quote-text">
+                            Working with Niels from deranged has been an educational pleasure. [...]
+                        </p>
+                        <p class="quotee">Mathias, Data Engineer & Scientist</p>
+                    </section>
                     <p>
-                        We integrated with the team, working closely with the CTO, and focused on increasing the
-                        technical skill-level of the employees, improving processes to unlock the full potential of the
-                        developers, and focus work on the most important tasks in order to support scaling.
+                        <em>
+                            This case is anonymized. References available <a href="mailto:get@deranged.dk">by request</a>.
+                        </em>
                     </p>
-                    <p>
-                        This case is anonymized. References available <a href="mailto:get@deranged.dk">by request</a>.
+                    <p class="case__cta">
+                        <a class="case__cta-link" href="/cases/scaleup">
+                            Read more about this case
+                        </a>
                     </p>
                 </div>
                 <div class="case__graphic">
@@ -223,6 +253,11 @@ title: 'Cases ____ deranged'
                 <h3 class="case__subheading">Summary</h3>
                 <div class="case__summary">
                     <ul>
+                        <li>
+                            We integrated with the team, working closely with the CTO, and focused on increasing the
+                            technical skill-level of the employees, improving processes to unlock the full potential of the
+                            developers, and focus work on the most important tasks in order to support scaling.
+                        </li>
                         <li>
                             We performed pair programming and individual coaching for developers of all experience levels;
                             leadership coaching for new tech leads; and presentations and workshops on software design and
