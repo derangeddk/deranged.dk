@@ -11,7 +11,7 @@ a {
     linear-gradient(
       to right,
       rgb(255,80,80),
-      rgba(0, 100, 200, 1),
+      rgba(40,255,40, 1),
   );
   background-size: 100% 2px, 0 3px;
   background-position: 100% 100%, 0 100%;
@@ -19,6 +19,6 @@ a {
   transition: background-size 400ms;
 
   &:hover {
-    background-size: 0 3px, 100% 3px;
+    background-size: 0 2px, 100% 3px;
   }
 }
