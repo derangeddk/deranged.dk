@@ -7,7 +7,7 @@
           {{ include.text_content.title_big }}
         </span>
       </h2>
-      {{ include.text_content.body }}
+      {{ include.text_content.body | markdownify }}
     </div>
     <aside class="aside-section__aside">
       <div class="card card--dark">
