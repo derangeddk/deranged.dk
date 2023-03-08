@@ -25,6 +25,7 @@
 
 .heading--medium {
   font-size: 1.75rem;
+  margin-bottom: 1rem;
 
   @media(min-width: $width-md) {
     font-size: 3rem;
@@ -33,6 +34,7 @@
 
 .heading--big {
   font-size: 2rem;
+  margin-bottom: 1rem;
 
   @media(min-width: $width-md) {
     font-size: 4rem;
@@ -125,4 +127,8 @@
 
 .text--line-height-90 {
   line-height: 90%;
+}
+
+p:not(:last-child) {
+  margin-bottom: 0.5rem;
 }
