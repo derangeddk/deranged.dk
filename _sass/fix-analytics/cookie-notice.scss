@@ -30,8 +30,8 @@
       padding: 4px 14px;
       box-sizing: border-box;
       cursor: pointer;
-      position: absolute;
-      right: 15px;
+      margin-left: auto;
+      display: block;
   }
 
   &.cookie-notice-hide {
