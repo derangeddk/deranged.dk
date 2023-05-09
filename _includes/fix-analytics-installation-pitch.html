@@ -1,13 +1,17 @@
 <section class="content-section">
   <div class="aside-section aside-section--reverse">
     <div class="aside-section__main mb-md">
-      <h2 class="heading heading--medium text--shiny">Easy installation</h2>
+      <h2 class="heading heading--medium text--shiny">
+        {{ include.text_content.easy_installation }}
+      </h2>
       <p class="heading heading--subtitle">
-        It takes just two lines of code to set up your installation.
+        {{ include.text_content.easy_installation_subtitle }}
       </p>
       <div class="image-with-action">
         <img class="image-with-action__image" src="/img/ga-install.png" alt="Two lines of code changed, showing all that is needed to install Fix Analytics">
-        <a href="{{ page.url }}installation/" class="button button--dark button--filled button--pop-under">See installation guide</a>
+        <a href="{{ page.url }}installation/" class="button button--dark button--filled button--pop-under">
+          {{ include.text_content.see_installation_guide }}
+        </a>
       </div>
     </div>
 
@@ -18,15 +22,10 @@
         </div-->
         <div class="card__body">
           <h3 class="card__header">
-            Need a plugin?
+            {{ include.text_content.plugins_header }}
           </h3>
           <div class="card__text">
-            <p>
-              We're working on plugin support for the most common content management systems (currently supporting <a href="{{ page.url }}dandomain/">Dandomain Webshops</a>).
-            </p>
-            <p>
-              If we don't support your CMS yet, feel free to send us an email on <a href="mailto:get+analytics@deranged.dk">get+analytics@deranged.dk</a> and we'll see if we can be of assistance.
-            </p>
+            {{ include.text_content.plugins_text }}
           </div>
         </div>
       </div>
