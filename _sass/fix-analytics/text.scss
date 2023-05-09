@@ -2,6 +2,17 @@
   font-weight: 600;
 }
 
+.heading--subtitle {
+  font-size: 1.2rem;
+  margin: -0.8rem 0 1rem;
+  font-weight: normal;
+}
+
+/* annoying override because of this p selector being more significant */
+p:not(:last-child).heading--subtitle {
+  margin: -0.8rem 0 1rem;
+}
+
 .heading__emphasis {
   font-weight: 800;
   font-style: normal;
@@ -25,7 +36,7 @@
 
 .heading--medium {
   font-size: 1.75rem;
-  margin-bottom: 1rem;
+  margin-bottom: 0.8rem;
 
   @media(min-width: $width-md) {
     font-size: 3rem;
