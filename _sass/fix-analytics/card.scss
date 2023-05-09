@@ -88,10 +88,11 @@
 
 .card__usp {
     padding: 2rem;
-    display: grid;
+    display: flex;
+    flex-direction: column;
 
     @media(min-width: $width-md) {
-        grid-template-columns: repeat(3, 1fr);
+        flex-direction: row;
     }
 }
 
@@ -102,6 +103,8 @@
 }
 
 .card__usp-item {
+    flex-basis: 0;
+    flex-grow: 1;
     display: flex;
     flex-direction: column;
     justify-content: center;
