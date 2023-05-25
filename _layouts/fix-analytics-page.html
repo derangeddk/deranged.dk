@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="{% if page.lang == 'da_dk' %}da{% else %}en{% endif %}">
 	<head>
+		<meta http-equiv="refresh" content="0;url=https://fixanalytics.eu{{ page.url | replace: '/fix-analytics', '' }}" />
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<title>{% if page.title %}{{ page.title }}{% else %}Fix Analytics{% endif %}</title>
