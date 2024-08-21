@@ -2,41 +2,9 @@
   --deranged-accent: #3b72ac;
   --deranged-text: #eaf1f7;
   --deranged-accent-2: #2e9dff;
-  --steel-blue: #3b99d9;
   --deranged-link: #abcaea;
   --black: #192024;
   --deranged-dark-blue: #2c3e50;
-  --steel-blue-2: #2c3e50;
-  --dark-khaki: #a8d069;
-  --medium-sea-green: #30ad64;
-  --light-sea-green: #25ccbf;
-  --light-sea-green-2: #20ac99;
-  --sandy-brown: #f8c740;
-  --goldenrod: #e2a62b;
-  --khaki: #face6a;
-  --sandy-brown-2: #e4b962;
-  --salmon: #fd7072;
-  --indian-red: #cf404d;
-  --tan: #d39f9a;
-  --dim-gray: #735260;
-  --indian-red-2: #af4173;
-  --brown: #822e50;
-  --tomato: #e64c40;
-  --firebrick: #bf3a30;
-  --salmon-2: #fc7d64;
-  --white-smoke: #ecf0f1;
-  --silver: #bec3c7;
-  --dim-gray-2: #49647b;
-  --dark-slate-gray: #2d3e4f;
-  --dark-slate-gray-2: #404047;
-  --white-smoke-2: #f0f0f0;
-  --white-smoke-3: #edeff2;
-  --cadet-blue: #668cad;
-  --pale-turquoise: #bfe0ff;
-  --light-sky-blue: #69b9ff;
-  --dodger-blue: #2e9dff;
-  --dim-gray-3: #676770;
-  --light-slate-gray: #8e8e9c;
 }
 
 .w-layout-blockcontainer {
@@ -144,7 +112,7 @@ p {
   font-weight: 500;
   line-height: 21px;
   text-decoration: none;
-  transition: color .1s ease-in, background-color .1s ease-in;
+  transition: color 0.1s ease-in, background-color 0.1s ease-in;
   display: inline-block;
   box-shadow: 0 2px 3px #0003;
 }
@@ -171,7 +139,7 @@ p {
 
 .navigation-link {
   color: var(--deranged-text);
-  transition: all .3s ease-in-out;
+  transition: all 0.3s ease-in-out;
 }
 
 .navigation-link:hover {
@@ -281,7 +249,7 @@ p {
   font-weight: 300;
   line-height: 21px;
   text-decoration: none;
-  transition: background-color .3s, border .3s, color .3s;
+  transition: background-color 0.3s, border 0.3s, color 0.3s;
   display: inline-block;
 }
 
@@ -453,7 +421,8 @@ p {
   font-family: Roboto;
 }
 
-.heading-5, .heading-6 {
+.heading-5,
+.heading-6 {
   color: var(--deranged-text);
   text-transform: none;
   font-weight: 500;
@@ -608,7 +577,7 @@ p {
 .container-4 {
   z-index: 1;
   background-color: var(--deranged-dark-blue);
-  opacity: .5;
+  opacity: 0.5;
   mix-blend-mode: darken;
   max-width: 1100px;
   height: 324px;
@@ -659,7 +628,11 @@ p {
   display: grid;
 }
 
-.container-6, .container-7, .container-8, .container-9, .container-10 {
+.container-6,
+.container-7,
+.container-8,
+.container-9,
+.container-10 {
   max-width: 1100px;
 }
 
@@ -672,7 +645,6 @@ p {
 
 @media screen and (max-width: 991px) {
   .button {
-    background-color: var(--steel-blue);
     vertical-align: baseline;
     mix-blend-mode: normal;
     border-radius: 20px;
@@ -690,10 +662,6 @@ p {
     color: #fff;
   }
 
-  .hamburger-button.w--open, .navigation-menu {
-    background-color: #3b99d9;
-  }
-
   .brand-text {
     text-transform: lowercase;
     font-weight: 400;
@@ -701,7 +669,6 @@ p {
   }
 
   .hero-section.centered {
-    background-image: linear-gradient(100deg, #2c3e50, #455d75 100%, #fff);
     padding-top: 144px;
     padding-bottom: 144px;
   }
@@ -774,5 +741,3 @@ p {
     width: 35%;
   }
 }
-
-
