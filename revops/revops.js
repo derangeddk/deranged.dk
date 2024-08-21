@@ -1,3 +1,5 @@
+blogPosts = {};
+
 async function populateServices() {
   const request = new Request("services.json");
 
@@ -45,4 +47,38 @@ async function populateServices() {
   container.appendChild(servicesList);
 }
 
+async function populateBlogPosts() {
+  const request = new Request("blog-posts.json");
+
+  const response = await fetch(request);
+  blogPosts = await response.json();
+}
+
+async function getLatestBlogPosts() {
+  await populateBlogPosts();
+
+  const blogPostsList = document.getElementById("recent-blog-posts");
+  const latestBlogPost = document.getElementById("post-preview");
+
+  blogPosts.forEach((post) => {
+    const clone = latestBlogPost.content.cloneNode(true);
+
+    const blogPostLink = clone.getElementById("post-preview-link");
+    blogPostLink.href = post.Slug;
+
+    const blogPostThumbnail = clone.getElementById("post-preview-thumbnail");
+    blogPostThumbnail.src = post["Thumbnail image"];
+
+    const blogPostTitle = clone.getElementById("post-preview-title");
+    blogPostTitle.innerHTML = post.Name;
+
+    const blogPostSummary = clone.getElementById("post-preview-summary");
+    blogPostSummary.innerHTML = post["Post Summary"];
+
+    blogPostsList.appendChild(clone);
+  });
+}
+
 populateServices();
+
+getLatestBlogPosts();

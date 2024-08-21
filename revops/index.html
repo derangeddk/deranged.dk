@@ -118,24 +118,30 @@
           </div>
         </div>
         <div class="latest-posts w-dyn-list">
-          <div role="list" class="latest-posts-list w-dyn-items">
-            <div role="listitem" class="post-preview w-dyn-item">
-              <a href="#" class="post-link-block w-inline-block">
+          <div
+            role="list"
+            class="latest-posts-list w-dyn-items"
+            id="recent-blog-posts"
+          >
+            <template id="post-preview" class="post-preview w-dyn-item">
+              <a
+                href="#"
+                class="post-link-block w-inline-block"
+                id="post-preview-link"
+              >
                 <div class="div-block-2">
                   <img
                     src="https://d3e54v103j8qbb.cloudfront.net/plugins/Basic/assets/placeholder.60f9b1840c.svg"
                     loading="lazy"
                     alt=""
-                    class="post-thumbnail w-dyn-bind-empty"
+                    class="post-thumbnail"
+                    id="post-preview-thumbnail"
                   />
-                  <h6 class="post-preview-title w-dyn-bind-empty"></h6>
-                  <p class="post-summary w-dyn-bind-empty"></p>
+                  <h6 class="post-preview-title" id="post-preview-title"></h6>
+                  <p class="post-summary" id="post-preview-summary"></p>
                 </div>
               </a>
-            </div>
-          </div>
-          <div class="w-dyn-empty">
-            <div>No items found.</div>
+            </template>
           </div>
         </div>
         <a href="#" class="button blog-button">Read more posts here</a>
