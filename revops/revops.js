@@ -31,9 +31,17 @@ async function populateBlogPosts() {
   var unorderedBlogPosts = await response.json();
 
   blogPosts = unorderedBlogPosts.sort(function (a, b) {
-    if (new Date(a.Date) == new Date(b.Date)) return 0;
-    if (new Date(a.Date) < new Date(b.Date)) return -1;
-    if (new Date(a.Date) > new Date(b.Date)) return 1;
+    const aDate = new Date(a.Date);
+    const bDate = new Date(b.Date);
+    if (aDate == bDate) {
+      return 0;
+    }
+    if (aDate < bDate) {
+      return -1;
+    }
+    if (aDate > bDate) {
+      return 1;
+    }
   });
 
   return blogPosts;
