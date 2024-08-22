@@ -51,16 +51,26 @@ async function populateBlogPosts() {
   const request = new Request("blog-posts.json");
 
   const response = await fetch(request);
-  blogPosts = await response.json();
+  var unorderedBlogPosts = await response.json();
+
+  blogPosts = unorderedBlogPosts.sort(function (a, b) {
+    if (new Date(a.Date) == new Date(b.Date)) return 0;
+    if (new Date(a.Date) < new Date(b.Date)) return -1;
+    if (new Date(a.Date) > new Date(b.Date)) return 1;
+  });
+
+  return blogPosts;
 }
 
 async function getLatestBlogPosts() {
-  await populateBlogPosts();
+  var latestBlogPosts = await populateBlogPosts();
+
+  latestBlogPosts = latestBlogPosts.slice(0, 3);
 
   const blogPostsList = document.getElementById("recent-blog-posts");
   const latestBlogPost = document.getElementById("post-preview");
 
-  blogPosts.forEach((post) => {
+  latestBlogPosts.forEach((post) => {
     const clone = latestBlogPost.content.cloneNode(true);
 
     const blogPostLink = clone.getElementById("post-preview-link");
