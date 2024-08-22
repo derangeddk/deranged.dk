@@ -53,11 +53,12 @@ h3 {
 }
 
 h4 {
+  text-align: left;
   margin-top: 0;
-  margin-bottom: 10px;
+  margin-bottom: 0;
   font-size: 18px;
-  font-weight: 700;
-  line-height: 24px;
+  font-weight: 500;
+  line-height: 20px;
 }
 
 h5 {
@@ -114,71 +115,25 @@ p {
   border-style: none;
 }
 
-.hero-section {
-  padding-top: 242px;
-  padding-bottom: 242px;
-}
-
-.hero-section.centered {
-  text-align: center;
-  background-color: #446280;
-  background-image: linear-gradient(90deg, #2c3e50 30%, #455d75 90%);
-  padding-top: 280px;
-  padding-bottom: 280px;
-}
-
-.hero-heading {
-  color: #fff;
-  letter-spacing: 4px;
-  text-transform: uppercase;
-  margin-bottom: 30px;
-  font-size: 50px;
-  font-weight: 300;
-  line-height: 50px;
-}
-
-.hero-subheading {
-  color: #fff;
-  letter-spacing: 3px;
-  text-transform: uppercase;
-  margin-bottom: 40px;
-  font-size: 25px;
-  font-weight: 300;
-  line-height: 25px;
-}
-
 .section-heading {
   color: var(--deranged-text);
   margin-top: 0;
   margin-bottom: 16px;
-}
-
-.section-heading.centered {
-  color: var(--deranged-text);
-  text-align: center;
+  text-align: left;
   letter-spacing: 1px;
   text-transform: none;
   font-size: 36px;
   font-weight: 700;
 }
 
-.section-heading.centered.white {
-  color: #fff;
-}
-
-.section-subheading.center {
+.section-subheading {
   color: var(--deranged-text);
-  text-align: center;
+  text-align: left;
   letter-spacing: 1px;
   text-transform: none;
   font-size: 18px;
   font-weight: 400;
   line-height: 24px;
-}
-
-.section-subheading.center.off-white {
-  color: #e8e8e8;
-  padding-bottom: 0;
 }
 
 .section-title-group {
@@ -399,6 +354,12 @@ p {
   justify-content: center;
   max-width: 1100px;
   display: flex;
+  flex-wrap: wrap;
+}
+
+.client_logo {
+  margin-right: 20px;
+  max-height: 70px;
 }
 
 .paragraph-7 {
@@ -484,12 +445,7 @@ p {
 }
 
 @media screen and (max-width: 991px) {
-  .hero-section.centered {
-    padding-top: 144px;
-    padding-bottom: 144px;
-  }
-
-  .section-subheading.center {
+  .section-subheading {
     text-transform: none;
     line-height: 1.4;
   }
@@ -509,20 +465,6 @@ p {
     margin-bottom: 30px;
   }
 
-  .hero-section.centered {
-    padding-top: 119px;
-    padding-bottom: 119px;
-  }
-
-  .hero-heading {
-    margin-bottom: 15px;
-    font-size: 50px;
-  }
-
-  .hero-subheading {
-    font-size: 18px;
-  }
-
   .grid-image {
     width: 20%;
     padding: 20px;
@@ -539,12 +481,7 @@ p {
 }
 
 @media screen and (max-width: 479px) {
-  .hero-section.centered {
-    padding-top: 60px;
-    padding-bottom: 60px;
-  }
-
-  .section-subheading.center {
+  .section-subheading {
     line-height: 30px;
   }
 

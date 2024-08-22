@@ -1,6 +1,6 @@
 [
   {
-    "Name": "Pipedrive CRM",
+    "Name": "Pipedrive as a Service",
     "Slug": "pipedrive",
     "Collection ID": "66c31735e6b629b0c680789b",
     "Locale ID": "66c31735a489578abdbf26ee",
@@ -9,13 +9,13 @@
     "Updated On": "Mon Aug 19 2024 10:04:03 GMT+0000 (Coordinated Universal Time)",
     "Published On": "",
     "Icon": "https://uploads-ssl.webflow.com/66c31735a489578abdbf26f1/66c31798be4b2f0a05bc84d2_image11.jpeg",
-    "Short description": "Our partnerships' with leading CRM providers Pipedrive, means we can guide you and your team through the decision making process through setup and onboarding, alongside helping you define your team's sales process.Choose Pipedrive,The peoples' favourite..Setup Timeframe 2 - 4 weeks",
+    "Short description": "We are here to support your Pipedrive journey with expert implementation, onboarding and sales process optimisation. Our partnership with Pipedrive allows us to guide your team through every step - from decision making to set up. We drive your success with Pipedrive.",
     "Description": "Maecenas euismod sapien eu arcu convallis, vitae vestibulum ipsum maximus.\nVestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae.\nFusce aliquet turpis at orci bibend. Our partnerships' with leading CRM providers Pipedrive, means we can guide you and your team through the decision making process through setup and onboarding, alongside helping you define your team's sales process.Choose Pipedrive,The peoples' favourite..Setup Timeframe 2 - 4 weeks",
     "Tags": "pipedrive",
     "Color": "hsla(147.45762711864407, 98.33%, 23.53%, 1.00)"
   },
   {
-    "Name": "Hubspot CRM",
+    "Name": "Hubspot As A Service",
     "Slug": "hubspot",
     "Collection ID": "66c31735e6b629b0c680789b",
     "Locale ID": "66c31735a489578abdbf26ee",
@@ -24,7 +24,7 @@
     "Updated On": "Mon Aug 19 2024 10:05:27 GMT+0000 (Coordinated Universal Time)",
     "Published On": "",
     "Icon": "https://uploads-ssl.webflow.com/66c31735a489578abdbf26f1/66c31798be4b2f0a05bc84c1_image4.jpeg",
-    "Short description": "Our partnerships with leading CRM providers, HubSpot means we can guide you and your team through the decision making process through setup and onboarding, alongside helping you define your team's sales process.Choose HubSpot, The worlds greatest CRM Setup Timeframe 2 - 4 weeks",
+    "Short description": "Our partnerships with HubSpot means we can guide you and your team through the decision making process through setup and onboarding, alongside helping you define your team's sales process.Choose HubSpot, The worlds greatest CRM",
     "Description": "Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae.\nFusce aliquet turpis at orci bibendum, non convallis justo tempor.\nDonec eu felis at libero consequat sagittis a et urna.\nVivamus vitae arcu vel velit efficitur vestib. Our partnerships with leading CRM providers, HubSpot means we can guide you and your team through the decision making process through setup and onboarding, alongside helping you define your team's sales process.Choose HubSpot, The worlds greatest CRM Setup Timeframe 2 - 4 weeks",
     "Tags": "hubspot",
     "Color": "#ff5c35"
