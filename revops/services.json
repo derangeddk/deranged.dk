@@ -1,6 +1,6 @@
 [
   {
-    "Name": "RevOps",
+    "Name": "RevOps services",
     "Slug": "revops",
     "Collection ID": "66c31735e6b629b0c680789b",
     "Locale ID": "66c31735a489578abdbf26ee",
@@ -9,7 +9,7 @@
     "Updated On": "Mon Aug 19 2024 10:06:55 GMT+0000 (Coordinated Universal Time)",
     "Published On": "",
     "Icon": "https://uploads-ssl.webflow.com/66c31735a489578abdbf26f1/66c31798be4b2f0a05bc84cd_image19.jpeg",
-    "Short description": "Our team has the skills to help you stay agile and be 100% ready to adapt to market shifts in your vertical.It is made up of CRM experts, Sales Advisors and Business Development specialists.",
+    "Short description": "Our Full Stack RevOps Services help you to streamline and align your sales, marketing, and customer success operations. By leveraging automations, data tools and CRM systems we can help ensure your business is equipped for success.",
     "Description": "Sed auctor augue id tellus lacinia, nec ultricies est fermentum.\nPraesent nec orci at nulla consequat congue ut non arcu.\nFusce aliquet turpis at orci bibendum, non convallis justo tempor.\nOur team has the skills to help you stay agile and be 100% ready to adapt to market shifts in your vertical.It is made up of CRM experts, Sales Advisors and Business Development specialists.\nC",
     "Tags": "",
     "Color": ""
@@ -24,13 +24,13 @@
     "Updated On": "Mon Aug 19 2024 10:07:54 GMT+0000 (Coordinated Universal Time)",
     "Published On": "",
     "Icon": "https://uploads-ssl.webflow.com/66c31735a489578abdbf26f1/66c31798be4b2f0a05bc84ca_image14.jpeg",
-    "Short description": "Bridge the gap between appointments or reduce your costs by hiring a fractional executive. We bring our expertise with us whether you’re looking to make process improvements, manage specific projects or oversee daily operations.",
+    "Short description": "Reduce startup costs or maintain continuity by hiring a fractional executive. Whether you need to improve processes, manage specific projects, or oversee daily operations, we bring the expertise to ensure your business runs smoothly and efficiently.",
     "Description": "Integer rutrum ante et nunc venenatis, id ultricies risus ultricies.\nMaecenas euismod sapien eu arcu convallis, vitae vestibulum ipsum maximus.\nDonec eu felis at libero consequat sagittis a et urna.\nPraesent nec orci at nulla consequat congue ut non arcu.\nPraesent nec orci at.\nBridge the gap between appointments or reduce your costs by hiring a fractional executive. We bring our expertise with us whether you’re looking to make process improvements, manage specific projects or oversee daily operations.",
     "Tags": "",
     "Color": ""
   },
   {
-    "Name": "Sales advice",
+    "Name": "On demand sales advice",
     "Slug": "salse-advice",
     "Collection ID": "66c31735e6b629b0c680789b",
     "Locale ID": "66c31735a489578abdbf26ee",
@@ -39,7 +39,7 @@
     "Updated On": "Mon Aug 19 2024 10:08:58 GMT+0000 (Coordinated Universal Time)",
     "Published On": "",
     "Icon": "https://uploads-ssl.webflow.com/66c31735a489578abdbf26f1/66c31798be4b2f0a05bc84c7_image16.jpeg",
-    "Short description": "Bridge the gap between appointments or reduce your costs by hiring a fractional executive. We bring our expertise with us whether you’re looking to make process improvements, manage specific projects or oversee daily operations.",
+    "Short description": "Sales Advice as a Service provides guidance to optimise your sales strategies and drive revenue growth. Whether you need help refining your sales process or closing more deals, our bespoke advice ensures you keep winning deals without the commitment of a full-time hire.",
     "Description": "Maecenas euismod sapien eu arcu convallis, vitae vestibulum ipsum maximus.\nDonec eu felis at libero consequat sagittis a et urna.\nPraesent nec orci at nulla consequat congue ut non arcu.\nDonec eu felis at libero consequ.\nBridge the gap between appointments or reduce your costs by hiring a fractional executive. We bring our expertise with us whether you’re looking to make process improvements, manage specific projects or oversee daily operations.",
     "Tags": "",
     "Color": ""
