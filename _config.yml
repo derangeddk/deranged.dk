@@ -1,0 +1,4 @@
+collections:
+  services:
+    output: true
+    permalink: revops/:collection/:name

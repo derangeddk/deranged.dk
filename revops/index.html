@@ -1,6 +1,12 @@
 ---
 layout: default
 title: Let's start building your Business ➟ deranged
+services:
+  - revops
+  - fractional-coo
+  - sales-advice
+  - pipedrive
+  - hubspot
 ---
 
 {% include overlay_nav.html %}
@@ -56,7 +62,22 @@ title: Let's start building your Business ➟ deranged
       </div>
     </div>
     <div class="collection-list-wrapper w-dyn-list">
-      <div class="collection-list w-dyn-items" id="services"></div>
+      <div class="collection-list w-dyn-items">
+        {% for s in page.services %} {% for service in site.services %} {% if s
+        == service.slug %}
+        <div class="collection-item w-dyn-item">
+          <a href="services/{{service.name}}" class="link-block w-inline-block">
+            <div class="div-block">
+              <img src="{{service.icon}}" loading="lazy" alt="" class="image" />
+              <h3 class="post-preview-title">{{service.title}}</h3>
+              <p class="post-summary">
+                {{service.excerpt}} <u>Read&nbsp;more</u>
+              </p>
+            </div>
+          </a>
+        </div>
+        {% endif %} {% endfor %} {% endfor %}
+      </div>
     </div>
   </div>
 </section>

@@ -1,26 +1,4 @@
-async function populateServices() {
-  const request = new Request("services.json");
-
-  const response = await fetch(request);
-  const services = await response.json();
-
-  const servicesList = document.getElementById("services");
-  servicesList.innerHTML = services
-    .map(
-      (service) => `
-        <div class="collection-item w-dyn-item">
-          <a href="${service.Slug}" class="link-block w-inline-block">
-            <div class="div-block">
-              <img src="${service.Icon}" loading="lazy" alt="" class="image"/>
-              <h3 class="post-preview-title">${service.Name}</h3>
-              <p class="post-summary">${service["Short description"]}</p>
-            </div>
-          </a>
-        </div>
-      `
-    )
-    .join("");
-}
+blogPosts = {};
 
 async function populateBlogPosts() {
   const request = new Request("blog-posts.json");
@@ -65,7 +43,7 @@ async function getLatestBlogPosts() {
                 class="post-thumbnail"
               />
               <h3 class="post-preview-title">${post.Name}</h3>
-              <p class="post-summary">${post["Post Summary"]}</p>
+              <p class="post-summary">${post["Post Summary"]} <u>Read&nbsp;more</u></p>
             </div>
           </a>
         </div>
@@ -74,4 +52,4 @@ async function getLatestBlogPosts() {
     .join("");
 }
 
-populateServices();
+getLatestBlogPosts();
