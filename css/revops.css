@@ -104,20 +104,10 @@ p {
 }
 
 .collection-list-wrapper {
-  grid-column-gap: 16px;
-  grid-row-gap: 16px;
-  grid-template-rows: auto auto;
-  grid-template-columns: 1fr 1fr 1fr;
-  grid-auto-columns: 1fr;
   display: block;
 }
 
 .collection-item {
-  grid-column-gap: 16px;
-  grid-row-gap: 16px;
-  grid-template-rows: auto auto;
-  grid-template-columns: 1fr 1fr;
-  grid-auto-columns: 1fr;
   display: block;
 }
 
@@ -287,11 +277,6 @@ p {
   .w-dyn-items {
     grid-row-gap: 12px;
     grid-column-gap: 12px;
-  }
-
-  .link-block,
-  .post-link-block {
-    grid-row-gap: 8px;
   }
 
   .post-preview-title {
