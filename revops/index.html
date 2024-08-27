@@ -13,7 +13,6 @@ services:
 
 <link href="../css/revops.css" rel="stylesheet" type="text/css" />
 <link href="../css/homestyle.css" rel="stylesheet" type="text/css" />
-<script src="revops.js" type="text/javascript" defer></script>
 
 <section class="hello-section">
   <a href="/" class="logo">deranged</a>
@@ -66,7 +65,7 @@ services:
         {% for s in page.services %} {% for service in site.services %} {% if s
         == service.slug %}
         <div class="collection-item w-dyn-item">
-          <a href="services/{{service.name}}" class="link-block w-inline-block">
+          <a href="{{service.url}}" class="link-block w-inline-block">
             <div class="div-block">
               <img src="{{service.icon}}" loading="lazy" alt="" class="image" />
               <h3 class="post-preview-title">{{service.title}}</h3>
@@ -107,7 +106,24 @@ services:
       </div>
     </div>
     <div class="latest-posts w-dyn-list">
-      <div class="latest-posts-list w-dyn-items" id="recent-blog-posts"></div>
+      <div class="latest-posts-list w-dyn-items">
+        {% for post in site.posts limit:3 %}
+        <div class="post-preview w-dyn-item">
+          <a href="{{post.url}}" class="post-link-block w-inline-block">
+            <div class="div-block-2">
+              <img
+                src="{{post.thumbnail}}"
+                loading="lazy"
+                alt=""
+                class="post-thumbnail"
+              />
+              <h3 class="post-preview-title">{{post.title}}</h3>
+              <p class="post-summary">{{post.excerpt}} <u>Read&nbsp;more</u></p>
+            </div>
+          </a>
+        </div>
+        {% endfor %}
+      </div>
     </div>
     <a href="blog" class="button blog-button">Read more posts here</a>
   </div>
