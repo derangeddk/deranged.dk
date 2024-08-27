@@ -1,0 +1,81 @@
+---
+layout: default
+title: Let's start building your Business ➟ deranged
+---
+
+{% include overlay_nav.html %}
+
+<link href="../css/revops.css" rel="stylesheet" type="text/css" />
+<link href="../css/homestyle.css" rel="stylesheet" type="text/css" />
+<script src="revops.js" type="text/javascript" defer></script>
+
+<section class="hello-section">
+  <a href="/" class="logo">deranged</a>
+  <div class="big-greeting">
+    <h1>RevOps</h1>
+    <h2>So nice to meet you!</h2>
+  </div>
+  <div class="big-greeting">
+    <h2>Let's start building your Business&hellip;</h2>
+  </div>
+  <button class="more-button" href="#expertise"></button>
+  <script>
+    (function () {
+      if (window.scrollTo) {
+        document
+          .querySelector(".hello-section .more-button")
+          .addEventListener("click", function (e) {
+            e.preventDefault();
+
+            var windowHeight = window.innerHeight;
+
+            window.scrollTo({
+              top: Math.max(650, windowHeight),
+              behavior: "smooth",
+            });
+
+            return false;
+          });
+      }
+    })();
+  </script>
+</section>
+
+<section class="section" id="expertise">
+  <div class="container-home-page w-container">
+    <div class="section-title-group">
+      <h2 class="section-heading">Our Expertise</h2>
+      <div class="section-subheading">
+        ➟ Are you struggling to align your sales, marketing and customer success
+        strategies? Or does your company need expert assistance with CRM
+        implementation? Or perhaps you are looking for a fractional executive to
+        fill knowledge gaps without the cost of a full time hire? We deliver
+        custom strategies that accelerate growth and improve operational
+        efficiency.
+        <a href="#contact">Start the conversation</a>
+      </div>
+    </div>
+    <div class="collection-list-wrapper w-dyn-list">
+      <div class="collection-list w-dyn-items" id="services"></div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container-home-page w-container">
+    <div class="section-title-group">
+      <h4>deranged is entrusted by:</h4>
+    </div>
+    <a href="/cases" class="container-3">
+      <img src="/img/marmar.png" class="client_logo" />
+      <img src="/img/fischer-lighting.png" class="client_logo" />
+      <img src="/img/kbh-stadsarkiv.png" class="client_logo" />
+      <img src="/img/nornorm-km.png" class="client_logo" />
+      <img src="/img/PenlyLogo.svg" class="client_logo svg" />
+    </a>
+  </div>
+</section>
+
+<div id="contact"></div>
+
+{% include get_a_quote.html subject='Quote request' %}
