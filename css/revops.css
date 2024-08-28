@@ -259,6 +259,10 @@ p {
   display: grid;
 }
 
+.blog-button {
+  width: auto;
+}
+
 @media screen and (max-width: 991px) {
   .section-subheading {
     text-transform: none;
