@@ -1,3 +1,6 @@
+plugins:
+  - jekyll-paginate
+
 collections:
   services:
     output: true
@@ -5,3 +8,6 @@ collections:
   posts:
     output: true
     permalink: revops/:collection/:name
+
+paginate: 12
+paginate_path: revops/blog/page:num

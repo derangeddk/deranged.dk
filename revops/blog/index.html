@@ -1,0 +1,101 @@
+---
+layout: default
+title: RevOps blog
+---
+
+{% include overlay_nav.html %}
+
+<link href="/css/revops.css" rel="stylesheet" type="text/css" />
+
+<style type="text/css" scoped>
+  .header {
+    background: rgba(52, 73, 94, 1);
+    display: grid;
+    grid-template-columns: 150px 1fr;
+    color: #eaf1f7;
+    padding: 30px;
+    text-align: left;
+  }
+
+  .header .logo {
+    color: inherit;
+    text-decoration: inherit;
+    font-weight: 200;
+    font-size: 1.3em;
+    position: relative;
+    z-index: 11;
+  }
+
+  .header h1 {
+    margin: 0;
+    padding: 0;
+    margin-top: -9px;
+    font-weight: 200;
+    font-size: 3em;
+  }
+
+  .header h1 a {
+    color: inherit;
+    text-decoration: inherit;
+  }
+
+  .big-heading {
+    text-align: left;
+    margin-top: 10px;
+    font-size: 4em;
+    font-weight: 500;
+  }
+
+  @media (max-width: 600px) {
+    .header {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>
+
+<section class="header">
+  <a href="/" class="logo">deranged</a>
+  <h1><a href="/revops">RevOps</a></h1>
+</section>
+<section class="section">
+  <div class="container-home-page w-container">
+    <div class="section-title-group">
+      <h1 class="big-heading">Blog</h1>
+    </div>
+    <div class="latest-posts w-dyn-list">
+      <div class="latest-posts-list w-dyn-items">
+        {% for post in paginator.posts %}
+        <div class="post-preview w-dyn-item">
+          <a href="{{ post.url }}" class="post-link-block w-inline-block">
+            <div class="div-block-2">
+              <img
+                src="{{ post.thumbnail }}"
+                loading="lazy"
+                alt=""
+                class="post-thumbnail"
+              />
+              <h3 class="post-preview-title">{{ post.title }}</h3>
+              <p class="post-summary">
+                {{ post.excerpt }} <u>Read&nbsp;more</u>
+              </p>
+            </div>
+          </a>
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+    {% if paginator.total_pages > 1 %}
+    <div class="pagination">
+      {% if paginator.previous_page %}
+      <a href="{{ paginator.previous_page_path }}" class="button blog-button"
+        >&laquo; Prev page</a
+      >
+      {% endif %} {% if paginator.next_page %}
+      <a href="{{ paginator.next_page_path }}" class="button blog-button"
+        >Next page &raquo;</a
+      >
+      {% endif %}
+    </div>
+    {% endif %}
+  </div>
+</section>
