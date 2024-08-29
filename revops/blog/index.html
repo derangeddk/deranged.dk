@@ -87,11 +87,11 @@ title: RevOps blog
     {% if paginator.total_pages > 1 %}
     <div class="pagination">
       {% if paginator.previous_page %}
-      <a href="{{ paginator.previous_page_path }}" class="button blog-button"
+      <a href="{{ paginator.previous_page_path }}" class="button width-auto"
         >&laquo; Prev page</a
       >
       {% endif %} {% if paginator.next_page %}
-      <a href="{{ paginator.next_page_path }}" class="button blog-button"
+      <a href="{{ paginator.next_page_path }}" class="button width-auto"
         >Next page &raquo;</a
       >
       {% endif %}
