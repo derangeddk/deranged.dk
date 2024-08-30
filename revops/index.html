@@ -1,13 +1,18 @@
 ---
 layout: default
 title: Let's start building your Business ➟ deranged
+services:
+  - revops
+  - fractional-coo
+  - sales-advice
+  - pipedrive
+  - hubspot
 ---
 
 {% include overlay_nav.html %}
 
-<link href="../css/revops.css" rel="stylesheet" type="text/css" />
-<link href="../css/homestyle.css" rel="stylesheet" type="text/css" />
-<script src="revops.js" type="text/javascript" defer></script>
+<link href="/css/revops.css" rel="stylesheet" type="text/css" />
+<link href="/css/homestyle.css" rel="stylesheet" type="text/css" />
 
 <section class="hello-section">
   <a href="/" class="logo">deranged</a>
@@ -56,7 +61,20 @@ title: Let's start building your Business ➟ deranged
       </div>
     </div>
     <div class="collection-list-wrapper w-dyn-list">
-      <div class="collection-list w-dyn-items" id="services"></div>
+      <div class="collection-list w-dyn-items">
+        {% for s in page.services %} {% for service in site.services %} {% if s
+        == service.slug %}
+        <div class="collection-item w-dyn-item">
+          <div class="div-block link-block">
+            <img src="{{service.icon}}" loading="lazy" alt="" class="image" />
+            <h3 class="post-preview-title">{{service.title}}</h3>
+            <p class="post-summary">
+              {{service.excerpt}}</u>
+            </p>
+          </div>
+        </div>
+        {% endif %} {% endfor %} {% endfor %}
+      </div>
     </div>
   </div>
 </section>
@@ -64,7 +82,7 @@ title: Let's start building your Business ➟ deranged
 <section class="section">
   <div class="container-home-page w-container">
     <div class="section-title-group">
-      <h4>deranged is entrusted by:</h4>
+      <h4>deranged is trusted by:</h4>
     </div>
     <a href="/cases" class="container-3">
       <img src="/img/marmar.png" class="client_logo" />
