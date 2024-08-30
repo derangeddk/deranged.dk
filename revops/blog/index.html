@@ -64,8 +64,12 @@ title: RevOps blog
     </div>
     <div class="latest-posts w-dyn-list">
       <div class="latest-posts-list w-dyn-items">
-        {% for post in paginator.posts %}
-        <div class="post-preview w-dyn-item">
+        {% for post in site.posts %}
+        <div
+          class="post-preview w-dyn-item"
+          id="{{forloop.index}}"
+          style="display: none"
+        >
           <a href="{{ post.url }}" class="post-link-block w-inline-block">
             <div class="div-block-2">
               <img
@@ -84,18 +88,55 @@ title: RevOps blog
         {% endfor %}
       </div>
     </div>
-    {% if paginator.total_pages > 1 %}
-    <div class="pagination">
-      {% if paginator.previous_page %}
-      <a href="{{ paginator.previous_page_path }}" class="button width-auto"
-        >&laquo; Prev page</a
-      >
-      {% endif %} {% if paginator.next_page %}
-      <a href="{{ paginator.next_page_path }}" class="button width-auto"
-        >Next page &raquo;</a
-      >
-      {% endif %}
-    </div>
-    {% endif %}
+    <!-- ToDo: button hiding -->
+    <button class="button width-auto" onClick="previousPage()">
+      Prev page
+    </button>
+    <button class="button width-auto" onClick="nextPage()">Next page</button>
   </div>
 </section>
+
+<script type="text/javascript" defer>
+  var totalPages = 0;
+  var totalPosts = 0;
+  var currentPage = 1;
+  var postsPerPage = 6;
+
+  function countPages() {
+    {% for post in site.posts %}
+      ++totalPosts;
+    {% endfor %}
+    totalPages = Math.ceil(totalPosts / postsPerPage);
+  }
+
+  function displayCurrentPagePosts() {
+    var firstPostIndex = 0;
+    var lastPostIndex = 0;
+    firstPostIndex = (currentPage - 1) * postsPerPage + 1;
+    lastPostIndex = currentPage * postsPerPage;
+    for (let i = 1; i < totalPosts + 1; i++) {
+      var postDiv = document.getElementById(i)
+      postDiv.style.display = 'none';
+    }
+    for (let i = firstPostIndex; i < lastPostIndex + 1; i++) {
+      var postDiv = document.getElementById(i)
+      postDiv.style.display = 'block';
+    }
+  }
+
+  function nextPage() {
+    if (currentPage < totalPages)
+      ++currentPage
+    displayCurrentPagePosts()
+  }
+
+  function previousPage() {
+    if (currentPage > 1)
+      --currentPage
+    displayCurrentPagePosts()
+  }
+
+  countPages();
+
+  window.onload = displayCurrentPagePosts()
+</script>
