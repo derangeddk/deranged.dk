@@ -35,3 +35,13 @@ footer {
     align-items: flex-start;
     justify-content: center;
 }
+
+.footer-info * {
+  display: flex;
+  flex-direction: row;
+}
+
+.footer-info img {
+  max-width: 19px;
+  margin-right: 4px;
+}
