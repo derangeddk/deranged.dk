@@ -1,0 +1,182 @@
+---
+layout: default
+---
+
+{% include overlay_nav.html %}
+
+<link href="/css/revops.css" rel="stylesheet" type="text/css" />
+
+<style type="text/css" scoped>
+  .header {
+    background: rgba(52, 73, 94, 1);
+    display: grid;
+    grid-template-columns: 150px 1fr;
+    color: #eaf1f7;
+    padding: 30px;
+    text-align: left;
+  }
+
+  .header .logo {
+    color: inherit;
+    text-decoration: inherit;
+    font-weight: 200;
+    font-size: 1.3em;
+    position: relative;
+    z-index: 11;
+  }
+
+  .header h1 {
+    margin: 0;
+    padding: 0;
+    margin-top: -9px;
+    font-weight: 200;
+    font-size: 3em;
+  }
+
+  .header h1 a {
+    color: inherit;
+    text-decoration: inherit;
+  }
+
+  .explainer-logo {
+    display: inline-block;
+    transform: translate(-5px, -13px) scale(0.4);
+  }
+
+  @media (max-width: 600px) {
+    .header {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>
+<section class="header">
+  <a href="/" class="logo">deranged</a>
+  <h1><a href="/revops/blog">blog</a></h1>
+</section>
+
+<style>
+  main {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    text-align: left;
+    margin-bottom: 4em;
+  }
+  main h1 {
+    text-align: left;
+    margin: 2em;
+    margin-left: 175px;
+    margin-bottom: 1em;
+    margin-right: 25px;
+    font-size: 4em;
+  }
+  h1 strong {
+    font-weight: bold;
+  }
+  main section > h2 {
+    margin-bottom: 1em;
+    margin-top: 4em;
+    padding-right: 25px;
+    font-size: 2em;
+    font-weight: 200;
+    margin-left: 175px;
+    position: relative;
+    max-width: 700px;
+    color: #ecf0f1;
+    z-index: 2;
+  }
+  main section > h2:before {
+    content: "";
+    background-image: linear-gradient(40deg, #2c3e50 30%, #455d75 90%);
+    width: calc(100% + 25px);
+    max-width: 750px;
+    position: absolute;
+    top: -0.25em;
+    bottom: -0.25em;
+    left: 0;
+    z-index: -1;
+    transform: translate(-25px, -2px) rotate(-0.5deg);
+  }
+  main section > p {
+    margin-left: 175px;
+    max-width: 650px;
+  }
+  main > section {
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  main section.form {
+    margin-left: 175px;
+    max-width: 650px;
+  }
+
+  @media (max-width: 1100px) {
+    main h1 {
+      margin-left: 20px;
+    }
+    main section > h2 {
+      margin-left: 20px;
+    }
+    main section > p {
+      margin-left: 20px;
+    }
+  }
+  @media (max-width: 950px) {
+    main h1 {
+      font-size: 3.5em;
+    }
+    main h1 br {
+      display: none;
+    }
+  }
+  @media (max-width: 600px) {
+    main h1 {
+      font-size: 3em;
+    }
+  }
+  @media (max-width: 450px) {
+    main {
+      font-size: 1.1em;
+    }
+  }
+
+  main a {
+    color: #2c3e50;
+  }
+</style>
+
+<main>
+  <h1>{{ page.title }}</h1>
+  {{ content }}
+</main>
+
+<section class="section">
+  <div class="container-home-page w-container">
+    <div class="section-title-group">
+      <h2 class="section-heading">Recent posts</h2>
+    </div>
+    <div class="latest-posts w-dyn-list">
+      <div class="latest-posts-list w-dyn-items">
+        {% assign filtered_posts = site.posts | where_exp: "post", "post.title
+        != page.title" %} {% for post in filtered_posts limit:3 %}
+        <div class="post-preview w-dyn-item">
+          <a href="{{post.url}}" class="post-link-block w-inline-block">
+            <div class="div-block-2">
+              <img
+                src="{{post.thumbnail}}"
+                loading="lazy"
+                alt=""
+                class="post-thumbnail"
+              />
+              <h3 class="post-preview-title">{{post.title}}</h3>
+              <p class="post-summary">{{post.excerpt}} <u>Read&nbsp;more</u></p>
+            </div>
+          </a>
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+    <a href="/revops/blog" class="button width-auto">Read more posts here</a>
+  </div>
+</section>
