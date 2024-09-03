@@ -1,4 +1,4 @@
 collections:
   services:
     output: false
-    permalink: revops/:collection/:name
+    permalink: :name
