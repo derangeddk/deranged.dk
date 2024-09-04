@@ -67,12 +67,13 @@ layout: default
     overflow: hidden;
     margin-left: 100px;
     background-color: #ecf0f1;
-    opacity: 0.3;
+    opacity: 0.6;
   }
   main .header-image {
     object-fit: cover;
     -webkit-filter: blur(1px);
     filter: blur(1px);
+    opacity: 0.5;
   }
   main h1 {
     text-align: left;
@@ -84,9 +85,22 @@ layout: default
     font-weight: bold;
     z-index: 1;
   }
+  main section > .image-wrapper {
+    margin-left: 175px;
+    max-width: 650px;
+    display: flex;
+    justify-content: center;
+  }
+  main section > .image-wrapper > img {
+    max-height: 300px;
+    max-width: 600px;
+  }
+  main section > ul {
+    margin-left: 175px;
+  }
   main section > h2 {
     margin-bottom: 1em;
-    margin-top: 4em;
+    margin-top: 2em;
     padding-right: 25px;
     font-size: 2em;
     font-weight: 200;
@@ -117,10 +131,13 @@ layout: default
     width: 100%;
     box-sizing: border-box;
   }
-
-  main section.form {
-    margin-left: 175px;
+  main p.sidenote {
+    background: #ecf0f1;
+    border: 1px solid #070d14;
+    font-size: 0.8em;
+    padding: 25px;
     max-width: 650px;
+    margin-left: 175px;
   }
 
   @media (max-width: 1100px) {
@@ -140,6 +157,11 @@ layout: default
     main .header-overlay {
       margin-left: -15px;
     }
+    main section > .image-wrapper,
+    main section > ul,
+    main section > p.sidenote {
+      margin-left: 20px;
+    }
   }
   @media (max-width: 950px) {
     main h1 {
@@ -152,6 +174,10 @@ layout: default
     main .header-image {
       height: 240px;
     }
+    main section > .image-wrapper > img {
+      max-height: 200px;
+      max-width: 400px;
+    }
   }
   @media (max-width: 600px) {
     main h1 {
@@ -161,10 +187,16 @@ layout: default
     main .header-image {
       display: none;
     }
+    main section > .image-wrapper > img {
+      max-width: 400px;
+    }
   }
   @media (max-width: 450px) {
     main {
       font-size: 1.1em;
+    }
+    main section > .image-wrapper > img {
+      max-width: 200px;
     }
   }
 
@@ -174,7 +206,7 @@ layout: default
 </style>
 
 <main>
-  <div class="header-overlay">
+  <div class="header-overlay" style="background-color: {{ page.color }};">
     <img src="{{ page.header-img }}" class="header-image" />
   </div>
   <h1>{{ page.title }}</h1>
