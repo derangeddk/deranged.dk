@@ -1,4 +1,4 @@
 collections:
   services:
-    output: false
+    output: true
     permalink: :name

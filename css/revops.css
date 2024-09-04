@@ -94,6 +94,13 @@ p {
   text-decoration: none;
   display: block;
   box-shadow: 0 2px 3px #0003;
+  transition: background-color 0.3s, transform 0.3s;
+}
+
+.link-block:hover,
+.post-link-block:hover {
+  background-color: #fff;
+  transform: scale(1.015);
 }
 
 .image {
