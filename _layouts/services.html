@@ -217,3 +217,7 @@ layout: default
   </section>
   {{ content }}
 </main>
+
+{% if page.custom-form == nil %}
+  {% include get_a_quote.html subject=page.title %}
+{% endif %}
