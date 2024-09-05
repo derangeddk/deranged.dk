@@ -4,4 +4,4 @@ collections:
     permalink: :name
   posts:
     output: true
-    permalink: revops/:collection/:name
+    permalink: :collection/:name
