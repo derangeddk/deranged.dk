@@ -1,0 +1,23 @@
+<urlset
+    xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd"
+>
+    <url>
+        <loc>https://deranged.dk/</loc>
+    </url>
+    <url>
+        <loc>https://deranged.dk/the-team/</loc>
+    </url>
+    <url>
+        <loc>https://deranged.dk/cases/</loc>
+    </url>
+    <url>
+        <loc>https://deranged.dk/privacy/</loc>
+    </url>
+    <url>
+        <loc>https://deranged.dk/explainers/</loc>
+    </url>
+    <url>
+        <loc>https://deranged.dk/explainers/small-deliveries</loc>
+    </url>
+</urlset>
