@@ -119,47 +119,6 @@ main p {
     }
 }
 
-.cookie-notice {
-    position: fixed;
-    bottom: 0;
-    right: 0;
-    background: $darkblue;
-    color: white;
-    padding: 0 15px 30px;
-    max-width: 400px;
-    box-sizing: border-box;
-    text-align: left;
-    box-shadow: 0 0 2px rgba(0,0,0,0.2), 0 -2px 4px rgba(0,0,0,0.2);
-    font-size: 0.9em;
-    transition: transform 0.5s;
-    z-index: 2000;
-
-    @media (max-width: 350px) {
-        font-size: 0.8em;
-    }
-
-    a {
-        color: rgb(204, 228, 252);
-    }
-
-    button {
-        background: rgb(59, 144, 229);
-        color: white;
-        font-family: inherit;
-        border: none;
-        font-size: inherit;
-        padding: 4px 14px;
-        box-sizing: border-box;
-        cursor: pointer;
-        margin-left: auto;
-        display: block;
-    }
-
-    &.cookie-notice-hide {
-        transform: translateY(500px);
-    }
-}
-
 .honeypot {
   height: 0;
   box-sizing: border-box;
