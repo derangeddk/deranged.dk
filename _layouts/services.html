@@ -40,6 +40,10 @@ layout: default
     .header {
       grid-template-columns: 1fr;
     }
+    .header h1 {
+      margin-top: 4px;
+      font-size: 2em;
+    }
   }
 </style>
 <section class="header">
@@ -53,7 +57,6 @@ layout: default
     flex-direction: column;
     align-items: flex-start;
     text-align: left;
-    margin-bottom: 4em;
   }
 
   main .header-overlay,
@@ -66,13 +69,13 @@ layout: default
     position: absolute;
     overflow: hidden;
     background-color: #ecf0f1;
-    opacity: 0.6;
+    opacity: 0.5;
   }
   main .header-image {
     object-fit: cover;
     -webkit-filter: blur(1px);
-    filter: blur(1px);
-    opacity: 0.5;
+    filter: blur(2px);
+    opacity: 0.4;
   }
   main h1 {
     text-align: left;
@@ -87,7 +90,7 @@ layout: default
     display: flex;
     width: 100%;
     justify-content: center;
-    padding-top: 1em;
+    padding-top: 1.5em;
   }
   main .section-top {
     display: flex;
@@ -104,11 +107,12 @@ layout: default
   main section > .h2-wrapper {
     display: flex;
     flex-direction: row;
+    align-items: center;
   }
   main section h2 {
     margin-bottom: 1em;
     margin-top: 1em;
-    padding-right: 25px;
+    /* padding-right: 25px; */
     font-size: 2.1em;
     font-weight: 900;
     position: relative;
@@ -120,30 +124,25 @@ layout: default
     background: #2c3e50;
     background-image: linear-gradient(40deg, #2c3e50 30%, #455d75 90%);
     border-radius: 100%;
-    margin-top: 40px;
     margin-right: 15px;
     height: 60px;
     width: 60px;
     padding: 8px;
   }
-  main section > p,
-  main section > ul {
-    max-width: 650px;
-  }
   main section {
     background-color: #fff;
-    width: 650px;
+    width: 950px;
     padding-left: 2em;
     padding-right: 2em;
     padding-bottom: 1em;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.4);
   }
   main img.side-image {
-    max-height: 100%;
-    object-fit: cover;
+    object-fit: contain;
+    width: 40vw;
     max-width: 650px;
-    margin-left: 1em;
-    margin-right: 1em;
+    margin-left: 1.2em;
+    margin-right: 1.2em;
     filter: contrast(80%);
     opacity: 0.8;
   }
@@ -157,7 +156,7 @@ layout: default
     margin-left: -15px;
     margin-right: -15px;
     margin-top: 1em;
-    margin-bottom: -190px;
+    margin-bottom: -100px;
     padding: 50px 50px 50px 70px;
   }
   .contact .side-explanation {
@@ -168,10 +167,12 @@ layout: default
     background-image: linear-gradient(40deg, #2c3e50 30%, #455d75 90%);
     font-size: 1.1em;
     padding: 20px;
-    max-width: 650px;
   }
 
   @media (max-width: 1100px) {
+    main {
+      padding-bottom: 20px;
+    }
     main h1 {
       margin-left: 20px;
     }
@@ -194,6 +195,7 @@ layout: default
     }
     main .flex-row {
       flex-wrap: wrap;
+      padding-top: 1em;
     }
     main img.side-image {
       order: 2;
@@ -202,10 +204,14 @@ layout: default
       width: 450px;
       max-width: 100vw;
     }
+    .contact {
+      margin-bottom: -20px;
+    }
   }
   @media (max-width: 950px) {
     main h1 {
       font-size: 3.5em;
+      margin: 1em;
     }
     main h1 br {
       display: none;
@@ -225,7 +231,7 @@ layout: default
   }
   @media (max-width: 600px) {
     main h1 {
-      font-size: 3em;
+      font-size: 2.5em;
     }
     main .header-overlay,
     main .header-image {
@@ -233,6 +239,11 @@ layout: default
     }
     main .section-top img {
       max-width: 400px;
+    }
+    main section .h2-icon {
+      width: 40px;
+      height: 40px;
+      padding: 5px;
     }
   }
   @media (max-width: 450px) {
