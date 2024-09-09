@@ -89,25 +89,28 @@ services:
     </div>
     <div class="collection-list-wrapper w-dyn-list">
       <div class="collection-list w-dyn-items">
-        {% for s in page.services %} {% for service in site.services %} {% if s
-        == service.slug %}
-        <div class="collection-item w-dyn-item">
-          <a href="{{ service.url }}" class="link-block w-inline-block">
-            <div class="div-block">
-              <img
-                src="{{ service.icon }}"
-                loading="lazy"
-                alt="{{ service.alt }}"
-                class="image"
-              />
-              <h3 class="post-preview-title">{{ service.title }}</h3>
-              <p class="post-summary">
-                {{ service.excerpt }} <u>Read&nbsp;more</u>
-              </p>
-            </div>
-          </a>
-        </div>
-        {% endif %} {% endfor %} {% endfor %}
+        {% for s in page.services %}
+          {% for service in site.services %}
+            {% if s == service.slug %}
+              <div class="collection-item w-dyn-item">
+                <a href="{{ service.url }}" class="link-block w-inline-block">
+                  <div class="div-block">
+                    <img
+                      src="{{ service.icon }}"
+                      loading="lazy"
+                      alt="{{ service.alt }}"
+                      class="image"
+                    />
+                    <h3 class="post-preview-title">{{ service.title }}</h3>
+                    <p class="post-summary">
+                      {{ service.excerpt }} <u>Read&nbsp;more</u>
+                    </p>
+                  </div>
+                </a>
+              </div>
+            {% endif %}
+          {% endfor %}
+        {% endfor %}
       </div>
     </div>
     <div class="section-title-group">
@@ -159,6 +162,36 @@ services:
       <img src="/img/nornorm-km.png" class="client_logo" />
       <img src="/img/PenlyLogo.svg" class="client_logo svg" />
     </a>
+  </div>
+</section>
+
+<section class="who-we-are-section">
+  <div class="who-we-are-content">
+    <h2 class="who-we-are-section__title">Meet the team</h2>
+    <p>
+      Our team consists of enthusiastic, flexible and engaged people with a
+      varied set of backgrounds. We work very deliberately to be flexible and
+      efficient, a company full of people who make a positive difference in
+      whichever setting they are placed.
+    </p>
+    <p>
+      When hiring, we look for people who care about making a difference in
+      their day-to-day life, and as a customer you're sure to experience this,
+      too.
+    </p>
+    <p>
+      Finding incredible people means thinking hard about the kind of work
+      environment we create. We are always reevaluating, and figuring out how to
+      create an efficient, inclusive and open space to work in, and we bring
+      that spirit with us wherever we work.
+    </p>
+    <a href="/the-team/" class="read-more">Check out the team</a>
+  </div>
+  <div class="team-photos">
+    <div><img src="/img/people/asbjoern-thegler-thumb.jpg" /></div>
+    <div><img src="/img/people/philip-dein-thumb.jpg" /></div>
+    <div><img src="/img/people/anders-thumb.jpg" /></div>
+    <div><img src="/img/people/niels-abildgaard-thumb.jpg" /></div>
   </div>
 </section>
 
