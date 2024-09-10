@@ -38,11 +38,6 @@ layout: default
     text-decoration: inherit;
   }
 
-  .explainer-logo {
-    display: inline-block;
-    transform: translate(-5px, -13px) scale(0.4);
-  }
-
   @media (max-width: 600px) {
     .header {
       grid-template-columns: 1fr;
@@ -60,84 +55,118 @@ layout: default
     flex-direction: column;
     align-items: flex-start;
     text-align: left;
-    margin-bottom: 4em;
+  }
+  main .header-overlay,
+  main .header-image {
+    height: 600px;
+    width: 100%;
+    max-width: 1200px;
+    margin-right: auto;
+    margin-left: auto;
+    margin-bottom: 1em;
+  }
+  main .header-overlay {
+    position: relative;
+    overflow: hidden;
+    background-color: #ecf0f1;
+  }
+  main .header-image {
+    position: absolute;
+    object-fit: cover;
+    -webkit-filter: blur(2px);
+    filter: blur(2px);
+    opacity: 0.2;
   }
   main h1 {
+    position: relative;
     text-align: left;
-    margin: 2em;
-    margin-left: 175px;
-    margin-bottom: 1em;
+    margin-top: 4em;
+    margin-bottom: 2em;
+    margin-left: 125px;
     margin-right: 25px;
     font-size: 4em;
-  }
-  h1 strong {
     font-weight: bold;
-  }
-  main section > h2 {
-    margin-bottom: 1em;
-    margin-top: 4em;
-    padding-right: 25px;
-    font-size: 2em;
-    font-weight: 200;
-    margin-left: 175px;
-    position: relative;
-    max-width: 700px;
-    color: #ecf0f1;
     z-index: 2;
   }
-  main section > h2:before {
-    content: "";
-    background-image: linear-gradient(40deg, #2c3e50 30%, #455d75 90%);
-    width: calc(100% + 25px);
-    max-width: 750px;
-    position: absolute;
-    top: -0.25em;
-    bottom: -0.25em;
-    left: 0;
-    z-index: -1;
-    transform: translate(-25px, -2px) rotate(-0.5deg);
+
+  main p.subtitle {
+    font-weight: 700;
+    font-size: larger;
   }
-  main section > p {
-    margin-left: 175px;
-    max-width: 650px;
+  main section > h2 {
+    margin-top: 1em;
+    margin-bottom: 0.2em;
+    font-size: 2.1em;
+    font-weight: 500;
+    position: relative;
+    color: #2c3e50;
   }
   main > section {
-    width: 100%;
-    box-sizing: border-box;
+    max-width: 1000px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 2em;
+    padding-right: 2em;
+    padding-bottom: 1em;
   }
 
-  main section.form {
-    margin-left: 175px;
-    max-width: 650px;
+  main .highlight-box {
+    color: white;
+    background-image: linear-gradient(40deg, #2c3e50 30%, #455d75 90%);
+    font-size: 1.1em;
+    padding: 50px;
+  }
+
+  main .highlight-box p:last-of-type {
+    margin: 0;
+  }
+
+  main .highlight-box > h2 {
+    color: white;
+    margin-top: 0;
+    margin-bottom: 0.4em;
   }
 
   @media (max-width: 1100px) {
     main h1 {
-      margin-left: 20px;
+      margin-top: 3em;
+      margin-left: 50px;
     }
-    main section > h2 {
-      margin-left: 20px;
-    }
-    main section > p {
-      margin-left: 20px;
+    main .header-overlay,
+    main .header-image {
+      height: 500px;
     }
   }
   @media (max-width: 950px) {
     main h1 {
       font-size: 3.5em;
+      margin-top: 2em;
+      margin-left: 40px;
     }
-    main h1 br {
-      display: none;
+    main .header-overlay,
+    main .header-image {
+      height: 400px;
     }
   }
   @media (max-width: 600px) {
     main h1 {
       font-size: 3em;
     }
+    main .header-overlay,
+    main .header-image {
+      height: 300px;
+    }
   }
   @media (max-width: 450px) {
     main {
       font-size: 1.1em;
+    }
+    main h1 {
+      font-size: 2.2em;
+    }
+    main .header-overlay,
+    main .header-image {
+      height: 250px;
     }
   }
 
@@ -147,7 +176,10 @@ layout: default
 </style>
 
 <main>
-  <h1>{{ page.title }}</h1>
+  <div class="header-overlay">
+    <img src="{{ page.img }}" class="header-image" alt="" />
+    <h1>{{ page.title }}</h1>
+  </div>
   {{ content }}
 </main>
 
@@ -159,22 +191,21 @@ layout: default
     <div class="latest-posts w-dyn-list">
       <div class="latest-posts-list w-dyn-items">
         {% assign filtered_posts = site.posts | where_exp: "post", "post.title
-        != page.title" %}
-        {% for post in filtered_posts limit:3 %}
-          <div class="post-preview w-dyn-item">
-            <a href="{{post.url}}" class="post-link-block w-inline-block">
-              <div class="div-block-2">
-                <img
-                  src="{{post.thumbnail}}"
-                  loading="lazy"
-                  alt=""
-                  class="post-thumbnail"
-                />
-                <h3 class="post-preview-title">{{post.title}}</h3>
-                <p class="post-summary">{{post.excerpt}} <u>Read&nbsp;more</u></p>
-              </div>
-            </a>
-          </div>
+        != page.title" %} {% for post in filtered_posts limit:3 %}
+        <div class="post-preview w-dyn-item">
+          <a href="{{post.url}}" class="post-link-block w-inline-block">
+            <div class="div-block-2">
+              <img
+                src="{{post.thumbnail}}"
+                loading="lazy"
+                alt=""
+                class="post-thumbnail"
+              />
+              <h3 class="post-preview-title">{{post.title}}</h3>
+              <p class="post-summary">{{post.excerpt}} <u>Read&nbsp;more</u></p>
+            </div>
+          </a>
+        </div>
         {% endfor %}
       </div>
     </div>
