@@ -3,7 +3,7 @@ layout: default
 title: Let's start building your Business ➟ deranged
 meta: "Align sales, marketing, and customer success with our RevOps services. We offer CRM implementation, fractional COO, sales advice and certified Pipedrive & HubSpot support."
 services:
-  - revops-services
+  - automation
   - coo
   - sales-advice
   - pipedrive
@@ -14,6 +14,23 @@ services:
 
 <link href="/css/revops.css" rel="stylesheet" type="text/css" />
 <link href="/css/homestyle.css" rel="stylesheet" type="text/css" />
+
+<style>
+  .who-we-are-section {
+    grid-template-columns: auto 1fr 480px;
+  }
+  .who-we-are-section .team-photos {
+    grid-template-columns: 150px 150px 150px;
+  }
+  @media screen and (max-width: 1100px) {
+    .who-we-are-section {
+      grid-template-columns: auto 1fr 210px;
+    }
+    .who-we-are-section .team-photos {
+      grid-template-columns: 90px 90px;
+    }
+  }
+</style>
 
 <section class="hello-section">
   <a href="/" class="logo">deranged</a>
@@ -47,18 +64,44 @@ services:
   </script>
 </section>
 
-<section class="section" id="expertise">
+<section class="section">
   <div class="container-home-page w-container">
     <div class="section-title-group">
       <h2 class="section-heading">Our Expertise</h2>
       <div class="section-subheading">
-        ➟ Are you struggling to align your sales, marketing and customer success
-        strategies? Or does your company need expert assistance with CRM
-        implementation? Or perhaps you are looking for a fractional executive to
-        fill knowledge gaps without the cost of a full time hire? We deliver
-        custom strategies that accelerate growth and improve operational
-        efficiency.
-        <a href="#contact">Start the conversation</a>
+        <p>
+          ➟ Revenue Operations (RevOps) isn’t magic, and while your company may
+          already be practicing aspects of RevOps, without a dedicated RevOps
+          professional, you might not be maximizing your potential.
+        </p>
+        <p>That’s where our expertise can help make a difference.</p>
+      </div>
+    </div>
+    <div class="section-title-group" id="services">
+      <h2 class="section-heading">Our Services</h2>
+      <div class="section-subheading">
+        <p>
+          ➟ Are you struggling to align your sales, marketing and customer
+          success strategies? Or does your company need expert assistance with
+          CRM implementation? Or perhaps you are looking for a fractional
+          executive to fill knowledge gaps without the cost of a full time hire?
+          We deliver custom strategies that accelerate growth and improve
+          operational efficiency.
+        </p>
+        <p>
+          Our Full Stack RevOps Services focus on the metrics that matter most
+          to you and by leveraging integrated technologies, like CRM systems,
+          automations and more, we streamline your business processes, create
+          efficient workflows, and drive sustainable growth - saving you
+          valuable time and resources.
+        </p>
+        <p>
+          Whether you are starting from scratch or looking to build your RevOps
+          framework from the ground up, our expert team integrates seamlessly
+          with your business. We hit the ground running and look to deliver
+          results from day one.
+          <a href="#contact">Start the conversation</a>
+        </p>
       </div>
     </div>
     <div class="collection-list-wrapper w-dyn-list">
@@ -87,12 +130,46 @@ services:
         {% endfor %}
       </div>
     </div>
-  </div>
-</section>
-
-<section class="section">
-  <div class="container-home-page w-container">
     <div class="section-title-group">
+      <h2 class="section-heading">Why choose us?</h2>
+      <div class="section-subheading">
+        <p>
+          ➟ Our mission is to help you improve your revenue growth by breaking
+          down silos and fostering a more collaborative culture to push your
+          business towards a more sustainable future of long term success.
+        </p>
+        <p>
+          We work directly with you and your teams to understand your unique
+          goals.
+        </p>
+        <p>
+          We have run our own successful companies - we understand business and
+          the pitfalls companies can fall into.
+        </p>
+        <p>We have certified technical expertise in RevOps Software.</p>
+        <p>
+          We have specialised expertise in startups and scaleups and a deep
+          understanding of growth stages. We work with you to help you establish
+          a solid foundation for sustainable growth.
+        </p>
+        <p>
+          Plug and Play Expertise. We hit the ground running. We excel at
+          quickly understanding and integrating into new business environments
+          and systems, allowing us to optimize operations and drive results
+          efficiently in any context.
+        </p>
+        <p>
+          When you work with us, we’ll help you translate your revenue goals
+          into actionable operational strategies. Our team ensures these
+          strategies are implemented swiftly, delivering the results you need to
+          accelerate growth.
+        </p>
+        <p>
+          We have extensive industry experience, a proven track record and bring
+          a deep understanding of the internal and external challenges
+          businesses face.
+        </p>
+      </div>
       <h4>deranged is trusted by:</h4>
     </div>
     <a href="/cases" class="container-3">
@@ -102,6 +179,38 @@ services:
       <img src="/img/nornorm-km.png" class="client_logo" />
       <img src="/img/PenlyLogo.svg" class="client_logo svg" />
     </a>
+  </div>
+</section>
+
+<section class="who-we-are-section">
+  <div class="who-we-are-content">
+    <h2 class="who-we-are-section__title">Meet the team</h2>
+    <p>
+      Our team consists of enthusiastic, flexible and engaged people with a
+      varied set of backgrounds. We work very deliberately to be flexible and
+      efficient, a company full of people who make a positive difference in
+      whichever setting they are placed.
+    </p>
+    <p>
+      When hiring, we look for people who care about making a difference in
+      their day-to-day life, and as a customer you're sure to experience this,
+      too.
+    </p>
+    <p>
+      Finding incredible people means thinking hard about the kind of work
+      environment we create. We are always reevaluating, and figuring out how to
+      create an efficient, inclusive and open space to work in, and we bring
+      that spirit with us wherever we work.
+    </p>
+    <a href="/the-team/" class="read-more">Check out the team</a>
+  </div>
+  <div class="team-photos">
+    <div><img src="/img/people/asbjoern-thegler-thumb.jpg" /></div>
+    <div><img src="/img/people/simon-thumb.jpg" /></div>
+    <div><img src="/img/people/haidar-thump.jpg" /></div>
+    <div><img src="/img/people/philip-dein-thumb.jpg" /></div>
+    <div><img src="/img/people/anders-thumb.jpg" /></div>
+    <div><img src="/img/people/niels-abildgaard-thumb.jpg" /></div>
   </div>
 </section>
 
