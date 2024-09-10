@@ -15,6 +15,23 @@ services:
 <link href="/css/revops.css" rel="stylesheet" type="text/css" />
 <link href="/css/homestyle.css" rel="stylesheet" type="text/css" />
 
+<style>
+  .who-we-are-section {
+    grid-template-columns: auto 1fr 480px;
+  }
+  .who-we-are-section .team-photos {
+    grid-template-columns: 150px 150px 150px;
+  }
+  @media screen and (max-width: 1100px) {
+    .who-we-are-section {
+      grid-template-columns: auto 1fr 210px;
+    }
+    .who-we-are-section .team-photos {
+      grid-template-columns: 90px 90px;
+    }
+  }
+</style>
+
 <section class="hello-section">
   <a href="/" class="logo">deranged</a>
   <div class="big-greeting">
@@ -189,6 +206,8 @@ services:
   </div>
   <div class="team-photos">
     <div><img src="/img/people/asbjoern-thegler-thumb.jpg" /></div>
+    <div><img src="/img/people/simon-thumb.jpg" /></div>
+    <div><img src="/img/people/haidar-thump.jpg" /></div>
     <div><img src="/img/people/philip-dein-thumb.jpg" /></div>
     <div><img src="/img/people/anders-thumb.jpg" /></div>
     <div><img src="/img/people/niels-abildgaard-thumb.jpg" /></div>
