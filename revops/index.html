@@ -109,7 +109,7 @@ services:
         {% for s in page.services %}
           {% for service in site.services %}
             {% if s == service.slug %}
-              <div class="collection-item w-dyn-item">
+              <div class="collection-item">
                 <a href="{{ service.url }}" class="link-block w-inline-block">
                   <div class="div-block">
                     <img
