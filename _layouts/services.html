@@ -61,21 +61,31 @@ layout: default
 
   .header-overlay,
   .header-image {
-    height: 300px;
-    width: calc(100vw - 115px);
-    max-width: 1200px;
+    height: 16em;
+    width: 100%;
   }
   .header-overlay {
     position: absolute;
     overflow: hidden;
     background-color: #ecf0f1;
-    opacity: 0.5;
+    background-image: linear-gradient(#ecf0f12c, #ecf0f1);
+    opacity: 0.9;
   }
   .header-image {
     object-fit: cover;
     -webkit-filter: blur(1px);
-    filter: blur(2px);
-    opacity: 0.4;
+    filter: blur(1px);
+    opacity: 0.8;
+    mask-image: linear-gradient(
+      to top,
+      rgba(0, 0, 0, 0) 0%,
+      rgba(0, 0, 0, 0.6) 100%
+    );
+    -webkit-mask-image: linear-gradient(
+      to top,
+      rgba(0, 0, 0, 0) 0%,
+      rgba(0, 0, 0, 0.6) 100%
+    );
   }
   main h1 {
     text-align: left;
@@ -91,6 +101,9 @@ layout: default
     width: 100%;
     justify-content: center;
     padding-top: 1.5em;
+  }
+  .flex-row:first-of-type {
+    padding-top: 0;
   }
   .section-top {
     display: flex;
@@ -169,13 +182,6 @@ layout: default
     }
     main section {
       margin-left: 0;
-    }
-    .header-overlay,
-    .header-image {
-      width: 100vw;
-    }
-    .header-overlay {
-      margin-left: -15px;
     }
     .section-top {
       flex-wrap: wrap;
