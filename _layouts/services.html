@@ -59,19 +59,19 @@ layout: default
     text-align: left;
   }
 
-  main .header-overlay,
-  main .header-image {
+  .header-overlay,
+  .header-image {
     height: 300px;
     width: calc(100vw - 115px);
     max-width: 1200px;
   }
-  main .header-overlay {
+  .header-overlay {
     position: absolute;
     overflow: hidden;
     background-color: #ecf0f1;
     opacity: 0.5;
   }
-  main .header-image {
+  .header-image {
     object-fit: cover;
     -webkit-filter: blur(1px);
     filter: blur(2px);
@@ -86,25 +86,25 @@ layout: default
     font-weight: bold;
     z-index: 1;
   }
-  main .flex-row {
+  .flex-row {
     display: flex;
     width: 100%;
     justify-content: center;
     padding-top: 1.5em;
   }
-  main .section-top {
+  .section-top {
     display: flex;
     align-items: center;
     width: 1000px;
     margin-top: 0;
     padding-top: 1em;
   }
-  main .section-top img {
+  .section-top img {
     max-height: 300px;
     max-width: 600px;
     padding-right: 2em;
   }
-  main section > .h2-wrapper {
+  .h2-wrapper {
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -119,7 +119,7 @@ layout: default
     color: #2c3e50;
     z-index: 2;
   }
-  main section .h2-icon {
+  .h2-icon {
     background: #2c3e50;
     background-image: linear-gradient(40deg, #2c3e50 30%, #455d75 90%);
     border-radius: 100%;
@@ -136,7 +136,7 @@ layout: default
     padding-bottom: 1em;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.4);
   }
-  main img.side-image {
+  img.side-image {
     object-fit: contain;
     width: 40vw;
     max-width: 650px;
@@ -159,7 +159,7 @@ layout: default
   .contact .side-explanation {
     padding: 15px;
   }
-  main p.sidenote {
+  p.sidenote {
     color: white;
     background-image: linear-gradient(40deg, #2c3e50 30%, #455d75 90%);
     font-size: 1.1em;
@@ -176,25 +176,25 @@ layout: default
     main section {
       margin-left: 0;
     }
-    main .header-overlay,
-    main .header-image {
+    .header-overlay,
+    .header-image {
       width: 100vw;
     }
-    main .header-overlay {
+    .header-overlay {
       margin-left: -15px;
     }
-    main .section-top {
+    .section-top {
       flex-wrap: wrap;
       justify-content: center;
     }
-    main .section-top img {
+    .section-top img {
       padding-right: 0;
     }
-    main .flex-row {
+    .flex-row {
       flex-wrap: wrap;
       padding-top: 1em;
     }
-    main img.side-image {
+    img.side-image {
       order: 2;
       padding: 1em;
       height: 300px;
@@ -210,14 +210,11 @@ layout: default
       font-size: 3.5em;
       margin: 1em;
     }
-    main h1 br {
-      display: none;
-    }
-    main .header-overlay,
-    main .header-image {
+    .header-overlay,
+    .header-image {
       height: 240px;
     }
-    main .section-top img {
+    .section-top img {
       max-height: 200px;
       max-width: 400px;
     }
@@ -230,14 +227,14 @@ layout: default
     main h1 {
       font-size: 2.5em;
     }
-    main .header-overlay,
-    main .header-image {
+    .header-overlay,
+    .header-image {
       display: none;
     }
-    main .section-top img {
+    .section-top img {
       max-width: 400px;
     }
-    main section .h2-icon {
+    .h2-icon {
       width: 40px;
       height: 40px;
       padding: 5px;
@@ -247,7 +244,7 @@ layout: default
     main {
       font-size: 1.1em;
     }
-    main .section-top img {
+    .section-top img {
       max-width: 200px;
     }
   }
@@ -266,7 +263,7 @@ layout: default
   </div>
   <div class="flex-row">
     <section class="section-top">
-      <img src="{{ page.icon }}" alt="{{ page.alt }}" />
+      <img src="{{ page.icon }}" alt="" />
       <div>{{ page.top-section }}</div>
     </section>
   </div>

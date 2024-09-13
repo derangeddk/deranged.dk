@@ -109,13 +109,13 @@ services:
         {% for s in page.services %}
           {% for service in site.services %}
             {% if s == service.slug %}
-              <div class="collection-item w-dyn-item">
+              <div class="collection-item">
                 <a href="{{ service.url }}" class="link-block w-inline-block">
                   <div class="div-block">
                     <img
                       src="{{ service.icon }}"
                       loading="lazy"
-                      alt="{{ service.alt }}"
+                      alt=""
                       class="image"
                     />
                     <h3 class="post-preview-title">{{ service.title }}</h3>
@@ -173,11 +173,11 @@ services:
       <h4>deranged is trusted by:</h4>
     </div>
     <a href="/cases" class="container-3">
-      <img src="/img/marmar.png" class="client_logo" />
-      <img src="/img/fischer-lighting.png" class="client_logo" />
-      <img src="/img/kbh-stadsarkiv.png" class="client_logo" />
-      <img src="/img/nornorm-km.png" class="client_logo" />
-      <img src="/img/PenlyLogo.svg" class="client_logo svg" />
+      <img src="/img/marmar.png" class="client_logo" alt="" />
+      <img src="/img/fischer-lighting.png" class="client_logo" alt="" />
+      <img src="/img/kbh-stadsarkiv.png" class="client_logo" alt="" />
+      <img src="/img/nornorm-km.png" class="client_logo" alt="" />
+      <img src="/img/PenlyLogo.svg" class="client_logo svg" alt="" />
     </a>
   </div>
 </section>
@@ -205,12 +205,12 @@ services:
     <a href="/the-team/" class="read-more">Check out the team</a>
   </div>
   <div class="team-photos">
-    <div><img src="/img/people/asbjoern-thegler-thumb.jpg" /></div>
-    <div><img src="/img/people/simon-thumb.jpg" /></div>
-    <div><img src="/img/people/haidar-thump.jpg" /></div>
-    <div><img src="/img/people/philip-dein-thumb.jpg" /></div>
-    <div><img src="/img/people/anders-thumb.jpg" /></div>
-    <div><img src="/img/people/niels-abildgaard-thumb.jpg" /></div>
+    <div><img src="/img/people/asbjoern-thegler-thumb.jpg" alt="" /></div>
+    <div><img src="/img/people/simon-thumb.jpg" alt="" /></div>
+    <div><img src="/img/people/haidar-thump.jpg" alt="" /></div>
+    <div><img src="/img/people/philip-dein-thumb.jpg" alt="" /></div>
+    <div><img src="/img/people/anders-thumb.jpg" alt="" /></div>
+    <div><img src="/img/people/niels-abildgaard-thumb.jpg" alt="" /></div>
   </div>
 </section>
 
