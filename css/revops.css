@@ -365,6 +365,37 @@ p {
 }
 
 @media screen and (max-width: 767px) {
+  .expertise-section {
+    padding-top: 5em;
+    padding-bottom: 0;
+  }
+
+  .expertise-container {
+    padding: 2em;
+    padding-bottom: 0;
+  }
+
+  .services-section {
+    padding: 2em;
+    padding-top: 5em;
+    padding-bottom: 0;
+  }
+
+  .choose-section {
+    padding-left: 2em;
+    padding-right: 2em;
+    padding-bottom: 0;
+  }
+
+  .choose-container {
+    padding-bottom: 0;
+  }
+
+  .trusted-section {
+    padding-top: 3em;
+    padding-bottom: 2em;
+  }
+
   .w-dyn-items {
     grid-template-columns: 1fr 1fr;
   }
