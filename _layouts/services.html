@@ -68,6 +68,15 @@ layout: default
     font-weight: bold;
     z-index: 1;
   }
+
+  img.service-logo {
+    margin-top: 6em;
+    margin-left: 25px;
+    margin-right: 25px;
+    height: 5em;
+    z-index: 1;
+  }
+
   .flex-row {
     display: flex;
     width: 100%;
@@ -184,6 +193,11 @@ layout: default
       margin-right: 1em;
       margin-left: 1em;
     }
+    img.service-logo {
+      height: 4em;
+      margin-right: 1em;
+      margin-left: 1em;
+    }
     .header-overlay,
     .header-image {
       height: 22em;
@@ -199,6 +213,10 @@ layout: default
   @media (max-width: 600px) {
     main h1 {
       font-size: 2.5em;
+    }
+    img.service-logo {
+      margin-top: 5em;
+      height: 3em;
     }
     .section-top img {
       max-width: 200px;
@@ -223,10 +241,14 @@ layout: default
 <main>
   <a href="/" class="logo">deranged</a>
   <div class="flex-row">
-    <div class="header-overlay" style="background-color: {{ page.color }};">
+    <div class="header-overlay">
       <img src="{{ page.header-img }}" class="header-image" alt="" />
     </div>
+    {% if page.logo == nil %}
     <h1>{{ page.title }}</h1>
+    {% else %}
+    <img src="{{ page.logo }}" class="service-logo" alt="" />
+    {% endif %}
   </div>
   <div class="flex-row">
     <section class="section-top">
