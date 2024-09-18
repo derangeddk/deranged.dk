@@ -786,7 +786,7 @@ permalink: /css/homestyle.css
   grid-template-columns: 1fr 1fr;
 }
 
-.how-we-think-section {
+.smv-digital-section {
   grid-row: 1 / 2;
   padding: 50px 50px 50px 70px;
   text-align: left;
@@ -803,7 +803,7 @@ permalink: /css/homestyle.css
   }
 }
 
-.how-we-think-section__title {
+.smv-digital-section__title {
   font-size: 1.8em;
   font-weight: 200;
   margin: 0;
@@ -815,7 +815,7 @@ permalink: /css/homestyle.css
   margin: 0;
 }
 
-.how-we-think-section .read-more {
+.smv-digital-section .read-more {
   background: #2c3e50;
   border: 1px solid white;
   color: #eaf1f7;
@@ -902,7 +902,7 @@ permalink: /css/homestyle.css
   .other-pages-section {
     grid-template-columns: 1fr;
   }
-  .how-we-think-section {
+  .smv-digital-section {
     grid-row: auto;
   }
   .who-we-are-section {
