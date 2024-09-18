@@ -33,7 +33,7 @@ layout: default
 
   .header-overlay,
   .header-image {
-    height: 16em;
+    height: 26em;
     width: 100%;
   }
   .header-overlay {
@@ -41,13 +41,13 @@ layout: default
     overflow: hidden;
     background-color: #ecf0f1;
     background-image: linear-gradient(#ecf0f12c, #ecf0f1);
-    opacity: 0.9;
+    opacity: 0.8;
   }
   .header-image {
     object-fit: cover;
-    -webkit-filter: blur(1px);
-    filter: blur(1px);
-    opacity: 0.8;
+    -webkit-filter: blur(2px);
+    filter: blur(2px);
+    opacity: 0.7;
     mask-image: linear-gradient(
       to top,
       rgba(0, 0, 0, 0) 0%,
@@ -61,7 +61,7 @@ layout: default
   }
   main h1 {
     text-align: left;
-    margin: 1.5em;
+    margin-top: 1.5em;
     margin-left: 25px;
     margin-right: 25px;
     font-size: 4em;
@@ -82,7 +82,7 @@ layout: default
     align-items: center;
     width: 1000px;
     margin-top: 0;
-    padding-top: 1em;
+    z-index: 1;
   }
   .section-top img {
     max-height: 300px;
@@ -114,12 +114,10 @@ layout: default
     padding: 8px;
   }
   main section {
-    background-color: #fff;
     width: 950px;
     padding-left: 2em;
     padding-right: 2em;
     padding-bottom: 1em;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.4);
   }
   img.side-image {
     object-fit: contain;
@@ -161,6 +159,8 @@ layout: default
     }
     .section-top img {
       padding-right: 0;
+      max-height: 200px;
+      max-width: 400px;
     }
     .flex-row {
       flex-wrap: wrap;
@@ -180,15 +180,15 @@ layout: default
   @media (max-width: 950px) {
     main h1 {
       font-size: 3.5em;
-      margin: 1em;
       margin-top: 1.5em;
+      margin-right: 1em;
+      margin-left: 1em;
     }
     .header-overlay,
     .header-image {
-      height: 200px;
+      height: 22em;
     }
     .section-top img {
-      max-height: 200px;
       max-width: 400px;
     }
     .contact {
@@ -200,12 +200,8 @@ layout: default
     main h1 {
       font-size: 2.5em;
     }
-    .header-overlay,
-    .header-image {
-      height: 140px;
-    }
     .section-top img {
-      max-width: 400px;
+      max-width: 200px;
     }
     .h2-icon {
       width: 40px;
@@ -216,9 +212,6 @@ layout: default
   @media (max-width: 450px) {
     main {
       font-size: 1.1em;
-    }
-    .section-top img {
-      max-width: 200px;
     }
   }
 
