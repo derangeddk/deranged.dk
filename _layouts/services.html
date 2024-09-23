@@ -154,6 +154,28 @@ layout: default
     opacity: 0.8;
     filter: contrast(0.8);
     mix-blend-mode: color-burn;
+    mask-image: linear-gradient(
+      to left,
+      rgba(0, 0, 0, 0.2) 0%,
+      rgba(0, 0, 0, 1) 100%
+    );
+    -webkit-mask-image: linear-gradient(
+      to left,
+      rgba(0, 0, 0, 0.2) 0%,
+      rgba(0, 0, 0, 1) 100%
+    );
+  }
+  .flex-row:not(.top):nth-last-child(even) img.side-image {
+    mask-image: linear-gradient(
+      to right,
+      rgba(0, 0, 0, 0.2) 0%,
+      rgba(0, 0, 0, 1) 100%
+    );
+    -webkit-mask-image: linear-gradient(
+      to right,
+      rgba(0, 0, 0, 0.2) 0%,
+      rgba(0, 0, 0, 1) 100%
+    );
   }
   .flex-row:not(.top):nth-last-child(even) img.side-image:not(.screenshot) {
     mix-blend-mode: color-dodge;
