@@ -13,39 +13,17 @@ sitemap_include: 'yes'
 
 {% include overlay_nav.html %}
 
-<link href="/css/revops.css" rel="stylesheet" type="text/css" />
 <link href="/css/homestyle.css" rel="stylesheet" type="text/css" />
+<link href="/css/revops.css" rel="stylesheet" type="text/css" />
 
 <section class="hello-section">
   <a href="/" class="logo">deranged</a>
   <div class="big-greeting">
     <h1>RevOps</h1>
-    <h2>So nice to meet you!</h2>
   </div>
   <div class="big-greeting">
     <h2>Let's start building your Business&hellip;</h2>
   </div>
-  <button class="more-button" href="#expertise"></button>
-  <script>
-    (function () {
-      if (window.scrollTo) {
-        document
-          .querySelector(".hello-section .more-button")
-          .addEventListener("click", function (e) {
-            e.preventDefault();
-
-            var windowHeight = window.innerHeight;
-
-            window.scrollTo({
-              top: Math.max(650, windowHeight),
-              behavior: "smooth",
-            });
-
-            return false;
-          });
-      }
-    })();
-  </script>
 </section>
 
 <section class="expertise-section">

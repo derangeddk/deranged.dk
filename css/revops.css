@@ -22,6 +22,11 @@ p {
   line-height: 25px;
 }
 
+.hello-section {
+  min-height: 650px;
+  height: 50vh;
+}
+
 .expertise-section {
   color: var(--deranged-dark-blue);
   padding: 4em;
