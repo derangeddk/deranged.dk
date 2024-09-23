@@ -290,5 +290,7 @@ layout: default
 </main>
 
 {% if page.custom-form == nil %}
+  {% include trusted.html %}
+
   {% include get_a_quote.html subject=page.title %}
 {% endif %}
