@@ -101,6 +101,17 @@ p {
   padding-bottom: 1em;
 }
 
+.section-button-middle {
+  display: flex;
+}
+
+a.button {
+  width: auto;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: #1b2b3a;
+}
+
 .services-list-section {
   color: var(--deranged-text);
   background-color: var(--deranged-dark-blue);
@@ -364,7 +375,7 @@ p {
   }
 
   .h2-wrapper {
-  flex-direction: column;
+    flex-direction: column;
   }
 
   .h2-icon {
