@@ -130,17 +130,35 @@ p {
   padding-bottom: 6em;
 }
 
+.h2-wrapper {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.h2-icon {
+  background: #1b2b3a;
+  background-image: linear-gradient(40deg, #1b2b3a 30%, #455d75 90%);
+  border-radius: 100%;
+  margin-right: 15px;
+  height: 60px;
+  width: 60px;
+  padding: 8px;
+}
+
 .section-heading {
-  margin-top: 0;
-  margin-bottom: 32px;
+  margin-bottom: 0.3em;
+  margin-top: 0.3em;
   text-align: left;
   letter-spacing: 1px;
   text-transform: none;
-  font-size: 36px;
+  font-size: 2.7em;
   font-weight: 700;
 }
 
 .section-text {
+  margin-left: 75px;
+  margin-right: 75px;
   text-align: left;
   text-transform: none;
   font-size: 18px;
@@ -277,6 +295,8 @@ p {
 
 @media screen and (max-width: 991px) {
   .section-text {
+    margin-left: 0;
+    margin-right: 0;
     text-transform: none;
     line-height: 1.4;
   }
@@ -339,6 +359,16 @@ p {
 @media screen and (max-width: 479px) {
   .section-text {
     line-height: 30px;
+  }
+
+  .h2-wrapper {
+  flex-direction: column;
+  }
+
+  .h2-icon {
+    width: 40px;
+    height: 40px;
+    padding: 5px;
   }
 
   .w-dyn-items {
