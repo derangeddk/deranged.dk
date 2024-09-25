@@ -5,6 +5,7 @@ layout: default
 {% include overlay_nav.html %}
 
 <link href="/css/revops.css" rel="stylesheet" type="text/css" />
+<link href="/css/homestyle.css" rel="stylesheet" type="text/css" />
 
 <style type="text/css" scoped>
   .header {
@@ -56,37 +57,51 @@ layout: default
     align-items: flex-start;
     text-align: left;
   }
-  main .header-overlay,
-  main .header-image {
-    height: 600px;
+  .header-overlay,
+  .header-image {
+    height: 24em;
     width: 100%;
-    max-width: 1200px;
-    margin-right: auto;
-    margin-left: auto;
-    margin-bottom: 1em;
   }
-  main .header-overlay {
-    position: relative;
+  .header-overlay {
+    position: absolute;
     overflow: hidden;
     background-color: #ecf0f1;
+    background-image: linear-gradient(#ecf0f12c, #ecf0f1);
+    opacity: 0.8;
   }
-  main .header-image {
-    position: absolute;
+  .header-image {
     object-fit: cover;
     -webkit-filter: blur(2px);
     filter: blur(2px);
-    opacity: 0.2;
+    opacity: 0.7;
+    mask-image: linear-gradient(
+      to top,
+      rgba(0, 0, 0, 0) 0%,
+      rgba(0, 0, 0, 0.6) 100%
+    );
+    -webkit-mask-image: linear-gradient(
+      to top,
+      rgba(0, 0, 0, 0) 0%,
+      rgba(0, 0, 0, 0.6) 100%
+    );
+  }
+
+  .flex-row {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    padding-right: 2em;
+    padding-left: 2em
   }
   main h1 {
     position: relative;
     text-align: left;
-    margin-top: 4em;
-    margin-bottom: 2em;
-    margin-left: 125px;
+    margin: 2.5em;
+    margin-left: 25px;
     margin-right: 25px;
     font-size: 4em;
     font-weight: bold;
-    z-index: 2;
+    z-index: 1;
   }
 
   main p.subtitle {
@@ -127,46 +142,31 @@ layout: default
     margin-bottom: 0.4em;
   }
 
-  @media (max-width: 1100px) {
-    main h1 {
-      margin-top: 3em;
-      margin-left: 50px;
-    }
-    main .header-overlay,
-    main .header-image {
-      height: 500px;
-    }
-  }
   @media (max-width: 950px) {
     main h1 {
       font-size: 3.5em;
-      margin-top: 2em;
-      margin-left: 40px;
+      margin-right: 1em;
+      margin-left: 1em;
     }
-    main .header-overlay,
-    main .header-image {
-      height: 400px;
+    .header-overlay,
+    .header-image {
+      height: 22em;
     }
   }
   @media (max-width: 600px) {
     main h1 {
-      font-size: 3em;
+      font-size: 2.5em;
+      margin-right: 0;
+      margin-left: 0;
     }
-    main .header-overlay,
-    main .header-image {
-      height: 300px;
+    .header-overlay,
+    .header-image {
+      height: 15em;
     }
   }
   @media (max-width: 450px) {
     main {
       font-size: 1.1em;
-    }
-    main h1 {
-      font-size: 2.2em;
-    }
-    main .header-overlay,
-    main .header-image {
-      height: 250px;
     }
   }
 
@@ -176,15 +176,17 @@ layout: default
 </style>
 
 <main>
-  <div class="header-overlay">
-    <img src="{{ page.img }}" class="header-image" alt="" />
+  <div class="flex-row">
+    <div class="header-overlay">
+      <img src="{{ page.img }}" class="header-image" alt="" />
+    </div>
     <h1>{{ page.title }}</h1>
   </div>
   {{ content }}
 </main>
 
-<section class="section">
-  <div class="container-home-page w-container">
+<section class="latest-posts-section">
+  <div class="latest-posts-container">
     <div class="section-title-group">
       <h2 class="section-heading">Recent posts</h2>
     </div>
@@ -212,3 +214,7 @@ layout: default
     <a href="/blog" class="button width-auto">Read more posts here</a>
   </div>
 </section>
+
+{% include team-and-smv-digital.html %}
+
+{% include get_a_quote.html subject='Quote request' %}
