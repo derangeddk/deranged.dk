@@ -1,41 +1,20 @@
+---
+layout: null
+---
 <urlset
     xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd"
 >
-    <url>
-        <loc>https://deranged.dk/</loc>
-    </url>
-    <url>
-        <loc>https://deranged.dk/the-team/</loc>
-    </url>
-    <url>
-        <loc>https://deranged.dk/cases/</loc>
-    </url>
-    <url>
-        <loc>https://deranged.dk/privacy/</loc>
-    </url>
-    <url>
-        <loc>https://deranged.dk/explainers/</loc>
-    </url>
-    <url>
-        <loc>https://deranged.dk/explainers/small-deliveries</loc>
-    </url>
-    <url>
-        <loc>https://deranged.dk/revops/</loc>
-    </url>
-    <url>
-        <loc>https://deranged.dk/automation</loc>
-    </url>
-    <url>
-        <loc>https://deranged.dk/coo</loc>
-    </url>
-    <url>
-        <loc>https://deranged.dk/sales-advice</loc>
-    </url>
-    <url>
-        <loc>https://deranged.dk/pipedrive</loc>
-    </url>
-    <url>
-        <loc>https://deranged.dk/hubspot</loc>
-    </url>
+    {% for page in site.pages %}
+        {% if page.sitemap-include == "yes" %}
+        <url>
+            <loc>{{ site.url }}{{ page.url | remove: "index.html" }}</loc>
+        </url>
+        {% endif %}
+    {% endfor %}
+    {% for service in site.services %}
+        <url>
+            <loc>{{ site.url }}{{ service.url }}</loc>
+        </url>
+    {% endfor %}
 </urlset>
