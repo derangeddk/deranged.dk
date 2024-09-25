@@ -8,13 +8,13 @@ layout: null
     {% for page in site.pages %}
         {% if page.sitemap-include == "yes" %}
         <url>
-            <loc>{{ site.url }}{{ page.url | remove: "index.html" }}</loc>
+            <loc>https://deranged.dk{{ page.url | remove: "index.html" }}</loc>
         </url>
         {% endif %}
     {% endfor %}
     {% for service in site.services %}
         <url>
-            <loc>{{ site.url }}{{ service.url }}</loc>
+            <loc>https://deranged.dk{{ service.url }}</loc>
         </url>
     {% endfor %}
 </urlset>
