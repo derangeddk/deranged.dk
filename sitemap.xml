@@ -7,9 +7,9 @@ layout: null
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd"
 >
     {% for page in site.pages %}
-        {% if page.sitemap-include == "yes" %}
+        {% if page.sitemap_include == "yes" %}
         <url>
-            <loc>https://deranged.dk{{ page.url | remove: "index.html" }}</loc>
+            <loc>https://deranged.dk{{ page.url | replace: "/index.html", "/" }}</loc>
         </url>
         {% endif %}
     {% endfor %}
