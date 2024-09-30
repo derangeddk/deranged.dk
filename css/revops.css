@@ -15,13 +15,6 @@ h3 {
   font-size: 20px;
 }
 
-h4 {
-  text-align: left;
-  font-size: 18px;
-  font-weight: 500;
-  line-height: 20px;
-}
-
 p {
   margin-top: 10px;
   margin-bottom: 30px;
@@ -129,19 +122,6 @@ p {
   max-width: 900px;
   padding-top: 2em;
   padding-bottom: 2em;
-}
-
-.trusted-section {
-  color: var(--deranged-text);
-  background-color: var(--deranged-dark-blue);
-  padding: 4em;
-}
-
-.trusted-container {
-  max-width: 1600px;
-  margin-left: auto;
-  margin-right: auto;
-  margin-bottom: 1.5em;
 }
 
 .section-heading {
@@ -252,22 +232,6 @@ p {
   display: inline-block;
 }
 
-.logo-container {
-  justify-content: space-around;
-  display: flex;
-  flex-wrap: wrap;
-}
-
-.client-logo {
-  margin-right: 12px;
-  max-height: 68px;
-  padding: 8px;
-}
-
-.client-logo.svg {
-  padding: 16px 8px;
-}
-
 .div-block-2 {
   color: var(--deranged-dark-blue);
   flex-flow: column;
@@ -349,11 +313,6 @@ p {
     padding: 2em;
     padding-top: 5em;
     padding-bottom: 0;
-  }
-
-  .trusted-section {
-    padding-top: 3em;
-    padding-bottom: 3em;
   }
 
   .w-dyn-items {
