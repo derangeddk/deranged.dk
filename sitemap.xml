@@ -1,23 +1,21 @@
+---
+layout: null
+---
+<?xml version="1.0" encoding="UTF-8"?>
 <urlset
     xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd"
 >
-    <url>
-        <loc>https://deranged.dk/</loc>
-    </url>
-    <url>
-        <loc>https://deranged.dk/the-team/</loc>
-    </url>
-    <url>
-        <loc>https://deranged.dk/cases/</loc>
-    </url>
-    <url>
-        <loc>https://deranged.dk/privacy/</loc>
-    </url>
-    <url>
-        <loc>https://deranged.dk/explainers/</loc>
-    </url>
-    <url>
-        <loc>https://deranged.dk/explainers/small-deliveries</loc>
-    </url>
+    {% for page in site.pages %}
+        {% if page.sitemap_include == "yes" %}
+        <url>
+            <loc>https://deranged.dk{{ page.url | replace: "/index.html", "/" }}</loc>
+        </url>
+        {% endif %}
+    {% endfor %}
+    {% for service in site.services %}
+        <url>
+            <loc>https://deranged.dk{{ service.url }}</loc>
+        </url>
+    {% endfor %}
 </urlset>
