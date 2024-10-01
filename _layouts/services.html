@@ -86,13 +86,13 @@ layout: default
     margin-top: 1.5em;
     padding: 4em;
   }
-  .flex-row.top {
+  .flex-row--top {
     margin-top: 0;
     padding: 0;
     padding-right: 2em;
     padding-left: 2em
   }
-  .flex-row:not(.top):nth-last-child(even) {
+  .flex-row--content:nth-of-type(odd) {
     background-color: #2c3e50;
     background-image: linear-gradient(235deg, #2c3e50 30%, #455d75 90%);
     color: #eaf1f7;
@@ -142,7 +142,7 @@ layout: default
     padding-right: 2em;
     padding-bottom: 1em;
   }
-  .flex-row:not(.top) section p, .flex-row:not(.top) section ul {
+  .flex-row--content section p, .flex-row--content section ul {
     margin-left: 75px;
   }
   img.side-image {
@@ -165,7 +165,7 @@ layout: default
       rgba(0, 0, 0, 1) 100%
     );
   }
-  .flex-row:not(.top):nth-last-child(even) img.side-image {
+  .flex-row--content:nth-of-type(odd) img.side-image {
     mask-image: linear-gradient(
       to right,
       rgba(0, 0, 0, 0.2) 0%,
@@ -177,7 +177,7 @@ layout: default
       rgba(0, 0, 0, 1) 100%
     );
   }
-  .flex-row:not(.top):nth-last-child(even) img.side-image:not(.screenshot) {
+  .flex-row--content:nth-of-type(odd) img.side-image:not(.screenshot) {
     mix-blend-mode: color-dodge;
   }
   img.side-image.screenshot {
@@ -230,7 +230,7 @@ layout: default
     .contact {
       margin-bottom: -20px;
     }
-    .flex-row:not(.top) section p, .flex-row:not(.top) section ul {
+    .flex-row--content section p, .flex-row--content section ul {
       margin-left: 0;
     }
   }
@@ -298,7 +298,7 @@ layout: default
 
 <main>
   <a href="/" class="logo">deranged</a>
-  <div class="flex-row top">
+  <div class="flex-row flex-row--top">
     <div class="header-overlay">
       <img src="{{ page.header-img }}" class="header-image" alt="" />
     </div>
@@ -308,7 +308,7 @@ layout: default
     <img src="{{ page.logo }}" class="service-logo" alt="" />
     {% endif %}
   </div>
-  <div class="flex-row top">
+  <div class="flex-row flex-row--top">
     <section class="section-top">
       <img src="{{ page.icon }}" alt="" />
       <div>{{ page.top-section }}</div>
