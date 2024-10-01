@@ -36,6 +36,8 @@ p {
   padding-top: max(4em, min(9vw, 232px));
   padding-bottom: 0;
   background-color: #ecf0f1;
+  display: flex;
+  justify-content: center;
 }
 .expertise-section:before,
 .expertise-section:after,
@@ -57,8 +59,6 @@ p {
 }
 
 .expertise-container {
-  margin-left: auto;
-  margin-right: auto;
   max-width: 900px;
   padding-top: 6em;
   padding-bottom: 2em;
@@ -71,8 +71,11 @@ p {
   background-color: var(--deranged-dark-blue);
   background-image: linear-gradient(#2c3e50 30%, #455d75 90%);
   padding: 4em;
+/* This makes the transitions occupy entire screen width */
   padding-top: max(6em, min(9vw, 232px));
   padding-bottom: 0;
+  display: flex;
+  justify-content: center;
 }
 
 .services-section:before,
@@ -94,8 +97,6 @@ p {
 }
 
 .service-container-top {
-  margin-left: auto;
-  margin-right: auto;
   max-width: 900px;
   padding-top: 6em;
   padding-bottom: 1em;
@@ -103,12 +104,11 @@ p {
 
 .section-button-middle {
   display: flex;
+  justify-content: center;
 }
 
 a.button {
   width: auto;
-  margin-left: auto;
-  margin-right: auto;
   background-color: #1b2b3a;
 }
 
@@ -131,25 +131,26 @@ a.button {
   color: var(--deranged-dark-blue);
   background-color: #ecf0f1;
   padding: 4em;
+/* This makes the transitions occupy entire screen width */
   padding-top: max(6em, min(9vw, 232px));
   padding-bottom: 1em;
+  display: flex;
+  justify-content: center;
 }
 
 .choose-container {
-  margin-left: auto;
-  margin-right: auto;
   max-width: 900px;
   padding-top: 6em;
   padding-bottom: 6em;
 }
 
-.h2-wrapper {
+.revops-section__heading-wrapper {
   display: flex;
   flex-direction: row;
   align-items: center;
 }
 
-.h2-icon {
+.revops-section__heading-icon {
   background: #1b2b3a;
   background-image: linear-gradient(40deg, #1b2b3a 30%, #455d75 90%);
   border-radius: 100%;
@@ -159,7 +160,7 @@ a.button {
   padding: 8px;
 }
 
-.section-heading {
+.revops-section__heading {
   margin-bottom: 0.3em;
   margin-top: 0.3em;
   text-align: left;
@@ -364,8 +365,6 @@ a.button {
 
   .post-thumbnail {
     max-width: 70%;
-    margin-left: auto;
-    margin-right: auto;
   }
 }
 
@@ -374,11 +373,11 @@ a.button {
     line-height: 30px;
   }
 
-  .h2-wrapper {
+  .revops-section__heading-wrapper {
     flex-direction: column;
   }
 
-  .h2-icon {
+  .revops-section__heading-icon {
     width: 40px;
     height: 40px;
     padding: 5px;
