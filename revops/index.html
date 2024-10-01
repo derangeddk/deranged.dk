@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Let's start building your Business ➟ deranged
+title: Let's start building your business ➟ deranged
 meta: "Align sales, marketing, and customer success with our RevOps services. We offer CRM implementation, fractional COO, sales advice and certified Pipedrive & HubSpot support."
 services:
   - automation
@@ -13,44 +13,24 @@ sitemap_include: 'yes'
 
 {% include overlay_nav.html %}
 
-<link href="/css/revops.css" rel="stylesheet" type="text/css" />
 <link href="/css/homestyle.css" rel="stylesheet" type="text/css" />
+<link href="/css/revops.css" rel="stylesheet" type="text/css" />
 
 <section class="hello-section">
   <a href="/" class="logo">deranged</a>
   <div class="big-greeting">
     <h1>RevOps</h1>
-    <h2>So nice to meet you!</h2>
+    <h2>Let's start building your business&hellip;</h2>
   </div>
-  <div class="big-greeting">
-    <h2>Let's start building your Business&hellip;</h2>
-  </div>
-  <button class="more-button" href="#expertise"></button>
-  <script>
-    (function () {
-      if (window.scrollTo) {
-        document
-          .querySelector(".hello-section .more-button")
-          .addEventListener("click", function (e) {
-            e.preventDefault();
-
-            var windowHeight = window.innerHeight;
-
-            window.scrollTo({
-              top: Math.max(650, windowHeight),
-              behavior: "smooth",
-            });
-
-            return false;
-          });
-      }
-    })();
-  </script>
+  <div class="big-greeting"></div>
 </section>
 
 <section class="expertise-section">
   <div class="expertise-container">
-    <h2 class="section-heading">Our Expertise</h2>
+    <div class="revops-section__heading-wrapper">
+      <img src="/img/trophy-icon.svg" class="revops-section__heading-icon" alt="" />
+      <h2 class="revops-section__heading">Our expertise</h2>
+    </div>
     <div class="section-text">
       <p>
         ➟ Revenue Operations (RevOps) isn’t magic, and while your company may
@@ -64,7 +44,10 @@ sitemap_include: 'yes'
 
 <section class="services-section">
   <div class="service-container-top" id="services">
-    <h2 class="section-heading">Our Services</h2>
+    <div class="revops-section__heading-wrapper">
+      <img src="/img/build-icon.svg" class="revops-section__heading-icon" alt="" />
+      <h2 class="revops-section__heading">Our services</h2>
+    </div>
     <div class="section-text">
       <p>
         ➟ Are you struggling to align your sales, marketing and customer success
@@ -86,8 +69,10 @@ sitemap_include: 'yes'
         framework from the ground up, our expert team integrates seamlessly with
         your business. We hit the ground running and look to deliver results
         from day one.
-        <a href="#contact">Start the conversation</a>
       </p>
+    </div>
+    <div class="section-button-middle">
+      <a class="button" href="#contact">Start the conversation</a>
     </div>
   </div>
 </section>
@@ -125,7 +110,10 @@ sitemap_include: 'yes'
 
 <section class="choose-section">
   <div class="choose-container">
-    <h2 class="section-heading">Why choose us?</h2>
+    <div class="revops-section__heading-wrapper">
+      <img src="/img/explore-icon.svg" class="revops-section__heading-icon" alt="" />
+      <h2 class="revops-section__heading">Why choose us</h2>
+    </div>
     <div class="section-text">
       <p>
         ➟ Our mission is to help you improve your revenue growth by breaking
