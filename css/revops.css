@@ -69,7 +69,6 @@ p {
   overflow: hidden;
   color: var(--deranged-text);
   background-color: var(--deranged-dark-blue);
-  background-image: linear-gradient(#2c3e50 30%, #455d75 90%);
   padding: 4em;
 /* This makes the transitions occupy entire screen width */
   padding-top: max(6em, min(9vw, 232px));
@@ -105,22 +104,22 @@ p {
 .section-button-middle {
   display: flex;
   justify-content: center;
+  padding: 2em;
 }
 
 a.button {
   width: auto;
-  background-color: #1b2b3a;
+  border-color: #ecf0f1;
+  border-style: solid;
+  border-width: 1px;
 }
 
 .services-list-section {
   color: var(--deranged-text);
   background-color: var(--deranged-dark-blue);
-  background-image: linear-gradient(360deg, #2c3e50 30%, #455d75 90%);
 }
 
 .service-container-bottom {
-  margin-left: 3em;
-  margin-right: 3em;
   padding-top: 1em;
   padding-bottom: 4em;
 }
@@ -180,53 +179,40 @@ a.button {
   line-height: 24px;
 }
 
-.collection-list-wrapper {
-  display: block;
+.services-collection-item {
+  display: flex;
+  padding: 4em;
+  padding-top: 1em;
+  padding-bottom: 1em;
+  justify-content: space-evenly;
+  align-items: center;
 }
 
-.collection-item {
-  display: block;
+:nth-child(even of .services-collection-item) img {
+  order: 2;
 }
 
-.collection-list {
-  grid-column-gap: 16px;
-  grid-row-gap: 16px;
-  grid-template-rows: auto auto;
-  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
-  grid-auto-columns: 1fr;
-  display: grid;
+.service-text-wrapper {
+  max-width: 750px;
+  align-content: center;
+  margin-left: 2em;
+  margin-right: 2em;
+  text-align: left;
+  font-size: 18px;
 }
 
-.link-block {
-  color: var(--black);
+.service-title {
+  letter-spacing: 1px;
+  text-transform: uppercase;
 }
 
-.link-block,
-.post-link-block {
-  background-color: var(--deranged-text);
-  border-radius: 10px;
-  width: 100%;
-  height: 100%;
-  text-decoration: none;
-  display: block;
-  box-shadow: 0 2px 3px #0003;
-  transition: background-color 0.3s, transform 0.3s;
-}
-
-.link-block:hover,
-.post-link-block:hover {
-  background-color: #fff;
-  transform: scale(1.015);
+.service-summary {
+  text-align: left;
 }
 
 .image {
-  object-fit: fill;
-  flex: none;
-  max-width: 200px;
-  max-height: 200px;
-  margin: 10px;
-  display: block;
-  overflow: clip;
+  width: 500px;
+  height: 500px;
 }
 
 .post-preview-title {
@@ -302,8 +288,11 @@ a.button {
 }
 
 @media screen and (max-width: 1400px) {
-  .collection-list {
-    grid-template-columns: 1fr 1fr 1fr;
+  .image {
+    max-width: 400px;
+    max-height: 400px;
+    width: 30vw;
+    height: 30vw;
   }
 }
 
@@ -315,13 +304,19 @@ a.button {
     line-height: 1.4;
   }
 
-  .collection-list {
-    grid-template-columns: 1fr 1fr;
+  .services-collection-item {
+    flex-direction: column;
+    padding: 2em;
   }
 
-  .w-dyn-items {
-    grid-row-gap: 12px;
-    grid-column-gap: 12px;
+  :nth-child(even of .services-collection-item) img {
+    order: 0;
+  }
+
+  .service-text-wrapper {
+    text-align: center;
+    margin-left: 0;
+    margin-right: 0;
   }
 
   .post-preview-title {
@@ -354,10 +349,6 @@ a.button {
     padding-top: 0;
   }
 
-  .w-dyn-items {
-    grid-template-columns: 1fr 1fr;
-  }
-
   .image {
     max-width: 160px;
     max-height: 160px;
@@ -381,10 +372,6 @@ a.button {
     width: 40px;
     height: 40px;
     padding: 5px;
-  }
-
-  .w-dyn-items {
-    grid-template-columns: 1fr;
   }
 
   .post-summary {

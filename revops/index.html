@@ -6,8 +6,6 @@ services:
   - automation
   - coo
   - sales-advice
-  - pipedrive
-  - hubspot
 sitemap_include: 'yes'
 ---
 
@@ -79,31 +77,30 @@ sitemap_include: 'yes'
 
 <section class="services-list-section">
   <div class="service-container-bottom">
-    <div class="collection-list-wrapper w-dyn-list">
-      <div class="collection-list w-dyn-items">
-        {% for s in page.services %}
-          {% for service in site.services %}
-            {% if s == service.slug %}
-              <div class="collection-item">
-                <a href="{{ service.url }}" class="link-block w-inline-block">
-                  <div class="div-block">
-                    <img
-                      src="{{ service.icon }}"
-                      loading="lazy"
-                      alt=""
-                      class="image"
-                    />
-                    <h3 class="post-preview-title">{{ service.title }}</h3>
-                    <p class="post-summary">
-                      {{ service.excerpt }} <u>Read&nbsp;more</u>
-                    </p>
-                  </div>
+    <div class="services-collection-wrapper">
+      {% for s in page.services %}
+        {% for service in site.services %}
+          {% if s == service.slug %}
+            <div class="services-collection-item">
+              <img
+                src="{{ service.icon }}"
+                loading="lazy"
+                alt=""
+                class="image"
+              />
+              <div class="service-text-wrapper">
+                <h2 class="service-title">{{ service.title }}</h2>
+                <p class="service-summary">
+                  {{ service.excerpt }}
+                </p>
+                <a href="{{ service.url }}" class="button">
+                  Read&nbsp;more
                 </a>
               </div>
-            {% endif %}
-          {% endfor %}
+            </div>
+          {% endif %}
         {% endfor %}
-      </div>
+      {% endfor %}
     </div>
   </div>
 </section>
