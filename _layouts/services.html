@@ -19,6 +19,19 @@ layout: default
     text-align: left;
     padding: 0;
   }
+  main a {
+    color: inherit;
+  }
+  @media (max-width: 1100px) {
+    main {
+      padding-bottom: 20px;
+    }
+  }
+  @media (max-width: 450px) {
+    main {
+      font-size: 1.1em;
+    }
+  }
 
   .logo {
     color: #2c3e50;
@@ -81,6 +94,48 @@ layout: default
     align-content: center;
     max-width: 800px;
     z-index: 1;
+  }
+  @media (max-width: 1100px) {
+    .header__row {
+      flex-direction: column;
+      align-items: center;
+    }
+    .header__icon {
+      padding-right: 0;
+      max-height: 200px;
+      max-width: 400px;
+    }
+  }
+  @media (max-width: 950px) {
+    .header__image {
+      height: 22em;
+    }
+    .header__title {
+      font-size: 3.5em;
+      margin-top: 1.5em;
+      margin-right: 1em;
+      margin-left: 1em;
+    }
+    .header__service-logo {
+      height: 4em;
+      margin-right: 1em;
+      margin-left: 1em;
+    }
+    .header__icon {
+      max-width: 400px;
+    }
+  }
+  @media (max-width: 600px) {
+    .header__title {
+      font-size: 2.5em;
+    }
+    .header__service-logo {
+      margin-top: 5em;
+      height: 3em;
+    }
+    .header__icon {
+      max-width: 200px;
+    }
   }
 
   .content-row {
@@ -159,6 +214,35 @@ layout: default
     object-position: left;
     mix-blend-mode: luminosity;
   }
+  @media (max-width: 1400px) {
+    .content-row__section {
+      grid-template-columns: 75px auto;
+    }
+  }
+  @media (max-width: 1100px) {
+    .content-row__section {
+      padding: 1em;
+      padding-left: 2em;
+      padding-right: 2em;
+    }
+    .content-row__text {
+      grid-column: 1 / span 2;
+      grid-row: 2;
+    }
+    .content-row__image {
+      display: none;
+    }
+  }
+  @media (max-width: 600px) {
+    .content-row__section {
+      grid-template-columns: 45px auto;
+    }
+    .content-row__icon {
+      width: 40px;
+      height: 40px;
+      padding: 5px;
+    }
+  }
 
   .contact {
     display: flex;
@@ -172,94 +256,17 @@ layout: default
   .contact-explanation {
     padding: 15px;
   }
-  @media (max-width: 1400px) {
-    .content-row__section {
-      grid-template-columns: 75px auto;
-    }
-  }
-
   @media (max-width: 1100px) {
-    main {
-      padding-bottom: 20px;
-    }
-    .header__row {
-      flex-direction: column;
-      align-items: center;
-    }
-    .header__icon {
-      padding-right: 0;
-      max-height: 200px;
-      max-width: 400px;
-    }
-    .content-row__section {
-      padding: 1em;
-      padding-left: 2em;
-      padding-right: 2em;
-    }
-    .content-row__text {
-      grid-column: 1 / span 2;
-      grid-row: 2;
-    }
-    .content-row__image {
-      display: none;
-    }
     .contact {
       margin-bottom: -20px;
     }
   }
   @media (max-width: 950px) {
-    .header__image {
-      height: 22em;
-    }
-    .header__title {
-      font-size: 3.5em;
-      margin-top: 1.5em;
-      margin-right: 1em;
-      margin-left: 1em;
-    }
-    .header__service-logo {
-      height: 4em;
-      margin-right: 1em;
-      margin-left: 1em;
-    }
-    .header__icon {
-      max-width: 400px;
-    }
     .contact {
       padding: 30px;
       flex-wrap: wrap;
     }
   }
-  @media (max-width: 600px) {
-    .header__title {
-      font-size: 2.5em;
-    }
-    .header__service-logo {
-      margin-top: 5em;
-      height: 3em;
-    }
-    .header__icon {
-      max-width: 200px;
-    }
-    .content-row__section {
-      grid-template-columns: 45px auto;
-    }
-    .content-row__icon {
-      width: 40px;
-      height: 40px;
-      padding: 5px;
-    }
-  }
-  @media (max-width: 450px) {
-    main {
-      font-size: 1.1em;
-    }
-  }
-
-  main a {
-    color: inherit;
-  }
-
 </style>
 
 <main>
