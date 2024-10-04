@@ -13,7 +13,7 @@ top-section: "<p>We are Official Premier Pipedrive Solution Providers - and want
 <p>We have vast experience with Pipedrive’s Sales and Marketing focused CRM and are ready to help you set you on the right track to get the maximum value out of Pipedrive.</p>"
 ---
 
-<style>
+<style type="text/css" scoped>
   .pipedriveWebForms {
     width: 550px;
     border: 1px solid #1b2b3a;
@@ -30,23 +30,37 @@ top-section: "<p>We are Official Premier Pipedrive Solution Providers - and want
       padding-right: 16px;
     }
   }
+
+  .flex-row {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    padding: 4em;
+    padding-top: 2em;
+  }
+  @media (max-width: 1100px) {
+    .flex-row {
+      padding: 2em;
+      padding-top: 1em;
+    }
+  }
+
 </style>
 
 <div class="flex-row">
   <a
-    class="button"
-    style="width: auto; margin-top: 10px"
+    class="button button--narrow"
     href="https://app.pipedrive.com/affiliate/pdp-deranged-aps?utm_content=copy_text&utm_medium[…]_program&utm_source=deranged%20ApS&utm_term=pdp-deranged-aps"
   >
     Try Pipedrive for free for 30 days!
   </a>
 </div>
 
-<div class="flex-row flex-row--content">
-  <section>
-    <img src="/img/build-icon.svg" class="h2-icon" alt="" />
-    <h2>Our Services</h2>
-    <div class="content-text">
+<div class="content-row">
+  <section class="content-row__section">
+    <img src="/img/build-icon.svg" class="content-row__icon" alt="" />
+    <h2 class="content-row__title">Our Services</h2>
+    <div class="content-row__text">
       <p>We offer the following services in both English & Danish:</p>
       <ul>
         <li>Pipedrive Onboarding</li>
@@ -72,15 +86,15 @@ top-section: "<p>We are Official Premier Pipedrive Solution Providers - and want
       </p>
     </div>
   </section>
-  <img class="side-image screenshot" src="/img/pipedrive-empty.svg" alt="" />
+  <img class="content-row__screenshot" src="/img/pipedrive-empty.svg" alt="" />
 </div>
 
-<div class="flex-row flex-row--content">
-  <img class="side-image screenshot" src="/img/pipedrive-email.svg" alt="" />
-  <section>
-    <img src="/img/explore-icon.svg" class="h2-icon" alt="" />
-    <h2>Why Choose Pipedrive</h2>
-    <div class="content-text">
+<div class="content-row">
+  <img class="content-row__screenshot" src="/img/pipedrive-email.svg" alt="" />
+  <section class="content-row__section">
+    <img src="/img/explore-icon.svg" class="content-row__icon" alt="" />
+    <h2 class="content-row__title">Why Choose Pipedrive</h2>
+    <div class="content-row__text">
       <p>
         Pipedrive is a simple to use and effective CRM (Customer relationship
         management) tool that enables you to visualize your entire sales process
@@ -103,11 +117,11 @@ top-section: "<p>We are Official Premier Pipedrive Solution Providers - and want
   </section>
 </div>
 
-<div class="flex-row flex-row--content">
-  <section>
-    <img src="/img/extension-icon.svg" class="h2-icon" alt="" />
-    <h2>Pipedrive Features</h2>
-    <div class="content-text">
+<div class="content-row">
+  <section class="content-row__section">
+    <img src="/img/extension-icon.svg" class="content-row__icon" alt="" />
+    <h2 class="content-row__title">Pipedrive Features</h2>
+    <div class="content-row__text">
       <p>
         Pipedrive is a feature rich CRM, here are some of the key components that
         will help you optimize your business.
@@ -137,7 +151,7 @@ top-section: "<p>We are Official Premier Pipedrive Solution Providers - and want
       </p>
     </div>
   </section>
-  <img class="side-image screenshot" src="/img/pipedrive-setup.svg" alt="" />
+  <img class="content-row__screenshot" src="/img/pipedrive-setup.svg" alt="" />
 </div>
 
 {% include trusted.html %}
@@ -149,7 +163,7 @@ top-section: "<p>We are Official Premier Pipedrive Solution Providers - and want
   >
     <script src="https://webforms.pipedrive.com/f/loader"></script>
   </div>
-  <div class="side-explanation">
+  <div class="contact-explanation">
     <p>
       This contact form was built using Pipedrive’s Web Forms feature, part of
       the LeadBooster add-on. These customisable, embeddable forms feed customer
