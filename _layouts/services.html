@@ -180,6 +180,7 @@ layout: default
     flex-grow: 1;
     display: grid;
     grid-template-columns: 75px min(650px);
+    grid-template-rows: auto 1fr;
     justify-content: center;
   }
   .content-row__text {
@@ -190,6 +191,7 @@ layout: default
   .content-row__screenshot {
     object-fit: cover;
     width: 40vw;
+    max-width: 1030px;
     opacity: 0.8;
     filter: contrast(0.8);
     mix-blend-mode: color-burn;
