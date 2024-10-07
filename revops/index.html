@@ -23,13 +23,13 @@ sitemap_include: 'yes'
   <div class="big-greeting"></div>
 </section>
 
-<section class="expertise-section">
-  <div class="expertise-container">
-    <div class="revops-section__heading-wrapper">
+<section class="revops-section">
+  <div class="revops-section__container">
+    <div class="revops-section__heading">
       <img src="/img/trophy-icon.svg" class="revops-section__heading-icon" alt="" />
-      <h2 class="revops-section__heading">Our expertise</h2>
+      <h2 class="revops-section__heading-title">Our expertise</h2>
     </div>
-    <div class="section-text">
+    <div class="revops-section__text">
       <p>
         ➟ Revenue Operations (RevOps) isn’t magic, and while your company may
         already be practicing aspects of RevOps, without a dedicated RevOps
@@ -40,13 +40,13 @@ sitemap_include: 'yes'
   </div>
 </section>
 
-<section class="services-section">
-  <div class="service-container-top" id="services">
-    <div class="revops-section__heading-wrapper">
+<section class="revops-section">
+  <div class="revops-section__container" id="services">
+    <div class="revops-section__heading">
       <img src="/img/build-icon.svg" class="revops-section__heading-icon" alt="" />
-      <h2 class="revops-section__heading">Our services</h2>
+      <h2 class="revops-section__heading-title">Our services</h2>
     </div>
-    <div class="section-text">
+    <div class="revops-section__text">
       <p>
         ➟ Are you struggling to align your sales, marketing and customer success
         strategies? Or does your company need expert assistance with CRM
@@ -69,49 +69,44 @@ sitemap_include: 'yes'
         from day one.
       </p>
     </div>
-    <div class="section-button-middle">
+    <div class="revops-section__button-middle">
       <a class="button" href="#contact">Start the conversation</a>
     </div>
   </div>
-</section>
-
-<section class="services-list-section">
-  <div class="service-container-bottom">
-    <div class="services-collection-wrapper">
-      {% for s in page.services %}
-        {% for service in site.services %}
-          {% if s == service.slug %}
-            <div class="services-collection-item">
-              <img
-                src="{{ service.icon }}"
-                loading="lazy"
-                alt=""
-                class="image"
-              />
-              <div class="service-text-wrapper">
-                <h2 class="service-title">{{ service.title }}</h2>
-                <p class="service-summary">
-                  {{ service.excerpt }}
-                </p>
-                <a href="{{ service.url }}" class="button">
-                  Read&nbsp;more
-                </a>
-              </div>
+  <div class="revops-section__container revops-section__container--full-width">
+    {% for s in page.services %}
+      {% for service in site.services %}
+        {% if s == service.slug %}
+          <div class="services-list-item">
+            <img
+              src="{{ service.icon }}"
+              loading="lazy"
+              alt=""
+              class="services-list-item__logo"
+            />
+            <div class="services-list-item__text">
+              <h2 class="services-list-item__title">{{ service.title }}</h2>
+              <p class="services-list-item__summary">
+                {{ service.excerpt }}
+              </p>
+              <a href="{{ service.url }}" class="button">
+                Read&nbsp;more
+              </a>
             </div>
-          {% endif %}
-        {% endfor %}
+          </div>
+        {% endif %}
       {% endfor %}
-    </div>
+    {% endfor %}
   </div>
 </section>
 
-<section class="choose-section">
-  <div class="choose-container">
-    <div class="revops-section__heading-wrapper">
+<section class="revops-section revops-section--last">
+  <div class="revops-section__container">
+    <div class="revops-section__heading">
       <img src="/img/explore-icon.svg" class="revops-section__heading-icon" alt="" />
-      <h2 class="revops-section__heading">Why choose us</h2>
+      <h2 class="revops-section__heading-title">Why choose us</h2>
     </div>
-    <div class="section-text">
+    <div class="revops-section__text">
       <p>
         ➟ Our mission is to help you improve your revenue growth by breaking
         down silos and fostering a more collaborative culture to push your
