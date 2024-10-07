@@ -186,6 +186,11 @@ a.button {
   padding-bottom: 1em;
   justify-content: space-evenly;
   align-items: center;
+  background-image: linear-gradient(-16deg, #2c3e50 50%, #455d75 80%);
+}
+
+:nth-child(even of .services-collection-item) {
+  background-image: linear-gradient(16deg, #2c3e50 50%, #455d75 80%);
 }
 
 :nth-child(even of .services-collection-item) img {
