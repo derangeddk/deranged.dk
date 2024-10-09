@@ -60,20 +60,18 @@ p {
 
 .revops-section__container {
   max-width: 900px;
-  padding: 4em;
-  padding-top: 6em;
-  padding-bottom: 2em;
+  padding: 6em 4em 2em;
 }
 .revops-section__container--full-width {
   width: 100%;
   max-width: none;
-  padding: 0;
-  padding-bottom: 4em;
+  padding: 0 2em 4em;
+  display:  flex;
+  justify-content: space-evenly;
 }
 
 .revops-section__heading {
   display: flex;
-  flex-direction: row;
   align-items: center;
 }
 .revops-section__heading-icon {
@@ -113,27 +111,23 @@ p {
 
 .services-list-item {
   display: flex;
-  padding: 4em;
-  padding-top: 1em;
-  padding-bottom: 1em;
-  justify-content: space-evenly;
+  flex-direction: column;
+  padding: 1em 0 1em;
   align-items: center;
-  background-image: linear-gradient(-16deg, var(--deranged-dark-blue) 50%, var(--deranged-light-blue) 80%);
 }
-:nth-child(even of .services-list-item) {
-  background-image: linear-gradient(16deg, var(--deranged-dark-blue) 50%, var(--deranged-light-blue) 80%);
+:nth-child(2 of .services-list-item) {
+  margin-top: 9rem;
 }
 
 .services-list-item__logo {
-  width: 500px;
-  height: 500px;
-}
-:nth-child(even of .services-list-item) .services-list-item__logo {
-  order: 2;
+  width: 100%;
+  max-width: 300px;
+  max-height: 300px;
 }
 
+
 .services-list-item__text {
-  max-width: 750px;
+  max-width: 500px;
   align-content: center;
   margin-left: 2em;
   margin-right: 2em;
@@ -144,22 +138,18 @@ p {
 .services-list-item__title {
   letter-spacing: 1px;
   text-transform: uppercase;
+  margin-top: 0;
 }
 
 .services-list-item__summary {
   text-align: left;
 }
 
-@media screen and (max-width: 1400px) {
-  .services-list-item__logo {
-    max-width: 400px;
-    max-height: 400px;
-    width: 30vw;
-    height: 30vw;
-  }
-}
-
 @media screen and (max-width: 991px) {
+  .revops-section__container--full-width {
+    display: block;
+  }
+
   .revops-section__text {
     margin-left: 0;
     margin-right: 0;
@@ -171,10 +161,18 @@ p {
     flex-direction: column;
     padding: 2em;
   }
-  :nth-child(even of .services-list-item) .services-list-item__logo {
-    order: 0;
+  :nth-child(2 of .services-list-item),
+  :nth-child(3 of .services-list-item) {
+    margin-top: 0;
   }
+
+  .services-list-item__logo {
+    width: 30vw;
+    height: 30vw;
+  }
+
   .services-list-item__text {
+    max-width: 750px;
     text-align: center;
     margin-left: 0;
     margin-right: 0;
