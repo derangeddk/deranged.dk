@@ -136,35 +136,29 @@ sitemap_include: 'yes'
 
 {% include trusted.html %}
 
-<section class="latest-posts-section">
-  <div class="latest-posts-container">
-      <h2 class="revops-section__heading">Latest news</h2>
-      <div class="revops-section__text">
+<section class="latest-posts">
+  <div class="latest-posts__heading">
+    <h2 class="latest-posts__title">Latest news</h2>
+      <div class="section-text">
         <p>
           ➟ Keep up to date on new features, tips and tricks within RevOps &amp;
           CRM Systems with our blogs!
         </p>
       </div>
   </div>
-  <div class="latest-posts w-dyn-list">
-    <div class="latest-posts-list w-dyn-items">
-      {% for post in site.posts limit:3 %}
-      <div class="post-preview w-dyn-item">
-        <a href="{{post.url}}" class="post-link-block w-inline-block">
-          <div class="div-block-2">
-            <img
-              src="{{post.img}}"
-              loading="lazy"
-              alt=""
-              class="post-thumbnail"
-            />
-            <h3 class="post-preview-title">{{post.title}}</h3>
-            <p class="post-summary">{{post.excerpt}} <u>Read&nbsp;more</u></p>
-          </div>
-        </a>
-      </div>
-      {% endfor %}
-    </div>
+  <div class="latest-posts__list-container">
+    {% for post in site.posts limit:3 %}
+    <a href="{{post.url}}" class="latest-posts__list-item">
+      <img
+          src="{{post.img}}"
+          loading="lazy"
+          alt=""
+          class="latest-posts__list-item-thumbnail"
+      />
+      <h3 class="latest-posts__list-item-title">{{post.title}}</h3>
+      <p class="latest-posts__list-item-summary">{{post.excerpt}} <u>Read&nbsp;more</u></p>
+    </a>
+    {% endfor %}
   </div>
   <a href="/blog" class="button">Read more posts here</a>
 </section>

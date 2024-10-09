@@ -1,31 +1,25 @@
-<section class="latest-posts-section">
-  <div class="latest-posts-container">
-    <h2 class="section-heading">Recent {{ page.category }} posts</h2>
+<section class="latest-posts">
+  <div class="latest-posts__heading">
+    <h2 class="latest-posts__title">Recent {{ page.category }} posts</h2>
   </div>
-  <div class="latest-posts w-dyn-list">
-    <div class="latest-posts-list w-dyn-items">
-        {% assign filtered_posts = site.posts %}
-        {% if page.category != nil %}
-            {% assign category = page.category | downcase %}
-            {% assign filtered_posts = filtered_posts | where_exp: "post", "post.categories contains category" %}
-        {% endif %}
-        {% for post in filtered_posts limit:3 %}
-        <div class="post-preview w-dyn-item">
-        <a href="{{post.url}}" class="post-link-block w-inline-block">
-            <div class="div-block-2">
-            <img
-                src="{{post.img}}"
-                loading="lazy"
-                alt=""
-                class="post-thumbnail"
-            />
-            <h3 class="post-preview-title">{{post.title}}</h3>
-            <p class="post-summary">{{post.excerpt}} <u>Read&nbsp;more</u></p>
-            </div>
-        </a>
-        </div>
-        {% endfor %}
-    </div>
+  <div class="latest-posts__list-container">
+    {% assign filtered_posts = site.posts %}
+    {% if page.category != nil %}
+        {% assign category = page.category | downcase %}
+        {% assign filtered_posts = filtered_posts | where_exp: "post", "post.categories contains category" %}
+    {% endif %}
+    {% for post in filtered_posts limit:3 %}
+    <a href="{{post.url}}" class="latest-posts__list-item">
+      <img
+          src="{{post.img}}"
+          loading="lazy"
+          alt=""
+          class="latest-posts__list-item-thumbnail"
+      />
+      <h3 class="latest-posts__list-item-title">{{post.title}}</h3>
+      <p class="latest-posts__list-item-summary">{{post.excerpt}} <u>Read&nbsp;more</u></p>
+    </a>
+    {% endfor %}
   </div>
-  <a href="/blog" class="button width-auto">Read more posts here</a>
+  <a href="/blog" class="button">Read more posts here</a>
 </section>
