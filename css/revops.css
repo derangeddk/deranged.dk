@@ -27,7 +27,7 @@ p {
   position: relative;
   overflow: hidden;
   color: var(--deranged-text);
-  padding-top: max(6em, min(9vw, 232px));
+  padding-top: max(6rem, min(9vw, 232px));
   background-color: var(--deranged-dark-blue);
   display: flex;
   flex-direction: column;
@@ -55,17 +55,17 @@ p {
   background-color: #ecf0f1;
 }
 .revops-section--last {
-  padding-bottom: 6em;
+  padding-bottom: 6rem;
 }
 
 .revops-section__container {
   max-width: 900px;
-  padding: 6em 4em 2em;
+  padding: 6rem 4rem 2rem;
 }
 .revops-section__container--full-width {
   width: 100%;
   max-width: none;
-  padding: 0 2em 4em;
+  padding: 0 2rem 4rem;
   display:  flex;
   justify-content: space-evenly;
 }
@@ -84,12 +84,12 @@ p {
   padding: 8px;
 }
 .revops-section__heading-title {
-  margin-bottom: 0.3em;
-  margin-top: 0.3em;
+  margin-bottom: 0.3rem;
+  margin-top: 0.3rem;
   text-align: left;
   letter-spacing: 1px;
   text-transform: none;
-  font-size: 2.7em;
+  font-size: 2.7rem;
   font-weight: 700;
 }
 
@@ -106,13 +106,13 @@ p {
 .revops-section__button-middle {
   display: flex;
   justify-content: center;
-  padding: 2em;
+  padding: 2rem;
 }
 
 .services-list-item {
   display: flex;
   flex-direction: column;
-  padding: 1em 0 1em;
+  padding: 1rem 0 1rem;
   align-items: center;
 }
 :nth-child(2 of .services-list-item) {
@@ -129,8 +129,8 @@ p {
 .services-list-item__text {
   max-width: 500px;
   align-content: center;
-  margin-left: 2em;
-  margin-right: 2em;
+  margin-left: 2rem;
+  margin-right: 2rem;
   text-align: left;
   font-size: 18px;
 }
@@ -159,7 +159,7 @@ p {
 
   .services-list-item {
     flex-direction: column;
-    padding: 2em;
+    padding: 2rem;
   }
   :nth-child(2 of .services-list-item),
   :nth-child(3 of .services-list-item) {
@@ -181,11 +181,11 @@ p {
 
 @media screen and (max-width: 767px) {
   .revops-section {
-    padding-top: 4em;
+    padding-top: 4rem;
   }
   .revops-section__container {
-    padding: 2em;
-    padding-bottom: 1em;
+    padding: 2rem;
+    padding-bottom: 1rem;
   }
   .revops-section__container--full-width {
     padding: 0;
