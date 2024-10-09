@@ -29,14 +29,14 @@ layout: default
   }
   @media (max-width: 450px) {
     main {
-      font-size: 1.1em;
+      font-size: 1rem;
     }
   }
 
   .logo {
     color: #2c3e50;
     font-weight: 400;
-    font-size: 1.3em;
+    font-size: 1.6rem;
     text-decoration: none;
     position: absolute;
     top: 28px;
@@ -51,13 +51,13 @@ layout: default
     display: flex;
     width: 100%;
     justify-content: center;
-    padding: 0 2em;
+    padding: 0 2rem;
   }
   .header__image {
     object-fit: cover;
     position: absolute;
     overflow: hidden;
-    height: 24em;
+    height: 24rem;
     width: 100%;
     filter: blur(2px);
     opacity: 0.7;
@@ -69,25 +69,25 @@ layout: default
   }
   .header__title {
     text-align: center;
-    margin-top: 1.5em;
+    margin-top: 6rem;
     margin-left: 25px;
     margin-right: 25px;
-    font-size: 4em;
+    font-size: 5rem;
     font-weight: bold;
     z-index: 1;
   }
   .header__service-logo {
-    margin-top: 6em;
+    margin-top: 6rem;
     margin-left: 25px;
     margin-right: 25px;
-    height: 5em;
+    height: 6rem;
     object-fit: contain;
     z-index: 1;
   }
   .header__icon {
     max-height: 300px;
     max-width: 600px;
-    padding-right: 2em;
+    padding-right: 2rem;
     z-index: 1;
   }
   .header__text {
@@ -108,18 +108,18 @@ layout: default
   }
   @media (max-width: 950px) {
     .header__image {
-      height: 22em;
+      height: 22rem;
     }
     .header__title {
-      font-size: 3.5em;
-      margin-top: 1.5em;
-      margin-right: 1em;
-      margin-left: 1em;
+      font-size: 4.6rem;
+      margin-top: 4rem;
+      margin-right: 1rem;
+      margin-left: 1rem;
     }
     .header__service-logo {
-      height: 4em;
-      margin-right: 1em;
-      margin-left: 1em;
+      height: 4rem;
+      margin-right: 1rem;
+      margin-left: 1rem;
     }
     .header__icon {
       max-width: 400px;
@@ -127,11 +127,11 @@ layout: default
   }
   @media (max-width: 600px) {
     .header__title {
-      font-size: 2.5em;
+      font-size: 2.5rem;
     }
     .header__service-logo {
-      margin-top: 5em;
-      height: 3em;
+      margin-top: 5rem;
+      height: 3rem;
     }
     .header__icon {
       max-width: 200px;
@@ -142,7 +142,6 @@ layout: default
     display: flex;
     width: 100%;
     justify-content: center;
-    padding: 4em;
     padding: 0;
     margin-top: 0;
   }
@@ -154,9 +153,9 @@ layout: default
   .content-row__title {
     grid-column: 2;
     grid-row: 1;
-    margin-bottom: 1em;
-    margin-top: 1em;
-    font-size: 2.1em;
+    margin-bottom: 1rem;
+    margin-top: 1rem;
+    font-size: 2.8rem;
     font-weight: 900;
     position: relative;
     max-width: 700px;
@@ -176,7 +175,7 @@ layout: default
     padding: 8px;
   }
   .content-row__section {
-    padding: 4em;
+    padding: 6rem;
     flex-grow: 1;
     display: grid;
     grid-template-columns: 75px min(650px);
@@ -223,21 +222,25 @@ layout: default
   }
   @media (max-width: 1100px) {
     .content-row__section {
-      padding: 1em;
-      padding-left: 2em;
-      padding-right: 2em;
+      padding: 1rem;
+      padding-left: 2rem;
+      padding-right: 2rem;
     }
     .content-row__text {
       grid-column: 1 / span 2;
       grid-row: 2;
     }
-    .content-row__image {
+    .content-row__image,
+    .content-row__screenshot {
       display: none;
     }
   }
-  @media (max-width: 600px) {
+  @media (max-width: 950px) {
     .content-row__section {
       grid-template-columns: 45px auto;
+    }
+    .content-row__title {
+      font-size: 2rem;
     }
     .content-row__icon {
       width: 40px;
@@ -251,7 +254,6 @@ layout: default
     background: #2c3e50;
     background-image: linear-gradient(145deg, #2c3e50 30%, #1b2b3a 90%);
     color: #eaf1f7;
-    font-size: 0.8em;
     width: 100%;
     padding: 50px 50px 50px 70px;
   }
