@@ -1,14 +1,128 @@
+<style type="text/css" scoped>
+.latest-posts {
+  margin: 0;
+  color: #eaf1f7;
+  background-color: #2c3e50;
+  background-image: linear-gradient(135deg, #2c3e50 30%, #455d75 90%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-bottom: 2em;
+}
+
+.latest-posts__heading {
+  padding: 2em 4em 2em;
+  width: 100%;
+  max-width: 900px;
+}
+
+.latest-posts__blog-title {
+  font-size: 4em;
+  font-weight: 500;
+  letter-spacing: 1px;
+  }
+
+.latest-posts__title {
+  margin-bottom: 0.3em;
+  margin-top: 0.3em;
+  text-align: left;
+  letter-spacing: 1px;
+  font-size: 2.1em;
+}
+
+.latest-posts__list-container {
+  display: grid;
+  grid-column-gap: 4vw;
+  grid-row-gap: 4vw;
+  grid-template-rows: auto;
+  grid-template-columns: 1fr 1fr 1fr;
+  font-size: 18px;
+  padding: 0 4em 2em;
+}
+@media screen and (max-width: 991px) {
+  .latest-posts__list-container {
+    grid-row-gap: 16px;
+    grid-column-gap: 16px;
+    padding-left: 2em;
+    padding-right: 2em;
+  }
+}
+@media screen and (max-width: 767px) {
+  .latest-posts__list-container {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+@media screen and (max-width: 479px) {
+  .latest-posts__list-container {
+    grid-template-columns: 1fr;
+  }
+}
+
+.latest-posts__list-item {
+  color: #2c3e50;
+  background-color: #eaf1f7;
+  text-decoration: none;
+  transition: background-color 0.3s, transform 0.3s;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: stretch;
+}
+
+.latest-posts__list-item:hover {
+  background-color: #fff;
+  transform: scale(1.015);
+}
+
+.latest-posts__list-item-thumbnail {
+  max-width: 100%;
+}
+
+.latest-posts__list-item-title {
+  font-size: 1.3em;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  padding: 0 0.6em 0;
+}
+
+.latest-posts__list-item-summary {
+  text-align: left;
+  flex: 1;
+  line-height: 25px;
+  padding: 1em;
+}
+
+.button {
+  width: auto;
+  border-color: #ecf0f1;
+  border-style: solid;
+  border-width: 1px;
+}
+</style>
+
 <section class="latest-posts">
+  {% if include.blog == 'true' %}
+    <h1 class="latest-posts__blog-title">Blog</h1>
+  {% else %}
   <div class="latest-posts__heading">
-    <h2 class="latest-posts__title">Recent {{ page.category }} posts</h2>
+    <h2 class="latest-posts__title">
+      {% if include.title %}
+        {{include.title}}
+      {% else %}
+        Recent posts
+      {% endif %}
+    </h2>
   </div>
+  {% endif %}
   <div class="latest-posts__list-container">
     {% assign filtered_posts = site.posts %}
-    {% if page.category != nil %}
-        {% assign category = page.category | downcase %}
-        {% assign filtered_posts = filtered_posts | where_exp: "post", "post.categories contains category" %}
+    {% if include.post == 'true' %}
+      {% assign filtered_posts = site.posts | where_exp: "post", "post.title != page.title" %}
     {% endif %}
-    {% for post in filtered_posts limit:3 %}
+    {% if include.blog != 'true' %}
+      {% assign filtered_posts = filtered_posts limit:3 %}
+    {% endif %}
+    {% for post in filtered_posts %}
     <a href="{{post.url}}" class="latest-posts__list-item">
       <img
           src="{{post.img}}"
@@ -21,5 +135,7 @@
     </a>
     {% endfor %}
   </div>
-  <a href="/blog" class="button">Read more posts here</a>
+  {% if include.blog != 'true' %}
+    <a href="/blog" class="button">Read more posts here</a>
+  {% endif %}
 </section>
