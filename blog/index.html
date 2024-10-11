@@ -1,12 +1,11 @@
 ---
 layout: default
-title: RevOps blog
+title: deranged blog
 sitemap_include: 'yes'
 ---
 
 {% include overlay_nav.html %}
 
-<link href="/css/revops.css" rel="stylesheet" type="text/css" />
 <link href="/css/homestyle.css" rel="stylesheet" type="text/css" />
 
 <style type="text/css" scoped>
@@ -57,23 +56,8 @@ sitemap_include: 'yes'
 <section class="header">
   <a href="/" class="logo">deranged</a>
 </section>
-<section class="latest-posts">
-  <h1 class="big-heading">Blog</h1>
-  <div class="latest-posts__list-container">
-    {% for post in site.posts %}
-    <a href="{{post.url}}" class="latest-posts__list-item">
-      <img
-          src="{{post.img}}"
-          loading="lazy"
-          alt=""
-          class="latest-posts__list-item-thumbnail"
-      />
-      <h3 class="latest-posts__list-item-title">{{post.title}}</h3>
-      <p class="latest-posts__list-item-summary">{{post.excerpt}} <u>Read&nbsp;more</u></p>
-    </a>
-    {% endfor %}
-  </div>
-</section>
+
+{% include latest-posts.html blog='true' %}
 
 {% include team-and-smv-digital.html %}
 

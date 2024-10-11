@@ -136,32 +136,7 @@ sitemap_include: 'yes'
 
 {% include trusted.html %}
 
-<section class="latest-posts">
-  <div class="latest-posts__heading">
-    <h2 class="latest-posts__title">Latest news</h2>
-      <div class="section-text">
-        <p>
-          ➟ Keep up to date on new features, tips and tricks within RevOps &amp;
-          CRM Systems with our blogs!
-        </p>
-      </div>
-  </div>
-  <div class="latest-posts__list-container">
-    {% for post in site.posts limit:3 %}
-    <a href="{{post.url}}" class="latest-posts__list-item">
-      <img
-          src="{{post.img}}"
-          loading="lazy"
-          alt=""
-          class="latest-posts__list-item-thumbnail"
-      />
-      <h3 class="latest-posts__list-item-title">{{post.title}}</h3>
-      <p class="latest-posts__list-item-summary">{{post.excerpt}} <u>Read&nbsp;more</u></p>
-    </a>
-    {% endfor %}
-  </div>
-  <a href="/blog" class="button">Read more posts here</a>
-</section>
+{% include latest-posts.html title='Latest news' %}
 
 {% include team-and-smv-digital.html %}
 
