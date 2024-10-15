@@ -71,12 +71,10 @@ p {
 }
 .revops-section__container--grid {
   max-width: 1200px;
-  padding: 0 2rem 4rem;
+  padding: 1rem 2rem 4rem;
   text-align: left;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
-  padding-top: 1rem;
-  padding-bottom: 1rem;
 }
 .revops-section__problem,
 .revops-section__solution {
