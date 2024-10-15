@@ -1,0 +1,64 @@
+---
+layout: default
+title: deranged blog
+sitemap_include: 'yes'
+---
+
+{% include overlay_nav.html %}
+
+<link href="/css/homestyle.css" rel="stylesheet" type="text/css" />
+
+<style type="text/css" scoped>
+  .header {
+    background: rgba(52, 73, 94, 1);
+    display: grid;
+    grid-template-columns: 150px 1fr;
+    color: #eaf1f7;
+    padding: 30px;
+    text-align: left;
+  }
+
+  .header .logo {
+    color: inherit;
+    text-decoration: inherit;
+    font-weight: 200;
+    font-size: 1.3em;
+    position: relative;
+    z-index: 11;
+  }
+
+  .header h1 {
+    margin: 0;
+    padding: 0;
+    margin-top: -9px;
+    font-weight: 200;
+    font-size: 3em;
+  }
+
+  .header h1 a {
+    color: inherit;
+    text-decoration: inherit;
+  }
+
+  .big-heading {
+    text-align: left;
+    font-size: 4em;
+    font-weight: 500;
+  }
+
+  @media (max-width: 600px) {
+    .header {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>
+
+<section class="header">
+  <a href="/" class="logo">deranged</a>
+</section>
+
+{% include latest-posts.html blog='true' %}
+
+{% include team-and-smv-digital.html %}
+
+{% include get_a_quote.html subject='Quote request' %}
