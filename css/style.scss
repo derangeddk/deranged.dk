@@ -219,3 +219,10 @@ main p {
         margin-bottom: #{$i}rem;
     }
 }
+
+@for $i from 1 through 10 {
+    .py-#{$i} {
+        padding-top: #{$i}rem;
+        padding-bottom: #{$i}rem;
+    }
+}
