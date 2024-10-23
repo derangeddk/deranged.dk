@@ -1,6 +1,10 @@
 <section class="rest-sales">
     <h2 class="rest-sales__title">
-        {{ include.title || "Get a quote" }}
+        {% if  include.title %}
+            {{include.title}}
+        {% else %}
+            Get a quote
+        {% endif %}
     </h2>
     {% if include.hide_pitch != "true" %}
     <p>
