@@ -4,6 +4,7 @@ layout: default
 
 {% include overlay_nav.html %}
 
+
 <style type="text/css" scoped>
   #main-nav-toggle .icon-bar {
     background: #2c3e50;
@@ -304,6 +305,8 @@ layout: default
 
 {% if page.custom-form == nil %}
   {% include trusted.html %}
+
+  {% include latest-posts.html %}
 
   {% include get_a_quote.html subject=page.title %}
 {% endif %}
