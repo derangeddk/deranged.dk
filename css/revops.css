@@ -54,6 +54,9 @@ p {
   color: var(--deranged-dark-blue);
   background-color: #ecf0f1;
 }
+:nth-child(odd of .revops-section) a:not(.button) {
+  color: var(--deranged-dark-blue);
+}
 .revops-section--last {
   padding-bottom: 6rem;
 }
@@ -254,4 +257,41 @@ p {
     height: 40px;
     padding: 5px;
   }
+}
+
+.pricing {
+  background-color: var(--deranged-light-blue);
+  background-image: linear-gradient(20deg, #1b2b3a 10%, #2c3e50 90%);
+  color: var(--deranged-text);
+  display: flex;
+  flex-direction: column;
+  padding: 50px 70px;
+  text-align: left;
+}
+@media screen and (max-width: 539px) {
+  .pricing {
+    padding: 50px 30px;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .pricing {
+    padding: 50px 10px;
+  }
+}
+
+.pricing__title {
+  font-size: 1.8rem;
+  font-weight: 200;
+  margin: 0;
+}
+
+.pricing__row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.pricing p {
+  max-width: 500px;
 }
