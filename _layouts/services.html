@@ -12,6 +12,12 @@ layout: default
     background: white;
   }
 
+.button {
+  border-color: #ecf0f1;
+  border-style: solid;
+  border-width: 1px;
+}
+
   main {
     display: flex;
     flex-direction: column;
@@ -158,7 +164,7 @@ layout: default
     font-size: 2.8rem;
     font-weight: 900;
     position: relative;
-    max-width: 700px;
+    max-width: 900px;
     color: inherit;
     z-index: 2;
   }
@@ -178,12 +184,16 @@ layout: default
     padding: 6rem;
     flex-grow: 1;
     display: grid;
-    grid-template-columns: 75px min(650px);
+    grid-template-columns: 75px minmax(650px, 900px);
     grid-template-rows: auto 1fr;
     justify-content: center;
   }
   .content-row__text {
+    max-width: 800px;
     grid-column: 2;
+    grid-row: 2;
+  }
+  .content-row__text--bottom {
     grid-row: -1;
   }
   .content-row__examples {
@@ -252,7 +262,7 @@ layout: default
   }
   @media (max-width: 1400px) {
     .content-row__section {
-      grid-template-columns: 75px auto;
+      grid-template-columns: 75px 1fr;
     }
   }
   @media (max-width: 1100px) {
