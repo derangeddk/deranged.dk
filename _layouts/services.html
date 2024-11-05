@@ -12,6 +12,12 @@ layout: default
     background: white;
   }
 
+.button {
+  border-color: #ecf0f1;
+  border-style: solid;
+  border-width: 1px;
+}
+
   main {
     display: flex;
     flex-direction: column;
@@ -164,7 +170,7 @@ layout: default
     font-size: 2.8rem;
     font-weight: 900;
     position: relative;
-    max-width: 700px;
+    max-width: 900px;
     color: inherit;
     z-index: 2;
   }
@@ -184,13 +190,52 @@ layout: default
     padding: 6rem;
     flex-grow: 1;
     display: grid;
-    grid-template-columns: 75px min(650px);
+    grid-template-columns: 75px minmax(650px, 900px);
     grid-template-rows: auto 1fr;
     justify-content: center;
   }
   .content-row__text {
+    max-width: 800px;
     grid-column: 2;
     grid-row: 2;
+  }
+  .content-row__text--bottom {
+    grid-row: -1;
+  }
+  .content-row__examples {
+    grid-column: 1 / span 2;
+    grid-row: 2;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+  }
+  .content-row__problem,
+  .content-row__solution {
+    position: relative;
+    padding: 1rem 1rem 0;
+    z-index: 1;
+    grid-column: 1 / span 3;
+  }
+  .content-row__solution {
+    padding: 0 1rem 1rem;
+    grid-column: 2 / span 4;
+  }
+  .content-row__problem p,
+  .content-row__solution p {
+    margin-bottom: 10px;
+  }
+  .content-row__problem:after,
+  .content-row__solution:after {
+    content: "";
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    top: 0%;
+    left: 0%;
+    transform: skew(8deg);
+    background-image: linear-gradient(345deg, transparent 80%, #c098b0 100%);
+  }
+  .content-row__solution:after {
+    background-image: linear-gradient(165deg, transparent 80%, #92bd9f 100%);
   }
   .content-row__image,
   .content-row__screenshot {
@@ -223,7 +268,7 @@ layout: default
   }
   @media (max-width: 1400px) {
     .content-row__section {
-      grid-template-columns: 75px auto;
+      grid-template-columns: 75px 1fr;
     }
   }
   @media (max-width: 1100px) {
@@ -234,7 +279,7 @@ layout: default
     }
     .content-row__text {
       grid-column: 1 / span 2;
-      grid-row: 2;
+      grid-row: -1;
     }
     .content-row__image,
     .content-row__screenshot {
@@ -252,6 +297,14 @@ layout: default
       width: 40px;
       height: 40px;
       padding: 5px;
+    }
+  }
+  @media screen and (max-width: 767px) {
+    .content-row__examples {
+      grid-template-columns: 1fr 1fr 1fr;
+    }
+    .content-row__solution {
+      grid-column: 1 / span 3;
     }
   }
 
