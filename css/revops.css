@@ -93,6 +93,7 @@ p {
 }
 .revops-section__problem:after,
 .revops-section__solution:after {
+  z-index: -1;
   content: "";
   position: absolute;
   height: 100%;
