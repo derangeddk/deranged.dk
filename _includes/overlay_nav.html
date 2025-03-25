@@ -1,16 +1,41 @@
-<button id="main-nav-toggle" onClick="handleNav()">
+<a href="#hello" class="skip-to-main-content-link">Skip to main content</a>
+<button id="main-nav-toggle" onClick="handleNav()" aria-label="Toggle navigation menu">
   <div class="icon-bar"></div>
   <div class="icon-bar"></div>
   <div class="icon-bar"></div>
 </button>
-<nav id="main-nav" class="main-nav overlay">
-  <div class="main-nav-menu">
+<nav id="main-nav" class="main-nav overlay" aria-hidden="true">
+  <div class="main-nav-menu" id="main-nav-menu" disabled>
     {% include menu_links.html %}
   </div>
 </nav>
 
 <script>
+    window.onload = (event) => {
+      var links = document.getElementById('main-nav-menu').children;
+      for (var i = 0; i < links.length; i++) {
+        document.getElementById('main-nav-menu').children[i].setAttribute("tabIndex", "-1");
+      };
+    };
+    
     function handleNav() {
       document.querySelector("body").classList.toggle("main-nav-open");
-    }
+
+      var attr = document.getElementById('main-nav').attributes;
+      if (attr['aria-hidden'].value == "true") {
+        document.getElementById('main-nav').setAttribute("aria-hidden", "false");
+      } else {
+        document.getElementById('main-nav').setAttribute("aria-hidden", "true");
+      };
+
+      var links = document.getElementById('main-nav-menu').children;
+      for (var i = 0; i < links.length; i++) {
+        var childAttr = document.getElementById('main-nav-menu').children[i].attributes;
+        if (childAttr['tabIndex']) {
+          document.getElementById('main-nav-menu').children[i].removeAttribute("tabIndex");
+        } else {
+          document.getElementById('main-nav-menu').children[i].setAttribute("tabIndex", "-1");
+        };
+      };
+    };
 </script>

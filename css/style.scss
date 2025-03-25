@@ -29,7 +29,7 @@ body {
 $darkblue: rgba(44, 62, 80,1.0);
 
 a {
-    color: #abcaea;
+    color: #b9d2e9;
 }
 
 .link--dark {
@@ -179,6 +179,7 @@ main p {
     .quotee {
         width: 100%;
         text-align: right;
+        line-height: 1.5;
         padding: 0 0.75em;
         max-width: 800px;
         &:before {

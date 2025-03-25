@@ -7,9 +7,9 @@ sitemap_include: 'yes'
 
 <link href="/css/homestyle.css" rel="stylesheet" type="text/css">
 
-<section class="hello-section">
-    <a href="/" class="logo">deranged</a>
-    <div class="big-greeting">
+<section role="banner" class="hello-section">
+    <a href="/" class="logo" aria-label="Navigate to deranged home">deranged</a>
+    <div class="big-greeting" id="hello">
         <h1>So nice to meet you!</h1>
         <h2>Let's start building your software&hellip;</h2>
     </div>
@@ -18,7 +18,7 @@ sitemap_include: 'yes'
         We hit the ground running on your software project. Our expert software development and operations team will help you to make the best decisions about software in your company.
         With flexiblity and engagement, we are your dev team.
     </p>
-    <button class="more-button" href="#customer-section"></button>
+    <button class="more-button" href="main" aria-label="skip to more content"></button>
     <script>
     (function() {
         if(window.scrollTo) {
@@ -39,7 +39,7 @@ sitemap_include: 'yes'
     </script>
 </section>
 
-<section class="differentiation-section">
+<section role="main" class="differentiation-section">
     <div
         class="image-of-differentiation image-of-devops"
     ></div>
@@ -53,7 +53,7 @@ sitemap_include: 'yes'
         class="image-of-differentiation image-of-extra"
     ></div>
     <div class="point-of-differentiation point-of-devops">
-        <img src="/img/build-icon.svg" class="point-of-differentiation__icon">
+        <img src="/img/build-icon.svg" class="point-of-differentiation__icon" alt="">
         <h1>DevOps tech leads</h1>
         <p>
             Our team consists of experts in every area needed to build and run software in your organization.
@@ -67,7 +67,7 @@ sitemap_include: 'yes'
         </p>
     </div>
     <div class="point-of-differentiation point-of-counsel">
-        <img src="/img/explore-icon.svg" class="point-of-differentiation__icon">
+        <img src="/img/explore-icon.svg" class="point-of-differentiation__icon" alt="">
         <h1>Technical counselling</h1>
         <p>
             We have put together a team with a lot of experience from a broad set of software businesses.
@@ -82,7 +82,7 @@ sitemap_include: 'yes'
         </p>
     </div>
     <div class="point-of-differentiation point-of-play">
-        <img src="/img/extension-icon.svg" class="point-of-differentiation__icon">
+        <img src="/img/extension-icon.svg" class="point-of-differentiation__icon" alt="">
         <h1>Plug and play</h1>
         <p>
             When we say that we <em>hit the ground running</em>, we mean it: we are a team that has established a strong culture of working well together, and we bring that with us when you hire us.
@@ -97,14 +97,14 @@ sitemap_include: 'yes'
     </div>
 </section>
 
-<section class="customer-quote-section customer-quote-section--big my-8">
+<section role="main" class="customer-quote-section customer-quote-section--big my-8">
     <p class="quote-text">
         It has been a pleasure working with a proactive contractor such as deranged. With their technical capacity, they enable the necessary overview and execute quickly.
     </p>
     <p class="quotee">Morten Schnack, CTO, The HabLab</p>
 </section>
 
-<section class="products">
+<section role="main" class="products">
     <h1 class="products__title mt-0">
         We excel at solving these problems…
     </h1>
@@ -229,7 +229,8 @@ sitemap_include: 'yes'
         </div>
     </div>
 </section>
-<section class="customer-quote-section customer-quote-section--big my-8">
+
+<section role="main" class="customer-quote-section customer-quote-section--big my-8">
     <p class="quote-text">
         I have never worked with anyone who has taken on so much respon&shy;sibility.
     </p>
