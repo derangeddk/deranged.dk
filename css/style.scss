@@ -185,6 +185,9 @@ code {
         &:before {
             content: '— ';
         }
+        a {
+            padding: 10px 0;
+        }
 
         @media (max-width: 539px) {
             font-size: 1.15em;
