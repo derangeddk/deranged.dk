@@ -5,23 +5,31 @@
   <div class="icon-bar"></div>
 </button>
 <nav id="main-nav" class="main-nav overlay">
-  <div class="main-nav-menu" id="main-nav-menu" display="none">
+  <div class="main-nav-menu hidden" id="main-nav-menu">
     {% include menu_links.html %}
   </div>
 </nav>
 
-<script>   
+<script>
   function handleNav() {
-    var attr = document.getElementById('main-nav-menu').attributes;
-    if (attr['display'].value == "none") {
-      document.getElementById('main-nav-menu').setAttribute("display", "block");
-      requestAnimationFrame(
-        document.querySelector("body").classList.toggle("main-nav-open")
-      );
+    var classes = document.getElementById('main-nav-menu').classList;
+    if (classes.contains("hidden")) {
+      document.getElementById('main-nav-menu').classList.toggle('hidden');
+      var start = null;
+      function startAnim(timestamp) {
+        if(!start) start = timestamp;
+        var progress = timestamp - start;
+        if (progress = 1) {
+          document.querySelector("body").classList.toggle("main-nav-open");
+        }
+      }
+      window.requestAnimationFrame(startAnim);
     } else {
       document.querySelector("body").classList.toggle("main-nav-open");
-      setTimeout(cb, 300);
-      document.getElementById('main-nav-menu').setAttribute("display", "none");
+      setTimeout(() => {
+        document.getElementById('main-nav-menu').classList.toggle('hidden');
+      }, 300);
+      
     };
   };
 </script>

@@ -11,6 +11,9 @@
     left: 50%;
     transform: translateX(-50%);
     opacity: 1;
+    outline-style: solid;
+    outline-width: thick;
+    outline-color: white;
   }
 }
 
@@ -47,6 +50,9 @@ nav.overlay {
   height: 100%;
   max-width: 400px;
   margin-left: auto;
+  &.hidden {
+    display: none;
+  }
   a {
     display: block;
     text-align: right;
