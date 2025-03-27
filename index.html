@@ -7,9 +7,27 @@ sitemap_include: 'yes'
 
 <link href="/css/homestyle.css" rel="stylesheet" type="text/css">
 
+<style type="text/css" scoped>
+    main {
+        padding: unset;
+        font-size: unset;
+    }
+    main .container {
+        padding-right: unset;
+    }
+    main h1 {
+        font-size: unset;
+        font-weight: unset;
+        margin: unset;
+    }
+    main p {
+        margin: unset;
+    }
+</style>
+
 <section role="banner" class="hello-section">
     <a href="/" class="logo" aria-label="Navigate to deranged home">deranged</a>
-    <div class="big-greeting" id="hello">
+    <div class="big-greeting" id="first-content">
         <h1>So nice to meet you!</h1>
         <h2>Let's start building your software&hellip;</h2>
     </div>
@@ -18,7 +36,7 @@ sitemap_include: 'yes'
         We hit the ground running on your software project. Our expert software development and operations team will help you to make the best decisions about software in your company.
         With flexiblity and engagement, we are your dev team.
     </p>
-    <button class="more-button" href="main" aria-label="skip to more content"></button>
+    <button class="more-button" aria-label="More content"></button>
     <script>
     (function() {
         if(window.scrollTo) {
@@ -39,209 +57,213 @@ sitemap_include: 'yes'
     </script>
 </section>
 
-<section role="main" class="differentiation-section">
-    <div
-        class="image-of-differentiation image-of-devops"
-    ></div>
-    <div
-        class="image-of-differentiation image-of-counsel"
-    ></div>
-    <div
-        class="image-of-differentiation image-of-play"
-    ></div>
-    <div
-        class="image-of-differentiation image-of-extra"
-    ></div>
-    <div class="point-of-differentiation point-of-devops">
-        <img src="/img/build-icon.svg" class="point-of-differentiation__icon" alt="">
-        <h1>DevOps tech leads</h1>
-        <p>
-            Our team consists of experts in every area needed to build and run software in your organization.
-            Our expertises cover application design, infrastructure and cloud, user requirements elicitation, databases, and user experience design.
-        </p>
-        <p>
-            We bring all of these expertises with us, when we work with you, and if you have developers employed, we will help coach them as well.
-        </p>
-        <p>
-            By employing the principles of DevOps, each of our developers is empowered to build, deploy and maintain software for you, meaning that we deliver quickly and with great stability.
-        </p>
-    </div>
-    <div class="point-of-differentiation point-of-counsel">
-        <img src="/img/explore-icon.svg" class="point-of-differentiation__icon" alt="">
-        <h1>Technical counselling</h1>
-        <p>
-            We have put together a team with a lot of experience from a broad set of software businesses.
-            We help you avoid common problems related to running a development department and building software.
-        </p>
-        <p>
-            We always start with your concrete business situation.
-            We help you take the best steps forwards, whether that is to extend existing software, or to build something new.
-        </p>
-        <p>
-            Our counselling covers all technical decisions, including infrastructure, work processes, security, future-proofing applications, and how to increase and ensure stability of both software and process.
-        </p>
-    </div>
-    <div class="point-of-differentiation point-of-play">
-        <img src="/img/extension-icon.svg" class="point-of-differentiation__icon" alt="">
-        <h1>Plug and play</h1>
-        <p>
-            When we say that we <em>hit the ground running</em>, we mean it: we are a team that has established a strong culture of working well together, and we bring that with us when you hire us.
-        </p>
-        <p>
-            Our employees are trained in getting started in new environments, infrastructures and programming languages quickly, which means we work efficiently in pretty much any environment.
-        </p>
-        <p>
-            When you work with us we will help and advise you in breaking desired business impacts into concrete technical steps that can be taken.
-            Then our team makes sure you get the needed technical implementation as quickly as possible.
-        </p>
-    </div>
-</section>
+<main>
 
-<section role="main" class="customer-quote-section customer-quote-section--big my-8">
-    <p class="quote-text">
-        It has been a pleasure working with a proactive contractor such as deranged. With their technical capacity, they enable the necessary overview and execute quickly.
-    </p>
-    <p class="quotee">Morten Schnack, CTO, The HabLab</p>
-</section>
+    <section class="differentiation-section">
+        <div
+            class="image-of-differentiation image-of-devops"
+        ></div>
+        <div
+            class="image-of-differentiation image-of-counsel"
+        ></div>
+        <div
+            class="image-of-differentiation image-of-play"
+        ></div>
+        <div
+            class="image-of-differentiation image-of-extra"
+        ></div>
+        <div class="point-of-differentiation point-of-devops">
+            <img src="/img/build-icon.svg" class="point-of-differentiation__icon" alt="">
+            <h1>DevOps tech leads</h1>
+            <p>
+                Our team consists of experts in every area needed to build and run software in your organization.
+                Our expertises cover application design, infrastructure and cloud, user requirements elicitation, databases, and user experience design.
+            </p>
+            <p>
+                We bring all of these expertises with us, when we work with you, and if you have developers employed, we will help coach them as well.
+            </p>
+            <p>
+                By employing the principles of DevOps, each of our developers is empowered to build, deploy and maintain software for you, meaning that we deliver quickly and with great stability.
+            </p>
+        </div>
+        <div class="point-of-differentiation point-of-counsel">
+            <img src="/img/explore-icon.svg" class="point-of-differentiation__icon" alt="">
+            <h1>Technical counselling</h1>
+            <p>
+                We have put together a team with a lot of experience from a broad set of software businesses.
+                We help you avoid common problems related to running a development department and building software.
+            </p>
+            <p>
+                We always start with your concrete business situation.
+                We help you take the best steps forwards, whether that is to extend existing software, or to build something new.
+            </p>
+            <p>
+                Our counselling covers all technical decisions, including infrastructure, work processes, security, future-proofing applications, and how to increase and ensure stability of both software and process.
+            </p>
+        </div>
+        <div class="point-of-differentiation point-of-play">
+            <img src="/img/extension-icon.svg" class="point-of-differentiation__icon" alt="">
+            <h1>Plug and play</h1>
+            <p>
+                When we say that we <em>hit the ground running</em>, we mean it: we are a team that has established a strong culture of working well together, and we bring that with us when you hire us.
+            </p>
+            <p>
+                Our employees are trained in getting started in new environments, infrastructures and programming languages quickly, which means we work efficiently in pretty much any environment.
+            </p>
+            <p>
+                When you work with us we will help and advise you in breaking desired business impacts into concrete technical steps that can be taken.
+                Then our team makes sure you get the needed technical implementation as quickly as possible.
+            </p>
+        </div>
+    </section>
 
-<section role="main" class="products">
-    <h1 class="products__title mt-0">
-        We excel at solving these problems…
-    </h1>
-    <div class="segment">
-        <div class="segment__icon segment__icon--top segment__icon--arrow-1">
-            ☈
-        </div>
-        <div class="segment__item segment__item--problem">
-            <h2 class="mt-0">
-                High-level technical leadership is hard to find
-            </h2>
-            It's hard to find the kind of person who can see the big picture of your business,
-            and make the right technical decisions to support it. Even if you have a great CTO,
-            they will quickly get too many tasks for each day. That leads to high-level technical
-            decision making and direction setting becoming a bottleneck.
-        </div>
-        <section class="segment__quote customer-quote-section">
-            <p class="quote-text mb-0">
-                <a href="mailto:niels@deranged.dk">[Niels from deranged]'s</a> ability to absorb and assimilate new information into actionable strategy is beyond compare. […] Choosing to work with him could very well be the best decision you make for your company.
-            </p>
-            <p class="quotee mb-0">
-                Isaac, Product Owner<br>
-                <a href="/cases/#tech-scaleup-1">
-                    Tech Scale-up
-                </a>
-            </p>
-        </section>
-        <div class="segment__item segment__item--solution">
-            <h2 class="mt-0">
-                Setting the right direction
-            </h2>
-            Our consultants take on a full perspective of your company and industry, to take on the role as temporary
-            CTO if you don't have one, or the role of directly supporting your CTO in the important
-            work they are doing.
-            <a class="segment__cta" href="">
-                Check it out <span class="segment__cta-icon">↬</span>
-            </a>
-        </div>
-        <div class="segment__icon segment__icon--bottom segment__icon--arrow-2">
-            ⟿
-        </div>
-    </div>
-    <div class="segment">
-        <div class="segment__icon segment__icon--top segment__icon--arrow-3">
-            ↶
-        </div>
-        <div class="segment__item segment__item--problem">
-            <h2 class="mt-0">
-                There aren't enough developers to go around
-            </h2>
-            Hiring and training a development team requires a continuous, large investment.
-            If developers leave, you lose the knowledge you've spent time building. Under constrained
-            budgets, it's impossible to cover all the skills needed in a development team. Alternatively,
-            consulting companies work on a project basis and aren't there to make adjustments as you
-            need them, and disagreements about scope often arise.
-        </div>
-        <section class="segment__quote customer-quote-section">
-            <p class="quote-text mb-0">
-                There has been good communication and dedi&shy;cation from deranged throughout the partner&shy;ship. [...] We have a close client-supplier relation&shy;ship. I see deranged as being my own in-house developers. That is how it feels.
-            </p>
-            <p class="quotee mb-0">
-                Ninna Toft Hansen, then-COO<br>
-                <a href="/cases/#fischer-lighting">
-                    Fischer Lighting
-                </a>
-            </p>
-        </section>
-        <div class="segment__item segment__item--solution">
-            <h2 class="mt-0">
-                Get the team you actually need
-            </h2>
-            We have an experienced team that is used to working together. We integrate closely
-            with your business as if we were your own developers, we hit the ground running,
-            and you only pay for us in the periods where you need development.
-            We focus on long-term collaboration with all our customers so the knowledge we build is not wasted.
-            We're a plug and play team: plug us into your business and we will start delivering value.
-            <a class="segment__cta" href="">
-                Check it out <span class="segment__cta-icon">⇝</span>
-            </a>
-        </div>
-        <div class="segment__icon segment__icon--bottom segment__icon--arrow-4">
-            ↸
-        </div>
-    </div>
-    <div class="segment">
-        <div class="segment__icon segment__icon--top segment__icon--arrow-5">
-            ⤰
-        </div>
-        <div class="segment__item segment__item--problem">
-            <h2 class="mt-0">
-                Senior technical knowledge is required
-            </h2>
-            Senior developers are few and far between. That makes it difficult to train junior
-            developers and build a highly competent software development team that takes responsibility
-            and delivers consistently. To make matters worse, if developers don't feel like they are
-            learning and growing, they often leave for other companies.
-        </div>
-        <section class="segment__quote customer-quote-section">
-            <p class="quote-text mb-0">
-                My approach to software engineering rapidly changed for better [while working with deranged].
-                We began asking the right questions, frequently communicating our ideas for solving problems, and implementing more impactful code.
-            </p>
-            <p class="quotee mb-0">
-                Michal, Full Stack Developer<br>
-                <a href="/cases/#tech-scaleup-1">
-                    Tech Scale-up
-                </a>
-            </p>
-        </section>
-        <div class="segment__item segment__item--solution">
-            <h2 class="mt-0">
-                Unlock your team's potential
-            </h2>
-            We help software teams improve technical skills and how they work through pair programming,
-            coaching, and presentations tailored to the concrete team situation.
-            <a class="segment__cta" href="">
-                Check it out <span class="segment__cta-icon">⇢</span>
-            </a>
-        </div>
-        <div class="segment__icon segment__icon--bottom segment__icon--arrow-6">
-            ⥉
-        </div>
-    </div>
-</section>
+    <section class="customer-quote-section customer-quote-section--big my-8">
+        <p class="quote-text">
+            It has been a pleasure working with a proactive contractor such as deranged. With their technical capacity, they enable the necessary overview and execute quickly.
+        </p>
+        <p class="quotee">Morten Schnack, CTO, The HabLab</p>
+    </section>
 
-<section role="main" class="customer-quote-section customer-quote-section--big my-8">
-    <p class="quote-text">
-        I have never worked with anyone who has taken on so much respon&shy;sibility.
-    </p>
-    <p class="quotee">
-        Signe Trolle Gronemann, Specialkonsulent and Product Owner<br>
-        <a class="link--dark" href="/cases/#koebenhavns-stadsarkiv">
-            Københavns Stadsarkiv
-        </a>
-    </p>
-    <a href="/cases/" class="see-cases">See examples of what we have done</a>
-</section>
+    <section class="products">
+        <h1 class="products__title mt-0">
+            We excel at solving these problems…
+        </h1>
+        <div class="segment">
+            <div class="segment__icon segment__icon--top segment__icon--arrow-1">
+                ☈
+            </div>
+            <div class="segment__item segment__item--problem">
+                <h2 class="mt-0">
+                    High-level technical leadership is hard to find
+                </h2>
+                It's hard to find the kind of person who can see the big picture of your business,
+                and make the right technical decisions to support it. Even if you have a great CTO,
+                they will quickly get too many tasks for each day. That leads to high-level technical
+                decision making and direction setting becoming a bottleneck.
+            </div>
+            <section class="segment__quote customer-quote-section">
+                <p class="quote-text mb-0">
+                    <a href="mailto:niels@deranged.dk">[Niels from deranged]'s</a> ability to absorb and assimilate new information into actionable strategy is beyond compare. […] Choosing to work with him could very well be the best decision you make for your company.
+                </p>
+                <p class="quotee mb-0">
+                    Isaac, Product Owner<br>
+                    <a href="/cases/#tech-scaleup-1">
+                        Tech Scale-up
+                    </a>
+                </p>
+            </section>
+            <div class="segment__item segment__item--solution">
+                <h2 class="mt-0">
+                    Setting the right direction
+                </h2>
+                Our consultants take on a full perspective of your company and industry, to take on the role as temporary
+                CTO if you don't have one, or the role of directly supporting your CTO in the important
+                work they are doing.
+                <a class="segment__cta" href="">
+                    Check it out <span class="segment__cta-icon">↬</span>
+                </a>
+            </div>
+            <div class="segment__icon segment__icon--bottom segment__icon--arrow-2">
+                ⟿
+            </div>
+        </div>
+        <div class="segment">
+            <div class="segment__icon segment__icon--top segment__icon--arrow-3">
+                ↶
+            </div>
+            <div class="segment__item segment__item--problem">
+                <h2 class="mt-0">
+                    There aren't enough developers to go around
+                </h2>
+                Hiring and training a development team requires a continuous, large investment.
+                If developers leave, you lose the knowledge you've spent time building. Under constrained
+                budgets, it's impossible to cover all the skills needed in a development team. Alternatively,
+                consulting companies work on a project basis and aren't there to make adjustments as you
+                need them, and disagreements about scope often arise.
+            </div>
+            <section class="segment__quote customer-quote-section">
+                <p class="quote-text mb-0">
+                    There has been good communication and dedi&shy;cation from deranged throughout the partner&shy;ship. [...] We have a close client-supplier relation&shy;ship. I see deranged as being my own in-house developers. That is how it feels.
+                </p>
+                <p class="quotee mb-0">
+                    Ninna Toft Hansen, then-COO<br>
+                    <a href="/cases/#fischer-lighting">
+                        Fischer Lighting
+                    </a>
+                </p>
+            </section>
+            <div class="segment__item segment__item--solution">
+                <h2 class="mt-0">
+                    Get the team you actually need
+                </h2>
+                We have an experienced team that is used to working together. We integrate closely
+                with your business as if we were your own developers, we hit the ground running,
+                and you only pay for us in the periods where you need development.
+                We focus on long-term collaboration with all our customers so the knowledge we build is not wasted.
+                We're a plug and play team: plug us into your business and we will start delivering value.
+                <a class="segment__cta" href="">
+                    Check it out <span class="segment__cta-icon">⇝</span>
+                </a>
+            </div>
+            <div class="segment__icon segment__icon--bottom segment__icon--arrow-4">
+                ↸
+            </div>
+        </div>
+        <div class="segment">
+            <div class="segment__icon segment__icon--top segment__icon--arrow-5">
+                ⤰
+            </div>
+            <div class="segment__item segment__item--problem">
+                <h2 class="mt-0">
+                    Senior technical knowledge is required
+                </h2>
+                Senior developers are few and far between. That makes it difficult to train junior
+                developers and build a highly competent software development team that takes responsibility
+                and delivers consistently. To make matters worse, if developers don't feel like they are
+                learning and growing, they often leave for other companies.
+            </div>
+            <section class="segment__quote customer-quote-section">
+                <p class="quote-text mb-0">
+                    My approach to software engineering rapidly changed for better [while working with deranged].
+                    We began asking the right questions, frequently communicating our ideas for solving problems, and implementing more impactful code.
+                </p>
+                <p class="quotee mb-0">
+                    Michal, Full Stack Developer<br>
+                    <a href="/cases/#tech-scaleup-1">
+                        Tech Scale-up
+                    </a>
+                </p>
+            </section>
+            <div class="segment__item segment__item--solution">
+                <h2 class="mt-0">
+                    Unlock your team's potential
+                </h2>
+                We help software teams improve technical skills and how they work through pair programming,
+                coaching, and presentations tailored to the concrete team situation.
+                <a class="segment__cta" href="">
+                    Check it out <span class="segment__cta-icon">⇢</span>
+                </a>
+            </div>
+            <div class="segment__icon segment__icon--bottom segment__icon--arrow-6">
+                ⥉
+            </div>
+        </div>
+    </section>
+
+    <section class="customer-quote-section customer-quote-section--big my-8">
+        <p class="quote-text">
+            I have never worked with anyone who has taken on so much respon&shy;sibility.
+        </p>
+        <p class="quotee">
+            Signe Trolle Gronemann, Specialkonsulent and Product Owner<br>
+            <a class="link--dark" href="/cases/#koebenhavns-stadsarkiv">
+                Københavns Stadsarkiv
+            </a>
+        </p>
+        <a href="/cases/" class="see-cases">See examples of what we have done</a>
+    </section>
+
+</main>
 
 {% include team-and-smv-digital.html %}
 
