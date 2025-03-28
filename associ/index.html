@@ -41,7 +41,7 @@ layout: default
             grid-template-columns: 1fr;
         }
     }
-    main {
+    .main-content {
         background: rgba(52, 73, 94, 1.0);
         background-image: linear-gradient(rgba(52, 73, 94, 1.0), rgb(33, 51, 66));
         padding-left: 180px;
@@ -49,24 +49,24 @@ layout: default
         text-align: left;
         padding-top: 3rem;
     }
-    main p, main ul {
+    .main-content p, .main-content ul {
         max-width: 700px;
     }
-    main ul li {
+    .main-content ul li {
         margin-bottom: 0.5rem;
     }
-    main h1 {
+    .main-content h1 {
         margin-bottom: 1rem;
     }
-    main h2 {
+    .main-content h2 {
         margin-bottom: 0;
     }
     @media (max-width: 1200px) {
-        main {
+        .main-content {
             padding-left: 15px;
             font-size: 1rem;
         }
-        main p {
+        .main-content p {
             max-width: 600px;
         }
     }
@@ -79,7 +79,7 @@ layout: default
     </div>
 </section>
 
-<main>
+<main class="main-content">
     <h2>Abstract</h2>
     <p>
         The Associ user system is an opinionated, easily integratable user system that emphasizes user control.

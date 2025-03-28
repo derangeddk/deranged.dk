@@ -18,22 +18,22 @@ lang: "da_dk"
         color: inherit;
         padding: 15px;
     }
-    main {
+    .main-content {
         font-size: 1em;
         display: flex;
         flex-direction: column;
         align-items: center;
     }
-    .intro {
+    .main-content .intro {
         margin: 75px 10px 0;
         display: flex;
         flex-direction: column;
         align-items: center;
     }
-    .intro h1 {
+    .main-content .intro h1 {
         margin-bottom: 75px;
     }
-    .intro-text-box {
+    .main-content .intro-text-box {
         max-width: 860px;
         padding: 15px;
         padding-right: 250px;
@@ -45,7 +45,7 @@ lang: "da_dk"
         color: white;
         box-sizing: border-box;
     }
-    .intro-text-box:before {
+    .main-content .intro-text-box:before {
         content: '';
         position: absolute;
         right: 0;
@@ -57,12 +57,12 @@ lang: "da_dk"
         background-size: cover;
         z-index: -1;
     }
-    .intro-text-box p {
+    .main-content .intro-text-box p {
         background: rgba(44, 62, 80, 0.95);
         padding: 15px;
         margin: 0;
     }
-    aside {
+    .main-content aside {
         background-color: white;
         padding: 15px;
         max-width: 800px;
@@ -70,7 +70,7 @@ lang: "da_dk"
         position: relative;
         padding-left: 200px;
     }
-    aside:before {
+    .main-content aside:before {
         content: '';
         position: absolute;
         left: -30px;
@@ -84,17 +84,17 @@ lang: "da_dk"
         border-bottom: 15px solid white;
         border-left: 15px solid white;
     }
-    aside h2 {
+    .main-content aside h2 {
         margin: 0;
         font-size: 1.05em;
     }
-    aside p {
+    .main-content aside p {
         margin: 0 0 1em;
     }
-    aside p:last-child {
+    .main-content aside p:last-child {
         margin-bottom: 0;
     }
-    .publications {
+    .main-content .publications {
         margin: 50px 0;
         width: 100%;
         background-color: white;
@@ -103,21 +103,21 @@ lang: "da_dk"
         flex-direction: column;
         align-items: center;
     }
-    .publications .content {
+    .main-content .publications .content {
         max-width: 800px;
         padding: 55px 5px;
     }
-    .publications h1 {
+    .main-content .publications h1 {
         font-size: 2em;
         margin: 0;
     }
-    .publications ul {
+    .main-content .publications ul {
         padding-left: 0;
     }
-    .publications li {
+    .main-content .publications li {
         list-style: none;
     }
-    .publications li a {
+    .main-content .publications li a {
         text-decoration: inherit;
         color: inherit;
         border-left: 5px solid rgb(44, 62, 80);
@@ -125,14 +125,14 @@ lang: "da_dk"
         padding: 5px 10px;
         margin: 10px 0;
     }
-    .publications li h2 {
+    .main-content .publications li h2 {
         margin: 0;
     }
-    .publications li .publishing-info {
+    .main-content .publications li .publishing-info {
         font-size: 0.9em;
         color: rgb(110,110,110);
     }
-    .publications li .teaser {
+    .main-content .publications li .teaser {
         font-size: 1.2em;
         padding: 12px 0 7px;
     }
@@ -140,7 +140,7 @@ lang: "da_dk"
 
 {% include nav.html %}
 
-<main>
+<main class="main-content">
     <section class="intro">
         <h1>Er I klar til at få udviklet software til jeres virksomhed?</h1>
         <div class="intro-text-box">

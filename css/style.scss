@@ -75,20 +75,20 @@ code {
 	font-family: 'Source Code Pro', Monaco, Consolas, "Lucida Console", monospace;
 	font-style: normal;
 }
-main {
+.main-content {
     padding: 0 15px 100px;
     font-size: 1.25em;
 }
-main .container {
+.main-content .container {
     padding-right: 300px;
 }
-main h1 {
+.main-content h1 {
     font-size: 2.5em;
     font-weight: 200;
     margin-bottom: 0;
     margin-top: 1em;
 }
-main p {
+.main-content p {
     margin-top: 0;
     margin-bottom: 1em;
 }
@@ -109,12 +109,12 @@ main p {
     color: white;
 }
 @media screen and (max-width: 900px) {
-    main .container {
+    .main-content .container {
         padding-right: 30%;
     }
 }
 @media screen and (max-width: 500px) {
-    main .container {
+    .main-content .container {
         padding-right: 0;
     }
 }
