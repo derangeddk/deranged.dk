@@ -1,5 +1,5 @@
 <a href="#first-content" class="skip-to-main-content-link">Skip to main content</a>
-<button id="main-nav-toggle" onClick="handleNav()" aria-label="Menu" aria-controls="main-nav">
+<button id="main-nav-toggle" aria-label="Menu" aria-controls="main-nav">
   <div class="icon-bar"></div>
   <div class="icon-bar"></div>
   <div class="icon-bar"></div>
@@ -11,19 +11,13 @@
 </nav>
 
 <script>
-  function handleNav() {
+  document.getElementById('main-nav-toggle').addEventListener("click", function () {
     var classes = document.getElementById('main-nav-menu').classList;
     if (classes.contains("hidden")) {
       document.getElementById('main-nav-menu').classList.toggle('hidden');
-      var start = null;
-      function startAnim(timestamp) {
-        if(!start) start = timestamp;
-        var progress = timestamp - start;
-        if (progress = 1) {
-          document.querySelector("body").classList.toggle("main-nav-open");
-        }
-      }
-      window.requestAnimationFrame(startAnim);
+      requestAnimationFrame(() => {
+        document.querySelector("body").classList.toggle("main-nav-open");
+      });
     } else {
       document.querySelector("body").classList.toggle("main-nav-open");
       setTimeout(() => {
@@ -31,5 +25,5 @@
       }, 300);
       
     };
-  };
+  });
 </script>
