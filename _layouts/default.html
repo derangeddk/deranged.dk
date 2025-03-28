@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="{% if page.lang == 'da_dk' %}da{% else %}en{% endif %}">
 	<head>
 		{% if page.redir %}<meta http-equiv="refresh" content="0;url={{ page.redir }}" />{% endif %}
 		<meta charset="utf-8">

@@ -1,16 +1,29 @@
-<button id="main-nav-toggle" onClick="handleNav()">
+<a href="#first-content" class="skip-to-main-content-link">Skip to main content</a>
+<button id="main-nav-toggle" aria-label="Menu" aria-controls="main-nav">
   <div class="icon-bar"></div>
   <div class="icon-bar"></div>
   <div class="icon-bar"></div>
 </button>
 <nav id="main-nav" class="main-nav overlay">
-  <div class="main-nav-menu">
+  <div class="main-nav-menu hidden" id="main-nav-menu">
     {% include menu_links.html %}
   </div>
 </nav>
 
 <script>
-    function handleNav() {
+  document.getElementById('main-nav-toggle').addEventListener("click", function () {
+    var classes = document.getElementById('main-nav-menu').classList;
+    if (classes.contains("hidden")) {
+      document.getElementById('main-nav-menu').classList.toggle('hidden');
+      requestAnimationFrame(() => {
+        document.querySelector("body").classList.toggle("main-nav-open");
+      });
+    } else {
       document.querySelector("body").classList.toggle("main-nav-open");
-    }
+      setTimeout(() => {
+        document.getElementById('main-nav-menu').classList.toggle('hidden');
+      }, 300);
+      
+    };
+  });
 </script>
