@@ -4,7 +4,6 @@ name: hubspot
 title: Hubspot
 logo: "/img/HubSpot_logo.svg"
 category: "HubSpot"
-custom-form: true
 icon-bright: "/img/HubSpot-Solutions-Partner-Provider-deranged-denmark.png"
 icon-dark: "/img/HubSpot-Solutions-Partner-Provider-deranged-denmark.png"
 meta: "Official HubSpot Solution Providers offering onboarding, CRM, Marketing & Service Hub setup in English & Danish. Integrate and automate your tech stack with HubSpot."
@@ -19,24 +18,6 @@ top-section: "<p>Are you having trouble getting the best out of HubSpot? Or are 
   </p>"
 ---
 
-<style>
-  .hbspt-form {
-    width: 550px;
-    border: 1px solid #1b2b3a;
-    background: #ecf0f1;
-    padding: 15px;
-    color: black;
-    position: relative;
-  }
-  @media (max-width: 950px) {
-    .hbspt-form {
-      width: 100%;
-      max-width: 550px;
-      padding-left: 16px;
-      padding-right: 16px;
-    }
-  }
-</style>
 
 <div class="content-row">
   <section class="content-row__section">
@@ -65,12 +46,12 @@ top-section: "<p>Are you having trouble getting the best out of HubSpot? Or are 
           Ready to transform your HubSpot experience?</strong> - We'll tailor HubSpot to fit your organisation's needs with our professional support.
         </strong>
       </p>
-      <center>
+      <div class="content-row__button">
         <a
           class="button button--narrow"
           href="#contact">Start the conversation
         </a>
-      </center>
+      </div>
   </section>
   <img
     class="content-row__screenshot"
@@ -175,34 +156,3 @@ top-section: "<p>Are you having trouble getting the best out of HubSpot? Or are 
   />
 </div>
 
-{% include trusted.html %}
-
-<section class="contact" id="contact">
-  <script
-    charset="utf-8"
-    type="text/javascript"
-    src="//js-eu1.hsforms.net/forms/embed/v2.js"
-  ></script>
-  <script>
-    hbspt.forms.create({
-      region: "eu1",
-      portalId: "144589865",
-      formId: "22607968-2315-4f21-9974-4ec2a5a5b495",
-    });
-  </script>
-  <div class="contact-explanation">
-    <p>
-      This contact form was built using HubSpot’s Forms feature, which is
-      available on all HubSpot plans. These fully customisable, embeddable forms
-      allow you to capture important customer data directly into HubSpot,
-      streamlining your lead generation process.
-    </p>
-    <p>
-      With HubSpot Forms, you can tailor the design to match your brand’s style
-      and colors, ensuring a seamless look and feel on your website. Plus, you
-      can set up automated actions—such as sending follow-up emails or creating
-      tasks. We can create custom HubSpot forms for your business, ready for
-      your web developers to embed directly on your website.
-    </p>
-  </div>
-</section>

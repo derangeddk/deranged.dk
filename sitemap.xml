@@ -14,8 +14,10 @@ layout: null
         {% endif %}
     {% endfor %}
     {% for service in site.services %}
-        <url>
-            <loc>https://deranged.dk{{ service.url }}</loc>
-        </url>
+        {% if service.content != empty %}
+            <url>
+                <loc>https://deranged.dk{{ service.url }}</loc>
+            </url>
+        {% endif %}
     {% endfor %}
 </urlset>

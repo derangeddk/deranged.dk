@@ -1,0 +1,150 @@
+---
+layout: default
+title: Solving your web accessibility issues ➟ deranged
+meta: "Ensure your website is accessible, compliant, and inclusive with expert led web accessibility solutions from deranged. From WCAG audits and accessibility reports to hands on website development and accessibility training, deranged ApS helps businesses remove digital barriers and meet European Accessibility Act standards. Whether you need guidance, page upgrades fixes, or long-term support, our team is here to help you solve your accessibility issues today."
+services:
+  - accessibility-reports
+  - page-upgrade
+  - accessibility-training
+sitemap_include: 'yes'
+---
+
+{% include overlay_nav.html %}
+
+<link href="/css/homestyle.css" rel="stylesheet" type="text/css" />
+<link href="/css/revops.css" rel="stylesheet" type="text/css" />
+
+<section class="hello-section" role="banner">
+  <a href="/" class="logo">deranged</a>
+  <div class="big-greeting">
+    <h1>Accessibility</h1>
+    <h2>Solving your web accessibility issues</h2>
+  </div>
+  <div class="big-greeting"></div>
+</section>
+
+<main>
+    <section class="revops-section">
+        <div class="revops-section__container">
+          <div class="revops-section__heading">
+            <img src="/img/trophy-icon.svg" class="revops-section__heading-icon" alt="" />
+            <h3 class="revops-section__heading-title" id="first-content">What is  Accessibility</h3>
+          </div>
+          <div class="revops-section__text">
+            <p>
+              ➟  Web accessibility (eAccessibility) isn&#8217;t just about compliance. It&#8217;s about creating inclusive digital experiences that are accessible to everyone. Accessibility ensures that all users, regardless of disabilities or limitations, can engage with your website or application seamlessly and help your organisation both comply with legislation and drive revenue growth.
+            </p>
+            <p>
+              So if your website struggles with usability for screen readers, keyboard navigation issues, or compliance with current WCAG guidelines - we are here to help.
+            </p>  
+            <p>
+              Our goal is to help you create digital environments that allow everyone to thrive, by removing barriers, ensuring no users are left behind, and ensuring compliance within the web accessibility landscape.
+            </p>
+          </div>
+          <div class="section-button-middle">
+            <a class="button" href="#contact">Start the conversation</a>
+          </div>
+        </div>
+      </section>
+      
+      <section class="revops-section">
+        <div class="revops-section__container" id="services">
+          <div class="revops-section__heading">
+            <img src="/img/build-icon.svg" class="revops-section__heading-icon" alt="" />
+            <h3 class="revops-section__heading-title">Your Accessibility team</h3>
+          </div>
+          <div class="revops-section__text">
+            <p>
+              ➟  Whether you need consultations with web accessibility experts to comply with the upcoming European accessibility act or you need a web development team to handle the issues for you - we&#8217;re ready to help with every step.
+            </p>
+            <p>
+              Our web accessibility services help simplify your organisation's compliance and inclusivity journey. These services can be tailored to your needs, including automated accessibility audits, human led reviews of websites, real-time issue detection, and guidance to ensure your website meets and exceeds European accessibility standards.
+            </p>
+            <p>
+              Get certified accessibility and technical expertise without the costs of a full time hire.
+            </p>
+          </div>
+        </div>
+        <div class="revops-section__container revops-section__container--full-width">
+          {% for s in page.services %}
+            {% for service in site.services %}
+              {% if s == service.slug %}
+                <div class="services-list-item">
+                  <img
+                    src="{{ service.icon-bright }}"
+                    loading="lazy"
+                    alt="{{ service.icon-alt }}"
+                    class="services-list-item__logo"
+                  />
+                  <div class="services-list-item__text">
+                    <h4 class="services-list-item__title">{{ service.title }}</h4>
+                    <p class="services-list-item__summary">
+                      {{ service.excerpt }}
+                    </p>
+                    {% if service.content != empty %}
+                      <a href="{{ service.url }}" class="button">
+                        Read&nbsp;more
+                      </a>
+                    {% endif %}
+                  </div>
+                </div>
+              {% endif %}
+            {% endfor %}
+          {% endfor %}
+        </div>
+      </section>
+      
+      <section class="revops-section revops-section--last">
+        <div class="revops-section__container">
+          <div class="revops-section__heading">
+            <img src="/img/explore-icon.svg" class="revops-section__heading-icon" alt="" />
+            <h3 class="revops-section__heading-title">We excel at solving these problems…</h3>
+          </div>
+        </div>
+        <div class="revops-section__container revops-section__container--grid">
+          <div class="revops-section__problem">
+            <h4>Barriers to accessibility</h4>
+            <p>
+              When users do find your site they may face accessibility barriers. Accessibility issues like poor color contrast, non-descriptive alt text or navigation that isn't screen reader friendly not only prevent people with visual, auditory, or physical disabilities from fully experiencing your site, but can also create legal risks for many private sector companies. Accessibility is already mandatory for public sector websites and is fast becoming a necessity for the private sector as well.
+            </p>
+          </div>
+          <div class="revops-section__solution">
+            <h4>Accessible design</h4>
+            <p>
+              To help you comply with WCAG standards and the European Accessibility Act, we identify and eliminate accessibility barriers on your website. Adhering to legal standards for accessibility helps improve your site's usability, reach more users, and show your organisations commitment to inclusivity. Investing in accessible design also future proofs your site against shifting user expectations and regulatory updates.
+            </p>
+          </div>
+          <div class="revops-section__problem">
+            <h4>Legal Risks & Obligations</h4>
+            <p>
+              With the European Accessibility Act taking effect in 2025, non compliance with accessibility standards can now lead to legal consequences for private sector companies. Many organisations struggle to meet WCAG guidelines which puts them at risk of fines.
+            </p>
+          </div>
+          <div class="revops-section__solution">
+            <h4>Compliance</h4>
+            <p>
+              We help businesses achieve compliance by conducting accessibility audits and generating detailed reports, and can also help implement the required fixes to your organisation's website. Ensuring legal standards are met not only mitigates risk but demonstrates a commitment to inclusivity.
+            </p>
+          </div>
+          <div class="revops-section__problem">
+            <h4>Lack of In-House Expertise</h4>
+            <p>
+              If an organisation lacks the knowledge or developer resources required to properly implement accessibility best practices it makes maintaining compliance and incorporating inclusive design an ongoing challenge.
+            </p>
+          </div>
+          <div class="revops-section__solution">
+            <h4>Fractional accessibility and technical expertise</h3>
+            <p>
+              Our team blends seamlessly into your team and provides expert-led accessibility training, and hands-on development. We are flexible and whether you need us short-term or long term we help get your team equipped to uphold accessibility standards both now and in the future.
+            </p>
+          </div>
+        </div>
+    </section>
+</main>
+
+
+{% include trusted.html %}
+
+{% include team-and-smv-digital.html %}
+
+{% include get_a_quote.html subject='Quote request' %}
