@@ -23,117 +23,119 @@ sitemap_include: 'yes'
   <div class="big-greeting"></div>
 </section>
 
-<section class="revops-section" role="main">
-  <div class="revops-section__container">
-    <div class="revops-section__heading">
-      <img src="/img/trophy-icon.svg" class="revops-section__heading-icon" alt="" />
-      <h3 class="revops-section__heading-title">Break down silos, build success</h2>
-    </div>
-    <div class="revops-section__text">
-      <p>
-        ➟ Revenue Operations (RevOps) isn’t magic, but its impact can be magical. RevOps is a strategic framework that aligns your sales, marketing, and customer success teams to drive sustainable business growth and while you may already be implementing some RevOps practices, there's a good chance that you're overlooking measures that drive growth.
-      </p>
-      <p>
-        So, if you are you struggling to <strong>align</strong> your sales, marketing and customer success strategies, or are looking to <strong>optimise</strong> your business processes and create efficient workflows or if your revenue <strong>growth</strong> has hit a plateau - we can help.
-      </p>
-      <p>
-        Our mission is to break down silos and foster a collaborative culture to drive your business towards a more sustainable future.
-      </p>
-    </div>
-    <div class="section-button-middle">
-      <a class="button" href="#contact">Start the conversation</a>
-    </div>
-  </div>
-</section>
-
-<section class="revops-section" role="main">
-  <div class="revops-section__container" id="services">
-    <div class="revops-section__heading">
-      <img src="/img/build-icon.svg" class="revops-section__heading-icon" alt="" />
-      <h3 class="revops-section__heading-title">Your RevOps team</h2>
-    </div>
-    <div class="revops-section__text">
-      <p>
-        ➟ Whether you are starting from scratch or looking to build your RevOps
-        framework from the ground up, our team integrates seamlessly with
-        your business. We hit the ground running and look to deliver results
-        from day one.
-      </p>
-    </div>
-  </div>
-  <div class="revops-section__container revops-section__container--full-width">
-    {% for s in page.services %}
-      {% for service in site.services %}
-        {% if s == service.slug %}
-          <div class="services-list-item">
-            <img
-              src="{{ service.icon-bright }}"
-              loading="lazy"
-              alt=""
-              class="services-list-item__logo"
-            />
-            <div class="services-list-item__text">
-              <h4 class="services-list-item__title">{{ service.title }}</h2>
-              <p class="services-list-item__summary">
-                {{ service.excerpt }}
-              </p>
-              <a href="{{ service.url }}" class="button">
-                Read&nbsp;more
-              </a>
-            </div>
+<main>
+    <section class="revops-section">
+        <div class="revops-section__container">
+          <div class="revops-section__heading">
+            <img src="/img/trophy-icon.svg" class="revops-section__heading-icon" alt="" />
+            <h3 class="revops-section__heading-title" id="first-content">Break down silos, build success</h2>
           </div>
-        {% endif %}
-      {% endfor %}
-    {% endfor %}
-  </div>
-</section>
-
-<section class="revops-section revops-section--last" role="main">
-  <div class="revops-section__container">
-    <div class="revops-section__heading">
-      <img src="/img/explore-icon.svg" class="revops-section__heading-icon" alt="" />
-      <h3 class="revops-section__heading-title">We excel at solving these problems…</h2>
-    </div>
-  </div>
-  <div class="revops-section__container revops-section__container--grid">
-    <div class="revops-section__problem">
-      <h4>Sales, marketing and customer success departments are poorly aligned</h3>
-      <p>
-        Companies often suffer from siloed departments that use different tech stacks. This results in scattered customer data, and a high potential for misaligment between departments resulting in disjointed strategies that affect growth.
-      </p>
-    </div>
-    <div class="revops-section__solution">
-      <h4>Break down silos</h3>
-      <p>
-        Our RevOps consultants seek to understand your business holistically and are keen to take on leadership roles in your team in order to break down silos. We can implement centralised data platforms, like CRMs, and support you in steering departments back towards your company goals. We work fractionally, so you only pay us for the time you need us.
-      </p>
-    </div>
-    <div class="revops-section__problem">
-      <h4>Relying on time consuming manual processes</h3>
-      <p>
-        Many companies rely on time-consuming manual processes for sales and marketing tasks alongside manually copying data between disjointed tech stacks. This limits efficiency, is unscalable and soaks up you and your teams time.
-      </p>
-    </div>
-    <div class="revops-section__solution">
-      <h4>Integrate and automate</h3>
-      <p>
-        We understand the pitfalls that companies can fall into. We specialise in identifying processes ripe for automation and address the most pressing needs in aligment with you. We streamline processes to save your team time.
-      </p>
-    </div>
-    <div class="revops-section__problem">
-      <h4>Lack of a clear RevOps strategy</h3>
-      <p>
-        With an misaligned RevOps strategy departments can end up falling back into silos and working towards conflicting objectives. Undefined goals can lead to an inability to measure and address performance gaps which in turn makes it difficult to measure departmental sucesses.
-      </p>
-    </div>
-    <div class="revops-section__solution">
-      <h4>Alignment in setting measurable goals</h3>
-      <p>
-        We focus on long-term collaborations with our customers so that we can help you develop a clear RevOps strategy that aligns with your business objectives. We have specialised expertise in startups and scale-ups and we work with you to help  establish a solid foundation for sustainable revenue growth.
-      </p>
-    </div>
-  </div>
-</section>
+          <div class="revops-section__text">
+            <p>
+              ➟ Revenue Operations (RevOps) isn&#8217;t magic, but its impact can be magical. RevOps is a strategic framework that aligns your sales, marketing, and customer success teams to drive sustainable business growth and while you may already be implementing some RevOps practices, there's a good chance that you're overlooking measures that drive growth.
+            </p>
+            <p>
+              So, if you are you struggling to <strong>align</strong> your sales, marketing and customer success strategies, or are looking to <strong>optimise</strong> your business processes and create efficient workflows or if your revenue <strong>growth</strong> has hit a plateau - we can help.
+            </p>
+            <p>
+              Our mission is to break down silos and foster a collaborative culture to drive your business towards a more sustainable future.
+            </p>
+          </div>
+          <div class="section-button-middle">
+            <a class="button" href="#contact">Start the conversation</a>
+          </div>
+        </div>
+      </section>
+      
+      <section class="revops-section">
+        <div class="revops-section__container" id="services">
+          <div class="revops-section__heading">
+            <img src="/img/build-icon.svg" class="revops-section__heading-icon" alt="" />
+            <h3 class="revops-section__heading-title">Your RevOps team</h2>
+          </div>
+          <div class="revops-section__text">
+            <p>
+              ➟ Whether you are starting from scratch or looking to build your RevOps
+              framework from the ground up, our team integrates seamlessly with
+              your business. We hit the ground running and look to deliver results
+              from day one.
+            </p>
+          </div>
+        </div>
+        <div class="revops-section__container revops-section__container--full-width">
+          {% for s in page.services %}
+            {% for service in site.services %}
+              {% if s == service.slug %}
+                <div class="services-list-item">
+                  <img
+                    src="{{ service.icon-bright }}"
+                    loading="lazy"
+                    alt=""
+                    class="services-list-item__logo"
+                  />
+                  <div class="services-list-item__text">
+                    <h4 class="services-list-item__title">{{ service.title }}</h2>
+                    <p class="services-list-item__summary">
+                      {{ service.excerpt }}
+                    </p>
+                    <a href="{{ service.url }}" class="button">
+                      Read&nbsp;more
+                    </a>
+                  </div>
+                </div>
+              {% endif %}
+            {% endfor %}
+          {% endfor %}
+        </div>
+      </section>
+      
+      <section class="revops-section revops-section--last">
+        <div class="revops-section__container">
+          <div class="revops-section__heading">
+            <img src="/img/explore-icon.svg" class="revops-section__heading-icon" alt="" />
+            <h3 class="revops-section__heading-title">We excel at solving these problems…</h2>
+          </div>
+        </div>
+        <div class="revops-section__container revops-section__container--grid">
+          <div class="revops-section__problem">
+            <h4>Sales, marketing and customer success departments are poorly aligned</h3>
+            <p>
+              Companies often suffer from siloed departments that use different tech stacks. This results in scattered customer data, and a high potential for misaligment between departments resulting in disjointed strategies that affect growth.
+            </p>
+          </div>
+          <div class="revops-section__solution">
+            <h4>Break down silos</h3>
+            <p>
+              Our RevOps consultants seek to understand your business holistically and are keen to take on leadership roles in your team in order to break down silos. We can implement centralised data platforms, like CRMs, and support you in steering departments back towards your company goals. We work fractionally, so you only pay us for the time you need us.
+            </p>
+          </div>
+          <div class="revops-section__problem">
+            <h4>Relying on time consuming manual processes</h3>
+            <p>
+              Many companies rely on time-consuming manual processes for sales and marketing tasks alongside manually copying data between disjointed tech stacks. This limits efficiency, is unscalable and soaks up you and your teams time.
+            </p>
+          </div>
+          <div class="revops-section__solution">
+            <h4>Integrate and automate</h3>
+            <p>
+              We understand the pitfalls that companies can fall into. We specialise in identifying processes ripe for automation and address the most pressing needs in aligment with you. We streamline processes to save your team time.
+            </p>
+          </div>
+          <div class="revops-section__problem">
+            <h4>Lack of a clear RevOps strategy</h3>
+            <p>
+              With an misaligned RevOps strategy departments can end up falling back into silos and working towards conflicting objectives. Undefined goals can lead to an inability to measure and address performance gaps which in turn makes it difficult to measure departmental sucesses.
+            </p>
+          </div>
+          <div class="revops-section__solution">
+            <h4>Alignment in setting measurable goals</h3>
+            <p>
+              We focus on long-term collaborations with our customers so that we can help you develop a clear RevOps strategy that aligns with your business objectives. We have specialised expertise in startups and scale-ups and we work with you to help  establish a solid foundation for sustainable revenue growth.
+            </p>
+          </div>
+        </div>
+    </section>
+</main>
 
 {% include trusted.html %}
 

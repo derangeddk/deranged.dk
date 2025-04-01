@@ -101,6 +101,7 @@ layout: default
   .main-content .header__text {
     align-content: center;
     line-height: 1.5;
+    max-width: 800px;
     z-index: 1;
   }
   @media (max-width: 1100px) {
@@ -351,7 +352,7 @@ layout: default
     </div>
     <div class="header__row">
       <img src="{{ page.icon-dark }}" class="header__icon" alt="" />
-      <div class="header__text">
+      <div class="header__text" id="first-content">
         {{ page.top-section }}
       </div>
     </div>
