@@ -100,7 +100,7 @@
 .latest-posts__list-item-summary {
   text-align: left;
   flex: 1;
-  line-height: 25px;
+  line-height: 1.5;
   padding: 1em;
 }
 
@@ -112,7 +112,7 @@
 }
 </style>
 
-<section class="latest-posts">
+<aside class="latest-posts">
   {% if include.blog == 'true' %}
     <h1 class="latest-posts__blog-title">Blog</h1>
   {% else %}
@@ -150,4 +150,4 @@
   {% if include.blog != 'true' %}
     <a href="/blog" class="button">Read more posts here</a>
   {% endif %}
-</section>
+</aside>
