@@ -44,7 +44,7 @@ layout: default
     }
   }
 </style>
-<section class="header">
+<section class="header" role="banner">
   <a href="/" class="logo">deranged</a>
   <h1><a href="/blog">blog</a></h1>
 </section>
@@ -90,7 +90,7 @@ layout: default
     width: 100%;
     justify-content: center;
     padding-right: 2em;
-    padding-left: 2em
+    padding-left: 2em;
   }
   main h1 {
     position: relative;
@@ -101,6 +101,11 @@ layout: default
     font-size: 4em;
     font-weight: bold;
     z-index: 1;
+    max-width: 100vw;
+  }
+
+  main p, main li {
+    line-height: 1.5;
   }
 
   main p.subtitle {
@@ -129,6 +134,7 @@ layout: default
     background-image: linear-gradient(40deg, #2c3e50 30%, #455d75 90%);
     font-size: 1.1em;
     padding: 50px;
+    margin-bottom: 32px;
   }
 
   main .highlight-box p:last-of-type {
@@ -146,6 +152,10 @@ layout: default
       font-size: 3.5em;
       margin-right: 1em;
       margin-left: 1em;
+    }
+    main .highlight-box {
+      margin: 0 16px 16px;
+      padding: 32px;
     }
     .header-overlay,
     .header-image {
@@ -166,6 +176,12 @@ layout: default
   @media (max-width: 450px) {
     main {
       font-size: 1.1em;
+    }
+    main h1 {
+      font-size: 2em;
+    }
+    main section > h2 {
+      font-size: 1.7em;
     }
   }
 
