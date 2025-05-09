@@ -20,4 +20,9 @@ layout: null
             </url>
         {% endif %}
     {% endfor %}
+    {% for post in site.posts %}
+        <url>
+            <loc>https://deranged.dk{{ post.url }}</loc>
+        </url>
+    {% endfor %}
 </urlset>
