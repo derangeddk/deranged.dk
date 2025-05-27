@@ -44,9 +44,9 @@ sitemap_include: 'yes'
         }
     }
 </style>
-<section class="header">
+<section class="header" role="banner">
     <a href="/" class="logo">deranged</a>
-    <div class="intro">
+    <div class="intro" id="first-content">
         <h1>Cases</h1>
         <h2>A showcase of some of the things we have worked on in the past.</h2>
     </div>
@@ -72,19 +72,26 @@ sitemap_include: 'yes'
         flex-direction: column;
         align-items: flex-end;
     }
-    .case__meta-intro {
-        text-align: right;
-        color: #eaf1f7;
+    .case__meta-assets {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
     }
     .case__meta h1 {
+        color: #eaf1f7;
         font-size: 0.9rem;
+        line-height: 1.4rem;
+        text-align: right;
         font-weight: 500;
         letter-spacing: 0.25rem;
         text-transform: uppercase;
         margin: 0;
+        padding: 0.9rem 0;
     }
     .case__meta a {
         text-decoration: underline;
+        padding: 0.9rem 0;
+        line-height: 1.4rem;
     }
     .case__logo {
         width: 200px;
@@ -127,7 +134,7 @@ sitemap_include: 'yes'
     }
     .case__content > :first-child {
         margin-top: 0;
-        line-height: 0.9rem;
+        line-height: 1.5;
     }
     .case__content h1 {
         font-size: 0.9rem;
@@ -135,9 +142,12 @@ sitemap_include: 'yes'
         letter-spacing: 0.25rem;
         text-transform: uppercase;
         margin: 0;
-        margin-top: 2rem;
+        padding-top: 0.9rem;
         line-height: normal;
     }
+    .case__content > p {
+        padding-top: 0.9rem;
+    } 
     .case__read-more {
         background: transparent;
         color: #eaf1f7;
@@ -174,21 +184,28 @@ sitemap_include: 'yes'
             align-items: flex-start;
         }
         .case__meta {
+            flex-basis: unset;
             width: 100%;
             padding: 0 30px;
+            align-items: flex-start;
+        }
+        .case__meta h1 {
+            text-align: left;
+        }
+        .case__meta-assets {
+            width: 100%;
             flex-direction: row;
+            align-items: center;
+            justify-content: space-between;
         }
         .case__logo {
-            padding: 0;
-            padding-top: 30px;
-            padding-right: 5px;
+            max-height: 128px;
+            width: unset;
+            max-width: 200px;
         }
         .case__content {
             margin: 0 30px;
             margin-top: 30px;
-        }
-        .case__meta-intro {
-            text-align: left;
         }
     }
     @media (max-width: 400px) {
@@ -209,224 +226,227 @@ sitemap_include: 'yes'
         }
     }
 </style>
-<section class="cases">
-    <div class="case" id="marmar">
-        <div class="case__meta">
-            <div class="case__meta-intro">
+
+<main>
+    <section class="cases">
+        <div class="case" id="marmar">
+            <div class="case__meta">
                 <h1>
                     <a href="https://marmarcopenhagen.dk" target="_blank" rel="noopener">Marmar</a>
                 </h1>
-                <img src="/img/marmar.png" class="case__logo">
+                <div class="case__meta-assets">
+                    <img src="/img/marmar.png" class="case__logo" alt="Marmar logo">
+                    <div class="case__icon">👕</div>
+                    <div class="case__icon">👗</div>
+                    <div class="case__icon">📈</div>
+                </div>
             </div>
-            <div class="case__icon">👕</div>
-            <div class="case__icon">👗</div>
-            <div class="case__icon">📈</div>
+            <div class="case__content">
+                <h1>Summary</h1>
+                <ul>
+                    <li>
+                        We were hired in to initially modernize webshop, as the existing shop was aging and hard to maintain. Especially the work required to upload new products and handle orders was a problem.
+                    </li>
+                    <li>
+                        Marmar's needs were for a typical webshop, so we suggested using a standard (best in class) piece of software for the shop, and focus on processes and integrations. We landed on Shopify as the core webshop product.
+                    </li>
+                    <li>
+                        We integrated two webshops (for different markets) with Marmar's logistics partner and their accounting system, allowing most orders to be fully processed without need for employee interaction. For edge cases, we implemented a reporing interface, supporting Marmar staff in figuring out what might have gone wrong with orders and fix the issues.
+                    </li>
+                    <li>
+                        We focused on employee education, making sure that key employees could solve issues as they occur. Additionally we trained employees to make advanced changes to the Shopify store, freeing them from the need to communicate with and pay and external contractor for changes to the webshop's look and content.
+                    </li>
+                    <li>
+                        The project resulted in a manifold increase in sales from webshop and significantly reduced workload required to handle orders and upload products.
+                    </li>
+                    <li>
+                        We also coordinated between several of Marmar's other suppliers and were instrumental in ensuring the success of a migration of a logistics integration for the entire business (both B2B and webshop).</li>
+                    </li>
+                </ul>
+            </div>
         </div>
-        <div class="case__content">
-            <h1>Summary</h1>
-            <ul>
-                <li>
-                    We were hired in to initially modernize webshop, as the existing shop was aging and hard to maintain. Especially the work required to upload new products and handle orders was a problem.
-                </li>
-                <li>
-                    Marmar's needs were for a typical webshop, so we suggested using a standard (best in class) piece of software for the shop, and focus on processes and integrations. We landed on Shopify as the core webshop product.
-                </li>
-                <li>
-                    We integrated two webshops (for different markets) with Marmar's logistics partner and their accounting system, allowing most orders to be fully processed without need for employee interaction. For edge cases, we implemented a reporing interface, supporting Marmar staff in figuring out what might have gone wrong with orders and fix the issues.
-                </li>
-                <li>
-                    We focused on employee education, making sure that key employees could solve issues as they occur. Additionally we trained employees to make advanced changes to the Shopify store, freeing them from the need to communicate with and pay and external contractor for changes to the webshop's look and content.
-                </li>
-                <li>
-                    The project resulted in a manifold increase in sales from webshop and significantly reduced workload required to handle orders and upload products.
-                </li>
-                <li>
-                    We also coordinated between several of Marmar's other suppliers and were instrumental in ensuring the success of a migration of a logistics integration for the entire business (both B2B and webshop).</li>
-                </li>
-            </ul>
-        </div>
-    </div>
 
-    <div class="case" id="tech-scaleup-1">
-        <div class="case__meta">
-            <div class="case__meta-intro">
+        <div class="case" id="tech-scaleup-1">
+            <div class="case__meta">
                 <h1>
                     Tech Scale-up 1
                 </h1>
-                <img src="/img/tech-company-logo-placeholder.jpg" class="case__logo">
+                <div class="case__meta-assets">
+                    <img src="/img/tech-company-logo-placeholder.jpg" class="case__logo" alt="placeholder image">
+                    <div class="case__icon">🚀</div>
+                    <div class="case__icon">📈</div>
+                    <div class="case__icon">✨</div>
+                </div>
             </div>
-            <div class="case__icon">🚀</div>
-            <div class="case__icon">📈</div>
-            <div class="case__icon">✨</div>
+            <div class="case__content">
+                <p>This case is anonymized. References available <a href="mailto:get@deranged.dk">by request</a>.</p>
+                <h1>Summary</h1>
+                <ul>
+                    <li>
+                        A Nasdaq-listed scale-up was looking to strengthen their development team and capitalize on new business opportunities.
+                    </li>
+                    <li>
+                        We integrated with the team, working closely with the CTO, and focused on increasing the technical skill-level of the employees, improving processes to unlock the full potential of the developers, and focus work on the most important tasks in order to support scaling.
+                    </li>
+                    <section class="customer-quote-section">
+                        <p class="quote-text">
+                            Finding and solving the right problem is a much harder task than getting code running. <a href="mailto:niels@deranged.dk">Niels [from deranged]</a> steered us into finding it and guided us on how to understand and solve it.
+                        </p>
+                        <p class="quotee">Gui, Tech Lead and Senior Developer</p>
+                    </section>
+                    <section class="customer-quote-section">
+                        <p class="quote-text">
+                            My approach to software engineering rapidly changed for better [while working with deranged]. <!--when Niels joined our team. He first helped me and others to realise our individual weaknesses and gave his constructive feedback that guided each of us towards becoming more valuable team members.
+                            Although challenging initially, Niels's ideas reshaped how our team operates.--> We began asking the right questions, frequently communicating our ideas for solving problems, and implementing more impactful code.
+                            <!--Besides being an influential mentor, Niels also largely contributed to our codebase, which now serves us as a great source of inspiration.-->
+                        </p>
+                        <p class="quotee">Michal, Full Stack Developer</p>
+                    </section>
+                    <section class="customer-quote-section">
+                        <p class="quote-text">
+                            Working with Niels from deranged has been an educational pleasure. His ability to teach in a constructive manner is without compare and he manages to find the problems in one's assumptions, helping to overcome the barriers currently being struggled with.
+                            <!--At arbejde med Niels Abilgaard fra Deranged har været en lærerig fornøjelse. Hans evne til at lære fra sig på en konstruktiv måde er uovertruffen og han formår altid at finde problemerne i ens antagelser der hjælper en udover de barrierer man kæmper med. Varme anbefalinger herfra.-->
+                        </p>
+                        <p class="quotee">Mathias, Data Engineer & Scientist</p>
+                    </section>
+                    <li>
+                        We performed pair programming and individual coaching for developers of all experience levels; leadership coaching for new tech leads; and presentations and workshops on software design and agile processes tailored to the evolving team needs.
+                    </li>
+                    <section class="customer-quote-section">
+                        <p class="quote-text">
+                            Working with <a href="mailto:niels@deranged.dk">Niels [from deranged]</a> has been an ab&shy;so&shy;lute plea&shy;sure! His ability to ab&shy;sorb and assim&shy;ilate new infor&shy;mation into action&shy;able strategy is beyond com&shy;pare. Even more im&shy;pres&shy;sive are his excep&shy;tional articu&shy;lation and com&shy;mun&shy;ication skills. <!--Choosing to work with Niels could very well be the best decision you  make for your company.-->
+                        </p>
+                        <p class="quotee">Isaac, Product Owner</p>
+                    </section>
+                    <li>
+                        We provided a plug and play development team to start executing on a new business opportunity, while the internal development capacity was being grown. This allowed the business to more quickly move towards the target, without having to move existing developers away from their already established core business.
+                    </li>
+                    <section class="customer-quote-section">
+                        <p class="quote-text">
+                            Working with deranged over the past six months allowed our business to both develop fenced off new software, as they worked as a de-facto stand alone team [...] <!--, whilst they also assisted and actively developed our legacy software integrating with our pre-existing development teams seamlessly.<br>
+                            deranged's highly competent team were able to operate in-house and liaise with our stakeholders in developing this stand alone product which is already delivering. We asked for features and they were implemented.--> The plug and play development team enabled us to scale up the scope of the project with instant effect while our in-house teams benefitted from their expertise.<br>
+                            deranged's flexible working structure meant we were able to re-posit the business focus of the stand-alone software quickly and generate substantially better results.
+                            <!--With on-going support options post software deployment, good hand-over and documentation we are able to continue using the software and look forward to future collaborations with Deranged.-->
+                        </p>
+                        <p class="quotee">Simon, Business Manager</p>
+                    </section>
+                </ul>
+            </div>
         </div>
-        <div class="case__content">
-            <p>This case is anonymized. References available <a href="mailto:get@deranged.dk">by request</a>.</p>
-            <h1>Summary</h1>
-            <ul>
-                <li>
-                    A Nasdaq-listed scale-up was looking to strengthen their development team and capitalize on new business opportunities.
-                </li>
-                <li>
-                    We integrated with the team, working closely with the CTO, and focused on increasing the technical skill-level of the employees, improving processes to unlock the full potential of the developers, and focus work on the most important tasks in order to support scaling.
-                </li>
-                <section class="customer-quote-section">
-                    <p class="quote-text">
-                        Finding and solving the right problem is a much harder task than getting code running. <a href="mailto:niels@deranged.dk">Niels [from deranged]</a> steered us into finding it and guided us on how to understand and solve it.
-                    </p>
-                    <p class="quotee">Gui, Tech Lead and Senior Developer</p>
-                </section>
-                <section class="customer-quote-section">
-                    <p class="quote-text">
-                        My approach to software engineering rapidly changed for better [while working with deranged]. <!--when Niels joined our team. He first helped me and others to realise our individual weaknesses and gave his constructive feedback that guided each of us towards becoming more valuable team members.
-                        Although challenging initially, Niels's ideas reshaped how our team operates.--> We began asking the right questions, frequently communicating our ideas for solving problems, and implementing more impactful code.
-                        <!--Besides being an influential mentor, Niels also largely contributed to our codebase, which now serves us as a great source of inspiration.-->
-                    </p>
-                    <p class="quotee">Michal, Full Stack Developer</p>
-                </section>
-                <section class="customer-quote-section">
-                    <p class="quote-text">
-                        Working with Niels from deranged has been an educational pleasure. His ability to teach in a constructive manner is without compare and he manages to find the problems in one's assumptions, helping to overcome the barriers currently being struggled with.
-                        <!--At arbejde med Niels Abilgaard fra Deranged har været en lærerig fornøjelse. Hans evne til at lære fra sig på en konstruktiv måde er uovertruffen og han formår altid at finde problemerne i ens antagelser der hjælper en udover de barrierer man kæmper med. Varme anbefalinger herfra.-->
-                    </p>
-                    <p class="quotee">Mathias, Data Engineer & Scientist</p>
-                </section>
-                <li>
-                    We performed pair programming and individual coaching for developers of all experience levels; leadership coaching for new tech leads; and presentations and workshops on software design and agile processes tailored to the evolving team needs.
-                </li>
-                <section class="customer-quote-section">
-                    <p class="quote-text">
-                        Working with <a href="mailto:niels@deranged.dk">Niels [from deranged]</a> has been an ab&shy;so&shy;lute plea&shy;sure! His ability to ab&shy;sorb and assim&shy;ilate new infor&shy;mation into action&shy;able strategy is beyond com&shy;pare. Even more im&shy;pres&shy;sive are his excep&shy;tional articu&shy;lation and com&shy;mun&shy;ication skills. <!--Choosing to work with Niels could very well be the best decision you  make for your company.-->
-                    </p>
-                    <p class="quotee">Isaac, Product Owner</p>
-                </section>
-                <li>
-                    We provided a plug and play development team to start executing on a new business opportunity, while the internal development capacity was being grown. This allowed the business to more quickly move towards the target, without having to move existing developers away from their already established core business.
-                </li>
-                <section class="customer-quote-section">
-                    <p class="quote-text">
-                        Working with deranged over the past six months allowed our business to both develop fenced off new software, as they worked as a de-facto stand alone team [...] <!--, whilst they also assisted and actively developed our legacy software integrating with our pre-existing development teams seamlessly.<br>
-                        deranged's highly competent team were able to operate in-house and liaise with our stakeholders in developing this stand alone product which is already delivering. We asked for features and they were implemented.--> The plug and play development team enabled us to scale up the scope of the project with instant effect while our in-house teams benefitted from their expertise.<br>
-                        deranged's flexible working structure meant we were able to re-posit the business focus of the stand-alone software quickly and generate substantially better results.
-                        <!--With on-going support options post software deployment, good hand-over and documentation we are able to continue using the software and look forward to future collaborations with Deranged.-->
-                    </p>
-                    <p class="quotee">Simon, Business Manager</p>
-                </section>
-            </ul>
-        </div>
-    </div>
 
-    <div class="case" id="fischer-lighting">
-        <div class="case__meta">
-            <div class="case__meta-intro">
+        <div class="case" id="fischer-lighting">
+            <div class="case__meta">
                 <h1>
                     <a href="https://fischer-lighting.com" target="_blank" rel="noopener">Fischer Lighting</a>
                 </h1>
-                <img src="/img/fischer-lighting.png" class="case__logo">
+                <div class="case__meta-assets">
+                    <img src="/img/fischer-lighting.png" class="case__logo" alt="Fischer Lighting logo">
+                    <div class="case__icon">💡</div>
+                    <div class="case__icon">📄</div>
+                    <div class="case__icon">⚡</div>
+                </div>
             </div>
-            <div class="case__icon">💡</div>
-            <div class="case__icon">📄</div>
-            <div class="case__icon">⚡</div>
+            <div class="case__content">
+                <h1>Summary</h1>
+                <ul>
+                    <li>
+                        A legacy custom software system used for running several business critical functions was causing problems, and needed replacing.
+                    </li>
+                    <li>
+                        We planned the replacement to be gradual and stable. We decided not to build and design a large and complex system to be launched all at once, as this would lead to significant confusion among users and potentially inhibit adoption. Additionally, such an approach is error prone as the complexity of systems grows exponentially with size: bugs would be more likely, and we would be less likely to have designed good user interactions for all use cases. Instead, we implemented a new system, integrating with the legacy system, replacing one part at a time. This allowed users to get used to the new system in manageable increments, while minimizing disruption to established work processes.
+                    </li>
+                    <section class="customer-quote-section">
+                        <p class="quote-text">
+                            There has been good com&shy;mun&shy;ica&shy;tion and dedi&shy;cation from deranged throughout the partner&shy;ship. [...] We have a close client-supplier relation&shy;ship. I see deranged as being my own in-house developers. That is how it feels.
+                        </p>
+                        <p class="quotee">Ninna Toft Hansen, then-COO</p>
+                    </section>
+                    <li>
+                        We performed an analysis of people and work processes involved in the tasks supported by the legacy system, which identified bottlenecks in communication and coordination, as well as providing a more thorough understanding of the work the legacy system was supporting. This allowed us to design a new system that would more comprehensibly automate easily automatable tasks and better support human decision making and creative processes.
+                    </li>
+                    <li>
+                        Throughout, we have analyzed and recommended the highest impact improvements, e.g. the ones where most value would result from the smallest investment. We continuously interact with users, working to understand how the software has changed their work processes, needs and interactions. This has allowed us to continue to improve user interaction with our system and support more and more of the work in the company.
+                    </li>
+                    <li>
+                        We have integrated with various of Fischer Lighting's other suppliers and tools, and built custom support for supply handling and planning of complex and interdependent products; advanced requirements specification of Fischer Lighting's customers' needs; project planning and execution; and report generation with advanced calculations. We have migrated data from a complex legacy system, and launched a new system that significantly saves employee work time, freeing up time for more important tasks.
+                    </li>
+                </ul>
+            </div>
         </div>
-        <div class="case__content">
-            <h1>Summary</h1>
-            <ul>
-                <li>
-                    A legacy custom software system used for running several business critical functions was causing problems, and needed replacing.
-                </li>
-                <li>
-                    We planned the replacement to be gradual and stable. We decided not to build and design a large and complex system to be launched all at once, as this would lead to significant confusion among users and potentially inhibit adoption. Additionally, such an approach is error prone as the complexity of systems grows exponentially with size: bugs would be more likely, and we would be less likely to have designed good user interactions for all use cases. Instead, we implemented a new system, integrating with the legacy system, replacing one part at a time. This allowed users to get used to the new system in manageable increments, while minimizing disruption to established work processes.
-                </li>
-                <section class="customer-quote-section">
-                    <p class="quote-text">
-                        There has been good com&shy;mun&shy;ica&shy;tion and dedi&shy;cation from deranged throughout the partner&shy;ship. [...] We have a close client-supplier relation&shy;ship. I see deranged as being my own in-house developers. That is how it feels.
-                    </p>
-                    <p class="quotee">Ninna Toft Hansen, then-COO</p>
-                </section>
-                <li>
-                    We performed an analysis of people and work processes involved in the tasks supported by the legacy system, which identified bottlenecks in communication and coordination, as well as providing a more thorough understanding of the work the legacy system was supporting. This allowed us to design a new system that would more comprehensibly automate easily automatable tasks and better support human decision making and creative processes.
-                </li>
-                <li>
-                    Throughout, we have analyzed and recommended the highest impact improvements, e.g. the ones where most value would result from the smallest investment. We continuously interact with users, working to understand how the software has changed their work processes, needs and interactions. This has allowed us to continue to improve user interaction with our system and support more and more of the work in the company.
-                </li>
-                <li>
-                    We have integrated with various of Fischer Lighting's other suppliers and tools, and built custom support for supply handling and planning of complex and interdependent products; advanced requirements specification of Fischer Lighting's customers' needs; project planning and execution; and report generation with advanced calculations. We have migrated data from a complex legacy system, and launched a new system that significantly saves employee work time, freeing up time for more important tasks.
-                </li>
-            </ul>
-        </div>
-    </div>
 
-    <div class="case" id="koebenhavns-stadsarkiv">
-        <div class="case__meta">
-            <div class="case__meta-intro">
+        <div class="case" id="koebenhavns-stadsarkiv">
+            <div class="case__meta">
                 <h1>
                     <a href="https://kbharkiv.dk/" target="_blank" rel="noopener">Københavns Stadsarkiv</a>
                 </h1>
-                <img src="/img/kbh-stadsarkiv.png" class="case__logo">
+                <div class="case__meta-assets">
+                    <img src="/img/kbh-stadsarkiv.png" class="case__logo" alt="Københavns Stadsarkiv logo">
+                    <div class="case__icon">🖼️</div>
+                    <div class="case__icon">🔎</div>
+                    <div class="case__icon">⚙️</div>
+                </div>
             </div>
-            <div class="case__icon">🖼️</div>
-            <div class="case__icon">🔎</div>
-            <div class="case__icon">⚙️</div>
+            <div class="case__content">
+                <h1>Summary</h1>
+                <ul>
+                    <li>
+                        Københavns Stadsarkiv needed a new contractor to take over main&shy;tenance for <a href="https://kbhbilleder.dk/" target="_blank" rel="noopener">kbhbilleder.dk</a>, a public-facing system covered by public sector regulations. Some of these regulations also meant that the system needed an accessibility audit and changes made to ensure it lived up to the required standards.
+                    </li>
+                    <li>
+                        In addition to the accessibility audit and update (and various small changes or features, we have planned and executed in cooperation with them), we also performed a full review of the system, and helped plan updates to the maintainability, stability and security, all while balancing impact with budget.
+                    </li>
+                    <section class="customer-quote-section">
+                        <p class="quote-text">
+                            I have never worked with anyone who has taken on so much respon&shy;sibility.
+                        </p>
+                        <p class="quotee">Signe Trolle Gronemann, Specialkonsulent and Product Owner</p>
+                    </section>
+                    <li>
+                        Concurrently, we have been working with Københavns Stadsarkiv on <a href="https://link-lives.dk/" target="_blank" rel="noopener">Link-Lives</a>, a research project in cooperation with the University of Copenhagen and Rigsarkivet, the Danish national archives, aiming to make available digital versions of historical records about Danes.
+                    </li>
+                    <li>
+                        For link-lives, we have been working closely with other employees at Københavns Stadsarkiv, including their own software developers and designers. We have taken ownership of the public-facing interface of the system, but coordinate closely and provide our expertise in advanced systems engineering and infrastructure automation, as well. The project was launched in 2022, and has been covered in Danish media, including <a href="https://link-lives.dk/de-almindelige-danskeres-historie/" target="_blank" rel="noopener">Weekendavisen</a> and <a href="https://www.kristeligt-dagblad.dk/danmark/ny-online-database-er-en-guldgrube-slaegtsforskere" target="_blank" rel="noopener">Kristeligt Dagblad</a>.
+                    </li>
+                </ul>
+            </div>
         </div>
-        <div class="case__content">
-            <h1>Summary</h1>
-            <ul>
-                <li>
-                    Københavns Stadsarkiv needed a new contractor to take over main&shy;tenance for <a href="https://kbhbilleder.dk/" target="_blank" rel="noopener">kbhbilleder.dk</a>, a public-facing system covered by public sector regulations. Some of these regulations also meant that the system needed an accessibility audit and changes made to ensure it lived up to the required standards.
-                </li>
-                <li>
-                    In addition to the accessibility audit and update (and various small changes or features, we have planned and executed in cooperation with them), we also performed a full review of the system, and helped plan updates to the maintainability, stability and security, all while balancing impact with budget.
-                </li>
-                <section class="customer-quote-section">
-                    <p class="quote-text">
-                        I have never worked with anyone who has taken on so much respon&shy;sibility.
-                    </p>
-                    <p class="quotee">Signe Trolle Gronemann, Specialkonsulent and Product Owner</p>
-                </section>
-                <li>
-                    Concurrently, we have been working with Københavns Stadsarkiv on <a href="https://link-lives.dk/" target="_blank" rel="noopener">Link-Lives</a>, a research project in cooperation with the University of Copenhagen and Rigsarkivet, the Danish national archives, aiming to make available digital versions of historical records about Danes.
-                </li>
-                <li>
-                    For link-lives, we have been working closely with other employees at Københavns Stadsarkiv, including their own software developers and designers. We have taken ownership of the public-facing interface of the system, but coordinate closely and provide our expertise in advanced systems engineering and infrastructure automation, as well. The project was launched in 2022, and has been covered in Danish media, including <a href="https://link-lives.dk/de-almindelige-danskeres-historie/" target="_blank" rel="noopener">Weekendavisen</a> and <a href="https://www.kristeligt-dagblad.dk/danmark/ny-online-database-er-en-guldgrube-slaegtsforskere" target="_blank" rel="noopener">Kristeligt Dagblad</a>.
-                </li>
-            </ul>
-        </div>
-    </div>
 
-    <div class="case" id="nornorm">
-        <div class="case__meta">
-            <div class="case__meta-intro">
+        <div class="case" id="nornorm">
+            <div class="case__meta">
                 <h1>
                     <a href="https://nornorm.com/" target="_blank" rel="noopener">NORNORM</a> and
                     <a href="https://kabellmunk.dk/" target="_blank" rel="noopener">Kabell & Munk</a>
                 </h1>
-                <img src="/img/nornorm-km.png" class="case__logo">
+                <div class="case__meta-assets">
+                    <img src="/img/nornorm-km.png" class="case__logo" alt="Nornorm and Kabell & Munk logos">
+                    <div class="case__icon">🪑</div>
+                    <div class="case__icon">🚚</div>
+                    <div class="case__icon">♻️</div>
+                </div>
             </div>
-            <div class="case__icon">🪑</div>
-            <div class="case__icon">🚚</div>
-            <div class="case__icon">♻️</div>
+            <div class="case__content">
+                <h1>Summary</h1>
+                <ul>
+                    <li>
+                        Working with Kabell & Munk, we supplied a scalable force of developers for NORNORM, an <a href="https://nornorm.com/press-releases/nornorm-wins-the-nordic-proptech-awards-in-space-as-a-service/" target="_blank" rel="noopener">award-winning property technology startup</a>, helping with development of their core product offering.
+                    </li>
+                    <li>
+                        We worked on building a generalized UI with reusable basic components, allowing stakeholders with no programming knowledge to assemble webpages more quickly. This allows for a faster iteration speed, and makes it easier to adjust to changing needs.
+                    </li>
+                    <section class="customer-quote-section">
+                        <p class="quote-text">
+                            deranged provided our team with competent frontend and backend development ressources and helped us deliver solutions that fit our client's needs. With a fast onboarding, they were quickly adding value across feature development, testing and client communication. I really appreciate their adaptability and scalability, which allowed us to deliver the fluctuating level of development bandwidth that the client requested.
+                        </p>
+                        <p class="quotee">Kalle Kabell, Partner, General Manager & Web Lead, Kabell & Munk</p>
+                    </section>
+                    <li>
+                        We made our expertise available to prioritization decisions, working with Kabell & Munk to ensure that good technical decisions were made for the long term sustainability of the technical platform.
+                    </li>
+                    <li>
+                        We worked on the integration of various tools and custom platforms used in the company in order to optimize workflows and reduce manual labor involved in running the company, including but not limited to QR-code scanning software.
+                    </li>
+                </ul>
+            </div>
         </div>
-        <div class="case__content">
-            <h1>Summary</h1>
-            <ul>
-                <li>
-                    Working with Kabell & Munk, we supplied a scalable force of developers for NORNORM, an <a href="https://nornorm.com/press-releases/nornorm-wins-the-nordic-proptech-awards-in-space-as-a-service/" target="_blank" rel="noopener">award-winning property technology startup</a>, helping with development of their core product offering.
-                </li>
-                <li>
-                    We worked on building a generalized UI with reusable basic components, allowing stakeholders with no programming knowledge to assemble webpages more quickly. This allows for a faster iteration speed, and makes it easier to adjust to changing needs.
-                </li>
-                <section class="customer-quote-section">
-                    <p class="quote-text">
-                        deranged provided our team with competent frontend and backend development ressources and helped us deliver solutions that fit our client's needs. With a fast onboarding, they were quickly adding value across feature development, testing and client communication. I really appreciate their adaptability and scalability, which allowed us to deliver the fluctuating level of development bandwidth that the client requested.
-                    </p>
-                    <p class="quotee">Kalle Kabell, Partner, General Manager & Web Lead, Kabell & Munk</p>
-                </section>
-                <li>
-                    We made our expertise available to prioritization decisions, working with Kabell & Munk to ensure that good technical decisions were made for the long term sustainability of the technical platform.
-                </li>
-                <li>
-                    We worked on the integration of various tools and custom platforms used in the company in order to optimize workflows and reduce manual labor involved in running the company, including but not limited to QR-code scanning software.
-                </li>
-            </ul>
-        </div>
-    </div>
-</section>
+    </section>
+</main>
