@@ -365,7 +365,7 @@ layout: default
 {% if page.custom-form == nil %}
   {% include trusted.html %}
 
-  {% include latest-posts.html %}
+  {% include latest-posts.html limit=3 %}
 
   {% include get_a_quote.html subject=page.title %}
 {% endif %}

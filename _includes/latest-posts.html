@@ -139,10 +139,7 @@
     {% if include.post == 'true' %}
       {% assign filtered_posts = site.posts | where_exp: "post", "post.title != page.title" %}
     {% endif %}
-    {% if include.blog != 'true' %}
-      {% assign filtered_posts = filtered_posts limit:3 %}
-    {% endif %}
-    {% for post in filtered_posts %}
+    {% for post in filtered_posts limit: include.limit %}
     <a href="{{post.url}}" class="latest-posts__list-item">
       <img
           src="{{post.img}}"
