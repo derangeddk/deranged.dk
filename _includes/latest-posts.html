@@ -16,12 +16,16 @@
 }
 
 .latest-posts__blog-title {
+  color: #2c3e50;
   font-size: 4em;
-  font-weight: 500;
+  font-weight: 200;
   letter-spacing: 1px;
+  align-self: flex-start;
+  padding: 0 70px;
   }
 
 .latest-posts__title {
+  color: #2c3e50;
   margin-bottom: 0.3em;
   margin-top: 0.3em;
   text-align: left;
@@ -31,14 +35,17 @@
 
 .latest-posts__list-container {
   display: grid;
-  grid-column-gap: 4vw;
-  grid-row-gap: 4vw;
+  grid-column-gap: 30px;
+  grid-row-gap: 30px;
   grid-template-rows: auto;
   grid-template-columns: 1fr 1fr 1fr;
   font-size: 18px;
   padding: 0 100px 2em;
 }
 @media screen and (max-width: 991px) {
+  .latest-posts__blog-title {
+    padding: 0 46px;
+  }
   .latest-posts__heading {
     padding: 2em 2em 2em;
   }
@@ -67,18 +74,18 @@
 
 .latest-posts__list-item {
   color: #2c3e50;
-  background-color: #eaf1f7;
+  background-color: #fff;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.4);
   text-decoration: none;
-  transition: background-color 0.3s, transform 0.3s;
+  transition: transform 0.3s, box-shadow 0.3s;
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: stretch;
 }
 
 .latest-posts__list-item:hover {
-  background-color: #fff;
   transform: scale(1.015);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 }
 
 .latest-posts__list-item-thumbnail {
@@ -89,8 +96,8 @@
   color: #2c3e50;
   font-size: 1.3em;
   letter-spacing: 1px;
-  text-transform: uppercase;
-  padding: 0 0.6em 0;
+  margin: 10px 10px 6px;
+  text-align: left;
 }
 @media screen and (max-width: 991px) {
   .latest-posts__list-item-title {
@@ -104,7 +111,7 @@
   text-align: left;
   flex: 1;
   line-height: 1.5;
-  padding: 1em;
+  margin: 0 10px 10px;
 }
 
 .button {
