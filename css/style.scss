@@ -244,6 +244,15 @@ code {
     }
 }
 
+@for $i from 1 through 10 {
+    .p-#{$i} {
+        padding-top: #{$i}rem;
+        padding-bottom: #{$i}rem;
+        padding-left: #{$i}rem;
+        padding-right: #{$i}rem;
+    }
+}
+
 .font-serif {
     font-family: 'Libre Baskerville', Baskerville, "Baskerville Old Face", "Hoefler Text", Garamond, "Times New Roman", serif;
 }
@@ -252,8 +261,20 @@ code {
 }
 
 .display-1 {
-    font-weight: 300;
+    font-weight: 200;
     font-size: 4rem;
+}
+.display-2 {
+    font-weight: 200;
+    font-size: 3rem;
+}
+.display-3 {
+    font-weight: 200;
+    font-size: 2rem;
+}
+.display-4 {
+    font-weight: 200;
+    font-size: 1.5rem;
 }
 
 h1, h2, h3, h4, h5, h6, .heading-1, .heading-2, .heading-3, .heading-4, .heading-5, .heading-6 {
