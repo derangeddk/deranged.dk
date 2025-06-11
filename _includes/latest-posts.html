@@ -142,7 +142,7 @@
     {% for post in filtered_posts limit: include.limit %}
     <a href="{{post.url}}" class="latest-posts__list-item">
       <img
-          src="{{post.img}}"
+          src="{{post.img-small}}"
           loading="lazy"
           alt=""
           class="latest-posts__list-item-thumbnail"
