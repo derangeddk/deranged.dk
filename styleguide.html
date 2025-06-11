@@ -1,0 +1,241 @@
+---
+layout: default
+---
+<div class="container">
+    <style scoped>
+        hr {
+            margin: 4rem 16rem;
+            border-color: rgba(0,0,0,0.2);
+        }
+        .hr--dark {
+            border-color: rgba(255,255,255,0.2);
+        }
+    </style>
+    <h1 class="display-1">Style guide</h1>
+    <p>
+        This page is a rough and limited style guide for the deranged brand.
+        The brand is designed flexibly and with a <em>content-first</em> mindset, and should
+        be reusable across all platforms and mediums.
+    </p>
+    <p>
+        Good design sources you can uncritically lean on:
+        <ul>
+            <li><a href="https://anthonyhobday.com/sideprojects/saferules/" target="_blank" rel="noopener" class="link--dark">Visual design rules you can safely follow every time</a> by Anthony Hobday</li>
+            <li><a href="https://www.interaction-design.org/literature/topics/gestalt-principles" target="_blank" rel="noopener" class="link--dark">The Gestalt Principles</a></li>
+        </ul>
+    </p>
+
+    <hr>
+
+    <h2>
+        Content <em>first</em>
+    </h2>
+    <p>
+        Before starting to design a page, figure out the content.
+        Design should always be in service of an actual message.
+        Do not adhere to established norms in the design if they make it harder to punch through with your message.
+    </p>
+    <p>
+        Make sure that each page quickly makes the <em>point</em>, and visitors can quickly tell if we are appealing to them or not.
+    </p>
+    <p>
+        The front page starts with a full-page element saying "So nice to meet you" to <em>subvert expectations</em> of visitors who have not yet been segmented/are not linked into more specific content.
+        It <strong>should not be emulated on other pages</strong>, as repeating the pattern weakens it.
+        And on other pages <strong>we know what they are looking for</strong>.
+        TL;DR: the front-page is exceptional, don't copy patterns from it.
+        Other pages need to get to the point quickly.
+        That's hard for the frontpage, because deranged is hard to pin down. What <em>is</em> the point?? That's why it subverts expectations instead.
+    </p>
+    <p>
+        On segment or product pages, write so that visitors can see that you:
+        <ul>
+            <li>Understand what problems they might have</li>
+            <li>That we can help solve them with expertise</li>
+        </ul>
+    </p>
+    <p>
+        For blog posts and explainers, share useful information. The goal is to look like the experts we are, not to increase sales.
+    </p>
+    <p>
+        <strong>Never</strong> write marketing-y bullshit. Write naturally and confidently. Kill your darlings, delete filler words.
+    </p>
+    <p>
+        It is okay to write with edge and humor, to make some personality shine through. We aren't every other brand.
+    </p>
+
+    <hr>
+
+    <h2>
+        Minimal elements
+    </h2>
+    <p>
+        Use minimal changes for the effects you want. You have your content, now make it look good.
+    </p>
+    <p>
+        First, use spacing and position to group the right elements together and tell your story. (Consult the gestalt principles.)
+    </p>
+    <p>
+        Only if spacing is not enough, you can add a border.
+    </p>
+    <p>
+        Only if a border is not eonugh, you can change a background color.
+    </p>
+    <p>
+        <em>Don't overdo it!</em> Lots of color changes make the design look messy.
+    </p>
+</div>
+
+<div class="section--dark section__exit-chevron"></div>
+<section class="section--dark pt-2">
+    <div class="container">
+        <h2>Alternate section backgrounds to keep it fresh</h2>
+        <p>
+            Alternate between sections with light background and dark. It keeps the design interesting.
+            Use <code>.section--dark</code> for dark styled sections.
+        </p>
+
+        <hr class="hr--dark">
+
+        <h2>
+            Avoid boring section transitions
+        </h2>
+        <p>
+            Try to avoid long straight lines when transitioning from one section to another.
+        </p>
+        <p>
+            Instead, try to break up the shape of the transition by having elements overlap the harsh line, or replace the straight line with a shape, e.g. a downward facing chevron.
+        </p>
+        <p>
+            You can use an element with <code>.section__exit-chevron</code> to create a chevron into a new section color.
+        </p>
+    </div>
+</section>
+<div class="section__exit-chevron"></div>
+
+<div class="container">
+    <h2>
+        UTF8 icons
+    </h2>
+    <p>
+        Instead of using an icon pack, see if there is an UTF-8 character that will work for your purposes. Use UTF8 characters as filler and stylistic input.
+        There are loads of fun little arrows and stuff.
+    </p>
+    <p style="font-size: 2.5rem;">
+        ←↑→↓↔↕↖↗↘↙↚↛↜
+        ↝↞↟↠↡↢↣↤↥↦↧↨↩↪↫↬↭↮↯↰↱↲
+        ↳↴↵↶↷↸↹
+        ↺↻↼↽↾↿⇀⇁⇂⇃⇄⇅⇆⇇⇈⇉⇊⇋⇌⇍
+        ⇎⇏⇐⇑⇒⇓⇔⇕⇖⇗⇘⇙⇚⇛
+        ⇜⇝⇞⇟⇠⇡⇢⇣⇤⇥⇦⇧⇨⇩⇪⇫
+        ⇬⇭⇮⇯⇰⇱⇲⇳⇴⇵⇶⇷
+        ⇸⇹⇺⇻⇼⇽⇾⇿
+    </p>
+
+    <hr>
+
+    <h2>
+        Brand colors
+    </h2>
+    <ul>
+        <li>
+            <div style="display: inline-block; width: 48px; height: 48px; background-color: #2c3e50; border: 2px solid black;"></div>
+            <code>#2c3e50</code>
+            Dark blue (primary brand color)
+            Also primary text color.
+        </li>
+        <li>
+            <div style="display: inline-block; width: 48px; height: 48px; background-color: #375068; border: 2px solid black;"></div>
+            <code>#375068</code>
+            Active state brand color (e.g. hovered buttons)
+        </li>
+        <li>
+            <div style="display: inline-block; width: 48px; height: 48px; background-color: #1b2b3a; border: 2px solid black;"></div>
+            <code>#1b2b3a</code>
+            Darkened brand color (e.g. footer, dark fade target of gradients)
+        </li>
+        <li>
+            <div style="display: inline-block; width: 48px; height: 48px; background-color: #ecf0f1; border: 2px solid black;"></div>
+            <code>#ecf0f1</code>
+            Off-white background-color.
+        </li>
+        <li>
+            <div style="display: inline-block; width: 48px; height: 48px; background-color: #eaf1f7; border: 2px solid black;"></div>
+            <code>#eaf1f7</code>
+            Off-white text-color for dark backgrounds.
+        </li>
+        <li>
+            <div style="display: inline-block; width: 48px; height: 48px; background-color: #0e3661; border: 2px solid black;"></div>
+            <code>#0e3661</code>
+            Link on light background
+        </li>
+        <li>
+            <div style="display: inline-block; width: 48px; height: 48px; background-color: #d3e6f8; border: 2px solid black;"></div>
+            <code>#d3e6f8</code>
+            Link on dark background
+        </li>
+    </ul>
+
+    <hr>
+
+    <h2>
+        Fonts
+    </h2>
+    <p>
+        The primary brand font is <a href="https://fonts.adobe.com/fonts/source-sans" target="_blank" rel="noopener" class="link--dark">Source Sans Pro</a>.
+    </p>
+    <p>
+        <span class="font-serif">For serif text, we use <a href="https://fonts.google.com/specimen/Libre+Baskerville" target="_blank" rel="noopener" class="link--dark">Libre Baskerville</a>.</span>
+        (We could consider switching to <a href="https://fonts.adobe.com/fonts/source-serif" target="_blank" rel="noopener" class="link--dark">Source Serif Pro</a> for a more unified look.)
+    </p>
+    <p>
+        <span class="font-code">For code, we use <a href="https://fonts.adobe.com/fonts/source-code-pro" target="_blank" rel="noopener" class="link--dark">Source Code Pro</a>.</span>
+    </p>
+
+    <hr>
+
+    <h2>
+        Body text
+    </h2>
+    <p>
+        Use the default font in size 18px as the default font-size. This should already be the default anyway.
+    </p>
+    <p>
+        For some long text sections you may want a more book-y <em>vibe</em>, in which case you can use the class <code>.font-serif</code> to get a Serif font.
+        <strong>Use serif fonts very sparingly and only if you really need that different feeling.</strong>
+    </p>
+
+    <hr>
+
+    <h2>
+        Headings
+    </h2>
+    <p>
+        Headings are <strong>never normal weight</strong>. Headings are always <strong>normally cased</strong>, never <s>UPPERCASED</s>.
+    </p>
+    <p>
+        Display headings are used to catch users' attention, and are large text on the site. Per default they should use <code>font-weight: 300</code> (light):
+    </p>
+    <div class="display-1">A display heading</div>
+    <p>
+        Normal headings, not for display purposes, are extrabold, <code>font-weight: 900;</code> and much closer in side to normal text:
+    </p>
+    <div class="heading-1">A normal heading</div>
+
+    <hr>
+
+    <h2>
+        Links
+    </h2>
+    <p>
+        This is a little bad... default links are styled to be on dark background, and you can use <code>.link--dark</code> for links on light background.
+        Messy, we should probably fix that.
+    </p>
+    <p>
+        Use link-looking links for linking to other content, on the page or externally.
+    </p>
+    <p>
+        Use buttons only for exceptional CTAs <strong>iff</strong> it is inviting users to start or perform an action. That is, a button <em>can</em> be a link <strong>only if</strong> it links directly to e.g. a form where the user can perform an action. Otherwise it must be a textual link.
+    </p>
+
+    <hr>
+</div>
