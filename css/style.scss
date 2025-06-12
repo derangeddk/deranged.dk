@@ -338,3 +338,33 @@ h3, .heading-3 {
 .section__exit-chevron:after {
     transform: rotate(260deg);
 }
+
+.header {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    grid-template-columns: 150px 1fr;
+    color: #eaf1f7;
+    padding: 30px 100px;
+}
+
+.header .logo {
+    color: inherit;
+    text-decoration: inherit;
+    font-weight: 200;
+    font-size: 1.3em;
+    position: relative;
+    z-index: 11;
+}
+
+.header .blog-link {
+    color: inherit;
+    margin: 0;
+    padding: 0;
+    margin-top: -0.5rem;
+    margin-left: 1rem;
+    font-weight: 200;
+    font-size: 3em;
+    text-decoration: 1px underline;
+    text-underline-offset: 0.5rem;
+}
