@@ -281,6 +281,10 @@ code {
     font-size: 1.5rem;
 }
 
+.display-1 strong, .display-2 strong, .display-3 strong, .display-4 strong {
+    font-weight: 900;
+}
+
 p {
     margin-top: 0;
     margin-bottom: 1.6rem;
@@ -309,6 +313,9 @@ h3, .heading-3 {
 }
 .section--dark-highlight-gradient {
     background-image: linear-gradient(-35deg, transparent 30%, #375068 90%);
+}
+.section--dark-darken-gradient {
+    background-image: linear-gradient(145deg, transparent 30%, #1b2b3a 90%);
 }
 
 .section__exit-chevron {
@@ -377,4 +384,34 @@ h3, .heading-3 {
     margin-left: 1rem;
     text-decoration: 1px underline;
     text-underline-offset: 0.5rem;
+}
+
+.longform {
+    font-size: 1.25rem;
+}
+.longform p, .longform ul, .longform ol, .longform blockquote {
+    font-family: 'Source Serif Pro', 'Libre Baskerville', Baskerville, "Baskerville Old Face", "Hoefler Text", Garamond, "Times New Roman", serif;
+    line-height: 160%;
+    letter-spacing: -0.003em;
+}
+.longform h2:first-child {
+    margin-top: 0;
+}
+.longform p + ul, .longform p + ol {
+    margin-top: -1rem;
+}
+.longform li {
+    margin-bottom: 0.25em;
+}
+.longform h1, .longform .heading-1 {
+    font-size: 2.5rem;
+}
+.longform h2, .longform .heading-2 {
+    font-size: 1.875rem;
+}
+.longform h4, .longform .heading-3 {
+    font-size: 1.5rem;
+}
+.longform a {
+    color: #0e3661;
 }
