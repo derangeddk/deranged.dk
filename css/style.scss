@@ -357,14 +357,24 @@ h3, .heading-3 {
     z-index: 11;
 }
 
-.header .blog-link {
+.header .site-area-logo {
     color: inherit;
     margin: 0;
     padding: 0;
-    margin-top: -0.5rem;
-    margin-left: 1rem;
     font-weight: 200;
     font-size: 3rem;
+}
+
+.header .blog-logo {
+    margin-top: -0.5rem;
+    margin-left: 1rem;
+    text-decoration: 1px underline;
+    text-underline-offset: 0.5rem;
+}
+
+.header .explainers-logo {
+    margin-top: -1rem;
+    margin-left: 1rem;
     text-decoration: 1px underline;
     text-underline-offset: 0.5rem;
 }
