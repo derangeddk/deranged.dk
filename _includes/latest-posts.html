@@ -6,6 +6,7 @@
   flex-direction: column;
   align-items: center;
   padding-bottom: 2em;
+  padding-top: 3rem;
 }
 
 .latest-posts__heading {
@@ -115,9 +116,7 @@
 </style>
 
 <aside class="latest-posts section--dark">
-  {% if include.blog == 'true' %}
-    <h1>Blog</h1>
-  {% else %}
+  {% if include.blog != 'true' %}
   <div class="latest-posts__heading">
     <h2 class="display-2">
       {% if include.title %}
