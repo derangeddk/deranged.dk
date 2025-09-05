@@ -182,9 +182,7 @@ p {
 .services-list-item__title {
   font-size: 27px;
   font-weight: bold;
-  line-height: 1.5;
   letter-spacing: 1px;
-  text-transform: uppercase;
   margin-top: 0;
   margin-bottom: 22px;
 }
