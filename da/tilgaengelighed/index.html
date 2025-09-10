@@ -7,6 +7,22 @@ lang: "da_dk"
 ---
 
 <style>
+  /*
+    Avoid text overflows
+  */
+  p,
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    text-transform: none;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    hyphens: auto;
+  }
+
   .flex {
     display: flex;
     gap: 20px;
