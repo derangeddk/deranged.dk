@@ -24,18 +24,36 @@ lang: "da_dk"
   .flex-wrap {
     flex-wrap: wrap;
   }
+
   .content {
-    padding: 5rem 2rem;
+    padding: 3rem 1rem;
     text-align: left;
+
+    @media(min-width: 768px) {
+      padding: 5rem 2rem;
+    }
 
     a:not([class]) {
       color: inherit;
       text-decoration: underline;
     }
   }
+  .content--blue {
+    color: var(--deranged-text);
+    background-color: #2c3e50;
+    background-image: linear-gradient(235deg, var(--deranged-dark-blue) 30%, var(--deranged-light-blue) 90%);
+
+    figcaption {
+      color: var(--deranged-text);
+    }
+  }
+
   .content__container {
     max-width: 900px;
     margin: auto;
+  }
+  .content__container--wide {
+    max-width: 1200px;
   }
   .content__container--full-width {
     max-width: 100%;
@@ -61,6 +79,7 @@ lang: "da_dk"
     margin-top: 0.5rem;
     text-align: center;
   }
+
   .section__heading {
     margin-bottom: 1rem;
     margin-top: 0;
@@ -71,18 +90,30 @@ lang: "da_dk"
     font-weight: 700;
   }
 
+  .section__heading--light {
+    font-weight: 200;
+  }
+
   .section__text {
     font-size: 1.125rem;
     line-height: 1.6;
     margin-bottom: 2rem;
   }
-  .content__container--blue {
-    color: var(--deranged-text);
-    background-color: var(--deranged-dark-blue);
 
-    figcaption {
-      color: var(--deranged-text);
-    }
+  .subpages-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 3rem;
+    margin-top: 2rem;
+  }
+  .subpages-item__title {
+    margin-top: 0;
+    margin-bottom: 0.5rem;
+    font-size: 1.5rem;
+  }
+  .subpages-item__excerpt {
+    margin-top: 0;
+    margin-bottom: 1rem;
   }
 </style>
 
@@ -108,7 +139,7 @@ lang: "da_dk"
       </h2>
       <div class="section__text">
         <p>
-          ➟ Digital tilgængelighed handler om at skabe inkluderende digitale oplevelser. Tilgængelighed sikrer, at alle kan bruge dit website eller din app, uanset eventuelle funktionsnedsættelser eller handicaps. Ved at sikre, at ingen brugere udelukkes, hjælper du både dine brugere og din organisation til at nå deres mål.
+          ➟  Digital tilgængelighed handler om at skabe inkluderende digitale oplevelser. Tilgængelighed sikrer, at alle kan bruge dit website eller din app, uanset eventuelle funktionsnedsættelser eller handicaps. Ved at sikre, at ingen brugere udelukkes, hjælper du både dine brugere og din organisation til at nå deres mål.
         </p>
         <p>
           For visse sektorer er der lovkrav om tilgængelighed for websteder og apps:
@@ -124,13 +155,13 @@ lang: "da_dk"
       </div>
       <div>
       <a href="/posts/2025-05-09-tilgængelighedsloven-for-den-private-sektor">
-        ➟ Læs mere tilgængelighedsloven for den private sektor
+        ➟  Læs mere tilgængelighedsloven for den private sektor
       </a>
       </div>
     </div>
   </section>
 
-  <section class="content content__container--blue">
+  <section class="content content--blue">
     <div class="content__container">
       <h2 class="section__heading">
         Dit tilgængelighedsteam
@@ -138,7 +169,7 @@ lang: "da_dk"
       <div class="flex">
         <div class="section__text">
           <p>
-            ➟  deranged tilbyder en bred række konsulentydelser inden for webtilgængelighed.
+            ➟ deranged tilbyder en bred række konsulentydelser inden for webtilgængelighed.
           </p>
           <figure class="content__image-container">
             <img src="/img/people/anne-tingaengelighed.jpg" class="revops-section__image" alt="" />
@@ -178,26 +209,29 @@ lang: "da_dk"
     </div>
   </section>
 
-  <section class="content">
-    <div class="content__container content__container--full-width">
-      <h2 class="section__heading" >
+  <section class="content content--blue">
+    <div class="content__container content__container--wide">
+      <h2 class="section__heading section__heading--light">
         Vores ydelser inden for webtilgængelighed
       </h2>
-      <div class="flex flex-wrap">
-        {% for service in page.subpages %}
-          <div class="">
-            <div class="services-list-item__text">
-              <h3 class="services-list-item__title">{{ service }}</h3>
-              <p class="services-list-item__summary">
-                {{ service.excerpt }}
+      <div class="subpages-list">
+        {% assign subpages = site.pages | where_exp:"p","p.url contains '/da/tilgaengelighed/'" %}
+        {% for page in subpages %}
+          {% unless page.url == '/da/tilgaengelighed/' or page.url == '/da/tilgaengelighed/index.html' %}
+            <div class="subpages-item">
+              <h3 class="subpages-item__title">
+                {{ page.title | default: page.url }}
+              </h3>
+              <p class="subpages-item__excerpt">
+                {{ page.excerpt }}
               </p>
               {% if service.content != empty %}
-                <a href="{{ service.url }}">
-                  Læs mere
+                <a href="{{ page.url }}">
+                  ➟  Læs mere
                 </a>
               {% endif %}
             </div>
-          </div>
+          {% endunless %}
         {% endfor %}
       </div>
     </div>
