@@ -2,16 +2,6 @@
 layout: default
 title: "Tilgængelighed: Fra kompetenceløft til fuld compliance - vi opgraderer både dig og dine digitale løsninger"
 meta: "Eksperthjælp til at sikre overholdelse af tilgængelighedsloven og til at løfte kompetencerne i din organisation, så I kommer i mål med compliance nu og her – og bygger en stærk, varig kultur for digital tilgængelighed."
-services:
-  - tilgaengelighedstest
-  - undervisning-i-tilgaengelighed
-  - raadgivning-i-tilgaengelighed
-  - brugertest-tilgaengelighed
-  - tilgaengelighedserklaering
-  - fiks-mine-tilgaengelighedsproblemer
-subpages:
-  - tilgaengelighedstest
-  - konsulentservice
 sitemap_include: 'yes'
 lang: "da_dk"
 ---
@@ -25,36 +15,6 @@ lang: "da_dk"
     flex-wrap: wrap;
   }
 
-  .content {
-    padding: 3rem 1rem;
-    text-align: left;
-
-    @media(min-width: 768px) {
-      padding: 5rem 2rem;
-    }
-
-    a:not([class]) {
-      color: inherit;
-      text-decoration: underline;
-    }
-  }
-  .content--blue {
-    color: var(--deranged-text);
-    background-color: #2c3e50;
-    background-image: linear-gradient(235deg, var(--deranged-dark-blue) 30%, var(--deranged-light-blue) 90%);
-
-    figcaption {
-      color: var(--deranged-text);
-    }
-  }
-
-  .content__container {
-    max-width: 900px;
-    margin: auto;
-  }
-  .content__container--wide {
-    max-width: 1200px;
-  }
   .content__container--full-width {
     max-width: 100%;
   }
@@ -104,7 +64,7 @@ lang: "da_dk"
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 3rem;
-    margin-top: 2rem;
+    margin-top: 4rem;
   }
   .subpages-item__title {
     margin-top: 0;
@@ -220,7 +180,7 @@ lang: "da_dk"
           {% unless page.url == '/da/tilgaengelighed/' or page.url == '/da/tilgaengelighed/index.html' %}
             <div class="subpages-item">
               <h3 class="subpages-item__title">
-                {{ page.title | default: page.url }}
+                {{ page.shortTitle | default: page.title | default: page.url }}
               </h3>
               <p class="subpages-item__excerpt">
                 {{ page.excerpt }}

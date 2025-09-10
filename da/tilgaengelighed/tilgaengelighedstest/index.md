@@ -1,14 +1,9 @@
 ---
-layout: services
-title: Tilgængelighedstest
-icon-bright: "/img/deranged_accessibility_report-white.svg"
-icon-dark: "/img/deranged_accessibility_report-dark.svg"
-meta: "Vores ekspert tester, om du lever op til kravene i EN 301 549, herunder WCAG 2.1 og WCAG 2.2, og dermed om du overholder loven. Vi tester live websites og apps, samt skitser, prototyper og enkeltstående komponenter i udviklingsfasen."
+layout: simple-content
+parent: tilgængelighed
+title: Dybdegående tilgængelighedstest
+shortTitle: Tilgængelighedstest
 excerpt: "Få vores ekspert til at teste, om du lever op til kravene i EN 301 549, herunder WCAG 2.1 og WCAG 2.2, og dermed om du overholder loven. Vi opfordrer til at teste så tidligt som muligt og tester derfor gerne skitser, wireframes, prototyper og enkeltstående komponenter i udviklingsfasen i tillæg til fulde websites og apps."
-header-img: ""
-top-section: "
-  Få vores ekspert til at teste, om du lever op til kravene i EN 301 549, herunder WCAG 2.1 og WCAG 2.2, og dermed om du overholder loven. Vi opfordrer til at teste så tidligt som muligt og tester derfor gerne skitser, wireframes, prototyper og enkeltstående komponenter i udviklingsfasen i tillæg til fulde websites og apps.
-"
 ---
 # Tilgængelighedstest
 Få en ekspert til at teste, om du lever op til kravene i EN 301 549, herunder WCAG 2.1 og WCAG 2.2, og dermed om du overholder loven.

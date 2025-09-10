@@ -1,14 +1,9 @@
 ---
-layout: services
-name: undervisning-i-tilgaengelighed
+layout: simple-content
+parent: tilgængelighed
 title: Undervisning i tilgængelighed
-icon-bright: "/img/deranged_accessibility_training-white.svg"
-icon-dark: "/img/deranged_accessibility_training-dark.svg"
-meta: "Uddannelse, oplæg og workshops i digital tilgængelighed. Til opkvalificering af nøglemedarbejdere eller til at skabe awareness i hele din organisation."
+shortTitle: Undervisning
 excerpt: "Hvad enten du står over for at skulle uddanne nøglemedarbejdere til at varetage højt specialiserede opgaver inden for tilgængelighed eller skabe awareness i hele din organisation, kan vi hjælpe dig med uddannelse, oplæg og workshops."
-header-img: ""
-top-section: "
-  Hvad enten du står over for at skulle uddanne nøglemedarbejdere til at varetage højt specialiserede opgaver inden for tilgængelighed eller skabe awareness i hele din organisation, kan vi hjælpe dig med uddannelse, oplæg og workshops."
 ---
 ## Awareness og opkvalificering inden for digital tilgængelighed
 Vi holder introkurser og kortere oplæg om webtilgængelighed, der kan sikre at hele din afdeling eller dit team får en basal forståelse for hvad tilgængelighed er.

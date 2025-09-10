@@ -1,0 +1,90 @@
+---
+layout: default
+---
+<link href="/css/homestyle.css" rel="stylesheet" type="text/css" />
+
+<style type="text/css" scoped>
+    .hero {
+        background-color: var(--deranged-dark-blue);
+        background-image: linear-gradient(40deg, var(--deranged-dark-blue) 30%, var(--deranged-light-blue) 90%);
+        color: #eaf1f7;
+
+        box-sizing: border-box;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: flex-start;
+        color: #eaf1f7;
+        position: relative;
+        padding: 3rem 1rem;
+        text-align: left;
+
+        @media(min-width: 768px) {
+            padding: 5rem 2rem;
+        }
+    }
+
+    .hero__content {
+        max-width: 900px;
+        margin: 0 auto;
+    }
+
+    .hero__title {
+        font-size: 2.5rem;
+        margin: 0;
+
+        @media(min-width: 768px) {
+            font-size: 4rem;
+        }
+    }
+
+    .hero__breadcrumbs {
+        font-size: 1.3rem;
+        margin-bottom: 1rem;
+        display: flex;
+        gap: 0.5rem;
+        flex-wrap: wrap;
+        align-items: center;
+        font-weight: 200;
+    }
+
+    .hero__breadcrumb-item {
+        color: inherit;
+        text-decoration: inherit;
+
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+</style>
+
+{% include overlay_nav.html %}
+<main lang="{{ page.lang | default: 'en_us' }}">
+    <section class="hero" role="banner">
+        <div class="hero__content">
+            <div class="hero__breadcrumbs deranged-logo">
+                <a href="/" class="hero__breadcrumb-item">
+                    deranged
+                </a>
+                {% if site.pages | where_exp:"p","p.url contains '/da/tilgaengelighed/'" %}
+                    /
+                    <a class="hero__breadcrumb-item" href="/da/tilgaengelighed/" class="">
+                         {{ page.parent }}
+                    </a>
+                {% endif %}
+            </div>
+            <h1 class="hero__title">
+                {{ page.title }}
+            </h1>
+            <!-- <p>{{ page.excerpt }}</p> -->
+        </div>
+    </section>
+    <section class="content content--markdown">
+        <div class="content__container">
+        {{ content }}
+    </section>
+</main>
+
+{% if page.custom-form == nil %}
+  {% include get_a_quote.html subject=page.title %}
+{% endif %}

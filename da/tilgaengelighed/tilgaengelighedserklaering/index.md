@@ -1,5 +1,6 @@
 ---
-layout: services
+layout: simple-content
+parent: tilgængelighed
 name: tilgaengelighedserklaering
 title: Tilgængelighedserklæring (Accessibility statement)
 meta: "Eksperthjælp til oprettelse af tilgængelighedserklæring eller opdatering af eksisterende erklæring"
