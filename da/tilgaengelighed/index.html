@@ -101,12 +101,22 @@ lang: "da_dk"
 <link href="/css/homestyle.css" rel="stylesheet" type="text/css" />
 <link href="/css/revops.css" rel="stylesheet" type="text/css" />
 
-<section class="hello-section" role="banner" lang="da-dk">
-  <a href="/" class="logo">deranged</a>
-  <div class="big-greeting">
-    <h1>Tilgængelighed</h1>
-    <p>Fra kompetenceløft til fuld compliance - vi opgraderer både dig og dine digitale løsninger</p>
-    <p>🇬🇧 <a href="/accessibility">Read in English</a></p>
+<section class="hero" role="banner">
+    <div class="hero__content">
+      <div class="hero__breadcrumbs deranged-logo">
+        <a href="/" class="hero__breadcrumb-item">
+            deranged
+        </a>
+      </div>
+    <h1 class="hero__title">
+      Tilgængelighed
+    </h1>
+    <p class="hero__subtitle">
+      Fra kompetenceløft til fuld compliance - vi opgraderer både dig og dine digitale løsninger
+    </p>
+    <p class="hero__language-switch">
+      🇬🇧 <a href="/accessibility">Read in English</a>
+    </p>
   </div>
 </section>
 
@@ -245,7 +255,4 @@ lang: "da_dk"
   </section>
 </main>
 
-
-{% include team-and-smv-digital.html %}
-
-{% include get_a_quote.html subject='Quote request' %}
+{% include get_a_quote.html subject='Tilgængelighed' %}
