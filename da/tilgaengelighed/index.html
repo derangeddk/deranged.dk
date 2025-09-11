@@ -20,7 +20,10 @@ lang: "da_dk"
     text-transform: none;
     word-wrap: break-word;
     overflow-wrap: break-word;
-    hyphens: auto;
+
+    @media(max-width: 767px) {
+      hyphens: auto;
+    }
   }
 
   .flex {
@@ -181,7 +184,6 @@ lang: "da_dk"
         <p>
           Når du har fået et overblik over tilgængelighedsproblemer i din løsning, kan du vælge at rette problemerne i din løsning selv eller med hjælp fra en anden leverandør – eller du kan få os til det.
         </p>
-        
       </div>
     </div>
   </section>
