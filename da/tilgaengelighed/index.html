@@ -73,6 +73,10 @@ lang: "da_dk"
     font-weight: 200;
   }
 
+  .section__heading--extra-margin-bottom {
+    margin-bottom: 4rem;
+  }
+
   .section__text {
     font-size: 1.125rem;
     line-height: 1.6;
@@ -83,7 +87,6 @@ lang: "da_dk"
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 3rem;
-    margin-top: 4rem;
   }
   .subpages-item__title {
     margin-top: 0;
@@ -200,7 +203,7 @@ lang: "da_dk"
 
   <section class="content content--blue">
     <div class="content__container content__container--wide">
-      <h2 class="section__heading section__heading--light">
+      <h2 class="section__heading section__heading--light section__heading--extra-margin-bottom">
         Vores ydelser inden for webtilgængelighed
       </h2>
       <div class="subpages-list">
@@ -228,29 +231,68 @@ lang: "da_dk"
 
   <section class="content">
     <div class="content__container">
-      <h2 class="section__heading">
+      <h2 class="section__heading section__heading--extra-margin-bottom">
         Vi er eksperter i at løse disse problemer…
       </h2>
-      <h3>Forstå hvad lovgivning, standarder og retningslinjer konkret betyder for dig</h3>
-      <p>
-        Hvad er forskellen på webtilgængelighedsloven og tilgængelighedsloven? Hvad er forskellen på WCAG 2.1 og WCAG 2.2 og på EN 301 459 – og er der nogle krav, der er valgfrie? Der er mange ting at holde styr på inden for webtilgængelighed, men vi kan tage dig i hånden og forklare, hvad det betyder for lige præcis din organisation.
-      </p>
-      <h3>Omsætte testrapporter til konkrete handlepunkter</h3>
-      <p>
-        Vores mål er, at dit tilgængelighedsbudget bliver brugt på faktisk at forbedre tilgængeligheden i din løsning ved at hjælpe dig med at omsætte indsigter i tilgængeligheden på din løsning til konkrete handlepunkter på nogens to do-liste. Det virker måske åbenlyst, men vi oplever at alt for mange tilgængelighedsprojekter starter med en stor rapport – og også slutter her, fordi ingen ved, hvordan de skal omsætte rapporten til noget i praksis.
-      </p>
-      <h3>Fange tilgængelighedsproblemer allerede i designfasen</h3>
-      <p>
-        Ved at indgå i dialog med UX’ere og grafiske designere kan vi hjælpe med at forebygge tilgængelighedsproblemer længe inden de opstår i koden på den endelige løsning. Ved hjælp af undervisning og tidlig test af wireframes, designskitser eller prototyper kan vi forebygge mange tilgængelighedsproblemer, som det ville være tidskrævende og dyrt at løse senere.
-      </p>
-      <h3>Løse tilgængelighedsproblemer i din kode</h3>
-      <p>
-        Vi kan enten indgå som en sparringspartner for dine udviklere, så de ikke behøver at bruge en masse tid på at google og gætte sig til løsninger på tilgængelighedsproblemer – eller vores udviklere kan hjælpe dig med at få rettet fejlene direkte i din kode. Det kan vi tilbyde, fordi deranged også er et udviklingshus. Om du har brug for den ene eller den anden slags hjælp, er helt op til dig.
-      </p>
-      <h3>Dokumentere compliance</h3>
-      <p>
-        Hvis du har brug for en fuld compliancerapport til at dokumentere, at dit websted eller din app lever op til tilgængelighedsloven (European Accessibility Act, EAA) eller webtilgængelighedsloven, så kan vi hjælpe dig. Til vores compliancerapporter bruger vi samme testmetode som bruges til Digitaliseringsstyrelsens monitoreringer for webtilgængelighedsloven.
-      </p>
+      <dl class="faq-list">
+        <dt class="faq-list__question">
+          Hvad er forskellen på webtilgængelighedsloven og tilgængelighedsloven?
+        </dt>
+        <dd class="faq-list__answer">
+          <p>
+            Webtilgængelighedsloven er ofte en specifik (nationale) lovgivning, der kræver, at offentlige websites og mobile apps lever op til bestemte tilgængelighedskrav.
+            "Tilgængelighedsloven" kan være en bredere betegnelse eller en anden lov i din jurisdiktion med lignende formål — tjek den konkrete lovtekst for hvem den gælder for og hvilke undtagelser der findes.
+          </p>
+          <p>
+            (Her kan du tilføje hvordan det konkret berører jeres organisation: fx krav til kontrakter, dokumentation, test-rapporter mv.)
+          </p>
+        </dd>
+
+        <dt class="faq-list__question">
+          Forstå hvad lovgivning, standarder og retningslinjer konkret betyder for dig
+        </dt>
+        <dd class="faq-list__answer">
+          <p>
+            Hvad er forskellen på webtilgængelighedsloven og tilgængelighedsloven? Hvad er forskellen på WCAG 2.1 og WCAG 2.2 og på EN 301 459 – og er der nogle krav, der er valgfrie? Der er mange ting at holde styr på inden for webtilgængelighed, men vi kan tage dig i hånden og forklare, hvad det betyder for lige præcis din organisation.
+          </p>
+        </dd>
+
+        <dt class="faq-list__question">
+          Omsætte testrapporter til konkrete handlepunkter
+        </dt>
+        <dd class="faq-list__answer">
+          <p>
+            Vores mål er, at dit tilgængelighedsbudget bliver brugt på faktisk at forbedre tilgængeligheden i din løsning ved at hjælpe dig med at omsætte indsigter i tilgængeligheden på din løsning til konkrete handlepunkter på nogens to do-liste. Det virker måske åbenlyst, men vi oplever at alt for mange tilgængelighedsprojekter starter med en stor rapport – og også slutter her, fordi ingen ved, hvordan de skal omsætte rapporten til noget i praksis.
+          </p>
+        </dd>
+
+        <dt class="faq-list__question">
+          Fange tilgængelighedsproblemer allerede i designfasen
+        </dt>
+        <dd class="faq-list__answer">
+          <p>
+            Ved at indgå i dialog med UX’ere og grafiske designere kan vi hjælpe med at forebygge tilgængelighedsproblemer længe inden de opstår i koden på den endelige løsning. Ved hjælp af undervisning og tidlig test af wireframes, designskitser eller prototyper kan vi forebygge mange tilgængelighedsproblemer, som det ville være tidskrævende og dyrt at løse senere.
+          </p>
+        </dd>
+
+        <dt class="faq-list__question">
+          Løse tilgængelighedsproblemer i din kode
+        </dt>
+        <dd class="faq-list__answer">
+          <p>
+            Vi kan enten indgå som en sparringspartner for dine udviklere, så de ikke behøver at bruge en masse tid på at google og gætte sig til løsninger på tilgængelighedsproblemer – eller vores udviklere kan hjælpe dig med at få rettet fejlene direkte i din kode. Det kan vi tilbyde, fordi deranged også er et udviklingshus. Om du har brug for den ene eller den anden slags hjælp, er helt op til dig.
+          </p>
+        </dd>
+
+        <dt class="faq-list__question">
+          Dokumentere compliance
+        </dt>
+        <dd class="faq-list__answer">
+          <p>
+            Hvis du har brug for en fuld compliancerapport til at dokumentere, at dit websted eller din app lever op til tilgængelighedsloven (European Accessibility Act, EAA) eller webtilgængelighedsloven, så kan vi hjælpe dig. Til vores compliancerapporter bruger vi samme testmetode som bruges til Digitaliseringsstyrelsens monitoreringer for webtilgængelighedsloven.
+          </p>
+        </dd>
+      </dl>
     </div>
   </section>
 </main>
