@@ -88,13 +88,21 @@ lang: "da_dk"
   }
 
   .section__cta {
+    display: flex;
+    gap: 2rem;
+    flex-wrap: wrap;
+    align-items: center;
     margin-top: 3rem;
+
+    .button {
+      margin: 0;
+    }
   }
   .section__cta--no-margin-top {
     margin-top: 0;
   }
   .section__cta--centered {
-    text-align: center;
+    justify-content: center;
   }
 
   .subpages-list {
@@ -194,6 +202,9 @@ lang: "da_dk"
       <div class="section__cta section__cta--no-margin-top">
         <a class="button" href="#services">
           Se vores ydelser inden for webtilgængelighed
+        </a>
+        <a href="/the-team/">
+          ➟ Mød hele deranged-teamet
         </a>
       </div>
     </div>
