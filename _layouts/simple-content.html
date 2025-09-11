@@ -66,10 +66,16 @@ layout: default
                 <a href="/" class="hero__breadcrumb-item">
                     deranged
                 </a>
-                {% if site.pages | where_exp:"p","p.url contains '/da/tilgaengelighed/'" %}
+                {% if page.url contains '/da/tilgaengelighed/'" %}
                     /
-                    <a class="hero__breadcrumb-item" href="/da/tilgaengelighed/" class="">
-                         {{ page.parent }}
+                    <a class="hero__breadcrumb-item" href="/da/tilgaengelighed/">
+                        Tilgængelighed
+                    </a>
+                {% endif %}
+                {% if page.url contains '/accessibility/'" %}
+                    /
+                    <a class="hero__breadcrumb-item" href="/accessibility/">
+                        Accessibility
                     </a>
                 {% endif %}
             </div>
