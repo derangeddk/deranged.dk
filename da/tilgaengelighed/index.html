@@ -81,6 +81,20 @@ lang: "da_dk"
     font-size: 1.125rem;
     line-height: 1.6;
     margin-bottom: 2rem;
+
+    p:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  .section__cta {
+    margin-top: 3rem;
+  }
+  .section__cta--no-margin-top {
+    margin-top: 0;
+  }
+  .section__cta--centered {
+    text-align: center;
   }
 
   .subpages-list {
@@ -173,13 +187,16 @@ lang: "da_dk"
             Vores seniorkonsulent i webtilgængelighed, Anne Thyme Nørregaard, har 10+ års erfaring inden for tilgængelighed og er Certified Professional in Web Accessibility (CPWA), som er den højeste niveau certificering, der tilbydes fra International Association of Accessibility Professionals (IAAP), og deranged er blandt andet leverandør til Digitaliseringsstyrelsen på opgaven med at monitorere om offentlige myndigheders websteder og apps lever op til kravene i webtilgængelighedsloven. Anne har hjulpet utallige offentlige myndigheder og private virksomheder med at opkvalificere deres medarbejdere og sikre tilgængeligheden på deres websteder, i apps og i software.
           </p>
           <p>
-          deranged er også et udviklingshus, så ud over at vi leverer opkvalificering og ”diagnosticering” inden for webtilgængelighed, kan vi også tilbyde dig, at vores udviklingsteam løser dine tilgængelighedsproblemer for dig! Vores udviklingsteam kan hjælpe dig både hvis det er en eksisterende løsning, der skal fikses, og hvis du skal have udviklet noget nyt, der lever op til tilgængelighedsloven (for den private sektor) eller webtilgængelighedsloven (for den offentlige sektor). Vi kan også hjælpe dig med at fikse tilgængelighedsproblemer, som du har fået kendskab til ad andre veje, fx fra automatiske testværktøjer eller en monitoreringsrapport.
-        </p>
+            deranged er også et udviklingshus, så ud over at vi leverer opkvalificering og ”diagnosticering” inden for webtilgængelighed, kan vi også tilbyde dig, at vores udviklingsteam løser dine tilgængelighedsproblemer for dig! Vores udviklingsteam kan hjælpe dig både hvis det er en eksisterende løsning, der skal fikses, og hvis du skal have udviklet noget nyt, der lever op til tilgængelighedsloven (for den private sektor) eller webtilgængelighedsloven (for den offentlige sektor). Vi kan også hjælpe dig med at fikse tilgængelighedsproblemer, som du har fået kendskab til ad andre veje, fx fra automatiske testværktøjer eller en monitoreringsrapport.
+          </p>
         </div>
       </div>
-      <div class="section-button-middle">
-        <a class="button" href="#contact">Tag en snak med os</a>
+      <div class="section__cta section__cta--no-margin-top">
+        <a class="button" href="#services">
+          Se vores ydelser inden for webtilgængelighed
+        </a>
       </div>
+    </div>
   </section>
 
   <section class="content">
@@ -201,7 +218,7 @@ lang: "da_dk"
     </div>
   </section>
 
-  <section class="content content--blue">
+  <section class="content content--blue" id="services">
     <div class="content__container content__container--wide">
       <h2 class="section__heading section__heading--light section__heading--extra-margin-bottom">
         Vores ydelser inden for webtilgængelighed
@@ -225,6 +242,11 @@ lang: "da_dk"
             </div>
           {% endunless %}
         {% endfor %}
+      </div>
+      <div class="section__cta section__cta--centered section__cta--extra-margin-top">
+        <a class="button" href="#contact">
+            Tag en snak med os
+        </a>
       </div>
     </div>
   </section>
