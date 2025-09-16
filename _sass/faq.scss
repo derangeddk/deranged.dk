@@ -1,0 +1,57 @@
+// Accordion looking FAQ list
+// TODO: Clean this styling up. BEMify it and make it more consistent with the rest of the site.
+.faq {
+}
+
+.faq details {
+  border: 1px solid #ddd;
+  border-radius: 0.5rem;
+  margin-bottom: 1rem;
+  padding: 1rem 2rem;
+  background: #fafafa;
+  transition: background 0.3s ease;
+  color: #2c3e50;
+}
+
+.faq details[open] {
+  border-color: #99c2ff;
+}
+
+.faq summary {
+  cursor: pointer;
+  list-style: none; /* skjul standard pil */
+  position: relative;
+  padding-right: 1.5rem;
+  font-size: 1.5rem;
+}
+
+.faq summary::marker {
+  display: none; /* skjul marker i nyere browsere */
+}
+
+.faq summary::after {
+  content: "+";
+  position: absolute;
+  right: 0;
+  top: 0;
+  font-weight: 600;
+  transition: transform 0.2s;
+  font-size: 1.5rem;
+}
+
+.faq details[open] summary::after {
+  content: "−";
+}
+
+.faq .answer {
+  margin-top: 1rem;
+  line-height: 1.5;
+  font-size: 1.1rem;
+
+  p:first-of-type {
+        margin-top: 0;
+    }
+    p:last-of-type {
+        margin-bottom: 0;
+    }
+}

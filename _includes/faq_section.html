@@ -1,0 +1,19 @@
+<div class="faq">
+    {% if include.title != null %}
+        <h2>
+            {{ include.title }}
+        </h2>
+    {% endif %}
+    {% for qa in include.questions %}
+        <details>
+            <summary>
+                {{ qa.question }}
+            </summary>
+            <div class="answer">
+                <p>
+                {{ qa.answer }}
+                </p>
+            </div>
+        </details>
+    {% endfor %}
+</div>
