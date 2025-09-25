@@ -4,6 +4,7 @@ parent: tilgængelighed
 title: Brugertest med fokus på tilgængelighed
 shortTitle: Brugertest
 excerpt: "Brugertest er den ultimative test af, om din løsning er ægte inkluderende. Vi kan hjælpe med at rekruttere bruger med funktionsnedsættelser, facilitere brugertests og analysere resultaterne - og ud fra vores erfaring og ekspertise gruppere resultaterne i problemer der har at gøre med manglende overholdelse af tekniske standarder, manglende kompabilitet med hjælpeteknologier og helt almindelige usability-problemer."
+sitemap_include: 'yes'
 ---
 ## Den ultimative test af tilgængelighed og brugervenlighed
 Brugertest med faktiske brugere med forskellige funktionsnedsættelser er den ultimative test af tilgængeligheden i din løsning. Du kan sagtens have en løsning som teknisk set lever op til kravene i standarden uden at den dog er nem at bruge for faktiske brugere, så derfor er det vigtigt også at teste med rigtige brugere fra målgruppen i tillæg til de klassiske ekspertgennemgange af tilgængelighed.

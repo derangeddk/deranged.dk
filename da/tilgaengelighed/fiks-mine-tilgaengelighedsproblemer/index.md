@@ -4,6 +4,7 @@ parent: tilgængelighed
 title: Fiks mine tilgængelighedsproblemer
 shortTitle: Fiks mine tilgængelighedsproblemer
 excerpt: "Hvis du ikke i forvejen har udviklingsressourcer til din rådighed eller dine ressourcer allerede er bundet til andre projekter og prioriteter, så tilbyder deranged som noget unikt at fikse dine tilgængelighedsproblemer direkte i din kode."
+sitemap_include: 'yes'
 ---
 ## Manglende udviklingsressourcer er ikke længere en show-stopper for dit tilgængelighedsprojekt
 Vi kan tilbyde at fikse tilgængelighedsproblemer direkte i din kode.

@@ -4,6 +4,7 @@ parent: tilgængelighed
 title: Dybdegående tilgængelighedstest
 shortTitle: Tilgængelighedstest
 excerpt: "Få vores ekspert til at teste, om du lever op til kravene i EN 301 549, herunder WCAG 2.1 og WCAG 2.2, og dermed om du overholder loven. Vi opfordrer til at teste så tidligt som muligt og tester derfor gerne skitser, wireframes, prototyper og enkeltstående komponenter i udviklingsfasen i tillæg til fulde websites og apps."
+sitemap_include: 'yes'
 ---
 # Tilgængelighedstest
 Få en ekspert til at teste, om du lever op til kravene i EN 301 549, herunder WCAG 2.1 og WCAG 2.2, og dermed om du overholder loven.

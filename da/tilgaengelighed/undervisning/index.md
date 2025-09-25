@@ -4,6 +4,7 @@ parent: tilgængelighed
 title: Undervisning i tilgængelighed
 shortTitle: Undervisning
 excerpt: "Hvad enten du står over for at skulle uddanne nøglemedarbejdere til at varetage højt specialiserede opgaver inden for tilgængelighed eller skabe awareness i hele din organisation, kan vi hjælpe dig med uddannelse, oplæg og workshops."
+sitemap_include: 'yes'
 ---
 ## Awareness og opkvalificering inden for digital tilgængelighed
 Vi holder introkurser og kortere oplæg om webtilgængelighed, der kan sikre at hele din afdeling eller dit team får en basal forståelse for hvad tilgængelighed er.
