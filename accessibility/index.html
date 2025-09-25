@@ -7,6 +7,32 @@ services:
   - page-upgrade
   - accessibility-training
 sitemap_include: 'yes'
+questions:
+  - question: "Barriers to accessibility"
+    answer: |
+      When users do find your site they may face accessibility barriers
+      Accessibility issues like poor color contrast, non-descriptive alt text or navigation that isn't screen reader friendly not only prevent people with visual, auditory, or physical disabilities from fully experiencing your site, but can also create legal risks for many private sector companies.
+      Accessibility is already mandatory for public sector websites and is fast becoming a necessity for the private sector as well.
+  - question: "Accessible design"
+    answer: |
+      To help you comply with WCAG standards and the European Accessibility Act, we identify and eliminate accessibility barriers on your website.
+      Adhering to legal standards for accessibility helps improve your site's usability, reach more users, and show your organisations commitment to inclusivity.
+      Investing in accessible design also future proofs your site against shifting user expectations and regulatory updates.
+  - question: "Legal Risks & Obligations"
+    answer: |
+      With the European Accessibility Act taking effect in 2025, non compliance with accessibility standards can now lead to legal consequences for private sector companies.
+      Many organisations struggle to meet WCAG guidelines which puts them at risk of fines.
+  - question: "Compliance"
+    answer: |
+      We help businesses achieve compliance by conducting accessibility audits and generating detailed reports, and can also help implement the required fixes to your organisation's website.
+      Ensuring legal standards are met not only mitigates risk but demonstrates a commitment to inclusivity.
+  - question: "Lack of In-House Expertise"
+    answer: |
+      If an organisation lacks the knowledge or developer resources required to properly implement accessibility best practices it makes maintaining compliance and incorporating inclusive design an ongoing challenge.
+  - question: "Fractional accessibility and technical expertise"
+    answer: |
+      Our team blends seamlessly into your team and provides expert-led accessibility training, and hands-on development.
+      We are flexible and whether you need us short-term or long term we help get your team equipped to uphold accessibility standards both now and in the future.
 ---
 
 {% include overlay_nav.html %}
@@ -33,11 +59,11 @@ sitemap_include: 'yes'
   </div>
 </section>
 
-<main>
+<main id="first-content">
   <section class="content">
       <div class="content__container">
         <div class="section__heading">
-          <h3 class="section__heading-title" id="first-content">What is  Accessibility</h3>
+          What is  Accessibility?
         </div>
         <div class="section__text">
           <p>
@@ -50,14 +76,16 @@ sitemap_include: 'yes'
             Our goal is to help you create digital environments that allow everyone to thrive, by removing barriers, ensuring no users are left behind, and ensuring compliance within the web accessibility landscape.
           </p>
         </div>
-        <div class="section-button-middle">
-          <a class="button" href="#contact">Start the conversation</a>
+        <div>
+            <a href="/posts/2025-05-09-tilgængelighedsloven-for-den-private-sektor">
+                ➟  Read more about the Accessibility Act for the Private Sector (in Danish)
+            </a>
         </div>
       </div>
     </section>
 
-    <section class="content content content--blue">
-      <div class="content__container" id="services">
+    <section class="content content--blue">
+      <div class="content__container">
         <h2 class="section__heading">
           Your Accessibility team
         </h2>
@@ -78,11 +106,20 @@ sitemap_include: 'yes'
             deranged is also a development house, so in addition to providing upskilling and "diagnostics" in web accessibility, we can also offer you the option of having our development team solve your accessibility issues for you! Our development team can assist you whether it's an existing solution that needs fixing or if you need something new developed that complies with the Accessibility Act (for the private sector) or the Web Accessibility Act (for the public sector). We can also help you fix accessibility issues that you've become aware of through other means, such as automated testing tools or a monitoring report.
           </p>
         </div>
+        <div class="section__cta section__cta--no-margin-top">
+            <a class="button" href="#services">
+            Check out our web accessibility services
+            </a>
+            <a href="/the-team/">
+            ➟ Meet the entire deranged team
+            </a>
+        </div>
       </div>
     </section>
+
     <section class="content">
       <div class="content__container">
-        <h2 class="section__heading">Why Accessibility Matters</h3>
+        <h2 class="section__heading">Why Accessibility Matters</h2>
         <div class="section__text">
           <p>
             ➟  Accessibility is not just a legal requirement, it&#8217;s a moral imperative. By making your website accessible, you&#8217;re not only complying with regulations but also demonstrating your commitment to inclusivity and social responsibility. An accessible website ensures that everyone, regardless of their abilities, can access and benefit from your content and services.
@@ -93,7 +130,8 @@ sitemap_include: 'yes'
         </div>
       </div>
     </section>
-    <section class="content content--blue">
+
+    <section class="content content--blue" id="services">
       <div class="content__container content__container--wide">
         <h2 class="section__heading section__heading--light section__heading--extra-margin-bottom">
           Our Accessibility Services
@@ -119,53 +157,33 @@ sitemap_include: 'yes'
             {% endfor %}
           {% endfor %}
         </div>
+        <div class="section__cta section__cta--centered section__cta--extra-margin-top">
+            <a class="button" href="#contact">
+                Chat with us
+            </a>
+        </div>
       </div>
     </section>
 
     <section class="content">
-      <div class="content__container">
-        <h2 class="section__heading">We excel at solving these problems…</h2>
-      <div>
-        <div class="revops-section__problem">
-          <h4>Barriers to accessibility</h4>
-          <p>
-            When users do find your site they may face accessibility barriers. Accessibility issues like poor color contrast, non-descriptive alt text or navigation that isn't screen reader friendly not only prevent people with visual, auditory, or physical disabilities from fully experiencing your site, but can also create legal risks for many private sector companies. Accessibility is already mandatory for public sector websites and is fast becoming a necessity for the private sector as well.
-          </p>
-        </div>
-        <div class="revops-section__solution">
-          <h4>Accessible design</h4>
-          <p>
-            To help you comply with WCAG standards and the European Accessibility Act, we identify and eliminate accessibility barriers on your website. Adhering to legal standards for accessibility helps improve your site's usability, reach more users, and show your organisations commitment to inclusivity. Investing in accessible design also future proofs your site against shifting user expectations and regulatory updates.
-          </p>
-        </div>
-        <div class="revops-section__problem">
-          <h4>Legal Risks & Obligations</h4>
-          <p>
-            With the European Accessibility Act taking effect in 2025, non compliance with accessibility standards can now lead to legal consequences for private sector companies. Many organisations struggle to meet WCAG guidelines which puts them at risk of fines.
-          </p>
-        </div>
-        <div class="revops-section__solution">
-          <h4>Compliance</h4>
-          <p>
-            We help businesses achieve compliance by conducting accessibility audits and generating detailed reports, and can also help implement the required fixes to your organisation's website. Ensuring legal standards are met not only mitigates risk but demonstrates a commitment to inclusivity.
-          </p>
-        </div>
-        <div class="revops-section__problem">
-          <h4>Lack of In-House Expertise</h4>
-          <p>
-            If an organisation lacks the knowledge or developer resources required to properly implement accessibility best practices it makes maintaining compliance and incorporating inclusive design an ongoing challenge.
-          </p>
-        </div>
-        <div class="revops-section__solution">
-          <h4>Fractional accessibility and technical expertise</h3>
-          <p>
-            Our team blends seamlessly into your team and provides expert-led accessibility training, and hands-on development. We are flexible and whether you need us short-term or long term we help get your team equipped to uphold accessibility standards both now and in the future.
-          </p>
+      <div class="content__container content__container--wide">
+        <div class="solution-list">
+            <h2 class="section__heading">We excel at solving these problems</h2>
+            <div class="solution-list__item">
+                {% for qa in page.questions %}
+                <div>
+                    <h3 class="solution-list__question">
+                        {{ qa.question }}
+                    </h3>
+                    <div class="solution-list__answer">
+                        {{ qa.answer | markdownify }}
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
         </div>
       </div>
   </section>
 </main>
-
-{% include team-and-smv-digital.html %}
 
 {% include get_a_quote.html subject='Quote request' %}
