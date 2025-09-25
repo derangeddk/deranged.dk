@@ -137,25 +137,24 @@ questions:
           Our Accessibility Services
         </h2>
         <div class="subpages-list">
-          {% for s in page.services %}
-            {% for service in site.services %}
-              {% if s == service.slug %}
+          {% assign subpages = site.pages | where_exp:"p","p.url contains '/accessibility/'" %}
+            {% for page in subpages %}
+              {% unless page.url == '/accessibility/' or page.url == '/accessibility/index.html' %}
                 <div class="subpages-item">
                   <h3 class="subpages-item__title">
-                    {{ service.title }}
+                    {{ page.shortTitle | default: page.title | default: page.url }}
                   </h3>
                   <p class="subpages-item__excerpt">
-                    {{ service.excerpt }}
+                    {{ page.excerpt }}
                   </p>
-                  {% if service.content != empty %}
-                    <a href="{{ service.url }}">
+                  {% if page.content != empty %}
+                    <a href="{{ page.url }}">
                       ➟  Read&nbsp;more
                     </a>
                   {% endif %}
                 </div>
-              {% endif %}
+              {% endunless %}
             {% endfor %}
-          {% endfor %}
         </div>
         <div class="section__cta section__cta--centered section__cta--extra-margin-top">
             <a class="button" href="#contact">
