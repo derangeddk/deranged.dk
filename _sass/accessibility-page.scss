@@ -1,0 +1,111 @@
+// TODO: Split this file up into smaller components and BEMify it.
+
+/*
+Avoid text overflows
+*/
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    text-transform: none;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+
+    @media(max-width: 767px) {
+        hyphens: auto;
+    }
+}
+
+.content__container--full-width {
+    max-width: 100%;
+}
+
+.content__image-container {
+    max-width: 300px;
+    margin: auto;
+
+    img {
+        width: 100%;
+        border-radius: 4px;
+    }
+
+    @media (min-width: 768px) {
+        float: right;
+        margin: 1rem 2.25rem;
+    }
+}
+
+figcaption {
+    font-size: 0.875rem;
+    color: #666;
+    margin-top: 0.5rem;
+    text-align: center;
+}
+
+.section__heading {
+    margin-bottom: 1rem;
+    margin-top: 0;
+    text-align: left;
+    letter-spacing: 1px;
+    text-transform: none;
+    font-size: 2.7rem;
+    font-weight: 700;
+}
+
+.section__heading--light {
+    font-weight: 200;
+}
+
+.section__heading--extra-margin-bottom {
+    margin-bottom: 4rem;
+}
+
+.section__text {
+    font-size: 1.125rem;
+    line-height: 1.6;
+    margin-bottom: 2rem;
+
+    p:last-child {
+        margin-bottom: 0;
+    }
+}
+
+.section__cta {
+    display: flex;
+    gap: 2rem;
+    flex-wrap: wrap;
+    align-items: center;
+    margin-top: 3rem;
+
+    .button {
+        margin: 0;
+    }
+}
+
+.section__cta--no-margin-top {
+    margin-top: 0;
+}
+
+.section__cta--centered {
+    justify-content: center;
+}
+
+.subpages-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 3rem;
+}
+
+.subpages-item__title {
+    margin-top: 0;
+    margin-bottom: 0.5rem;
+    font-size: 1.5rem;
+}
+
+.subpages-item__excerpt {
+    margin-top: 0;
+    margin-bottom: 1rem;
+}

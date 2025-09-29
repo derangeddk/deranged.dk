@@ -1,0 +1,41 @@
+---
+layout: default
+---
+<link href="/css/homestyle.css" rel="stylesheet" type="text/css" />
+
+{% include overlay_nav.html %}
+<main lang="{{ page.lang | default: 'en_us' }}">
+    <section class="hero" role="banner">
+        <div class="hero__content">
+            <div class="hero__breadcrumbs deranged-logo">
+                <a href="/" class="hero__breadcrumb-item">
+                    deranged
+                </a>
+                {% if page.url contains '/da/tilgaengelighed/' %}
+                    /
+                    <a class="hero__breadcrumb-item" href="/da/tilgaengelighed/">
+                        Tilgængelighed
+                    </a>
+                {% endif %}
+                {% if page.url contains '/accessibility/' %}
+                    /
+                    <a class="hero__breadcrumb-item" href="/accessibility/">
+                        Accessibility
+                    </a>
+                {% endif %}
+            </div>
+            <h1 class="hero__title">
+                {{ page.title }}
+            </h1>
+            <!-- <p>{{ page.excerpt }}</p> -->
+        </div>
+    </section>
+    <section class="content content--markdown">
+        <div class="content__container">
+        {{ content }}
+    </section>
+</main>
+
+{% if page.custom-form == nil %}
+  {% include get_a_quote.html subject=page.title %}
+{% endif %}

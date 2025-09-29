@@ -1,23 +1,41 @@
 <aside class="rest-sales">
     <h2 class="rest-sales__title">
-        {% if  include.title %}
-            {{include.title}}
+        {% if  include.lang == 'da_dk' %}
+            Få et tilbud
         {% else %}
-            Get a quote
+            {% if  include.title %}
+                {{include.title}}
+            {% else %}
+                Get a quote
+            {% endif %}
         {% endif %}
     </h2>
     {% if include.hide_pitch != "true" %}
-    <p>
-        We generally work with being paid on an hourly basis.
-        We are conscious of your budget when planning our work, and communicate with you to ensure there are no surprises.
-    </p>
-    <p>
-        We are experts in working in the most efficient way possible, playing to each others' strengths, making sure you get the most value delivered for your money.
-    </p>
-    <p>
-        Get in touch and we will first arrange a meeting to talk about your concrete business situation.
-        We will suggest a small project for you to get familiar with how we work, and if the fit is right initiate a longer, sustainable relationship, where we help you improve your business's software.
-    </p>
+        {% if  include.lang == 'da_dk' %}
+            <p>
+                Vi arbejder generelt med timeløn.
+                Vi tager højde for dit budget, når vi planlægger vores arbejde, og kommunikerer med dig for at sikre, at der ikke opstår uventede overraskelser.
+            </p>
+            <p>
+                Vi er eksperter i at arbejde så effektivt som muligt, udnytte hinandens styrker og sikre, at du får mest muligt for pengene.
+            </p>
+            <p>
+                Kontakt os, så aftaler vi først et møde for at tale om din konkrete forretningssituation.
+                Vi vil foreslå et lille projekt, så du kan blive fortrolig med vores arbejdsmetoder, og hvis det passer, indlede et længerevarende, bæredygtigt samarbejde, hvor vi hjælper dig med at forbedre din virksomheds software.
+            </p>
+        {% else %}
+            <p>
+                We generally work with being paid on an hourly basis.
+                We are conscious of your budget when planning our work, and communicate with you to ensure there are no surprises.
+            </p>
+            <p>
+                We are experts in working in the most efficient way possible, playing to each others' strengths, making sure you get the most value delivered for your money.
+            </p>
+            <p>
+                Get in touch and we will first arrange a meeting to talk about your concrete business situation.
+                We will suggest a small project for you to get familiar with how we work, and if the fit is right initiate a longer, sustainable relationship, where we help you improve your business's software.
+            </p>
+        {% endif %}
     {% endif %}
     <section class="side-by-side-contact-form-and-explanation">
         <section class="contact-form" id="contact">
@@ -29,7 +47,13 @@
                 </label>
                 <div class="two-col-inputs">
                     <label for="name">
-                        <span>Name</span>
+                        <span>
+                            {% if  include.lang == 'da_dk' %}
+                                Navn
+                            {% else %}
+                                Name
+                            {% endif %}
+                        </span>
                         <input type="text" name="name" placeholder="Peter Parker">
                     </label>
                     <label for="email">
@@ -38,18 +62,42 @@
                     </label>
                 </div>
                 <label for="subject">
-                    <span>Subject</span>
+                    <span>
+                        {% if  include.lang == 'da_dk' %}
+                            Emne
+                        {% else %}
+                            Subject
+                        {% endif %}
+                    </span>
                     <input type="text" name="subject" value="{{ include.subject || '' }}" placeholder="{{ include.subject || 'Subject' }}">
                 </label>
                 <label for="message">
-                    <span>Message</span>
+                    <span>
+                        {% if  include.lang == 'da_dk' %}
+                            Besked
+                        {% else %}
+                            Message
+                        {% endif %}
+                    </span>
                     <textarea name="message" placeholder="Hi deranged,
 
 We're planning to expand into a new market, but we need our technology to keep up..."></textarea>
                 </label>
-                <button class="button" type="submit">Get in touch!</button>
+                <button class="button" type="submit">
+                    {% if  include.lang == 'da_dk' %}
+                        Kontakt os!
+                    {% else %}
+                        Get in touch!
+                    {% endif %}
+                </button>
             </form>
-            <div class="contact-form-overlay contact-form-overlay-clickthrough">Sending...</div>
+            <div class="contact-form-overlay contact-form-overlay-clickthrough">
+                {% if  include.lang == 'da_dk' %}
+                    Afsendelse...
+                {% else %}
+                    Sending...
+                {% endif %}
+            </div>
         </section>
         <script>
             (function() {
@@ -180,12 +228,21 @@ We're planning to expand into a new market, but we need our technology to keep u
             })();
         </script>
         <div class="contact-explanation">
-            <p>
-                The contact form runs on our tiny open-source <a href="https://github.com/derangeddk/contact-form-api/" target="_blank" rel="noopener">contact-form-api</a>, which is highly configurable, and is easy to use for your business, too.
-            </p>
-            <p>
-                It runs as a separate service, and comes packaged with a Dockerfile, so it takes minutes to launch it on your own infrastructure.
-            </p>
+            {% if  include.lang == 'da_dk' %}
+                <p>
+                    Kontaktformularen kører på vores lille open source <a href="https://github.com/derangeddk/contact-form-api/" target="_blank" rel="noopener">contact-form-api</a>, som er meget konfigurerbar og også nem at bruge i din virksomhed.
+                </p>
+                <p>
+                    Det kører som en separat tjeneste og leveres sammen med en Dockerfile, så det tager kun få minutter at starte det på din egen infrastruktur.
+                </p>
+            {% else %}
+                <p>
+                    The contact form runs on our tiny open-source <a href="https://github.com/derangeddk/contact-form-api/" target="_blank" rel="noopener">contact-form-api</a>, which is highly configurable, and is easy to use for your business, too.
+                </p>
+                <p>
+                    It runs as a separate service, and comes packaged with a Dockerfile, so it takes minutes to launch it on your own infrastructure.
+                </p>
+            {% endif %}
         </div>
     </section>
 </aside>
