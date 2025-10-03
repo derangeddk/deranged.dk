@@ -149,25 +149,25 @@ questions:
         Our services within web accessibility
       </h2>
       <div class="subpages-list">
-        {% assign subpages = site.pages | where_exp:"p","p.url contains '/da/tilgaengelighed/'" %}
-        {% for page in subpages %}
-          {% unless page.url == '/da/tilgaengelighed/' or page.url == '/da/tilgaengelighed/index.html' %}
-            <div class="subpages-item">
-              <h3 class="subpages-item__title">
-                {{ page.shortTitle | default: page.title | default: page.url }}
-              </h3>
-              <p class="subpages-item__excerpt">
-                {{ page.excerpt }}
-              </p>
-              {% if page.content != empty %}
-                <a href="{{ page.url }}">
-                  ➟  Read more
-                </a>
-              {% endif %}
-            </div>
-          {% endunless %}
-        {% endfor %}
-      </div>
+          {% assign subpages = site.pages | where_exp:"p","p.url contains '/accessibility/'" %}
+            {% for page in subpages %}
+              {% unless page.url == '/accessibility/' or page.url == '/accessibility/index.html' %}
+                <div class="subpages-item">
+                  <h3 class="subpages-item__title">
+                    {{ page.shortTitle | default: page.title | default: page.url }}
+                  </h3>
+                  <p class="subpages-item__excerpt">
+                    {{ page.excerpt }}
+                  </p>
+                  {% if page.content != empty %}
+                    <a href="{{ page.url }}">
+                      ➟  Read&nbsp;more
+                    </a>
+                  {% endif %}
+                </div>
+              {% endunless %}
+            {% endfor %}
+        </div>
       <div class="section__cta section__cta--centered section__cta--extra-margin-top">
         <a class="button" href="#contact">
             Talk to us
