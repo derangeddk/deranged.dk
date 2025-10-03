@@ -7,7 +7,7 @@ excerpt: "Få vores ekspert til at teste, om du lever op til kravene i EN 301 54
 sitemap_include: 'yes'
 ---
 # Ekspert-evaluering af tilgængelighed
-Få en ekspert til at teste, om du lever op til kravene i EN 301 549, herunder WCAG 2.1 og WCAG 2.2, og dermed om du overholder loven.
+Få en ekspert til at teste, om du lever op til kravene i EN 301 549, herunder WCAG 2.1 og WCAG 2.2, og dermed om du overholder tilgængelighedsloven (European Accessibility Act, EAA) eller webtilgængelighedsloven (Web Accessibility Directive, WAD).
 
 Hvad enten dit mål er at remediere din digitale løsning for at skabe en mere inkluderende brugeroplevelse eller blot at kunne dokumentere compliance (eller mangel på samme), er en tilgængelighedstest et godt første skridt.
 
