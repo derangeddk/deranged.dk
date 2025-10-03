@@ -13,4 +13,4 @@ Det kan vi gøre, fordi vi er et udviklingshus, som har stor erfaring med at ind
 
 Vi udvikler også software, websites og it-løsninger selv fra bunden – selvfølgelig med tilgængelighed som en højt prioriteret del af projektet.
 
-Se også vores service <a href="/page-upgrade">Page Upgrade</a>, hvor vi kan hjælpe med en 360 graders opdatering af dine eksisterende websider med øje for både tilgængelighed, SEO, performance, GPDR-compliant analytics mm.
+Se også vores service <a href="../accessibility/page-upgrade">Page Upgrade</a>, hvor vi kan hjælpe med en 360 graders opdatering af dine eksisterende websider med øje for både tilgængelighed, SEO, performance, GPDR-compliant analytics mm.
