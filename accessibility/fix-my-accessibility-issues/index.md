@@ -13,4 +13,4 @@ We can do this because we are a development house with extensive experience in e
 
 We also develop software, websites, and IT solutions from scratch – of course with accessibility as a highly prioritized part of the project.
 
-See also our service <a href="/page-upgrade">Page Upgrade</a>, where we can help with a 360-degree update of your existing web pages with a focus on accessibility, SEO, performance, GDPR-compliant analytics, and more.
+See also our service <a href="../services/page-upgrade">Page Upgrade</a>, where we can help with a 360-degree update of your existing web pages with a focus on accessibility, SEO, performance, GDPR-compliant analytics, and more.
