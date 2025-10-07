@@ -2,10 +2,6 @@
 layout: default
 title: Let's start building your business ➟ deranged
 meta: "Align sales, marketing, and success teams with RevOps. deranged offers CRM and AI consulting, operations, SaaS product management, and agile project delivery for sustainable business growth and process optimization. Certified HubSpot and Pipedrive partners."
-services:
-  - automation
-  - crm
-  - coo
 sitemap_include: 'yes'
 questions:
   - question: "When teams aren&#8217;t aligned"
@@ -120,47 +116,38 @@ questions:
     </div>
   </section>
     
-      <section class="revops-section">
-        <div class="revops-section__container" id="services">
-          <div class="revops-section__heading">
-            <img src="/img/build-icon.svg" class="revops-section__heading-icon" alt="" />
-            <h3 class="revops-section__heading-title">Your RevOps team</h2>
-          </div>
-          <div class="revops-section__text">
-            <p>
-              ➟ Whether you are starting from scratch or looking to build your RevOps
-              framework from the ground up, our team integrates seamlessly with
-              your business. We hit the ground running and look to deliver results
-              from day one.
-            </p>
-          </div>
-        </div>
-        <div class="revops-section__container revops-section__container--full-width">
-          {% for s in page.services %}
-            {% for service in site.services %}
-              {% if s == service.slug %}
-                <div class="services-list-item">
-                  <img
-                    src="{{ service.icon-bright }}"
-                    loading="lazy"
-                    alt=""
-                    class="services-list-item__logo"
-                  />
-                  <div class="services-list-item__text">
-                    <h4 class="services-list-item__title">{{ service.title }}</h2>
-                    <p class="services-list-item__summary">
-                      {{ service.excerpt }}
-                    </p>
-                    <a href="{{ service.url }}" class="button">
-                      Read&nbsp;more
-                    </a>
-                  </div>
-                </div>
+  <section class="content content--blue" id="services">
+    <div class="content__container content__container--wide">
+      <h2 class="section__heading section__heading--light section__heading--extra-margin-bottom">
+        Our RevOps Services
+      </h2>
+      <div class="subpages-list">
+        {% assign subpages = site.pages | where_exp:"p","p.url contains '/revops/'" %}
+        {% for page in subpages %}
+          {% unless page.url == '/revops/' or page.url == '/revops/index.html' %}
+            <div class="subpages-item">
+              <h3 class="subpages-item__title">
+                {{ page.shortTitle | default: page.title | default: page.url }}
+              </h3>
+              <p class="subpages-item__excerpt">
+                {{ page.excerpt }}
+              </p>
+              {% if page.content != empty %}
+                <a href="{{ page.url }}">
+                  ➟  Read&nbsp;more
+                </a>
               {% endif %}
-            {% endfor %}
-          {% endfor %}
-        </div>
-      </section>
+            </div>
+          {% endunless %}
+        {% endfor %}
+      </div>
+      <div class="section__cta section__cta--centered section__cta--extra-margin-top">
+        <a class="button" href="#contact">
+          Chat with us
+        </a>
+      </div>
+    </div>
+  </section>
       
   <section class="content">
     <div class="content__container content__container--wide">

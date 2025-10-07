@@ -23,6 +23,12 @@ layout: default
                         Accessibility
                     </a>
                 {% endif %}
+                {% if page.url contains '/revops/' %}
+                    /
+                    <a class="hero__breadcrumb-item" href="/revops">
+                        RevOps
+                    </a>
+                {% endif %}
             </div>
             <h1 class="hero__title">
                 {{ page.title }}
