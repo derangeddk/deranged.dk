@@ -20,7 +20,7 @@ Vi kan hjælpe med:
 - Løsningsforslag og prioriteringer
 
 Med vores erfaring og ekspertise kan vi under brugertesten og i analysefasen gruppere resultaterne i problemer der har at gøre med henholdsvis:
-- Manglende overholdelse af tilgængelighedsstandarder (fx EN 301 549, WCAG 2.1, WCAG 2.2)
+- Manglende overholdelse af tilgængelighedsstandarder (fx EN 301 549, WCAG 2.1, WCAG 2.2), og dermed manglende overholdelse af tilgængelighedsloven (European Accessibility Act, EAA) eller webtilgængelighedsloven (Web Accessibility Directive, WAD)
 - Manglende overholdelse af andre tekniske standarder (fx WAI-ARIA)
 - Manglende kompabilitet med hjælpeteknologier
 - Helt almindelige usability-problemer - som ofte bliver forstærket, når de opleves af brugere med funktionsnedsættelser.
