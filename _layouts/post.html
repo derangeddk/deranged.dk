@@ -137,11 +137,20 @@ layout: default
     </div>
     <div class="post__intro">
       {% if page.img %}
-        <img src="{{ page.img }}" class="post__intro-image" alt="" />
+        <img src="{{ page.img }}" class="post__intro-image" alt="" inert />
       {% endif %}
-      <div class="post__intro-symbol">⚆</div>
-      <h1 class="display-1 post__intro-heading">{%if page.title_display %}{{ page.title_display }}{% else %}{{ page.title }}{% endif %}</h1>
-      <p class="post__intro-subtitle">{{page.subtitle}}</p>
+      <!-- TODO: find a way to utilize this symbol?  -->
+      <!-- <div class="post__intro-symbol">⚆</div> -->
+      <h1 class="display-1 post__intro-heading">
+        {%if page.title_display %}
+          {{ page.title_display }}
+        {% else %}
+          {{ page.title }}
+        {% endif %}
+      </h1>
+      <p class="post__intro-subtitle">
+        {{page.subtitle}}
+      </p>
       <div class="post__intro-author">
         {{page.by}}<br>
         {{page.at}}
