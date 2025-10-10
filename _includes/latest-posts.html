@@ -4,14 +4,31 @@
   color: #eaf1f7;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  padding-bottom: 2em;
-  padding-top: 3rem;
+  text-align: left;
+}
+
+.latest-posts__content {
+  padding: 1.5rem 2rem;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.latest-posts__wrapper {
+  width: 100%;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 3rem 1.5rem;
+
+  @media(min-width: 1200px) {
+    /* Add Padding-bottom to make space for bottom ↯ symbol */
+    padding: 3rem 100px 2rem;
+  }
 }
 
 .latest-posts__heading {
-  padding: 2em 100px 2em;
   width: 100%;
+  margin-bottom: 2rem;
   text-align: left;
 }
 
@@ -36,40 +53,24 @@
 
 .latest-posts__list-container {
   display: grid;
-  grid-column-gap: 30px;
-  grid-row-gap: 30px;
+  grid-column-gap: 2rem;
+  grid-row-gap: 2rem;
   grid-template-rows: auto;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: minmax(350px, 1fr) minmax(350px, 1fr);
   font-size: 18px;
-  padding: 0 100px 2em;
-  max-width: 1400px;
 }
 @media screen and (max-width: 991px) {
   .latest-posts__blog-title {
     padding: 0 46px;
   }
-  .latest-posts__heading {
-    padding: 2em 2em 2em;
-  }
   .latest-posts__list-container {
     grid-row-gap: 16px;
     grid-column-gap: 16px;
-    padding-left: 2em;
-    padding-right: 2em;
   }
 }
 @media screen and (max-width: 767px) {
   .latest-posts__list-container {
     grid-template-columns: 1fr;
-  }
-}
-@media screen and (max-width: 479px) {
-  .latest-posts__heading {
-    padding: 2em 1em 2em;
-  }
-  .latest-posts__list-container {
-    padding-left: 1em;
-    padding-right: 1em;
   }
 }
 
@@ -97,18 +98,15 @@
     rgba(0, 0, 0, 0.2) 0%,
     rgba(0, 0, 0, 0.8) 100%
   );
-  -webkit-mask-image: linear-gradient(
-    to top,
-    rgba(0, 0, 0, 0.2) 0%,
-    rgba(0, 0, 0, 0.8) 100%
-  );
+  display: none;
 }
 
 .latest-posts__list-item-title {
   color: #2c3e50;
-  font-size: 1.3em;
+  font-size: 1.6rem;
   letter-spacing: 1px;
-  margin: 10px 10px 6px;
+  margin: 0;
+  margin-bottom: 1rem;
   text-align: left;
 }
 @media screen and (max-width: 991px) {
@@ -123,7 +121,14 @@
   text-align: left;
   flex: 1;
   line-height: 1.5;
-  margin: 0 10px 10px;
+}
+
+.latest-posts__meta {
+  margin-top: auto;
+  display: flex;
+  flex-direction: column;
+  font-size: 0.8em;
+  text-align: left;
 }
 
 .button {
@@ -132,39 +137,65 @@
   border-style: solid;
   border-width: 1px;
 }
+
+.latest-posts__cta {
+  margin-top: 2rem;
+  text-align: left;
+}
 </style>
 
 <aside class="latest-posts section--dark">
-  {% if include.blog != 'true' %}
-  <div class="latest-posts__heading">
-    <h2 class="display-2">
-      {% if include.title %}
-        {{include.title}}
-      {% else %}
-        Recent posts
+  <div class="latest-posts__wrapper">
+    <div class="latest-posts__heading">
+      <h2 class="display-2">
+        {% if include.blog != 'true' %}
+          {% if include.title %}
+            {{include.title}}
+          {% else %}
+            Recent posts
+          {% endif %}
+        {% else %}
+          Our posts
+        {% endif %}
+      </h2>
+    </div>
+    <div class="latest-posts__list-container">
+      {% assign filtered_posts = site.posts %}
+      {% if include.post == 'true' %}
+        {% assign filtered_posts = site.posts | where_exp: "post", "post.title != page.title" %}
       {% endif %}
-    </h2>
-  </div>
-  {% endif %}
-  <div class="latest-posts__list-container">
-    {% assign filtered_posts = site.posts %}
-    {% if include.post == 'true' %}
-      {% assign filtered_posts = site.posts | where_exp: "post", "post.title != page.title" %}
+      {% for post in filtered_posts limit: include.limit %}
+      <a href="{{post.url}}" class="latest-posts__list-item">
+        <img
+            src="{{post.img-small}}"
+            loading="lazy"
+            alt=""
+            class="latest-posts__list-item-thumbnail"
+        />
+        <div class="latest-posts__content">
+          <h3 class="latest-posts__list-item-title">
+            {{post.title}}
+          </h3>
+          <p class="latest-posts__list-item-summary">
+            {{post.excerpt}}
+            <br><u>Read&nbsp;more</u>
+          </p>
+          <div class="latest-posts__meta">
+            {% if post.author %}
+              By {{ post.author }}
+            {% endif %}
+            {% if post.at %}
+              <span>Published {{post.at}}</span>
+            {% endif %}
+          </div>
+        </div>
+      </a>
+      {% endfor %}
+    </div>
+    {% if include.blog != 'true' %}
+      <a href="/blog" class="latest-posts__cta button">
+        Read more posts here
+      </a>
     {% endif %}
-    {% for post in filtered_posts limit: include.limit %}
-    <a href="{{post.url}}" class="latest-posts__list-item">
-      <img
-          src="{{post.img-small}}"
-          loading="lazy"
-          alt=""
-          class="latest-posts__list-item-thumbnail"
-      />
-      <h3 class="latest-posts__list-item-title">{{post.title}}</h3>
-      <p class="latest-posts__list-item-summary">{{post.excerpt}} <u>Read&nbsp;more</u></p>
-    </a>
-    {% endfor %}
   </div>
-  {% if include.blog != 'true' %}
-    <a href="/blog" class="button">Read more posts here</a>
-  {% endif %}
 </aside>
