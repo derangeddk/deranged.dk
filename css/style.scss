@@ -266,7 +266,16 @@ code {
 
 .display-1 {
     font-weight: 200;
-    font-size: 4rem;
+    font-size: 2.5rem;
+
+    @media(min-width: 767px) {
+        font-size: 4rem;
+    }
+}
+.display-1--xl {
+    @media(min-width: 768px) {
+        font-size: 6rem;
+    }
 }
 .display-2 {
     font-weight: 200;
@@ -281,8 +290,20 @@ code {
     font-size: 1.5rem;
 }
 
+.display-1 strong, .display-2 strong, .display-3 strong, .display-4 strong {
+    font-weight: 900;
+}
+
+p {
+    margin-top: 0;
+    margin-bottom: 1.6rem;
+}
+
 h1, h2, h3, h4, h5, h6, .heading-1, .heading-2, .heading-3, .heading-4, .heading-5, .heading-6 {
     font-weight: 900;
+    margin: 0;
+    margin-top: 3rem;
+    margin-bottom: 0.5rem;
 }
 
 h1, .heading-1 {
@@ -291,10 +312,19 @@ h1, .heading-1 {
 h2, .heading-2 {
     font-size: 1.5rem;
 }
+h3, .heading-3 {
+    font-size: 1.25rem;
+}
 
 .section--dark {
     background-color: #2c3e50;
     color: #eaf1f7;
+}
+.section--dark-highlight-gradient {
+    background-image: linear-gradient(-35deg, transparent 30%, #375068 90%);
+}
+.section--dark-darken-gradient {
+    background-image: linear-gradient(145deg, transparent 30%, #1b2b3a 90%);
 }
 
 .section__exit-chevron {
@@ -323,4 +353,78 @@ h2, .heading-2 {
 }
 .section__exit-chevron:after {
     transform: rotate(260deg);
+}
+
+.header {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    grid-template-columns: 150px 1fr;
+    color: #eaf1f7;
+    padding: 30px 24px;
+
+    @media(min-width: 768px) {
+        padding: 30px 100px;
+    }
+}
+
+.header .logo {
+    color: inherit;
+    text-decoration: inherit;
+    font-weight: 200;
+    font-size: 1.3em;
+    position: relative;
+    z-index: 11;
+}
+
+.header .site-area-logo {
+    color: inherit;
+    margin: 0;
+    padding: 0;
+    font-weight: 200;
+    font-size: 3rem;
+}
+
+.header .blog-logo {
+    margin-top: -0.5rem;
+    margin-left: 1rem;
+    text-decoration: 1px underline;
+    text-underline-offset: 0.5rem;
+}
+
+.header .explainers-logo {
+    margin-top: -1rem;
+    margin-left: 1rem;
+    text-decoration: 1px underline;
+    text-underline-offset: 0.5rem;
+}
+
+.longform {
+    font-size: 1.25rem;
+}
+.longform p, .longform ul, .longform ol, .longform blockquote {
+    font-family: 'Source Serif Pro', 'Libre Baskerville', Baskerville, "Baskerville Old Face", "Hoefler Text", Garamond, "Times New Roman", serif;
+    line-height: 160%;
+    letter-spacing: -0.003em;
+}
+.longform h2:first-child {
+    margin-top: 0;
+}
+.longform p + ul, .longform p + ol {
+    margin-top: -1rem;
+}
+.longform li {
+    margin-bottom: 0.25em;
+}
+.longform h1, .longform .heading-1 {
+    font-size: 2.5rem;
+}
+.longform h2, .longform .heading-2 {
+    font-size: 1.875rem;
+}
+.longform h4, .longform .heading-3 {
+    font-size: 1.5rem;
+}
+.longform a {
+    color: #0e3661;
 }

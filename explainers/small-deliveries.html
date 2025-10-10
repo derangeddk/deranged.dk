@@ -2,8 +2,27 @@
 permalink: explainers/small-deliveries
 layout: explainers
 sitemap_include: 'yes'
+title: Get more value for money with small deliveries
+title_display: >
+    Get more value for money with <strong>small deliveries</strong>
+teaser: >
+    <p>
+        When building software, it is better to take it into use a bit at a time.
+        That way, you will get more total value for your business.
+        Not only that, you probably also get better software, because small deliveries encourage feedback.
+    </p>
+    <p>
+        In this quick explainer, we cover the mechanics at play when delivering software, and the differences between delivering in small increments and "big bang" deliveries.
+    </p>
+author: >
+    Published 28<sup>th</sup> of March 2019<br>
+    Written by <a href="mailto:niels@deranged.dk">Niels Roesen Abildgaard</a><br>
+    Illustrations by <a href="mailto:niels@deranged.dk">Niels Roesen Abildgaard</a>
 ---
 <style>
+    .graph-figure {
+        width: 100%;
+    }
     .graph-container {
         padding: 15px;
         display: flex;
@@ -12,7 +31,7 @@ sitemap_include: 'yes'
         padding-bottom: 30px;
         background: #ecf0f1;
         width: 100%;
-        max-width: 670px;
+        max-width: 800px;
     }
 
     .graph-area {
@@ -23,7 +42,7 @@ sitemap_include: 'yes'
         opacity: 1;
     }
     .graph {
-        max-width: 640px;
+        max-width: 770px;
         width: 100%;
     }
     .graph .y-axis-number {
@@ -115,7 +134,7 @@ sitemap_include: 'yes'
         flex-direction: row;
         align-items: flex-start;
         justify-content: center;
-        margin: 8em 0;
+        margin: 3rem 0;
     }
     figure.figure-reverse {
         flex-direction: row-reverse;
@@ -147,11 +166,14 @@ sitemap_include: 'yes'
     }
     @media (max-width: 550px) {
         figure figcaption, figure.figure-reverse figcaption {
-            transform: translate(20px, 20px);
+            transform: translate(30px, 10px);
             width: calc(100% - 20px);
         }
     }
 
+    .svg-moves-figure {
+        width: 100%;
+    }
     figure .svg-moves-illustration {
         padding: 25px;
         border: 1px solid #070d14;
@@ -162,7 +184,7 @@ sitemap_include: 'yes'
     .svg-moves-illustration svg {
         grid-row: span 2;
         grid-column: span 2;
-        max-width: 150px;
+        max-width: 200px;
         width: 100%;
     }
 
@@ -224,29 +246,12 @@ sitemap_include: 'yes'
             margin-left: 0;
         }
     }
+
+    .further-reading {
+        text-align: left;
+    }
 </style>
-<h1>
-    Get more value for money<br>
-    with <strong>small deliveries</strong>
-</h1>
-<section class="explainer-description">
-    <div class="teaser">
-        <p>
-            When building software, it is better to take it into use a bit at a time.
-            That way, you will get more total value for your business.
-            Not only that, you probably also get better software, because small deliveries encourage feedback.
-        </p>
-        <p>
-            In this quick explainer, we cover the mechanics at play when delivering software, and the differences between delivering in small increments and "big bang" deliveries.
-        </p>
-    </div>
-    <div class="author">
-        Published 28<sup>th</sup> of March 2019<br>
-        Written by <a href="mailto:niels@deranged.dk">Niels Roesen Abildgaard</a><br>
-        Illustrations by <a href="mailto:niels@deranged.dk">Niels Roesen Abildgaard</a>
-    </div>
-</section>
-<section>
+<div class="container">
     <h2>Delivering software</h2>
     <p>
         In software development, we talk about <em>deliveries</em>.
@@ -273,8 +278,7 @@ sitemap_include: 'yes'
         It provides more total business value, even if the overall project takes longer to complete, and it allows for natural feedback to occur between business and contractor, and even allows for a changing of priorities mid-way through development.
         The rest of this explainer covers these benefits (and how they occur) in more detail.
     </p>
-</section>
-<section>
+
     <h2>You get more business value</h2>
     <p>
         <em>Business value</em> is a measure of how much something is worth to your business.
@@ -322,6 +326,7 @@ sitemap_include: 'yes'
     <p>
         Concretely, the first two graphs show how early deliveries consistently result in more total accumulated business value, even if a project is finished later than it would otherwise be (more on this below).
     </p>
+</div>
     <figure id="big-bang-graph" class="graph-figure">
         <figcaption>
             This graph shows a how the <span class="graph-term-value-generation">value generation rate</span> and <span class="graph-term-accumulated-value">accumulated value</span> of a "big bang" project looks.
@@ -340,6 +345,7 @@ sitemap_include: 'yes'
             This is even the case in this example, where the project is <span class="graph-term-project-delivery-point">delivered one time unit later</span> than the project shown above.
         </figcaption>
     </figure>
+<div class="container">
     <p>
         The first graph shows a "big bang" delivery, where all of the software is delivered in one chunk, and then starts <span class="graph-term-value-generation">generating value</span>.
         This means that <span class="graph-term-accumulated-value">value accumulation</span> starts relatively late.
@@ -364,6 +370,7 @@ sitemap_include: 'yes'
     <p>
         Such an approach shown in the following graph, where high impact features are delivered in the first two time units, resulting in an even higher <span class="graph-term-accumulated-value">total accumulated value</span>.
     </p>
+</div>
     <figure id="valuable-first-graph" class="graph-figure figure-reverse">
         <figcaption>
             This graph shows a project where two high-impact features (generating 2 <span class="graph-term-value-generation">value per time</span>) are delivered early on, one in each of the first two time units.
@@ -372,6 +379,7 @@ sitemap_include: 'yes'
             In this example, the project is not <span class="graph-term-project-delivery-point">fully delivered</span> until two time units after the previous example (and three time units before the first example), and yet it delivers the most <span class="graph-term-accumulated-value">total value</span>.
         </figcaption>
     </figure>
+<div class="container">
     <p>
         In short, software delivered in small increments results in shorter earn-back periods and more overall value generated.
         That is the main reason for us to recommend this approach over "big bang" deliveries.
@@ -399,8 +407,7 @@ sitemap_include: 'yes'
         This means you can use your contractor's time much more efficiently, building software that generates much more value.
         This feedback cycle has larger implications, so we will spend the next section diving deeper into it.
     </p>
-</section>
-<section>
+
     <h2>Everything changes all the time</h2>
     <p>
         A major disadvantage of "big bang" deliveries is the lack of chances to course correct.
@@ -438,6 +445,7 @@ sitemap_include: 'yes'
     <p>
         With small deliveries, your business situation continuously informs software decisions, and the software continuously affects and changes your business.
     </p>
+</div>
     <figure class="svg-moves-figure figure-reverse">
         <figcaption>
             As software is delivered to a business, the business gets something concrete to think about, comment on, and base future decisions on.
@@ -544,6 +552,7 @@ sitemap_include: 'yes'
             </svg>
         </div>
     </figure>
+<div class="container">
     <p>
         Small deliveries naturally establish a feedback loop between your business needs and the software being built.
         This feedback loop is vital for clean communication, and helps ensure that the software being built actually helps your business.
@@ -575,6 +584,7 @@ sitemap_include: 'yes'
         And the need for change in your business means changing priorities for software to support it.
         Fortunately, small deliveries support making these changes.
     </p>
+</div>
     <figure class="svg-moves-figure">
         <figcaption>
             No business exists in a vacuum.
@@ -634,7 +644,7 @@ sitemap_include: 'yes'
                 }
                 .world-biz-it-illustration .it-illustration {
                     grid-row: 7 / 9;
-                    grid-column: 1 / 3; 
+                    grid-column: 1 / 3;
                 }
                 .world-biz-it-illustration .arrow-world-out {
                     transform: translate(15px, 40px);
@@ -739,9 +749,9 @@ sitemap_include: 'yes'
             </svg>
         </div>
     </figure>
-</section>
+
 <div class="aside-wrap">
-    <section>
+    <section class="container">
         <h2>Our takeaway</h2>
         <p>
             You made it to the end!
@@ -776,10 +786,10 @@ sitemap_include: 'yes'
             You can even write us just to get in touch, even if you have no concrete business proposals&mdash;we would love to hear from you.
         </p>
         <p>
-            Best of luck in your future software adventures from <a href="/who-we-are">the whole team</a>!
+            Best of luck in your future software adventures!
         </p>
     </section>
-    <aside>
+    <aside class="further-reading">
         <h3>Further reading</h3>
         <p>
             If this explainer has piqued your interest, but you are looking for some more in-depth resources on software development, we recommend the following.

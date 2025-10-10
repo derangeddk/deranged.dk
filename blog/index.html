@@ -8,54 +8,11 @@ sitemap_include: 'yes'
 
 <link href="/css/homestyle.css" rel="stylesheet" type="text/css" />
 
-<style type="text/css" scoped>
-  .header {
-    background: rgba(52, 73, 94, 1);
-    display: grid;
-    grid-template-columns: 150px 1fr;
-    color: #eaf1f7;
-    padding: 30px;
-    text-align: left;
-  }
-
-  .header .logo {
-    color: inherit;
-    text-decoration: inherit;
-    font-weight: 200;
-    font-size: 1.3em;
-    position: relative;
-    z-index: 11;
-    padding: 0.4em 0;
-  }
-
-  .header h1 {
-    margin: 0;
-    padding: 0;
-    margin-top: -9px;
-    font-weight: 200;
-    font-size: 3em;
-  }
-
-  .header h1 a {
-    color: inherit;
-    text-decoration: inherit;
-  }
-
-  .big-heading {
-    text-align: left;
-    font-size: 4em;
-    font-weight: 500;
-  }
-
-  @media (max-width: 600px) {
-    .header {
-      grid-template-columns: 1fr;
-    }
-  }
-</style>
-
-<section class="header" role="banner">
-  <a href="/" class="logo">deranged</a>
+<section class="section--dark">
+  <div class="header" role="banner">
+    <a href="/" class="logo">deranged</a>
+    <a class="site-area-logo blog-logo" role="heading" aria-level="1" href="/blog">Blog&nbsp;</a>
+  </div>
 </section>
 
 {% include latest-posts.html blog='true' %}

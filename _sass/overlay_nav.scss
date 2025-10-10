@@ -89,13 +89,17 @@ nav.overlay {
 
 #main-nav-toggle {
   position: absolute;
-  top: 30px;
-  right: 30px;
+  top: 40px;
+  right: 1rem;
   font-size: 36px;
   z-index: 100;
   background: transparent;
   border-width: 0;
   cursor: pointer;
+
+  @media(min-width: 768px) {
+    right: 100px;
+  }
 
   .icon-bar {
    background: white;
