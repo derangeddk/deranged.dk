@@ -272,6 +272,11 @@ code {
         font-size: 4rem;
     }
 }
+.display-1--xl {
+    @media(min-width: 768px) {
+        font-size: 6rem;
+    }
+}
 .display-2 {
     font-weight: 200;
     font-size: 3rem;
