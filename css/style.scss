@@ -356,7 +356,11 @@ h3, .heading-3 {
     align-items: start;
     grid-template-columns: 150px 1fr;
     color: #eaf1f7;
-    padding: 30px 100px;
+    padding: 30px 24px;
+
+    @media(min-width: 768px) {
+        padding: 30px 100px;
+    }
 }
 
 .header .logo {
