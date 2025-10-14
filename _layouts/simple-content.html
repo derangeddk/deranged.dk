@@ -29,6 +29,12 @@ layout: default
                         RevOps
                     </a>
                 {% endif %}
+                {% if page.url contains '/cases/' %}
+                    /
+                    <a class="hero__breadcrumb-item" href="/cases">
+                        cases
+                    </a>
+                {% endif %}
             </div>
             <h1 class="hero__title">
                 {{ page.title }}
