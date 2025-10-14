@@ -12,13 +12,13 @@
   height: 100%;
   display: flex;
   flex-direction: column;
+  max-width: 700px;
 }
 
 .latest-posts__wrapper {
   width: 100%;
   max-width: 1400px;
-  margin: 0 auto;
-  padding: 3rem 1.5rem;
+  padding: 3rem 1rem;
 
   @media(min-width: 1200px) {
     /* Add Padding-bottom to make space for bottom ↯ symbol */
@@ -28,6 +28,7 @@
 
 .latest-posts__heading {
   width: 100%;
+  margin-top: 0;
   margin-bottom: 2rem;
   text-align: left;
 }
@@ -40,7 +41,11 @@
   width: 100%;
   max-width: 1400px;
   padding: 0 70px;
+
+  @media screen and (max-width: 991px) {
+    padding: 0 46px;
   }
+}
 
 .latest-posts__title {
   color: #2c3e50;
@@ -56,20 +61,19 @@
   grid-column-gap: 2rem;
   grid-row-gap: 2rem;
   grid-template-rows: auto;
-  grid-template-columns: minmax(350px, 1fr) minmax(350px, 1fr);
+  grid-template-columns: 1fr;
   font-size: 18px;
-}
-@media screen and (max-width: 991px) {
-  .latest-posts__blog-title {
-    padding: 0 46px;
-  }
-  .latest-posts__list-container {
+
+  @media screen and (max-width: 991px) {
     grid-row-gap: 16px;
     grid-column-gap: 16px;
   }
 }
-@media screen and (max-width: 767px) {
-  .latest-posts__list-container {
+
+.latest-posts__list-container--2-col {
+  grid-template-columns: 1fr 1fr;
+
+  @media screen and (max-width: 767px) {
     grid-template-columns: 1fr;
   }
 }
@@ -81,7 +85,10 @@
   text-decoration: none;
   transition: transform 0.3s, box-shadow 0.3s;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
+  justify-content: space-between;
+  overflow: hidden;
+  position: relative;
 }
 
 .latest-posts__list-item:hover {
@@ -90,29 +97,59 @@
 }
 
 .latest-posts__list-item-thumbnail {
-  max-height: 250px;
-  max-width: 100%;
+  height: 100%;
+  max-width: 300px;
   object-fit: cover;
-  mask-image: linear-gradient(
-    to top,
-    rgba(0, 0, 0, 0.2) 0%,
-    rgba(0, 0, 0, 0.8) 100%
-  );
-  display: none;
+  mask-image: linear-gradient(to left, rgb(0, 0, 0), rgba(0,0,0,0) 80%);
+  opacity: 0.2;
+  position: absolute;
+  right: 0;
+  z-index: 0;
+
+  @media screen and (max-width: 900px) {
+    display: none;
+  }
+}
+
+.latest-posts__tags {
+  margin-top: 1rem;
+  z-index: 1;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+
+  @media(min-width: 1050px) {
+    position: absolute;
+    right: 2rem;
+    margin-top: 0;
+  }
+}
+
+.latest-posts__tag {
+  background-color: var(--deranged-light-blue);
+  padding: 0.25rem 0.5rem;
+  border-radius: 4px;
+  font-size: 0.8rem;
+  font-family: monospace;
+  display: inline-block;
+  color: #fff;
+  width: fit-content;
+  z-index: 1;
+  line-height: 1;
 }
 
 .latest-posts__list-item-title {
   color: #2c3e50;
-  font-size: 1.6rem;
+  font-size: 1.8rem;
   letter-spacing: 1px;
   margin: 0;
   margin-bottom: 1rem;
   text-align: left;
 }
+
 @media screen and (max-width: 991px) {
   .latest-posts__list-item-title {
     font-size: 1.2em;
-    margin-bottom: 0;
   }
 }
 
@@ -121,14 +158,44 @@
   text-align: left;
   flex: 1;
   line-height: 1.5;
+  display: grid;
+  gap: 0.5rem;
+  margin-bottom: 1.25rem;
+}
+
+.latest-posts__list-item-summary-text {
+  margin-bottom: 0;
+}
+
+.latest-posts__list-item-summary-readmore {
+  display: inline-block;
 }
 
 .latest-posts__meta {
+  display: flex;
+  gap: 0.85rem;
+}
+
+.latest-posts__meta-author {
   margin-top: auto;
   display: flex;
   flex-direction: column;
   font-size: 0.8em;
   text-align: left;
+}
+
+.latest-posts__meta-avatar {
+  border-radius: 50%;
+  height: 55px;
+  aspect-ratio: 1/1;
+  object-fit: cover;
+  object-position: top;
+  outline: 1px solid var(--deranged-light-blue);
+  padding: 3px;
+}
+
+.latest-posts__meta-date {
+  margin-top: 5px;
 }
 
 .button {
@@ -144,51 +211,62 @@
 }
 </style>
 
-<aside class="latest-posts section--dark">
-  <div class="latest-posts__wrapper">
-    <div class="latest-posts__heading">
-      <h2 class="display-2">
-        {% if include.blog != 'true' %}
-          {% if include.title %}
-            {{include.title}}
-          {% else %}
-            Recent posts
-          {% endif %}
+<aside class="latest-posts {% if include.wrapper == 'true' %}content--blue{% endif %}">
+  <div class="{% if include.wrapper == 'true' %}latest-posts__wrapper{% endif %}">
+    {% if include.blog != 'true' %}
+      <h2 class="latest-posts__heading display-2">
+        {% if include.title %}
+          {{ include.title }}
         {% else %}
-          Our posts
+          Recent posts
         {% endif %}
       </h2>
-    </div>
+    {% endif %}
     <div class="latest-posts__list-container">
       {% assign filtered_posts = site.posts %}
       {% if include.post == 'true' %}
         {% assign filtered_posts = site.posts | where_exp: "post", "post.title != page.title" %}
       {% endif %}
       {% for post in filtered_posts limit: include.limit %}
-      <a href="{{post.url}}" class="latest-posts__list-item">
-        <img
-            src="{{post.img-small}}"
-            loading="lazy"
-            alt=""
-            class="latest-posts__list-item-thumbnail"
-        />
+      <a href="{{ post.url }}" class="latest-posts__list-item" lang="{% if post.lang == 'da_dk' %}da-dk{% else %}en{% endif %}">
         <div class="latest-posts__content">
           <h3 class="latest-posts__list-item-title">
-            {{post.title}}
+            {{ post.title }}
           </h3>
-          <p class="latest-posts__list-item-summary">
-            {{post.excerpt}}
-            <br><u>Read&nbsp;more</u>
-          </p>
+          <div class="latest-posts__list-item-summary">
+            <p class="latest-posts__list-item-summary-text">
+              {{ post.excerpt }}
+            </p>
+            <span class="latest-posts__list-item-summary-readmore">➟ <u>Read&nbsp;more</u></span>
+          </div>
           <div class="latest-posts__meta">
-            {% if post.author %}
-              By {{ post.author }}
-            {% endif %}
-            {% if post.at %}
-              <span>Published {{post.at}}</span>
-            {% endif %}
+            <img src="{{post.author.image}}" alt="" class="latest-posts__meta-avatar" />
+            <div class="latest-posts__meta-author">
+              {% if post.author.name %}
+                By {{ post.author.name }}
+              {% endif %}
+              {% if post.author.title %}
+                <i>{{ post.author.title }}</i>
+              {% endif %}
+              {% if post.at %}
+                <span class="latest-posts__meta-date">
+                  Published {{ post.at }}
+                </span>
+              {% endif %}
+            </div>
+          </div>
+          <div class="latest-posts__tags">
+            <div class="latest-posts__tag">
+              {% if post.lang == 'da_dk' %}🇩🇰 dansk{% else %}🇬🇧 english{% endif %}
+            </div>
           </div>
         </div>
+        <img
+          src="{{post.img-small}}"
+          loading="lazy"
+          alt=""
+          class="latest-posts__list-item-thumbnail"
+        />
       </a>
       {% endfor %}
     </div>
