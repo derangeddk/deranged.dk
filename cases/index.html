@@ -7,45 +7,212 @@ sitemap_include: 'yes'
 
 <link href="/css/homestyle.css" rel="stylesheet" type="text/css" />
 
-<section class="hero" role="banner">
-  <div class="hero__content">
-    <div class="hero__breadcrumbs deranged-logo">
-      <a href="/" class="hero__breadcrumb-item">
-        deranged
-      </a>
-      /
-      <a href="/cases" class="hero__breadcrumb-item">
-        cases
-      </a>
+<style type="text/css" scoped>
+    .header {
+        background: rgba(52, 73, 94, 1.0);
+        display: grid;
+        grid-template-columns: 150px 1fr;
+        color: #eaf1f7;
+        padding: 30px;
+        text-align: left;
+    }
+
+    .header .logo {
+        color: inherit;
+        text-decoration: inherit;
+        font-weight: 200;
+        font-size: 1.3em;
+        position: relative;
+        z-index: 11;
+    }
+
+    .header .intro {
+        margin: 15vh 0;
+        padding: 0;
+    }
+    .header h1 {
+        margin: 0;
+        font-weight: 200;
+        font-size: 3em;
+    }
+    .header h2 {
+        font-size: 1.5em;
+        margin: 0;
+        font-weight: 400;
+    }
+    @media (max-width: 900px) {
+        .header {
+            grid-template-columns: 1fr;
+        }
+    }
+</style>
+<section class="header" role="banner">
+    <a href="/" class="logo">deranged</a>
+    <div class="intro">
+        <h1>Cases</h1>
+        <h2>Some of the things we have worked on</h2>
     </div>
-    <h1 class="hero__title">
-      Some of the things we have worked on
-    </h1>
-  </div>
 </section>
 
 <main id="first-content">
+  {% assign unfiltered_cases = site.pages | where_exp:"p","p.url contains '/cases/'" %}
+  {% assign cases = unfiltered_cases | where_exp:"unfiltered_cases","unfiltered_cases.url != '/cases/index.html'" %}
+  <section class="content">
+    <div class="content__container content__container--wide">
+      <div class="section__content-wrapper">
+        <div class="section__side-column">
+          <h2 class="section__heading">
+            DevOps consulting
+          </h2>
+          <div class="section__text">
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+            </p>
+            <div class="section__cta section__cta--no-margin-top">
+              <a href="/#more-content">
+                ➟ Check out our DevOps services
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="cases-list">
+          {% assign devops_cases = cases | where_exp: "item", "item.categories contains 'devops'" %}
+          {% for case in devops_cases %}
+            <a href="{{ case.url }}" class="cases-item">
+              <div class="cases-item__content">
+                {% if case.customer %}
+                  <h3 class="cases-item__cuctomer">
+                    {{ case.customer }}
+                  </h3>
+                {% endif %}
+                <h2 class="cases-item__title">
+                  {{ case.title | case.url }}
+                </h2>
+                <span>➟ <u>Read&nbsp;more</u></span>
+              </div>
+            </a>
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+  </section>
+
   <section class="content content--blue">
     <div class="content__container content__container--wide">
-      <div class="subpages-list">
-        {% assign subpages = site.pages | where_exp:"p","p.url contains '/cases/'" %}
-        {% for page in subpages %}
-          {% unless page.url == '/cases/' or page.url == '/cases/index.html' %}
-            <div class="subpages-item">
-              <h3 class="subpages-item__title">
-                {{ page.shortTitle | default: page.title | default: page.url }}
-              </h3>
-              <p class="subpages-item__excerpt">
-                {{ page.excerpt }}
-              </p>
-              {% if page.content != empty %}
-                <a href="{{ page.url }}">
-                  ➟  Read&nbsp;more
-                </a>
-              {% endif %}
+      <div class="section__content-wrapper">
+        <div class="section__side-column">
+          <h2 class="section__heading">
+            Accessibility
+          </h2>
+          <div class="section__text">
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+            </p>
+            <div class="section__cta section__cta--no-margin-top">
+              <a href="/accessibility">
+                ➟ Check out our accessibility services
+              </a>
             </div>
-          {% endunless %}
-        {% endfor %}
+          </div>
+        </div>
+        <div class="cases-list">
+          {% assign accessibility_cases = cases | where_exp: "item", "item.categories contains 'accessibility'" %}
+          {% for case in accessibility_cases %}
+            <a href="{{ case.url }}" class="cases-item">
+              <div class="cases-item__content">
+                {% if case.customer %}
+                  <h3 class="cases-item__cuctomer">
+                    {{ case.customer }}
+                  </h3>
+                {% endif %}
+                <h2 class="cases-item__title">
+                  {{ case.title | case.url }}
+                </h2>
+                <span>➟ <u>Read&nbsp;more</u></span>
+              </div>
+            </a>
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="content">
+    <div class="content__container content__container--wide">
+      <div class="section__content-wrapper">
+        <div class="section__side-column">
+          <h2 class="section__heading">
+            Revenue operations
+          </h2>
+          <div class="section__text">
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+            </p>
+            <div class="section__cta section__cta--no-margin-top">
+              <a href="/revops#services">
+                ➟ Check out our RevOps services
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="cases-list">
+          {% assign revops_cases = cases | where_exp: "item", "item.categories contains 'revops'" %}
+          {% for case in revops_cases %}
+            <a href="{{ case.url }}" class="cases-item">
+              <div class="cases-item__content">
+                {% if case.customer %}
+                  <h3 class="cases-item__cuctomer">
+                    {{ case.customer }}
+                  </h3>
+                {% endif %}
+                <h2 class="cases-item__title">
+                  {{ case.title | case.url }}
+                </h2>
+                <span>➟ <u>Read&nbsp;more</u></span>
+              </div>
+            </a>
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="content content--blue">
+    <div class="content__container content__container--wide">
+      <div class="section__content-wrapper">
+        <div class="section__side-column">
+          <h2 class="section__heading">
+            Customer relationship consulting
+          </h2>
+          <div class="section__text">
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+            </p>
+            <div class="section__cta section__cta--no-margin-top">
+              <a href="/revops/crm.html">
+                ➟ Check out our CRM services
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="cases-list">
+          {% assign crm_cases = cases | where_exp: "item", "item.categories contains 'crm'" %}
+          {% for case in crm_cases %}
+            <a href="{{ case.url }}" class="cases-item">
+              <div class="cases-item__content">
+                {% if case.customer %}
+                  <h3 class="cases-item__cuctomer">
+                    {{ case.customer }}
+                  </h3>
+                {% endif %}
+                <h2 class="cases-item__title">
+                  {{ case.title | case.url }}
+                </h2>
+                <span>➟ <u>Read&nbsp;more</u></span>
+              </div>
+            </a>
+          {% endfor %}
+        </div>
       </div>
     </div>
   </section>
