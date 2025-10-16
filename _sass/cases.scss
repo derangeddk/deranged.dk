@@ -58,6 +58,11 @@
     text-align: left;
 }
 
+.cases-item__customer-wrapper {
+    display: flex;
+    justify-content: space-between;
+}
+
 .cases-item__customer {
     color: #2c3e50;
     font-size: 1.6rem;
@@ -66,4 +71,10 @@
     margin: 0;
     margin-bottom: 0.4rem;
     text-align: left;
+}
+
+.case-item__logo {
+    max-height: 4rem;
+    max-width: 110px;
+    object-fit: contain;
 }
