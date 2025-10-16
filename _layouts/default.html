@@ -16,7 +16,7 @@
 		<meta property="og:description" content="{% if page.meta %}{{ page.meta }}{% else %}We hit the ground running on your development projects. DevOps & RevOps services that align with your business reality.{% endif %}" />
 		<meta property="og:site_name" content="deranged.dk" />
 		{% if page.meta_image %}
-			<meta property="og:image" content="{{ page.meta_image }}" />
+			<meta property="og:image" content="{{ site.url }}{{ page.meta_image }}" />
 		{% endif %}
 		<script>
 			var _paq = window._paq = window._paq || [];
