@@ -5,3 +5,4 @@ collections:
   posts:
     output: true
     permalink: :collection/:name
+url: https://deranged.dk
