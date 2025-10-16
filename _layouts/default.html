@@ -4,12 +4,20 @@
 		{% if page.redir %}<meta http-equiv="refresh" content="0;url={{ page.redir }}" />{% endif %}
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<title>{% if page.title %}{{ page.title }} ____ deranged{% else %}{{ page.url }} &&& deranged is ready to help{% endif %}</title>
+		<title>{% if page.title %}{{ page.title }} ➟ deranged{% else %}{{ page.url }} &&& deranged is ready to help{% endif %}</title>
 		<meta name="description" content="{% if page.meta %}{{ page.meta }}{% else %}We hit the ground running on your development projects. DevOps & RevOps services that align with your business reality.{% endif %}"/>
 		<link href='https://fonts.googleapis.com/css?family=Libre+Baskerville:400,400italic|Source+Code+Pro|Source+Sans+Pro:200,400,900|Source+Serif+Pro:400,600' rel='stylesheet' type='text/css'>
 		<link href="/css/derangedstyle.css" rel="stylesheet" type="text/css">
 		<link href="/img/lightmode-favicon.ico" rel="icon" media="(prefers-color-scheme: light)">
 		<link href="/img/darkmode-favicon.ico" rel="icon" media="(prefers-color-scheme: dark)">
+
+		<!-- Open Graph tag for Social Media -->
+		<meta property="og:title" content="{% if page.title %}{{ page.title }}{% else %}{{ page.url }}{% endif %}  ➟ deranged" />
+		<meta property="og:description" content="{% if page.meta %}{{ page.meta }}{% else %}We hit the ground running on your development projects. DevOps & RevOps services that align with your business reality.{% endif %}" />
+		<meta property="og:site_name" content="deranged.dk" />
+		{% if page.meta_image %}
+			<meta property="og:image" content="{{ site.url }}{{ page.meta_image }}" />
+		{% endif %}
 		<script>
 			var _paq = window._paq = window._paq || [];
 			/* tracker methods like "setCustomDimension" should be called before "trackPageView" */
