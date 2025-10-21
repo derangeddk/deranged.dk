@@ -81,20 +81,18 @@ sitemap_include: 'yes'
             <a href="{{ case.url }}" class="cases-item">
               <div class="cases-item__content">
                 {% if case.customer %}
-                  <div class="cases-item__customer-wrapper">
-                    <h3 class="cases-item__customer">
-                      {{ case.customer }}
-                    </h3>
-                    {% if case.logo %}
-                      <img src="{{ case.logo }}" class="case-item__logo" alt="{{ case.customer }} logo">
-                    {% endif %}
-                  </div>
+                  <h3 class="cases-item__customer">
+                    {{ case.customer }}
+                  </h3>
                 {% endif %}
                 <h2 class="cases-item__title">
                   {{ case.title | case.url }}
                 </h2>
                 <span>➟ <u>Read&nbsp;more</u></span>
               </div>
+              {% if case.logo %}
+                <img src="{{ case.logo }}" class="case-item__logo" alt="{{ case.customer }} logo">
+              {% endif %}
             </a>
           {% endfor %}
         </div>
@@ -126,20 +124,18 @@ sitemap_include: 'yes'
             <a href="{{ case.url }}" class="cases-item">
               <div class="cases-item__content">
                 {% if case.customer %}
-                  <div class="cases-item__customer-wrapper">
-                    <h3 class="cases-item__customer">
-                      {{ case.customer }}
-                    </h3>
-                    {% if case.logo %}
-                      <img src="{{ case.logo }}" class="case-item__logo" alt="{{ case.customer }} logo">
-                    {% endif %}
-                  </div>
+                  <h3 class="cases-item__customer">
+                    {{ case.customer }}
+                  </h3>
                 {% endif %}
                 <h2 class="cases-item__title">
                   {{ case.title | case.url }}
                 </h2>
                 <span>➟ <u>Read&nbsp;more</u></span>
               </div>
+              {% if case.logo %}
+                <img src="{{ case.logo }}" class="case-item__logo" alt="{{ case.customer }} logo">
+              {% endif %}
             </a>
           {% endfor %}
         </div>
@@ -171,20 +167,18 @@ sitemap_include: 'yes'
             <a href="{{ case.url }}" class="cases-item">
               <div class="cases-item__content">
                 {% if case.customer %}
-                  <div class="cases-item__customer-wrapper">
-                    <h3 class="cases-item__customer">
-                      {{ case.customer }}
-                    </h3>
-                    {% if case.logo %}
-                      <img src="{{ case.logo }}" class="case-item__logo" alt="{{ case.customer }} logo">
-                    {% endif %}
-                  </div>
+                  <h3 class="cases-item__customer">
+                    {{ case.customer }}
+                  </h3>
                 {% endif %}
                 <h2 class="cases-item__title">
                   {{ case.title | case.url }}
                 </h2>
                 <span>➟ <u>Read&nbsp;more</u></span>
               </div>
+              {% if case.logo %}
+                <img src="{{ case.logo }}" class="case-item__logo" alt="{{ case.customer }} logo">
+              {% endif %}
             </a>
           {% endfor %}
         </div>
@@ -216,20 +210,18 @@ sitemap_include: 'yes'
             <a href="{{ case.url }}" class="cases-item">
               <div class="cases-item__content">
                 {% if case.customer %}
-                  <div class="cases-item__customer-wrapper">
-                    <h3 class="cases-item__customer">
-                      {{ case.customer }}
-                    </h3>
-                    {% if case.logo %}
-                      <img src="{{ case.logo }}" class="case-item__logo" alt="{{ case.customer }} logo">
-                    {% endif %}
-                  </div>
+                  <h3 class="cases-item__customer">
+                    {{ case.customer }}
+                  </h3>
                 {% endif %}
                 <h2 class="cases-item__title">
                   {{ case.title | case.url }}
                 </h2>
                 <span>➟ <u>Read&nbsp;more</u></span>
               </div>
+              {% if case.logo %}
+                <img src="{{ case.logo }}" class="case-item__logo" alt="{{ case.customer }} logo">
+              {% endif %}
             </a>
           {% endfor %}
         </div>
