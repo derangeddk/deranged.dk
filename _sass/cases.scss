@@ -73,6 +73,9 @@
     max-height: 4rem;
     max-width: 110px;
     object-fit: contain;
+    object-position: top;
+    margin-top: 0.4rem;
+    margin-left: 0.4rem;
 
     @media screen and (max-width: 600px) {
         display: none;
