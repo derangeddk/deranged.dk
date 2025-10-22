@@ -1,0 +1,16 @@
+<a href="{{ include.url }}" class="cases-item">
+    <div class="cases-item__content">
+    {% if include.customer %}
+        <h3 class="cases-item__customer">
+        {{ include.customer }}
+        </h3>
+    {% endif %}
+    <h2 class="cases-item__title">
+        {{ include.title | include.url }}
+    </h2>
+    <span>➟ <u>Read&nbsp;more</u></span>
+    </div>
+    {% if include.logo %}
+    <img src="{{ include.logo }}" class="case-item__logo" alt="{{ include.customer }} logo">
+    {% endif %}
+</a>

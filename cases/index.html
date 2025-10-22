@@ -78,22 +78,7 @@ sitemap_include: 'yes'
         <div class="cases-list">
           {% assign devops_cases = cases | where_exp: "item", "item.categories contains 'devops'" %}
           {% for case in devops_cases %}
-            <a href="{{ case.url }}" class="cases-item">
-              <div class="cases-item__content">
-                {% if case.customer %}
-                  <h3 class="cases-item__customer">
-                    {{ case.customer }}
-                  </h3>
-                {% endif %}
-                <h2 class="cases-item__title">
-                  {{ case.title | case.url }}
-                </h2>
-                <span>➟ <u>Read&nbsp;more</u></span>
-              </div>
-              {% if case.logo %}
-                <img src="{{ case.logo }}" class="case-item__logo" alt="{{ case.customer }} logo">
-              {% endif %}
-            </a>
+            {% include case_element.html title=case.title customer=case.customer logo=case.logo categories=case.categories %}
           {% endfor %}
         </div>
       </div>
@@ -121,22 +106,7 @@ sitemap_include: 'yes'
         <div class="cases-list">
           {% assign accessibility_cases = cases | where_exp: "item", "item.categories contains 'accessibility'" %}
           {% for case in accessibility_cases %}
-            <a href="{{ case.url }}" class="cases-item">
-              <div class="cases-item__content">
-                {% if case.customer %}
-                  <h3 class="cases-item__customer">
-                    {{ case.customer }}
-                  </h3>
-                {% endif %}
-                <h2 class="cases-item__title">
-                  {{ case.title | case.url }}
-                </h2>
-                <span>➟ <u>Read&nbsp;more</u></span>
-              </div>
-              {% if case.logo %}
-                <img src="{{ case.logo }}" class="case-item__logo" alt="{{ case.customer }} logo">
-              {% endif %}
-            </a>
+            {% include case_element.html title=case.title customer=case.customer logo=case.logo categories=case.categories %}
           {% endfor %}
         </div>
       </div>
@@ -164,22 +134,7 @@ sitemap_include: 'yes'
         <div class="cases-list">
           {% assign revops_cases = cases | where_exp: "item", "item.categories contains 'revops'" %}
           {% for case in revops_cases %}
-            <a href="{{ case.url }}" class="cases-item">
-              <div class="cases-item__content">
-                {% if case.customer %}
-                  <h3 class="cases-item__customer">
-                    {{ case.customer }}
-                  </h3>
-                {% endif %}
-                <h2 class="cases-item__title">
-                  {{ case.title | case.url }}
-                </h2>
-                <span>➟ <u>Read&nbsp;more</u></span>
-              </div>
-              {% if case.logo %}
-                <img src="{{ case.logo }}" class="case-item__logo" alt="{{ case.customer }} logo">
-              {% endif %}
-            </a>
+            {% include case_element.html title=case.title customer=case.customer logo=case.logo categories=case.categories %}
           {% endfor %}
         </div>
       </div>
@@ -207,22 +162,7 @@ sitemap_include: 'yes'
         <div class="cases-list">
           {% assign crm_cases = cases | where_exp: "item", "item.categories contains 'crm'" %}
           {% for case in crm_cases %}
-            <a href="{{ case.url }}" class="cases-item">
-              <div class="cases-item__content">
-                {% if case.customer %}
-                  <h3 class="cases-item__customer">
-                    {{ case.customer }}
-                  </h3>
-                {% endif %}
-                <h2 class="cases-item__title">
-                  {{ case.title | case.url }}
-                </h2>
-                <span>➟ <u>Read&nbsp;more</u></span>
-              </div>
-              {% if case.logo %}
-                <img src="{{ case.logo }}" class="case-item__logo" alt="{{ case.customer }} logo">
-              {% endif %}
-            </a>
+            {% include case_element.html title=case.title customer=case.customer logo=case.logo categories=case.categories %}
           {% endfor %}
         </div>
       </div>
