@@ -1,0 +1,24 @@
+<section class="content {% if include.blue %}content--blue{% endif %}">
+    <div class="content__container content__container--wide">
+      <div class="section__content-wrapper">
+        <div class="section__side-column">
+          <h2 class="section__heading section__heading--light">
+            {{ include.title }}
+          </h2>
+          <div class="section__text">
+            <p>
+              {{ include.description }}
+            </p>
+            <div class="section__cta section__cta--no-margin-top">
+              <a href="{{ include.link }}">
+                ➟ Check out our {{ include.button }} services
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="cases-list">
+          {{ include.content }}
+        </div>
+      </div>
+    </div>
+</section>

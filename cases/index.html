@@ -55,119 +55,44 @@ sitemap_include: 'yes'
 </section>
 
 <main id="first-content">
-  {% assign unfiltered_cases = site.pages | where_exp:"p","p.url contains '/cases/'" %}
-  {% assign cases = unfiltered_cases | where_exp:"unfiltered_cases","unfiltered_cases.url != '/cases/index.html'" %}
-  <section class="content">
-    <div class="content__container content__container--wide">
-      <div class="section__content-wrapper">
-        <div class="section__side-column">
-          <h2 class="section__heading section__heading--light">
-            DevOps consulting
-          </h2>
-          <div class="section__text">
-            <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-            </p>
-            <div class="section__cta section__cta--no-margin-top">
-              <a href="/#more-content">
-                ➟ Check out our DevOps services
-              </a>
-            </div>
-          </div>
-        </div>
-        <div class="cases-list">
-          {% assign devops_cases = cases | where_exp: "item", "item.categories contains 'devops'" %}
+    {% assign unfiltered_cases = site.pages | where_exp:"p","p.url contains '/cases/'" %}
+    {% assign cases = unfiltered_cases | where_exp:"unfiltered_cases","unfiltered_cases.url != '/cases/index.html'" %}
+  
+    {% capture devops_content %}
+        {% assign devops_cases = cases | where_exp: "item", "item.categories contains 'devops'" %}
           {% for case in devops_cases %}
             {% include case_element.html title=case.title customer=case.customer logo=case.logo categories=case.categories %}
           {% endfor %}
-        </div>
-      </div>
-    </div>
-  </section>
+    {% endcapture %}
 
-  <section class="content content--blue">
-    <div class="content__container content__container--wide">
-      <div class="section__content-wrapper">
-        <div class="section__side-column">
-          <h2 class="section__heading section__heading--light">
-            Accessibility
-          </h2>
-          <div class="section__text">
-            <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-            </p>
-            <div class="section__cta section__cta--no-margin-top">
-              <a href="/accessibility">
-                ➟ Check out our accessibility services
-              </a>
-            </div>
-          </div>
-        </div>
-        <div class="cases-list">
-          {% assign accessibility_cases = cases | where_exp: "item", "item.categories contains 'accessibility'" %}
-          {% for case in accessibility_cases %}
+    {% include cases_section.html title="DevOps consulting" description="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat." link="/#more-content" button="DevOps" content=devops_content %}
+    
+    {% capture accessibility_content %}
+        {% assign accessibility_cases = cases | where_exp: "item", "item.categories contains 'accessibility'" %}
+        {% for case in accessibility_cases %}
             {% include case_element.html title=case.title customer=case.customer logo=case.logo categories=case.categories %}
-          {% endfor %}
-        </div>
-      </div>
-    </div>
-  </section>
+        {% endfor %}
+    {% endcapture %}
 
-  <section class="content">
-    <div class="content__container content__container--wide">
-      <div class="section__content-wrapper">
-        <div class="section__side-column">
-          <h2 class="section__heading section__heading--light">
-            Revenue operations
-          </h2>
-          <div class="section__text">
-            <p>
-              As a fractional revenue and operations partner, we integrate with your team to align project goals with the right systems and tools. We move quickly to iterate and help you build scalable processes for sales, customer success and operations, helping you drive growth sustainably.
-            </p>
-            <div class="section__cta section__cta--no-margin-top">
-              <a href="/revops#services">
-                ➟ Check out our RevOps services
-              </a>
-            </div>
-          </div>
-        </div>
-        <div class="cases-list">
-          {% assign revops_cases = cases | where_exp: "item", "item.categories contains 'revops'" %}
+    {% include cases_section.html blue="true" title="Accessibility" description="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat." link="/accessibility" button="accessibility" content=accessibility_content %}
+
+    {% capture revops_content %}
+        {% assign revops_cases = cases | where_exp: "item", "item.categories contains 'revops'" %}
           {% for case in revops_cases %}
             {% include case_element.html title=case.title customer=case.customer logo=case.logo categories=case.categories %}
           {% endfor %}
-        </div>
-      </div>
-    </div>
-  </section>
+    {% endcapture %}
 
-  <section class="content content--blue">
-    <div class="content__container content__container--wide">
-      <div class="section__content-wrapper">
-        <div class="section__side-column">
-          <h2 class="section__heading section__heading--light">
-            Customer relationship consulting
-          </h2>
-          <div class="section__text">
-            <p>
-              We work closely with your team to unify fragmented customer data and implement or upgrade CRM solutions tailored to your business. We focus on automating client engagement workflows, optimising customer success processes, and enabling seamless integration with your existing tools helping you focus on growth.
-            </p>
-            <div class="section__cta section__cta--no-margin-top">
-              <a href="/revops/crm.html">
-                ➟ Check out our CRM services
-              </a>
-            </div>
-          </div>
-        </div>
-        <div class="cases-list">
-          {% assign crm_cases = cases | where_exp: "item", "item.categories contains 'crm'" %}
+    {% include cases_section.html title="Revenue operations" description="As a fractional revenue and operations partner, we integrate with your team to align project goals with the right systems and tools. We move quickly to iterate and help you build scalable processes for sales, customer success and operations, helping you drive growth sustainably." link="/revops#services" button="RevOps" content=revops_content %}
+
+    {% capture crm_content %}
+        {% assign crm_cases = cases | where_exp: "item", "item.categories contains 'crm'" %}
           {% for case in crm_cases %}
             {% include case_element.html title=case.title customer=case.customer logo=case.logo categories=case.categories %}
           {% endfor %}
-        </div>
-      </div>
-    </div>
-  </section>
+    {% endcapture %}
+
+    {% include cases_section.html blue="true" title="Customer relationship consulting" description="We work closely with your team to unify fragmented customer data and implement or upgrade CRM solutions tailored to your business. We focus on automating client engagement workflows, optimising customer success processes, and enabling seamless integration with your existing tools helping you focus on growth." link="/revops/crm.html" button="CRM" content=crm_content %}
 </main>
 
 {% include team-and-smv-digital.html %}
