@@ -65,7 +65,18 @@ sitemap_include: 'yes'
           {% endfor %}
     {% endcapture %}
 
-    {% include cases_section.html title="DevOps consulting" description="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat." link="/#more-content" button="DevOps" content=devops_content %}
+    {% capture devops_quotes %}
+        {% include case_quote_element.html
+            quote_text="There has been good com&shy;mun&shy;ica&shy;tion and dedi&shy;cation from deranged throughout the partner&shy;ship. [...] We have a close client-supplier relation&shy;ship. I see deranged as being my own in-house developers. That is how it feels."
+            quotee="Ninna Toft Hansen, Fischer Lighting COO"
+        %}
+        {% include case_quote_element.html
+            quote_text="My approach to software engineering rapidly changed for better [while working with deranged]. We began asking the right questions, frequently communicating our ideas for solving problems, and implementing more impactful code."
+            quotee="Michal, Full Stack Developer"
+        %}
+    {% endcapture %}
+
+    {% include cases_section.html title="DevOps consulting" description="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat." link="/#more-content" button="DevOps" content=devops_content quotes=devops_quotes %}
     
     {% capture accessibility_content %}
         {% assign accessibility_cases = cases | where_exp: "item", "item.categories contains 'accessibility'" %}
@@ -74,7 +85,14 @@ sitemap_include: 'yes'
         {% endfor %}
     {% endcapture %}
 
-    {% include cases_section.html blue="true" title="Accessibility" description="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat." link="/accessibility" button="accessibility" content=accessibility_content %}
+    {% capture accessibility_quotes %}
+        {% include case_quote_element.html
+            quote_text="I have never worked with anyone who has taken on so much respon&shy;sibility."
+            quotee="Signe Trolle Gronemann, Specialkonsulent and Product Owner"
+        %}
+    {% endcapture %}
+
+    {% include cases_section.html blue="true" title="Accessibility" description="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat." link="/accessibility" button="accessibility" content=accessibility_content quotes=accessibility_quotes %}
 
     {% capture revops_content %}
         {% assign revops_cases = cases | where_exp: "item", "item.categories contains 'revops'" %}

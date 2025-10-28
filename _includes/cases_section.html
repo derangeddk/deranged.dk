@@ -15,6 +15,9 @@
               </a>
             </div>
           </div>
+          {% if include.quotes %}
+            {{ include.quotes }}
+          {% endif %}
         </div>
         <div class="cases-list">
           {{ include.content }}
