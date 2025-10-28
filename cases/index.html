@@ -61,7 +61,7 @@ sitemap_include: 'yes'
     {% capture devops_content %}
         {% assign devops_cases = cases | where_exp: "item", "item.categories contains 'devops'" %}
           {% for case in devops_cases %}
-            {% include case_element.html title=case.title customer=case.customer logo=case.logo categories=case.categories %}
+            {% include case_element.html url=case.url title=case.title customer=case.customer logo=case.logo categories=case.categories %}
           {% endfor %}
     {% endcapture %}
 
@@ -70,7 +70,7 @@ sitemap_include: 'yes'
     {% capture accessibility_content %}
         {% assign accessibility_cases = cases | where_exp: "item", "item.categories contains 'accessibility'" %}
         {% for case in accessibility_cases %}
-            {% include case_element.html title=case.title customer=case.customer logo=case.logo categories=case.categories %}
+            {% include case_element.html url=case.url title=case.title customer=case.customer logo=case.logo categories=case.categories %}
         {% endfor %}
     {% endcapture %}
 
@@ -79,7 +79,7 @@ sitemap_include: 'yes'
     {% capture revops_content %}
         {% assign revops_cases = cases | where_exp: "item", "item.categories contains 'revops'" %}
           {% for case in revops_cases %}
-            {% include case_element.html title=case.title customer=case.customer logo=case.logo categories=case.categories %}
+            {% include case_element.html url=case.url title=case.title customer=case.customer logo=case.logo categories=case.categories %}
           {% endfor %}
     {% endcapture %}
 
@@ -88,7 +88,7 @@ sitemap_include: 'yes'
     {% capture crm_content %}
         {% assign crm_cases = cases | where_exp: "item", "item.categories contains 'crm'" %}
           {% for case in crm_cases %}
-            {% include case_element.html title=case.title customer=case.customer logo=case.logo categories=case.categories %}
+            {% include case_element.html url=case.url title=case.title customer=case.customer logo=case.logo categories=case.categories %}
           {% endfor %}
     {% endcapture %}
 
