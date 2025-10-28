@@ -11,7 +11,7 @@
 }
 
 .section__side-column {
-    max-width: 500px;
+    max-width: 700px;
     flex-grow: 1;
     flex-shrink: 2;
 
@@ -25,7 +25,6 @@
     flex-direction: column;
     max-width: 650px;
     flex-grow: 1.33;
-    gap: 2rem;
 
     @media screen and (max-width: 900px) {
         margin: auto;
