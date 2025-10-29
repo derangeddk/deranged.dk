@@ -71,10 +71,6 @@ sitemap_include: 'yes'
 
     {% capture devops_quotes %}
         {% include case_quote_element.html
-            quote_text="There has been good com&shy;mun&shy;ica&shy;tion and dedi&shy;cation from deranged throughout the partner&shy;ship. [...] We have a close client-supplier relation&shy;ship. I see deranged as being my own in-house developers. That is how it feels."
-            quotee="Ninna Toft Hansen, Fischer Lighting COO"
-        %}
-        {% include case_quote_element.html
             quote_text="My approach to software engineering rapidly changed for better [while working with deranged]. We began asking the right questions, frequently communicating our ideas for solving problems, and implementing more impactful code."
             quotee="Michal, Full Stack Developer"
         %}
@@ -102,6 +98,26 @@ sitemap_include: 'yes'
 
     {% include cases_section.html blue="true" title="Accessibility" description="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat." link="/accessibility" button="accessibility" content=accessibility_content quotes=accessibility_quotes %}
 
+    {% capture appdev_content %}
+        {% assign appdev_cases = cases | where_exp: "item", "item.categories contains 'appdev'" %}
+        {% for case in appdev_cases %}
+            {% if forloop.index < 3  %}
+                {% include case_element.html url=case.url title=case.title customer=case.customer logo=case.logo categories=case.categories %}
+            {% else %}
+                {% include case_element.html url=case.url title=case.title customer=case.customer categories=case.categories %}
+            {% endif %}
+        {% endfor %}
+    {% endcapture %}
+
+    {% capture appdev_quotes %}
+        {% include case_quote_element.html
+            quote_text="There has been good com&shy;mun&shy;ica&shy;tion and dedi&shy;cation from deranged throughout the partner&shy;ship. [...] We have a close client-supplier relation&shy;ship. I see deranged as being my own in-house developers. That is how it feels."
+            quotee="Ninna Toft Hansen, Fischer Lighting COO"
+        %}
+    {% endcapture %}
+
+    {% include cases_section.html title="Application development" description="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat." link="/#more-content" button="app development" content=appdev_content quotes=appdev_quotes %}
+
     {% capture revops_content %}
         {% assign revops_cases = cases | where_exp: "item", "item.categories contains 'revops'" %}
           {% for case in revops_cases %}
@@ -113,7 +129,7 @@ sitemap_include: 'yes'
           {% endfor %}
     {% endcapture %}
 
-    {% include cases_section.html title="Revenue operations" description="As a fractional revenue and operations partner, we integrate with your team to align project goals with the right systems and tools. We move quickly to iterate and help you build scalable processes for sales, customer success and operations, helping you drive growth sustainably." link="/revops#services" button="RevOps" content=revops_content %}
+    {% include cases_section.html blue="true" title="Revenue operations" description="As a fractional revenue and operations partner, we integrate with your team to align project goals with the right systems and tools. We move quickly to iterate and help you build scalable processes for sales, customer success and operations, helping you drive growth sustainably." link="/revops#services" button="RevOps" content=revops_content %}
 
     {% capture crm_content %}
         {% assign crm_cases = cases | where_exp: "item", "item.categories contains 'crm'" %}
@@ -126,7 +142,7 @@ sitemap_include: 'yes'
           {% endfor %}
     {% endcapture %}
 
-    {% include cases_section.html blue="true" title="Customer relationship consulting" description="We work closely with your team to unify fragmented customer data and implement or upgrade CRM solutions tailored to your business. We focus on automating client engagement workflows, optimising customer success processes, and enabling seamless integration with your existing tools helping you focus on growth." link="/revops/crm.html" button="CRM" content=crm_content %}
+    {% include cases_section.html title="Customer relationship consulting" description="We work closely with your team to unify fragmented customer data and implement or upgrade CRM solutions tailored to your business. We focus on automating client engagement workflows, optimising customer success processes, and enabling seamless integration with your existing tools helping you focus on growth." link="/revops/crm.html" button="CRM" content=crm_content %}
 </main>
 
 {% include get_a_quote.html subject='Quote request' %}
