@@ -10,25 +10,29 @@
     }
 }
 
-.section__side-column {
+.section__text-column {
     max-width: 700px;
-    flex-grow: 1;
-    flex-shrink: 2;
+    width: 50%;
 
     @media screen and (max-width: 900px) {
         margin: auto;
+        width: auto;
+    }
+}
+
+.section__cases-column {
+    max-width: 650px;
+    width: 50%;
+
+    @media screen and (max-width: 900px) {
+        margin: auto;
+        width: auto;
     }
 }
 
 .cases-list {
     display: flex;
     flex-direction: column;
-    max-width: 650px;
-    flex-grow: 1.33;
-
-    @media screen and (max-width: 900px) {
-        margin: auto;
-    }
 }
 
 .cases-item {
@@ -56,6 +60,10 @@
     margin: 0;
     margin-bottom: 1rem;
     text-align: left;
+    &.small {
+        font-size: 1.6rem;
+        margin-bottom: 0.5rem;
+    }
 }
 
 .cases-item__customer {
@@ -66,6 +74,9 @@
     margin: 0;
     margin-bottom: 0.4rem;
     text-align: left;
+    &.small {
+        font-size: 1.4rem;
+    }
 }
 
 .case-item__logo {

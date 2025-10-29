@@ -1,0 +1,13 @@
+<a href="{{ include.url }}" class="cases-item">
+    <div class="cases-item__content">
+        {% if include.customer %}
+            <h3 class="cases-item__customer small">
+            {{ include.customer }}
+            </h3>
+        {% endif %}
+        <h2 class="cases-item__title small">
+            {{ include.title | include.url }}
+        </h2>
+        <span>➟ <u>Read&nbsp;more</u></span>
+    </div>
+</a>
