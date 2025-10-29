@@ -7,50 +7,19 @@ sitemap_include: 'yes'
 
 <link href="/css/homestyle.css" rel="stylesheet" type="text/css" />
 
-<style type="text/css" scoped>
-    .header {
-        background: rgba(52, 73, 94, 1.0);
-        display: grid;
-        grid-template-columns: 150px 1fr;
-        color: #eaf1f7;
-        padding: 30px;
-        text-align: left;
-    }
-
-    .header .logo {
-        color: inherit;
-        text-decoration: inherit;
-        font-weight: 200;
-        font-size: 1.3em;
-        position: relative;
-        z-index: 11;
-    }
-
-    .header .intro {
-        margin: 15vh 0;
-        padding: 0;
-    }
-    .header h1 {
-        margin: 0;
-        font-weight: 200;
-        font-size: 3em;
-    }
-    .header h2 {
-        font-size: 1.5em;
-        margin: 0;
-        font-weight: 400;
-    }
-    @media (max-width: 900px) {
-        .header {
-            grid-template-columns: 1fr;
-        }
-    }
-</style>
-<section class="header" role="banner">
-    <a href="/" class="logo">deranged</a>
-    <div class="intro">
-        <h1>Cases</h1>
-        <h2>Some of the things we have worked on</h2>
+<section class="hero" role="banner">
+    <div class="hero__content">
+        <div class="hero__breadcrumbs deranged-logo">
+            <a href="/" class="hero__breadcrumb-item">
+                deranged
+            </a>
+        </div>
+        <h1 class="hero__title">
+            Cases
+        </h1>
+        <p class="hero__subtitle">
+            Some of the things we have worked on
+        </p>
     </div>
 </section>
 
