@@ -76,7 +76,7 @@ sitemap_include: 'yes'
         %}
     {% endcapture %}
 
-    {% include cases_section.html title="DevOps consulting" description="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat." link="/#more-content" button="DevOps" content=devops_content quotes=devops_quotes %}
+    {% include cases_section.html title="DevOps consulting" description="Our team consists of experts across all key areas needed to build and run software in your organisation. Our developers are empowered to build, deploy, and maintain software, enabling us to deliver quickly and with stability." link="/#more-content" button="DevOps" content=devops_content quotes=devops_quotes %}
     
     {% capture accessibility_content %}
         {% assign accessibility_cases = cases | where_exp: "item", "item.categories contains 'accessibility'" %}
@@ -96,7 +96,7 @@ sitemap_include: 'yes'
         %}
     {% endcapture %}
 
-    {% include cases_section.html blue="true" title="Accessibility" description="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat." link="/accessibility" button="accessibility" content=accessibility_content quotes=accessibility_quotes %}
+    {% include cases_section.html blue="true" title="Accessibility" description="Our web accessibility consulting covers training, advisory, testing services and we can fix your accessibility issues directly in your code. We work with your team to ensure you achieve compliance quickly while gaining deep understanding and capabilities." link="/accessibility" button="accessibility" content=accessibility_content quotes=accessibility_quotes %}
 
     {% capture appdev_content %}
         {% assign appdev_cases = cases | where_exp: "item", "item.categories contains 'appdev'" %}
@@ -116,7 +116,7 @@ sitemap_include: 'yes'
         %}
     {% endcapture %}
 
-    {% include cases_section.html title="Application development" description="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat." link="/#more-content" button="app development" content=appdev_content quotes=appdev_quotes %}
+    {% include cases_section.html title="Application development" description="We provide scalable engineering capacity to build and maintain your web applications, migrate from legacy platforms, and help you make sound architectural decisions, improving reliability and enabling long-term stability." link="/#more-content" button="app development" content=appdev_content quotes=appdev_quotes %}
 
     {% capture revops_content %}
         {% assign revops_cases = cases | where_exp: "item", "item.categories contains 'revops'" %}
