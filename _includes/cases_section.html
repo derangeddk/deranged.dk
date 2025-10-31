@@ -8,7 +8,7 @@
     <div class="content__container content__container--wide">
       <div class="section__content-wrapper">
         <div class="section__text-column">
-          <h2 class="section__heading section__heading--light">
+          <h2 class="section__heading section__heading--light" id="{{ include.anchor }}">
             {{ include.title }}
           </h2>
           <div class="section__text">
@@ -16,7 +16,7 @@
               {{ include.description }}
             </p>
             <div class="section__cta section__cta--no-margin-top">
-              <a href="{{ include.link }}">
+              <a href="{{ include.link }}" {% if include.blue %}style="color: #d3e6f8"{% else %}class="link--dark"{% endif %}>
                 ➟ Check out our {{ include.button }} services
               </a>
             </div>
