@@ -794,7 +794,7 @@ permalink: /css/homestyle.css
   grid-template-columns: 1fr 1fr;
 }
 
-.smv-digital-section {
+.smv-digital-section, .ski-provider-section, .dosl-provider-section {
   grid-row: 1 / 2;
   padding: 50px 50px 50px 100px;
   text-align: left;
@@ -812,7 +812,32 @@ permalink: /css/homestyle.css
   }
 }
 
-.smv-digital-section__title {
+.ski-provider-section {
+  background: #ecf0f1;
+  color: #2c3e50;
+}
+
+.dosl-provider-section {
+  padding: 50px;
+
+  @media screen and (max-width:1199px) {
+    padding-left: 100px;
+  }
+  @media screen and (max-width: 539px) {
+    padding: 50px 30px;
+  }
+  @media screen and (max-width: 400px) {
+    padding: 50px 10px;
+  }
+}
+
+.ski-provider-section img, .dosl-provider-section img {
+  max-height: 65px;
+  margin-bottom: 8px;
+  max-width: 100%;
+}
+
+.smv-digital-section__title, .ski-provider-section__title, .dosl-provider-section__title {
   font-size: 1.8em;
   font-weight: 200;
   margin: 0;
@@ -912,7 +937,7 @@ permalink: /css/homestyle.css
   .other-pages-section {
     grid-template-columns: 1fr;
   }
-  .smv-digital-section {
+  .smv-digital-section, .ski-provider-section, .dosl-provider-section {
     grid-row: auto;
   }
   .who-we-are-section {
