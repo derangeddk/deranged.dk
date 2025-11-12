@@ -177,7 +177,6 @@
 }
 
 .latest-posts__meta-author {
-  margin-top: auto;
   display: flex;
   flex-direction: column;
   font-size: 0.8em;
@@ -240,20 +239,23 @@
             <span class="latest-posts__list-item-summary-readmore">➟ <u>{% if post.lang == 'da_dk' %}Læs&nbsp;mere{% else %}Read&nbsp;more{% endif %}</u></span>
           </div>
           <div class="latest-posts__meta">
-            <img src="{{post.author.image}}" alt="" class="latest-posts__meta-avatar" />
+            {% assign authors = post.author %}
+            {% for author in authors %}
+            <img src="{{author.image}}" alt="" class="latest-posts__meta-avatar" />
             <div class="latest-posts__meta-author">
-              {% if post.author.name %}
-                {% if post.lang == 'da_dk' %}Af{% else %}By{% endif %} {{ post.author.name }}
+              {% if author.name %}
+                {% if post.lang == 'da_dk' and forloop.first %}Af{% elsif forloop.first %}By{% elsif post.lang == 'da_dk' and forloop.last %}og{% elsif forloop.last %}and{% endif %} {{ author.name }}
               {% endif %}
-              {% if post.author.title %}
-                <i>{{ post.author.title }}</i>
+              {% if author.title %}
+                <i>{{ author.title }}</i>
               {% endif %}
-              {% if post.at %}
+              {% if post.at and forloop.first %}
                 <span class="latest-posts__meta-date">
                   Published {{ post.at }}
                 </span>
               {% endif %}
             </div>
+            {% endfor %}
           </div>
           <div class="latest-posts__tags">
             <div class="latest-posts__tag">
