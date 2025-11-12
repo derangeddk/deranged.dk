@@ -18,6 +18,28 @@
 		{% if page.meta_image %}
 			<meta property="og:image" content="{{ site.url }}{{ page.meta_image }}" />
 		{% endif %}
+        <script type="application/ld+json">
+            {
+            "@context": "https://schema.org",
+            "@type": "Organization",
+            "name": "deranged ApS",
+            "url": "https://deranged.dk",
+            "logo": "https://deranged.dk/assets/logo.png",
+            "sameAs": [
+                "https://www.linkedin.com/company/derangeddk"
+            ],
+            "contactPoint": [
+                {
+                "@type": "ContactPoint",
+                "contactType": "Sales / Consulting",
+                "email": "get@deranged.dk",
+                "areaServed": "DK",
+                "availableLanguage": ["da","en"]
+                }
+            ],
+            "description": "{% if page.lang == 'da_dk' %}deranged ApS leverer rådgivning og løsninger inden for DevOps, RevOps og digital tilgængelighed, herunder WCAG, EN 301 549 og EAA.{% else %}deranged ApS provides consulting and solutions in DevOps, RevOps, and digital accessibility, including WCAG, EN 301 549 and EAA.{% endif %}"
+            }
+        </script>
 		<script>
 			var _paq = window._paq = window._paq || [];
 			/* tracker methods like "setCustomDimension" should be called before "trackPageView" */
