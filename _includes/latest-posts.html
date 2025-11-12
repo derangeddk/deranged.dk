@@ -237,13 +237,13 @@
             <p class="latest-posts__list-item-summary-text">
               {{ post.excerpt }}
             </p>
-            <span class="latest-posts__list-item-summary-readmore">➟ <u>Read&nbsp;more</u></span>
+            <span class="latest-posts__list-item-summary-readmore">➟ <u>{% if post.lang == 'da_dk' %}Læs&nbsp;mere{% else %}Read&nbsp;more{% endif %}</u></span>
           </div>
           <div class="latest-posts__meta">
             <img src="{{post.author.image}}" alt="" class="latest-posts__meta-avatar" />
             <div class="latest-posts__meta-author">
               {% if post.author.name %}
-                By {{ post.author.name }}
+                {% if post.lang == 'da_dk' %}Af{% else %}By{% endif %} {{ post.author.name }}
               {% endif %}
               {% if post.author.title %}
                 <i>{{ post.author.title }}</i>
