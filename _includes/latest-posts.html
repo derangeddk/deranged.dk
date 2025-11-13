@@ -181,6 +181,12 @@
   }
 }
 
+.latest-posts__meta-authors-wrapper {
+  display: flex;
+  gap: 0.85rem;
+  flex-wrap: wrap;
+}
+
 .latest-posts__meta-author-wrapper {
   display: flex;
   gap: 0.85rem;
@@ -251,17 +257,19 @@
           </div>
           <div class="latest-posts__meta">
             <h4>{% if post.lang == 'da_dk' and post.author.size == 1 %}Forfatter{% elsif post.author.size == 1 %}Author{% elsif post.lang == 'da_dk' and post.author.size > 1 %}Forfattere{% elsif post.author.size > 1 %}Authors{% endif %}</h4>
-            <div class="latest-posts__meta-author-wrapper">
+            <div class="latest-posts__meta-authors-wrapper">
               {% assign authors = post.author %}
               {% for author in authors %}
-              <img src="{{author.image}}" alt="" class="latest-posts__meta-avatar" />
-              <div class="latest-posts__meta-author">
-                {% if author.name %}
-                  {{ author.name }}
-                {% endif %}
-                {% if author.title %}
-                  <i>{{ author.title }}</i>
-                {% endif %}
+              <div class="latest-posts__meta-author-wrapper">
+                <img src="{{author.image}}" alt="" class="latest-posts__meta-avatar" />
+                <div class="latest-posts__meta-author">
+                  {% if author.name %}
+                    {{ author.name }}
+                  {% endif %}
+                  {% if author.title %}
+                    <i>{{ author.title }}</i>
+                  {% endif %}
+                </div>
               </div>
               {% endfor %}
             </div>
