@@ -4,6 +4,7 @@ layout: default
 
 {% include overlay_nav.html %}
 
+<link href="/css/homestyle.css" rel="stylesheet" type="text/css" />
 
 <style type="text/css" scoped>
   #main-nav-toggle .icon-bar {
@@ -338,6 +339,14 @@ layout: default
       flex-wrap: wrap;
     }
   }
+
+  .main-content .latest-posts {
+    width: 100%;
+    
+    .latest-posts__list-item {
+      color: #2c3e50;
+    }
+  }
 </style>
 
 <main class="main-content">
@@ -366,7 +375,7 @@ layout: default
 {% if page.custom-form == nil %}
   {% include trusted.html %}
 
-  {% include latest-posts.html limit=2 %}
+  {% include latest-posts.html limit=2 wrapper='true' %}
 
   {% include get_a_quote.html subject=page.title %}
 {% endif %}
