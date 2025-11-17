@@ -173,18 +173,33 @@
 
 .latest-posts__meta {
   display: flex;
+  flex-direction: column;
+}
+
+.latest-posts__meta-header {
+    font-size: 0.9em;
+    margin-top: 0;
+}
+
+.latest-posts__authors {
+  display: flex;
+  gap: 0.85rem;
+  flex-wrap: wrap;
+}
+
+.latest-posts__author {
+  display: flex;
   gap: 0.85rem;
 }
 
-.latest-posts__meta-author {
-  margin-top: auto;
+.latest-posts__author-text {
   display: flex;
   flex-direction: column;
   font-size: 0.8em;
   text-align: left;
 }
 
-.latest-posts__meta-avatar {
+.latest-posts__author-avatar {
   border-radius: 50%;
   height: 55px;
   aspect-ratio: 1/1;
@@ -194,8 +209,9 @@
   padding: 3px;
 }
 
-.latest-posts__meta-date {
-  margin-top: 5px;
+.latest-posts__publish-date {
+  margin-top: 8px;
+  font-size: 0.8em;
 }
 
 .button {
@@ -240,20 +256,26 @@
             <span class="latest-posts__list-item-summary-readmore">➟ <u>{% if post.lang == 'da_dk' %}Læs&nbsp;mere{% else %}Read&nbsp;more{% endif %}</u></span>
           </div>
           <div class="latest-posts__meta">
-            <img src="{{post.author.image}}" alt="" class="latest-posts__meta-avatar" />
-            <div class="latest-posts__meta-author">
-              {% if post.author.name %}
-                {% if post.lang == 'da_dk' %}Af{% else %}By{% endif %} {{ post.author.name }}
-              {% endif %}
-              {% if post.author.title %}
-                <i>{{ post.author.title }}</i>
-              {% endif %}
-              {% if post.at %}
-                <span class="latest-posts__meta-date">
-                  Published {{ post.at }}
-                </span>
-              {% endif %}
+            <h4 class="latest-posts__meta-header">{% if post.lang == 'da_dk' and post.author.size == 1 %}Forfatter{% elsif post.author.size == 1 %}Author{% elsif post.lang == 'da_dk' and post.author.size > 1 %}Forfattere{% elsif post.author.size > 1 %}Authors{% endif %}</h4>
+            <div class="latest-posts__authors">
+              {% assign authors = post.author %}
+              {% for author in authors %}
+              <div class="latest-posts__author">
+                <img src="{{author.image}}" alt="" class="latest-posts__author-avatar" />
+                <div class="latest-posts__author-text">
+                  {% if author.name %}
+                    {{ author.name }}
+                  {% endif %}
+                  {% if author.title %}
+                    <i>{{ author.title }}</i>
+                  {% endif %}
+                </div>
+              </div>
+              {% endfor %}
             </div>
+            <span class="latest-posts__publish-date">
+              {% if post.lang == 'da_dk' %}Offentliggjort{% else %}Published{% endif %} {{ post.at }}
+            </span>
           </div>
           <div class="latest-posts__tags">
             <div class="latest-posts__tag">
