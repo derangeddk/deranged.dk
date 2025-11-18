@@ -38,6 +38,63 @@ questions:
 <link href="/css/homestyle.css" rel="stylesheet" type="text/css" />
 <link href="/css/revops.css" rel="stylesheet" type="text/css" />
 
+<style type="text/css" scoped>
+
+  .request-contact {
+    display: grid;
+    column-gap: 2.5rem;
+    grid-template-columns: 1fr;
+    align-items: start;
+
+    @media(min-width: 1200px) {
+      row-gap: 1rem;
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+
+  .contact-form {
+    max-width: 600px;
+  }
+
+  .contact-form label {
+    max-width: 208px;
+
+    @media(max-width: 600px) {
+      max-width: none;
+    }
+  }
+
+  .contact-form-row {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    column-gap: 10px;
+
+    @media(max-width: 600px) {
+      row-gap: 1rem;
+      flex-direction: column;
+    }
+  }
+
+  .contact-form button {
+    margin-top: 10px;
+  }
+
+  footer {
+    @media screen and (min-width: 1200px) {
+      .footer-icon {
+        font-size: 18em;
+      }
+    }
+  }
+
+  .content--blue:last-of-type {
+    background: #2c3e50;
+    background-image: linear-gradient(145deg, #2c3e50 30%, #1b2b3a 90%);
+  }
+
+</style>
+
 <section class="hero" role="banner">
     <div class="hero__content">
       <div class="hero__breadcrumbs deranged-logo">
@@ -200,4 +257,167 @@ questions:
   </section>
 </main>
 
-{% include get_a_quote.html subject='Accessibility' lang='en' %}
+<section class="content content--blue">
+  <div class="content__container content__container--wide">
+    <div class="request-contact" id="contact">
+      <div>
+        <h2 class="section__heading">
+          Get in touch
+        </h2>
+        <div class="section__text">
+          <p>
+            Submit your phone number or email address and we will get back to you
+          </p>
+        </div>
+      </div>
+      <div class="contact-form">
+        <form id="contactRequest" action="https://contact-form.deranged.k8s.deranged.dk/" method="post">
+          <label for="mail" class="honeypot">
+            <span>Repeat mail</span>
+            <input type="text" name="UZYvvqxJKVgFLbvYcWxs" placeholder="mary.jane@broadwaytheater.com">
+            <!-- This is a honeypot, it is invisible to users, but not to bots. If it has value, it means it is a bot -->
+          </label>
+          <div class="contact-form-row">
+            <label for="phone">
+              <span>Tel</span>
+              <input type="text" name="phone" placeholder="39602504">
+            </label>
+            <label for="email">
+              <span>Email</span>
+              <input type="text" name="email" placeholder="peter.parker@dailyplanet.com">
+            </label>
+            <button class="button" type="submit" disabled id="submitButton">
+              Submit
+            </button>
+          </div>
+        </form>
+        <div class="contact-form-overlay contact-form-overlay-clickthrough">
+          Submitting...
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+  (function() {
+    var form = document.getElementById("contactRequest");
+    var honeypot = form.UZYvvqxJKVgFLbvYcWxs;
+    var emailField = form.email;
+    var phoneField = form.phone;
+    var contactFormOverlay = document.querySelector(".contact-form-overlay");
+
+    form.addEventListener("input", () => {
+      if (emailField.value.length >  0 || phoneField.value.length > 0) {
+        document.getElementById("submitButton").disabled = false;
+      } else {
+        document.getElementById("submitButton").disabled = true;
+      }
+    });
+    
+    form.addEventListener("submit", function(e) {
+      e.preventDefault();
+      var honeypotValue = honeypot.value;
+      if(honeypotValue !== "") {
+        document.body.append("honeypot: '" + honeypotValue + "' (" + typeof honeypotValue + ")");
+        return;
+      }
+
+      showOverlay();
+
+      var email = emailField.value;
+      var phone = phoneField.value;
+
+      sendRequest({
+        from: (email ? `<${email}>` : "") + ((email && phone) ? " " : "") + phone,
+        subject: "[deranged.dk/accessibility contact request]",
+        content: "Contact request from " + email + ((email && phone) ? " " : "") + phone
+      }, {
+        success: showSuccess,
+        failure: showFailure
+      });
+
+      return false;
+    });
+
+    function showOverlay() {
+      contactFormOverlay.innerText = "Getting in touch...";
+      contactFormOverlay.classList.remove("contact-form-overlay-clickthrough");
+      requestAnimationFrame(function() {
+          contactFormOverlay.classList.add("contact-form-overlay-visible");
+      });
+    }
+
+    function sendRequest(data, callbacks) {
+      var req = new XMLHttpRequest();
+      req.open("POST", form.action, true);
+      req.setRequestHeader("Content-Type", "application/json");
+
+      console.log(JSON.stringify(data));
+      return;
+      req.onreadystatechange = function() {
+        if(req.readyState != 4) {
+          return;
+        }
+        if(req.status == 200) {
+          return callbacks.success();
+        }
+        console.error("Response from server on request", {
+          status: req.statusText,
+          responseType: req.responseType,
+          response: req.response
+        });
+        callbacks.failure();
+      };
+      req.send(JSON.stringify(data));
+    }
+
+    function showSuccess() {
+      contactFormOverlay.classList.remove("contact-form-overlay-visible");
+
+      setTimeout(function() {
+        contactFormOverlay.innerText = "Got in touch!";
+        contactFormOverlay.classList.add("contact-form-overlay-visible");
+
+        setTimeout(function() {
+          contactFormOverlay.classList.remove("contact-form-overlay-visible");
+
+          setTimeout(function() {
+            contactFormOverlay.classList.add("contact-form-overlay-clickthrough");
+          }, 500);
+        }, 1500);
+      }, 200);
+
+      deleteTextInField(emailField);
+      deleteTextInField(phoneField)
+    }
+
+    function showFailure() {
+      contactFormOverlay.classList.remove("contact-form-overlay-visible");
+
+      setTimeout(function() {
+        contactFormOverlay.innerText = "Something went wrong - try again!";
+        contactFormOverlay.classList.add("contact-form-overlay-visible");
+
+        setTimeout(function() {
+          contactFormOverlay.classList.remove("contact-form-overlay-visible");
+
+          setTimeout(function() {
+            contactFormOverlay.classList.add("contact-form-overlay-clickthrough");
+          }, 500);
+        }, 2000);
+      }, 200);
+    }
+
+    function deleteTextInField(field, callback) {
+      if(field.value.length == 0) {
+        if(callback) {
+          return callback();
+        }
+        return;
+      }
+      field.value = field.value.substring(0, field.value.length - 1);
+      setTimeout(deleteTextInField, 33, field, callback);
+    }
+  })();
+</script>
