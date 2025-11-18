@@ -789,79 +789,47 @@ permalink: /css/homestyle.css
   transform: scaleY(-1) rotate(-40deg);
 }
 
-.other-pages-section {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-}
-
-.smv-digital-section, .ski-provider-section, .dosl-provider-section {
-  grid-row: 1 / 2;
-  padding: 50px 50px 50px 100px;
+.certification-section {
+  padding: 5rem;
   text-align: left;
-  background: #2c3e50;
-  color: #eaf1f7;
-  p {
+
+  @media(max-width: 768px) {
+    padding: 2rem;
+  }
+}
+
+.certification-section__content {
+  margin: auto;
+  max-width: 1600px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  gap: 3rem;
+
+  div {
     max-width: 500px;
-    line-height: 1.5;
   }
-  @media screen and (max-width: 539px) {
-    padding: 50px 30px;
-  }
-  @media screen and (max-width: 400px) {
-    padding: 50px 10px;
+
+  @media(max-width: 768px) {
+    row-gap: 1rem;
+    grid-template-columns: 1fr;
   }
 }
 
-.ski-provider-section {
-  background: #ecf0f1;
-  color: #2c3e50;
-}
-
-.dosl-provider-section {
-  padding: 50px;
-
-  @media screen and (max-width:1199px) {
-    padding-left: 100px;
-  }
-  @media screen and (max-width: 539px) {
-    padding: 50px 30px;
-  }
-  @media screen and (max-width: 400px) {
-    padding: 50px 10px;
-  }
-}
-
-.ski-provider-section img, .dosl-provider-section img {
-  max-height: 65px;
-  margin-bottom: 8px;
+.certification-section__content-logo {
+  max-height: 56px;
   max-width: 100%;
 }
 
-.smv-digital-section__title, .ski-provider-section__title, .dosl-provider-section__title {
+.certification-section__content-title {
   font-size: 1.8em;
   font-weight: 200;
-  margin: 0;
+  margin-top: 0;
 }
 
 .who-we-are-section__title {
   font-size: 1.8em;
   font-weight: 200;
   margin: 0;
-}
-
-.smv-digital-section .read-more {
-  background: #2c3e50;
-  border: 1px solid white;
-  color: #eaf1f7;
-  text-decoration: inherit;
-  padding: 19px 24px;
-  margin: 20px 0;
-  cursor: pointer;
-  transition: background-color 0.3s, transform 0.3s;
-  display: inline-block;
-  &:hover {
-    transform: scale(1.1);
-  }
 }
 
 .who-we-are-section {
@@ -930,19 +898,6 @@ permalink: /css/homestyle.css
       background: #375068;
       transform: scale(1.1);
     }
-  }
-}
-
-@media screen and (max-width:1199px) {
-  .other-pages-section {
-    grid-template-columns: 1fr;
-  }
-  .smv-digital-section, .ski-provider-section, .dosl-provider-section {
-    grid-row: auto;
-  }
-  .who-we-are-section {
-    grid-row: auto;
-    grid-column: auto;
   }
 }
 
