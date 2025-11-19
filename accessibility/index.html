@@ -274,17 +274,17 @@ questions:
         <form id="contactRequest" action="https://contact-form.deranged.k8s.deranged.dk/" method="post">
           <label for="mail" class="honeypot">
             <span>Repeat mail</span>
-            <input type="text" name="UZYvvqxJKVgFLbvYcWxs" placeholder="mary.jane@broadwaytheater.com">
+            <input type="email" name="UZYvvqxJKVgFLbvYcWxs" placeholder="mary.jane@broadwaytheater.com">
             <!-- This is a honeypot, it is invisible to users, but not to bots. If it has value, it means it is a bot -->
           </label>
           <div class="contact-form-row">
             <label for="phone">
               <span>Tel</span>
-              <input type="text" name="phone" placeholder="39602504">
+              <input type="tel" name="phone" placeholder="39602504" pattern="(?=(?:.*\d){8})(?=.{1,15}$)\+?[\d\s\(\)\-]+">
             </label>
             <label for="email">
               <span>Email</span>
-              <input type="text" name="email" placeholder="peter.parker@dailyplanet.com">
+              <input type="email" name="email" placeholder="peter.parker@dailyplanet.com">
             </label>
             <button class="button" type="submit" disabled id="submitButton">
               Submit
