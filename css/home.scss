@@ -846,6 +846,7 @@ permalink: /css/homestyle.css
       object-fit: cover;
       height: 100%;
       width: 100%;
+      box-shadow: 0 6px 5px rgba(0,0,0,0.2), 0 4px 3px rgba(0,0,0,0.05);
     }
 
     div:nth-of-type(1) img {
@@ -887,6 +888,7 @@ permalink: /css/homestyle.css
       margin-left: 0;
       div:nth-of-type(1n) img {
         transform: none;
+        box-shadow: none;
       }
     }
   }
