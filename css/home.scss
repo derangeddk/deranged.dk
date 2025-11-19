@@ -891,20 +891,6 @@ permalink: /css/homestyle.css
     max-width: 500px;
     line-height: 1.5;
   }
-  .read-more {
-    background: #2c3e50;
-    color: #eaf1f7;
-    text-decoration: inherit;
-    padding: 20px 25px;
-    margin: 20px 0;
-    cursor: pointer;
-    transition: background-color 0.3s, transform 0.3s;
-    display: inline-block;
-    &:hover {
-      background: #375068;
-      transform: scale(1.1);
-    }
-  }
 }
 
 // Styling for Accessible Content Sections
