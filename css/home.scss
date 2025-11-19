@@ -848,11 +848,13 @@ permalink: /css/homestyle.css
     grid-auto-rows: 1fr;
     div {
       min-height: 120px;
+      background-color: var(--deranged-light-blue);
     }
     img {
       object-fit: cover;
       height: 100%;
       width: 100%;
+      filter: grayscale(0.5) brightness(1.5) opacity(0.5);
     }
   }
   @media screen and (max-width: 1200px) {
