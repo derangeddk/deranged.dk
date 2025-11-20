@@ -222,6 +222,10 @@ code {
     }
 }
 
+.customer-quote-section.before-certification {
+    margin-bottom: 3rem;
+}
+
 @for $i from 1 through 10 {
     .my-#{$i} {
         margin-top: #{$i}rem;

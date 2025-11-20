@@ -790,11 +790,12 @@ permalink: /css/homestyle.css
 }
 
 .certification-section {
-  padding: 6rem;
-  padding-bottom: 9rem;
+  transform: skewY(4deg);
+  padding: 12rem 6rem;
   text-align: left;
 
   @media(max-width: 1200px) {
+    padding-top: 6rem;
     padding-bottom: 6rem;
   }
   
@@ -812,6 +813,7 @@ permalink: /css/homestyle.css
 
   div {
     max-width: 500px;
+    transform: skewY(-4deg);
   }
 
   @media(max-width: 539px) {
@@ -821,8 +823,8 @@ permalink: /css/homestyle.css
 }
 
 .certification-section__content-logo {
-  max-height: 56px;
-  max-width: 100%;
+  max-height: 80px;
+  max-width: min(300px, 100%);
   margin-bottom: 1rem;
 }
 
