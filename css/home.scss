@@ -790,10 +790,15 @@ permalink: /css/homestyle.css
 }
 
 .certification-section {
-  padding: 5rem;
+  padding: 6rem;
+  padding-bottom: 9rem;
   text-align: left;
 
-  @media(max-width: 768px) {
+  @media(max-width: 1200px) {
+    padding-bottom: 6rem;
+  }
+  
+  @media(max-width: 539px) {
     padding: 2rem;
   }
 }
@@ -809,7 +814,7 @@ permalink: /css/homestyle.css
     max-width: 500px;
   }
 
-  @media(max-width: 768px) {
+  @media(max-width: 539px) {
     row-gap: 1rem;
     grid-template-columns: 1fr;
   }
@@ -828,7 +833,7 @@ permalink: /css/homestyle.css
 }
 
 .who-we-are-section {
-  padding: 0 5rem;
+  padding: 0 6rem;
   margin-left: auto;
   margin-right: auto;
   max-width: 1380px;
@@ -877,7 +882,7 @@ permalink: /css/homestyle.css
     padding: 0;
     display: block;
     .who-we-are-content {
-      padding: 5rem;
+      padding: 6rem;
       padding-bottom: 0;
       margin-bottom: 25px;
       max-width: none;
@@ -893,7 +898,7 @@ permalink: /css/homestyle.css
     }
   }
 
-  @media screen and (max-width: 768px) {
+  @media screen and (max-width: 539px) {
     .who-we-are-content {
       padding: 2rem;
       padding-bottom: 0;
@@ -909,8 +914,8 @@ permalink: /css/homestyle.css
 
 .who-we-are-content {
   text-align: left;
-  padding-top: 5rem;
-  padding-bottom: 5rem;
+  padding-top: 6rem;
+  padding-bottom: 6rem;
   max-width: 500px;
   p {
     max-width: 500px;
@@ -982,5 +987,3 @@ permalink: /css/homestyle.css
 .content__container--wide {
   max-width: 1200px;
 }
-
-
