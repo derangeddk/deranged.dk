@@ -837,6 +837,8 @@ permalink: /css/homestyle.css
 
   @media(max-width: 539px) {
     max-height: 80px;
+    transform: scale(0.8);
+    transform-origin: left;
   }
 }
 
