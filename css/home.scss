@@ -800,7 +800,7 @@ permalink: /css/homestyle.css
   }
   
   @media(max-width: 539px) {
-    padding: 2rem;
+    padding: 4rem 2rem 2rem;
   }
 }
 
@@ -834,6 +834,10 @@ permalink: /css/homestyle.css
   max-height: 120px;
   max-width: min(340px, 100%);
   margin-bottom: 0.5rem;
+
+  @media(max-width: 539px) {
+    max-height: 80px;
+  }
 }
 
 .who-we-are-section__title {
