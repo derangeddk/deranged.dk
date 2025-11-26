@@ -869,30 +869,7 @@ permalink: /css/homestyle.css
       height: 100%;
       width: 100%;
       box-shadow: 0 6px 5px rgba(0,0,0,0.2), 0 4px 3px rgba(0,0,0,0.05);
-    }
-
-    div:nth-of-type(1) img {
-      transform: translate(-20%, -15%) scale(1.15);
-    }
-
-    div:nth-of-type(2) img {
-      transform: translate(-30%, 10%) scale(1.1);
-    }
-
-    div:nth-of-type(3) img {
-      transform: translate(25%, -20%) scale(1.3);
-    }
-
-    div:nth-of-type(4) img {
-      transform: translate(5%, 25%) scale(1.1);
-    }
-
-    div:nth-of-type(5) img {
-      transform: translate(35%, 0) scale(1.2);
-    }
-
-    div:nth-of-type(6) img {
-      transform: translate(70%, -25%) scale(1.25);
+      transition: all 1s ease;
     }
   }
   @media screen and (max-width: 1200px) {
@@ -908,8 +885,8 @@ permalink: /css/homestyle.css
       grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
       grid-auto-rows: 1fr 1fr;
       margin-left: 0;
-      div:nth-of-type(1n) img {
-        transform: none;
+      
+      img {
         box-shadow: none;
       }
     }

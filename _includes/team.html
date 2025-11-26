@@ -21,11 +21,72 @@
         <a href="/the-team/" class="button">Check out the team</a>
     </div>
     <div class="team-photos">
-        <div><img src="/img/people/asbjoern-thegler.jpg" alt="" loading="lazy" /></div>
-        <div><img src="/img/people/simon-spinola.jpg" alt="" loading="lazy" /></div>
-        <div><img src="/img/people/haidar.jpg" alt="" loading="lazy" /></div>
-        <div><img src="/img/people/philip-dein.jpg" alt="" loading="lazy" /></div>
-        <div><img src="/img/people/anders.jpg" alt="" loading="lazy" /></div>
-        <div><img src="/img/people/niels-abildgaard.jpg" alt="" loading="lazy" /></div>
+        <div><img src="/img/people/asbjoern-thegler.jpg" alt="" loading="lazy" class="team_member"/></div>
+        <div><img src="/img/people/simon-spinola.jpg" alt="" loading="lazy" class="team_member"/></div>
+        <div><img src="/img/people/haidar.jpg" alt="" loading="lazy" class="team_member"/></div>
+        <div><img src="/img/people/philip-dein.jpg" alt="" loading="lazy" class="team_member"/></div>
+        <div><img src="/img/people/anders.jpg" alt="" loading="lazy" class="team_member"/></div>
+        <div><img src="/img/people/niels-abildgaard.jpg" alt="" loading="lazy" class="team_member"/></div>
     </div>
 </section>
+
+<script>
+    let options = {
+        root: null,
+        rootMargin: '0px',
+        threshold: 0.5
+    };
+
+    let teamImages = document.getElementsByClassName("team_member");
+
+    let transforms = [
+        {
+            target: "translate(-20%, -15%) scale(1.15)",
+            initial: "translate(-2%, -1.5%) scale(1)"
+        },
+        {
+            target: "translate(-30%, 10%) scale(1.1)",
+            initial: "translate(-3%, 1%) scale(1)"
+        },
+        {
+            target: "translate(25%, -20%) scale(1.3)",
+            initial: "translate(2.5%, -2%) scale(1)"
+        },
+        {
+            target: "translate(5%, 25%) scale(1.1)",
+            initial: "translate(0.5%, 2.5%) scale(1)"
+        },
+        {
+            target: "translate(35%, 0) scale(1.2)",
+            initial: "translate(3.5%, 0) scale(1)"
+        },
+        {
+            target: "translate(70%, -25%) scale(1.25)",
+            initial: "translate(7%, -2.5%) scale(1)"
+        }
+    ];
+
+    const isLargeScreen = window.matchMedia("(min-width: 1200px)").matches;
+
+    function callbackFunc(entries, observer) {
+        entries.forEach((entry) => {
+            let index = Array.from(teamImages).indexOf(entry.target);
+
+            if (isLargeScreen) {
+                if (entry.isIntersecting) {
+                    entry.target.style.transform = transforms[index].target
+                } else {
+                    entry.target.style.transform = transforms[index].initial
+                }
+            } else {
+                entry.target.style.transform = "translate(0) scale(1)";
+            }
+        });
+    }
+
+    let observer = new IntersectionObserver(callbackFunc, options);
+
+    Array.from(teamImages).forEach((teamImage) => {
+        observer.observe(teamImage);
+    });
+</script>
