@@ -93,7 +93,7 @@
 
       sendRequest({
         from: (email ? `<${email}>` : "") + ((email && phone) ? " " : "") + phone,
-        subject: "[deranged.dk/accessibility contact request]",
+        subject: `[${window.location.href}] contact request]`,
         content: "Contact request from " + email + ((email && phone) ? " " : "") + phone
       }, {
         success: showSuccess,
