@@ -92,7 +92,7 @@
       var phone = phoneField.value;
 
       sendRequest({
-        from: (email ? `<${email}>` : "") + ((email && phone) ? " " : "") + phone,
+        from: email ? `<${email}>` : "<get@deranged.dk>",
         subject: `[${window.location.href}] contact request]`,
         content: "Contact request from " + email + ((email && phone) ? " " : "") + phone
       }, {
@@ -116,8 +116,6 @@
       req.open("POST", form.action, true);
       req.setRequestHeader("Content-Type", "application/json");
 
-      console.log(JSON.stringify(data));
-      return;
       req.onreadystatechange = function() {
         if(req.readyState != 4) {
           return;
