@@ -21,13 +21,16 @@
 
     @media(max-width: 600px) {
         grid-template-columns: auto;
-        justify-items: center;
     }
 }
 
 .contact-form--small button {
     padding: 9px 13px;
     margin-top: 10px;
+
+    @media(max-width: 600px) {
+        justify-self: end;
+    }
 }
 
 .content--blue:has(.request-contact) {
