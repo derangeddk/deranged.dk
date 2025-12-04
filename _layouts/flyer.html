@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>{% if page.title %}{{ page.title }} | {% endif %}Flyer | deranged</title>
+        <link href='https://fonts.googleapis.com/css?family=Libre+Baskerville:400,400italic|Source+Code+Pro|Source+Sans+Pro:200,400,900|Source+Serif+Pro:400,600' rel='stylesheet' type='text/css'>
+        <style type="text/css">
+            p {
+                margin-top: 0;
+                margin-bottom: 1.6rem;
+            }
+            p:last-child {
+                margin-bottom: 0;
+            }
+            h1, h2, h3, h4, h5, h6 {
+                margin: 0;
+            }
+
+            h1 {
+                font-size: 2.5rem;
+            }
+            h2 {
+                font-size: 1.6rem;
+            }
+            a {
+                color: inherit;
+            }
+
+            body {
+                font-size: 1.15rem;
+                background-color: #e0e3e4;
+                color: #2c3e50;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                padding-top: 5rem;
+                font-family: 'Source Sans Pro', Calibri, Candara, Segoe, "Segoe UI", Optima, Arial, sans-serif;
+            }
+            header {
+                background-color: #2c3e50;
+                position: absolute;
+                left: 0;
+                right: 0;
+                top: 0;
+                color: #ecf0f1;
+            }
+            header nav {
+                display: flex;
+                flex-direction: row;
+            }
+            header a {
+                color: inherit;
+                text-decoration: none;
+                padding: 1rem;
+            }
+            .spacer {
+                flex-grow: 1;
+            }
+            .page {
+                background-color: #ecf0f1;
+                box-shadow: 0 2px 3px rgba(0,0,0,0.1), 0 9px 11px rgba(0,0,0,0.2);
+                width: 210mm;
+                height: 297mm;
+                margin: 2rem;
+                position: relative;
+                overflow: hidden;
+            }
+            @media print {
+                body {
+                    margin: 0;
+                    padding: 0;
+                }
+                header {
+                    display: none;
+                }
+                .page {
+                    box-shadow: none;
+                    margin: 0;
+                }
+            }
+
+            .page__container {
+                margin: 0 50px;
+            }
+            .page > .page__container:first-child {
+                margin-top: 40px;
+            }
+            .page > .page__container:last-child {
+                margin-bottom: 40px;
+            }
+
+            .page__footer {
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                right: 0;
+            }
+            .page__footer-links {
+                display: flex;
+                flex-direction: column;
+            }
+            .page__footer-links--small {
+                flex-direction: row;
+                font-size: 0.9rem;
+            }
+            .page__footer-links a {
+                color: inherit;
+            }
+
+            .link--codey {
+                font-family: 'Source Code Pro', Consolas, monospace;
+                text-decoration: inherit;
+                font-size: 0.9em;
+            }
+
+            .section--dark {
+                background-color: #2c3e50;
+                color: #eaf1f7;
+            }
+
+            .section--darker {
+                background-color: #1b2b3a;
+                color: #eaf1f7;
+            }
+            .section--darker-gradient {
+                background-image: linear-gradient(145deg, #2c3e50 30%, #1b2b3a 90%);
+            }
+
+            .hero {
+                position: relative;
+            }
+
+            .hero--dark {
+                background-image: linear-gradient(-35deg, #2c3e50 30%, #375068 90%);
+            }
+
+            .hero__logo {
+                padding: 30px 50px;
+                font-size: 1.25rem;
+                font-weight: 200;
+            }
+            .hero__logo a {
+                text-decoration: inherit;
+                color: inherit;
+            }
+
+            .hero__intro {
+                padding: 0px 50px 5rem;
+                display: flex;
+                align-items: start;
+                flex-direction: column;
+                text-align: left;
+            }
+            .hero__intro > * {
+                z-index: 3;
+            }
+            .hero__intro-image-wrap {
+                position: absolute;
+                z-index: 2;    
+                right: 0;
+                left: 0;
+                bottom: 0;
+                height: 100%;
+                width: auto;
+                display: flex;
+                justify-content: end;
+            }
+            .hero__intro-image-wrap::after {
+                content: ' ';
+                background-image: linear-gradient(-35deg, transparent 40%, #375068 70%);
+                position: absolute;
+                right: 0;
+                top: 0;
+                left: 0;
+                bottom: 0;
+                z-index: 1;
+            }
+            .hero__intro-image {
+                width: auto;
+                height: 100%;
+                object-position: top right;
+                opacity: 0.4;
+            }
+            .hero__intro-heading {
+                margin-top: 3rem;
+                margin-bottom: 2rem;
+                font-weight: 200;
+            }
+            .hero__intro-subtitle {
+                max-width: 1125px;
+                position: relative;
+            }
+
+            .hero + .page__container {
+                margin-top: -50px;
+                position: relative;
+                z-index: 5;
+            }
+            .card + .card {
+                margin-top: 1.375rem;
+            }
+
+            .card {
+                margin: 0 -20px;
+                background-color: #ecf0f1;
+                box-shadow: 0 2px 3px rgba(0,0,0,0.2);
+            }
+            .card__content {
+                padding: 15px 20px;
+            }
+            .card--light {
+                background-color: white;
+            }
+
+            .card__highlights {
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                padding: 0;
+                margin: 0;
+                background-color: #ecf0f1;
+                border-top: 1px solid #ecf0f1;
+                border-bottom: 1px solid #ecf0f1;
+                gap: 1px;
+            }
+            .card__highlights:last-child {
+                border-bottom: none;
+            }
+            .card__highlights li {
+                padding: 15px 20px;
+                margin: 0;
+                list-style: none;
+                background-color: white;
+            }
+
+            .key-player {
+                display: grid;
+                grid-template: "content image" auto / 1fr 200px;
+                gap: 2rem;
+            }
+            .key-player__image {
+                grid-area: image;
+                height: 42px;
+                width: 40px;
+                align-self: end;
+                transform: translateY(3px) scale(5);
+                transform-origin: bottom left;
+                object-fit: cover;
+            }
+            .key-player__content {
+                grid-area: content;
+            }
+
+            .faq {
+                display: grid;
+                font-size: 1rem;
+                grid-template: "question answers" auto / 1fr 1fr;
+                padding-top: 1.5rem;
+                padding-bottom: 0.5rem;
+            }
+            .faq + .faq {
+                padding-top: 0.75rem;
+            }
+            .faq__question {
+                grid-area: question;
+                display: flex;
+                flex-direction: row;
+                gap: 1rem;
+            }
+            .faq__question::before {
+                content: '?';
+                display: flex;
+                flex-shrink: 0;
+                justify-content: center;
+                align-items: center;
+                float: left;
+                border: 1.25px solid black;
+                border-radius: 100%;
+                font-size: 1.25rem;
+                width: 1.5rem;
+                height: 1.5rem;
+                transform: translateY(-0.1rem) rotate(-4deg);
+                font-weight: bold;
+            }
+            .faq__answers {
+                grid-area: answers;
+                display: flex;
+                flex-direction: column;
+                margin: 0;
+                gap: 0.75rem;
+            }
+            .faq__answers li {
+                margin: 0;
+                padding: 0;
+                list-style: none;
+                display: flex;
+                flex-direction: row;
+            }
+            .faq__answers li:before {
+                content: '⍚';
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                float: left;
+                flex-shrink: 0;
+                margin-right: 0.5rem;
+                font-size: 0.85rem;
+                width: 1rem;
+                height: 1rem;
+                transform: translateY(0.1rem) rotate(-4deg);
+                font-weight: bold;
+            }
+        </style>
+    </head>
+    <body>
+        <header>
+            <nav>
+                <a href="/flyers">Tilbage til flyers</a>
+                <a href="#content">Spring til indhold</a>
+                <div class="spacer"></div>
+                <a href="javascript:window.print()">Print</a>
+            </nav>
+        </header>
+        {{ content }}
+    </body>
+</html>
