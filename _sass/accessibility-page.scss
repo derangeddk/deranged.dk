@@ -85,6 +85,48 @@ figcaption {
     }
 }
 
+.section__two-col {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.team-photos {
+    align-content: center;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+
+    img {
+        object-fit: cover;
+        height: 300px;
+        width: 100%;
+        box-shadow: 0 6px 5px rgba(0,0,0,0.2), 0 4px 3px rgba(0,0,0,0.05);
+    }
+
+    div:nth-of-type(1) img {
+      transform: translate(-10%, -15%) scale(0.8);
+    }
+
+    div:nth-of-type(2) img {
+      transform: translate(-15%, 10%) scale(1.1);
+    }
+
+    div:nth-of-type(3) img {
+      transform: translate(-12%, -20%) scale(0.9);
+    }
+
+    div:nth-of-type(4) img {
+      transform: translate(5%, -5%) scale(0.85);
+    }
+
+    div:nth-of-type(5) img {
+      transform: translate(-3%, 3%) scale(0.8);
+    }
+
+    div:nth-of-type(6) img {
+      transform: translate(-5%, -15%) scale(0.9);
+    }
+}
+
 .section__cta {
     display: flex;
     gap: 2rem;
