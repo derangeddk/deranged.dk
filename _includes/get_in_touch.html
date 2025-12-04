@@ -12,9 +12,9 @@
         <div class="section__text">
           <p>
             {% if  include.lang == 'da_dk' %}
-              Indsend dit telefonnummer eller din e-mailadresse, så vender vi tilbage til dig
+              Indsend din e-mailadresse, så vender vi tilbage til dig
             {% else %}
-              Submit your phone number or email address and we will get back to you
+              Submit your email address and we will get back to you
             {% endif %}
           </p>
         </div>
@@ -27,21 +27,21 @@
             <!-- This is a honeypot, it is invisible to users, but not to bots. If it has value, it means it is a bot -->
           </label>
           <div class="contact-form__row">
+            <label for="email">
+              <span>Email</span>
+              <input type="email" name="email" required placeholder="peter.parker@dailyplanet.com">
+            </label>
             <label for="phone">
               <span>
                 {% if  include.lang == 'da_dk' %}
-                  Tlf
+                  Telefon (valgfri)
                 {% else %}
-                  Tel
+                  Phone number (optional)
                 {% endif %}
               </span>
               <input type="tel" name="phone" placeholder="39602504" pattern="(?=(?:.*\d){8})(?=.{1,15}$)\+?[\d\s\(\)\-]+">
             </label>
-            <label for="email">
-              <span>Email</span>
-              <input type="email" name="email" placeholder="peter.parker@dailyplanet.com">
-            </label>
-            <button class="button" type="submit" disabled id="submitButton">
+            <button class="button" type="submit" id="submitButton">
               {% if  include.lang == 'da_dk' %}
                 Indsende
               {% else %}
@@ -69,14 +69,6 @@
     var emailField = form.email;
     var phoneField = form.phone;
     var contactFormOverlay = document.querySelector(".contact-form-overlay");
-
-    form.addEventListener("input", () => {
-      if (emailField.value.length >  0 || phoneField.value.length > 0) {
-        document.getElementById("submitButton").disabled = false;
-      } else {
-        document.getElementById("submitButton").disabled = true;
-      }
-    });
     
     form.addEventListener("submit", function(e) {
       e.preventDefault();
@@ -92,9 +84,9 @@
       var phone = phoneField.value;
 
       sendRequest({
-        from: email ? `<${email}>` : "<get@deranged.dk>",
-        subject: `[${window.location.href}] contact request]`,
-        content: "Contact request from " + email + ((email && phone) ? " " : "") + phone
+        from: `<${email}>`,
+        subject: `[${window.location.href}] contact request`,
+        content: "Contact request from " + email + (phone ? ` ${phone}` : "")
       }, {
         success: showSuccess,
         failure: showFailure
