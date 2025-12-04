@@ -21,17 +21,17 @@
       </div>
       <div class="contact-form contact-form--small">
         <form id="contactRequest" action="https://contact-form.deranged.k8s.deranged.dk/" method="post">
-          <label for="mail" class="honeypot">
+          <label class="honeypot">
             <span>Repeat mail</span>
             <input type="email" name="UZYvvqxJKVgFLbvYcWxs" placeholder="mary.jane@broadwaytheater.com">
             <!-- This is a honeypot, it is invisible to users, but not to bots. If it has value, it means it is a bot -->
           </label>
           <div class="contact-form__row">
-            <label for="email">
+            <label>
               <span>Email</span>
               <input type="email" name="email" required placeholder="peter.parker@dailyplanet.com">
             </label>
-            <label for="phone">
+            <label>
               <span>
                 {% if  include.lang == 'da_dk' %}
                   Telefon (valgfri)
