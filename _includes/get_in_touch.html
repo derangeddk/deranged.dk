@@ -1,9 +1,11 @@
+{% if  include.standalone != 'true' %}
 <section class="content content--blue">
   <div class="content__container content__container--wide">
+{% endif %}
     <div class="request-contact" id="contact">
       <div>
         <h2 class="section__heading">
-          {% if  include.lang == 'da_dk' %}
+          {% if page.lang == 'da_dk' %}
             Kontakt os
           {% else %}
             Get in touch
@@ -11,7 +13,7 @@
         </h2>
         <div class="section__text">
           <p>
-            {% if  include.lang == 'da_dk' %}
+            {% if page.lang == 'da_dk' %}
               Indsend din e-mailadresse, så vender vi tilbage til dig
             {% else %}
               Submit your email address and we will get back to you
@@ -33,7 +35,7 @@
             </label>
             <label>
               <span>
-                {% if  include.lang == 'da_dk' %}
+                {% if page.lang == 'da_dk' %}
                   Telefon (valgfri)
                 {% else %}
                   Phone number (optional)
@@ -42,7 +44,7 @@
               <input type="tel" name="phone" placeholder="39602504" pattern="(?=(?:.*\d){8})(?=.{1,15}$)\+?[\d\s\(\)\-]+">
             </label>
             <button class="button" type="submit" id="submitButton">
-              {% if  include.lang == 'da_dk' %}
+              {% if page.lang == 'da_dk' %}
                 Indsende
               {% else %}
                 Submit
@@ -51,7 +53,7 @@
           </div>
         </form>
         <div class="contact-form-overlay contact-form-overlay-clickthrough">
-          {% if  include.lang == 'da_dk' %}
+          {% if page.lang == 'da_dk' %}
             Indsendelse...
           {% else %}
             Submitting...
@@ -59,8 +61,10 @@
         </div>
       </div>
     </div>
+{% if  include.standalone != 'true' %}
   </div>
 </section>
+{% endif %}
 
 <script>
   (function() {

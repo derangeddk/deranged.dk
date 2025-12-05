@@ -167,9 +167,7 @@ questions:
         {% endfor %}
       </div>
       <div class="section__cta section__cta--centered">
-        <a class="button button--with-border" href="#contact">
-            Tag en snak med os
-        </a>
+        {% include get_in_touch.html standalone='true' %}
       </div>
     </div>
   </section>
@@ -197,4 +195,4 @@ questions:
   </section>
 </main>
 
-{% include get_in_touch.html lang='da_dk' %}
+{% include get_in_touch.html %}

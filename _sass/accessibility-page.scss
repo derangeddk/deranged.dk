@@ -78,9 +78,9 @@ figcaption {
     gap: 2rem;
     flex-wrap: wrap;
     align-items: center;
-    margin-top: 3rem;
+    margin-top: 5rem;
 
-    .button {
+    .button:not(.request-contact .button) {
         margin: 0;
     }
 }
