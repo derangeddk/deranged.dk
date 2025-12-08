@@ -47,7 +47,7 @@
               </span>
               <input type="tel" name="phone" placeholder="39602504" pattern="(?=(?:.*\d){8})(?=.{1,15}$)\+?[\d\s\(\)\-]+">
             </label>
-            <button class="button" type="submit" id="submitButton">
+            <button class="button contact-form__submit" type="submit" id="submitButton">
               {% if page.lang == 'da_dk' %}
                 Indsende
               {% else %}
@@ -58,7 +58,7 @@
         </form>
         <div class="contact-form-overlay contact-form-overlay-clickthrough">
           {% if page.lang == 'da_dk' %}
-            Indsendelse...
+            Sender...
           {% else %}
             Submitting...
           {% endif %}
