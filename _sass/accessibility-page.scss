@@ -88,42 +88,51 @@ figcaption {
 .section__two-col {
     display: grid;
     grid-template-columns: 1fr 1fr;
+    column-gap: 1rem;
 }
 
 .team-photos {
     align-content: center;
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
 
     img {
         object-fit: cover;
-        height: 300px;
+        height: 260px;
         width: 100%;
         box-shadow: 0 6px 5px rgba(0,0,0,0.2), 0 4px 3px rgba(0,0,0,0.05);
     }
 
+    figure {
+        margin: 0;
+        grid-column: 1 / span 2;
+        grid-row: 1 / span 2;
+        transform: translate(0, 0) scale(0.9);
+        box-shadow: 0 6px 5px rgba(0,0,0,0.2), 0 4px 3px rgba(0,0,0,0.05);
+        img {
+            box-shadow: none;
+            height: 440px;
+        }
+        .photo-caption {
+            margin: 1rem 0.8rem;
+            transform: translate(0, 0) scale(1.2);
+        }
+    }
+
     div:nth-of-type(1) img {
-      transform: translate(-10%, -15%) scale(0.8);
+      transform: translate(-16%, 22%) scale(1);
     }
 
     div:nth-of-type(2) img {
-      transform: translate(-15%, 10%) scale(1.1);
+      transform: translate(-24%, 12%) scale(1);
     }
 
     div:nth-of-type(3) img {
-      transform: translate(-12%, -20%) scale(0.9);
+      transform: translate(0, 12%) scale(1);
     }
 
     div:nth-of-type(4) img {
-      transform: translate(5%, -5%) scale(0.85);
-    }
-
-    div:nth-of-type(5) img {
-      transform: translate(-3%, 3%) scale(0.8);
-    }
-
-    div:nth-of-type(6) img {
-      transform: translate(-5%, -15%) scale(0.9);
+      transform: translate(-3%, 14%) scale(1);
     }
 }
 
