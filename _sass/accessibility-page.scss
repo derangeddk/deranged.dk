@@ -38,6 +38,18 @@ h6 {
     }
 }
 
+.content:has(.request-contact--standalone) {
+    padding-bottom: 20rem;
+
+    @media(min-width: 768px) {
+      padding-bottom: 22rem;
+    }
+}
+
+.content:has(.request-contact--standalone) + .content {
+    padding-top: 15rem;
+}
+
 figcaption {
     font-size: 0.875rem;
     color: #666;
@@ -82,6 +94,18 @@ figcaption {
 
     .button:not(.request-contact .button) {
         margin: 0;
+    }
+}
+
+.section__cta:has(.request-contact--standalone) {
+    position: absolute;
+    width: 100%;
+    bottom: -28rem;
+    left: 50%;
+    transform: translate(-50%, 0);
+
+    @media(min-width: 768px) {
+      bottom: -25rem;
     }
 }
 

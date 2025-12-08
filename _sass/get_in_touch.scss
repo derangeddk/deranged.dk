@@ -8,6 +8,12 @@
     }
 }
 
+.request-contact--standalone .contact-form--small {
+    border-bottom-width: 10px;
+    border-right-width: 10px;
+    border-left-width: 10px;
+}
+
 .contact-form--small {
     max-width: 600px;
     z-index: 200;
@@ -19,7 +25,7 @@
     align-items: end;
     column-gap: 10px;
 
-    @media(max-width: 600px) {
+    @media(max-width: 768px) {
         grid-template-columns: auto;
     }
 }
@@ -28,7 +34,7 @@
     padding: 9px 13px;
     margin-top: 10px;
 
-    @media(max-width: 600px) {
+    @media(max-width: 768px) {
         justify-self: end;
     }
 }

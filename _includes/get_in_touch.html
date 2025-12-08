@@ -2,7 +2,11 @@
 <section class="content content--blue">
   <div class="content__container content__container--wide">
 {% endif %}
+    {% if  include.standalone != 'true' %}
     <div class="request-contact" id="contact">
+    {% else %}
+    <div class="request-contact request-contact--standalone" id="contact">
+    {% endif %}
       <div>
         <h2 class="section__heading">
           {% if page.lang == 'da_dk' %}
