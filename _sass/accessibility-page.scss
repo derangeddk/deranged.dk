@@ -23,21 +23,6 @@ h6 {
     max-width: 100%;
 }
 
-.content__image-container {
-    max-width: 300px;
-    margin: auto;
-
-    img {
-        width: 100%;
-        border-radius: 4px;
-    }
-
-    @media (min-width: 768px) {
-        float: right;
-        margin: 1rem 2.25rem;
-    }
-}
-
 .content:has(.request-contact--standalone) {
     padding-bottom: 24rem;
 
@@ -48,13 +33,6 @@ h6 {
 
 .content:has(.request-contact--standalone) + .content {
     padding-top: 12rem;
-}
-
-figcaption {
-    font-size: 0.875rem;
-    color: #666;
-    margin-top: 0.5rem;
-    text-align: center;
 }
 
 .section__heading {
@@ -145,8 +123,9 @@ figcaption {
         }
 
         .photo-caption {
-            margin: 1rem 1.8rem;
-            transform: translate(0, 0) scale(1.2);
+            text-align: center;
+            margin: 0.8rem;
+            font-size: 1.1rem;
         }
     }
 
