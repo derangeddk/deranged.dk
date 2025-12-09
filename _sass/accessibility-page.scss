@@ -87,20 +87,43 @@ figcaption {
 
 .section__two-col {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr;
     column-gap: 1rem;
+
+    @media (min-width: 768px) {
+        grid-template-columns: 1fr 1fr;
+    }
 }
 
 .team-photos {
     align-content: center;
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
+    width: 80%;
+    justify-self: center;
+
+    @media (min-width: 768px) {
+        width: 100%;
+        grid-template-columns: 1fr 1fr;
+    }
+
+    @media (min-width: 400px) {
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+    }
 
     img {
+        display: none;
         object-fit: cover;
-        height: 260px;
+        max-height: 260px;
         width: 100%;
         box-shadow: 0 6px 5px rgba(0,0,0,0.2), 0 4px 3px rgba(0,0,0,0.05);
+
+        @media (min-width: 768px) {
+            height: 260px;
+        }
+
+        @media (min-width: 400px) {
+            display: block;
+        }
     }
 
     figure {
@@ -109,10 +132,18 @@ figcaption {
         grid-row: 1 / span 2;
         transform: translate(0, 0) scale(0.9);
         box-shadow: 0 6px 5px rgba(0,0,0,0.2), 0 4px 3px rgba(0,0,0,0.05);
+
         img {
+            display: block;
             box-shadow: none;
-            height: 440px;
+            max-height: 440px;
+            width: 100%;
+
+            @media (min-width: 768px) {
+                height: 440px;
+            }
         }
+
         .photo-caption {
             margin: 1rem 1.8rem;
             transform: translate(0, 0) scale(1.2);
