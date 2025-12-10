@@ -8,10 +8,18 @@
     }
 }
 
-.request-contact--standalone .contact-form--small {
-    border-bottom-width: 10px;
-    border-right-width: 10px;
-    border-left-width: 10px;
+.request-contact--standalone {
+    .request-contact__text {
+        @media(min-width: 539px) {
+            padding: 0 10px;
+        }
+    }
+
+    .contact-form--small {
+        border-bottom-width: 10px;
+        border-right-width: 10px;
+        border-left-width: 10px;
+    }
 }
 
 .contact-form--small {
