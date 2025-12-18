@@ -608,7 +608,7 @@ permalink: /css/homestyle.css
   z-index: 0;
   overflow: hidden;
 
-  @media (max-width: 767px) {
+  @media (max-width: $width-md) {
     padding: 3em 1.5em;
     padding-top: 100px;
     overflow: hidden;
@@ -634,7 +634,7 @@ permalink: /css/homestyle.css
 .products__title {
   font-size: 3em;
 
-  @media (max-width: 767px) {
+  @media (max-width: $width-md) {
     font-size: 2.5em;
   }
 }
@@ -648,7 +648,7 @@ permalink: /css/homestyle.css
   text-align: start;
   margin: 3em auto;
 
-  @media (max-width: 767px) {
+  @media (max-width: $width-md) {
     margin: 5em 0;
   }
 }
@@ -665,7 +665,7 @@ permalink: /css/homestyle.css
   z-index: 1;
   line-height: 1.6em;
 
-  @media (max-width: 539px) {
+  @media (max-width: $width-sm) {
     padding: 1em 0 0;
   }
 
@@ -725,14 +725,14 @@ permalink: /css/homestyle.css
   margin-top: 2em;
   margin-bottom: 3em;
 
-  @media (max-width: 539px) {
+  @media (max-width: $width-sm) {
     padding: 0;
   }
 
   .quote-text {
     font-size: 1.2em;
 
-    @media (max-width: 539px) {
+    @media (max-width: $width-sm) {
       font-size: 1.3em;
     }
   }
@@ -799,7 +799,7 @@ permalink: /css/homestyle.css
     padding-bottom: 6rem;
   }
   
-  @media(max-width: 539px) {
+  @media(max-width: $width-sm) {
     padding: 4rem 2rem 2rem;
   }
 }
@@ -817,7 +817,7 @@ permalink: /css/homestyle.css
   }
 
   div.square-logo {
-    @media screen and (min-width: 539px) {
+    @media screen and (min-width: $width-sm) {
       display: grid;
       grid-template-columns: 120px 1fr;
       column-gap: 1.6rem;
@@ -825,7 +825,7 @@ permalink: /css/homestyle.css
     }
   }
 
-  @media(max-width: 539px) {
+  @media(max-width: $width-sm) {
     row-gap: 1rem;
     grid-template-columns: 1fr;
   }
@@ -836,7 +836,7 @@ permalink: /css/homestyle.css
   max-width: min(340px, 100%);
   margin-bottom: 0.5rem;
 
-  @media(max-width: 539px) {
+  @media(max-width: $width-sm) {
     max-height: 80px;
     transform: scale(0.8);
     transform-origin: left;
@@ -892,7 +892,7 @@ permalink: /css/homestyle.css
     }
   }
 
-  @media screen and (max-width: 539px) {
+  @media screen and (max-width: $width-sm) {
     .who-we-are-content {
       padding: 2rem;
       padding-bottom: 0;
