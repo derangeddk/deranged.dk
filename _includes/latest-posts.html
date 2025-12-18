@@ -214,12 +214,6 @@
   font-size: 0.8em;
 }
 
-.button {
-  border-color: #ecf0f1;
-  border-style: solid;
-  border-width: 1px;
-}
-
 .latest-posts__cta {
   margin-top: 2rem;
   text-align: left;
@@ -292,7 +286,7 @@
       {% endfor %}
     </div>
     {% if include.blog != 'true' %}
-      <a href="/blog" class="latest-posts__cta button">
+      <a href="/blog" class="latest-posts__cta button button--with-border">
         Read more posts
       </a>
     {% endif %}
