@@ -868,7 +868,7 @@ permalink: /css/homestyle.css
       object-fit: cover;
       height: 100%;
       width: 100%;
-      box-shadow: 0 6px 5px rgba(0,0,0,0.2), 0 4px 3px rgba(0,0,0,0.05);
+      box-shadow: $overlay-shadow;
       transition: all 1s ease;
     }
   }
