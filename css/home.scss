@@ -4,21 +4,15 @@ permalink: /css/homestyle.css
 
 @import 'variables';
 
-:root {
-  --deranged-text: #eaf1f7;
-  --deranged-light-blue: #455d75;
-  --deranged-dark-blue: #2c3e50;
-}
-
 .hello-section {
   box-sizing: border-box;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   align-items: flex-start;
-  background-color: #2c3e50;
-  background-image: linear-gradient(40deg, #2c3e50 30%, #455d75 90%);
-  color: #eaf1f7;
+  background-color: $deranged-dark-blue;
+  background-image: linear-gradient(40deg, $deranged-dark-blue 30%, $deranged-light-blue 90%);
+  color: $deranged-text;
   position: relative;
   min-height: calc(100vh + 63px);
   height: 650px;
@@ -151,8 +145,8 @@ permalink: /css/homestyle.css
 
 .differentiation-section {
   display: grid;
-  background: #2c3e50;
-  background-image: linear-gradient(-220deg, #2c3e50 0%, #2c3e50 200px, #ecf0f1 201px, #ecf0f1 100%);
+  background: $deranged-dark-blue;
+  background-image: linear-gradient(-220deg, $deranged-dark-blue 0%, $deranged-dark-blue 200px, #ecf0f1 201px, #ecf0f1 100%);
   grid-template-rows: repeat(11, 1fr);
   grid-template-columns: repeat(5, 20vw);
   width: 100%;
@@ -299,7 +293,7 @@ permalink: /css/homestyle.css
 @media (min-width: 600px) {
   .differentiation-section {
     grid-template-rows: repeat(11, 20vw);
-    background-image: linear-gradient(-220deg, #2c3e50 0%, #2c3e50 30.09%, #ecf0f1 30.1%, #ecf0f1 100%);
+    background-image: linear-gradient(-220deg, $deranged-dark-blue 0%, $deranged-dark-blue 30.09%, #ecf0f1 30.1%, #ecf0f1 100%);
 
     .image-of-differentiation:before {
       left: -50%;
@@ -592,17 +586,17 @@ permalink: /css/homestyle.css
 
 .spacedark {
   background-color: #070d14;
-  background-image: linear-gradient(200deg, #070d14 50%, #2c3e50);
+  background-image: linear-gradient(200deg, #070d14 50%, $deranged-dark-blue);
   min-height: 300px;
 
   &--alternate {
-    background-image: linear-gradient(20deg, #070d14 50%, #2c3e50);
+    background-image: linear-gradient(20deg, #070d14 50%, $deranged-dark-blue);
   }
 }
 
 .products {
-  background-color: #2c3e50;
-  background-image: linear-gradient(315deg, #2c3e50 15%, #455d75 95%);
+  background-color: $deranged-dark-blue;
+  background-image: linear-gradient(315deg, $deranged-dark-blue 15%, $deranged-light-blue 95%);
   color: #ecf0f1;
   padding: 100px;
   padding-top: 175px;
@@ -967,12 +961,12 @@ permalink: /css/homestyle.css
 }
 
 .content--blue {
-  color: var(--deranged-text);
-  background-color: #2c3e50;
-  background-image: linear-gradient(235deg, var(--deranged-dark-blue) 30%, var(--deranged-light-blue) 90%);
+  color: $deranged-text;
+  background-color: $deranged-dark-blue;
+  background-image: linear-gradient(235deg, $deranged-dark-blue 30%, $deranged-light-blue 90%);
 
   figcaption {
-    color: var(--deranged-text);
+    color: $deranged-text;
   }
 }
 

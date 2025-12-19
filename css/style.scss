@@ -2,22 +2,12 @@
 permalink: /css/derangedstyle.css
 ---
 
-$deranged-text: #eaf1f7;
-$deranged-light-blue: #455d75;
-$deranged-dark-blue: #2c3e50;
-
-:root {
-  --deranged-text: $deranged-text;
-  --deranged-light-blue: $deranged-light-blue;
-  --deranged-dark-blue: $deranged-dark-blue;
-}
-
 html {
 	text-align: center;
     background-color: black;
-    background-image: linear-gradient(200deg, #070d14 50%, $deranged-dark-blue);
+    background-image: linear-gradient(200deg, #070d14 50%, #2c3e50);
     background-attachment: fixed;
-	color: $deranged-dark-blue;
+	color: #2c3e50;
     font-family: 'Source Sans Pro', Calibri, Candara, Segoe, "Segoe UI", Optima, Arial, sans-serif;
     display: flex;
     justify-content: center;
