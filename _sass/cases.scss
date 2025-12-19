@@ -34,7 +34,7 @@
 }
 
 .cases-item {
-    color: #2c3e50;
+    color: $deranged-dark-blue;
     background-color: #fff;
     box-shadow: 0 1px 4px rgba(0, 0, 0, 0.4);
     text-decoration: none;
@@ -56,7 +56,7 @@
 }
 
 .cases-item__title {
-    color: #2c3e50;
+    color: $deranged-dark-blue;
     font-size: 1.8rem;
     letter-spacing: 1px;
     margin: 0;
@@ -69,7 +69,7 @@
 }
 
 .cases-item__customer {
-    color: #2c3e50;
+    color: $deranged-dark-blue;
     font-size: 1.6rem;
     font-weight: 400;
     letter-spacing: 1px;

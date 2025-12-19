@@ -102,7 +102,7 @@ code {
 }
 .call-to-action {
     background: #34495e;
-    color: #ecf0f1;
+    color: $deranged-light-background;
     text-decoration: none;
     display: block;
     text-align: center;
@@ -356,7 +356,7 @@ h3, .heading-3 {
 }
 .section--dark.section__exit-chevron:before,
 .section--dark.section__exit-chevron:after {
-    background-color: #ecf0f1;
+    background-color: $deranged-light-background;
 }
 .section__exit-chevron:after {
     transform: rotate(260deg);

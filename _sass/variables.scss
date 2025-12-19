@@ -1,10 +1,12 @@
 // Colors
 $deranged-text: #eaf1f7;
+$deranged-light-background: #ecf0f1;
 $deranged-light-blue: #455d75;
 $deranged-dark-blue: #2c3e50;
 
 :root {
   --deranged-text: #{$deranged-text};
+  --deranged-light-background: #{$deranged-light-background};
   --deranged-light-blue: #{$deranged-light-blue};
   --deranged-dark-blue: #{$deranged-dark-blue};
 }

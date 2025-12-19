@@ -146,7 +146,7 @@ permalink: /css/homestyle.css
 .differentiation-section {
   display: grid;
   background: $deranged-dark-blue;
-  background-image: linear-gradient(-220deg, $deranged-dark-blue 0%, $deranged-dark-blue 200px, #ecf0f1 201px, #ecf0f1 100%);
+  background-image: linear-gradient(-220deg, $deranged-dark-blue 0%, $deranged-dark-blue 200px, $deranged-light-background 201px, $deranged-light-background 100%);
   grid-template-rows: repeat(11, 1fr);
   grid-template-columns: repeat(5, 20vw);
   width: 100%;
@@ -293,7 +293,7 @@ permalink: /css/homestyle.css
 @media (min-width: 600px) {
   .differentiation-section {
     grid-template-rows: repeat(11, 20vw);
-    background-image: linear-gradient(-220deg, $deranged-dark-blue 0%, $deranged-dark-blue 30.09%, #ecf0f1 30.1%, #ecf0f1 100%);
+    background-image: linear-gradient(-220deg, $deranged-dark-blue 0%, $deranged-dark-blue 30.09%, $deranged-light-background 30.1%, $deranged-light-background 100%);
 
     .image-of-differentiation:before {
       left: -50%;
@@ -597,7 +597,7 @@ permalink: /css/homestyle.css
 .products {
   background-color: $deranged-dark-blue;
   background-image: linear-gradient(315deg, $deranged-dark-blue 15%, $deranged-light-blue 95%);
-  color: #ecf0f1;
+  color: $deranged-light-background;
   padding: 100px;
   padding-top: 175px;
   position: relative;
@@ -617,7 +617,7 @@ permalink: /css/homestyle.css
     left: 50%;
     width: 100vw;
     height: 100vw;
-    background-color: #ecf0f1;
+    background-color: $deranged-light-background;
     transform: rotate(170deg);
     transform-origin: top left;
   }
