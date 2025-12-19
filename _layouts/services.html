@@ -14,21 +14,12 @@ layout: default
     background: white;
   }
 
-.button {
-  border-color: #ecf0f1;
-  border-style: solid;
-  border-width: 1px;
-}
-
   .main-content {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
     text-align: left;
     padding: 0;
-  }
-  .main-content a {
-    color: inherit;
   }
   @media (max-width: 1100px) {
     .main-content {
@@ -39,13 +30,6 @@ layout: default
     .main-content {
       font-size: 1rem;
     }
-  }
-
-  .main-content .button {
-    color: #eaf1f7;
-    border-color: #ecf0f1;
-    border-style: solid;
-    border-width: 1px;
   }
 
   .main-content .logo {
@@ -160,6 +144,9 @@ layout: default
     background-color: #2c3e50;
     background-image: linear-gradient(235deg, #2c3e50 30%, #455d75 90%);
     color: #eaf1f7;
+  }
+  .main-content :nth-child(even of .content-row) a:not(a.button) {
+    color: #0e3661;
   }
   .main-content .content-row__title {
     grid-column: 2;
