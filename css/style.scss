@@ -1,12 +1,19 @@
 ---
 permalink: /css/derangedstyle.css
 ---
+
+:root {
+  --deranged-text: #eaf1f7;
+  --deranged-light-blue: #455d75;
+  --deranged-dark-blue: #2c3e50;
+}
+
 html {
 	text-align: center;
     background-color: black;
-    background-image: linear-gradient(200deg, #070d14 50%, #2c3e50);
+    background-image: linear-gradient(200deg, #070d14 50%, var(--deranged-dark-blue));
     background-attachment: fixed;
-	color: #2c3e50;
+	color: var(--deranged-dark-blue);
     font-family: 'Source Sans Pro', Calibri, Candara, Segoe, "Segoe UI", Optima, Arial, sans-serif;
     display: flex;
     justify-content: center;
@@ -145,7 +152,7 @@ code {
     }
 
     &--dark {
-        color: #eaf1f7;
+        color: var(--deranged-text);
     }
 
     &--big {
@@ -202,8 +209,8 @@ code {
 }
 
 .customer-quote-section .see-cases {
-    background: #2c3e50;
-    color: #eaf1f7;
+    background: var(--deranged-dark-blue);
+    color: var(--deranged-text);
     text-decoration: inherit;
     padding: 20px 25px;
     margin: 20px;
@@ -322,8 +329,8 @@ h3, .heading-3 {
 }
 
 .section--dark {
-    background-color: #2c3e50;
-    color: #eaf1f7;
+    background-color: var(--deranged-dark-blue);
+    color: var(--deranged-text);
 }
 .section--dark-highlight-gradient {
     background-image: linear-gradient(-35deg, transparent 30%, #375068 90%);
@@ -348,7 +355,7 @@ h3, .heading-3 {
     left: 50%;
     width: 100vw;
     height: 100vw;
-    background-color: #2c3e50;
+    background-color: var(--deranged-dark-blue);
     transform: rotate(190deg);
     transform-origin: top left;
 }
@@ -365,7 +372,7 @@ h3, .heading-3 {
     flex-direction: column;
     align-items: start;
     grid-template-columns: 150px 1fr;
-    color: #eaf1f7;
+    color: var(--deranged-text);
     padding: 30px 24px;
 
     @media(min-width: 768px) {
