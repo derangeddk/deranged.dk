@@ -1,3 +1,14 @@
+// Colors
+$deranged-text: #eaf1f7;
+$deranged-light-blue: #455d75;
+$deranged-dark-blue: #2c3e50;
+
+:root {
+  --deranged-text: #{$deranged-text};
+  --deranged-light-blue: #{$deranged-light-blue};
+  --deranged-dark-blue: #{$deranged-dark-blue};
+}
+
 // Breakpoints
 $width-sm: 539px;
 $width-md: 767px;
