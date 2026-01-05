@@ -4,12 +4,14 @@ $deranged-light-background: #ecf0f1;
 $deranged-light-blue: #455d75;
 $deranged-dark-blue: #2c3e50;
 $deranged-darkened-blue: #1b2b3a;
+$deranged-dark-link: #0e3661;
 
 :root {
   --deranged-text: #{$deranged-text};
   --deranged-light-background: #{$deranged-light-background};
   --deranged-light-blue: #{$deranged-light-blue};
   --deranged-dark-blue: #{$deranged-dark-blue};
+  --deranged-dark-link: #{$deranged-dark-link};
 }
 
 // Breakpoints

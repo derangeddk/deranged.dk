@@ -922,9 +922,8 @@ permalink: /css/homestyle.css
       padding: 5rem 2rem;
     }
 
-    a:not([class]) {
-      color: inherit;
-      text-decoration: underline;
+    a:not(.content--blue a, a.button) {
+      color: $deranged-dark-link;
     }
   }
 
