@@ -1,7 +1,7 @@
 <style type="text/css" scoped>
   .trusted-section {
-    color: #eaf1f7;
-    background-color: #2c3e50;
+    color: var(--deranged-text);
+    background-color: var(--deranged-dark-blue);
     padding: 4em;
     width: 100%;
   }
@@ -32,6 +32,10 @@
     padding: 8px;
   }
 
+  .trusted-section__logo--light {
+    filter: invert() hue-rotate(180deg) saturate(0.3) brightness(1.2);
+  }
+
   @media screen and (max-width: 767px) {
     .trusted-section {
       padding-top: 3em;
@@ -44,11 +48,11 @@
   <div class="trusted-section__container">
     <p>deranged is trusted by:</p>
     <a href="/cases" class="trusted-section__logo-container" aria-label="Read examples of what we have done">
-      <img src="/img/marmar.png" class="trusted-section__logo" alt="" loading="lazy" />
-      <img src="/img/fischer-lighting.png" class="trusted-section__logo" alt="" loading="lazy" />
-      <img src="/img/kbh-stadsarkiv.png" class="trusted-section__logo" alt="" loading="lazy" />
-      <img src="/img/nornorm-km.png" class="trusted-section__logo" alt="" loading="lazy" />
-      <img src="/img/PenlyLogo.svg" class="trusted-section__logo" alt="" loading="lazy" />
+      <img src="/img/marmar.png" class="trusted-section__logo" alt="Marmar" loading="lazy" />
+      <img src="/img/fischer-lighting.png" class="trusted-section__logo" alt="Fischer lighting" loading="lazy" />
+      <img src="/img/KK_logo.svg" class="trusted-section__logo trusted-section__logo--light" alt="Municipality of Copenhagen" loading="lazy" />
+      <img src="/img/nornorm.svg" class="trusted-section__logo trusted-section__logo--light" alt="Nornorm" loading="lazy" />
+      <img src="/img/PenlyLogo.svg" class="trusted-section__logo trusted-section__logo--light" alt="Penly" loading="lazy" />
     </a>
   </div>
 </aside>
