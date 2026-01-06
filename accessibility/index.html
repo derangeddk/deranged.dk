@@ -169,10 +169,8 @@ questions:
               {% endunless %}
             {% endfor %}
         </div>
-      <div class="section__cta section__cta--centered section__cta--extra-margin-top">
-        <a class="button button--with-border" href="#contact">
-            Get in touch
-        </a>
+      <div class="section__cta section__cta--centered">
+        {% include get_in_touch.html standalone='true' %}
       </div>
     </div>
   </section>
@@ -200,4 +198,4 @@ questions:
   </section>
 </main>
 
-{% include get_a_quote.html subject='Accessibility' lang='en' %}
+{% include get_in_touch.html %}

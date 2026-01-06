@@ -38,6 +38,18 @@ h6 {
     }
 }
 
+.content:has(.request-contact--standalone) {
+    padding-bottom: 24rem;
+
+    @media(min-width: 768px) {
+      padding-bottom: 21.2rem;
+    }
+}
+
+.content:has(.request-contact--standalone) + .content {
+    padding-top: 12rem;
+}
+
 figcaption {
     font-size: 0.875rem;
     color: #666;
@@ -78,10 +90,22 @@ figcaption {
     gap: 2rem;
     flex-wrap: wrap;
     align-items: center;
-    margin-top: 3rem;
+    margin-top: 5rem;
 
-    .button {
+    .button:not(.request-contact .button) {
         margin: 0;
+    }
+}
+
+.section__cta:has(.request-contact--standalone) {
+    position: absolute;
+    width: 100%;
+    bottom: -28rem;
+    left: 50%;
+    transform: translate(-50%, 0);
+
+    @media(min-width: 768px) {
+      bottom: -25rem;
     }
 }
 

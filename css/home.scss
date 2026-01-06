@@ -974,6 +974,11 @@ permalink: /css/homestyle.css
   max-width: 900px;
   margin: auto;
 }
+
+.content__container:has(.request-contact--standalone) {
+  position: relative;
+}
+
 .content__container--wide {
   max-width: 1200px;
 }
