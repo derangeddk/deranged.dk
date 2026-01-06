@@ -75,11 +75,9 @@ sitemap_include: 'yes'
                     ⇳ Scroll through, or jump to a specific category if you know what you are looking for. Each case has a link to read more, if you find something of interest.
                 </p>
                 <ul>
-                    <li><a href="#devops">DevOps consulting</a></li>
-                    <li><a href="#accessibility">Accessibility</a></li>
-                    <li><a href="#appdev">Application development</a></li>
-                    <li><a href="#revops">Revenue operations</a></li>
-                    <li><a href="#crm">Customer relationship consulting</a></li>
+                    {% for category in site.data.categories %}
+                        <li><a href="#{{ category.name }}">{{ category.title }}</a></li>
+                    {% endfor %}
                 </ul>
             </div>
         </div>
@@ -89,92 +87,33 @@ sitemap_include: 'yes'
 <main>
     {% assign unfiltered_cases = site.pages | where_exp:"p","p.url contains '/cases/'" %}
     {% assign cases = unfiltered_cases | where_exp:"unfiltered_cases","unfiltered_cases.url != '/cases/index.html'" | sort: "order" %}
-  
-    {% capture devops_content %}
-        {% assign devops_cases = cases | where_exp: "item", "item.categories contains 'devops'" %}
-          {% for case in devops_cases %}
-            {% if forloop.index < 3  %}
-                {% include case_element.html url=case.url title=case.title customer=case.customer logo=case.logo logo_alt=case.logo_alt description=case.description categories=case.categories %}
-            {% else %}
-                {% include case_element_small.html url=case.url title=case.title customer=case.customer categories=case.categories %}
+
+    {% for category in site.data.categories %}
+        {% capture category_content %}
+            {% assign category_cases = cases | where_exp: "item", "item.categories contains category.name" %}
+            {% for case in category_cases %}
+                {% if forloop.index < 3  %}
+                    {% include case_element.html url=case.url title=case.title customer=case.customer logo=case.logo logo_alt=case.logo_alt description=case.description categories=case.categories %}
+                {% else %}
+                    {% include case_element_small.html url=case.url title=case.title customer=case.customer categories=case.categories %}
+                {% endif %}
+            {% endfor %}
+        {% endcapture %}
+
+        {% capture category_quote %}
+            {% if category.quote %}
+                {% include case_quote_element.html quote_text=category.quote.quote_text quotee=category.quote.quotee %}
             {% endif %}
-          {% endfor %}
-    {% endcapture %}
+        {% endcapture %}
 
-    {% capture devops_quotes %}
-        {% include case_quote_element.html
-            quote_text="My approach to software engineering rapidly changed for better [while working with deranged]. We began asking the right questions, frequently communicating our ideas for solving problems, and implementing more impactful code."
-            quotee="Michal, Full Stack Developer"
-        %}
-    {% endcapture %}
+        {% assign mod = forloop.index | modulo: 2 %}
 
-    {% include cases_section.html title="DevOps consulting" anchor="devops" description="Our team consists of experts across all key areas needed to build and run software in your organisation. Our developers are empowered to build, deploy, and maintain software, enabling us to deliver quickly and with stability." link="/#more-content" button="DevOps" content=devops_content quotes=devops_quotes %}
-    
-    {% capture accessibility_content %}
-        {% assign accessibility_cases = cases | where_exp: "item", "item.categories contains 'accessibility'" %}
-        {% for case in accessibility_cases %}
-            {% if forloop.index < 3  %}
-                {% include case_element.html url=case.url title=case.title customer=case.customer logo=case.logo logo_alt=case.logo_alt description=case.description categories=case.categories %}
-            {% else %}
-                {% include case_element_small.html url=case.url title=case.title customer=case.customer categories=case.categories %}
-            {% endif %}
-        {% endfor %}
-    {% endcapture %}
-
-    {% capture accessibility_quotes %}
-        {% include case_quote_element.html
-            quote_text="I have never worked with anyone who has taken on so much respon&shy;sibility."
-            quotee="Signe Trolle Gronemann, Specialkonsulent and Product Owner"
-        %}
-    {% endcapture %}
-
-    {% include cases_section.html blue="true" title="Accessibility" anchor="accessibility" description="Our web accessibility consulting covers training, advisory, testing services and we can fix your accessibility issues directly in your code. We work with your team to ensure you achieve compliance quickly while gaining deep understanding and capabilities." link="/accessibility" button="accessibility" content=accessibility_content quotes=accessibility_quotes %}
-
-    {% capture appdev_content %}
-        {% assign appdev_cases = cases | where_exp: "item", "item.categories contains 'appdev'" %}
-        {% for case in appdev_cases %}
-            {% if forloop.index < 3  %}
-                {% include case_element.html url=case.url title=case.title customer=case.customer logo=case.logo logo_alt=case.logo_alt description=case.description categories=case.categories %}
-            {% else %}
-                {% include case_element_small.html url=case.url title=case.title customer=case.customer categories=case.categories %}
-            {% endif %}
-        {% endfor %}
-    {% endcapture %}
-
-    {% capture appdev_quotes %}
-        {% include case_quote_element.html
-            quote_text="There has been good com&shy;mun&shy;ica&shy;tion and dedi&shy;cation from deranged throughout the partner&shy;ship. [...] We have a close client-supplier relation&shy;ship. I see deranged as being my own in-house developers. That is how it feels."
-            quotee="Ninna Toft Hansen, Fischer Lighting COO"
-        %}
-    {% endcapture %}
-
-    {% include cases_section.html title="Application development" anchor="appdev" description="We provide scalable engineering capacity to build and maintain your web applications, migrate from legacy platforms, and help you make sound architectural decisions, improving reliability and enabling long-term stability." link="/#more-content" button="app development" content=appdev_content quotes=appdev_quotes %}
-
-    {% capture revops_content %}
-        {% assign revops_cases = cases | where_exp: "item", "item.categories contains 'revops'" %}
-          {% for case in revops_cases %}
-            {% if forloop.index < 3  %}
-                {% include case_element.html url=case.url title=case.title customer=case.customer logo=case.logo logo_alt=case.logo_alt description=case.description categories=case.categories %}
-            {% else %}
-                {% include case_element_small.html url=case.url title=case.title customer=case.customer categories=case.categories %}
-            {% endif %}
-          {% endfor %}
-    {% endcapture %}
-
-    {% include cases_section.html blue="true" title="Revenue operations" anchor="revops" description="As a fractional revenue and operations partner, we integrate with your team to align project goals with the right systems and tools. We move quickly to iterate and help you build scalable processes for sales, customer success and operations, helping you drive growth sustainably." link="/revops#services" button="RevOps" content=revops_content %}
-
-    {% capture crm_content %}
-        {% assign crm_cases = cases | where_exp: "item", "item.categories contains 'crm'" %}
-          {% for case in crm_cases %}
-            {% if forloop.index < 3  %}
-                {% include case_element.html url=case.url title=case.title customer=case.customer logo=case.logo logo_alt=case.logo_alt description=case.description categories=case.categories %}
-            {% else %}
-                {% include case_element_small.html url=case.url title=case.title customer=case.customer categories=case.categories %}
-            {% endif %}
-          {% endfor %}
-    {% endcapture %}
-
-    {% include cases_section.html title="Customer relationship consulting" anchor="crm" description="We work closely with your team to unify fragmented customer data and implement or upgrade CRM solutions tailored to your business. We focus on automating client engagement workflows, optimising customer success processes, and enabling seamless integration with your existing tools helping you focus on growth." link="/revops/crm.html" button="CRM" content=crm_content %}
+        {% if mod == 0 %}
+            {% include cases_section.html blue="true" title=category.title anchor=category.name description=category.description link=category.link button=category.button content=category_content quotes=category_quote %}
+        {% else %}
+            {% include cases_section.html title=category.title anchor=category.name description=category.description link=category.link button=category.button content=category_content quotes=category_quote %}
+        {% endif %}
+    {% endfor %}
 </main>
 
 {% include get_a_quote.html subject='Quote request' %}
