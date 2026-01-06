@@ -32,6 +32,10 @@
     padding: 8px;
   }
 
+  .trusted-section__logo--light {
+    filter: invert() hue-rotate(180deg) saturate(0.3) brightness(1.2);
+  }
+
   @media screen and (max-width: 767px) {
     .trusted-section {
       padding-top: 3em;
@@ -46,9 +50,9 @@
     <a href="/cases" class="trusted-section__logo-container" aria-label="Read examples of what we have done">
       <img src="/img/marmar.png" class="trusted-section__logo" alt="Marmar" loading="lazy" />
       <img src="/img/fischer-lighting.png" class="trusted-section__logo" alt="Fischer lighting" loading="lazy" />
-      <img src="/img/KK_logo.svg" class="trusted-section__logo" style="filter: invert() hue-rotate(180deg) saturate(0.3) brightness(1.2)" alt="Municipality of Copenhagen" loading="lazy" />
-      <img src="/img/nornorm.svg" class="trusted-section__logo" style="filter: invert() hue-rotate(180deg) saturate(0.3) brightness(1.2)" alt="Nornorm" loading="lazy" />
-      <img src="/img/PenlyLogo.svg" class="trusted-section__logo" style="filter: invert() hue-rotate(180deg) saturate(0.3) brightness(1.2)" alt="Penly" loading="lazy" />
+      <img src="/img/KK_logo.svg" class="trusted-section__logo trusted-section__logo--light" alt="Municipality of Copenhagen" loading="lazy" />
+      <img src="/img/nornorm.svg" class="trusted-section__logo trusted-section__logo--light" alt="Nornorm" loading="lazy" />
+      <img src="/img/PenlyLogo.svg" class="trusted-section__logo trusted-section__logo--light" alt="Penly" loading="lazy" />
     </a>
   </div>
 </aside>
