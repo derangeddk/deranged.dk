@@ -14,7 +14,7 @@ h6 {
     word-wrap: break-word;
     overflow-wrap: break-word;
 
-    @media(max-width: 767px) {
+    @media(max-width: $width-md) {
         hyphens: auto;
     }
 }
@@ -91,7 +91,7 @@ h6 {
         object-fit: cover;
         max-height: 260px;
         width: 100%;
-        box-shadow: 0 6px 5px rgba(0,0,0,0.2), 0 4px 3px rgba(0,0,0,0.05);
+        box-shadow: $overlay-shadow;
 
         @media (min-width: 768px) {
             height: 260px;
@@ -106,7 +106,7 @@ h6 {
         margin: 0;
         grid-column: 1 / span 2;
         grid-row: 1 / span 2;
-        box-shadow: 0 6px 5px rgba(0,0,0,0.2), 0 4px 3px rgba(0,0,0,0.05);
+        box-shadow: $overlay-shadow;
 
         img {
             display: block;
