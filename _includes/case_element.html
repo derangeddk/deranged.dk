@@ -12,6 +12,10 @@
     <span class="link--dark">➟ <u>Read&nbsp;more</u></span>
     </div>
     {% if include.logo %}
-    <img src="{{ include.logo }}" class="case-item__logo" alt="{{ include.customer }} logo">
+        {% if include.logo_alt %}
+            <img src="{{ include.logo }}" class="case-item__logo" alt="{{ include.logo_alt }}">
+        {% else %}
+            <img src="{{ include.logo }}" class="case-item__logo" alt="{{ include.customer }}">
+        {% endif %}
     {% endif %}
 </a>

@@ -94,7 +94,7 @@ sitemap_include: 'yes'
         {% assign devops_cases = cases | where_exp: "item", "item.categories contains 'devops'" %}
           {% for case in devops_cases %}
             {% if forloop.index < 3  %}
-                {% include case_element.html url=case.url title=case.title customer=case.customer logo=case.logo description=case.description categories=case.categories %}
+                {% include case_element.html url=case.url title=case.title customer=case.customer logo=case.logo logo_alt=case.logo_alt description=case.description categories=case.categories %}
             {% else %}
                 {% include case_element_small.html url=case.url title=case.title customer=case.customer categories=case.categories %}
             {% endif %}
@@ -114,7 +114,7 @@ sitemap_include: 'yes'
         {% assign accessibility_cases = cases | where_exp: "item", "item.categories contains 'accessibility'" %}
         {% for case in accessibility_cases %}
             {% if forloop.index < 3  %}
-                {% include case_element.html url=case.url title=case.title customer=case.customer logo=case.logo description=case.description categories=case.categories %}
+                {% include case_element.html url=case.url title=case.title customer=case.customer logo=case.logo logo_alt=case.logo_alt description=case.description categories=case.categories %}
             {% else %}
                 {% include case_element_small.html url=case.url title=case.title customer=case.customer categories=case.categories %}
             {% endif %}
@@ -134,7 +134,7 @@ sitemap_include: 'yes'
         {% assign appdev_cases = cases | where_exp: "item", "item.categories contains 'appdev'" %}
         {% for case in appdev_cases %}
             {% if forloop.index < 3  %}
-                {% include case_element.html url=case.url title=case.title customer=case.customer logo=case.logo description=case.description categories=case.categories %}
+                {% include case_element.html url=case.url title=case.title customer=case.customer logo=case.logo logo_alt=case.logo_alt description=case.description categories=case.categories %}
             {% else %}
                 {% include case_element_small.html url=case.url title=case.title customer=case.customer categories=case.categories %}
             {% endif %}
@@ -154,7 +154,7 @@ sitemap_include: 'yes'
         {% assign revops_cases = cases | where_exp: "item", "item.categories contains 'revops'" %}
           {% for case in revops_cases %}
             {% if forloop.index < 3  %}
-                {% include case_element.html url=case.url title=case.title customer=case.customer logo=case.logo description=case.description categories=case.categories %}
+                {% include case_element.html url=case.url title=case.title customer=case.customer logo=case.logo logo_alt=case.logo_alt description=case.description categories=case.categories %}
             {% else %}
                 {% include case_element_small.html url=case.url title=case.title customer=case.customer categories=case.categories %}
             {% endif %}
@@ -167,7 +167,7 @@ sitemap_include: 'yes'
         {% assign crm_cases = cases | where_exp: "item", "item.categories contains 'crm'" %}
           {% for case in crm_cases %}
             {% if forloop.index < 3  %}
-                {% include case_element.html url=case.url title=case.title customer=case.customer logo=case.logo description=case.description categories=case.categories %}
+                {% include case_element.html url=case.url title=case.title customer=case.customer logo=case.logo logo_alt=case.logo_alt description=case.description categories=case.categories %}
             {% else %}
                 {% include case_element_small.html url=case.url title=case.title customer=case.customer categories=case.categories %}
             {% endif %}
