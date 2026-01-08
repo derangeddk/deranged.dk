@@ -207,6 +207,10 @@ h6 {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 3rem;
+
+    @media(max-width: $width-md) {
+        grid-template-columns: 1fr;
+    }
 }
 
 .subpages-item__title {
