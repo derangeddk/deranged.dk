@@ -28,6 +28,9 @@ nav.overlay {
   z-index: -1;
   opacity: 0.0;
   transition: all 200ms ease;
+  &.hidden {
+    display: none;
+  }
   @media screen and (min-width: 768px) {
     nav.overlay:before {
        content: "\219D";
@@ -50,9 +53,6 @@ nav.overlay {
   height: 100%;
   max-width: 400px;
   margin-left: auto;
-  &.hidden {
-    display: none;
-  }
   a {
     display: block;
     text-align: right;
