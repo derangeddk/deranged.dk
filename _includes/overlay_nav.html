@@ -17,18 +17,27 @@
   document.getElementById('main-nav-toggle').addEventListener("click", function () {
     var classes = document.getElementById('main-nav').classList;
     var mainNavToggle = document.getElementById('main-nav-toggle');
+    var nonNavElements = document.querySelectorAll(
+      'body > :not(#main-nav, #main-nav-toggle)'
+    );
     if (classes.contains("hidden")) {
       document.getElementById('main-nav').classList.toggle('hidden');
       requestAnimationFrame(() => {
         document.querySelector("body").classList.toggle("main-nav-open");
       });
       mainNavToggle.setAttribute('aria-label', 'Close menu');
+      nonNavElements.forEach(e => {
+        e.setAttribute('inert', 'true');
+      });
     } else {
       document.querySelector("body").classList.toggle("main-nav-open");
       setTimeout(() => {
         document.getElementById('main-nav').classList.toggle('hidden');
       }, 300);
       mainNavToggle.setAttribute('aria-label', 'Menu');
+      nonNavElements.forEach(e => {
+        e.removeAttribute('inert');
+      });
     };
   });
 </script>
