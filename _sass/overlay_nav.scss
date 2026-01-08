@@ -76,6 +76,9 @@ nav.overlay {
     &:hover:after {
       height: 60%;
     }
+    @media(max-height: 767px) {
+        padding: 0;
+    }
   }
 }
 
