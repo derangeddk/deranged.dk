@@ -7,7 +7,7 @@
   <div class="icon-bar"></div>
   <div class="icon-bar"></div>
 </button>
-<nav id="main-nav" class="main-nav overlay hidden" lang="en">
+<nav id="main-nav" class="main-nav overlay u-hide" lang="en">
   <div class="main-nav-menu" id="main-nav-menu">
     {% include menu_links.html %}
   </div>
@@ -20,8 +20,8 @@
     var nonNavElements = document.querySelectorAll(
       'body > :not(#main-nav, #main-nav-toggle)'
     );
-    if (classes.contains("hidden")) {
-      document.getElementById('main-nav').classList.toggle('hidden');
+    if (classes.contains("u-hide")) {
+      document.getElementById('main-nav').classList.toggle('u-hide');
       requestAnimationFrame(() => {
         document.querySelector("body").classList.toggle("main-nav-open");
       });
@@ -32,7 +32,7 @@
     } else {
       document.querySelector("body").classList.toggle("main-nav-open");
       setTimeout(() => {
-        document.getElementById('main-nav').classList.toggle('hidden');
+        document.getElementById('main-nav').classList.toggle('u-hide');
       }, 300);
       mainNavToggle.setAttribute('aria-label', 'Menu');
       nonNavElements.forEach(e => {
