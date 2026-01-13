@@ -50,9 +50,6 @@ nav.overlay {
   height: 100%;
   max-width: 400px;
   margin-left: auto;
-  &.hidden {
-    display: none;
-  }
   a {
     display: block;
     text-align: right;
@@ -76,11 +73,10 @@ nav.overlay {
     &:hover:after {
       height: 60%;
     }
+    @media(max-height: 767px) {
+        padding: 0;
+    }
   }
-}
-
-#main-nav-toggle:focus {
-  outline: 0;
 }
 
 #main-nav-toggle::-moz-focus-inner{
