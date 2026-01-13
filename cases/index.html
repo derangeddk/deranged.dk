@@ -93,7 +93,7 @@ sitemap_include: 'yes'
             {% assign category_cases = cases | where_exp: "item", "item.categories contains category.name" %}
             {% for case in category_cases %}
                 {% if forloop.index < 3  %}
-                    {% include case_element.html url=case.url title=case.title customer=case.customer logo=case.logo logo_alt=case.logo_alt description=case.description categories=case.categories %}
+                    {% include case_element.html url=case.url title=case.title customer=case.customer logo=case.logo logo_alt=case.logo_alt meta=case.meta categories=case.categories %}
                 {% else %}
                     {% include case_element_small.html url=case.url title=case.title customer=case.customer categories=case.categories %}
                 {% endif %}
