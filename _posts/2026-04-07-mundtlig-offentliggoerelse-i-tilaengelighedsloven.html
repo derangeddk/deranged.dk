@@ -53,35 +53,47 @@ by: >
     <ul>
         <li>Generelle beskrivelser af tjenesten (fx “Om os”-indhold)</li>
         <li>Brugervejledninger (fx “Handelsbetingelser”)</li>
-        <li>Oplysninger om tilgængelighed (fx en “Tilgængelighedserklæring”)</li>
+        <li>Oplysninger om tilgængelighed (fx en “Tilgængelighedserklæring” eller som en del af anden dokumentation)</li>
     </ul>
-
+    
     <p>De 3 typer af dokumentation er defineret i <a href="#Bilag-4">bilag 4 i tilgængelighedsloven</a> - se dette for præcis formulering af de omfattede typer af dokumentation.</p>
+    
+    <h3>Eksempler på de omfattede typer af dokumentation</h3>
+    
+    <p>Konkrete eksempler på de forskellige typer af dokumentation, som skal offentliggøres mundtligt og skriftligt:</p>
+    
+    <ul>
+        <li>Generelle beskrivelser af tjenesten kan fx være “Om os”-indhold</li>
+        <li>Brugervejledninger kan fx være “Handelsbetingelser”</li>
+        <li>Oplysninger om tilgængelighed kan fx være en “Tilgængelighedserklæring” eller oplysninger om tilgængelighed der fremgår som en del af anden dokumentation</li>
+    </ul>
 
     <p>Eksemplerne for hver type af dokumentation kommer fra historiske tilsyn fra Erhvervsstyrelsen (tidl. Sikkerhedsstyrelsen), som deranged har fået indsigt i via de organisationer, som har modtaget tilsyn.</p>
 
     <div class="highlight-box">
-        <p><strong>OBS:</strong> Der stilles IKKE krav til, at oplysninger om tilgængelighed skal fremgå på en selvstændig side (ofte kaldet “tilgængelighedserklæring” på dansk eller “Accessibility statement” på engelsk) i tilgængelighedsloven (EAA).</p>
+        <p><strong>OBS:</strong> Der stilles krav til at oplysninger om løsningens tilgængelighed skal offentliggøres. Der er dog i tilgængelihgedsloven (EAA) IKKE krav til, at oplysninger om tilgængelighed skal fremgå på en selvstændig side (ofte kaldet “tilgængelighedserklæring” på dansk eller “Accessibility statement” på engelsk).</p>
         
         <p>Denne fortolkning er bekræftet telefonisk af Erhvervsstyrelsen.</p>
         
-        <p>Kravet om en "Tilgængelighedserklæring" findes kun for organisationer omfattet af webtilgængelighedsloven (WAD), som gælder for den offentlige sektor og offentligretlige organer.</p>
+        <p>Kravet om offentliggørelse af en "Tilgængelighedserklæring" findes kun for organisationer omfattet af webtilgængelighedsloven (WAD), som gælder for den offentlige sektor og offentligretlige organer.</p>
 
     </div>
 
     <h2 id="hvad-er-kravene-offentliggoerelse">Hvad er kravene til hvordan dokumentationen skal offentliggøres?</h2>
-    <p>Dokumentationen skal ifølge tilgængelighedsloven offentliggøres:</p>
+    <p>Dokumentationen skal ifølge tilgængelighedsloven (kap. 5, stk. 2) offentliggøres:</p>
     <ul>
         <li>Skriftligt</li>
         <li>Mundtligt</li>
     </ul>
 
-    <p>Både den skriftlige og den mundtlige version skal være tilgængelige for personer med handicap.</p>
-    <p>Det betyder blandt andet, men ikke udelukkende at:</p>
+    <p>Både den skriftlige og den mundtlige version skal ifølge tilgængelighedsloven endvidere være tilgængelige for personer med handicap.</p>
+    <p>Det betyder blandt andet at:</p>
     <ul>
         <li>Den skriftlige version også skal kunne læses op af skærmlæsere, og</li>
         <li>Eventuelle knapper til at aktivere den mundtlige version også skal kunne aktiveres med tastaturnavigation og også være tilgængelige med en skærmlæser.</li>
     </ul>
+
+    <p>Lær mere om <a href="2025-05-09-tilg%C3%A6ngelighedsloven-for-den-private-sektor#krav">tilgængelighedskravene i tilgængelighedsloven (EAA)</a></p>.
 
     <h2 id="hvad-er-kravene-mundtlig">Hvad er kravene til den mundtlige offentliggørelse?</h2>
     <p>For den mundtlige fremstilling er det IKKE nok at brugeren selv kan bruge oplæsningsværktøjer eller skærmlæser. Den mundtlige version skal udbydes direkte i løsningen.</p>
@@ -104,18 +116,18 @@ by: >
 
     <h3>Funktion til højtlæsning som mundtlig offentliggørelse</h3>
 
-    <p>Fordelen ved en højtlæsningsfunktion er frem for forud produceret lyd eller video er klart, at du slipper for at vedligeholde 2 forskellige versioner af det samme indhold, som risikerer at komme ud af sync efterhånden som du opdaterer dit indhold. Det er altid lettere at vedligeholde 1 version end 2 versioner i forskellige formater, især når den ene version er lyd- eller videoindhold, som typisk har længere produktstid og højere produktionsomkostninger end tekstindhold.</p>
+    <p>Fordelen ved en højtlæsningsfunktion er frem for forudproduceret lyd eller video er, at du slipper for at vedligeholde 2 forskellige versioner af det samme indhold, som risikerer at komme ude af trit med hinanden efterhånden som du opdaterer dit indhold. Det er altid lettere at vedligeholde én version end to versioner i forskellige formater, især når den ene version er lyd- eller videoindhold, som typisk har længere produktstid og højere produktionsomkostninger end tekstindhold.</p>
     
     <p>Hvis du vil bygge din egen højtlæsningsfunktion i stedet for at bruge en færdig hyldevare, kan du bruge SpeechSynthesis (tekst-til-tale) i Web Speech API som understøttes bredt i browsere i dag.</p>
 
     <p>Mere info om Web Speech API:</p>
     
     <ul>
-            <li>Borger.dk har en guide til, hvordan du selv nemt kan høre hvordan Web Speech API lyder i din egen browser: <a href="https://www.borger.dk/hjaelp-og-vejledning/hvad-har-du-brug-for-hjaelp-til/borger-dk/teknisk-hjaelp/oplaesning-af-indhold" target="_blank">https://www.borger.dk/hjaelp-og-vejledning/hvad-har-du-brug-for-hjaelp-til/borger-dk/teknisk-hjaelp/oplaesning-af-indhold</a></p>
-            <li>Se teknisk dokumentation for Web Speech API: <a href="https://developer.mozilla.org/en-US/docs/Web/API/Web_Speech_API" target="_blank">https://developer.mozilla.org/en-US/docs/Web/API/Web_Speech_API</a></p>
+            <li>Borger.dk har en <a href="https://www.borger.dk/hjaelp-og-vejledning/hvad-har-du-brug-for-hjaelp-til/borger-dk/teknisk-hjaelp/oplaesning-af-indhold" target="_blank">guide til oplæsning af indhold</<a>, som viser hvordan du nemt kan høre hvordan Web Speech API lyder i din egen browser.</p>
+            <li>Se <a href="https://developer.mozilla.org/en-US/docs/Web/API/Web_Speech_API" target="_blank">teknisk dokumentation for Web Speech API på MDN</a></p>
     </ul>
 
-    <p>Husk, at funktionerne til at betjene højtlæsningsfunktionen også skal leve op til alle tilgængelighedskrav, herunder at eventuelle knapper til at aktivere funktionen også skal kunne aktiveres med tastaturnavigation og også være tilgængelige med en skærmlæser.</p>
+    <p>Husk, at funktionerne til at betjene højtlæsningsfunktionen også skal leve op til alle tilgængelighedskrav, herunder at knapper til at aktivere funktionen også skal kunne aktiveres med tastaturnavigation og være tilgængelige med en skærmlæser.</p>
 
     <div class="highlight-box">
         <h2 id="direkte-fra-kilden">Direkte fra kilden: Tilgængelighedslovens egne ord om offentlig dokumentation</h2>
@@ -142,7 +154,7 @@ by: >
 
             <p>1. Tjenesteyderen skal i de almindelige betingelser eller et tilsvarende dokument afgive oplysninger om vurderingen af, hvordan tjenesten opfylder de tilgængelighedskrav, der er omhandlet i § 6. Oplysningerne skal omfatte en beskrivelse af de relevante krav og, i det omfang det er relevant for vurderingen, af tjenestens udformning og brug. Forbrugeroplysningskravene i direktiv 2011/83/EU skal opfyldes, og oplysningerne skal, hvor det er relevant, indeholde følgende elementer: </p>
             
-            <ol type="a" style="margin-top:0">
+            <ol type="a" style="margin-top:1rem">
                 <li>en generel beskrivelse af tjenesten i tilgængelige formater</li>
                 <li>de beskrivelser og forklaringer, der er nødvendige for at forstå, hvordan tjenesten skal bruges</li>
                 <li>en beskrivelse af, hvordan tjenesten opfylder de relevante tilgængelighedskrav i bilag 1.</li>
@@ -151,13 +163,13 @@ by: >
     </div>
 
     
-    <h2 id="Laes-mere">Læs mere...</h2>
+    <h2 id="Laes-mere">Læs mere om tilgængelighedsloven</h2>
 
-    <p>Se også:</p>
+    <p>I vores <a href="https://deploy-preview-188--zealous-fermat-77bc7b.netlify.app/posts/2025-05-09-tilg%C3%A6ngelighedsloven-for-den-private-sektor">artikel om tilgængelighedsloven</a>a> kan du bl.a. læse mere om:</p>
 
         <ul>
             <li><a href="https://deploy-preview-188--zealous-fermat-77bc7b.netlify.app/posts/2025-05-09-tilg%C3%A6ngelighedsloven-for-den-private-sektor#hvem-er-omfattet">Hvem er omfattet af tilgængelighedsloven?</a></li>
-            <li><a href="https://deploy-preview-188--zealous-fermat-77bc7b.netlify.app/posts/2025-05-09-tilg%C3%A6ngelighedsloven-for-den-private-sektor#tilsyn">Hvem holder øje med, om jeg overholder tilgængelighedsloven?</a></li>
+            <li><a href="https://deploy-preview-188--zealous-fermat-77bc7b.netlify.app/posts/2025-05-09-tilg%C3%A6ngelighedsloven-for-den-private-sektor#tilsyn">Hvem fører tilsyn med tilgængelighedsloven?</a></li>
         </ul>
     
     <div class="highlight-box">
