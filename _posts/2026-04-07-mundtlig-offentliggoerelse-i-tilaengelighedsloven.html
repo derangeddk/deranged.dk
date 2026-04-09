@@ -24,9 +24,18 @@ by: >
 ---
 
 <section>
-    <p><strong>Kort fortalt:</strong> Tilgængelighedsloven (European Accessibility Act, EAA) stiller krav til, at nogle typer dokumentation skal offentliggøres mundtligt. Det gælder fx oplysninger om tilgængelighed, men også generelle beskrivelser af tjenesten samt brugervejledninger. Ifølge Sikkerhedsstyrelsen omfatter dette fx “Om os”-sider og handelsbetingelser. Mundtlig offentliggørelse kan fx være via lydfil, video eller en læs højt-funktion.</p>
+    <p><strong>Kort fortalt:</strong> Tilgængelighedsloven (European Accessibility Act, EAA) stiller krav til, at nogle typer dokumentation skal offentliggøres mundtligt. Det gælder fx oplysninger om tilgængelighed, men også generelle beskrivelser af tjenesten samt brugervejledninger. Ifølge Erhvervsstyrelsen (tidl. Sikkerhedsstyrelsen) omfatter dette fx “Om os”-sider og handelsbetingelser. Mundtlig offentliggørelse kan fx være via lydfil, video eller en læs højt-funktion.</p>
 
     <p><em>Bemærk: Dette er ikke juridisk rådgivning</em></p>
+
+    <p>Informationerne i det følgende er baseret på:
+        <ul>
+            <li><a href="direkte-fra-kilden">Tilgængelighedsloven og dens bilag</a></li>
+            <li>Viden om praksis i Erhvervsstyrelsens (tidl. Sikkerhedsstyrelsens) tilsyn, modtaget fra organisationer, som har modtaget tilsyn</li>
+            <li>Telefonisk dialog med Erhvervsstyrelsen</li>
+        </ul>
+
+    <p>I det følgende vil kilderne til de specifikke informationer fremgå eksplicit.</p>
 
     <h3>Gå direkte til...</h3>
 
@@ -38,7 +47,7 @@ by: >
     </ul>
     
     <h2 id="hvilke-typer">Hvilke typer dokumentation skal offentliggøres mundtligt?</h2>
-    <p>Tilgængelighedsloven stiller krav til at 3 specifikke typer oplysninger skal offentliggøres både skriftligt og mundtligt. I bilag 4 er der 3 typer oplysninger, der er omfattet, og som derfor skal offentliggøres mundtligt.</p>
+    <p>Tilgængelighedsloven stiller krav til at 3 specifikke typer oplysninger skal offentliggøres både skriftligt og mundtligt.</p>
 
     <p>Disse 3 omfattede typer oplysninger er (se <a href="">bilag 4 i loven</a> for præcis formulering):</p>
     <ul>
@@ -48,12 +57,13 @@ by: >
     </ul>
 
     <div class="highlight-box">
-        <p><strong>OBS:</strong> Der stilles ikke krav til, at oplysninger om tilgængelighed skal fremgå på en selvstændig side (ofte kaldet “tilgængelighedserklæring” på dansk eller “Accessibility statement” på engelsk) i tilgængelighedsloven (EAA).</p>
-        <p>Dette krav er kun et krav for organisationer omfattet af webtilgængelighedsloven (WAD), som gælder for den offentlige sektor og offentligretlige organer.</p>
+        <p><strong>OBS:</strong> Der stilles IKKE krav til, at oplysninger om tilgængelighed skal fremgå på en selvstændig side (ofte kaldet “tilgængelighedserklæring” på dansk eller “Accessibility statement” på engelsk) i tilgængelighedsloven (EAA). Denne fortolkning er bekræftet telefonisk af Erhvervsstyrelsen.</p>
+        <p>Kravet om en "Tilgængelighedserklæring" findes kun for organisationer omfattet af webtilgængelighedsloven (WAD), som gælder for den offentlige sektor og offentligretlige organer.</p>
+
     </div>
 
     <h2 id="hvad-er-kravene-offentliggoerelse">Hvad er kravene til hvordan dokumentationen skal offentliggøres?</h2>
-    <p>Dokumentationen skal offentliggøres:</p>
+    <p>Dokumentationen skal ifølge tilgængelighedsloven offentliggøres:</p>
     <ul>
         <li>Skriftligt</li>
         <li>Mundtligt</li>
@@ -76,12 +86,18 @@ by: >
         <li>Med en indbygget funktion til at læse indholdet på siden højt (som det fx kendes fra dr.dk, hvor der er en “læs op”-knap)</li>
     </ol>
 
-    <h3>Yderligere krav til mundtlig offentliggørelse</h3>
-    <p>Det vil være en god service at den mundtlige offentliggørelse kan findes enten direkte på siden med den skriftlige offentliggørelse eller via et link fra samme side. Dette er dog ikke et krav.</p>
+    <p>Erhvervsstyrelsen har bekræftet telefonisk, at alle 3 metoder kan bruges til at leve op til kravet om mundtlig offentliggørelse.</p>
+
+    <h3>Yderligere specifikatoner af kravene til mundtlig offentliggørelse</h3>
+    <p>Det vil være en god service at den mundtlige offentliggørelse kan findes enten direkte på siden med den skriftlige offentliggørelse eller via et link fra samme side. Dette er dog IKKE et krav, hvilket er bekræftet telefonisk af Erhvervsstyrelsen.</p>
+
+    <p>Der er IKKE krav om, at informationerne i den mundtlige offentliggørelse skal 1:1 tilsvare informationerne i den skriftlige offentliggørelse.</p>
 
     <p>Husk, at lydfiler og videoindhold også er underlagt tilgængelighedskrav. Fx skal en video være forsynet med undertekster.</p>
 
     <h3>Funktion til højtlæsning som mundtlig offentliggørelse</h3>
+
+    <p>Fordelen ved en højtlæsningsfunktion er frem for forud produceret lyd eller video er klart, at du slipper for at vedligeholde 2 forskellige versioner af det samme indhold, som risikerer at komme ud af sync efterhånden som du opdaterer dit indhold. Det er altid lettere at vedligeholde 1 version end 2 versioner i forskellige formater, især når den ene version er lyd- eller videoindhold, som typisk har længere produktstid og højere produktionsomkostninger end tekstindhold.</p>
     
     <p>Hvis du vil bygge din egen højtlæsningsfunktion i stedet for at bruge en færdig hyldevare, kan du bruge SpeechSynthesis (tekst-til-tale) i Web Speech API som understøttes bredt i browsere i dag.</p>
 
@@ -92,11 +108,13 @@ by: >
             <li>Se teknisk dokumentation for Web Speech API: <a href="https://developer.mozilla.org/en-US/docs/Web/API/Web_Speech_API" target="_blank">https://developer.mozilla.org/en-US/docs/Web/API/Web_Speech_API</a></p>
     </ul>
 
+    <p>Husk, at funktionerne til at betjene højtlæsningsfunktionen også skal leve op til alle tilgængelighedskrav, herunder at eventuelle knapper til at aktivere funktionen også skal kunne aktiveres med tastaturnavigation og også være tilgængelige med en skærmlæser.</p>
+
     <div class="highlight-box">
         <h2 id="direkte-fra-kilden">Direkte fra kilden: Tilgængelighedslovens egne ord om offentlig dokumentation</h2>
         <p>Fra Lov om tilgængelighedskrav for produkter og tjenester (tilgængelighedsloven): <a href="https://www.retsinformation.dk/eli/lta/2022/801" target="_blank">https://www.retsinformation.dk/eli/lta/2022/801</a></p>
 
-        <h3>Fra Kapitel 5 i tilgængelighedsloven</h3>
+        <h3 id="Kapitel-5">Fra Kapitel 5 i tilgængelighedsloven</h3>
 
         <blockquote>
             <p>Tjenesteyderens forpligtelser</p>
@@ -110,7 +128,7 @@ by: >
         </blockquote>
 
 
-            <h3>Fra Bilag 4 i tilgængelighedsloven</h3>
+            <h3 id="Bilag-4">Fra Bilag 4 i tilgængelighedsloven</h3>
         
         <blockquote>
             <p>OPLYSNINGER OM TJENESTER, DER OPFYLDER TILGÆNGELIGHEDSKRAVENE</p>
