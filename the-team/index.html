@@ -565,13 +565,17 @@ sitemap_include: 'yes'
             background-image: linear-gradient(rgb(44, 62, 80) 40%, rgb(27, 43, 58));
             color: #eaf1f7;
             grid-column: span 2;
-            grid-row: span 2;
+            grid-row: span 1;
             font-size: 1.5em;
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
             padding: 100px;
+
+            h2 {
+                margin-top: 0;
+            }
         }
         .join-us-container h1 {
             font-size: 2.5em;
@@ -580,16 +584,28 @@ sitemap_include: 'yes'
         .join-us-container p {
             line-height: 1.5;
         }
+        @media (min-width: 1600px) {
+            .join-us-container {
+                grid-column: span 1;
+                grid-row: span 1;
+            }
+        }
         @media (min-width: 1350px) and (max-width: 1599px) {
             .join-us-container {
                 font-size: 1em;
-                grid-column: span 1;
+                grid-column: span 3;
             }
         }
         @media (max-width: 1349px) {
             .join-us-container {
                 font-size: 1em;
                 grid-row: span 1;
+                grid-column: span 3;
+            }
+        }
+        @media (min-width: 600px) and (max-width: 949px) {
+            .join-us-container {
+                grid-column: span 2;
             }
         }
         @media (max-width: 599px) {
@@ -846,7 +862,7 @@ sitemap_include: 'yes'
             </div>
         </div>
         <div class="join-us-container">
-            <h1>Want to join the team?</h1>
+            <h2>Want to join the team?</h2>
             <p>
                 We are not currently actively hiring, but if you are interested in what it's like working with us, and would
                 like to learn more, you are always welcome to contact us on <a
