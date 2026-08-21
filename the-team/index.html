@@ -179,6 +179,9 @@ sitemap_include: 'yes'
             height: 100%;
             object-fit: cover;
         }
+        .person-image--position-top img {
+            object-position: top;
+        }
         .person-image img.dream {
             position: absolute;
             opacity: 0;
@@ -565,13 +568,17 @@ sitemap_include: 'yes'
             background-image: linear-gradient(rgb(44, 62, 80) 40%, rgb(27, 43, 58));
             color: #eaf1f7;
             grid-column: span 2;
-            grid-row: span 2;
+            grid-row: span 1;
             font-size: 1.5em;
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
             padding: 100px;
+
+            h2 {
+                margin-top: 0;
+            }
         }
         .join-us-container h1 {
             font-size: 2.5em;
@@ -580,16 +587,28 @@ sitemap_include: 'yes'
         .join-us-container p {
             line-height: 1.5;
         }
+        @media (min-width: 1600px) {
+            .join-us-container {
+                grid-column: span 1;
+                grid-row: span 1;
+            }
+        }
         @media (min-width: 1350px) and (max-width: 1599px) {
             .join-us-container {
                 font-size: 1em;
-                grid-column: span 1;
+                grid-column: span 3;
             }
         }
         @media (max-width: 1349px) {
             .join-us-container {
                 font-size: 1em;
                 grid-row: span 1;
+                grid-column: span 3;
+            }
+        }
+        @media (min-width: 600px) and (max-width: 949px) {
+            .join-us-container {
+                grid-column: span 2;
             }
         }
         @media (max-width: 599px) {
@@ -760,7 +779,7 @@ sitemap_include: 'yes'
                 In his free time, Haidar enjoys playing indoor volleyball.
             </div>
         </div>
-        <div class="person-image person-lg-col-4 person-md-col-3 person-sm-col-2 person-xs-col-2">
+        <div class="person-image person-image--position-top person-lg-col-4 person-md-col-3 person-sm-col-2 person-xs-col-2">
             <img src="/img/people/simon-spinola.jpg" alt="">
         </div>
         <div
@@ -779,7 +798,7 @@ sitemap_include: 'yes'
                 </p>
             </div>
         </div>
-        <div class="person-image person-lg-col-2 person-md-col-1 person-sm-col-1">
+        <div class="person-image person-image--position-top person-lg-col-2 person-md-col-1 person-sm-col-1">
             <img src="/img/people/anne.jpg" alt="">
         </div>
         <div
@@ -799,7 +818,7 @@ sitemap_include: 'yes'
                 </p>
             </div>
         </div>
-        <div class="person-image person-lg-col-1 person-md-col-1 person-sm-col-3 person-xs-col-2">
+        <div class="person-image person-image--position-top person-lg-col-1 person-md-col-1 person-sm-col-3 person-xs-col-2">
             <img src="/img/people/lasse-grønbæk.jpg" alt="">
         </div>
         <div
@@ -822,8 +841,31 @@ sitemap_include: 'yes'
                 In his free time, Lasse leads the local TTRPG association and enjoys translating, writing, and designing tabletop role-playing games.
             </div>
         </div>
+        <div class="person-image person-image--position-top person-lg-col-3 person-md-col-3 person-sm-col-2 person-xs-col-1">
+            <img src="/img/people/martin.jpg" alt="">
+        </div>
+        <div
+            class="person person-lg-col-4 person-lg-row-2 person-lg-scoot-left person-md-col-2 person-md-scoot-right person-sm-col-1 person-xs-col-2 person-sm-scoot-right person-xs-scoot-left">
+            <div class="person-name">
+                <h2>Martin Grünbaum</h2>
+                <div class="person-title">Staff Software Developer. MSc Computer Science.</div>
+            </div>
+            <img src="/img/code-icon.svg" role="heading" class="person-description-icon" alt="about"/>
+            <div class="person-about">
+                <p>
+                    Martin enjoys solving complex problems and turning ideas into practical solutions. Beginning his programming journey ~30 years ago, he combines a strong technical foundation with a passion for technical leadership, product design, building engineering teams and creating healthy engineering cultures.
+                </p>
+                <p>
+                    He believes good leadership starts with authenticity and trust, and enjoys bringing people with different perspectives together around a shared goal. For Martin, building great technology and building an environment where people can thrive go hand in hand.
+                </p>
+            </div>
+            <img src="/img/terrain-icon.svg" role="heading" class="person-description-icon" alt="free time"/>
+            <div class="person-free-time">
+                In his free time, Martin enjoys bouldering, board games, books and everything geeky — and generally has a hard time sticking to just one hobby.
+            </div>
+        </div>
         <div class="join-us-container">
-            <h1>Want to join the team?</h1>
+            <h2>Want to join the team?</h2>
             <p>
                 We are not currently actively hiring, but if you are interested in what it's like working with us, and would
                 like to learn more, you are always welcome to contact us on <a
