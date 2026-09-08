@@ -9,7 +9,7 @@
     {% endif %}
       <div class="request-contact__text">
         <h2 class="section__heading">
-          {% if page.lang == 'da_dk' %}
+          {% if page.lang == 'da-DK' %}
             Kontakt os
           {% else %}
             Get in touch
@@ -17,7 +17,7 @@
         </h2>
         <div class="section__text">
           <p>
-            {% if page.lang == 'da_dk' %}
+            {% if page.lang == 'da-DK' %}
               Indsend din e-mailadresse, så vender vi tilbage til dig
             {% else %}
               Submit your email address and we will get back to you
@@ -39,7 +39,7 @@
             </label>
             <label>
               <span>
-                {% if page.lang == 'da_dk' %}
+                {% if page.lang == 'da-DK' %}
                   Telefon (valgfri)
                 {% else %}
                   Phone number (optional)
@@ -48,7 +48,7 @@
               <input type="tel" name="phone" placeholder="39602504" pattern="(?=(?:.*\d){8})(?=.{1,15}$)\+?[\d\s\(\)\-]+">
             </label>
             <button class="button contact-form__submit" type="submit" id="submitButton">
-              {% if page.lang == 'da_dk' %}
+              {% if page.lang == 'da-DK' %}
                 Indsende
               {% else %}
                 Submit
@@ -57,7 +57,7 @@
           </div>
         </form>
         <div class="contact-form-overlay contact-form-overlay-clickthrough">
-          {% if page.lang == 'da_dk' %}
+          {% if page.lang == 'da-DK' %}
             Sender...
           {% else %}
             Submitting...

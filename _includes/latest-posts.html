@@ -237,7 +237,7 @@
         {% assign filtered_posts = site.posts | where_exp: "post", "post.title != page.title" %}
       {% endif %}
       {% for post in filtered_posts limit: include.limit %}
-      <a href="{{ post.url }}" class="latest-posts__list-item" lang="{% if post.lang == 'da_dk' %}da-dk{% else %}en{% endif %}">
+      <a href="{{ post.url }}" class="latest-posts__list-item" lang="{% if post.lang == 'da-DK' %}da-dk{% else %}en{% endif %}">
         <div class="latest-posts__content">
           <h3 class="latest-posts__list-item-title">
             {{ post.title }}
@@ -246,10 +246,10 @@
             <p class="latest-posts__list-item-summary-text">
               {{ post.excerpt }}
             </p>
-            <span class="latest-posts__list-item-summary-readmore">➟ <u>{% if post.lang == 'da_dk' %}Læs&nbsp;mere{% else %}Read&nbsp;more{% endif %}</u></span>
+            <span class="latest-posts__list-item-summary-readmore">➟ <u>{% if post.lang == 'da-DK' %}Læs&nbsp;mere{% else %}Read&nbsp;more{% endif %}</u></span>
           </div>
           <div class="latest-posts__meta">
-            <h4 class="latest-posts__meta-header">{% if post.lang == 'da_dk' and post.author.size == 1 %}Forfatter{% elsif post.author.size == 1 %}Author{% elsif post.lang == 'da_dk' and post.author.size > 1 %}Forfattere{% elsif post.author.size > 1 %}Authors{% endif %}</h4>
+            <h4 class="latest-posts__meta-header">{% if post.lang == 'da-DK' and post.author.size == 1 %}Forfatter{% elsif post.author.size == 1 %}Author{% elsif post.lang == 'da-DK' and post.author.size > 1 %}Forfattere{% elsif post.author.size > 1 %}Authors{% endif %}</h4>
             <div class="latest-posts__authors">
               {% assign authors = post.author %}
               {% for author in authors %}
@@ -267,12 +267,12 @@
               {% endfor %}
             </div>
             <span class="latest-posts__publish-date">
-              {% if post.lang == 'da_dk' %}Offentliggjort{% else %}Published{% endif %} {{ post.at }}
+              {% if post.lang == 'da-DK' %}Offentliggjort{% else %}Published{% endif %} {{ post.at }}
             </span>
           </div>
           <div class="latest-posts__tags">
             <div class="latest-posts__tag">
-              {% if post.lang == 'da_dk' %}🇩🇰 dansk{% else %}🇬🇧 english{% endif %}
+              {% if post.lang == 'da-DK' %}🇩🇰 dansk{% else %}🇬🇧 english{% endif %}
             </div>
           </div>
         </div>
