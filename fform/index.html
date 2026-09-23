@@ -1,0 +1,59 @@
+---
+layout: default
+title: fform
+meta: "meta description goes here"
+sitemap_include: 'yes'
+---
+
+<link href="/css/homestyle.css" rel="stylesheet" type="text/css" />
+<style type="text/css" scoped>
+    :root {
+        --deranged-text: #eaf1f7;
+        --deranged-light-blue: #455d75;
+        --deranged-dark-blue: #2c3e50;
+    }
+
+    p {
+        margin-top: 10px;
+        margin-bottom: 30px;
+        line-height: 1.5;
+    }
+
+    .button {
+        width: auto;
+        border-color: #ecf0f1;
+        border-style: solid;
+        border-width: 1px;
+    }
+
+    .hello-section {
+        min-height: 400px;
+        height: 50vh;
+        background-image: linear-gradient(6deg, var(--deranged-dark-blue) 30%, var(--deranged-light-blue) 90%);
+    }
+</style>
+
+{% include overlay_nav.html %}
+
+<section class="hello-section" role="banner">
+    <a href="/" class="logo">deranged</a>
+    <div class="big-greeting">
+        <h1>fform</h1>
+        <h2>Secondary title goes here</h2>
+    </div>
+</section>
+
+<main>
+    <section>
+        <p>Hello world</p>
+    </section>
+    <section>
+        <div class="pipedriveWebForms" data-pd-webforms="https://webforms.pipedrive.com/f/ceggADlR4gHBujCPSaqjIHgP9qDsQy38PQ1NDUl7TX78sIHqqhqiYkKpICFtINzUP1"><script src="https://webforms.pipedrive.com/f/loader"></script></div>
+    </section>
+</main>
+
+{% include trusted.html %}
+
+{% include team-and-smv-digital.html %}
+
+{% include get_a_quote.html subject='Quote request' %}
