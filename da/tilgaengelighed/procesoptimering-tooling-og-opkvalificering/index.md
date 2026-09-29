@@ -9,7 +9,7 @@ sitemap_include: 'yes'
 
 ## Procesoptimering, tooling & opkvalificering
 
-Tilgængelighed skal ikke håndteres som et skippertag hver gang en ny version rulles ud. Det skal fikses strukturelt. Vi hjælper med at ændre den måde, I arbejder med tilgængelighed på, så det bliver en integreret og helt naturlig del af jeres arbejdsgange.
+Tilgængelighed skal ikke håndteres som en eftertanke hver gang en ny version rulles ud. Det skal fikses strukturelt. Vi hjælper med at ændre den måde, I arbejder med tilgængelighed på, så det bliver en integreret og helt naturlig del af jeres arbejdsgange.
 
 Vi kigger på hele jeres udviklingspipeline – fra de første designskitser til koden kører i produktion – og styrker jer på processer, automatisering og kompetencer.
 
