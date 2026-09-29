@@ -20,4 +20,4 @@ Vi tager styringen på dine tilgængelighedsprojekter fra start til slut og sikr
 - **Tværgående koordinering:** Vi bygger bro mellem forretningsansvarlige, UX-designere, interne udviklingsteams og eksterne leverandører.
 - **Sparring og rådgivning:** Vi besvarer de løbende spørgsmål, der opstår undervejs, så projektet aldrig går i stå på grund af uklarheder.
 
-Med deranged som din projektleder sikrer du, at tilgængelighed ikke bliver et tungt og tilfældigt skippertag, men en velstyret og tryg proces.
+Med deranged som din projektleder sikrer du, at tilgængelighed ikke bliver et tungt og tilfældigt tillægsprojekt, men en velstyret og tryg proces.
