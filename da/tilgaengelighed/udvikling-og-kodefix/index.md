@@ -16,7 +16,7 @@ Hvad enten du skal have bygget en helt ny løsning fra bunden eller har en eksis
 ### Vores tilgang til kode og udvikling:
 
 - **Tilgængelig by default:** Når vi bygger nye websites, apps eller softwarekomponenter, tænker vi semantik, ARIA-roles, tastaturnavigation og kontrast ind fra første linje kode.
-- **Udbedring i eksisterende kodebase:** Har I fået en lang liste af fejl fra et automatisk testværktøj eller en auditering? Vi går direkte ind i jeres repositorier og retter fejlene.
+- **Udbedring i eksisterende kodebase:** Har I fået en lang liste af fejl fra et automatisk testværktøj eller en auditering? Vi går direkte ind i jeres kodebase og retter fejlene.
 - **Aflastning af dine egne ressourcer:** Hvis jeres egne udviklere har travlt med forretningskritisk udvikling, træder vi til og løser tilgængelighedsopgaverne for jer.
 - **Sparring med jeres udviklere:** Vi kan også fungere som tekniske sparringspartnere for dit eksisterende team, så de slipper for at gætte sig frem til korrekte implementationer.
 
